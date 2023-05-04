@@ -1,0 +1,22 @@
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Diseño.exe.config
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Diseño.exe
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Diseño.pdb
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.AssemblyReference.cache
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.SuggestedBindingRedirects.cache
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Diseño.Form1.resources
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Diseño.Form2.resources
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Diseño.Properties.Resources.resources
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.GenerateResource.cache
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CoreCompileInputs.cache
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Diseño.exe
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Diseño.pdb
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Colàgeno\source\repos\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CopyComplete

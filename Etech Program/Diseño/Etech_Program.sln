@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etech Celulares_Program", "Diseño\Etech Celulares_Program.csproj", "{8894E0ED-A2D2-4D81-A045-DB733D9096B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8894E0ED-A2D2-4D81-A045-DB733D9096B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8894E0ED-A2D2-4D81-A045-DB733D9096B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8894E0ED-A2D2-4D81-A045-DB733D9096B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8894E0ED-A2D2-4D81-A045-DB733D9096B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6CE4259-F617-4146-A120-720F374F5D4E}
+	EndGlobalSection
+EndGlobal
