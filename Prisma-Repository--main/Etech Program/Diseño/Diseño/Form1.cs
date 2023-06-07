@@ -62,14 +62,23 @@ namespace Diseño
                 btnModificar.ForeColor = Color.White;
                 btnEliminar.ForeColor = Color.White;
                 btnCerrarSesion.ForeColor = Color.White;
+                btnAgregar.BackColor = Color.DarkRed;
+                btnModificar.BackColor = Color.DarkRed;
+                btnEliminar.BackColor = Color.DarkRed;
+                btnCerrarSesion.BackColor = Color.DarkRed;
             }
             else
             {
                 panelD.Width = 45;
-                btnAgregar.ForeColor = Color.DarkRed;
-                btnModificar.ForeColor = Color.DarkRed;
-                btnEliminar.ForeColor = Color.DarkRed;
-                btnCerrarSesion.ForeColor = Color.DarkRed;
+                btnAgregar.ForeColor = Color.Firebrick;
+                btnModificar.ForeColor = Color.Firebrick;
+                btnEliminar.ForeColor = Color.Firebrick;
+                btnCerrarSesion.ForeColor = Color.Firebrick;
+                btnAgregar.BackColor = Color.Firebrick;
+                btnCerrarSesion.BackColor = Color.Firebrick;
+                btnEliminar.BackColor = Color.Firebrick;
+                btnModificar.BackColor = Color.Firebrick;
+
             }
         }
 
@@ -82,6 +91,24 @@ namespace Diseño
         {
             DataBaseConnect dataBaseConnectSesion = new DataBaseConnect();
             dataBaseConnectSesion.desconectarse();
+            MessageBox.Show("Cerrando Sesión", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Application.Restart();
+        }
+
+        private void tableLayoutPanel1_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Utilidades utilidades = new Utilidades();
+            utilidades.MostrarTest();
         }
     }
 }
