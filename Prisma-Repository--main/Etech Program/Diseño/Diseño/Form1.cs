@@ -28,7 +28,7 @@ namespace Diseño
             }
             else
             {
-            // Acá va la operación de búsqueda:
+                // Acá va la operación de búsqueda:
 
 
 
@@ -43,7 +43,8 @@ namespace Diseño
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            DataBaseConnect dataBaseConnect = new DataBaseConnect();
+            dataBaseConnect.conectarse();
         }
         //Codigo referente al menu
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -56,17 +57,23 @@ namespace Diseño
             if (panelD.Size.Width == 45)
             {
                 panelD.Width = 120;
-                
+
             }
             else
             {
                 panelD.Width = 45;
             }
-        }   
+        }
 
         private void panelD_Paint(object sender, PaintEventArgs e)
         {
-           
+
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DataBaseConnect dataBaseConnectSesion = new DataBaseConnect();
+            dataBaseConnectSesion.desconectarse();
         }
     }
 }

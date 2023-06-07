@@ -62,7 +62,8 @@ namespace Diseño
         //--------------------------------------------------------------------------------------------------------------------------------------------------
         private void Form2_Load(object sender, System.EventArgs e)
         {
-
+            DataBaseConnect dataBaseConnect = new DataBaseConnect();
+            dataBaseConnect.conectarse();
             txtNombre.Text = "ID de Empleado...";
             txtNombre.ForeColor = Color.Gray;
 

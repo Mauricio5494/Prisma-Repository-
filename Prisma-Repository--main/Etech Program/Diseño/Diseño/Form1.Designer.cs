@@ -79,6 +79,7 @@
             this.btnCerrarSesion.Text = "Salir";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -92,7 +93,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.22625F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.77375F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1110, 442);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1110, 547);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // panelD
