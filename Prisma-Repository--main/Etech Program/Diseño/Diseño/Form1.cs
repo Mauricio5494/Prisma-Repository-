@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Diseño
@@ -57,11 +58,18 @@ namespace Diseño
             if (panelD.Size.Width == 45)
             {
                 panelD.Width = 120;
-
+                btnAgregar.ForeColor = Color.White;
+                btnModificar.ForeColor = Color.White;
+                btnEliminar.ForeColor = Color.White;
+                btnCerrarSesion.ForeColor = Color.White;
             }
             else
             {
                 panelD.Width = 45;
+                btnAgregar.ForeColor = Color.DarkRed;
+                btnModificar.ForeColor = Color.DarkRed;
+                btnEliminar.ForeColor = Color.DarkRed;
+                btnCerrarSesion.ForeColor = Color.DarkRed;
             }
         }
 

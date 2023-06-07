@@ -62,8 +62,12 @@ namespace Diseño
         //--------------------------------------------------------------------------------------------------------------------------------------------------
         private void Form2_Load(object sender, System.EventArgs e)
         {
+            ////////////////////////////////////////////////////////
+            //se conecta a la base de datos
             DataBaseConnect dataBaseConnect = new DataBaseConnect();
             dataBaseConnect.conectarse();
+            ////////////////////////////////////////////////////////
+
             txtNombre.Text = "ID de Empleado...";
             txtNombre.ForeColor = Color.Gray;
 
@@ -112,7 +116,7 @@ namespace Diseño
 
         private void button1_MouseEnter(object sender, System.EventArgs e)
         {
-            toolTip1.SetToolTip(button1, "Entra como invitado, solo tienes permiso de ver.");
+            toolTip1.SetToolTip(btnInvitado, "Entra como invitado, solo tienes permiso de ver.");
         }
 
         private void txtPass_MouseEnter(object sender, System.EventArgs e)
@@ -127,7 +131,9 @@ namespace Diseño
 
         private void button1_Click(object sender, System.EventArgs e)
         {
+            Form1 mostrar = new Form1();
 
+            mostrar.Show();
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------------
         // Hasta acá.

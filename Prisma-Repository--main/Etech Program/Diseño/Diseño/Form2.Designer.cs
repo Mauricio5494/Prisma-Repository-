@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInvitado = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.picMostrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -81,23 +81,23 @@
             this.txtPass.TabIndex = 5;
             this.txtPass.MouseEnter += new System.EventHandler(this.txtPass_MouseEnter);
             // 
-            // button1
+            // btnInvitado
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.Image = global::Diseño.Properties.Resources.alt_de_inicio_de_sesion;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(149, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Invitado";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.btnInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInvitado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnInvitado.Image = global::Diseño.Properties.Resources.alt_de_inicio_de_sesion;
+            this.btnInvitado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInvitado.Location = new System.Drawing.Point(149, 212);
+            this.btnInvitado.Name = "btnInvitado";
+            this.btnInvitado.Size = new System.Drawing.Size(75, 31);
+            this.btnInvitado.TabIndex = 6;
+            this.btnInvitado.Text = "Invitado";
+            this.btnInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInvitado.UseVisualStyleBackColor = false;
+            this.btnInvitado.Click += new System.EventHandler(this.button1_Click);
+            this.btnInvitado.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
             // checkBox1
             // 
@@ -155,11 +155,12 @@
             // 
             // Form2
             // 
+            this.AcceptButton = this.btnIngreso;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(304, 281);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnInvitado);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
@@ -191,7 +192,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInvitado;
         private System.Windows.Forms.PictureBox picMostrar;
         private System.Windows.Forms.CheckBox checkBox1;
     }
