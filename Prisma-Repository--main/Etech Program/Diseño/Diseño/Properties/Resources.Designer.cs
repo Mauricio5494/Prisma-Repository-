@@ -83,6 +83,16 @@ namespace Diseño.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap interrogatorio {
+            get {
+                object obj = ResourceManager.GetObject("interrogatorio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_etech_uruguay_220_e1654881097513 {
             get {
                 object obj = ResourceManager.GetObject("logo-etech-uruguay-220-e1654881097513", resourceCulture);

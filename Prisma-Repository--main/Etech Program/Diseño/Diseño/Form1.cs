@@ -50,7 +50,8 @@ namespace Diseño
         //Codigo referente al menu
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            Agregar_Celular_Form mostrar = new Agregar_Celular_Form();
+            mostrar.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

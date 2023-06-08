@@ -2,9 +2,11 @@
 {
     internal class Utilidades
     {
-        public void MostrarTest()
+        public string MostrarTest()
         {
             string consulta = "SELECT * FROM usuario";
+
+            return consulta;
         }
     }
 }
