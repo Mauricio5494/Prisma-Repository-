@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2023 a las 22:20:30
+-- Tiempo de generación: 16-06-2023 a las 22:30:20
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,14 +24,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contacto`
+-- Estructura de tabla para la tabla `celular`
 --
 
-CREATE TABLE `contacto` (
+CREATE TABLE `celular` (
   `ID` int(11) NOT NULL,
-  `correo` tinytext DEFAULT NULL,
-  `telefono` tinytext DEFAULT NULL,
-  `Num_Cels` tinytext DEFAULT NULL
+  `num_serie` text NOT NULL,
+  `modelo` text NOT NULL,
+  `marca` text NOT NULL,
+  `estado` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cliente`
+--
+
+CREATE TABLE `cliente` (
+  `nombre` text NOT NULL,
+  `CI` text DEFAULT NULL,
+  `correo` text DEFAULT NULL,
+  `telefono_fijo` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trabajo`
+--
+
+CREATE TABLE `trabajo` (
+  `ID_trabajo` int(11) NOT NULL,
+  `plazo` date NOT NULL,
+  `presupuesto` int(11) NOT NULL,
+  `problema` text NOT NULL,
+  `fecha_de_ingreso` datetime NOT NULL,
+  `adelanto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -41,59 +70,75 @@ CREATE TABLE `contacto` (
 --
 
 CREATE TABLE `usuario` (
+  `ID` int(11) NOT NULL,
   `nombre` tinytext DEFAULT NULL,
   `contraseña` varchar(255) DEFAULT NULL,
-  `ID` int(11) NOT NULL
+  `correo` text NOT NULL,
+  `num_celular` text NOT NULL,
+  `telefono_fijo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`nombre`, `contraseña`, `ID`) VALUES
-('Pedro', '123', 1);
+INSERT INTO `usuario` (`ID`, `nombre`, `contraseña`, `correo`, `num_celular`, `telefono_fijo`) VALUES
+(1, 'Pedro', '123', '', '', NULL),
+(2, 'pepe', 'pepe', 'pepe@hotmail.com', '09pepe738398', 47);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `contacto`
+-- Indices de la tabla `celular`
 --
-ALTER TABLE `contacto`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `celular`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `num_serie_UNIQUE` (`num_serie`) USING HASH;
+
+--
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD UNIQUE KEY `CI_unique` (`CI`) USING HASH,
+  ADD UNIQUE KEY `correo_unique` (`correo`) USING HASH;
+
+--
+-- Indices de la tabla `trabajo`
+--
+ALTER TABLE `trabajo`
+  ADD PRIMARY KEY (`ID_trabajo`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `correo_unico` (`correo`) USING HASH,
+  ADD UNIQUE KEY `num_celular-unique` (`num_celular`) USING HASH;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `contacto`
+-- AUTO_INCREMENT de la tabla `celular`
 --
-ALTER TABLE `contacto`
+ALTER TABLE `celular`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `trabajo`
+--
+ALTER TABLE `trabajo`
+  MODIFY `ID_trabajo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `contacto`
---
-ALTER TABLE `contacto`
-  ADD CONSTRAINT `contacto_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuario` (`ID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
