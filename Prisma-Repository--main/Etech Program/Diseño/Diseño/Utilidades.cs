@@ -1,6 +1,6 @@
 ﻿namespace Diseño
 {
-    internal class Utilidades
+    class Utilidades
     {
         public string MostrarTest()
         {

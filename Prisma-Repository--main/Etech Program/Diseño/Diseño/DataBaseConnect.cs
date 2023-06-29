@@ -5,49 +5,49 @@ using System.Windows.Forms;
 
 namespace Diseño
 {
-    internal class DataBaseConnect
+    class DataBaseConnect
     {
-        private MySqlConnection conectar;
-
-        public void conectarse()
+        public static MySqlConnection conectarse()
         {
+            //requisitos para la conexion (informacion del base de datos):
             string uid = "root";
             string pwd = "";
             string servidor = "localhost";
-            int port = 3306;
+            string port = "3306";
             string database = "etech_celulares";
-
-            string server = $"Server={servidor}; Uid={uid}; Pwd={pwd}; Port={port}; Database={database}";
-
-            MySqlConnection conn = new MySqlConnection(server);
+            string requisitos = $"Server={servidor}; Uid={uid}; Pwd={pwd}; Port={port}; Database={database}";
+            //instancia del metodo:
+            MySqlConnection ConnectionDB = new MySqlConnection(requisitos);
 
             try
             {
-                conn.Open();
-                //MessageBox.Show("Estado:\n\nConectado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return ConnectionDB;   
             }
             catch (Exception e)
             {
                 MessageBox.Show("Error al conectar a la Base de Datos\n\nMensaje de Error:\n" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show("Mensaje técnico:\n\n" + e.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                return null;
             }
         }
 
-        public void desconectarse()
+        //Parece ser que podemos prescindir de este metodo
+        public static MySqlConnection desconectarse()
         {
+            MySqlConnection ConnectionDB = new MySqlConnection();
             try
             {
-                if (conectar != null && conectar.State == ConnectionState.Open)
+                if (ConnectionDB != null && ConnectionDB.State == ConnectionState.Open)
                 {
-                    conectar.Close();
-                    //MessageBox.Show("Conexión Cerrada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ConnectionDB.Close();
+                    MessageBox.Show("Conexión Cerrada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("No hay Base de Datos de la cuál Desconectarse \nMensaje de Error:\n\n" + e.Message);
             }
+            return null;
         }
     }
 }

@@ -96,7 +96,7 @@
             this.btnInvitado.Text = "Invitado";
             this.btnInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInvitado.UseVisualStyleBackColor = false;
-            this.btnInvitado.Click += new System.EventHandler(this.button1_Click);
+            this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
             this.btnInvitado.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
             // checkBox1

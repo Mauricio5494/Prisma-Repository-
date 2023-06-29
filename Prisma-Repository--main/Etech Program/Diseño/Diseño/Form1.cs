@@ -1,15 +1,29 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Diseño
 {
     public partial class Form1 : Form
     {
+        //variables/atributos de la clase:
+        private bool invitado;
+
+        //instancias:
+        MySqlConnection conn = DataBaseConnect.conectarse();
+        MySqlCommand cmd = new MySqlCommand();
+
+        //Constructor
         public Form1()
         {
             InitializeComponent();
+            invitado = true;
         }
+        public bool Invitado
+        {
+            set { invitado = value; }
+        } 
 
         private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -21,18 +35,13 @@ namespace Diseño
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             // Salta error para no crashear el programa:
-
             if (MenuOpciones.Text.Equals("") || txtCampo_Bsuqeda.Text == "")
             {
-
                 MessageBox.Show("Antes de buscar seleccione una opción de filtro y escribe algo en el campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 // Acá va la operación de búsqueda:
-
-
-
             }
         }
 
@@ -44,14 +53,33 @@ namespace Diseño
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DataBaseConnect dataBaseConnect = new DataBaseConnect();
-            dataBaseConnect.conectarse();
+            //Conexion con la base de datos:
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message + x.StackTrace);
+            }
+            finally 
+            { 
+                conn.Close(); 
+            }
         }
         //Codigo referente al menu
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Agregar_Celular_Form mostrar = new Agregar_Celular_Form();
-            mostrar.Show();
+            if (invitado == false)
+            {
+                Agregar_Celular_Form mostrar = new Agregar_Celular_Form();
+                mostrar.Show();
+            }
+            else 
+            {
+                MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +95,11 @@ namespace Diseño
                 btnModificar.BackColor = Color.DarkRed;
                 btnEliminar.BackColor = Color.DarkRed;
                 btnCerrarSesion.BackColor = Color.DarkRed;
+
+                btnAgregar.FlatStyle = FlatStyle.Popup;
+                btnModificar.FlatStyle = FlatStyle.Popup;
+                btnEliminar.FlatStyle = FlatStyle.Popup;
+                btnCerrarSesion.FlatStyle = FlatStyle.Popup;
             }
             else
             {
@@ -80,6 +113,10 @@ namespace Diseño
                 btnEliminar.BackColor = Color.Firebrick;
                 btnModificar.BackColor = Color.Firebrick;
 
+                btnAgregar.FlatStyle = FlatStyle.Flat;
+                btnModificar.FlatStyle = FlatStyle.Flat;
+                btnEliminar.FlatStyle = FlatStyle.Flat;
+                btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             }
         }
 
@@ -90,8 +127,8 @@ namespace Diseño
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            DataBaseConnect dataBaseConnectSesion = new DataBaseConnect();
-            dataBaseConnectSesion.desconectarse();
+            invitado = true;
+            conn.Close();
             MessageBox.Show("Cerrando Sesión", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Restart();
         }
@@ -110,6 +147,30 @@ namespace Diseño
         {
             Utilidades utilidades = new Utilidades();
             utilidades.MostrarTest();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (invitado == false)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (invitado == false)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }

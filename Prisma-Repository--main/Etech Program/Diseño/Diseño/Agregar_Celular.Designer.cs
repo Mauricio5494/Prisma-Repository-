@@ -40,15 +40,15 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbExtraEstado = new System.Windows.Forms.RadioButton();
+            this.rbEnEspera = new System.Windows.Forms.RadioButton();
+            this.rbEnReparacion = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPassAyuda = new System.Windows.Forms.Button();
-            this.rbEnReparacion = new System.Windows.Forms.RadioButton();
-            this.rbEnEspera = new System.Windows.Forms.RadioButton();
-            this.rbExtraEstado = new System.Windows.Forms.RadioButton();
-            this.rdContraseña = new System.Windows.Forms.RadioButton();
-            this.rbNumerico = new System.Windows.Forms.RadioButton();
             this.rbPatron = new System.Windows.Forms.RadioButton();
+            this.rbNumerico = new System.Windows.Forms.RadioButton();
+            this.rdContraseña = new System.Windows.Forms.RadioButton();
+            this.btnPassAyuda = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbNoTieneContraseña = new System.Windows.Forms.RadioButton();
             this.rbSiTieneContraseña = new System.Windows.Forms.RadioButton();
@@ -66,6 +66,7 @@
             this.btnAgregarCel.TabIndex = 0;
             this.btnAgregarCel.Text = "Agregar";
             this.btnAgregarCel.UseVisualStyleBackColor = true;
+            this.btnAgregarCel.Click += new System.EventHandler(this.btnAgregarCel_Click);
             // 
             // label1
             // 
@@ -147,6 +148,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado";
             // 
+            // rbExtraEstado
+            // 
+            this.rbExtraEstado.AutoSize = true;
+            this.rbExtraEstado.Location = new System.Drawing.Point(191, 19);
+            this.rbExtraEstado.Name = "rbExtraEstado";
+            this.rbExtraEstado.Size = new System.Drawing.Size(45, 17);
+            this.rbExtraEstado.TabIndex = 15;
+            this.rbExtraEstado.Text = "Otro";
+            this.rbExtraEstado.UseVisualStyleBackColor = true;
+            // 
+            // rbEnEspera
+            // 
+            this.rbEnEspera.AutoSize = true;
+            this.rbEnEspera.Location = new System.Drawing.Point(111, 19);
+            this.rbEnEspera.Name = "rbEnEspera";
+            this.rbEnEspera.Size = new System.Drawing.Size(74, 17);
+            this.rbEnEspera.TabIndex = 14;
+            this.rbEnEspera.Text = "En Espera";
+            this.rbEnEspera.UseVisualStyleBackColor = true;
+            // 
+            // rbEnReparacion
+            // 
+            this.rbEnReparacion.AutoSize = true;
+            this.rbEnReparacion.Checked = true;
+            this.rbEnReparacion.Location = new System.Drawing.Point(9, 19);
+            this.rbEnReparacion.Name = "rbEnReparacion";
+            this.rbEnReparacion.Size = new System.Drawing.Size(96, 17);
+            this.rbEnReparacion.TabIndex = 13;
+            this.rbEnReparacion.TabStop = true;
+            this.rbEnReparacion.Text = "En Reparación";
+            this.rbEnReparacion.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -171,6 +204,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tipo de contraseña";
             // 
+            // rbPatron
+            // 
+            this.rbPatron.AutoSize = true;
+            this.rbPatron.Location = new System.Drawing.Point(111, 21);
+            this.rbPatron.Name = "rbPatron";
+            this.rbPatron.Size = new System.Drawing.Size(56, 17);
+            this.rbPatron.TabIndex = 18;
+            this.rbPatron.Text = "Patrón";
+            this.rbPatron.UseVisualStyleBackColor = true;
+            // 
+            // rbNumerico
+            // 
+            this.rbNumerico.AutoSize = true;
+            this.rbNumerico.Location = new System.Drawing.Point(191, 21);
+            this.rbNumerico.Name = "rbNumerico";
+            this.rbNumerico.Size = new System.Drawing.Size(70, 17);
+            this.rbNumerico.TabIndex = 17;
+            this.rbNumerico.Text = "Numérico";
+            this.rbNumerico.UseVisualStyleBackColor = true;
+            // 
+            // rdContraseña
+            // 
+            this.rdContraseña.AutoSize = true;
+            this.rdContraseña.Location = new System.Drawing.Point(12, 21);
+            this.rdContraseña.Name = "rdContraseña";
+            this.rdContraseña.Size = new System.Drawing.Size(79, 17);
+            this.rdContraseña.TabIndex = 16;
+            this.rdContraseña.Text = "Contraseña";
+            this.rdContraseña.UseVisualStyleBackColor = true;
+            // 
             // btnPassAyuda
             // 
             this.btnPassAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -184,67 +247,6 @@
             this.btnPassAyuda.TabIndex = 13;
             this.btnPassAyuda.UseVisualStyleBackColor = true;
             this.btnPassAyuda.Click += new System.EventHandler(this.btnPassAyuda_Click);
-            // 
-            // rbEnReparacion
-            // 
-            this.rbEnReparacion.AutoSize = true;
-            this.rbEnReparacion.Checked = true;
-            this.rbEnReparacion.Location = new System.Drawing.Point(9, 19);
-            this.rbEnReparacion.Name = "rbEnReparacion";
-            this.rbEnReparacion.Size = new System.Drawing.Size(96, 17);
-            this.rbEnReparacion.TabIndex = 13;
-            this.rbEnReparacion.Text = "En Reparación";
-            this.rbEnReparacion.UseVisualStyleBackColor = true;
-            // 
-            // rbEnEspera
-            // 
-            this.rbEnEspera.AutoSize = true;
-            this.rbEnEspera.Location = new System.Drawing.Point(111, 19);
-            this.rbEnEspera.Name = "rbEnEspera";
-            this.rbEnEspera.Size = new System.Drawing.Size(74, 17);
-            this.rbEnEspera.TabIndex = 14;
-            this.rbEnEspera.Text = "En Espera";
-            this.rbEnEspera.UseVisualStyleBackColor = true;
-            // 
-            // rbExtraEstado
-            // 
-            this.rbExtraEstado.AutoSize = true;
-            this.rbExtraEstado.Location = new System.Drawing.Point(191, 19);
-            this.rbExtraEstado.Name = "rbExtraEstado";
-            this.rbExtraEstado.Size = new System.Drawing.Size(45, 17);
-            this.rbExtraEstado.TabIndex = 15;
-            this.rbExtraEstado.Text = "Otro";
-            this.rbExtraEstado.UseVisualStyleBackColor = true;
-            // 
-            // rdContraseña
-            // 
-            this.rdContraseña.AutoSize = true;
-            this.rdContraseña.Location = new System.Drawing.Point(12, 21);
-            this.rdContraseña.Name = "rdContraseña";
-            this.rdContraseña.Size = new System.Drawing.Size(79, 17);
-            this.rdContraseña.TabIndex = 16;
-            this.rdContraseña.Text = "Contraseña";
-            this.rdContraseña.UseVisualStyleBackColor = true;
-            // 
-            // rbNumerico
-            // 
-            this.rbNumerico.AutoSize = true;
-            this.rbNumerico.Location = new System.Drawing.Point(191, 21);
-            this.rbNumerico.Name = "rbNumerico";
-            this.rbNumerico.Size = new System.Drawing.Size(70, 17);
-            this.rbNumerico.TabIndex = 17;
-            this.rbNumerico.Text = "Numérico";
-            this.rbNumerico.UseVisualStyleBackColor = true;
-            // 
-            // rbPatron
-            // 
-            this.rbPatron.AutoSize = true;
-            this.rbPatron.Location = new System.Drawing.Point(111, 21);
-            this.rbPatron.Name = "rbPatron";
-            this.rbPatron.Size = new System.Drawing.Size(56, 17);
-            this.rbPatron.TabIndex = 18;
-            this.rbPatron.Text = "Patrón";
-            this.rbPatron.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -285,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(488, 527);
+            this.ClientSize = new System.Drawing.Size(470, 527);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

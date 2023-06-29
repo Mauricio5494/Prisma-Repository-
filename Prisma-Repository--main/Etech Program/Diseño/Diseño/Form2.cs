@@ -1,6 +1,9 @@
 ﻿using Diseño.Properties;
 using System.Drawing;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System;
+using System.Security.Cryptography;
 
 namespace Diseño
 {
@@ -11,22 +14,20 @@ namespace Diseño
             InitializeComponent();
 
         }
-
         ToolTip toolTip1 = new ToolTip();
 
+        //Atributos de la clase:
+        string ID = null;
+        string password = null;
 
-
-        //Variables solo para pruebas:
-        //------------------------------
-        string nombre = "admin";
-        string contrasenia = "123";
-        //------------------------------
+        //Instancias:
+        MySqlConnection conn = DataBaseConnect.conectarse();
+        MySqlCommand cmd = new MySqlCommand();
+        Form1 Form1 = new Form1();
 
         //Método para cambiar la imágen del ojo y la sintaxis de ingreso de caracteres al TextBox de la Contraseña:
         private void checkBox1_CheckedChanged(object sender, System.EventArgs e)
         {
-
-
             if (checkBox1.Checked)
             {
                 //Se cambia la imagen y la sintaxis cambia a letras y números
@@ -43,39 +44,39 @@ namespace Diseño
 
         private void btnIngreso_Click(object sender, System.EventArgs e)
         {
-            //Para probar el cambio entre Forms si la contraseña y usuario son correctas.
-            if (txtNombre.Text == "admin" && txtPass.Text == "123")
+            //Conexion con la base de datos:
+            try
             {
-                Form1 mostrar = new Form1();
-                mostrar.Show();
-                this.Hide();
+                conn.Open();
+                cmd.Connection = conn;
+                Form1.Invitado = false;
             }
-            else
+            catch (Exception b)
             {
-                MessageBox.Show("Usuario o contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNombre.Text = "";
-                txtPass.Text = "";
+                MessageBox.Show(b.Message + b.StackTrace);
+            } 
+            finally
+            {
+                conn.Close();
             }
         }
+        private void btnInvitado_Click(object sender, EventArgs e)
+        {
+            Form1.Invitado = true;
+            Form1 mostrar = new Form1();
+            mostrar.Show();
+            this.Hide();
+        }
 
-        //Métodos para tener un poco más de "Intuición" en nuestro programa. Orientado al Cliente.
-        //--------------------------------------------------------------------------------------------------------------------------------------------------
+        //Métodos relacionados con el apartado visual del programa que lo hacen mas intuitivo (no afectan las funcionalidades):
         private void Form2_Load(object sender, System.EventArgs e)
         {
-            ////////////////////////////////////////////////////////
-            //se conecta a la base de datos
-            DataBaseConnect dataBaseConnect = new DataBaseConnect();
-            dataBaseConnect.conectarse();
-            ////////////////////////////////////////////////////////
-
             txtNombre.Text = "ID de Empleado...";
             txtNombre.ForeColor = Color.Gray;
-
         }
 
         private void checkBox1_MouseEnter(object sender, System.EventArgs e)
         {
-
             if (checkBox1.Checked == false)
             {
                 toolTip1.SetToolTip(checkBox1, "Mostrar Constraseña");
@@ -89,24 +90,20 @@ namespace Diseño
             {
 
             }
-
         }
 
         private void txtNombre_Enter(object sender, System.EventArgs e)
         {
-
             txtNombre.ForeColor = Color.Black;
             if (txtNombre.Text == "ID de Empleado...")
             {
                 txtNombre.Text = "";
 
             }
-
         }
 
         private void txtNombre_Leave(object sender, System.EventArgs e)
         {
-
             if (txtNombre.Text == "")
             {
                 txtNombre.Text = "ID de Empleado...";
@@ -128,14 +125,5 @@ namespace Diseño
         {
             toolTip1.SetToolTip(txtNombre, "Acá va el ID que le proporcionó su Jefe o Empleador.");
         }
-
-        private void button1_Click(object sender, System.EventArgs e)
-        {
-            Form1 mostrar = new Form1();
-
-            mostrar.Show();
-        }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------
-        // Hasta acá.
     }
 }
