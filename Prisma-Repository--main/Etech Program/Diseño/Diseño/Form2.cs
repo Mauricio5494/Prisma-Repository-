@@ -63,7 +63,7 @@ namespace Diseño
         private void btnInvitado_Click(object sender, EventArgs e)
         {
             Form1.Invitado = true;
-            Form1 mostrar = new Form1();
+            Menu mostrar = new Menu();
             mostrar.Show();
             this.Hide();
         }
@@ -124,6 +124,23 @@ namespace Diseño
         private void txtNombre_MouseEnter(object sender, System.EventArgs e)
         {
             toolTip1.SetToolTip(txtNombre, "Acá va el ID que le proporcionó su Jefe o Empleador.");
+        }
+
+        private void LabelRegistrarse_MouseEnter(object sender, EventArgs e)
+        {
+            LabelRegistrarse.ForeColor = Color.DodgerBlue;
+        }
+
+        private void LabelRegistrarse_MouseLeave(object sender, EventArgs e)
+        {
+            LabelRegistrarse.ForeColor = Color.Blue;
+        }
+
+        private void LabelRegistrarse_Click(object sender, EventArgs e)
+        {
+            Registro mostrar = new Registro();
+            mostrar.Show();
+            this.Hide();
         }
     }
 }

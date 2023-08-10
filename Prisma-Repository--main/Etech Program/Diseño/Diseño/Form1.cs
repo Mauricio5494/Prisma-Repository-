@@ -73,8 +73,7 @@ namespace Diseño
         {
             if (invitado == false)
             {
-                Agregar_Celular_Form mostrar = new Agregar_Celular_Form();
-                mostrar.Show();
+               
             }
             else 
             {

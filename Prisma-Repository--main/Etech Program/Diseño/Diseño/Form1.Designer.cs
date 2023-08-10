@@ -29,22 +29,152 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelD = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuOpciones = new System.Windows.Forms.ComboBox();
             this.txtCampo_Bsuqeda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.panelE = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelD.SuspendLayout();
             this.panelE.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelD
+            // 
+            this.panelD.BackColor = System.Drawing.Color.Firebrick;
+            this.panelD.Controls.Add(this.btnEliminar);
+            this.panelD.Controls.Add(this.btnModificar);
+            this.panelD.Controls.Add(this.btnAgregar);
+            this.panelD.Controls.Add(this.btnCerrarSesion);
+            this.panelD.Location = new System.Drawing.Point(-2, -2);
+            this.panelD.Name = "panelD";
+            this.panelD.Size = new System.Drawing.Size(45, 1060);
+            this.panelD.TabIndex = 5;
+            this.panelD.Paint += new System.Windows.Forms.PaintEventHandler(this.panelD_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(153, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 14);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Filtrar por:";
+            // 
+            // MenuOpciones
+            // 
+            this.MenuOpciones.FormattingEnabled = true;
+            this.MenuOpciones.Items.AddRange(new object[] {
+            "Dueño",
+            "Marca",
+            "Modelo",
+            "Estanteria"});
+            this.MenuOpciones.Location = new System.Drawing.Point(223, 25);
+            this.MenuOpciones.Name = "MenuOpciones";
+            this.MenuOpciones.Size = new System.Drawing.Size(121, 21);
+            this.MenuOpciones.TabIndex = 7;
+            this.MenuOpciones.SelectedIndexChanged += new System.EventHandler(this.MenuOpciones_SelectedIndexChanged);
+            // 
+            // txtCampo_Bsuqeda
+            // 
+            this.txtCampo_Bsuqeda.Enabled = false;
+            this.txtCampo_Bsuqeda.Location = new System.Drawing.Point(350, 25);
+            this.txtCampo_Bsuqeda.Name = "txtCampo_Bsuqeda";
+            this.txtCampo_Bsuqeda.Size = new System.Drawing.Size(323, 20);
+            this.txtCampo_Bsuqeda.TabIndex = 8;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Enabled = false;
+            this.btnBuscar.Location = new System.Drawing.Point(679, 23);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "button1";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // panelE
+            // 
+            this.panelE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelE.Controls.Add(this.btnMenu);
+            this.panelE.Controls.Add(this.label1);
+            this.panelE.Controls.Add(this.btnBuscar);
+            this.panelE.Controls.Add(this.MenuOpciones);
+            this.panelE.Controls.Add(this.txtCampo_Bsuqeda);
+            this.panelE.Location = new System.Drawing.Point(-2, -2);
+            this.panelE.Name = "panelE";
+            this.panelE.Size = new System.Drawing.Size(2000, 74);
+            this.panelE.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(61, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.PanSE;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(0, 18);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(45, 41);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Quitar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(0, 132);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 46);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -98,136 +228,6 @@
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.MouseEnter += new System.EventHandler(this.tableLayoutPanel1_MouseEnter);
             // 
-            // panelD
-            // 
-            this.panelD.BackColor = System.Drawing.Color.Firebrick;
-            this.panelD.Controls.Add(this.btnEliminar);
-            this.panelD.Controls.Add(this.btnModificar);
-            this.panelD.Controls.Add(this.btnAgregar);
-            this.panelD.Controls.Add(this.btnCerrarSesion);
-            this.panelD.Location = new System.Drawing.Point(-2, -2);
-            this.panelD.Name = "panelD";
-            this.panelD.Size = new System.Drawing.Size(45, 1060);
-            this.panelD.TabIndex = 5;
-            this.panelD.Paint += new System.Windows.Forms.PaintEventHandler(this.panelD_Paint);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
-            this.btnEliminar.TabIndex = 14;
-            this.btnEliminar.Text = "Quitar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(0, 132);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 46);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(153, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 14);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filtrar por:";
-            // 
-            // MenuOpciones
-            // 
-            this.MenuOpciones.FormattingEnabled = true;
-            this.MenuOpciones.Items.AddRange(new object[] {
-            "Dueño",
-            "Marca",
-            "Modelo",
-            "Estanteria"});
-            this.MenuOpciones.Location = new System.Drawing.Point(223, 25);
-            this.MenuOpciones.Name = "MenuOpciones";
-            this.MenuOpciones.Size = new System.Drawing.Size(121, 21);
-            this.MenuOpciones.TabIndex = 7;
-            this.MenuOpciones.SelectedIndexChanged += new System.EventHandler(this.MenuOpciones_SelectedIndexChanged);
-            // 
-            // txtCampo_Bsuqeda
-            // 
-            this.txtCampo_Bsuqeda.Enabled = false;
-            this.txtCampo_Bsuqeda.Location = new System.Drawing.Point(350, 25);
-            this.txtCampo_Bsuqeda.Name = "txtCampo_Bsuqeda";
-            this.txtCampo_Bsuqeda.Size = new System.Drawing.Size(323, 20);
-            this.txtCampo_Bsuqeda.TabIndex = 8;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Enabled = false;
-            this.btnBuscar.Location = new System.Drawing.Point(679, 23);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "button1";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.PanSE;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(0, 18);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(45, 41);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panelE
-            // 
-            this.panelE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panelE.Controls.Add(this.btnMenu);
-            this.panelE.Controls.Add(this.label1);
-            this.panelE.Controls.Add(this.btnBuscar);
-            this.panelE.Controls.Add(this.MenuOpciones);
-            this.panelE.Controls.Add(this.txtCampo_Bsuqeda);
-            this.panelE.Location = new System.Drawing.Point(-2, -2);
-            this.panelE.Name = "panelE";
-            this.panelE.Size = new System.Drawing.Size(2000, 74);
-            this.panelE.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(61, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,7 +253,6 @@
         #endregion
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox MenuOpciones;
@@ -264,6 +263,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

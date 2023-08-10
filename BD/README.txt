@@ -1,0 +1,1 @@
+No, esta BD era la que estaba mal... la nueva vamos a tener que acordar de cómo hacerla.

@@ -33,13 +33,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.btnInvitado = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.picMostrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LabelRegistrarse = new System.Windows.Forms.Label();
             this.btnIngreso = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
+            this.btnInvitado = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picMostrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
             this.SuspendLayout();
             // 
             // labID
@@ -81,24 +82,6 @@
             this.txtPass.TabIndex = 5;
             this.txtPass.MouseEnter += new System.EventHandler(this.txtPass_MouseEnter);
             // 
-            // btnInvitado
-            // 
-            this.btnInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInvitado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnInvitado.Image = global::Diseño.Properties.Resources.alt_de_inicio_de_sesion;
-            this.btnInvitado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInvitado.Location = new System.Drawing.Point(149, 212);
-            this.btnInvitado.Name = "btnInvitado";
-            this.btnInvitado.Size = new System.Drawing.Size(75, 31);
-            this.btnInvitado.TabIndex = 6;
-            this.btnInvitado.Text = "Invitado";
-            this.btnInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInvitado.UseVisualStyleBackColor = false;
-            this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
-            this.btnInvitado.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
-            // 
             // checkBox1
             // 
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
@@ -115,30 +98,26 @@
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             this.checkBox1.MouseEnter += new System.EventHandler(this.checkBox1_MouseEnter);
             // 
-            // picMostrar
+            // LabelRegistrarse
             // 
-            this.picMostrar.Enabled = false;
-            this.picMostrar.Image = global::Diseño.Properties.Resources.ojo_tapado;
-            this.picMostrar.Location = new System.Drawing.Point(231, 175);
-            this.picMostrar.Name = "picMostrar";
-            this.picMostrar.Size = new System.Drawing.Size(16, 16);
-            this.picMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picMostrar.TabIndex = 7;
-            this.picMostrar.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513_LARGE_Edited;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 75);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.LabelRegistrarse.AutoSize = true;
+            this.LabelRegistrarse.BackColor = System.Drawing.Color.Transparent;
+            this.LabelRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LabelRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelRegistrarse.ForeColor = System.Drawing.Color.Blue;
+            this.LabelRegistrarse.Location = new System.Drawing.Point(12, 259);
+            this.LabelRegistrarse.Name = "LabelRegistrarse";
+            this.LabelRegistrarse.Size = new System.Drawing.Size(71, 13);
+            this.LabelRegistrarse.TabIndex = 9;
+            this.LabelRegistrarse.Text = "Registrarse";
+            this.LabelRegistrarse.Click += new System.EventHandler(this.LabelRegistrarse_Click);
+            this.LabelRegistrarse.MouseEnter += new System.EventHandler(this.LabelRegistrarse_MouseEnter);
+            this.LabelRegistrarse.MouseLeave += new System.EventHandler(this.LabelRegistrarse_MouseLeave);
             // 
             // btnIngreso
             // 
             this.btnIngreso.BackColor = System.Drawing.Color.DarkRed;
+            this.btnIngreso.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngreso.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
@@ -153,6 +132,46 @@
             this.btnIngreso.UseVisualStyleBackColor = false;
             this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
+            // btnInvitado
+            // 
+            this.btnInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnInvitado.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInvitado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnInvitado.Image = global::Diseño.Properties.Resources.alt_de_inicio_de_sesion;
+            this.btnInvitado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInvitado.Location = new System.Drawing.Point(149, 212);
+            this.btnInvitado.Name = "btnInvitado";
+            this.btnInvitado.Size = new System.Drawing.Size(75, 31);
+            this.btnInvitado.TabIndex = 6;
+            this.btnInvitado.Text = "Invitado";
+            this.btnInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInvitado.UseVisualStyleBackColor = false;
+            this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
+            this.btnInvitado.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513_LARGE_Edited;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(156, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picMostrar
+            // 
+            this.picMostrar.Enabled = false;
+            this.picMostrar.Image = global::Diseño.Properties.Resources.ojo_tapado;
+            this.picMostrar.Location = new System.Drawing.Point(231, 175);
+            this.picMostrar.Name = "picMostrar";
+            this.picMostrar.Size = new System.Drawing.Size(16, 16);
+            this.picMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picMostrar.TabIndex = 7;
+            this.picMostrar.TabStop = false;
+            // 
             // Form2
             // 
             this.AcceptButton = this.btnIngreso;
@@ -160,6 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(304, 281);
+            this.Controls.Add(this.LabelRegistrarse);
             this.Controls.Add(this.btnInvitado);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtNombre);
@@ -177,8 +197,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +215,6 @@
         private System.Windows.Forms.Button btnInvitado;
         private System.Windows.Forms.PictureBox picMostrar;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label LabelRegistrarse;
     }
 }
