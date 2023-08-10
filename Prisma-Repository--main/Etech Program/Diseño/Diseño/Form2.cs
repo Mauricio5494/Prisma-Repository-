@@ -63,6 +63,7 @@ namespace Diseño
         private void btnInvitado_Click(object sender, EventArgs e)
         {
             Form1.Invitado = true;
+            //pete
             //Menu mostrar = new Menu();
             //mostrar.Show();
             this.Hide();
