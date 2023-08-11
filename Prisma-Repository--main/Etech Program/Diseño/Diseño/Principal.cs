@@ -119,10 +119,6 @@ namespace Diseño
             }
         }
 
-        private void panelD_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
