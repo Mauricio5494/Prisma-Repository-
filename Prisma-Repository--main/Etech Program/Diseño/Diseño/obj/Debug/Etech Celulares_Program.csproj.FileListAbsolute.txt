@@ -164,4 +164,3 @@ C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository-
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CopyComplete
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Registro.resources
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Menu.resources
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Registro.resources
