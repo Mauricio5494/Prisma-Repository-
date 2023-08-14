@@ -74,22 +74,18 @@ C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\E
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.WebForms.dll
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\MySql.Data.dll
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\MySQL.Utility.dll
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.AssemblyReference.cache
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.SuggestedBindingRedirects.cache
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe.config
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Form1.resources
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Form2.resources
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Properties.Resources.resources
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.GenerateResource.cache
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CoreCompileInputs.cache
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CopyComplete
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.pdb
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Agregar_Celular_Form.resources
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -164,7 +160,6 @@ C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository-
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CopyComplete
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Registro.resources
 C:\Users\Usuario\Documents\source\repos\Proyecto BD_App Etech\Prisma-Repository--main\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Menu.resources
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Registro.resources
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -189,3 +184,10 @@ C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Ete
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CopyComplete
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.pdb
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Memory.dll
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Buffers.dll
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Principal.resources
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Login.resources
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.RegistroUsuarios.resources
