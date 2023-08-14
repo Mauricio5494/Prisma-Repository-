@@ -234,7 +234,7 @@ namespace Diseño
         {
             if (panel_Agregar_Celular.Height > 0)
             {
-                panel_Agregar_Celular.Height = panel_Agregar_Celular.Height - 6;
+                panel_Agregar_Celular.Height = panel_Agregar_Celular.Height - 12;
                 panel_Agregar_Celular.Enabled = false;
             }
             else
@@ -247,7 +247,7 @@ namespace Diseño
         {
             if (panel_Agregar_Celular.Height < 591)
             {
-                panel_Agregar_Celular.Height = panel_Agregar_Celular.Height + 6;
+                panel_Agregar_Celular.Height = panel_Agregar_Celular.Height + 12;
                 panel_Agregar_Celular.Enabled = true;
             }
             else
@@ -260,7 +260,7 @@ namespace Diseño
         {
             if (panel_Menu.Height > 0)
             {
-                panel_Menu.Height = panel_Menu.Height - 6; 
+                panel_Menu.Height = panel_Menu.Height - 12; 
                 panel_Menu.Enabled = true;
             }
             else
@@ -273,7 +273,7 @@ namespace Diseño
         {
             if (panel_Menu.Height < 591)
             {
-                panel_Menu.Height = panel_Menu.Height + 6; 
+                panel_Menu.Height = panel_Menu.Height + 12; 
                 panel_Menu.Enabled = true;
             }
             else
@@ -287,7 +287,7 @@ namespace Diseño
         {
             if (GroupBox_AgregarCelulares.Height > 0)
             {
-                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height - 6;
+                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height - 12;
                 GroupBox_AgregarCelulares.Enabled = false;
                 GroupBox_AgregarCelulares.SendToBack();
             }
@@ -301,7 +301,7 @@ namespace Diseño
         {
             if (GroupBox_AgregarCelulares.Height < 486)
             {
-                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height + 6;
+                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height + 12;
                 GroupBox_AgregarCelulares.Enabled = true;
                 GroupBox_AgregarCelulares.BringToFront();
             }
@@ -315,7 +315,7 @@ namespace Diseño
         {
             if (groupBox_AgregarTrabajo.Height > 0)
             {
-                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height - 6;
+                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height - 12;
                 groupBox_AgregarTrabajo.Enabled = false;
                 groupBox_AgregarTrabajo.SendToBack();
             }
@@ -329,7 +329,7 @@ namespace Diseño
         {
             if (groupBox_AgregarTrabajo.Height < 486)
             {
-                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height + 6;
+                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height + 12;
                 groupBox_AgregarTrabajo.Enabled = true;
                 groupBox_AgregarTrabajo.BringToFront();
             }
@@ -343,7 +343,7 @@ namespace Diseño
         {
             if (groupBox_Menu.Height > 0)
             {
-                groupBox_Menu.Height = groupBox_Menu.Height - 6;
+                groupBox_Menu.Height = groupBox_Menu.Height - 12;
                 groupBox_Menu.Enabled = false;
             }
             else
@@ -356,7 +356,7 @@ namespace Diseño
         {
             if (groupBox_Menu.Height < 475)
             {
-                groupBox_Menu.Height = groupBox_Menu.Height + 6;
+                groupBox_Menu.Height = groupBox_Menu.Height + 12;
                 groupBox_Menu.Enabled = true;
             }
             else
