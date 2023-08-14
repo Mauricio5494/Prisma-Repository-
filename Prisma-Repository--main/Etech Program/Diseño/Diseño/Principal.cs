@@ -28,14 +28,14 @@ namespace Diseño
         private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Método activador de el campo de busqueda y el botón de buscar si una opcion de filtro está seleccionada:
-            txtCampo_Bsuqeda.Enabled = true;
+            txtCampo_Busqueda.Enabled = true;
             btnBuscar.Enabled = true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             // Salta error para no crashear el programa:
-            if (MenuOpciones.Text.Equals("") || txtCampo_Bsuqeda.Text == "")
+            if (MenuOpciones.Text.Equals("") || txtCampo_Busqueda.Text == "")
             {
                 MessageBox.Show("Antes de buscar seleccione una opción de filtro y escribe algo en el campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -71,34 +71,92 @@ namespace Diseño
         //Codigo referente al menu
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (panel_Agregar_Celular.Height < 591)
+            {
+                timer_Agregar_Agrandar.Enabled = true;    
+                timer_Agregar_Reducir.Enabled = false;
+                panel_Agregar_Celular.Enabled = true;
+                panel_Agregar_Celular.BringToFront();
+
+                timer_Menu_Reducir.Enabled = true;
+                timer_Menu_Agrandar.Enabled = false;
+                timer_GroupBox_Menu_Reducir.Enabled = true;
+                timer_GroupBox_Menu_Agrandar.Enabled = false;
+                panel_Menu.Enabled = false;
+                panel_Menu.SendToBack();
+            }
+            else
+            {
+                timer_Agregar_Reducir.Enabled = true;
+                timer_Agregar_Agrandar.Enabled = false;
+                timer_GroupBox_AgregarC_Reducir.Enabled = true;
+                timer_GroupBox_AgregarT_Reducir.Enabled = true;
+                timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+                timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+                panel_Agregar_Celular.Enabled = false;
+            }
             if (invitado == false)
             {
-               
+                
             }
             else 
             {
-                MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+               // MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+        private void btnMenu_Principal(object sender, EventArgs e)
+        {
+            if (panel_Menu.Height < 591)
+            {
+                timer_Menu_Agrandar.Enabled = true;
+                timer_Menu_Reducir.Enabled = false;
+                timer_GroupBox_Menu_Agrandar.Enabled = true;
+                timer_GroupBox_Menu_Reducir.Enabled = false;
+                panel_Menu.Enabled = true;
+                panel_Menu.BringToFront();
+
+                timer_Agregar_Reducir.Enabled = true;
+                timer_Agregar_Agrandar.Enabled = false;
+                timer_GroupBox_AgregarC_Reducir.Enabled = true;
+                timer_GroupBox_AgregarT_Reducir.Enabled = true;
+                timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+                timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+                panel_Agregar_Celular.Enabled = false;
+                panel_Agregar_Celular.SendToBack();
+            }
+            else
+            {
+                timer_Menu_Reducir.Enabled = true;
+                timer_Menu_Agrandar.Enabled = false;
+                timer_GroupBox_Menu_Reducir.Enabled = true;
+                timer_GroupBox_Menu_Agrandar.Enabled = false;
+                panel_Menu.Enabled = false;
+                panel_Menu.SendToBack();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             if (panelD.Size.Width == 45)
             {
-                panelD.Width = 120;
-                btnAgregar.ForeColor = Color.White;
-                btnModificar.ForeColor = Color.White;
-                btnEliminar.ForeColor = Color.White;
-                btnCerrarSesion.ForeColor = Color.White;
+                panelD.Width = 119;
+                btnAgregar.ForeColor = Color.Black;
+                btnModificar.ForeColor = Color.Black;
+                btnEliminar.ForeColor = Color.Black;
+                btnCerrarSesion.ForeColor = Color.Black;
+                btnMenuPrincipal.ForeColor = Color.Black;
                 btnAgregar.BackColor = Color.DarkRed;
                 btnModificar.BackColor = Color.DarkRed;
                 btnEliminar.BackColor = Color.DarkRed;
                 btnCerrarSesion.BackColor = Color.DarkRed;
+                btnMenuPrincipal.BackColor = Color.DarkRed;
 
-                btnAgregar.FlatStyle = FlatStyle.Popup;
+                /*btnAgregar.FlatStyle = FlatStyle.Popup;
                 btnModificar.FlatStyle = FlatStyle.Popup;
-                btnEliminar.FlatStyle = FlatStyle.Popup;
-                btnCerrarSesion.FlatStyle = FlatStyle.Popup;
+                btnEliminar.FlatStyle = FlatStyle.Popup; 
+                btnCerrarSesion.FlatStyle = FlatStyle.Popup;*/
+                tablaCelulares.Location = new Point(124, 78);
+                tablaTrabajo.Location = new Point(124, 373);
             }
             else
             {
@@ -107,18 +165,21 @@ namespace Diseño
                 btnModificar.ForeColor = Color.Firebrick;
                 btnEliminar.ForeColor = Color.Firebrick;
                 btnCerrarSesion.ForeColor = Color.Firebrick;
+                btnMenuPrincipal.ForeColor= Color.Firebrick;
                 btnAgregar.BackColor = Color.Firebrick;
                 btnCerrarSesion.BackColor = Color.Firebrick;
                 btnEliminar.BackColor = Color.Firebrick;
                 btnModificar.BackColor = Color.Firebrick;
+                btnMenuPrincipal.BackColor= Color.Firebrick;
 
                 btnAgregar.FlatStyle = FlatStyle.Flat;
                 btnModificar.FlatStyle = FlatStyle.Flat;
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+                tablaCelulares.Location = new Point(49, 78);
+                tablaTrabajo.Location = new Point(49, 373);
             }
         }
-
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -166,6 +227,160 @@ namespace Diseño
             {
                 MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        //Metodos de los paneles de los Paneles:
+        private void timer_Agregar_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (panel_Agregar_Celular.Height > 0)
+            {
+                panel_Agregar_Celular.Height = panel_Agregar_Celular.Height - 6;
+                panel_Agregar_Celular.Enabled = false;
+            }
+            else
+            {
+                timer_Agregar_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_Agregar_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (panel_Agregar_Celular.Height < 591)
+            {
+                panel_Agregar_Celular.Height = panel_Agregar_Celular.Height + 6;
+                panel_Agregar_Celular.Enabled = true;
+            }
+            else
+            {
+                timer_Agregar_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_Menu_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (panel_Menu.Height > 0)
+            {
+                panel_Menu.Height = panel_Menu.Height - 6; 
+                panel_Menu.Enabled = true;
+            }
+            else
+            {
+                timer_Menu_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_Menu_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (panel_Menu.Height < 591)
+            {
+                panel_Menu.Height = panel_Menu.Height + 6; 
+                panel_Menu.Enabled = true;
+            }
+            else
+            {
+                timer_Menu_Agrandar.Enabled = false;
+            }
+        }
+
+        //Metodos para los GroupBox:
+        private void timer_GroupBox_AgregarC_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (GroupBox_AgregarCelulares.Height > 0)
+            {
+                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height - 6;
+                GroupBox_AgregarCelulares.Enabled = false;
+                GroupBox_AgregarCelulares.SendToBack();
+            }
+            else
+            {
+                timer_GroupBox_AgregarC_Reducir.Enabled= false;
+            }
+        }
+
+        private void timer_GroupBox_AgregarC_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (GroupBox_AgregarCelulares.Height < 486)
+            {
+                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height + 6;
+                GroupBox_AgregarCelulares.Enabled = true;
+                GroupBox_AgregarCelulares.BringToFront();
+            }
+            else
+            {
+                timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_AgregarT_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_AgregarTrabajo.Height > 0)
+            {
+                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height - 6;
+                groupBox_AgregarTrabajo.Enabled = false;
+                groupBox_AgregarTrabajo.SendToBack();
+            }
+            else
+            {
+                timer_GroupBox_AgregarT_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_AgregarT_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_AgregarTrabajo.Height < 486)
+            {
+                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height + 6;
+                groupBox_AgregarTrabajo.Enabled = true;
+                groupBox_AgregarTrabajo.BringToFront();
+            }
+            else
+            {
+                timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_Menu_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_Menu.Height > 0)
+            {
+                groupBox_Menu.Height = groupBox_Menu.Height - 6;
+                groupBox_Menu.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_Menu_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_Menu_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_Menu.Height < 475)
+            {
+                groupBox_Menu.Height = groupBox_Menu.Height + 6;
+                groupBox_Menu.Enabled = true;
+            }
+            else
+            {
+                timer_GroupBox_Menu_Agrandar.Enabled = false;
+            }
+        }
+
+        private void radioButton_CELULARES_CheckedChanged(object sender, EventArgs e)
+        {
+            timer_GroupBox_AgregarC_Agrandar.Enabled = true;
+            timer_GroupBox_AgregarC_Reducir.Enabled = false;
+
+            timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+            timer_GroupBox_AgregarT_Reducir.Enabled = true;
+        }
+
+        private void radioButton_TRABAJO_CheckedChanged(object sender, EventArgs e)
+        {
+            timer_GroupBox_AgregarT_Agrandar.Enabled = true;
+            timer_GroupBox_AgregarT_Reducir.Enabled = false;
+
+            timer_GroupBox_AgregarC_Reducir.Enabled = true;
+            timer_GroupBox_AgregarC_Agrandar.Enabled = false;
         }
     }
 }

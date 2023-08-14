@@ -44,5 +44,20 @@ namespace Diseño
             mostrar.Show();
             this.Hide();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

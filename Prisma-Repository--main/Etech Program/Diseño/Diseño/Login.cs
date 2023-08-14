@@ -64,7 +64,7 @@ namespace Diseño
         {
             Form1.Invitado = true;
             //Menu mostrar = new Menu();
-            //mostrar.Show();
+            Form1.Show();
             this.Hide();
         }
 

@@ -148,6 +148,10 @@
     <None Include="Resources\Clientes1.png" />
     <None Include="Resources\Usuarios.png" />
     <None Include="Resources\Estadisticas.png" />
+    <None Include="Resources\lupa.png" />
+    <None Include="Resources\lupa1.png" />
+    <None Include="Resources\busqueda.png" />
+    <None Include="Resources\casa.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
