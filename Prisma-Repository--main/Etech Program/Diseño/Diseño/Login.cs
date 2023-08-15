@@ -17,13 +17,16 @@ namespace Diseño
         ToolTip toolTip1 = new ToolTip();
 
         //Atributos de la clase:
-        string ID = null;
-        string password = null;
+        private string nombre;
+        private string password;
+        string sql;
 
         //Instancias:
         MySqlConnection conn = DataBaseConnect.conectarse();
-        MySqlCommand cmd = new MySqlCommand();
-        Principal Form1 = new Principal();
+        MySqlCommand cmd_conn = new MySqlCommand();
+        MySqlCommand cmd_sql;
+        MySqlDataReader reader;
+        Principal Taller = new Principal();
 
         //Método para cambiar la imágen del ojo y la sintaxis de ingreso de caracteres al TextBox de la Contraseña:
         private void checkBox1_CheckedChanged(object sender, System.EventArgs e)
@@ -44,16 +47,31 @@ namespace Diseño
 
         private void btnIngreso_Click(object sender, System.EventArgs e)
         {
+            nombre = txtNombre.Text;
+            password = txtPass.Text;
+
             //Conexion con la base de datos:
             try
             {
                 conn.Open();
-                cmd.Connection = conn;
-                Form1.Invitado = false;
+                cmd_conn.Connection = conn;
+                sql = "select Nombre, Contraseña from usuarios where nombre = '" + nombre + "' and Contraseña = '" + password + "' ";
+                cmd_sql = new MySqlCommand(sql, conn);
+                reader = cmd_sql.ExecuteReader();
+                if (reader.Read())
+                {
+                    Taller.Invitado = false;
+                    Taller.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("No encontramos ninguna cuenta que coincida exactamente con los datos que ingresaste", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception b)
             {
-                MessageBox.Show(b.Message + b.StackTrace);
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
             finally
             {
@@ -62,9 +80,9 @@ namespace Diseño
         }
         private void btnInvitado_Click(object sender, EventArgs e)
         {
-            Form1.Invitado = true;
+            Taller.Invitado = true;
             //Menu mostrar = new Menu();
-            Form1.Show();
+            Taller.Show();
             this.Hide();
         }
 
@@ -141,6 +159,11 @@ namespace Diseño
             RegistroUsuarios mostrar = new RegistroUsuarios();
             mostrar.Show();
             this.Hide();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

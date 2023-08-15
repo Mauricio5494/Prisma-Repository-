@@ -191,3 +191,8 @@ C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\E
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Principal.resources
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Login.resources
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.RegistroUsuarios.resources
+C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe.config
+C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Memory.dll
+C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Buffers.dll

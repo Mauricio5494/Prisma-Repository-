@@ -285,9 +285,9 @@
             // tablaTrabajo
             // 
             this.tablaTrabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaTrabajo.Location = new System.Drawing.Point(49, 373);
+            this.tablaTrabajo.Location = new System.Drawing.Point(49, 389);
             this.tablaTrabajo.Name = "tablaTrabajo";
-            this.tablaTrabajo.Size = new System.Drawing.Size(703, 296);
+            this.tablaTrabajo.Size = new System.Drawing.Size(703, 289);
             this.tablaTrabajo.TabIndex = 13;
             // 
             // tablaCelulares
@@ -295,7 +295,7 @@
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCelulares.Location = new System.Drawing.Point(49, 78);
             this.tablaCelulares.Name = "tablaCelulares";
-            this.tablaCelulares.Size = new System.Drawing.Size(703, 289);
+            this.tablaCelulares.Size = new System.Drawing.Size(703, 303);
             this.tablaCelulares.TabIndex = 14;
             // 
             // panel_Agregar_Celular
@@ -753,7 +753,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1264, 685);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_Agregar_Celular);
             this.Controls.Add(this.tablaCelulares);

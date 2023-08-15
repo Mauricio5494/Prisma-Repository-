@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.labID = new System.Windows.Forms.Label();
+            this.labName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -43,21 +43,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // labID
+            // labName
             // 
-            this.labID.AutoSize = true;
-            this.labID.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labID.Location = new System.Drawing.Point(65, 103);
-            this.labID.Name = "labID";
-            this.labID.Size = new System.Drawing.Size(83, 14);
-            this.labID.TabIndex = 1;
-            this.labID.Text = "ID de Técnico:";
+            this.labName.AutoSize = true;
+            this.labName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labName.Location = new System.Drawing.Point(65, 102);
+            this.labName.Name = "labName";
+            this.labName.Size = new System.Drawing.Size(54, 14);
+            this.labName.TabIndex = 1;
+            this.labName.Text = "Nombre:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 155);
+            this.label2.Location = new System.Drawing.Point(65, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 14);
             this.label2.TabIndex = 3;
@@ -69,6 +69,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(156, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             this.txtNombre.MouseEnter += new System.EventHandler(this.txtNombre_MouseEnter);
@@ -172,7 +173,7 @@
             this.picMostrar.TabIndex = 7;
             this.picMostrar.TabStop = false;
             // 
-            // Form2
+            // Login
             // 
             this.AcceptButton = this.btnIngreso;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,14 +186,14 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.labID);
+            this.Controls.Add(this.labName);
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.picMostrar);
             this.Controls.Add(this.checkBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form2";
+            this.Name = "Login";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
@@ -207,7 +208,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnIngreso;
-        private System.Windows.Forms.Label labID;
+        private System.Windows.Forms.Label labName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;

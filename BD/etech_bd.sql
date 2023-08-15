@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 06-05-2023 a las 01:49:43
--- Versión del servidor: 8.0.32
--- Versión de PHP: 8.2.0
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 15-08-2023 a las 07:55:44
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,122 +24,134 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `celular`
+-- Estructura de tabla para la tabla `celulares`
 --
 
-CREATE TABLE `celular` (
-  `ID_Celular` int NOT NULL,
-  `ID_Tecnico_FK` int DEFAULT NULL,
-  `Marca` varchar(15) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Modelo` varchar(15) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Patrón` varchar(9) COLLATE utf8mb4_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+CREATE TABLE `celulares` (
+  `ID` int(11) NOT NULL,
+  `Modelo` varchar(10) NOT NULL,
+  `Marca` varchar(10) NOT NULL,
+  `IMEI` varchar(15) DEFAULT NULL,
+  `Estado` varchar(9) NOT NULL,
+  `Cedula_Cliente` varchar(8) NOT NULL,
+  `ID_Usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `cliente` (
-  `ID_Cliente` int NOT NULL,
-  `Nombre` varchar(50) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `Contacto` varchar(12) COLLATE utf8mb4_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+CREATE TABLE `clientes` (
+  `Cedula` varchar(8) NOT NULL,
+  `Nombre` varchar(30) NOT NULL,
+  `Telefono` varchar(8) NOT NULL,
+  `CorreoElectronico` varchar(30) NOT NULL,
+  `Celular` varchar(8) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tecnico`
+-- Estructura de tabla para la tabla `trabajos`
 --
 
-CREATE TABLE `tecnico` (
-  `Nombre` varchar(50) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `Turno` varchar(20) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `contacto` varchar(12) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `ID_Tecnico` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+CREATE TABLE `trabajos` (
+  `ID` int(11) NOT NULL,
+  `Plazo` date DEFAULT NULL,
+  `Presupuesto` int(11) DEFAULT NULL,
+  `Problema` varchar(50) NOT NULL,
+  `Solucion` varchar(50) NOT NULL,
+  `Fecha_Ingreso` date NOT NULL,
+  `Adelanto` int(11) DEFAULT NULL,
+  `ID_Celular` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `trabajo`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `trabajo` (
-  `ID_Trabajo` int NOT NULL,
-  `Problema` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `Solucion` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `Adelanto` int DEFAULT NULL,
-  `Precio` int DEFAULT NULL,
-  `Fecha_Ingreso` date DEFAULT NULL,
-  `Fecha_Entrega` date DEFAULT NULL,
-  `Presupuesto_AprobORnot` bit(1) DEFAULT NULL,
-  `Presupuesto_Monto` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+CREATE TABLE `usuarios` (
+  `ID` int(11) NOT NULL,
+  `Nombre` varchar(30) NOT NULL,
+  `Contraseña` varchar(30) NOT NULL,
+  `Telefono` varchar(8) DEFAULT NULL,
+  `CorreoElectronico` varchar(30) NOT NULL,
+  `Celular` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `celular`
+-- Indices de la tabla `celulares`
 --
-ALTER TABLE `celular`
-  ADD PRIMARY KEY (`ID_Celular`),
-  ADD KEY `FK_tecnico` (`ID_Tecnico_FK`);
+ALTER TABLE `celulares`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `Cedula_Cliente` (`Cedula_Cliente`),
+  ADD KEY `ID_Usuario` (`ID_Usuario`);
 
 --
--- Indices de la tabla `cliente`
+-- Indices de la tabla `clientes`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`ID_Cliente`);
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`Cedula`);
 
 --
--- Indices de la tabla `tecnico`
+-- Indices de la tabla `trabajos`
 --
-ALTER TABLE `tecnico`
-  ADD PRIMARY KEY (`ID_Tecnico`),
-  ADD UNIQUE KEY `ID_Tecnico` (`ID_Tecnico`),
-  ADD UNIQUE KEY `ID_Tecnico_2` (`ID_Tecnico`);
+ALTER TABLE `trabajos`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ID_Celular` (`ID_Celular`);
 
 --
--- Indices de la tabla `trabajo`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `trabajo`
-  ADD PRIMARY KEY (`ID_Trabajo`);
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `celular`
+-- AUTO_INCREMENT de la tabla `celulares`
 --
-ALTER TABLE `celular`
-  MODIFY `ID_Celular` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `celulares`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT de la tabla `trabajos`
 --
-ALTER TABLE `cliente`
-  MODIFY `ID_Cliente` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `trabajos`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `tecnico`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
-ALTER TABLE `tecnico`
-  MODIFY `ID_Tecnico` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `usuarios`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `celular`
+-- Filtros para la tabla `celulares`
 --
-ALTER TABLE `celular`
-  ADD CONSTRAINT `celular_ibfk_1` FOREIGN KEY (`ID_Tecnico_FK`) REFERENCES `tecnico` (`ID_Tecnico`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `celulares`
+  ADD CONSTRAINT `celulares_ibfk_1` FOREIGN KEY (`Cedula_Cliente`) REFERENCES `clientes` (`Cedula`),
+  ADD CONSTRAINT `celulares_ibfk_2` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuarios` (`ID`);
+
+--
+-- Filtros para la tabla `trabajos`
+--
+ALTER TABLE `trabajos`
+  ADD CONSTRAINT `trabajos_ibfk_1` FOREIGN KEY (`ID_Celular`) REFERENCES `celulares` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

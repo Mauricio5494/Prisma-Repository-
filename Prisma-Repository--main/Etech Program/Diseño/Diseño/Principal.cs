@@ -245,7 +245,7 @@ namespace Diseño
 
         private void timer_Agregar_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (panel_Agregar_Celular.Height < 591)
+            if (panel_Agregar_Celular.Height < 600)
             {
                 panel_Agregar_Celular.Height = panel_Agregar_Celular.Height + 12;
                 panel_Agregar_Celular.Enabled = true;
@@ -271,7 +271,7 @@ namespace Diseño
 
         private void timer_Menu_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (panel_Menu.Height < 591)
+            if (panel_Menu.Height < 600)
             {
                 panel_Menu.Height = panel_Menu.Height + 12; 
                 panel_Menu.Enabled = true;
