@@ -32,11 +32,11 @@
             this.labelRegresar = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Telefono = new System.Windows.Forms.Label();
+            this.label_Celular = new System.Windows.Forms.Label();
+            this.label_Correo = new System.Windows.Forms.Label();
+            this.label_Password = new System.Windows.Forms.Label();
+            this.label_Nombre = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -52,11 +52,11 @@
             this.groupBox1.Controls.Add(this.labelRegresar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label_Telefono);
+            this.groupBox1.Controls.Add(this.label_Celular);
+            this.groupBox1.Controls.Add(this.label_Correo);
+            this.groupBox1.Controls.Add(this.label_Password);
+            this.groupBox1.Controls.Add(this.label_Nombre);
             this.groupBox1.Controls.Add(this.txtCelular);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtCorreo);
@@ -69,7 +69,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrate";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // labelRegresar
             // 
@@ -107,50 +106,50 @@
             this.txtTelefono.Size = new System.Drawing.Size(299, 20);
             this.txtTelefono.TabIndex = 11;
             // 
-            // label5
+            // label_Telefono
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 222);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Telefono Fijo (Opcional):";
+            this.label_Telefono.AutoSize = true;
+            this.label_Telefono.Location = new System.Drawing.Point(6, 222);
+            this.label_Telefono.Name = "label_Telefono";
+            this.label_Telefono.Size = new System.Drawing.Size(147, 13);
+            this.label_Telefono.TabIndex = 10;
+            this.label_Telefono.Text = "Telefono Fijo (Opcional):";
             // 
-            // label4
+            // label_Celular
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Celular:";
+            this.label_Celular.AutoSize = true;
+            this.label_Celular.Location = new System.Drawing.Point(6, 172);
+            this.label_Celular.Name = "label_Celular";
+            this.label_Celular.Size = new System.Drawing.Size(50, 13);
+            this.label_Celular.TabIndex = 8;
+            this.label_Celular.Text = "Celular:";
             // 
-            // label3
+            // label_Correo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Correo:";
+            this.label_Correo.AutoSize = true;
+            this.label_Correo.Location = new System.Drawing.Point(3, 124);
+            this.label_Correo.Name = "label_Correo";
+            this.label_Correo.Size = new System.Drawing.Size(48, 13);
+            this.label_Correo.TabIndex = 7;
+            this.label_Correo.Text = "Correo:";
             // 
-            // label2
+            // label_Password
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Contraseña:";
+            this.label_Password.AutoSize = true;
+            this.label_Password.Location = new System.Drawing.Point(3, 75);
+            this.label_Password.Name = "label_Password";
+            this.label_Password.Size = new System.Drawing.Size(75, 13);
+            this.label_Password.TabIndex = 6;
+            this.label_Password.Text = "Contraseña:";
             // 
-            // label1
+            // label_Nombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nombre:";
+            this.label_Nombre.AutoSize = true;
+            this.label_Nombre.Location = new System.Drawing.Point(3, 26);
+            this.label_Nombre.Name = "label_Nombre";
+            this.label_Nombre.Size = new System.Drawing.Size(54, 13);
+            this.label_Nombre.TabIndex = 5;
+            this.label_Nombre.Text = "Nombre:";
             // 
             // txtCelular
             // 
@@ -179,7 +178,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(299, 20);
             this.txtNombre.TabIndex = 0;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // pictureBox1
             // 
@@ -200,7 +198,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroUsuarios";
             this.Text = "Registro";
-            this.Load += new System.EventHandler(this.Registro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -211,17 +208,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Celular;
+        private System.Windows.Forms.Label label_Correo;
+        private System.Windows.Forms.Label label_Password;
+        private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_Telefono;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label labelRegresar;
     }

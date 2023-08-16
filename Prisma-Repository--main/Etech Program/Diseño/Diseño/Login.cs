@@ -9,24 +9,27 @@ namespace Diseño
 {
     public partial class Login : Form
     {
+        //Atributos de la clase:
+        private bool Invitado;
+        private string nombre;
+        private string password;
+        string sql;
+
         public Login()
         {
             InitializeComponent();
 
         }
-        ToolTip toolTip1 = new ToolTip();
-
-        //Atributos de la clase:
-        private string nombre;
-        private string password;
-        string sql;
 
         //Instancias:
+        ToolTip toolTip1 = new ToolTip();
+        Utilidades Seguridad = new Utilidades();
         MySqlConnection conn = DataBaseConnect.conectarse();
         MySqlCommand cmd_conn = new MySqlCommand();
         MySqlCommand cmd_sql;
         MySqlDataReader reader;
         Principal Taller = new Principal();
+        
 
         //Método para cambiar la imágen del ojo y la sintaxis de ingreso de caracteres al TextBox de la Contraseña:
         private void checkBox1_CheckedChanged(object sender, System.EventArgs e)
@@ -60,7 +63,7 @@ namespace Diseño
                 reader = cmd_sql.ExecuteReader();
                 if (reader.Read())
                 {
-                    Taller.Invitado = false;
+                    Seguridad.SetInvitado = false;
                     Taller.Show();
                     this.Hide();
                 }
@@ -80,9 +83,9 @@ namespace Diseño
         }
         private void btnInvitado_Click(object sender, EventArgs e)
         {
-            Taller.Invitado = true;
             //Menu mostrar = new Menu();
             Taller.Show();
+            Seguridad.SetInvitado = true;
             this.Hide();
         }
 
