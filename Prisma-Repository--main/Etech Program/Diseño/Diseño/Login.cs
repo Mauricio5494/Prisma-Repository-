@@ -10,8 +10,8 @@ namespace Diseño
     {
         //Atributos de la clase:
         private bool Invitado;
-        private string nombre;
-        private string password;
+        private string Nombre;
+        private string Password;
         string sql;
 
         public Login()
@@ -48,14 +48,14 @@ namespace Diseño
 
         private void btnIngreso_Click(object sender, System.EventArgs e)
         {
-            nombre = txtNombre.Text;
-            password = txtPass.Text;
+            Nombre = txtNombre.Text;
+            Password = txtPass.Text;
 
             //Conexion con la base de datos:
             try
             {
                 conn.Open();
-                sql = "select Nombre, Contraseña from usuarios where nombre = '" + nombre + "' and Contraseña = '" + password + "' ";
+                sql = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' and Contraseña = '" + Password + "'";
                 cmd_sql = new MySqlCommand(sql, conn);
                 reader = cmd_sql.ExecuteReader();
                 if (reader.Read())
