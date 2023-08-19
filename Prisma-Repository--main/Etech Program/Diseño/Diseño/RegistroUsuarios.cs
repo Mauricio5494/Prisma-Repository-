@@ -92,6 +92,12 @@ namespace Diseño
                     MessageBox.Show("Ya existe otra cuenta con esa informacion", "Ups...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+
+            txtNombre.Text = "";
+            txtPassword.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+            txtCelular.Text = "";
         }
 
         private void Comprobacion()
