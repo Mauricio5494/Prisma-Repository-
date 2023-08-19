@@ -36,15 +36,15 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Filtrar = new System.Windows.Forms.Label();
             this.MenuOpciones = new System.Windows.Forms.ComboBox();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
             this.panelE = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
-            this.groupBox_AgregarTrabajo = new System.Windows.Forms.GroupBox();
-            this.btn_Agregar_Trabajo = new System.Windows.Forms.Button();
+            this.groupBox_AgregarTrabajos = new System.Windows.Forms.GroupBox();
+            this.btnAgregar_Trabajo = new System.Windows.Forms.Button();
             this.txtAdelanto_Agregar = new System.Windows.Forms.TextBox();
             this.labelAdelanto_Agregar = new System.Windows.Forms.Label();
             this.txtFechaDeIngreso_Agregar = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.radioButton_TRABAJO_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_CELULARES_Agregar = new System.Windows.Forms.RadioButton();
             this.label_Tabla_Agregar = new System.Windows.Forms.Label();
-            this.GroupBox_AgregarCelulares = new System.Windows.Forms.GroupBox();
+            this.groupBox_AgregarCelulares = new System.Windows.Forms.GroupBox();
             this.btnAgregar_Celular = new System.Windows.Forms.Button();
             this.radioButton_Averiado_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_Arreglado_Agregar = new System.Windows.Forms.RadioButton();
@@ -108,9 +108,9 @@
             this.labelPlazo_Agregar_Modificar = new System.Windows.Forms.Label();
             this.txtTrabajo_IMEI_Modificar = new System.Windows.Forms.TextBox();
             this.labelTrabajo_IMEI_Modificar = new System.Windows.Forms.Label();
-            this.txtIDTabla_Trabajo_Modificar = new System.Windows.Forms.TextBox();
+            this.txtIDTrabajo_Modificar = new System.Windows.Forms.TextBox();
             this.IDTabla_Trabajos_Modificar = new System.Windows.Forms.Label();
-            this.groupBox_ModificarCelular = new System.Windows.Forms.GroupBox();
+            this.groupBox_ModificarCelulares = new System.Windows.Forms.GroupBox();
             this.radioButton_Averiado_Modificar = new System.Windows.Forms.RadioButton();
             this.radioButton_Arreglado_Modificar = new System.Windows.Forms.RadioButton();
             this.txtTecnico_Modificar = new System.Windows.Forms.TextBox();
@@ -134,17 +134,38 @@
             this.timer_GroupBox_ModificarT_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_Modificar_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Modificar_Reducir = new System.Windows.Forms.Timer(this.components);
+            this.panel_Eliminar = new System.Windows.Forms.Panel();
+            this.groupBox_EliminarTrabajos = new System.Windows.Forms.GroupBox();
+            this.btnEliminar_Trabajo = new System.Windows.Forms.Button();
+            this.txtID_Trabajo_Eliminar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton_TRABAJO_Eliminar = new System.Windows.Forms.RadioButton();
+            this.radioButton_CELULARES_Eliminar = new System.Windows.Forms.RadioButton();
+            this.label_Tabla_Eliminar = new System.Windows.Forms.Label();
+            this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
+            this.btnEliminar_Celular = new System.Windows.Forms.Button();
+            this.txtID_Tabla_Celular_Eliminar = new System.Windows.Forms.TextBox();
+            this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
+            this.timer_GroupBox_EliminarC_Agrandar = new System.Windows.Forms.Timer(this.components);
+            this.timer_GroupBox_EliminarC_Reducir = new System.Windows.Forms.Timer(this.components);
+            this.timer_GroupBox_EliminarT_Reducir = new System.Windows.Forms.Timer(this.components);
+            this.timer_GroupBox_EliminarT_Agrandar = new System.Windows.Forms.Timer(this.components);
+            this.timer_Eliminar_Agrandar = new System.Windows.Forms.Timer(this.components);
+            this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panelD.SuspendLayout();
             this.panelE.SuspendLayout();
             this.panel_Agregar.SuspendLayout();
-            this.groupBox_AgregarTrabajo.SuspendLayout();
-            this.GroupBox_AgregarCelulares.SuspendLayout();
+            this.groupBox_AgregarTrabajos.SuspendLayout();
+            this.groupBox_AgregarCelulares.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
             this.groupBox_ModificarTrabajos.SuspendLayout();
-            this.groupBox_ModificarCelular.SuspendLayout();
+            this.groupBox_ModificarCelulares.SuspendLayout();
+            this.panel_Eliminar.SuspendLayout();
+            this.groupBox_EliminarTrabajos.SuspendLayout();
+            this.groupBox_EliminarCelulares.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelD
@@ -241,7 +262,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 625);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
             this.btnCerrarSesion.TabIndex = 3;
@@ -250,17 +271,17 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // label1
+            // label_Filtrar
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(74, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 14);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filtrar por:";
+            this.label_Filtrar.AutoSize = true;
+            this.label_Filtrar.BackColor = System.Drawing.Color.Transparent;
+            this.label_Filtrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Filtrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Filtrar.Location = new System.Drawing.Point(74, 27);
+            this.label_Filtrar.Name = "label_Filtrar";
+            this.label_Filtrar.Size = new System.Drawing.Size(64, 14);
+            this.label_Filtrar.TabIndex = 6;
+            this.label_Filtrar.Text = "Filtrar por:";
             // 
             // MenuOpciones
             // 
@@ -288,7 +309,7 @@
             // 
             this.panelE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panelE.Controls.Add(this.btnMenu);
-            this.panelE.Controls.Add(this.label1);
+            this.panelE.Controls.Add(this.label_Filtrar);
             this.panelE.Controls.Add(this.btnBuscar);
             this.panelE.Controls.Add(this.MenuOpciones);
             this.panelE.Controls.Add(this.txtCampo_Busqueda);
@@ -327,51 +348,51 @@
             // panel_Agregar
             // 
             this.panel_Agregar.BackColor = System.Drawing.Color.Firebrick;
-            this.panel_Agregar.Controls.Add(this.groupBox_AgregarTrabajo);
+            this.panel_Agregar.Controls.Add(this.groupBox_AgregarTrabajos);
             this.panel_Agregar.Controls.Add(this.radioButton_TRABAJO_Agregar);
             this.panel_Agregar.Controls.Add(this.radioButton_CELULARES_Agregar);
             this.panel_Agregar.Controls.Add(this.label_Tabla_Agregar);
-            this.panel_Agregar.Controls.Add(this.GroupBox_AgregarCelulares);
+            this.panel_Agregar.Controls.Add(this.groupBox_AgregarCelulares);
             this.panel_Agregar.Enabled = false;
             this.panel_Agregar.Location = new System.Drawing.Point(833, 78);
             this.panel_Agregar.Name = "panel_Agregar";
             this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 15;
             // 
-            // groupBox_AgregarTrabajo
+            // groupBox_AgregarTrabajos
             // 
-            this.groupBox_AgregarTrabajo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_AgregarTrabajo.Controls.Add(this.btn_Agregar_Trabajo);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.txtAdelanto_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.labelAdelanto_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.txtFechaDeIngreso_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.labelFechaDeIngreso_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.txtProblema_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.labelProblema_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.txtPresupuesto_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.labelPresupuesto_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.txtPlazo_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.labelPlazo_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.txtTrabajo_IMEI_Agregar);
-            this.groupBox_AgregarTrabajo.Controls.Add(this.labelTrabajo_IMEI_Agregar);
-            this.groupBox_AgregarTrabajo.Enabled = false;
-            this.groupBox_AgregarTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_AgregarTrabajo.Location = new System.Drawing.Point(42, 77);
-            this.groupBox_AgregarTrabajo.Name = "groupBox_AgregarTrabajo";
-            this.groupBox_AgregarTrabajo.Size = new System.Drawing.Size(337, 0);
-            this.groupBox_AgregarTrabajo.TabIndex = 16;
-            this.groupBox_AgregarTrabajo.TabStop = false;
-            this.groupBox_AgregarTrabajo.Text = "Ingrese un trabajo";
+            this.groupBox_AgregarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_AgregarTrabajos.Controls.Add(this.btnAgregar_Trabajo);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtAdelanto_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelAdelanto_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtFechaDeIngreso_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelFechaDeIngreso_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtProblema_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelProblema_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtPresupuesto_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelPresupuesto_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtPlazo_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelPlazo_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtTrabajo_IMEI_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelTrabajo_IMEI_Agregar);
+            this.groupBox_AgregarTrabajos.Enabled = false;
+            this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(42, 77);
+            this.groupBox_AgregarTrabajos.Name = "groupBox_AgregarTrabajos";
+            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_AgregarTrabajos.TabIndex = 16;
+            this.groupBox_AgregarTrabajos.TabStop = false;
+            this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
             // 
-            // btn_Agregar_Trabajo
+            // btnAgregar_Trabajo
             // 
-            this.btn_Agregar_Trabajo.Location = new System.Drawing.Point(6, 457);
-            this.btn_Agregar_Trabajo.Name = "btn_Agregar_Trabajo";
-            this.btn_Agregar_Trabajo.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar_Trabajo.TabIndex = 12;
-            this.btn_Agregar_Trabajo.Text = "Agregar";
-            this.btn_Agregar_Trabajo.UseVisualStyleBackColor = true;
-            this.btn_Agregar_Trabajo.Click += new System.EventHandler(this.btnAgregar_Trabajo_Click);
+            this.btnAgregar_Trabajo.Location = new System.Drawing.Point(6, 457);
+            this.btnAgregar_Trabajo.Name = "btnAgregar_Trabajo";
+            this.btnAgregar_Trabajo.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar_Trabajo.TabIndex = 12;
+            this.btnAgregar_Trabajo.Text = "Agregar";
+            this.btnAgregar_Trabajo.UseVisualStyleBackColor = true;
+            this.btnAgregar_Trabajo.Click += new System.EventHandler(this.btnAgregar_Trabajo_Click);
             // 
             // txtAdelanto_Agregar
             // 
@@ -502,37 +523,37 @@
             this.label_Tabla_Agregar.AutoSize = true;
             this.label_Tabla_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Tabla_Agregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Tabla_Agregar.Location = new System.Drawing.Point(39, 33);
+            this.label_Tabla_Agregar.Location = new System.Drawing.Point(31, 33);
             this.label_Tabla_Agregar.Name = "label_Tabla_Agregar";
-            this.label_Tabla_Agregar.Size = new System.Drawing.Size(137, 13);
+            this.label_Tabla_Agregar.Size = new System.Drawing.Size(149, 13);
             this.label_Tabla_Agregar.TabIndex = 1;
-            this.label_Tabla_Agregar.Text = "AGREGAR  LA TABLA:";
+            this.label_Tabla_Agregar.Text = "AGREGAR A  LA TABLA:";
             // 
-            // GroupBox_AgregarCelulares
+            // groupBox_AgregarCelulares
             // 
-            this.GroupBox_AgregarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GroupBox_AgregarCelulares.Controls.Add(this.btnAgregar_Celular);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.radioButton_Averiado_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.radioButton_Arreglado_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.txtTecnico_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.labelEstado_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.txtMarca_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.labelMarca_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.txtModelo_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.labelModelo_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.txtIMEI_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.labelIMEI_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.txtCI_Del_Dueño_Agregar);
-            this.GroupBox_AgregarCelulares.Controls.Add(this.labelID_Dueño_Agregar);
-            this.GroupBox_AgregarCelulares.Enabled = false;
-            this.GroupBox_AgregarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox_AgregarCelulares.Location = new System.Drawing.Point(42, 77);
-            this.GroupBox_AgregarCelulares.Name = "GroupBox_AgregarCelulares";
-            this.GroupBox_AgregarCelulares.Size = new System.Drawing.Size(337, 0);
-            this.GroupBox_AgregarCelulares.TabIndex = 0;
-            this.GroupBox_AgregarCelulares.TabStop = false;
-            this.GroupBox_AgregarCelulares.Text = "Ingrese un celular";
+            this.groupBox_AgregarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_AgregarCelulares.Controls.Add(this.btnAgregar_Celular);
+            this.groupBox_AgregarCelulares.Controls.Add(this.radioButton_Averiado_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.radioButton_Arreglado_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtTecnico_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelEstado_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtMarca_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelMarca_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtModelo_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelModelo_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtIMEI_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelIMEI_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtCI_Del_Dueño_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelID_Dueño_Agregar);
+            this.groupBox_AgregarCelulares.Enabled = false;
+            this.groupBox_AgregarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_AgregarCelulares.Location = new System.Drawing.Point(42, 77);
+            this.groupBox_AgregarCelulares.Name = "groupBox_AgregarCelulares";
+            this.groupBox_AgregarCelulares.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_AgregarCelulares.TabIndex = 0;
+            this.groupBox_AgregarCelulares.TabStop = false;
+            this.groupBox_AgregarCelulares.Text = "Ingrese un celular";
             // 
             // btnAgregar_Celular
             // 
@@ -755,6 +776,7 @@
             this.btnUsuarios.Text = "USUARIOS";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // timer_Menu_Agrandar
             // 
@@ -790,7 +812,7 @@
             // 
             this.panel_Modificar.BackColor = System.Drawing.Color.Firebrick;
             this.panel_Modificar.Controls.Add(this.groupBox_ModificarTrabajos);
-            this.panel_Modificar.Controls.Add(this.groupBox_ModificarCelular);
+            this.panel_Modificar.Controls.Add(this.groupBox_ModificarCelulares);
             this.panel_Modificar.Controls.Add(this.radioButton_TRABAJO_Modificar);
             this.panel_Modificar.Controls.Add(this.radioButton_CELULARES_Modificar);
             this.panel_Modificar.Controls.Add(this.label_Tabla_Modificar);
@@ -816,7 +838,7 @@
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelPlazo_Agregar_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.txtTrabajo_IMEI_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelTrabajo_IMEI_Modificar);
-            this.groupBox_ModificarTrabajos.Controls.Add(this.txtIDTabla_Trabajo_Modificar);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.txtIDTrabajo_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.IDTabla_Trabajos_Modificar);
             this.groupBox_ModificarTrabajos.Enabled = false;
             this.groupBox_ModificarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
@@ -933,12 +955,12 @@
             this.labelTrabajo_IMEI_Modificar.TabIndex = 12;
             this.labelTrabajo_IMEI_Modificar.Text = "IMEI del celular:";
             // 
-            // txtIDTabla_Trabajo_Modificar
+            // txtIDTrabajo_Modificar
             // 
-            this.txtIDTabla_Trabajo_Modificar.Location = new System.Drawing.Point(6, 56);
-            this.txtIDTabla_Trabajo_Modificar.Name = "txtIDTabla_Trabajo_Modificar";
-            this.txtIDTabla_Trabajo_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtIDTabla_Trabajo_Modificar.TabIndex = 1;
+            this.txtIDTrabajo_Modificar.Location = new System.Drawing.Point(6, 56);
+            this.txtIDTrabajo_Modificar.Name = "txtIDTrabajo_Modificar";
+            this.txtIDTrabajo_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtIDTrabajo_Modificar.TabIndex = 1;
             // 
             // IDTabla_Trabajos_Modificar
             // 
@@ -949,33 +971,33 @@
             this.IDTabla_Trabajos_Modificar.TabIndex = 0;
             this.IDTabla_Trabajos_Modificar.Text = "ID de la fila:";
             // 
-            // groupBox_ModificarCelular
+            // groupBox_ModificarCelulares
             // 
-            this.groupBox_ModificarCelular.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_ModificarCelular.Controls.Add(this.radioButton_Averiado_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.radioButton_Arreglado_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.txtTecnico_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.labelTecnico_A_Cargo_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.labelEstado_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.txtMarca_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.labelMarca_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.txtModelo_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.labelModelo_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.txtIMEI_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.labelIMEI_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.txtCI_Del_Dueño_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.labelID_Dueño_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.txtID_Tabla_Celular_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.labelID_Celular_Modificar);
-            this.groupBox_ModificarCelular.Controls.Add(this.btnModificar_Celular);
-            this.groupBox_ModificarCelular.Enabled = false;
-            this.groupBox_ModificarCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_ModificarCelular.Location = new System.Drawing.Point(42, 77);
-            this.groupBox_ModificarCelular.Name = "groupBox_ModificarCelular";
-            this.groupBox_ModificarCelular.Size = new System.Drawing.Size(337, 0);
-            this.groupBox_ModificarCelular.TabIndex = 7;
-            this.groupBox_ModificarCelular.TabStop = false;
-            this.groupBox_ModificarCelular.Text = "Modificar tabla celulares";
+            this.groupBox_ModificarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Averiado_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Arreglado_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtTecnico_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelEstado_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtMarca_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelMarca_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtModelo_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelModelo_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtIMEI_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelIMEI_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtCI_Del_Dueño_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Dueño_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtID_Tabla_Celular_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Celular_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.btnModificar_Celular);
+            this.groupBox_ModificarCelulares.Enabled = false;
+            this.groupBox_ModificarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_ModificarCelulares.Location = new System.Drawing.Point(42, 77);
+            this.groupBox_ModificarCelulares.Name = "groupBox_ModificarCelulares";
+            this.groupBox_ModificarCelulares.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_ModificarCelulares.TabIndex = 7;
+            this.groupBox_ModificarCelulares.TabStop = false;
+            this.groupBox_ModificarCelulares.Text = "Modificar tabla celulares";
             // 
             // radioButton_Averiado_Modificar
             // 
@@ -1173,14 +1195,176 @@
             this.timer_Modificar_Reducir.Interval = 1;
             this.timer_Modificar_Reducir.Tick += new System.EventHandler(this.timer_Modificar_Reducir_Tick);
             // 
+            // panel_Eliminar
+            // 
+            this.panel_Eliminar.BackColor = System.Drawing.Color.Firebrick;
+            this.panel_Eliminar.Controls.Add(this.groupBox_EliminarTrabajos);
+            this.panel_Eliminar.Controls.Add(this.radioButton_TRABAJO_Eliminar);
+            this.panel_Eliminar.Controls.Add(this.radioButton_CELULARES_Eliminar);
+            this.panel_Eliminar.Controls.Add(this.label_Tabla_Eliminar);
+            this.panel_Eliminar.Controls.Add(this.groupBox_EliminarCelulares);
+            this.panel_Eliminar.Enabled = false;
+            this.panel_Eliminar.Location = new System.Drawing.Point(833, 78);
+            this.panel_Eliminar.Name = "panel_Eliminar";
+            this.panel_Eliminar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Eliminar.TabIndex = 18;
+            // 
+            // groupBox_EliminarTrabajos
+            // 
+            this.groupBox_EliminarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_EliminarTrabajos.Controls.Add(this.btnEliminar_Trabajo);
+            this.groupBox_EliminarTrabajos.Controls.Add(this.txtID_Trabajo_Eliminar);
+            this.groupBox_EliminarTrabajos.Controls.Add(this.label1);
+            this.groupBox_EliminarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupBox_EliminarTrabajos.Location = new System.Drawing.Point(42, 77);
+            this.groupBox_EliminarTrabajos.Name = "groupBox_EliminarTrabajos";
+            this.groupBox_EliminarTrabajos.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_EliminarTrabajos.TabIndex = 6;
+            this.groupBox_EliminarTrabajos.TabStop = false;
+            this.groupBox_EliminarTrabajos.Text = "Elimine un trabajo";
+            // 
+            // btnEliminar_Trabajo
+            // 
+            this.btnEliminar_Trabajo.Location = new System.Drawing.Point(6, 457);
+            this.btnEliminar_Trabajo.Name = "btnEliminar_Trabajo";
+            this.btnEliminar_Trabajo.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar_Trabajo.TabIndex = 14;
+            this.btnEliminar_Trabajo.Text = "Eliminar";
+            this.btnEliminar_Trabajo.UseVisualStyleBackColor = true;
+            // 
+            // txtID_Trabajo_Eliminar
+            // 
+            this.txtID_Trabajo_Eliminar.Location = new System.Drawing.Point(6, 56);
+            this.txtID_Trabajo_Eliminar.Name = "txtID_Trabajo_Eliminar";
+            this.txtID_Trabajo_Eliminar.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Trabajo_Eliminar.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID del trabajo que desea eliminar:";
+            // 
+            // radioButton_TRABAJO_Eliminar
+            // 
+            this.radioButton_TRABAJO_Eliminar.AutoSize = true;
+            this.radioButton_TRABAJO_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_TRABAJO_Eliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radioButton_TRABAJO_Eliminar.Location = new System.Drawing.Point(288, 31);
+            this.radioButton_TRABAJO_Eliminar.Name = "radioButton_TRABAJO_Eliminar";
+            this.radioButton_TRABAJO_Eliminar.Size = new System.Drawing.Size(81, 17);
+            this.radioButton_TRABAJO_Eliminar.TabIndex = 5;
+            this.radioButton_TRABAJO_Eliminar.TabStop = true;
+            this.radioButton_TRABAJO_Eliminar.Text = "TRABAJO";
+            this.radioButton_TRABAJO_Eliminar.UseVisualStyleBackColor = true;
+            this.radioButton_TRABAJO_Eliminar.CheckedChanged += new System.EventHandler(this.radioButton_TRABAJO_Eliminar_CheckedChanged);
+            // 
+            // radioButton_CELULARES_Eliminar
+            // 
+            this.radioButton_CELULARES_Eliminar.AutoSize = true;
+            this.radioButton_CELULARES_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_CELULARES_Eliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radioButton_CELULARES_Eliminar.Location = new System.Drawing.Point(186, 31);
+            this.radioButton_CELULARES_Eliminar.Name = "radioButton_CELULARES_Eliminar";
+            this.radioButton_CELULARES_Eliminar.Size = new System.Drawing.Size(97, 17);
+            this.radioButton_CELULARES_Eliminar.TabIndex = 4;
+            this.radioButton_CELULARES_Eliminar.TabStop = true;
+            this.radioButton_CELULARES_Eliminar.Text = "CELULARES";
+            this.radioButton_CELULARES_Eliminar.UseVisualStyleBackColor = true;
+            this.radioButton_CELULARES_Eliminar.CheckedChanged += new System.EventHandler(this.radioButton_CELULARES_Eliminar_CheckedChanged);
+            // 
+            // label_Tabla_Eliminar
+            // 
+            this.label_Tabla_Eliminar.AutoSize = true;
+            this.label_Tabla_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tabla_Eliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_Tabla_Eliminar.Location = new System.Drawing.Point(31, 33);
+            this.label_Tabla_Eliminar.Name = "label_Tabla_Eliminar";
+            this.label_Tabla_Eliminar.Size = new System.Drawing.Size(149, 13);
+            this.label_Tabla_Eliminar.TabIndex = 2;
+            this.label_Tabla_Eliminar.Text = "ELIMINAR EN LA TABLA";
+            // 
+            // groupBox_EliminarCelulares
+            // 
+            this.groupBox_EliminarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_EliminarCelulares.Controls.Add(this.btnEliminar_Celular);
+            this.groupBox_EliminarCelulares.Controls.Add(this.txtID_Tabla_Celular_Eliminar);
+            this.groupBox_EliminarCelulares.Controls.Add(this.label_ID_Celular_Eliminar);
+            this.groupBox_EliminarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupBox_EliminarCelulares.Location = new System.Drawing.Point(42, 77);
+            this.groupBox_EliminarCelulares.Name = "groupBox_EliminarCelulares";
+            this.groupBox_EliminarCelulares.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_EliminarCelulares.TabIndex = 0;
+            this.groupBox_EliminarCelulares.TabStop = false;
+            this.groupBox_EliminarCelulares.Text = "Elimine un celular";
+            // 
+            // btnEliminar_Celular
+            // 
+            this.btnEliminar_Celular.Location = new System.Drawing.Point(6, 457);
+            this.btnEliminar_Celular.Name = "btnEliminar_Celular";
+            this.btnEliminar_Celular.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar_Celular.TabIndex = 14;
+            this.btnEliminar_Celular.Text = "Eliminar";
+            this.btnEliminar_Celular.UseVisualStyleBackColor = true;
+            // 
+            // txtID_Tabla_Celular_Eliminar
+            // 
+            this.txtID_Tabla_Celular_Eliminar.Location = new System.Drawing.Point(6, 56);
+            this.txtID_Tabla_Celular_Eliminar.Name = "txtID_Tabla_Celular_Eliminar";
+            this.txtID_Tabla_Celular_Eliminar.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Tabla_Celular_Eliminar.TabIndex = 1;
+            // 
+            // label_ID_Celular_Eliminar
+            // 
+            this.label_ID_Celular_Eliminar.AutoSize = true;
+            this.label_ID_Celular_Eliminar.Location = new System.Drawing.Point(3, 40);
+            this.label_ID_Celular_Eliminar.Name = "label_ID_Celular_Eliminar";
+            this.label_ID_Celular_Eliminar.Size = new System.Drawing.Size(197, 13);
+            this.label_ID_Celular_Eliminar.TabIndex = 0;
+            this.label_ID_Celular_Eliminar.Text = "ID del celular que desea eliminar:";
+            // 
+            // timer_GroupBox_EliminarC_Agrandar
+            // 
+            this.timer_GroupBox_EliminarC_Agrandar.Interval = 1;
+            this.timer_GroupBox_EliminarC_Agrandar.Tick += new System.EventHandler(this.timer_GroupBox_EliminarC_Agrandar_Tick);
+            // 
+            // timer_GroupBox_EliminarC_Reducir
+            // 
+            this.timer_GroupBox_EliminarC_Reducir.Interval = 1;
+            this.timer_GroupBox_EliminarC_Reducir.Tick += new System.EventHandler(this.timer_GroupBox_EliminarC_Reducir_Tick);
+            // 
+            // timer_GroupBox_EliminarT_Reducir
+            // 
+            this.timer_GroupBox_EliminarT_Reducir.Interval = 1;
+            this.timer_GroupBox_EliminarT_Reducir.Tick += new System.EventHandler(this.timer_GroupBox_EliminarT_Reducir_Tick);
+            // 
+            // timer_GroupBox_EliminarT_Agrandar
+            // 
+            this.timer_GroupBox_EliminarT_Agrandar.Interval = 1;
+            this.timer_GroupBox_EliminarT_Agrandar.Tick += new System.EventHandler(this.timer_GroupBox_EliminarT_Agrandar_Tick);
+            // 
+            // timer_Eliminar_Agrandar
+            // 
+            this.timer_Eliminar_Agrandar.Interval = 1;
+            this.timer_Eliminar_Agrandar.Tick += new System.EventHandler(this.timer_Eliminar_Agrandar_Tick);
+            // 
+            // timer_Eliminar_Reducir
+            // 
+            this.timer_Eliminar_Reducir.Interval = 1;
+            this.timer_Eliminar_Reducir.Tick += new System.EventHandler(this.timer_Eliminar_Reducir_Tick);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1264, 685);
+            this.ClientSize = new System.Drawing.Size(1264, 692);
             this.Controls.Add(this.panelE);
             this.Controls.Add(this.panelD);
+            this.Controls.Add(this.panel_Eliminar);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_Agregar);
             this.Controls.Add(this.panel_Modificar);
@@ -1194,10 +1378,10 @@
             this.panelE.PerformLayout();
             this.panel_Agregar.ResumeLayout(false);
             this.panel_Agregar.PerformLayout();
-            this.groupBox_AgregarTrabajo.ResumeLayout(false);
-            this.groupBox_AgregarTrabajo.PerformLayout();
-            this.GroupBox_AgregarCelulares.ResumeLayout(false);
-            this.GroupBox_AgregarCelulares.PerformLayout();
+            this.groupBox_AgregarTrabajos.ResumeLayout(false);
+            this.groupBox_AgregarTrabajos.PerformLayout();
+            this.groupBox_AgregarCelulares.ResumeLayout(false);
+            this.groupBox_AgregarCelulares.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
@@ -1205,8 +1389,14 @@
             this.panel_Modificar.PerformLayout();
             this.groupBox_ModificarTrabajos.ResumeLayout(false);
             this.groupBox_ModificarTrabajos.PerformLayout();
-            this.groupBox_ModificarCelular.ResumeLayout(false);
-            this.groupBox_ModificarCelular.PerformLayout();
+            this.groupBox_ModificarCelulares.ResumeLayout(false);
+            this.groupBox_ModificarCelulares.PerformLayout();
+            this.panel_Eliminar.ResumeLayout(false);
+            this.panel_Eliminar.PerformLayout();
+            this.groupBox_EliminarTrabajos.ResumeLayout(false);
+            this.groupBox_EliminarTrabajos.PerformLayout();
+            this.groupBox_EliminarCelulares.ResumeLayout(false);
+            this.groupBox_EliminarCelulares.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1215,7 +1405,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Panel panelD;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Filtrar;
         private System.Windows.Forms.ComboBox MenuOpciones;
         private System.Windows.Forms.TextBox txtCampo_Busqueda;
         private System.Windows.Forms.Button btnBuscar;
@@ -1225,7 +1415,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Panel panel_Agregar;
         private System.Windows.Forms.Timer timer_Agregar_Agrandar;
-        private System.Windows.Forms.GroupBox GroupBox_AgregarCelulares;
+        private System.Windows.Forms.GroupBox groupBox_AgregarCelulares;
         private System.Windows.Forms.TextBox txtCI_Del_Dueño_Agregar;
         private System.Windows.Forms.Label labelID_Dueño_Agregar;
         private System.Windows.Forms.TextBox txtIMEI_Agregar;
@@ -1246,8 +1436,8 @@
         private System.Windows.Forms.RadioButton radioButton_CELULARES_Agregar;
         private System.Windows.Forms.Timer timer_Agregar_Reducir;
         private System.Windows.Forms.Timer timer_GroupBox_AgregarC_Reducir;
-        private System.Windows.Forms.GroupBox groupBox_AgregarTrabajo;
-        private System.Windows.Forms.Button btn_Agregar_Trabajo;
+        private System.Windows.Forms.GroupBox groupBox_AgregarTrabajos;
+        private System.Windows.Forms.Button btnAgregar_Trabajo;
         private System.Windows.Forms.TextBox txtAdelanto_Agregar;
         private System.Windows.Forms.Label labelAdelanto_Agregar;
         private System.Windows.Forms.TextBox txtFechaDeIngreso_Agregar;
@@ -1276,7 +1466,7 @@
         private System.Windows.Forms.Timer timer_GroupBox_ModificarC_Reducir;
         private System.Windows.Forms.Timer timer_GroupBox_ModificarC_Agrandar;
         private System.Windows.Forms.Panel panel_Modificar;
-        private System.Windows.Forms.GroupBox groupBox_ModificarCelular;
+        private System.Windows.Forms.GroupBox groupBox_ModificarCelulares;
         private System.Windows.Forms.Button btnModificar_Celular;
         private System.Windows.Forms.RadioButton radioButton_TRABAJO_Modificar;
         private System.Windows.Forms.RadioButton radioButton_CELULARES_Modificar;
@@ -1311,11 +1501,29 @@
         private System.Windows.Forms.Label labelPlazo_Agregar_Modificar;
         private System.Windows.Forms.TextBox txtTrabajo_IMEI_Modificar;
         private System.Windows.Forms.Label labelTrabajo_IMEI_Modificar;
-        private System.Windows.Forms.TextBox txtIDTabla_Trabajo_Modificar;
+        private System.Windows.Forms.TextBox txtIDTrabajo_Modificar;
         private System.Windows.Forms.Label IDTabla_Trabajos_Modificar;
         private System.Windows.Forms.Button btnModificar_Trabajo;
         private System.Windows.Forms.Timer timer_Modificar_Agrandar;
         private System.Windows.Forms.Timer timer_Modificar_Reducir;
+        private System.Windows.Forms.Panel panel_Eliminar;
+        private System.Windows.Forms.GroupBox groupBox_EliminarCelulares;
+        private System.Windows.Forms.Button btnEliminar_Celular;
+        private System.Windows.Forms.TextBox txtID_Tabla_Celular_Eliminar;
+        private System.Windows.Forms.Label label_ID_Celular_Eliminar;
+        private System.Windows.Forms.Timer timer_GroupBox_EliminarC_Agrandar;
+        private System.Windows.Forms.Timer timer_GroupBox_EliminarC_Reducir;
+        private System.Windows.Forms.RadioButton radioButton_TRABAJO_Eliminar;
+        private System.Windows.Forms.RadioButton radioButton_CELULARES_Eliminar;
+        private System.Windows.Forms.Label label_Tabla_Eliminar;
+        private System.Windows.Forms.GroupBox groupBox_EliminarTrabajos;
+        private System.Windows.Forms.TextBox txtID_Trabajo_Eliminar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEliminar_Trabajo;
+        private System.Windows.Forms.Timer timer_GroupBox_EliminarT_Reducir;
+        private System.Windows.Forms.Timer timer_GroupBox_EliminarT_Agrandar;
+        private System.Windows.Forms.Timer timer_Eliminar_Agrandar;
+        private System.Windows.Forms.Timer timer_Eliminar_Reducir;
     }
 }
 

@@ -6,15 +6,15 @@
         private bool Invitado;
 
         //Constructor:
-        public Utilidades() 
+        public Utilidades()
         {
-            Invitado = true;
+            Invitado = false;
         }
 
         //Getters y Setters:
         public bool getInvitado
         {
-            get { return Invitado;}
+            get { return Invitado; }
         }
         public bool SetInvitado
         {

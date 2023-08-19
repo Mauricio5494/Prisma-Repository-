@@ -1,9 +1,8 @@
 ﻿using Diseño.Properties;
-using System.Drawing;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System;
-using System.Security.Cryptography;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Diseño
 {
@@ -25,11 +24,10 @@ namespace Diseño
         ToolTip toolTip1 = new ToolTip();
         Utilidades Seguridad = new Utilidades();
         MySqlConnection conn = DataBaseConnect.conectarse();
-        MySqlCommand cmd_conn = new MySqlCommand();
         MySqlCommand cmd_sql;
         MySqlDataReader reader;
         Principal Taller = new Principal();
-        
+
 
         //Método para cambiar la imágen del ojo y la sintaxis de ingreso de caracteres al TextBox de la Contraseña:
         private void checkBox1_CheckedChanged(object sender, System.EventArgs e)
@@ -57,7 +55,6 @@ namespace Diseño
             try
             {
                 conn.Open();
-                cmd_conn.Connection = conn;
                 sql = "select Nombre, Contraseña from usuarios where nombre = '" + nombre + "' and Contraseña = '" + password + "' ";
                 cmd_sql = new MySqlCommand(sql, conn);
                 reader = cmd_sql.ExecuteReader();
@@ -75,7 +72,7 @@ namespace Diseño
             catch (Exception b)
             {
                 MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+            }
             finally
             {
                 conn.Close();
@@ -167,6 +164,11 @@ namespace Diseño
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

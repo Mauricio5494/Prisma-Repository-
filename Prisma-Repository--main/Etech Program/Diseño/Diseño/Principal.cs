@@ -1,13 +1,14 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace Diseño
 {
     public partial class Principal : Form
     {
         //instancias:
+        Usuarios Usuarios = new Usuarios();
         Utilidades Seguridad = new Utilidades();
         MySqlConnection conn = DataBaseConnect.conectarse();
         MySqlCommand cmd = new MySqlCommand();
@@ -61,7 +62,7 @@ namespace Diseño
                 conn.Close();
             }
         }
-       
+
         //Codigo referente al menu secundario:
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -109,13 +110,33 @@ namespace Diseño
         {
             if (Seguridad.getInvitado == false)
             {
-                if (panel_Agregar.Height < 591)
+                if (panel_Agregar.Height < 600)
                 {
                     //Panel-Agregar y GroupBoxes-Agregar:
                     timer_Agregar_Agrandar.Enabled = true;
                     timer_Agregar_Reducir.Enabled = false;
                     panel_Agregar.Enabled = true;
                     panel_Agregar.BringToFront();
+
+                    //Panel-Modificar y GroupBoxes-Modificar:
+                    timer_Modificar_Reducir.Enabled = true;
+                    timer_Modificar_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                    timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                    timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                    panel_Modificar.Enabled = false;
+                    panel_Modificar.SendToBack();
+
+                    //Panel-Eliminar y GroupBoxes-Eliminar:
+                    timer_Eliminar_Reducir.Enabled = true;
+                    timer_Eliminar_Agrandar.Enabled = false;
+                    timer_GroupBox_EliminarC_Reducir.Enabled = true;
+                    timer_GroupBox_EliminarT_Reducir.Enabled = true;
+                    timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+                    timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+                    panel_Eliminar.Enabled = false;
+                    panel_Eliminar.SendToBack();
 
                     //Panel-Menu y GroupBoxes-Menu:
                     timer_Menu_Reducir.Enabled = true;
@@ -147,11 +168,11 @@ namespace Diseño
         {
             if (Seguridad.getInvitado == false)
             {
-                if (panel_Modificar.Height < 591)
+                if (panel_Modificar.Height < 600)
                 {
                     //Panel-Modificar y GroupBoxes-Modificar:
                     timer_Modificar_Agrandar.Enabled = true;
-                    timer_Modificar_Reducir.Enabled=false;
+                    timer_Modificar_Reducir.Enabled = false;
                     panel_Modificar.Enabled = true;
                     panel_Agregar.BringToFront();
 
@@ -164,6 +185,16 @@ namespace Diseño
                     timer_GroupBox_AgregarT_Agrandar.Enabled = false;
                     panel_Agregar.Enabled = false;
                     panel_Agregar.SendToBack();
+
+                    //Panel-Eliminar y GroupBoxes-Eliminar:
+                    timer_Eliminar_Reducir.Enabled = true;
+                    timer_Eliminar_Agrandar.Enabled = false;
+                    timer_GroupBox_EliminarC_Reducir.Enabled = true;
+                    timer_GroupBox_EliminarT_Reducir.Enabled = true;
+                    timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+                    timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+                    panel_Eliminar.Enabled = false;
+                    panel_Eliminar.SendToBack();
 
                     //Panel-Menu y GroupBoxes-Menu:
                     timer_Menu_Reducir.Enabled = true;
@@ -195,7 +226,53 @@ namespace Diseño
         {
             if (Seguridad.getInvitado == false)
             {
+                if (panel_Eliminar.Height < 600)
+                {
+                    //Panel-Eliminar y GroupBoxes-Modificar:
+                    timer_Eliminar_Agrandar.Enabled = true;
+                    timer_Eliminar_Reducir.Enabled = false;
+                    panel_Eliminar.Enabled = true;
+                    panel_Eliminar.BringToFront();
 
+                    //Panel-Agregar y GroupBoxes-Agregar:
+                    timer_Agregar_Reducir.Enabled = true;
+                    timer_Agregar_Agrandar.Enabled = false;
+                    timer_GroupBox_AgregarC_Reducir.Enabled = true;
+                    timer_GroupBox_AgregarT_Reducir.Enabled = true;
+                    timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+                    timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+                    panel_Agregar.Enabled = false;
+                    panel_Agregar.SendToBack();
+
+                    //Panel-Modificar y GroupBoxes-Modificar:
+                    timer_Modificar_Reducir.Enabled = true;
+                    timer_Modificar_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                    timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                    timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                    panel_Modificar.Enabled = false;
+                    panel_Modificar.SendToBack();
+
+                    //Panel-Menu y GroupBoxes-Menu:
+                    timer_Menu_Reducir.Enabled = true;
+                    timer_Menu_Agrandar.Enabled = false;
+                    timer_GroupBox_Menu_Reducir.Enabled = true;
+                    timer_GroupBox_Menu_Agrandar.Enabled = false;
+                    panel_Menu.Enabled = false;
+                    panel_Menu.SendToBack();
+                }
+                else
+                {
+                    timer_Eliminar_Reducir.Enabled = true;
+                    timer_Eliminar_Agrandar.Enabled = false;
+                    timer_GroupBox_EliminarC_Reducir.Enabled = true;
+                    timer_GroupBox_EliminarT_Reducir.Enabled = true;
+                    timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+                    timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+                    panel_Eliminar.Enabled = false;
+                    panel_Eliminar.SendToBack();
+                }
             }
             else
             {
@@ -205,7 +282,7 @@ namespace Diseño
 
         private void btnMenu_Principal(object sender, EventArgs e)
         {
-            if (panel_Menu.Height < 591)
+            if (panel_Menu.Height < 600)
             {
                 //Panel-Menu y GroupBoxes-Menu:
                 timer_Menu_Agrandar.Enabled = true;
@@ -224,6 +301,26 @@ namespace Diseño
                 timer_GroupBox_AgregarT_Agrandar.Enabled = false;
                 panel_Agregar.Enabled = false;
                 panel_Agregar.SendToBack();
+
+                //Panel-Modificar y GroupBoxes-Modificar:
+                timer_Modificar_Reducir.Enabled = true;
+                timer_Modificar_Agrandar.Enabled = false;
+                timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                panel_Modificar.Enabled = false;
+                panel_Modificar.SendToBack();
+
+                //Panel-Eliminar y GroupBoxes-Eliminar:
+                timer_Eliminar_Reducir.Enabled = true;
+                timer_Eliminar_Agrandar.Enabled = false;
+                timer_GroupBox_EliminarC_Reducir.Enabled = true;
+                timer_GroupBox_EliminarT_Reducir.Enabled = true;
+                timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+                timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+                panel_Eliminar.Enabled = false;
+                panel_Eliminar.SendToBack();
             }
             else
             {
@@ -250,12 +347,12 @@ namespace Diseño
 
         }
 
-        private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
+        private void btnModificar_Celular_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnModificar_Celular_Click(object sender, EventArgs e)
+        private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
         {
 
         }
@@ -263,6 +360,13 @@ namespace Diseño
         private void btnModificar_Trabajo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //Botones del Menu:
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Usuarios.Show();
+            this.Hide();
         }
 
         //Timers de los paneles:
@@ -301,7 +405,7 @@ namespace Diseño
             }
             else
             {
-                timer_Modificar_Reducir.Enabled= false;
+                timer_Modificar_Reducir.Enabled = false;
             }
         }
 
@@ -343,15 +447,40 @@ namespace Diseño
                 timer_Menu_Agrandar.Enabled = false;
             }
         }
+        private void timer_Eliminar_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (panel_Eliminar.Height > 0)
+            {
+                panel_Eliminar.Height = panel_Eliminar.Height - 12;
+                panel_Eliminar.Enabled = false;
+            }
+            else
+            {
+                timer_Eliminar_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_Eliminar_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (panel_Eliminar.Height < 600)
+            {
+                panel_Eliminar.Height = panel_Eliminar.Height + 12;
+                panel_Eliminar.Enabled = true;
+            }
+            else
+            {
+                timer_Eliminar_Agrandar.Enabled = false;
+            }
+        }
 
         //Timers de los GroupBoxes:
         private void timer_GroupBox_AgregarC_Reducir_Tick(object sender, EventArgs e)
         {
-            if (GroupBox_AgregarCelulares.Height > 0)
+            if (groupBox_AgregarCelulares.Height > 0)
             {
-                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height - 12;
-                GroupBox_AgregarCelulares.Enabled = false;
-                GroupBox_AgregarCelulares.SendToBack();
+                groupBox_AgregarCelulares.Height = groupBox_AgregarCelulares.Height - 12;
+                groupBox_AgregarCelulares.Enabled = false;
+                groupBox_AgregarCelulares.SendToBack();
             }
             else
             {
@@ -361,11 +490,11 @@ namespace Diseño
 
         private void timer_GroupBox_AgregarC_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (GroupBox_AgregarCelulares.Height < 486)
+            if (groupBox_AgregarCelulares.Height < 486)
             {
-                GroupBox_AgregarCelulares.Height = GroupBox_AgregarCelulares.Height + 12;
-                GroupBox_AgregarCelulares.Enabled = true;
-                GroupBox_AgregarCelulares.BringToFront();
+                groupBox_AgregarCelulares.Height = groupBox_AgregarCelulares.Height + 12;
+                groupBox_AgregarCelulares.Enabled = true;
+                groupBox_AgregarCelulares.BringToFront();
             }
             else
             {
@@ -375,11 +504,11 @@ namespace Diseño
 
         private void timer_GroupBox_AgregarT_Reducir_Tick(object sender, EventArgs e)
         {
-            if (groupBox_AgregarTrabajo.Height > 0)
+            if (groupBox_AgregarTrabajos.Height > 0)
             {
-                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height - 12;
-                groupBox_AgregarTrabajo.Enabled = false;
-                groupBox_AgregarTrabajo.SendToBack();
+                groupBox_AgregarTrabajos.Height = groupBox_AgregarTrabajos.Height - 12;
+                groupBox_AgregarTrabajos.Enabled = false;
+                groupBox_AgregarTrabajos.SendToBack();
             }
             else
             {
@@ -389,11 +518,11 @@ namespace Diseño
 
         private void timer_GroupBox_AgregarT_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (groupBox_AgregarTrabajo.Height < 486)
+            if (groupBox_AgregarTrabajos.Height < 486)
             {
-                groupBox_AgregarTrabajo.Height = groupBox_AgregarTrabajo.Height + 12;
-                groupBox_AgregarTrabajo.Enabled = true;
-                groupBox_AgregarTrabajo.BringToFront();
+                groupBox_AgregarTrabajos.Height = groupBox_AgregarTrabajos.Height + 12;
+                groupBox_AgregarTrabajos.Enabled = true;
+                groupBox_AgregarTrabajos.BringToFront();
             }
             else
             {
@@ -429,10 +558,10 @@ namespace Diseño
 
         private void timer_GroupBox_ModificarC_Reducir_Tick(object sender, EventArgs e)
         {
-            if (groupBox_ModificarCelular.Height > 0)
+            if (groupBox_ModificarCelulares.Height > 0)
             {
-                groupBox_ModificarCelular.Height = groupBox_ModificarCelular.Height - 12;
-                groupBox_ModificarCelular.Enabled = false;
+                groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height - 12;
+                groupBox_ModificarCelulares.Enabled = false;
             }
             else
             {
@@ -442,10 +571,10 @@ namespace Diseño
 
         private void timer_GroupBox_ModificarC_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (groupBox_ModificarCelular.Height < 486)
+            if (groupBox_ModificarCelulares.Height < 486)
             {
-                groupBox_ModificarCelular.Height = groupBox_ModificarCelular.Height + 12;
-                groupBox_ModificarCelular.Enabled = true;
+                groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height + 12;
+                groupBox_ModificarCelulares.Enabled = true;
             }
             else
             {
@@ -479,6 +608,57 @@ namespace Diseño
             }
         }
 
+        private void timer_GroupBox_EliminarC_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarCelulares.Height > 0)
+            {
+                groupBox_EliminarCelulares.Height = groupBox_EliminarCelulares.Height - 12;
+                groupBox_EliminarCelulares.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_EliminarC_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_EliminarC_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarCelulares.Height < 486)
+            {
+                groupBox_EliminarCelulares.Height = groupBox_EliminarCelulares.Height + 12;
+                groupBox_EliminarCelulares.Enabled = true;
+            }
+            else
+            {
+                timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_EliminarT_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarTrabajos.Height > 0)
+            {
+                groupBox_EliminarTrabajos.Height = groupBox_EliminarTrabajos.Height - 12;
+                groupBox_EliminarTrabajos.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_EliminarT_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_EliminarT_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarTrabajos.Height < 486)
+            {
+                groupBox_EliminarTrabajos.Height = groupBox_EliminarTrabajos.Height + 12;
+            }
+            else
+            {
+                timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+            }
+        }
+
         //RadioButtons:
         private void radioButton_CELULARES_Agregar_CheckedChanged(object sender, EventArgs e)
         {
@@ -498,8 +678,8 @@ namespace Diseño
         }
         private void radioButton_CELULARES_Modificar_CheckedChanged(object sender, EventArgs e)
         {
-            timer_GroupBox_ModificarC_Agrandar.Enabled= true;
-            timer_GroupBox_ModificarC_Reducir.Enabled= false;
+            timer_GroupBox_ModificarC_Agrandar.Enabled = true;
+            timer_GroupBox_ModificarC_Reducir.Enabled = false;
 
             timer_GroupBox_ModificarT_Agrandar.Enabled = false;
             timer_GroupBox_ModificarT_Reducir.Enabled = true;
@@ -509,9 +689,27 @@ namespace Diseño
         {
             timer_GroupBox_ModificarT_Agrandar.Enabled = true;
             timer_GroupBox_ModificarT_Reducir.Enabled = false;
-        
+
             timer_GroupBox_ModificarC_Agrandar.Enabled = false;
             timer_GroupBox_ModificarC_Reducir.Enabled = true;
+        }
+
+        private void radioButton_CELULARES_Eliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            timer_GroupBox_EliminarC_Agrandar.Enabled = true;
+            timer_GroupBox_EliminarC_Reducir.Enabled = false;
+
+            timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+            timer_GroupBox_EliminarT_Reducir.Enabled = true;
+        }
+
+        private void radioButton_TRABAJO_Eliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            timer_GroupBox_EliminarT_Agrandar.Enabled = true;
+            timer_GroupBox_EliminarT_Reducir.Enabled = false;
+
+            timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+            timer_GroupBox_EliminarC_Reducir.Enabled = true;
         }
     }
 }

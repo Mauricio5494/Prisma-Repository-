@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diseño
@@ -24,6 +18,7 @@ namespace Diseño
 
         //Instancias:
         MySqlConnection conn = DataBaseConnect.conectarse();
+        MySqlCommand cmd_conn = new MySqlCommand();
         MySqlCommand cmd_registro;
         MySqlCommand cmd_Seguridad;
         MySqlDataReader reader;
@@ -42,7 +37,7 @@ namespace Diseño
         {
             labelRegresar.ForeColor = Color.Gray;
         }
-        
+
         private void labelRegresar_Click(object sender, EventArgs e)
         {
             Login mostrar = new Login();
@@ -54,50 +49,48 @@ namespace Diseño
         {
             Nombre = txtNombre.Text;
             Password = txtPassword.Text;
-            Correo = txtCorreo.Text;
             Telefono = txtTelefono.Text;
             Correo = txtCorreo.Text;
             Celular = txtCelular.Text;
-
-            try
+            if (txtNombre.Text.Equals("") || txtPassword.Text.Equals("") || txtCorreo.Text.Equals("") || txtCelular.Text.Equals(""))
             {
-                conn.Open();
-                sql_Seguridad = "select Nombre, Contraseña from usuarios where nombre = '" + Nombre + "' and Contraseña = '" + Password + "' ";
-                cmd_Seguridad = new MySqlCommand(sql_Seguridad, conn);
-                reader = cmd_Seguridad.ExecuteReader();
+                MessageBox.Show("No deje campos de texto obligatorios en blanco", "CUIDADO!!!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    sql_registro = "INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUE('" + Nombre + "', '" + Password + "', '" + Telefono + "', '" + Correo + "', '" + Celular + "')";
+                    sql_Seguridad = "SELECT Nombre, Contraseña from usuarios where nombre = '" + Nombre + "' and Contraseña = '" + Password + "' ";
+                    cmd_Seguridad = new MySqlCommand(sql_Seguridad, conn);
+                    cmd_registro = new MySqlCommand(sql_registro, conn);
+                    reader = cmd_registro.ExecuteReader();
 
-                if (reader.Read())
-                {
-                    MessageBox.Show("Ya existe un usuario con esa informacion", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                else
-                {
-                    if (txtNombre.Text != "" || txtPassword.Text != "" || txtCorreo.Text != "" || txtCorreo.Text != "" || txtCelular.Text != "")
+                    if (reader.Read())
                     {
-                        sql_registro = "INSERT INTO usuarios (Nombre, Contraseña, Telefono, CorreoElectronico, Celular) values('" + Nombre + "', '" + Password + "', '" + Telefono + "', '" + Correo + "', '" + Celular + "')";
-                        cmd_registro = new MySqlCommand(sql_registro, conn);
+                        MessageBox.Show("Los datos que ingreso coinciden con otras cuentas", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
                         try
                         {
                             cmd_registro.ExecuteNonQuery();
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("No pudo registrar el usuario", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            MessageBox.Show("No se puedo registrar el usuario", "UPS...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("No deje los campos obligatorios en blanco", "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
                 }
-            }
-            catch 
-            {
-                MessageBox.Show("Fallo la conexion con la BD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            finally 
-            { 
-                conn.Close();
+                catch
+                {
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Diseño
 
             try
             {
-                return ConnectionDB;   
+                return ConnectionDB;
             }
             catch (Exception e)
             {
