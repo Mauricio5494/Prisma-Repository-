@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-08-2023 a las 07:55:44
+-- Tiempo de generación: 29-08-2023 a las 08:04:28
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `etech_bd`
+-- Base de datos: `etech_db`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `celulares` (
   `ID` int(11) NOT NULL,
-  `Modelo` varchar(10) NOT NULL,
+  `Modelo` varchar(20) NOT NULL,
   `Marca` varchar(10) NOT NULL,
   `IMEI` varchar(15) DEFAULT NULL,
   `Estado` varchar(9) NOT NULL,
@@ -122,7 +122,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `celulares`
 --
 ALTER TABLE `celulares`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `trabajos`
@@ -134,7 +134,7 @@ ALTER TABLE `trabajos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

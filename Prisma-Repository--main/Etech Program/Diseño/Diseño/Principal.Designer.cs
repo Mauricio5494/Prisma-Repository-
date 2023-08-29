@@ -152,6 +152,10 @@
             this.timer_GroupBox_EliminarT_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Eliminar_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
+            this.tablaCelulares = new System.Windows.Forms.DataGridView();
+            this.radioButton_TablaCelulares = new System.Windows.Forms.RadioButton();
+            this.radioButton_TablaTrabajo = new System.Windows.Forms.RadioButton();
+            this.tablaTrabajo = new System.Windows.Forms.DataGridView();
             this.panelD.SuspendLayout();
             this.panelE.SuspendLayout();
             this.panel_Agregar.SuspendLayout();
@@ -166,6 +170,8 @@
             this.panel_Eliminar.SuspendLayout();
             this.groupBox_EliminarTrabajos.SuspendLayout();
             this.groupBox_EliminarCelulares.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelD
@@ -308,6 +314,8 @@
             // panelE
             // 
             this.panelE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelE.Controls.Add(this.radioButton_TablaTrabajo);
+            this.panelE.Controls.Add(this.radioButton_TablaCelulares);
             this.panelE.Controls.Add(this.btnMenu);
             this.panelE.Controls.Add(this.label_Filtrar);
             this.panelE.Controls.Add(this.btnBuscar);
@@ -599,9 +607,9 @@
             this.labelTecnico_A_Cargo_Agregar.AutoSize = true;
             this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 240);
             this.labelTecnico_A_Cargo_Agregar.Name = "labelTecnico_A_Cargo_Agregar";
-            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(168, 13);
+            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(138, 13);
             this.labelTecnico_A_Cargo_Agregar.TabIndex = 9;
-            this.labelTecnico_A_Cargo_Agregar.Text = "Nombre del tecnico a cargo:";
+            this.labelTecnico_A_Cargo_Agregar.Text = "ID del tecnico a cargo:";
             // 
             // labelEstado_Agregar
             // 
@@ -1356,12 +1364,58 @@
             this.timer_Eliminar_Reducir.Interval = 1;
             this.timer_Eliminar_Reducir.Tick += new System.EventHandler(this.timer_Eliminar_Reducir_Tick);
             // 
+            // tablaCelulares
+            // 
+            this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaCelulares.Location = new System.Drawing.Point(49, 77);
+            this.tablaCelulares.Name = "tablaCelulares";
+            this.tablaCelulares.Size = new System.Drawing.Size(703, 0);
+            this.tablaCelulares.TabIndex = 19;
+            // 
+            // radioButton_TablaCelulares
+            // 
+            this.radioButton_TablaCelulares.AutoSize = true;
+            this.radioButton_TablaCelulares.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.radioButton_TablaCelulares.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton_TablaCelulares.Location = new System.Drawing.Point(925, 25);
+            this.radioButton_TablaCelulares.Name = "radioButton_TablaCelulares";
+            this.radioButton_TablaCelulares.Size = new System.Drawing.Size(125, 18);
+            this.radioButton_TablaCelulares.TabIndex = 12;
+            this.radioButton_TablaCelulares.TabStop = true;
+            this.radioButton_TablaCelulares.Text = "Mostrar Celulares";
+            this.radioButton_TablaCelulares.UseVisualStyleBackColor = true;
+            this.radioButton_TablaCelulares.CheckedChanged += new System.EventHandler(this.radioButton_TablaCelulares_CheckedChanged);
+            // 
+            // radioButton_TablaTrabajo
+            // 
+            this.radioButton_TablaTrabajo.AutoSize = true;
+            this.radioButton_TablaTrabajo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.radioButton_TablaTrabajo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton_TablaTrabajo.Location = new System.Drawing.Point(1065, 25);
+            this.radioButton_TablaTrabajo.Name = "radioButton_TablaTrabajo";
+            this.radioButton_TablaTrabajo.Size = new System.Drawing.Size(112, 18);
+            this.radioButton_TablaTrabajo.TabIndex = 13;
+            this.radioButton_TablaTrabajo.TabStop = true;
+            this.radioButton_TablaTrabajo.Text = "Mostrar Trabajo";
+            this.radioButton_TablaTrabajo.UseVisualStyleBackColor = true;
+            this.radioButton_TablaTrabajo.CheckedChanged += new System.EventHandler(this.radioButton_TablaTrabajo_CheckedChanged);
+            // 
+            // tablaTrabajo
+            // 
+            this.tablaTrabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaTrabajo.Location = new System.Drawing.Point(49, 77);
+            this.tablaTrabajo.Name = "tablaTrabajo";
+            this.tablaTrabajo.Size = new System.Drawing.Size(703, 0);
+            this.tablaTrabajo.TabIndex = 20;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1264, 692);
+            this.Controls.Add(this.tablaTrabajo);
+            this.Controls.Add(this.tablaCelulares);
             this.Controls.Add(this.panelE);
             this.Controls.Add(this.panelD);
             this.Controls.Add(this.panel_Eliminar);
@@ -1397,6 +1451,8 @@
             this.groupBox_EliminarTrabajos.PerformLayout();
             this.groupBox_EliminarCelulares.ResumeLayout(false);
             this.groupBox_EliminarCelulares.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1524,6 +1580,10 @@
         private System.Windows.Forms.Timer timer_GroupBox_EliminarT_Agrandar;
         private System.Windows.Forms.Timer timer_Eliminar_Agrandar;
         private System.Windows.Forms.Timer timer_Eliminar_Reducir;
+        private System.Windows.Forms.DataGridView tablaCelulares;
+        private System.Windows.Forms.RadioButton radioButton_TablaTrabajo;
+        private System.Windows.Forms.RadioButton radioButton_TablaCelulares;
+        private System.Windows.Forms.DataGridView tablaTrabajo;
     }
 }
 

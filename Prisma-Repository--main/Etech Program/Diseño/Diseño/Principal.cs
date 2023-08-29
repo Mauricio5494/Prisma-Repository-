@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,11 +8,24 @@ namespace Diseño
 {
     public partial class Principal : Form
     {
+        //Atributos o variables:
+        string insertarCelulares;
+        string insertarTrabajo;
+
+        string modelo;
+        string marca;
+        string imei;
+        string estado;
+        string ci_Cliente;
+        int id_Usuario;
+
         //instancias:
         Usuarios Usuarios = new Usuarios();
+        DataTable DataTable = new DataTable();
         Utilidades Seguridad = new Utilidades();
         MySqlConnection conn = DataBaseConnect.conectarse();
         MySqlCommand cmd = new MySqlCommand();
+        MySqlDataReader reader;
 
         //Constructor
         public Principal()
@@ -19,9 +33,31 @@ namespace Diseño
             InitializeComponent();
         }
 
-        private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
+        //Metodos SQL:
+        private void MostrarDatosEnLasTablasCelulares()
         {
-            //Método activador de el campo de busqueda y el botón de buscar si una opcion de filtro está seleccionada:
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM celulares;", conn);
+                cmd.CommandType = System.Data.CommandType.Text;
+                reader = cmd.ExecuteReader();
+                DataTable.Load(reader);    
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            tablaCelulares.DataSource = DataTable;
+        }
+
+        //Método activador de el campo de busqueda y el botón de buscar si una opcion de filtro está seleccionada:
+        private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
+        {    
             txtCampo_Busqueda.Enabled = true;
             btnBuscar.Enabled = true;
         }
@@ -47,20 +83,7 @@ namespace Diseño
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            //Conexion con la base de datos:
-            try
-            {
-                conn.Open();
-                cmd.Connection = conn;
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.Message + x.StackTrace);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            MostrarDatosEnLasTablasCelulares();
         }
 
         //Codigo referente al menu secundario:
@@ -80,7 +103,7 @@ namespace Diseño
                 btnCerrarSesion.BackColor = Color.DarkRed;
                 btnMenuPrincipal.BackColor = Color.DarkRed;
 
-                //tablaCelulares.Location = new Point(124, 78);
+                tablaCelulares.Location = new Point(124, 78);
                 //tablaTrabajo.Location = new Point(124, 373);
             }
             else
@@ -101,7 +124,7 @@ namespace Diseño
                 btnModificar.FlatStyle = FlatStyle.Flat;
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-                //tablaCelulares.Location = new Point(49, 78);
+                tablaCelulares.Location = new Point(49, 78);
                 //tablaTrabajo.Location = new Point(49, 373);
             }
         }
@@ -344,7 +367,54 @@ namespace Diseño
         //Botones con funciones SQL:
         private void btnAgregarCelular_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtModelo_Agregar.Text != "" || txtMarca_Agregar.Text != "" || txtIMEI_Agregar.Text != "" || txtCI_Del_Dueño_Agregar.Text != "" || txtTecnico_Agregar.Text != "")
+                {
+                    if (radioButton_Arreglado_Agregar.Checked || radioButton_Averiado_Agregar.Checked)
+                    {
+                        conn.Open();
+                        modelo = txtModelo_Agregar.Text;
+                        marca = txtMarca_Agregar.Text;
+                        imei = txtIMEI_Agregar.Text;
+                        if (radioButton_Arreglado_Agregar.Checked)
+                        {
+                            estado = "Arreglado";
+                        }
+                        else
+                        {
+                            estado = "Averiado";
+                        }
+                        ci_Cliente = txtCI_Del_Dueño_Agregar.Text;
+                        id_Usuario = int.Parse(txtTecnico_Agregar.Text);
 
+                        insertarCelulares = "INSERT INTO celulares(Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario) VALUES('" + modelo + "', '" + marca + "', '" + imei + "', '" + estado + "', '" + ci_Cliente + "', " + id_Usuario + ")";
+                        cmd = new MySqlCommand(insertarCelulares, conn);
+
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se ingreso correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        } 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+                MostrarDatosEnLasTablasCelulares();
+            }
         }
 
         private void btnModificar_Celular_Click(object sender, EventArgs e)
@@ -710,6 +780,30 @@ namespace Diseño
 
             timer_GroupBox_EliminarC_Agrandar.Enabled = false;
             timer_GroupBox_EliminarC_Reducir.Enabled = true;
+        }
+
+        private void radioButton_TablaCelulares_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tablaCelulares.Height < 600)
+            {
+                tablaCelulares.Height = 600;
+            }
+            else 
+            {
+                tablaCelulares.Height = 0;
+            }
+        }
+
+        private void radioButton_TablaTrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tablaTrabajo.Height < 600)
+            {
+                tablaTrabajo.Height = 600;
+            }
+            else
+            {
+                tablaTrabajo.Height = 0;
+            }
         }
     }
 }
