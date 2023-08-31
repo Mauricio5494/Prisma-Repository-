@@ -66,6 +66,11 @@ namespace Diseño
         {
             // Salta error para no crashear el programa:
             if (MenuOpciones.Text.Equals("") || txtCampo_Busqueda.Text == "")
+
+//          |-----------------------------------------------------------------------------------------------------------------------------------------------------|
+//          | Y ahora cuál es el plan? Porque hay 2 menu opciones, celular y trabajo... 2 if, quizás... con un boolean que indique cuál la tabla en al que estás. |
+//          |-----------------------------------------------------------------------------------------------------------------------------------------------------|
+
             {
                 MessageBox.Show("Antes de buscar seleccione una opción de filtro y escribe algo en el campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -84,7 +89,7 @@ namespace Diseño
         private void Principal_Load(object sender, EventArgs e)
         {
             MostrarDatosEnLasTablasCelulares();
-            radioButton_TablaTrabajo.Checked = true;
+            radioButton_TablaTrabajos.Checked = true;
             radioButton_TRABAJO_Agregar.Checked = true;
         }
 
@@ -106,7 +111,7 @@ namespace Diseño
                 btnMenuPrincipal.BackColor = Color.DarkRed;
 
                 tablaCelulares.Location = new Point(124, 78);
-                tablaTrabajo.Location = new Point(124, 373);
+                tablaTrabajos.Location = new Point(124, 373);
             }
             else
             {
