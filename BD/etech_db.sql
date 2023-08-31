@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-08-2023 a las 08:04:28
+-- Tiempo de generación: 30-08-2023 a las 05:05:04
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -62,7 +62,6 @@ CREATE TABLE `trabajos` (
   `Plazo` date DEFAULT NULL,
   `Presupuesto` int(11) DEFAULT NULL,
   `Problema` varchar(50) NOT NULL,
-  `Solucion` varchar(50) NOT NULL,
   `Fecha_Ingreso` date NOT NULL,
   `Adelanto` int(11) DEFAULT NULL,
   `ID_Celular` int(11) NOT NULL
@@ -122,7 +121,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `celulares`
 --
 ALTER TABLE `celulares`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `trabajos`
@@ -134,7 +133,7 @@ ALTER TABLE `trabajos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

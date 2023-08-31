@@ -30,24 +30,5 @@ namespace Diseño
                 return null;
             }
         }
-
-        //Parece ser que podemos prescindir de este metodo
-        public static MySqlConnection desconectarse()
-        {
-            MySqlConnection ConnectionDB = new MySqlConnection();
-            try
-            {
-                if (ConnectionDB != null && ConnectionDB.State == ConnectionState.Open)
-                {
-                    ConnectionDB.Close();
-                    MessageBox.Show("Conexión Cerrada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("No hay Base de Datos de la cuál Desconectarse \nMensaje de Error:\n\n" + e.Message);
-            }
-            return null;
-        }
     }
 }

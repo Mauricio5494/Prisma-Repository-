@@ -2,7 +2,10 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
+using System.Security.Cryptography;
 using System.Windows.Forms;
+
 
 namespace Diseño
 {
@@ -10,8 +13,20 @@ namespace Diseño
     {
         //Atributos o variables:
         string insertarCelulares;
-        string insertarTrabajo;
+        string insertarTrabajos;
+        string modifcarCelulares;
+        string modifcarTrabajos;
+        string eliminarCelulares;
+        string eliminarTrabajos;
+        string option;
+        string busqueda;
 
+        int mesPlazo;
+        int diaPlazo;
+        int mesFechaIngreso;
+        int diaFechaIngreso;
+
+        //Tabla Celulares:
         string modelo;
         string marca;
         string imei;
@@ -19,9 +34,22 @@ namespace Diseño
         string ci_Cliente;
         int id_Usuario;
 
+        //Tabla Trabajos:  
+        DateTime plazo;
+        string stringPlazo;
+        int presupuesto;
+        string problema;
+        DateTime fechaIngreso;
+        string stringFechaIngreso;
+        int adelanto;
+        int idCelular;
+
         //instancias:
         Usuarios Usuarios = new Usuarios();
-        DataTable DataTable = new DataTable();
+        DataTable DataTableCelulares = new DataTable();
+        DataTable DataTableTrabajos = new DataTable();
+        DataTable DataTableCelularesBusqueda = new DataTable();
+        DataTable DataTableTrabajosBusqueda = new DataTable();
         Utilidades Seguridad = new Utilidades();
         MySqlConnection conn = DataBaseConnect.conectarse();
         MySqlCommand cmd = new MySqlCommand();
@@ -38,11 +66,12 @@ namespace Diseño
         {
             try
             {
+                DataTableCelulares.Rows.Clear(); 
                 conn.Open();
                 cmd = new MySqlCommand("SELECT * FROM celulares;", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
-                DataTable.Load(reader);    
+                DataTableCelulares.Load(reader);    
             }
             catch (Exception x)
             {
@@ -52,8 +81,30 @@ namespace Diseño
             {
                 conn.Close();
             }
-            tablaCelulares.DataSource = DataTable;
+            tablaCelulares.DataSource = DataTableCelulares;
         }
+        private void MostrarDatosEnLasTablasTrabajos()
+        {
+            try
+            {
+                DataTableTrabajos.Rows.Clear();
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM trabajos;", conn);
+                cmd.CommandType = System.Data.CommandType.Text;
+                reader = cmd.ExecuteReader();
+                DataTableTrabajos.Load(reader);
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            tablaTrabajos.DataSource = DataTableTrabajos;
+        }
+
 
         //Método activador de el campo de busqueda y el botón de buscar si una opcion de filtro está seleccionada:
         private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,20 +113,232 @@ namespace Diseño
             btnBuscar.Enabled = true;
         }
 
+        private void MenuOpcionesTrabajos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtCampo_Busqueda.Enabled = true;
+            btnBuscar.Enabled = true;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Salta error para no crashear el programa:
-            if (MenuOpciones.Text.Equals("") || txtCampo_Busqueda.Text == "")
+            if (MenuOpcionesCelular.Text.Equals("") && txtCampo_Busqueda.Text.Equals("") || MenuOpcionesTrabajos.Equals("") && txtCampo_Busqueda.Text.Equals(""))
             {
-                MessageBox.Show("Antes de buscar seleccione una opción de filtro y escribe algo en el campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Antes de buscar seleccione una opción de filtro y escribe algo en el campo", "Alto!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
-                // Acá va la operación de búsqueda:
+                //busqueda para celulares:
+                if (MenuOpcionesCelular.Enabled == true)
+                {
+                    option = MenuOpcionesCelular.Text;
+                    switch (option)
+                    {
+                        case "Dueño":
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM celulares WHERE Cedula_Cliente = (SELECT cedula FROM clientes WHERE Nombre = '" + txtCampo_Busqueda.Text + "')";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        case "Marca":
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM celulares WHERE Marca = '" + txtCampo_Busqueda.Text + "'";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        case "Modelo":
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM celulares WHERE Modelo = '" + txtCampo_Busqueda.Text + "'";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        case "ID":
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM celulares WHERE ID = " + txtCampo_Busqueda.Text + "";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        default:
+                            labelError_MenuOpciones.Visible = true;
+                            break;
+                    }
+                }
+                else
+                {
+                    //Busqueda para Trabajos:
+                    option = MenuOpcionesTrabajos.Text;
+                    switch (option)
+                    {
+                        case "Presupuesto":
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableTrabajosBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM trabajos WHERE Presupuesto = " + txtCampo_Busqueda.Text + ";";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableTrabajosBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+                            break;
+                      
+                        case "Problema":
+                            labelError_MenuOpciones.Visible = false;
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableTrabajosBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM trabajos WHERE Problema = '" + txtCampo_Busqueda.Text + "';";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableTrabajosBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+                            break;
+                 
+                        case "Fecha de ingreso":
+                            labelError_MenuOpciones.Visible = false;
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableTrabajosBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM trabajos WHERE Fecha_Ingreso = '" + txtCampo_Busqueda.Text + "';";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableTrabajosBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+                            break;
+               
+                        case "ID del celular":
+                            labelError_MenuOpciones.Visible = false;
+                            labelError_MenuOpciones.Visible = false;
+                            DataTableTrabajosBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT * FROM trabajos WHERE ID_Celular = " + txtCampo_Busqueda.Text + ";";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableTrabajosBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+                            break;
+                        
+                        default:
+                            labelError_MenuOpciones.Visible = true;
+                            break;
+                    }
+                }
             }
         }
 
-        //Método necesario para cerrar el programa si se cierra el Formulario, sino, solo se cierra y no termina el proceso.
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -83,7 +346,7 @@ namespace Diseño
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            MostrarDatosEnLasTablasCelulares();
+            
         }
 
         //Codigo referente al menu secundario:
@@ -104,7 +367,7 @@ namespace Diseño
                 btnMenuPrincipal.BackColor = Color.DarkRed;
 
                 tablaCelulares.Location = new Point(124, 78);
-                //tablaTrabajo.Location = new Point(124, 373);
+                tablaTrabajos.Location = new Point(124, 373);
             }
             else
             {
@@ -125,7 +388,7 @@ namespace Diseño
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
                 tablaCelulares.Location = new Point(49, 78);
-                //tablaTrabajo.Location = new Point(49, 373);
+                tablaTrabajos.Location = new Point(49, 373);
             }
         }
         //Codigo referente a los botones del menu secundario:
@@ -369,7 +632,7 @@ namespace Diseño
         {
             try
             {
-                if (txtModelo_Agregar.Text != "" || txtMarca_Agregar.Text != "" || txtIMEI_Agregar.Text != "" || txtCI_Del_Dueño_Agregar.Text != "" || txtTecnico_Agregar.Text != "")
+                if (txtModelo_Agregar.Text != "" && txtMarca_Agregar.Text != "" && txtIMEI_Agregar.Text != "" && txtCI_Del_Dueño_Agregar.Text != "" && txtTecnico_Agregar.Text != "")
                 {
                     if (radioButton_Arreglado_Agregar.Checked || radioButton_Averiado_Agregar.Checked)
                     {
@@ -395,7 +658,7 @@ namespace Diseño
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        catch (Exception ex)
+                        catch
                         {
                             MessageBox.Show("No se ingreso correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         } 
@@ -408,7 +671,7 @@ namespace Diseño
             }
             catch
             {
-
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -424,7 +687,91 @@ namespace Diseño
 
         private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
         {
+            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_fechaIngreso.Value != null && txtID_Trabajo_Agregar.Text != "")
+            {
+                try
+                {
+                    conn.Open();
+                    idCelular = int.Parse(txtID_Trabajo_Agregar.Text);
+                    plazo = dateTimePicker_Plazo.Value;
+                    mesPlazo = plazo.Month;
+                    diaPlazo = plazo.Day;
+                    if (mesPlazo < 10)
+                    {
+                        if (diaPlazo < 10) 
+                        {
+                            stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                        }
+                        else
+                        {
+                            stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                        }
+                    }
+                    else
+                    {
+                        if (diaPlazo <10)
+                        {
+                            stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                        }
+                        else
+                        {
+                            stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                        }      
+                    }
+                    presupuesto = int.Parse(txtPresupuesto_Agregar.Text);
+                    problema = txtProblema_Agregar.Text;
+                    fechaIngreso = dateTimePicker_fechaIngreso.Value;
+                    mesFechaIngreso = fechaIngreso.Month;
+                    diaFechaIngreso = fechaIngreso.Day;
+                    if (mesFechaIngreso < 10)
+                    {
+                        if (diaFechaIngreso < 10)
+                        {
+                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                        }
+                        else
+                        {
+                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                        }
+                    }
+                    else
+                    {
+                        if (diaFechaIngreso < 10)
+                        {
+                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                        }
+                        else
+                        {
+                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                        }
+                    }
+                    adelanto = int.Parse(txtAdelanto_Agregar.Text);
 
+                    insertarTrabajos = "INSERT INTO Trabajos(Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES('" + stringPlazo + "', " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
+                    cmd = new MySqlCommand(insertarTrabajos, conn);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No se ingreso correctamente el Trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch 
+                {
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    conn.Close();
+                    MostrarDatosEnLasTablasTrabajos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnModificar_Trabajo_Click(object sender, EventArgs e)
@@ -432,7 +779,19 @@ namespace Diseño
 
         }
 
-        //Botones del Menu:
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            if (radioButton_TablaCelulares.Checked == true)
+            {
+                MostrarDatosEnLasTablasCelulares();
+            }
+            else if (radioButton_TablaTrabajos.Checked == true)
+            {
+                MostrarDatosEnLasTablasTrabajos();
+            }
+        }
+
+        //Botones del Menu principal:
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             Usuarios.Show();
@@ -784,25 +1143,47 @@ namespace Diseño
 
         private void radioButton_TablaCelulares_CheckedChanged(object sender, EventArgs e)
         {
+            btnRecargar.Enabled = true;
+            btnRecargar.Visible = true;
+
+            MenuOpcionesCelular.Enabled = true;
+            MenuOpcionesCelular.Visible = true;
+            MenuOpcionesTrabajos.Enabled = false;
+            MenuOpcionesTrabajos.Visible = false;
+
+
+
             if (tablaCelulares.Height < 600)
             {
+                tablaTrabajos.Height = 0;
                 tablaCelulares.Height = 600;
+                MostrarDatosEnLasTablasCelulares();
             }
             else 
             {
-                tablaCelulares.Height = 0;
+                MostrarDatosEnLasTablasCelulares();
             }
         }
 
         private void radioButton_TablaTrabajo_CheckedChanged(object sender, EventArgs e)
         {
-            if (tablaTrabajo.Height < 600)
+            btnRecargar.Enabled = true;
+            btnRecargar.Visible = true;
+
+            MenuOpcionesTrabajos.Enabled = true;
+            MenuOpcionesTrabajos.Visible = true;
+            MenuOpcionesCelular.Enabled = false;
+            MenuOpcionesCelular.Visible = false;
+
+            if (tablaTrabajos.Height < 600)
             {
-                tablaTrabajo.Height = 600;
+                tablaCelulares.Height = 0;
+                tablaTrabajos.Height = 600;
+                MostrarDatosEnLasTablasTrabajos();
             }
             else
             {
-                tablaTrabajo.Height = 0;
+                MostrarDatosEnLasTablasTrabajos();
             }
         }
     }

@@ -226,3 +226,33 @@ C:\Users\Usuario\Documents\GitHub\Copia de seguridad\Prisma-Repository-Copia\Pri
 C:\Users\Usuario\Documents\GitHub\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe
 C:\Users\Usuario\Documents\GitHub\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.pdb
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Usuarios.resources
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Diseño.exe.config
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Diseño.exe
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Diseño.pdb
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Memory.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\System.Buffers.dll
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\bin\Debug\MySql.Data.xml
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.SuggestedBindingRedirects.cache
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe.config
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Principal.resources
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Login.resources
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Properties.Resources.resources
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.RegistroUsuarios.resources
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Usuarios.resources
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CopyComplete
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe
+C:\Users\Usuario\Documents\source\repos\Copia de seguridad\Prisma-Repository-Copia\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.pdb
