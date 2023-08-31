@@ -84,6 +84,8 @@ namespace Diseño
         private void Principal_Load(object sender, EventArgs e)
         {
             MostrarDatosEnLasTablasCelulares();
+            radioButton_TablaTrabajo.Checked = true;
+            radioButton_TRABAJO_Agregar.Checked = true;
         }
 
         //Codigo referente al menu secundario:
@@ -104,7 +106,7 @@ namespace Diseño
                 btnMenuPrincipal.BackColor = Color.DarkRed;
 
                 tablaCelulares.Location = new Point(124, 78);
-                //tablaTrabajo.Location = new Point(124, 373);
+                tablaTrabajo.Location = new Point(124, 373);
             }
             else
             {
@@ -125,7 +127,7 @@ namespace Diseño
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
                 tablaCelulares.Location = new Point(49, 78);
-                //tablaTrabajo.Location = new Point(49, 373);
+                tablaTrabajo.Location = new Point(49, 373);
             }
         }
         //Codigo referente a los botones del menu secundario:
