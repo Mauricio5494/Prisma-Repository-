@@ -161,6 +161,11 @@
             this.tablaCelulares = new System.Windows.Forms.DataGridView();
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.comboBoxColumnas_Celulares = new System.Windows.Forms.ComboBox();
+            this.labelModificar_Columna_Celular = new System.Windows.Forms.Label();
+            this.txtModifcar_Columna_Celulares = new System.Windows.Forms.TextBox();
+            this.labelModificar_Columna = new System.Windows.Forms.Label();
+            this.labelError_Modificar_Celulares = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -1083,22 +1088,27 @@
             // groupBox_ModificarCelulares
             // 
             this.groupBox_ModificarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelError_Modificar_Celulares);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelModificar_Columna);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelModificar_Columna_Celular);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtModifcar_Columna_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Averiado_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Arreglado_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtTecnico_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.labelEstado_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtMarca_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.labelMarca_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtModelo_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.labelModelo_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtIMEI_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.labelIMEI_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtCI_Del_Dueño_Modificar);
-            this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Dueño_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.comboBoxColumnas_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.txtID_Tabla_Celular_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Arreglado_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Celular_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.btnModificar_Celular);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtTecnico_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Dueño_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtCI_Del_Dueño_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelIMEI_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtIMEI_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelEstado_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelModelo_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtModelo_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtMarca_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelMarca_Modificar);
             this.groupBox_ModificarCelulares.Enabled = false;
             this.groupBox_ModificarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_ModificarCelulares.Location = new System.Drawing.Point(42, 77);
@@ -1111,113 +1121,139 @@
             // radioButton_Averiado_Modificar
             // 
             this.radioButton_Averiado_Modificar.AutoSize = true;
-            this.radioButton_Averiado_Modificar.Location = new System.Drawing.Point(96, 370);
+            this.radioButton_Averiado_Modificar.Enabled = false;
+            this.radioButton_Averiado_Modificar.Location = new System.Drawing.Point(93, 329);
             this.radioButton_Averiado_Modificar.Name = "radioButton_Averiado_Modificar";
             this.radioButton_Averiado_Modificar.Size = new System.Drawing.Size(75, 17);
             this.radioButton_Averiado_Modificar.TabIndex = 28;
             this.radioButton_Averiado_Modificar.TabStop = true;
             this.radioButton_Averiado_Modificar.Text = "Averiado";
             this.radioButton_Averiado_Modificar.UseVisualStyleBackColor = true;
+            this.radioButton_Averiado_Modificar.Visible = false;
             // 
             // radioButton_Arreglado_Modificar
             // 
             this.radioButton_Arreglado_Modificar.AutoSize = true;
-            this.radioButton_Arreglado_Modificar.Location = new System.Drawing.Point(9, 370);
+            this.radioButton_Arreglado_Modificar.Enabled = false;
+            this.radioButton_Arreglado_Modificar.Location = new System.Drawing.Point(6, 329);
             this.radioButton_Arreglado_Modificar.Name = "radioButton_Arreglado_Modificar";
             this.radioButton_Arreglado_Modificar.Size = new System.Drawing.Size(79, 17);
             this.radioButton_Arreglado_Modificar.TabIndex = 27;
             this.radioButton_Arreglado_Modificar.TabStop = true;
             this.radioButton_Arreglado_Modificar.Text = "Arreglado";
             this.radioButton_Arreglado_Modificar.UseVisualStyleBackColor = true;
+            this.radioButton_Arreglado_Modificar.Visible = false;
             // 
             // txtTecnico_Modificar
             // 
-            this.txtTecnico_Modificar.Location = new System.Drawing.Point(6, 306);
+            this.txtTecnico_Modificar.Enabled = false;
+            this.txtTecnico_Modificar.Location = new System.Drawing.Point(6, 290);
             this.txtTecnico_Modificar.Name = "txtTecnico_Modificar";
             this.txtTecnico_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtTecnico_Modificar.TabIndex = 26;
+            this.txtTecnico_Modificar.Visible = false;
             // 
             // labelTecnico_A_Cargo_Modificar
             // 
             this.labelTecnico_A_Cargo_Modificar.AutoSize = true;
-            this.labelTecnico_A_Cargo_Modificar.Location = new System.Drawing.Point(3, 290);
+            this.labelTecnico_A_Cargo_Modificar.Enabled = false;
+            this.labelTecnico_A_Cargo_Modificar.Location = new System.Drawing.Point(3, 275);
             this.labelTecnico_A_Cargo_Modificar.Name = "labelTecnico_A_Cargo_Modificar";
-            this.labelTecnico_A_Cargo_Modificar.Size = new System.Drawing.Size(168, 13);
+            this.labelTecnico_A_Cargo_Modificar.Size = new System.Drawing.Size(138, 13);
             this.labelTecnico_A_Cargo_Modificar.TabIndex = 25;
-            this.labelTecnico_A_Cargo_Modificar.Text = "Nombre del tecnico a cargo:";
+            this.labelTecnico_A_Cargo_Modificar.Text = "ID del tecnico a cargo:";
+            this.labelTecnico_A_Cargo_Modificar.Visible = false;
             // 
             // labelEstado_Modificar
             // 
             this.labelEstado_Modificar.AutoSize = true;
-            this.labelEstado_Modificar.Location = new System.Drawing.Point(3, 340);
+            this.labelEstado_Modificar.Enabled = false;
+            this.labelEstado_Modificar.Location = new System.Drawing.Point(3, 313);
             this.labelEstado_Modificar.Name = "labelEstado_Modificar";
             this.labelEstado_Modificar.Size = new System.Drawing.Size(50, 13);
             this.labelEstado_Modificar.TabIndex = 24;
             this.labelEstado_Modificar.Text = "Estado:";
+            this.labelEstado_Modificar.Visible = false;
             // 
             // txtMarca_Modificar
             // 
-            this.txtMarca_Modificar.Location = new System.Drawing.Point(6, 256);
+            this.txtMarca_Modificar.Enabled = false;
+            this.txtMarca_Modificar.Location = new System.Drawing.Point(6, 252);
             this.txtMarca_Modificar.Name = "txtMarca_Modificar";
             this.txtMarca_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtMarca_Modificar.TabIndex = 23;
+            this.txtMarca_Modificar.Visible = false;
             // 
             // labelMarca_Modificar
             // 
             this.labelMarca_Modificar.AutoSize = true;
-            this.labelMarca_Modificar.Location = new System.Drawing.Point(3, 240);
+            this.labelMarca_Modificar.Enabled = false;
+            this.labelMarca_Modificar.Location = new System.Drawing.Point(3, 236);
             this.labelMarca_Modificar.Name = "labelMarca_Modificar";
             this.labelMarca_Modificar.Size = new System.Drawing.Size(46, 13);
             this.labelMarca_Modificar.TabIndex = 22;
             this.labelMarca_Modificar.Text = "Marca:";
+            this.labelMarca_Modificar.Visible = false;
             // 
             // txtModelo_Modificar
             // 
-            this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 206);
+            this.txtModelo_Modificar.Enabled = false;
+            this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 213);
             this.txtModelo_Modificar.Name = "txtModelo_Modificar";
             this.txtModelo_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtModelo_Modificar.TabIndex = 21;
+            this.txtModelo_Modificar.Visible = false;
             // 
             // labelModelo_Modificar
             // 
             this.labelModelo_Modificar.AutoSize = true;
-            this.labelModelo_Modificar.Location = new System.Drawing.Point(3, 190);
+            this.labelModelo_Modificar.Enabled = false;
+            this.labelModelo_Modificar.Location = new System.Drawing.Point(3, 197);
             this.labelModelo_Modificar.Name = "labelModelo_Modificar";
             this.labelModelo_Modificar.Size = new System.Drawing.Size(52, 13);
             this.labelModelo_Modificar.TabIndex = 20;
             this.labelModelo_Modificar.Text = "Modelo:";
+            this.labelModelo_Modificar.Visible = false;
             // 
             // txtIMEI_Modificar
             // 
-            this.txtIMEI_Modificar.Location = new System.Drawing.Point(6, 156);
+            this.txtIMEI_Modificar.Enabled = false;
+            this.txtIMEI_Modificar.Location = new System.Drawing.Point(6, 174);
             this.txtIMEI_Modificar.Name = "txtIMEI_Modificar";
             this.txtIMEI_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtIMEI_Modificar.TabIndex = 19;
+            this.txtIMEI_Modificar.Visible = false;
             // 
             // labelIMEI_Modificar
             // 
             this.labelIMEI_Modificar.AutoSize = true;
-            this.labelIMEI_Modificar.Location = new System.Drawing.Point(6, 140);
+            this.labelIMEI_Modificar.Enabled = false;
+            this.labelIMEI_Modificar.Location = new System.Drawing.Point(3, 158);
             this.labelIMEI_Modificar.Name = "labelIMEI_Modificar";
             this.labelIMEI_Modificar.Size = new System.Drawing.Size(37, 13);
             this.labelIMEI_Modificar.TabIndex = 18;
             this.labelIMEI_Modificar.Text = "IMEI:";
+            this.labelIMEI_Modificar.Visible = false;
             // 
             // txtCI_Del_Dueño_Modificar
             // 
-            this.txtCI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 106);
+            this.txtCI_Del_Dueño_Modificar.Enabled = false;
+            this.txtCI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 135);
             this.txtCI_Del_Dueño_Modificar.Name = "txtCI_Del_Dueño_Modificar";
             this.txtCI_Del_Dueño_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtCI_Del_Dueño_Modificar.TabIndex = 17;
+            this.txtCI_Del_Dueño_Modificar.Visible = false;
             // 
             // labelID_Dueño_Modificar
             // 
             this.labelID_Dueño_Modificar.AutoSize = true;
-            this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(3, 90);
+            this.labelID_Dueño_Modificar.Enabled = false;
+            this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(3, 119);
             this.labelID_Dueño_Modificar.Name = "labelID_Dueño_Modificar";
             this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(83, 13);
             this.labelID_Dueño_Modificar.TabIndex = 16;
             this.labelID_Dueño_Modificar.Text = "CI del dueño:";
+            this.labelID_Dueño_Modificar.Visible = false;
             // 
             // txtID_Tabla_Celular_Modificar
             // 
@@ -1237,7 +1273,7 @@
             // 
             // btnModificar_Celular
             // 
-            this.btnModificar_Celular.Location = new System.Drawing.Point(6, 457);
+            this.btnModificar_Celular.Location = new System.Drawing.Point(9, 457);
             this.btnModificar_Celular.Name = "btnModificar_Celular";
             this.btnModificar_Celular.Size = new System.Drawing.Size(75, 23);
             this.btnModificar_Celular.TabIndex = 13;
@@ -1494,6 +1530,74 @@
             this.btnRecargar.Visible = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
+            // comboBoxColumnas_Celulares
+            // 
+            this.comboBoxColumnas_Celulares.AutoCompleteCustomSource.AddRange(new string[] {
+            "Modelo",
+            "Marca",
+            "IMEI",
+            "Estado",
+            "Cedula del cliente",
+            "ID del Tecnico/Usuario",
+            "Todas..."});
+            this.comboBoxColumnas_Celulares.FormattingEnabled = true;
+            this.comboBoxColumnas_Celulares.Items.AddRange(new object[] {
+            "Modelo",
+            "Marca",
+            "IMEI",
+            "Estado",
+            "Cedula del dueño",
+            "ID del usuario/tecnico",
+            "Todas..."});
+            this.comboBoxColumnas_Celulares.Location = new System.Drawing.Point(6, 95);
+            this.comboBoxColumnas_Celulares.Name = "comboBoxColumnas_Celulares";
+            this.comboBoxColumnas_Celulares.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxColumnas_Celulares.TabIndex = 24;
+            this.comboBoxColumnas_Celulares.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumnas_Celulares_SelectedIndexChanged);
+            // 
+            // labelModificar_Columna_Celular
+            // 
+            this.labelModificar_Columna_Celular.AutoSize = true;
+            this.labelModificar_Columna_Celular.Location = new System.Drawing.Point(3, 79);
+            this.labelModificar_Columna_Celular.Name = "labelModificar_Columna_Celular";
+            this.labelModificar_Columna_Celular.Size = new System.Drawing.Size(177, 13);
+            this.labelModificar_Columna_Celular.TabIndex = 25;
+            this.labelModificar_Columna_Celular.Text = "Columna que desea modificar:";
+            // 
+            // txtModifcar_Columna_Celulares
+            // 
+            this.txtModifcar_Columna_Celulares.Enabled = false;
+            this.txtModifcar_Columna_Celulares.Location = new System.Drawing.Point(6, 135);
+            this.txtModifcar_Columna_Celulares.Name = "txtModifcar_Columna_Celulares";
+            this.txtModifcar_Columna_Celulares.Size = new System.Drawing.Size(325, 20);
+            this.txtModifcar_Columna_Celulares.TabIndex = 26;
+            this.txtModifcar_Columna_Celulares.Visible = false;
+            // 
+            // labelModificar_Columna
+            // 
+            this.labelModificar_Columna.AutoSize = true;
+            this.labelModificar_Columna.Enabled = false;
+            this.labelModificar_Columna.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelModificar_Columna.Location = new System.Drawing.Point(3, 119);
+            this.labelModificar_Columna.Name = "labelModificar_Columna";
+            this.labelModificar_Columna.Size = new System.Drawing.Size(89, 13);
+            this.labelModificar_Columna.TabIndex = 29;
+            this.labelModificar_Columna.Text = "Datos nuevos:";
+            this.labelModificar_Columna.Visible = false;
+            // 
+            // labelError_Modificar_Celulares
+            // 
+            this.labelError_Modificar_Celulares.AutoSize = true;
+            this.labelError_Modificar_Celulares.Enabled = false;
+            this.labelError_Modificar_Celulares.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelError_Modificar_Celulares.ForeColor = System.Drawing.Color.Firebrick;
+            this.labelError_Modificar_Celulares.Location = new System.Drawing.Point(3, 119);
+            this.labelError_Modificar_Celulares.Name = "labelError_Modificar_Celulares";
+            this.labelError_Modificar_Celulares.Size = new System.Drawing.Size(259, 14);
+            this.labelError_Modificar_Celulares.TabIndex = 24;
+            this.labelError_Modificar_Celulares.Text = "Limítese a escoger alguna opcion predefinida";
+            this.labelError_Modificar_Celulares.Visible = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1607,7 +1711,6 @@
         private System.Windows.Forms.Label labelID_Celular_Modificar;
         private System.Windows.Forms.RadioButton radioButton_Averiado_Modificar;
         private System.Windows.Forms.RadioButton radioButton_Arreglado_Modificar;
-        private System.Windows.Forms.TextBox txtTecnico_Modificar;
         private System.Windows.Forms.Label labelTecnico_A_Cargo_Modificar;
         private System.Windows.Forms.Label labelEstado_Modificar;
         private System.Windows.Forms.TextBox txtMarca_Modificar;
@@ -1679,6 +1782,12 @@
         private System.Windows.Forms.PictureBox btnRecargar;
         private System.Windows.Forms.ComboBox MenuOpcionesTrabajos;
         private System.Windows.Forms.Label labelError_MenuOpciones;
+        private System.Windows.Forms.Label labelModificar_Columna_Celular;
+        private System.Windows.Forms.ComboBox comboBoxColumnas_Celulares;
+        private System.Windows.Forms.TextBox txtTecnico_Modificar;
+        private System.Windows.Forms.TextBox txtModifcar_Columna_Celulares;
+        private System.Windows.Forms.Label labelModificar_Columna;
+        private System.Windows.Forms.Label labelError_Modificar_Celulares;
     }
 }
 
