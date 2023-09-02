@@ -127,5 +127,10 @@ namespace Diseño
                 conn.Close(); 
             }   
         }
+
+        private void RegistroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

@@ -745,7 +745,7 @@ namespace Diseño
             {
                 if (txtModelo_Agregar.Text != "" && txtMarca_Agregar.Text != "" && txtIMEI_Agregar.Text != "" && txtCI_Del_Dueño_Agregar.Text != "" && txtTecnico_Agregar.Text != "")
                 {
-                    if (radioButton_Arreglado_Agregar.Checked.Equals(null) && radioButton_Averiado_Agregar.Checked.Equals(null))
+                    if (radioButton_Arreglado_Agregar.Checked.Equals(true) || radioButton_Averiado_Agregar.Checked.Equals(true))
                     {
                         conn.Open();
                         modelo = txtModelo_Agregar.Text;

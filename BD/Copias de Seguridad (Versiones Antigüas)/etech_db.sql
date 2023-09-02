@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2023 a las 01:51:41
+-- Tiempo de generación: 30-08-2023 a las 05:05:04
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.0.28
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,19 +37,6 @@ CREATE TABLE `celulares` (
   `ID_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `celulares`
---
-
-INSERT INTO `celulares` (`ID`, `Modelo`, `Marca`, `IMEI`, `Estado`, `Cedula_Cliente`, `ID_Usuario`) VALUES
-(13, 'Samsung epico xd', 'samsung', '123432145', 'Arreglado', '56541591', 3),
-(14, 'Samsung J10', 'Apple', '000564244', 'Arreglado', '56541591', 3),
-(15, 'Samsung epico xd', 'samsung', '123432145', 'Averiado', '56541591', 3),
-(16, 'Samsung epico xd', 'samsung', '123432145', 'Arreglado', '56541591', 3),
-(17, 'Samsung epico xd', 'samsung', '123432145', 'Arreglado', '56541591', 3),
-(18, 'redmi 9 C', 'Xiaomi', '123432145', 'Arreglado', '56541591', 3),
-(19, 'Redmi 9 C', 'Xiaomi', '1234341234', 'Averiado', '54742365', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -64,14 +51,6 @@ CREATE TABLE `clientes` (
   `Celular` varchar(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`Cedula`, `Nombre`, `Telefono`, `CorreoElectronico`, `Celular`) VALUES
-('54742365', 'Mauricio', '1234234', 'namelessdebl0@gmail.com', '96275530'),
-('56541591', 'mateo', '1234234', 'xdxdxddd@hotmail.com', '12344');
-
 -- --------------------------------------------------------
 
 --
@@ -82,20 +61,11 @@ CREATE TABLE `trabajos` (
   `ID` int(11) NOT NULL,
   `Plazo` date DEFAULT NULL,
   `Presupuesto` int(11) DEFAULT NULL,
-  `Problema` varchar(255) NOT NULL,
+  `Problema` varchar(50) NOT NULL,
   `Fecha_Ingreso` date NOT NULL,
   `Adelanto` int(11) DEFAULT NULL,
   `ID_Celular` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `trabajos`
---
-
-INSERT INTO `trabajos` (`ID`, `Plazo`, `Presupuesto`, `Problema`, `Fecha_Ingreso`, `Adelanto`, `ID_Celular`) VALUES
-(1, '2023-09-14', 123, 'No jala wasap', '2023-09-12', 23412, 18),
-(2, '2023-09-14', 123, 'Esta rota la bateria', '2023-09-12', 23412, 13),
-(3, '2023-09-06', 0, 'No prende la pantalla, la cámara no enciende o no ', '2023-09-23', 0, 15);
 
 -- --------------------------------------------------------
 
@@ -111,13 +81,6 @@ CREATE TABLE `usuarios` (
   `CorreoElectronico` varchar(30) NOT NULL,
   `Celular` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`ID`, `Nombre`, `Contraseña`, `Telefono`, `CorreoElectronico`, `Celular`) VALUES
-(3, 'Mateo Parodi', 'mateo123', '2134344', 'mateprodi12@gmail.com', '12341234');
 
 --
 -- Índices para tablas volcadas
@@ -158,19 +121,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `celulares`
 --
 ALTER TABLE `celulares`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `trabajos`
 --
 ALTER TABLE `trabajos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

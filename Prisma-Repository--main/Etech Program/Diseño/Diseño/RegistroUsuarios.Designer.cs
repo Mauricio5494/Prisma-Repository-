@@ -198,6 +198,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroUsuarios";
             this.Text = "Registro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroUsuarios_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

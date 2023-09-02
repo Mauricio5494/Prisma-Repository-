@@ -117,22 +117,27 @@
             this.txtIDTrabajo_Modificar = new System.Windows.Forms.TextBox();
             this.IDTabla_Trabajos_Modificar = new System.Windows.Forms.Label();
             this.groupBox_ModificarCelulares = new System.Windows.Forms.GroupBox();
+            this.labelError_Modificar_Celulares = new System.Windows.Forms.Label();
+            this.labelModificar_Columna = new System.Windows.Forms.Label();
+            this.labelModificar_Columna_Celular = new System.Windows.Forms.Label();
+            this.txtModifcar_Columna_Celulares = new System.Windows.Forms.TextBox();
             this.radioButton_Averiado_Modificar = new System.Windows.Forms.RadioButton();
-            this.radioButton_Arreglado_Modificar = new System.Windows.Forms.RadioButton();
-            this.txtTecnico_Modificar = new System.Windows.Forms.TextBox();
-            this.labelTecnico_A_Cargo_Modificar = new System.Windows.Forms.Label();
-            this.labelEstado_Modificar = new System.Windows.Forms.Label();
-            this.txtMarca_Modificar = new System.Windows.Forms.TextBox();
-            this.labelMarca_Modificar = new System.Windows.Forms.Label();
-            this.txtModelo_Modificar = new System.Windows.Forms.TextBox();
-            this.labelModelo_Modificar = new System.Windows.Forms.Label();
-            this.txtIMEI_Modificar = new System.Windows.Forms.TextBox();
-            this.labelIMEI_Modificar = new System.Windows.Forms.Label();
-            this.txtCI_Del_Dueño_Modificar = new System.Windows.Forms.TextBox();
-            this.labelID_Dueño_Modificar = new System.Windows.Forms.Label();
+            this.comboBoxColumnas_Celulares = new System.Windows.Forms.ComboBox();
             this.txtID_Tabla_Celular_Modificar = new System.Windows.Forms.TextBox();
+            this.radioButton_Arreglado_Modificar = new System.Windows.Forms.RadioButton();
             this.labelID_Celular_Modificar = new System.Windows.Forms.Label();
             this.btnModificar_Celular = new System.Windows.Forms.Button();
+            this.txtTecnico_Modificar = new System.Windows.Forms.TextBox();
+            this.labelID_Dueño_Modificar = new System.Windows.Forms.Label();
+            this.txtCI_Del_Dueño_Modificar = new System.Windows.Forms.TextBox();
+            this.labelTecnico_A_Cargo_Modificar = new System.Windows.Forms.Label();
+            this.labelIMEI_Modificar = new System.Windows.Forms.Label();
+            this.txtIMEI_Modificar = new System.Windows.Forms.TextBox();
+            this.labelEstado_Modificar = new System.Windows.Forms.Label();
+            this.labelModelo_Modificar = new System.Windows.Forms.Label();
+            this.txtModelo_Modificar = new System.Windows.Forms.TextBox();
+            this.txtMarca_Modificar = new System.Windows.Forms.TextBox();
+            this.labelMarca_Modificar = new System.Windows.Forms.Label();
             this.radioButton_TRABAJO_Modificar = new System.Windows.Forms.RadioButton();
             this.radioButton_CELULARES_Modificar = new System.Windows.Forms.RadioButton();
             this.label_Tabla_Modificar = new System.Windows.Forms.Label();
@@ -161,11 +166,6 @@
             this.tablaCelulares = new System.Windows.Forms.DataGridView();
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.comboBoxColumnas_Celulares = new System.Windows.Forms.ComboBox();
-            this.labelModificar_Columna_Celular = new System.Windows.Forms.Label();
-            this.txtModifcar_Columna_Celulares = new System.Windows.Forms.TextBox();
-            this.labelModificar_Columna = new System.Windows.Forms.Label();
-            this.labelError_Modificar_Celulares = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -328,6 +328,7 @@
             // panelE
             // 
             this.panelE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelE.Controls.Add(this.btnRecargar);
             this.panelE.Controls.Add(this.labelError_MenuOpciones);
             this.panelE.Controls.Add(this.MenuOpcionesTrabajos);
             this.panelE.Controls.Add(this.pictureBox2);
@@ -384,9 +385,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1189, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(1293, 18);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox2.Size = new System.Drawing.Size(44, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
@@ -395,11 +397,11 @@
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label_Name_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_Name_Form.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_Name_Form.Location = new System.Drawing.Point(1087, 15);
+            this.label_Name_Form.Location = new System.Drawing.Point(1162, 23);
             this.label_Name_Form.Name = "label_Name_Form";
-            this.label_Name_Form.Size = new System.Drawing.Size(96, 44);
+            this.label_Name_Form.Size = new System.Drawing.Size(125, 33);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "TALLER";
             // 
@@ -467,7 +469,7 @@
             this.panel_Agregar.Controls.Add(this.label_Tabla_Agregar);
             this.panel_Agregar.Controls.Add(this.groupBox_AgregarCelulares);
             this.panel_Agregar.Enabled = false;
-            this.panel_Agregar.Location = new System.Drawing.Point(833, 78);
+            this.panel_Agregar.Location = new System.Drawing.Point(916, 81);
             this.panel_Agregar.Name = "panel_Agregar";
             this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 15;
@@ -826,7 +828,7 @@
             this.panel_Menu.Controls.Add(this.pictureBox1);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
             this.panel_Menu.Enabled = false;
-            this.panel_Menu.Location = new System.Drawing.Point(833, 78);
+            this.panel_Menu.Location = new System.Drawing.Point(916, 81);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 16;
@@ -931,7 +933,7 @@
             this.panel_Modificar.Controls.Add(this.radioButton_CELULARES_Modificar);
             this.panel_Modificar.Controls.Add(this.label_Tabla_Modificar);
             this.panel_Modificar.Enabled = false;
-            this.panel_Modificar.Location = new System.Drawing.Point(833, 78);
+            this.panel_Modificar.Location = new System.Drawing.Point(916, 81);
             this.panel_Modificar.Name = "panel_Modificar";
             this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 17;
@@ -1118,6 +1120,49 @@
             this.groupBox_ModificarCelulares.TabStop = false;
             this.groupBox_ModificarCelulares.Text = "Modificar tabla celulares";
             // 
+            // labelError_Modificar_Celulares
+            // 
+            this.labelError_Modificar_Celulares.AutoSize = true;
+            this.labelError_Modificar_Celulares.Enabled = false;
+            this.labelError_Modificar_Celulares.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelError_Modificar_Celulares.ForeColor = System.Drawing.Color.Firebrick;
+            this.labelError_Modificar_Celulares.Location = new System.Drawing.Point(3, 119);
+            this.labelError_Modificar_Celulares.Name = "labelError_Modificar_Celulares";
+            this.labelError_Modificar_Celulares.Size = new System.Drawing.Size(259, 14);
+            this.labelError_Modificar_Celulares.TabIndex = 24;
+            this.labelError_Modificar_Celulares.Text = "Limítese a escoger alguna opcion predefinida";
+            this.labelError_Modificar_Celulares.Visible = false;
+            // 
+            // labelModificar_Columna
+            // 
+            this.labelModificar_Columna.AutoSize = true;
+            this.labelModificar_Columna.Enabled = false;
+            this.labelModificar_Columna.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelModificar_Columna.Location = new System.Drawing.Point(3, 119);
+            this.labelModificar_Columna.Name = "labelModificar_Columna";
+            this.labelModificar_Columna.Size = new System.Drawing.Size(89, 13);
+            this.labelModificar_Columna.TabIndex = 29;
+            this.labelModificar_Columna.Text = "Datos nuevos:";
+            this.labelModificar_Columna.Visible = false;
+            // 
+            // labelModificar_Columna_Celular
+            // 
+            this.labelModificar_Columna_Celular.AutoSize = true;
+            this.labelModificar_Columna_Celular.Location = new System.Drawing.Point(3, 79);
+            this.labelModificar_Columna_Celular.Name = "labelModificar_Columna_Celular";
+            this.labelModificar_Columna_Celular.Size = new System.Drawing.Size(177, 13);
+            this.labelModificar_Columna_Celular.TabIndex = 25;
+            this.labelModificar_Columna_Celular.Text = "Columna que desea modificar:";
+            // 
+            // txtModifcar_Columna_Celulares
+            // 
+            this.txtModifcar_Columna_Celulares.Enabled = false;
+            this.txtModifcar_Columna_Celulares.Location = new System.Drawing.Point(6, 135);
+            this.txtModifcar_Columna_Celulares.Name = "txtModifcar_Columna_Celulares";
+            this.txtModifcar_Columna_Celulares.Size = new System.Drawing.Size(325, 20);
+            this.txtModifcar_Columna_Celulares.TabIndex = 26;
+            this.txtModifcar_Columna_Celulares.Visible = false;
+            // 
             // radioButton_Averiado_Modificar
             // 
             this.radioButton_Averiado_Modificar.AutoSize = true;
@@ -1130,6 +1175,38 @@
             this.radioButton_Averiado_Modificar.Text = "Averiado";
             this.radioButton_Averiado_Modificar.UseVisualStyleBackColor = true;
             this.radioButton_Averiado_Modificar.Visible = false;
+            // 
+            // comboBoxColumnas_Celulares
+            // 
+            this.comboBoxColumnas_Celulares.AutoCompleteCustomSource.AddRange(new string[] {
+            "Modelo",
+            "Marca",
+            "IMEI",
+            "Estado",
+            "Cedula del cliente",
+            "ID del Tecnico/Usuario",
+            "Todas..."});
+            this.comboBoxColumnas_Celulares.FormattingEnabled = true;
+            this.comboBoxColumnas_Celulares.Items.AddRange(new object[] {
+            "Modelo",
+            "Marca",
+            "IMEI",
+            "Estado",
+            "Cedula del dueño",
+            "ID del usuario/tecnico",
+            "Todas..."});
+            this.comboBoxColumnas_Celulares.Location = new System.Drawing.Point(6, 95);
+            this.comboBoxColumnas_Celulares.Name = "comboBoxColumnas_Celulares";
+            this.comboBoxColumnas_Celulares.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxColumnas_Celulares.TabIndex = 24;
+            this.comboBoxColumnas_Celulares.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumnas_Celulares_SelectedIndexChanged);
+            // 
+            // txtID_Tabla_Celular_Modificar
+            // 
+            this.txtID_Tabla_Celular_Modificar.Location = new System.Drawing.Point(6, 56);
+            this.txtID_Tabla_Celular_Modificar.Name = "txtID_Tabla_Celular_Modificar";
+            this.txtID_Tabla_Celular_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Tabla_Celular_Modificar.TabIndex = 15;
             // 
             // radioButton_Arreglado_Modificar
             // 
@@ -1144,6 +1221,25 @@
             this.radioButton_Arreglado_Modificar.UseVisualStyleBackColor = true;
             this.radioButton_Arreglado_Modificar.Visible = false;
             // 
+            // labelID_Celular_Modificar
+            // 
+            this.labelID_Celular_Modificar.AutoSize = true;
+            this.labelID_Celular_Modificar.Location = new System.Drawing.Point(3, 40);
+            this.labelID_Celular_Modificar.Name = "labelID_Celular_Modificar";
+            this.labelID_Celular_Modificar.Size = new System.Drawing.Size(77, 13);
+            this.labelID_Celular_Modificar.TabIndex = 14;
+            this.labelID_Celular_Modificar.Text = "ID de la fila:";
+            // 
+            // btnModificar_Celular
+            // 
+            this.btnModificar_Celular.Location = new System.Drawing.Point(9, 457);
+            this.btnModificar_Celular.Name = "btnModificar_Celular";
+            this.btnModificar_Celular.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar_Celular.TabIndex = 13;
+            this.btnModificar_Celular.Text = "Modificar";
+            this.btnModificar_Celular.UseVisualStyleBackColor = true;
+            this.btnModificar_Celular.Click += new System.EventHandler(this.btnModificar_Celular_Click);
+            // 
             // txtTecnico_Modificar
             // 
             this.txtTecnico_Modificar.Enabled = false;
@@ -1152,6 +1248,26 @@
             this.txtTecnico_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtTecnico_Modificar.TabIndex = 26;
             this.txtTecnico_Modificar.Visible = false;
+            // 
+            // labelID_Dueño_Modificar
+            // 
+            this.labelID_Dueño_Modificar.AutoSize = true;
+            this.labelID_Dueño_Modificar.Enabled = false;
+            this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(3, 119);
+            this.labelID_Dueño_Modificar.Name = "labelID_Dueño_Modificar";
+            this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(83, 13);
+            this.labelID_Dueño_Modificar.TabIndex = 16;
+            this.labelID_Dueño_Modificar.Text = "CI del dueño:";
+            this.labelID_Dueño_Modificar.Visible = false;
+            // 
+            // txtCI_Del_Dueño_Modificar
+            // 
+            this.txtCI_Del_Dueño_Modificar.Enabled = false;
+            this.txtCI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 135);
+            this.txtCI_Del_Dueño_Modificar.Name = "txtCI_Del_Dueño_Modificar";
+            this.txtCI_Del_Dueño_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtCI_Del_Dueño_Modificar.TabIndex = 17;
+            this.txtCI_Del_Dueño_Modificar.Visible = false;
             // 
             // labelTecnico_A_Cargo_Modificar
             // 
@@ -1164,6 +1280,26 @@
             this.labelTecnico_A_Cargo_Modificar.Text = "ID del tecnico a cargo:";
             this.labelTecnico_A_Cargo_Modificar.Visible = false;
             // 
+            // labelIMEI_Modificar
+            // 
+            this.labelIMEI_Modificar.AutoSize = true;
+            this.labelIMEI_Modificar.Enabled = false;
+            this.labelIMEI_Modificar.Location = new System.Drawing.Point(3, 158);
+            this.labelIMEI_Modificar.Name = "labelIMEI_Modificar";
+            this.labelIMEI_Modificar.Size = new System.Drawing.Size(37, 13);
+            this.labelIMEI_Modificar.TabIndex = 18;
+            this.labelIMEI_Modificar.Text = "IMEI:";
+            this.labelIMEI_Modificar.Visible = false;
+            // 
+            // txtIMEI_Modificar
+            // 
+            this.txtIMEI_Modificar.Enabled = false;
+            this.txtIMEI_Modificar.Location = new System.Drawing.Point(6, 174);
+            this.txtIMEI_Modificar.Name = "txtIMEI_Modificar";
+            this.txtIMEI_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtIMEI_Modificar.TabIndex = 19;
+            this.txtIMEI_Modificar.Visible = false;
+            // 
             // labelEstado_Modificar
             // 
             this.labelEstado_Modificar.AutoSize = true;
@@ -1174,6 +1310,26 @@
             this.labelEstado_Modificar.TabIndex = 24;
             this.labelEstado_Modificar.Text = "Estado:";
             this.labelEstado_Modificar.Visible = false;
+            // 
+            // labelModelo_Modificar
+            // 
+            this.labelModelo_Modificar.AutoSize = true;
+            this.labelModelo_Modificar.Enabled = false;
+            this.labelModelo_Modificar.Location = new System.Drawing.Point(3, 197);
+            this.labelModelo_Modificar.Name = "labelModelo_Modificar";
+            this.labelModelo_Modificar.Size = new System.Drawing.Size(52, 13);
+            this.labelModelo_Modificar.TabIndex = 20;
+            this.labelModelo_Modificar.Text = "Modelo:";
+            this.labelModelo_Modificar.Visible = false;
+            // 
+            // txtModelo_Modificar
+            // 
+            this.txtModelo_Modificar.Enabled = false;
+            this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 213);
+            this.txtModelo_Modificar.Name = "txtModelo_Modificar";
+            this.txtModelo_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtModelo_Modificar.TabIndex = 21;
+            this.txtModelo_Modificar.Visible = false;
             // 
             // txtMarca_Modificar
             // 
@@ -1194,92 +1350,6 @@
             this.labelMarca_Modificar.TabIndex = 22;
             this.labelMarca_Modificar.Text = "Marca:";
             this.labelMarca_Modificar.Visible = false;
-            // 
-            // txtModelo_Modificar
-            // 
-            this.txtModelo_Modificar.Enabled = false;
-            this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 213);
-            this.txtModelo_Modificar.Name = "txtModelo_Modificar";
-            this.txtModelo_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtModelo_Modificar.TabIndex = 21;
-            this.txtModelo_Modificar.Visible = false;
-            // 
-            // labelModelo_Modificar
-            // 
-            this.labelModelo_Modificar.AutoSize = true;
-            this.labelModelo_Modificar.Enabled = false;
-            this.labelModelo_Modificar.Location = new System.Drawing.Point(3, 197);
-            this.labelModelo_Modificar.Name = "labelModelo_Modificar";
-            this.labelModelo_Modificar.Size = new System.Drawing.Size(52, 13);
-            this.labelModelo_Modificar.TabIndex = 20;
-            this.labelModelo_Modificar.Text = "Modelo:";
-            this.labelModelo_Modificar.Visible = false;
-            // 
-            // txtIMEI_Modificar
-            // 
-            this.txtIMEI_Modificar.Enabled = false;
-            this.txtIMEI_Modificar.Location = new System.Drawing.Point(6, 174);
-            this.txtIMEI_Modificar.Name = "txtIMEI_Modificar";
-            this.txtIMEI_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtIMEI_Modificar.TabIndex = 19;
-            this.txtIMEI_Modificar.Visible = false;
-            // 
-            // labelIMEI_Modificar
-            // 
-            this.labelIMEI_Modificar.AutoSize = true;
-            this.labelIMEI_Modificar.Enabled = false;
-            this.labelIMEI_Modificar.Location = new System.Drawing.Point(3, 158);
-            this.labelIMEI_Modificar.Name = "labelIMEI_Modificar";
-            this.labelIMEI_Modificar.Size = new System.Drawing.Size(37, 13);
-            this.labelIMEI_Modificar.TabIndex = 18;
-            this.labelIMEI_Modificar.Text = "IMEI:";
-            this.labelIMEI_Modificar.Visible = false;
-            // 
-            // txtCI_Del_Dueño_Modificar
-            // 
-            this.txtCI_Del_Dueño_Modificar.Enabled = false;
-            this.txtCI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 135);
-            this.txtCI_Del_Dueño_Modificar.Name = "txtCI_Del_Dueño_Modificar";
-            this.txtCI_Del_Dueño_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtCI_Del_Dueño_Modificar.TabIndex = 17;
-            this.txtCI_Del_Dueño_Modificar.Visible = false;
-            // 
-            // labelID_Dueño_Modificar
-            // 
-            this.labelID_Dueño_Modificar.AutoSize = true;
-            this.labelID_Dueño_Modificar.Enabled = false;
-            this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(3, 119);
-            this.labelID_Dueño_Modificar.Name = "labelID_Dueño_Modificar";
-            this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(83, 13);
-            this.labelID_Dueño_Modificar.TabIndex = 16;
-            this.labelID_Dueño_Modificar.Text = "CI del dueño:";
-            this.labelID_Dueño_Modificar.Visible = false;
-            // 
-            // txtID_Tabla_Celular_Modificar
-            // 
-            this.txtID_Tabla_Celular_Modificar.Location = new System.Drawing.Point(6, 56);
-            this.txtID_Tabla_Celular_Modificar.Name = "txtID_Tabla_Celular_Modificar";
-            this.txtID_Tabla_Celular_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtID_Tabla_Celular_Modificar.TabIndex = 15;
-            // 
-            // labelID_Celular_Modificar
-            // 
-            this.labelID_Celular_Modificar.AutoSize = true;
-            this.labelID_Celular_Modificar.Location = new System.Drawing.Point(3, 40);
-            this.labelID_Celular_Modificar.Name = "labelID_Celular_Modificar";
-            this.labelID_Celular_Modificar.Size = new System.Drawing.Size(77, 13);
-            this.labelID_Celular_Modificar.TabIndex = 14;
-            this.labelID_Celular_Modificar.Text = "ID de la fila:";
-            // 
-            // btnModificar_Celular
-            // 
-            this.btnModificar_Celular.Location = new System.Drawing.Point(9, 457);
-            this.btnModificar_Celular.Name = "btnModificar_Celular";
-            this.btnModificar_Celular.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar_Celular.TabIndex = 13;
-            this.btnModificar_Celular.Text = "Modificar";
-            this.btnModificar_Celular.UseVisualStyleBackColor = true;
-            this.btnModificar_Celular.Click += new System.EventHandler(this.btnModificar_Celular_Click);
             // 
             // radioButton_TRABAJO_Modificar
             // 
@@ -1349,7 +1419,7 @@
             this.panel_Eliminar.Controls.Add(this.label_Tabla_Eliminar);
             this.panel_Eliminar.Controls.Add(this.groupBox_EliminarCelulares);
             this.panel_Eliminar.Enabled = false;
-            this.panel_Eliminar.Location = new System.Drawing.Point(833, 78);
+            this.panel_Eliminar.Location = new System.Drawing.Point(916, 81);
             this.panel_Eliminar.Name = "panel_Eliminar";
             this.panel_Eliminar.Size = new System.Drawing.Size(419, 0);
             this.panel_Eliminar.TabIndex = 18;
@@ -1506,7 +1576,7 @@
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCelulares.Location = new System.Drawing.Point(49, 77);
             this.tablaCelulares.Name = "tablaCelulares";
-            this.tablaCelulares.Size = new System.Drawing.Size(703, 0);
+            this.tablaCelulares.Size = new System.Drawing.Size(820, 0);
             this.tablaCelulares.TabIndex = 19;
             // 
             // tablaTrabajos
@@ -1522,7 +1592,7 @@
             this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecargar.Enabled = false;
             this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(758, 78);
+            this.btnRecargar.Location = new System.Drawing.Point(729, 46);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(25, 25);
             this.btnRecargar.TabIndex = 21;
@@ -1530,81 +1600,12 @@
             this.btnRecargar.Visible = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
-            // comboBoxColumnas_Celulares
-            // 
-            this.comboBoxColumnas_Celulares.AutoCompleteCustomSource.AddRange(new string[] {
-            "Modelo",
-            "Marca",
-            "IMEI",
-            "Estado",
-            "Cedula del cliente",
-            "ID del Tecnico/Usuario",
-            "Todas..."});
-            this.comboBoxColumnas_Celulares.FormattingEnabled = true;
-            this.comboBoxColumnas_Celulares.Items.AddRange(new object[] {
-            "Modelo",
-            "Marca",
-            "IMEI",
-            "Estado",
-            "Cedula del dueño",
-            "ID del usuario/tecnico",
-            "Todas..."});
-            this.comboBoxColumnas_Celulares.Location = new System.Drawing.Point(6, 95);
-            this.comboBoxColumnas_Celulares.Name = "comboBoxColumnas_Celulares";
-            this.comboBoxColumnas_Celulares.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxColumnas_Celulares.TabIndex = 24;
-            this.comboBoxColumnas_Celulares.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumnas_Celulares_SelectedIndexChanged);
-            // 
-            // labelModificar_Columna_Celular
-            // 
-            this.labelModificar_Columna_Celular.AutoSize = true;
-            this.labelModificar_Columna_Celular.Location = new System.Drawing.Point(3, 79);
-            this.labelModificar_Columna_Celular.Name = "labelModificar_Columna_Celular";
-            this.labelModificar_Columna_Celular.Size = new System.Drawing.Size(177, 13);
-            this.labelModificar_Columna_Celular.TabIndex = 25;
-            this.labelModificar_Columna_Celular.Text = "Columna que desea modificar:";
-            // 
-            // txtModifcar_Columna_Celulares
-            // 
-            this.txtModifcar_Columna_Celulares.Enabled = false;
-            this.txtModifcar_Columna_Celulares.Location = new System.Drawing.Point(6, 135);
-            this.txtModifcar_Columna_Celulares.Name = "txtModifcar_Columna_Celulares";
-            this.txtModifcar_Columna_Celulares.Size = new System.Drawing.Size(325, 20);
-            this.txtModifcar_Columna_Celulares.TabIndex = 26;
-            this.txtModifcar_Columna_Celulares.Visible = false;
-            // 
-            // labelModificar_Columna
-            // 
-            this.labelModificar_Columna.AutoSize = true;
-            this.labelModificar_Columna.Enabled = false;
-            this.labelModificar_Columna.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelModificar_Columna.Location = new System.Drawing.Point(3, 119);
-            this.labelModificar_Columna.Name = "labelModificar_Columna";
-            this.labelModificar_Columna.Size = new System.Drawing.Size(89, 13);
-            this.labelModificar_Columna.TabIndex = 29;
-            this.labelModificar_Columna.Text = "Datos nuevos:";
-            this.labelModificar_Columna.Visible = false;
-            // 
-            // labelError_Modificar_Celulares
-            // 
-            this.labelError_Modificar_Celulares.AutoSize = true;
-            this.labelError_Modificar_Celulares.Enabled = false;
-            this.labelError_Modificar_Celulares.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelError_Modificar_Celulares.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelError_Modificar_Celulares.Location = new System.Drawing.Point(3, 119);
-            this.labelError_Modificar_Celulares.Name = "labelError_Modificar_Celulares";
-            this.labelError_Modificar_Celulares.Size = new System.Drawing.Size(259, 14);
-            this.labelError_Modificar_Celulares.TabIndex = 24;
-            this.labelError_Modificar_Celulares.Text = "Limítese a escoger alguna opcion predefinida";
-            this.labelError_Modificar_Celulares.Visible = false;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1264, 692);
-            this.Controls.Add(this.btnRecargar);
+            this.ClientSize = new System.Drawing.Size(1350, 689);
             this.Controls.Add(this.tablaTrabajos);
             this.Controls.Add(this.tablaCelulares);
             this.Controls.Add(this.panelE);
@@ -1616,7 +1617,8 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Etech Gestor de celulares";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panelD.ResumeLayout(false);
