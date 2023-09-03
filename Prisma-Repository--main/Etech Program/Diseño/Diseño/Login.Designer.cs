@@ -69,7 +69,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(156, 20);
             this.txtNombre.TabIndex = 4;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             this.txtNombre.MouseEnter += new System.EventHandler(this.txtNombre_MouseEnter);

@@ -89,7 +89,7 @@ namespace Diseño
         //Métodos relacionados con el apartado visual del programa que lo hacen mas intuitivo (no afectan las funcionalidades):
         private void Form2_Load(object sender, System.EventArgs e)
         {
-            txtNombre.Text = "ID de Empleado...";
+            txtNombre.Text = "Nombre del Empleado...";
             txtNombre.ForeColor = Color.Gray;
         }
 
@@ -113,7 +113,7 @@ namespace Diseño
         private void txtNombre_Enter(object sender, System.EventArgs e)
         {
             txtNombre.ForeColor = Color.Black;
-            if (txtNombre.Text == "ID de Empleado...")
+            if (txtNombre.Text == "Nombre del Empleado...")
             {
                 txtNombre.Text = "";
 
@@ -159,11 +159,6 @@ namespace Diseño
             RegistroUsuarios mostrar = new RegistroUsuarios();
             mostrar.Show();
             this.Hide();
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)

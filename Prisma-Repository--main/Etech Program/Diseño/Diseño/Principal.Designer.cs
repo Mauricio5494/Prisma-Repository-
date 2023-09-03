@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelD = new System.Windows.Forms.Panel();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -50,8 +51,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_AgregarTrabajos = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker_fechaIngreso = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_Plazo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_FechaDeIngreso_Agregar = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Plazo_Agregar = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar_Trabajo = new System.Windows.Forms.Button();
             this.txtAdelanto_Agregar = new System.Windows.Forms.TextBox();
             this.labelAdelanto_Agregar = new System.Windows.Forms.Label();
@@ -101,29 +102,34 @@
             this.timer_GroupBox_ModificarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.panel_Modificar = new System.Windows.Forms.Panel();
             this.groupBox_ModificarTrabajos = new System.Windows.Forms.GroupBox();
+            this.labelError_Modificar_Trabajos = new System.Windows.Forms.Label();
+            this.labelModificar_Columna_Trabajos = new System.Windows.Forms.Label();
+            this.txtModificar_Columna_Trabajos = new System.Windows.Forms.TextBox();
+            this.comboBoxColumnas_Trabajos = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker_FechaDeIngreso_Modificar = new System.Windows.Forms.DateTimePicker();
             this.btnModificar_Trabajo = new System.Windows.Forms.Button();
+            this.dateTimePicker_Plazo_Modificar = new System.Windows.Forms.DateTimePicker();
             this.txtAdelanto_Modificar = new System.Windows.Forms.TextBox();
             this.labelAdelanto_Modificar = new System.Windows.Forms.Label();
-            this.txtFechaDeIngreso_Modificar = new System.Windows.Forms.TextBox();
             this.labelFechaDeIngreso_Modificar = new System.Windows.Forms.Label();
             this.txtProblema_Modificar = new System.Windows.Forms.TextBox();
             this.labelProblema_Modificar = new System.Windows.Forms.Label();
             this.txtPresupuesto_Modificar = new System.Windows.Forms.TextBox();
             this.labelPresupuesto_Modificar = new System.Windows.Forms.Label();
-            this.txtPlazo_Modificar = new System.Windows.Forms.TextBox();
-            this.labelPlazo_Agregar_Modificar = new System.Windows.Forms.Label();
-            this.txtTrabajo_IMEI_Modificar = new System.Windows.Forms.TextBox();
-            this.labelTrabajo_IMEI_Modificar = new System.Windows.Forms.Label();
-            this.txtIDTrabajo_Modificar = new System.Windows.Forms.TextBox();
+            this.labelPlazo_Modificar = new System.Windows.Forms.Label();
+            this.txtTrabajo_ID_Modificar = new System.Windows.Forms.TextBox();
+            this.labelTrabajo_ID_Modificar = new System.Windows.Forms.Label();
+            this.txtID_Trabajo_Modificar = new System.Windows.Forms.TextBox();
             this.IDTabla_Trabajos_Modificar = new System.Windows.Forms.Label();
             this.groupBox_ModificarCelulares = new System.Windows.Forms.GroupBox();
             this.labelError_Modificar_Celulares = new System.Windows.Forms.Label();
-            this.labelModificar_Columna = new System.Windows.Forms.Label();
+            this.labelModificar_Columna_Celulares = new System.Windows.Forms.Label();
             this.labelModificar_Columna_Celular = new System.Windows.Forms.Label();
-            this.txtModifcar_Columna_Celulares = new System.Windows.Forms.TextBox();
+            this.txtModificar_Columna_Celulares = new System.Windows.Forms.TextBox();
             this.radioButton_Averiado_Modificar = new System.Windows.Forms.RadioButton();
             this.comboBoxColumnas_Celulares = new System.Windows.Forms.ComboBox();
-            this.txtID_Tabla_Celular_Modificar = new System.Windows.Forms.TextBox();
+            this.txtID_Celular_Modificar = new System.Windows.Forms.TextBox();
             this.radioButton_Arreglado_Modificar = new System.Windows.Forms.RadioButton();
             this.labelID_Celular_Modificar = new System.Windows.Forms.Label();
             this.btnModificar_Celular = new System.Windows.Forms.Button();
@@ -155,7 +161,7 @@
             this.label_Tabla_Eliminar = new System.Windows.Forms.Label();
             this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
             this.btnEliminar_Celular = new System.Windows.Forms.Button();
-            this.txtID_Tabla_Celular_Eliminar = new System.Windows.Forms.TextBox();
+            this.txtID_Celular_Eliminar = new System.Windows.Forms.TextBox();
             this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
             this.timer_GroupBox_EliminarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_EliminarC_Reducir = new System.Windows.Forms.Timer(this.components);
@@ -165,8 +171,8 @@
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.tablaCelulares = new System.Windows.Forms.DataGridView();
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.panelD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_Agregar.SuspendLayout();
@@ -183,12 +189,12 @@
             this.groupBox_EliminarCelulares.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelD
             // 
             this.panelD.BackColor = System.Drawing.Color.Firebrick;
+            this.panelD.Controls.Add(this.btnRecargar);
             this.panelD.Controls.Add(this.btnMenuPrincipal);
             this.panelD.Controls.Add(this.btnEliminar);
             this.panelD.Controls.Add(this.btnModificar);
@@ -198,6 +204,19 @@
             this.panelD.Name = "panelD";
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 5;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Enabled = false;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(10, 288);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.TabIndex = 21;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Visible = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnMenuPrincipal
             // 
@@ -328,7 +347,6 @@
             // panelE
             // 
             this.panelE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panelE.Controls.Add(this.btnRecargar);
             this.panelE.Controls.Add(this.labelError_MenuOpciones);
             this.panelE.Controls.Add(this.MenuOpcionesTrabajos);
             this.panelE.Controls.Add(this.pictureBox2);
@@ -385,7 +403,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1293, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(1277, 14);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(44, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -399,7 +417,7 @@
             this.label_Name_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_Name_Form.Location = new System.Drawing.Point(1162, 23);
+            this.label_Name_Form.Location = new System.Drawing.Point(1146, 19);
             this.label_Name_Form.Name = "label_Name_Form";
             this.label_Name_Form.Size = new System.Drawing.Size(125, 33);
             this.label_Name_Form.TabIndex = 14;
@@ -469,7 +487,7 @@
             this.panel_Agregar.Controls.Add(this.label_Tabla_Agregar);
             this.panel_Agregar.Controls.Add(this.groupBox_AgregarCelulares);
             this.panel_Agregar.Enabled = false;
-            this.panel_Agregar.Location = new System.Drawing.Point(916, 81);
+            this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
             this.panel_Agregar.Name = "panel_Agregar";
             this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 15;
@@ -477,8 +495,8 @@
             // groupBox_AgregarTrabajos
             // 
             this.groupBox_AgregarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_fechaIngreso);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_Plazo);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_FechaDeIngreso_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_Plazo_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.btnAgregar_Trabajo);
             this.groupBox_AgregarTrabajos.Controls.Add(this.txtAdelanto_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelAdelanto_Agregar);
@@ -499,19 +517,19 @@
             this.groupBox_AgregarTrabajos.TabStop = false;
             this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
             // 
-            // dateTimePicker_fechaIngreso
+            // dateTimePicker_FechaDeIngreso_Agregar
             // 
-            this.dateTimePicker_fechaIngreso.Location = new System.Drawing.Point(6, 293);
-            this.dateTimePicker_fechaIngreso.Name = "dateTimePicker_fechaIngreso";
-            this.dateTimePicker_fechaIngreso.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker_fechaIngreso.TabIndex = 14;
+            this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 293);
+            this.dateTimePicker_FechaDeIngreso_Agregar.Name = "dateTimePicker_FechaDeIngreso_Agregar";
+            this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_FechaDeIngreso_Agregar.TabIndex = 14;
             // 
-            // dateTimePicker_Plazo
+            // dateTimePicker_Plazo_Agregar
             // 
-            this.dateTimePicker_Plazo.Location = new System.Drawing.Point(6, 99);
-            this.dateTimePicker_Plazo.Name = "dateTimePicker_Plazo";
-            this.dateTimePicker_Plazo.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker_Plazo.TabIndex = 13;
+            this.dateTimePicker_Plazo_Agregar.Location = new System.Drawing.Point(6, 99);
+            this.dateTimePicker_Plazo_Agregar.Name = "dateTimePicker_Plazo_Agregar";
+            this.dateTimePicker_Plazo_Agregar.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_Plazo_Agregar.TabIndex = 13;
             // 
             // btnAgregar_Trabajo
             // 
@@ -941,20 +959,25 @@
             // groupBox_ModificarTrabajos
             // 
             this.groupBox_ModificarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_ModificarTrabajos.Controls.Add(this.labelError_Modificar_Trabajos);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.labelModificar_Columna_Trabajos);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.txtModificar_Columna_Trabajos);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.comboBoxColumnas_Trabajos);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.label2);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.dateTimePicker_FechaDeIngreso_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.btnModificar_Trabajo);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.dateTimePicker_Plazo_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.txtAdelanto_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelAdelanto_Modificar);
-            this.groupBox_ModificarTrabajos.Controls.Add(this.txtFechaDeIngreso_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelFechaDeIngreso_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.txtProblema_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelProblema_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.txtPresupuesto_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelPresupuesto_Modificar);
-            this.groupBox_ModificarTrabajos.Controls.Add(this.txtPlazo_Modificar);
-            this.groupBox_ModificarTrabajos.Controls.Add(this.labelPlazo_Agregar_Modificar);
-            this.groupBox_ModificarTrabajos.Controls.Add(this.txtTrabajo_IMEI_Modificar);
-            this.groupBox_ModificarTrabajos.Controls.Add(this.labelTrabajo_IMEI_Modificar);
-            this.groupBox_ModificarTrabajos.Controls.Add(this.txtIDTrabajo_Modificar);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.labelPlazo_Modificar);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.txtTrabajo_ID_Modificar);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.labelTrabajo_ID_Modificar);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.txtID_Trabajo_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.IDTabla_Trabajos_Modificar);
             this.groupBox_ModificarTrabajos.Enabled = false;
             this.groupBox_ModificarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
@@ -964,6 +987,82 @@
             this.groupBox_ModificarTrabajos.TabIndex = 8;
             this.groupBox_ModificarTrabajos.TabStop = false;
             this.groupBox_ModificarTrabajos.Text = "Modificar tabla trabajos";
+            // 
+            // labelError_Modificar_Trabajos
+            // 
+            this.labelError_Modificar_Trabajos.AutoSize = true;
+            this.labelError_Modificar_Trabajos.Enabled = false;
+            this.labelError_Modificar_Trabajos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelError_Modificar_Trabajos.ForeColor = System.Drawing.Color.Firebrick;
+            this.labelError_Modificar_Trabajos.Location = new System.Drawing.Point(3, 119);
+            this.labelError_Modificar_Trabajos.Name = "labelError_Modificar_Trabajos";
+            this.labelError_Modificar_Trabajos.Size = new System.Drawing.Size(259, 14);
+            this.labelError_Modificar_Trabajos.TabIndex = 30;
+            this.labelError_Modificar_Trabajos.Text = "Limítese a escoger alguna opcion predefinida";
+            this.labelError_Modificar_Trabajos.Visible = false;
+            // 
+            // labelModificar_Columna_Trabajos
+            // 
+            this.labelModificar_Columna_Trabajos.AutoSize = true;
+            this.labelModificar_Columna_Trabajos.Enabled = false;
+            this.labelModificar_Columna_Trabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelModificar_Columna_Trabajos.Location = new System.Drawing.Point(3, 119);
+            this.labelModificar_Columna_Trabajos.Name = "labelModificar_Columna_Trabajos";
+            this.labelModificar_Columna_Trabajos.Size = new System.Drawing.Size(89, 13);
+            this.labelModificar_Columna_Trabajos.TabIndex = 31;
+            this.labelModificar_Columna_Trabajos.Text = "Datos nuevos:";
+            this.labelModificar_Columna_Trabajos.Visible = false;
+            // 
+            // txtModificar_Columna_Trabajos
+            // 
+            this.txtModificar_Columna_Trabajos.Enabled = false;
+            this.txtModificar_Columna_Trabajos.Location = new System.Drawing.Point(6, 135);
+            this.txtModificar_Columna_Trabajos.Name = "txtModificar_Columna_Trabajos";
+            this.txtModificar_Columna_Trabajos.Size = new System.Drawing.Size(325, 20);
+            this.txtModificar_Columna_Trabajos.TabIndex = 30;
+            this.txtModificar_Columna_Trabajos.Visible = false;
+            // 
+            // comboBoxColumnas_Trabajos
+            // 
+            this.comboBoxColumnas_Trabajos.AutoCompleteCustomSource.AddRange(new string[] {
+            "Plazo",
+            "Presupuesto",
+            "Problema",
+            "Fecha de ingreso",
+            "Adelanto",
+            "Todas..."});
+            this.comboBoxColumnas_Trabajos.FormattingEnabled = true;
+            this.comboBoxColumnas_Trabajos.Items.AddRange(new object[] {
+            "Plazo",
+            "Presupuesto",
+            "Problema",
+            "Fecha de ingreso",
+            "Adelanto",
+            "ID del celular",
+            "Todas..."});
+            this.comboBoxColumnas_Trabajos.Location = new System.Drawing.Point(6, 95);
+            this.comboBoxColumnas_Trabajos.Name = "comboBoxColumnas_Trabajos";
+            this.comboBoxColumnas_Trabajos.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxColumnas_Trabajos.TabIndex = 30;
+            this.comboBoxColumnas_Trabajos.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumnas_Trabajos_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Columna que desea modificar:";
+            // 
+            // dateTimePicker_FechaDeIngreso_Modificar
+            // 
+            this.dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
+            this.dateTimePicker_FechaDeIngreso_Modificar.Location = new System.Drawing.Point(6, 324);
+            this.dateTimePicker_FechaDeIngreso_Modificar.Name = "dateTimePicker_FechaDeIngreso_Modificar";
+            this.dateTimePicker_FechaDeIngreso_Modificar.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_FechaDeIngreso_Modificar.TabIndex = 22;
+            this.dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
             // 
             // btnModificar_Trabajo
             // 
@@ -975,108 +1074,124 @@
             this.btnModificar_Trabajo.UseVisualStyleBackColor = true;
             this.btnModificar_Trabajo.Click += new System.EventHandler(this.btnModificar_Trabajo_Click);
             // 
+            // dateTimePicker_Plazo_Modificar
+            // 
+            this.dateTimePicker_Plazo_Modificar.Enabled = false;
+            this.dateTimePicker_Plazo_Modificar.Location = new System.Drawing.Point(6, 173);
+            this.dateTimePicker_Plazo_Modificar.Name = "dateTimePicker_Plazo_Modificar";
+            this.dateTimePicker_Plazo_Modificar.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_Plazo_Modificar.TabIndex = 21;
+            this.dateTimePicker_Plazo_Modificar.Visible = false;
+            // 
             // txtAdelanto_Modificar
             // 
-            this.txtAdelanto_Modificar.Location = new System.Drawing.Point(6, 356);
+            this.txtAdelanto_Modificar.Enabled = false;
+            this.txtAdelanto_Modificar.Location = new System.Drawing.Point(6, 363);
             this.txtAdelanto_Modificar.Name = "txtAdelanto_Modificar";
             this.txtAdelanto_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtAdelanto_Modificar.TabIndex = 23;
+            this.txtAdelanto_Modificar.Visible = false;
             // 
             // labelAdelanto_Modificar
             // 
             this.labelAdelanto_Modificar.AutoSize = true;
-            this.labelAdelanto_Modificar.Location = new System.Drawing.Point(3, 340);
+            this.labelAdelanto_Modificar.Enabled = false;
+            this.labelAdelanto_Modificar.Location = new System.Drawing.Point(3, 347);
             this.labelAdelanto_Modificar.Name = "labelAdelanto_Modificar";
             this.labelAdelanto_Modificar.Size = new System.Drawing.Size(61, 13);
             this.labelAdelanto_Modificar.TabIndex = 22;
             this.labelAdelanto_Modificar.Text = "Adelanto:";
-            // 
-            // txtFechaDeIngreso_Modificar
-            // 
-            this.txtFechaDeIngreso_Modificar.Location = new System.Drawing.Point(6, 306);
-            this.txtFechaDeIngreso_Modificar.Name = "txtFechaDeIngreso_Modificar";
-            this.txtFechaDeIngreso_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtFechaDeIngreso_Modificar.TabIndex = 21;
+            this.labelAdelanto_Modificar.Visible = false;
             // 
             // labelFechaDeIngreso_Modificar
             // 
             this.labelFechaDeIngreso_Modificar.AutoSize = true;
-            this.labelFechaDeIngreso_Modificar.Location = new System.Drawing.Point(3, 290);
+            this.labelFechaDeIngreso_Modificar.Enabled = false;
+            this.labelFechaDeIngreso_Modificar.Location = new System.Drawing.Point(3, 308);
             this.labelFechaDeIngreso_Modificar.Name = "labelFechaDeIngreso_Modificar";
             this.labelFechaDeIngreso_Modificar.Size = new System.Drawing.Size(109, 13);
             this.labelFechaDeIngreso_Modificar.TabIndex = 20;
             this.labelFechaDeIngreso_Modificar.Text = "Fecha de ingreso:";
+            this.labelFechaDeIngreso_Modificar.Visible = false;
             // 
             // txtProblema_Modificar
             // 
-            this.txtProblema_Modificar.Location = new System.Drawing.Point(6, 256);
+            this.txtProblema_Modificar.Enabled = false;
+            this.txtProblema_Modificar.Location = new System.Drawing.Point(6, 252);
+            this.txtProblema_Modificar.Multiline = true;
             this.txtProblema_Modificar.Name = "txtProblema_Modificar";
-            this.txtProblema_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtProblema_Modificar.Size = new System.Drawing.Size(325, 53);
             this.txtProblema_Modificar.TabIndex = 19;
+            this.txtProblema_Modificar.Visible = false;
             // 
             // labelProblema_Modificar
             // 
             this.labelProblema_Modificar.AutoSize = true;
-            this.labelProblema_Modificar.Location = new System.Drawing.Point(3, 240);
+            this.labelProblema_Modificar.Enabled = false;
+            this.labelProblema_Modificar.Location = new System.Drawing.Point(3, 236);
             this.labelProblema_Modificar.Name = "labelProblema_Modificar";
             this.labelProblema_Modificar.Size = new System.Drawing.Size(63, 13);
             this.labelProblema_Modificar.TabIndex = 18;
             this.labelProblema_Modificar.Text = "Problema:";
+            this.labelProblema_Modificar.Visible = false;
             // 
             // txtPresupuesto_Modificar
             // 
-            this.txtPresupuesto_Modificar.Location = new System.Drawing.Point(6, 206);
+            this.txtPresupuesto_Modificar.Enabled = false;
+            this.txtPresupuesto_Modificar.Location = new System.Drawing.Point(6, 213);
             this.txtPresupuesto_Modificar.Name = "txtPresupuesto_Modificar";
             this.txtPresupuesto_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtPresupuesto_Modificar.TabIndex = 17;
+            this.txtPresupuesto_Modificar.Visible = false;
             // 
             // labelPresupuesto_Modificar
             // 
             this.labelPresupuesto_Modificar.AutoSize = true;
-            this.labelPresupuesto_Modificar.Location = new System.Drawing.Point(3, 190);
+            this.labelPresupuesto_Modificar.Enabled = false;
+            this.labelPresupuesto_Modificar.Location = new System.Drawing.Point(3, 197);
             this.labelPresupuesto_Modificar.Name = "labelPresupuesto_Modificar";
             this.labelPresupuesto_Modificar.Size = new System.Drawing.Size(81, 13);
             this.labelPresupuesto_Modificar.TabIndex = 16;
             this.labelPresupuesto_Modificar.Text = "Presupuesto:";
+            this.labelPresupuesto_Modificar.Visible = false;
             // 
-            // txtPlazo_Modificar
+            // labelPlazo_Modificar
             // 
-            this.txtPlazo_Modificar.Location = new System.Drawing.Point(6, 156);
-            this.txtPlazo_Modificar.Name = "txtPlazo_Modificar";
-            this.txtPlazo_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtPlazo_Modificar.TabIndex = 15;
+            this.labelPlazo_Modificar.AutoSize = true;
+            this.labelPlazo_Modificar.Enabled = false;
+            this.labelPlazo_Modificar.Location = new System.Drawing.Point(3, 158);
+            this.labelPlazo_Modificar.Name = "labelPlazo_Modificar";
+            this.labelPlazo_Modificar.Size = new System.Drawing.Size(42, 13);
+            this.labelPlazo_Modificar.TabIndex = 14;
+            this.labelPlazo_Modificar.Text = "Plazo:";
+            this.labelPlazo_Modificar.Visible = false;
             // 
-            // labelPlazo_Agregar_Modificar
+            // txtTrabajo_ID_Modificar
             // 
-            this.labelPlazo_Agregar_Modificar.AutoSize = true;
-            this.labelPlazo_Agregar_Modificar.Location = new System.Drawing.Point(3, 140);
-            this.labelPlazo_Agregar_Modificar.Name = "labelPlazo_Agregar_Modificar";
-            this.labelPlazo_Agregar_Modificar.Size = new System.Drawing.Size(42, 13);
-            this.labelPlazo_Agregar_Modificar.TabIndex = 14;
-            this.labelPlazo_Agregar_Modificar.Text = "Plazo:";
+            this.txtTrabajo_ID_Modificar.Enabled = false;
+            this.txtTrabajo_ID_Modificar.Location = new System.Drawing.Point(6, 135);
+            this.txtTrabajo_ID_Modificar.Name = "txtTrabajo_ID_Modificar";
+            this.txtTrabajo_ID_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtTrabajo_ID_Modificar.TabIndex = 13;
+            this.txtTrabajo_ID_Modificar.Visible = false;
             // 
-            // txtTrabajo_IMEI_Modificar
+            // labelTrabajo_ID_Modificar
             // 
-            this.txtTrabajo_IMEI_Modificar.Location = new System.Drawing.Point(6, 106);
-            this.txtTrabajo_IMEI_Modificar.Name = "txtTrabajo_IMEI_Modificar";
-            this.txtTrabajo_IMEI_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtTrabajo_IMEI_Modificar.TabIndex = 13;
+            this.labelTrabajo_ID_Modificar.AutoSize = true;
+            this.labelTrabajo_ID_Modificar.Enabled = false;
+            this.labelTrabajo_ID_Modificar.Location = new System.Drawing.Point(3, 119);
+            this.labelTrabajo_ID_Modificar.Name = "labelTrabajo_ID_Modificar";
+            this.labelTrabajo_ID_Modificar.Size = new System.Drawing.Size(87, 13);
+            this.labelTrabajo_ID_Modificar.TabIndex = 12;
+            this.labelTrabajo_ID_Modificar.Text = "ID del celular:";
+            this.labelTrabajo_ID_Modificar.Visible = false;
             // 
-            // labelTrabajo_IMEI_Modificar
+            // txtID_Trabajo_Modificar
             // 
-            this.labelTrabajo_IMEI_Modificar.AutoSize = true;
-            this.labelTrabajo_IMEI_Modificar.Location = new System.Drawing.Point(3, 90);
-            this.labelTrabajo_IMEI_Modificar.Name = "labelTrabajo_IMEI_Modificar";
-            this.labelTrabajo_IMEI_Modificar.Size = new System.Drawing.Size(100, 13);
-            this.labelTrabajo_IMEI_Modificar.TabIndex = 12;
-            this.labelTrabajo_IMEI_Modificar.Text = "IMEI del celular:";
-            // 
-            // txtIDTrabajo_Modificar
-            // 
-            this.txtIDTrabajo_Modificar.Location = new System.Drawing.Point(6, 56);
-            this.txtIDTrabajo_Modificar.Name = "txtIDTrabajo_Modificar";
-            this.txtIDTrabajo_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtIDTrabajo_Modificar.TabIndex = 1;
+            this.txtID_Trabajo_Modificar.Location = new System.Drawing.Point(6, 56);
+            this.txtID_Trabajo_Modificar.Name = "txtID_Trabajo_Modificar";
+            this.txtID_Trabajo_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Trabajo_Modificar.TabIndex = 1;
             // 
             // IDTabla_Trabajos_Modificar
             // 
@@ -1091,12 +1206,12 @@
             // 
             this.groupBox_ModificarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox_ModificarCelulares.Controls.Add(this.labelError_Modificar_Celulares);
-            this.groupBox_ModificarCelulares.Controls.Add(this.labelModificar_Columna);
+            this.groupBox_ModificarCelulares.Controls.Add(this.labelModificar_Columna_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelModificar_Columna_Celular);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtModifcar_Columna_Celulares);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtModificar_Columna_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Averiado_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.comboBoxColumnas_Celulares);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtID_Tabla_Celular_Modificar);
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtID_Celular_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Arreglado_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Celular_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.btnModificar_Celular);
@@ -1133,17 +1248,17 @@
             this.labelError_Modificar_Celulares.Text = "Limítese a escoger alguna opcion predefinida";
             this.labelError_Modificar_Celulares.Visible = false;
             // 
-            // labelModificar_Columna
+            // labelModificar_Columna_Celulares
             // 
-            this.labelModificar_Columna.AutoSize = true;
-            this.labelModificar_Columna.Enabled = false;
-            this.labelModificar_Columna.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelModificar_Columna.Location = new System.Drawing.Point(3, 119);
-            this.labelModificar_Columna.Name = "labelModificar_Columna";
-            this.labelModificar_Columna.Size = new System.Drawing.Size(89, 13);
-            this.labelModificar_Columna.TabIndex = 29;
-            this.labelModificar_Columna.Text = "Datos nuevos:";
-            this.labelModificar_Columna.Visible = false;
+            this.labelModificar_Columna_Celulares.AutoSize = true;
+            this.labelModificar_Columna_Celulares.Enabled = false;
+            this.labelModificar_Columna_Celulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelModificar_Columna_Celulares.Location = new System.Drawing.Point(3, 119);
+            this.labelModificar_Columna_Celulares.Name = "labelModificar_Columna_Celulares";
+            this.labelModificar_Columna_Celulares.Size = new System.Drawing.Size(89, 13);
+            this.labelModificar_Columna_Celulares.TabIndex = 29;
+            this.labelModificar_Columna_Celulares.Text = "Datos nuevos:";
+            this.labelModificar_Columna_Celulares.Visible = false;
             // 
             // labelModificar_Columna_Celular
             // 
@@ -1154,14 +1269,14 @@
             this.labelModificar_Columna_Celular.TabIndex = 25;
             this.labelModificar_Columna_Celular.Text = "Columna que desea modificar:";
             // 
-            // txtModifcar_Columna_Celulares
+            // txtModificar_Columna_Celulares
             // 
-            this.txtModifcar_Columna_Celulares.Enabled = false;
-            this.txtModifcar_Columna_Celulares.Location = new System.Drawing.Point(6, 135);
-            this.txtModifcar_Columna_Celulares.Name = "txtModifcar_Columna_Celulares";
-            this.txtModifcar_Columna_Celulares.Size = new System.Drawing.Size(325, 20);
-            this.txtModifcar_Columna_Celulares.TabIndex = 26;
-            this.txtModifcar_Columna_Celulares.Visible = false;
+            this.txtModificar_Columna_Celulares.Enabled = false;
+            this.txtModificar_Columna_Celulares.Location = new System.Drawing.Point(6, 135);
+            this.txtModificar_Columna_Celulares.Name = "txtModificar_Columna_Celulares";
+            this.txtModificar_Columna_Celulares.Size = new System.Drawing.Size(325, 20);
+            this.txtModificar_Columna_Celulares.TabIndex = 26;
+            this.txtModificar_Columna_Celulares.Visible = false;
             // 
             // radioButton_Averiado_Modificar
             // 
@@ -1201,12 +1316,12 @@
             this.comboBoxColumnas_Celulares.TabIndex = 24;
             this.comboBoxColumnas_Celulares.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumnas_Celulares_SelectedIndexChanged);
             // 
-            // txtID_Tabla_Celular_Modificar
+            // txtID_Celular_Modificar
             // 
-            this.txtID_Tabla_Celular_Modificar.Location = new System.Drawing.Point(6, 56);
-            this.txtID_Tabla_Celular_Modificar.Name = "txtID_Tabla_Celular_Modificar";
-            this.txtID_Tabla_Celular_Modificar.Size = new System.Drawing.Size(325, 20);
-            this.txtID_Tabla_Celular_Modificar.TabIndex = 15;
+            this.txtID_Celular_Modificar.Location = new System.Drawing.Point(6, 56);
+            this.txtID_Celular_Modificar.Name = "txtID_Celular_Modificar";
+            this.txtID_Celular_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Celular_Modificar.TabIndex = 15;
             // 
             // radioButton_Arreglado_Modificar
             // 
@@ -1446,6 +1561,7 @@
             this.btnEliminar_Trabajo.TabIndex = 14;
             this.btnEliminar_Trabajo.Text = "Eliminar";
             this.btnEliminar_Trabajo.UseVisualStyleBackColor = true;
+            this.btnEliminar_Trabajo.Click += new System.EventHandler(this.btnEliminar_Trabajo_Click);
             // 
             // txtID_Trabajo_Eliminar
             // 
@@ -1506,7 +1622,7 @@
             // 
             this.groupBox_EliminarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox_EliminarCelulares.Controls.Add(this.btnEliminar_Celular);
-            this.groupBox_EliminarCelulares.Controls.Add(this.txtID_Tabla_Celular_Eliminar);
+            this.groupBox_EliminarCelulares.Controls.Add(this.txtID_Celular_Eliminar);
             this.groupBox_EliminarCelulares.Controls.Add(this.label_ID_Celular_Eliminar);
             this.groupBox_EliminarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox_EliminarCelulares.Location = new System.Drawing.Point(42, 77);
@@ -1524,13 +1640,14 @@
             this.btnEliminar_Celular.TabIndex = 14;
             this.btnEliminar_Celular.Text = "Eliminar";
             this.btnEliminar_Celular.UseVisualStyleBackColor = true;
+            this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
             // 
-            // txtID_Tabla_Celular_Eliminar
+            // txtID_Celular_Eliminar
             // 
-            this.txtID_Tabla_Celular_Eliminar.Location = new System.Drawing.Point(6, 56);
-            this.txtID_Tabla_Celular_Eliminar.Name = "txtID_Tabla_Celular_Eliminar";
-            this.txtID_Tabla_Celular_Eliminar.Size = new System.Drawing.Size(325, 20);
-            this.txtID_Tabla_Celular_Eliminar.TabIndex = 1;
+            this.txtID_Celular_Eliminar.Location = new System.Drawing.Point(6, 56);
+            this.txtID_Celular_Eliminar.Name = "txtID_Celular_Eliminar";
+            this.txtID_Celular_Eliminar.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Celular_Eliminar.TabIndex = 1;
             // 
             // label_ID_Celular_Eliminar
             // 
@@ -1574,31 +1691,18 @@
             // tablaCelulares
             // 
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaCelulares.Location = new System.Drawing.Point(49, 77);
+            this.tablaCelulares.Location = new System.Drawing.Point(49, 78);
             this.tablaCelulares.Name = "tablaCelulares";
-            this.tablaCelulares.Size = new System.Drawing.Size(820, 0);
+            this.tablaCelulares.Size = new System.Drawing.Size(786, 0);
             this.tablaCelulares.TabIndex = 19;
             // 
             // tablaTrabajos
             // 
             this.tablaTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaTrabajos.Location = new System.Drawing.Point(49, 77);
+            this.tablaTrabajos.Location = new System.Drawing.Point(49, 78);
             this.tablaTrabajos.Name = "tablaTrabajos";
-            this.tablaTrabajos.Size = new System.Drawing.Size(703, 0);
+            this.tablaTrabajos.Size = new System.Drawing.Size(786, 0);
             this.tablaTrabajos.TabIndex = 20;
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Enabled = false;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(729, 46);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.TabIndex = 21;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Visible = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // Principal
             // 
@@ -1615,13 +1719,14 @@
             this.Controls.Add(this.panel_Agregar);
             this.Controls.Add(this.panel_Modificar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etech Gestor de celulares";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panelD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1648,7 +1753,6 @@
             this.groupBox_EliminarCelulares.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1709,7 +1813,7 @@
         private System.Windows.Forms.RadioButton radioButton_TRABAJO_Modificar;
         private System.Windows.Forms.RadioButton radioButton_CELULARES_Modificar;
         private System.Windows.Forms.Label label_Tabla_Modificar;
-        private System.Windows.Forms.TextBox txtID_Tabla_Celular_Modificar;
+        private System.Windows.Forms.TextBox txtID_Celular_Modificar;
         private System.Windows.Forms.Label labelID_Celular_Modificar;
         private System.Windows.Forms.RadioButton radioButton_Averiado_Modificar;
         private System.Windows.Forms.RadioButton radioButton_Arreglado_Modificar;
@@ -1728,17 +1832,15 @@
         private System.Windows.Forms.Timer timer_GroupBox_ModificarT_Reducir;
         private System.Windows.Forms.TextBox txtAdelanto_Modificar;
         private System.Windows.Forms.Label labelAdelanto_Modificar;
-        private System.Windows.Forms.TextBox txtFechaDeIngreso_Modificar;
         private System.Windows.Forms.Label labelFechaDeIngreso_Modificar;
         private System.Windows.Forms.TextBox txtProblema_Modificar;
         private System.Windows.Forms.Label labelProblema_Modificar;
         private System.Windows.Forms.TextBox txtPresupuesto_Modificar;
         private System.Windows.Forms.Label labelPresupuesto_Modificar;
-        private System.Windows.Forms.TextBox txtPlazo_Modificar;
-        private System.Windows.Forms.Label labelPlazo_Agregar_Modificar;
-        private System.Windows.Forms.TextBox txtTrabajo_IMEI_Modificar;
-        private System.Windows.Forms.Label labelTrabajo_IMEI_Modificar;
-        private System.Windows.Forms.TextBox txtIDTrabajo_Modificar;
+        private System.Windows.Forms.Label labelPlazo_Modificar;
+        private System.Windows.Forms.TextBox txtTrabajo_ID_Modificar;
+        private System.Windows.Forms.Label labelTrabajo_ID_Modificar;
+        private System.Windows.Forms.TextBox txtID_Trabajo_Modificar;
         private System.Windows.Forms.Label IDTabla_Trabajos_Modificar;
         private System.Windows.Forms.Button btnModificar_Trabajo;
         private System.Windows.Forms.Timer timer_Modificar_Agrandar;
@@ -1746,7 +1848,7 @@
         private System.Windows.Forms.Panel panel_Eliminar;
         private System.Windows.Forms.GroupBox groupBox_EliminarCelulares;
         private System.Windows.Forms.Button btnEliminar_Celular;
-        private System.Windows.Forms.TextBox txtID_Tabla_Celular_Eliminar;
+        private System.Windows.Forms.TextBox txtID_Celular_Eliminar;
         private System.Windows.Forms.Label label_ID_Celular_Eliminar;
         private System.Windows.Forms.Timer timer_GroupBox_EliminarC_Agrandar;
         private System.Windows.Forms.Timer timer_GroupBox_EliminarC_Reducir;
@@ -1779,17 +1881,24 @@
         private System.Windows.Forms.Label labelPlazo_Agregar;
         private System.Windows.Forms.TextBox txtID_Trabajo_Agregar;
         private System.Windows.Forms.Label labelTrabajo_ID_Agregar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_fechaIngreso;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_FechaDeIngreso_Agregar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo_Agregar;
         private System.Windows.Forms.PictureBox btnRecargar;
         private System.Windows.Forms.ComboBox MenuOpcionesTrabajos;
         private System.Windows.Forms.Label labelError_MenuOpciones;
         private System.Windows.Forms.Label labelModificar_Columna_Celular;
         private System.Windows.Forms.ComboBox comboBoxColumnas_Celulares;
         private System.Windows.Forms.TextBox txtTecnico_Modificar;
-        private System.Windows.Forms.TextBox txtModifcar_Columna_Celulares;
-        private System.Windows.Forms.Label labelModificar_Columna;
+        private System.Windows.Forms.TextBox txtModificar_Columna_Celulares;
+        private System.Windows.Forms.Label labelModificar_Columna_Celulares;
         private System.Windows.Forms.Label labelError_Modificar_Celulares;
+        private System.Windows.Forms.Label labelError_Modificar_Trabajos;
+        private System.Windows.Forms.ComboBox comboBoxColumnas_Trabajos;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_FechaDeIngreso_Modificar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo_Modificar;
+        private System.Windows.Forms.Label labelModificar_Columna_Trabajos;
+        private System.Windows.Forms.TextBox txtModificar_Columna_Trabajos;
     }
 }
 

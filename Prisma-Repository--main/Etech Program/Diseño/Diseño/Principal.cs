@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
+using MySql.Utility.Forms;
 using System;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -32,10 +34,11 @@ namespace Diseño
         string marca;
         string imei;
         string estado;
-        string ci_Cliente;
-        int id_Usuario;
+        string ciCliente;
+        int idUsuario;
 
         //Tabla Trabajos:  
+        int idTrabajo;
         DateTime plazo;
         string stringPlazo;
         int presupuesto;
@@ -168,20 +171,20 @@ namespace Diseño
                 radioButton_Averiado_Modificar.Visible = true;
 
                 //Modificar Columna:
-                labelModificar_Columna.Enabled = false;
-                labelModificar_Columna.Visible = false;
+                labelModificar_Columna_Celulares.Enabled = false;
+                labelModificar_Columna_Celulares.Visible = false;
 
-                txtModifcar_Columna_Celulares.Enabled = false;
-                txtModifcar_Columna_Celulares.Visible = false;
+                txtModificar_Columna_Celulares.Enabled = false;
+                txtModificar_Columna_Celulares.Visible = false;
             }
             else
             {
                 //Modificar Columna:
-                labelModificar_Columna.Enabled = true;
-                labelModificar_Columna.Visible = true;
+                labelModificar_Columna_Celulares.Enabled = true;
+                labelModificar_Columna_Celulares.Visible = true;
 
-                txtModifcar_Columna_Celulares.Enabled = true;
-                txtModifcar_Columna_Celulares.Visible = true;
+                txtModificar_Columna_Celulares.Enabled = true;
+                txtModificar_Columna_Celulares.Visible = true;
 
                 //Labels:
                 labelError_Modificar_Celulares.Enabled = false;
@@ -226,6 +229,216 @@ namespace Diseño
 
                 radioButton_Averiado_Modificar.Enabled = false;
                 radioButton_Averiado_Modificar.Visible = false;
+            }
+        }
+
+        private void comboBoxColumnas_Trabajos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxColumnas_Trabajos.Text.Equals("Todas..."))
+            {
+                //Labels:
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
+
+                labelTrabajo_ID_Modificar.Enabled = true;
+                labelTrabajo_ID_Modificar.Visible = true;
+
+                labelPlazo_Modificar.Enabled = true;
+                labelPlazo_Modificar.Visible = true;
+
+                labelPresupuesto_Modificar.Enabled = true;
+                labelPresupuesto_Modificar.Visible = true;
+
+                labelProblema_Modificar.Enabled = true;
+                labelProblema_Modificar.Visible = true;
+
+                labelFechaDeIngreso_Modificar.Enabled = true;
+                labelFechaDeIngreso_Modificar.Visible = true;
+
+                labelAdelanto_Modificar.Enabled = true;
+                labelAdelanto_Modificar.Visible = true;
+
+                //TextBox y DateTimePicker:
+                txtTrabajo_ID_Modificar.Enabled = true;
+                txtTrabajo_ID_Modificar.Visible = true;
+
+                dateTimePicker_Plazo_Modificar.Enabled = true;
+                dateTimePicker_Plazo_Modificar.Visible = true;
+
+                dateTimePicker_Plazo_Modificar.Location = new Point(6, 173);
+
+                txtPresupuesto_Modificar.Enabled = true;
+                txtPresupuesto_Modificar.Visible = true;
+
+                txtProblema_Modificar.Enabled = true;
+                txtProblema_Modificar.Visible = true;
+
+                dateTimePicker_FechaDeIngreso_Modificar.Enabled = true;
+                dateTimePicker_FechaDeIngreso_Modificar.Visible = true;
+
+                dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 324);
+
+                txtAdelanto_Modificar.Enabled = true;
+                txtAdelanto_Modificar.Visible = true;
+
+                //Modificar Columna:
+                labelModificar_Columna_Trabajos.Enabled = false;
+                labelModificar_Columna_Trabajos.Visible = false;
+
+                txtModificar_Columna_Trabajos.Enabled = false;
+                txtModificar_Columna_Trabajos.Visible = false;
+            }
+            else if (comboBoxColumnas_Trabajos.Text.Equals("Plazo"))
+            {
+                dateTimePicker_Plazo_Modificar.Enabled = true;
+                dateTimePicker_Plazo_Modificar.Visible = true;
+
+                dateTimePicker_Plazo_Modificar.Location = new Point(6, 135);
+
+                labelModificar_Columna_Trabajos.Enabled = true;
+                labelModificar_Columna_Trabajos.Visible = true;
+
+                //Labels:
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
+
+                labelTrabajo_ID_Modificar.Enabled = false;
+                labelTrabajo_ID_Modificar.Visible = false;
+
+                labelPlazo_Modificar.Enabled = false;
+                labelPlazo_Modificar.Visible = false;
+
+                labelPresupuesto_Modificar.Enabled = false;
+                labelPresupuesto_Modificar.Visible = false;
+
+                labelProblema_Modificar.Enabled = false;
+                labelProblema_Modificar.Visible = false;
+
+                labelFechaDeIngreso_Modificar.Enabled = false;
+                labelFechaDeIngreso_Modificar.Visible = false;
+
+                labelAdelanto_Modificar.Enabled = false;
+                labelAdelanto_Modificar.Visible = false;
+
+                //TextBox y DateTimePicker:
+                txtTrabajo_ID_Modificar.Enabled = false;
+                txtTrabajo_ID_Modificar.Visible = false;
+
+                txtPresupuesto_Modificar.Enabled = false;
+                txtPresupuesto_Modificar.Visible = false;
+
+                txtProblema_Modificar.Enabled = false;
+                txtProblema_Modificar.Visible = false;
+
+                dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
+                dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
+
+                txtAdelanto_Modificar.Enabled = false;
+                txtAdelanto_Modificar.Visible = false;
+
+                txtModificar_Columna_Trabajos.Enabled = false;
+                txtModificar_Columna_Trabajos.Visible = false;
+            }
+            else if (comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso"))
+            {
+                dateTimePicker_FechaDeIngreso_Modificar.Enabled = true;
+                dateTimePicker_FechaDeIngreso_Modificar.Visible = true;
+
+                labelModificar_Columna_Trabajos.Enabled = true;
+                labelModificar_Columna_Trabajos.Visible = true;
+
+                dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 135);
+
+                //Labels:
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
+
+                labelTrabajo_ID_Modificar.Enabled = false;
+                labelTrabajo_ID_Modificar.Visible = false;
+
+                labelPlazo_Modificar.Enabled = false;
+                labelPlazo_Modificar.Visible = false;
+
+                labelPresupuesto_Modificar.Enabled = false;
+                labelPresupuesto_Modificar.Visible = false;
+
+                labelProblema_Modificar.Enabled = false;
+                labelProblema_Modificar.Visible = false;
+
+                labelFechaDeIngreso_Modificar.Enabled = false;
+                labelFechaDeIngreso_Modificar.Visible = false;
+
+                labelAdelanto_Modificar.Enabled = false;
+                labelAdelanto_Modificar.Visible = false;
+
+                //TextBox y DateTimePicker:
+                txtTrabajo_ID_Modificar.Enabled = false;
+                txtTrabajo_ID_Modificar.Visible = false;
+
+                dateTimePicker_Plazo_Modificar.Enabled = false;
+                dateTimePicker_Plazo_Modificar.Visible = false;
+
+                txtPresupuesto_Modificar.Enabled = false;
+                txtPresupuesto_Modificar.Visible = false;
+
+                txtProblema_Modificar.Enabled = false;
+                txtProblema_Modificar.Visible = false;
+
+                txtAdelanto_Modificar.Enabled = false;
+                txtAdelanto_Modificar.Visible = false;
+
+                txtModificar_Columna_Trabajos.Enabled = false;
+                txtModificar_Columna_Trabajos.Visible = false;
+            }
+            else
+            {
+                //Modificar Columna:
+                labelModificar_Columna_Trabajos.Enabled = true;
+                labelModificar_Columna_Trabajos.Visible = true;
+
+                txtModificar_Columna_Trabajos.Enabled = true;
+                txtModificar_Columna_Trabajos.Visible = true;
+
+                //Labels:
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
+
+                labelTrabajo_ID_Modificar.Enabled = false;
+                labelTrabajo_ID_Modificar.Visible = false;
+
+                labelPlazo_Modificar.Enabled = false;
+                labelPlazo_Modificar.Visible = false;
+
+                labelPresupuesto_Modificar.Enabled = false;
+                labelPresupuesto_Modificar.Visible = false;
+
+                labelProblema_Modificar.Enabled = false;
+                labelProblema_Modificar.Visible = false;
+
+                labelFechaDeIngreso_Modificar.Enabled = false;
+                labelFechaDeIngreso_Modificar.Visible = false;
+
+                labelAdelanto_Modificar.Enabled = false;
+                labelAdelanto_Modificar.Visible = false;
+
+                //TextBox y DateTimePicker:
+                txtTrabajo_ID_Modificar.Enabled = false;
+                txtTrabajo_ID_Modificar.Visible = false;
+
+                dateTimePicker_Plazo_Modificar.Enabled = false;
+                dateTimePicker_Plazo_Modificar.Visible = false;
+
+                txtPresupuesto_Modificar.Enabled = false;
+                txtPresupuesto_Modificar.Visible = false;
+
+                txtProblema_Modificar.Enabled = false;
+                txtProblema_Modificar.Visible = false;
+
+                dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
+                dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
+
+                txtAdelanto_Modificar.Enabled = false;
+                txtAdelanto_Modificar.Visible = false;
             }
         }
 
@@ -478,7 +691,7 @@ namespace Diseño
                 btnMenuPrincipal.BackColor = Color.DarkRed;
 
                 tablaCelulares.Location = new Point(124, 78);
-                tablaTrabajos.Location = new Point(124, 373);
+                tablaTrabajos.Location = new Point(124, 78);
             }
             else
             {
@@ -499,7 +712,7 @@ namespace Diseño
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
                 tablaCelulares.Location = new Point(49, 78);
-                tablaTrabajos.Location = new Point(49, 373);
+                tablaTrabajos.Location = new Point(49, 78);
             }
         }
         //Codigo referente a los botones del menu secundario:
@@ -759,10 +972,10 @@ namespace Diseño
                         {
                             estado = "Averiado";
                         }
-                        ci_Cliente = txtCI_Del_Dueño_Agregar.Text;
-                        id_Usuario = int.Parse(txtTecnico_Agregar.Text);
+                        ciCliente = txtCI_Del_Dueño_Agregar.Text;
+                        idUsuario = int.Parse(txtTecnico_Agregar.Text);
 
-                        insertarCelulares = "INSERT INTO celulares(Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario) VALUES('" + modelo + "', '" + marca + "', '" + imei + "', '" + estado + "', '" + ci_Cliente + "', " + id_Usuario + ")";
+                        insertarCelulares = "INSERT INTO celulares(Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario) VALUES('" + modelo + "', '" + marca + "', '" + imei + "', '" + estado + "', '" + ciCliente + "', " + idUsuario + ")";
                         cmd = new MySqlCommand(insertarCelulares, conn);
 
                         try
@@ -804,14 +1017,14 @@ namespace Diseño
                 labelError_Modificar_Celulares.Visible = false;
 
                 //Codigo para modificar el Celular:
-                if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && txtID_Tabla_Celular_Modificar.Text != "" && txtTecnico_Modificar.Text != "") 
+                if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && txtID_Celular_Modificar.Text != "" && txtTecnico_Modificar.Text != "") 
                 {
                     if (radioButton_Arreglado_Modificar.Checked == true || radioButton_Averiado_Modificar.Checked == true)
                     {
                         try
                         {
                             conn.Open();
-                            idCelular = int.Parse(txtID_Tabla_Celular_Modificar.Text);
+                            idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             modelo = txtModelo_Modificar.Text;
                             marca = txtMarca_Modificar.Text;
                             imei = txtIMEI_Modificar.Text;
@@ -823,10 +1036,10 @@ namespace Diseño
                             {
                                 estado = "Averiado";
                             }
-                            ci_Cliente = txtCI_Del_Dueño_Modificar.Text;
-                            id_Usuario = int.Parse(txtTecnico_Modificar.Text);
+                            ciCliente = txtCI_Del_Dueño_Modificar.Text;
+                            idUsuario = int.Parse(txtTecnico_Modificar.Text);
 
-                            modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "', Marca = '" + marca + "', IMEI = '" + imei + "', Estado = '" + estado + "', Cedula_Cliente = '" + ci_Cliente + "', ID_Usuario = " + id_Usuario + " WHERE celulares.ID = " + idCelular + ";";
+                            modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "', Marca = '" + marca + "', IMEI = '" + imei + "', Estado = '" + estado + "', Cedula_Cliente = '" + ciCliente + "', ID_Usuario = " + idUsuario + " WHERE celulares.ID = " + idCelular + ";";
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
@@ -865,6 +1078,236 @@ namespace Diseño
                 labelError_Modificar_Celulares.Visible = false;
 
                 //Codigo para modificar el celular:
+                option = comboBoxColumnas_Celulares.Text;
+
+                switch (option)
+                {
+                    case "Modelo":
+                        if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtID_Celular_Modificar.Text);
+                            modelo = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "' WHERE celulares.ID = " + idCelular + ";";
+                            cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasCelulares();
+                            } 
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Marca":
+                        if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtID_Celular_Modificar.Text);
+                            marca = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Marca = '" + marca + "' WHERE celulares.ID = " + idCelular + ";";
+                            cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasCelulares();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "IMEI":
+                        if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtID_Celular_Modificar.Text);
+                            imei = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Marca = '" + imei + "' WHERE celulares.ID = " + idCelular + ";";
+                            cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasCelulares();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Estado":
+                        if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtID_Celular_Modificar.Text);
+                            estado = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Marca = '" + estado + "' WHERE celulares.ID = " + idCelular + ";";
+                            cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasCelulares();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Cedula del dueño":
+                        if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtID_Celular_Modificar.Text);
+                            ciCliente = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Marca = '" + ciCliente + "' WHERE celulares.ID = " + idCelular + ";";
+                            cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasCelulares();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "ID del usuario/tecnico":
+                        if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtID_Celular_Modificar.Text);
+                            idUsuario = int.Parse(txtModificar_Columna_Celulares.Text);
+                            modifcarCelulares = "UPDATE celulares SET Marca = " + idUsuario +" WHERE celulares.ID = " + idCelular + ";";
+                            cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasCelulares();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    default:
+                        labelError_Modificar_Celulares.Enabled = true;
+                        labelError_Modificar_Celulares.Visible = true;
+
+                        //Labels:
+                        labelID_Dueño_Modificar.Enabled = false;
+                        labelID_Dueño_Modificar.Visible = false;
+
+                        labelIMEI_Modificar.Enabled = false;
+                        labelIMEI_Modificar.Visible = false;
+
+                        labelModelo_Modificar.Enabled = false;
+                        labelModelo_Modificar.Visible = false;
+
+                        labelMarca_Modificar.Enabled = false;
+                        labelMarca_Modificar.Visible = false;
+
+                        labelTecnico_A_Cargo_Modificar.Enabled = false;
+                        labelTecnico_A_Cargo_Modificar.Visible = false;
+
+                        labelEstado_Modificar.Enabled = false;
+                        labelEstado_Modificar.Visible = false;
+
+                        labelModificar_Columna_Celulares.Enabled = false;
+                        labelModificar_Columna_Celulares.Visible = false;
+
+                        //TextBox y RadioButtons:
+                        txtCI_Del_Dueño_Modificar.Enabled = false;
+                        txtCI_Del_Dueño_Modificar.Visible = false;
+
+                        txtIMEI_Modificar.Enabled = false;
+                        txtIMEI_Modificar.Visible = false;
+
+                        txtModelo_Modificar.Enabled = false;
+                        txtModelo_Modificar.Visible = false;
+
+                        txtMarca_Modificar.Enabled = false;
+                        txtMarca_Modificar.Visible = false;
+
+                        txtTecnico_Modificar.Enabled = false;
+                        txtTecnico_Modificar.Visible = false;
+
+                        radioButton_Arreglado_Modificar.Enabled = false;
+                        radioButton_Arreglado_Modificar.Visible = false;
+
+                        radioButton_Averiado_Modificar.Enabled = false;
+                        radioButton_Averiado_Modificar.Visible = false;
+
+                        txtModificar_Columna_Celulares.Enabled = false;
+                        txtModificar_Columna_Celulares.Visible = false;
+                        break;
+                }
             }
             else
             {
@@ -890,8 +1333,8 @@ namespace Diseño
                 labelEstado_Modificar.Enabled = false;
                 labelEstado_Modificar.Visible = false;
 
-                labelModificar_Columna.Enabled = false;
-                labelModificar_Columna.Visible = false;
+                labelModificar_Columna_Celulares.Enabled = false;
+                labelModificar_Columna_Celulares.Visible = false;
 
                 //TextBox y RadioButtons:
                 txtCI_Del_Dueño_Modificar.Enabled = false;
@@ -915,20 +1358,56 @@ namespace Diseño
                 radioButton_Averiado_Modificar.Enabled = false;
                 radioButton_Averiado_Modificar.Visible = false;
 
-                txtModifcar_Columna_Celulares.Enabled = false;
-                txtModifcar_Columna_Celulares.Visible = false;
+                txtModificar_Columna_Celulares.Enabled = false;
+                txtModificar_Columna_Celulares.Visible = false;
+            }
+        }
+
+        private void btnEliminar_Celular_Click(object sender, EventArgs e)
+        {
+            if (txtID_Celular_Eliminar.Text != "")
+            {
+                idCelular = int.Parse(txtID_Celular_Eliminar.Text);
+                try
+                {
+                    conn.Open();
+                    eliminarCelulares = "DELETE FROM celulares WHERE ID = " + idCelular + ";";
+                    cmd = new MySqlCommand(eliminarCelulares, conn);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No se elimino correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                        MostrarDatosEnLasTablasCelulares();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
         private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
         {
-            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_fechaIngreso.Value != null && txtID_Trabajo_Agregar.Text != "")
+            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && txtID_Trabajo_Agregar.Text != "")
             {
                 try
                 {
                     conn.Open();
                     idCelular = int.Parse(txtID_Trabajo_Agregar.Text);
-                    plazo = dateTimePicker_Plazo.Value;
+                    plazo = dateTimePicker_Plazo_Agregar.Value;
                     mesPlazo = plazo.Month;
                     diaPlazo = plazo.Day;
                     if (mesPlazo < 10)
@@ -955,7 +1434,7 @@ namespace Diseño
                     }
                     presupuesto = int.Parse(txtPresupuesto_Agregar.Text);
                     problema = txtProblema_Agregar.Text;
-                    fechaIngreso = dateTimePicker_fechaIngreso.Value;
+                    fechaIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
                     mesFechaIngreso = fechaIngreso.Month;
                     diaFechaIngreso = fechaIngreso.Day;
                     if (mesFechaIngreso < 10)
@@ -1011,7 +1490,424 @@ namespace Diseño
 
         private void btnModificar_Trabajo_Click(object sender, EventArgs e)
         {
+            if (comboBoxColumnas_Trabajos.Text.Equals("Todas..."))
+            {
+                //Label de error:
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
 
+                //Codigo para modificar el Trabajos:
+                if (txtTrabajo_ID_Modificar.Text != "" && txtID_Trabajo_Modificar.Text != "" && dateTimePicker_Plazo_Modificar.Value != null && txtPresupuesto_Modificar.Text != "" && txtProblema_Modificar.Text != "" && dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtAdelanto_Modificar.Text != null)
+                {
+                    try
+                    {
+                        conn.Open();
+                        idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+                        idCelular = int.Parse(txtTrabajo_ID_Modificar.Text);
+                        plazo = dateTimePicker_FechaDeIngreso_Modificar.Value;
+                        mesPlazo = plazo.Month;
+                        diaPlazo = plazo.Day;
+                        if (mesPlazo < 10)
+                        {
+                            if (diaPlazo < 10)
+                            {
+                                stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                            }
+                            else
+                            {
+                                stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                            }
+                        }
+                        else
+                        {
+                            if (diaPlazo < 10)
+                            {
+                                stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                            }
+                            else
+                            {
+                                stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                            }
+                        }
+                        presupuesto = int.Parse(txtPresupuesto_Modificar.Text);
+                        problema = txtProblema_Modificar.Text;
+                        fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
+                        mesFechaIngreso = fechaIngreso.Month;
+                        diaFechaIngreso = fechaIngreso.Day;
+                        if (mesFechaIngreso < 10)
+                        {
+                            if (diaFechaIngreso < 10)
+                            {
+                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                            }
+                            else
+                            {
+                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                            }
+                        }
+                        else
+                        {
+                            if (diaFechaIngreso < 10)
+                            {
+                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                            }
+                            else
+                            {
+                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                            }
+                        }
+                        adelanto = int.Parse(txtAdelanto_Modificar.Text);
+
+                        modifcarTrabajos = "UPDATE trabajos SET Plazo = '" + stringPlazo + "', Presupuesto = " + presupuesto + ", Problema = '" + problema + "', Fecha_Ingreso = '" + stringFechaIngreso + "', Adelanto = " + adelanto + ", ID_Celular = " + idCelular + " WHERE trabajos.ID = " + idTrabajo + ";";
+                        cmd = new MySqlCommand(modifcarTrabajos, conn);
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                        MostrarDatosEnLasTablasTrabajos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
+
+            else if (comboBoxColumnas_Trabajos.Text.Equals("Adelanto") || comboBoxColumnas_Trabajos.Text.Equals("Plazo") || comboBoxColumnas_Trabajos.Text.Equals("Presupuesto") || comboBoxColumnas_Trabajos.Text.Equals("Problema") || comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso") || comboBoxColumnas_Trabajos.Text.Equals("ID del celular"))
+            {
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
+
+                option = comboBoxColumnas_Trabajos.Text;
+
+                switch (option)
+                {
+                    case "Plazo":
+                        if (dateTimePicker_Plazo_Modificar.Value != null && txtID_Trabajo_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+                            plazo = dateTimePicker_Plazo_Modificar.Value;
+                            mesPlazo = plazo.Month;
+                            diaPlazo = plazo.Day;
+                            if (mesPlazo < 10)
+                            {
+                                if (diaPlazo < 10)
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                                }
+                            }
+                            else
+                            {
+                                if (diaPlazo < 10)
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                                }
+                            }
+
+                            modifcarTrabajos = "UPDATE trabajos SET Plazo = '" + stringPlazo + "' WHERE trabajos.ID = " + idTrabajo + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Presupuesto":
+                        if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+                            presupuesto = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET Presupuesto = " + presupuesto + " WHERE trabajos.ID = " + idTrabajo + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Problema":
+                        if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+                            problema = txtModificar_Columna_Trabajos.Text;
+
+                            modifcarTrabajos = "UPDATE trabajos SET Problema = '" + problema + "' WHERE trabajos.ID = " + idTrabajo + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Fecha de ingreso":
+                        if (dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtID_Trabajo_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+                            fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
+                            mesFechaIngreso = fechaIngreso.Month;
+                            diaFechaIngreso = fechaIngreso.Day;
+                            if (mesFechaIngreso < 10)
+                            {
+                                if (diaFechaIngreso < 10)
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                                }
+                            }
+                            else
+                            {
+                                if (diaFechaIngreso < 10)
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                                }
+                            }
+
+                            modifcarTrabajos = "UPDATE trabajos SET Fecha_Ingreso = '" + stringFechaIngreso + "' WHERE trabajos.ID = " + idTrabajo + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+                    case "Adelanto":
+                        if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+                            adelanto = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET Adelanto = " + adelanto + " WHERE trabajos.ID = " + idTrabajo + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break; 
+
+                    case "ID del celular":
+                        if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
+                        {
+                            conn.Open();
+                            idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+                            idCelular = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET ID_Celular = " + idCelular + " WHERE trabajos.ID = " + idTrabajo + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                comboBoxColumnas_Trabajos.Text = null;
+                //Labels:
+                labelError_Modificar_Trabajos.Enabled = true;
+                labelError_Modificar_Trabajos.Visible = true;
+
+                labelTrabajo_ID_Modificar.Enabled = false;
+                labelTrabajo_ID_Modificar.Visible = false;
+
+                labelPlazo_Modificar.Enabled = false;
+                labelPlazo_Modificar.Visible = false;
+
+                labelPresupuesto_Modificar.Enabled = false;
+                labelPresupuesto_Modificar.Visible = false;
+
+                labelProblema_Modificar.Enabled = false;
+                labelProblema_Modificar.Visible = false;
+
+                labelFechaDeIngreso_Modificar.Enabled = false;
+                labelFechaDeIngreso_Modificar.Visible = false;
+
+                labelAdelanto_Modificar.Enabled = false;
+                labelAdelanto_Modificar.Visible = false;
+
+                labelModificar_Columna_Trabajos.Enabled = false;
+                labelModificar_Columna_Trabajos.Visible = false;
+
+                //TextBox y DateTimePicker:
+                txtTrabajo_ID_Modificar.Enabled = false;
+                txtTrabajo_ID_Modificar.Visible = false;
+
+                dateTimePicker_Plazo_Modificar.Enabled = false;
+                dateTimePicker_Plazo_Modificar.Visible = false;
+
+                txtPresupuesto_Modificar.Enabled = false;
+                txtPresupuesto_Modificar.Visible = false;
+
+                txtProblema_Modificar.Enabled = false;
+                txtProblema_Modificar.Visible = false;
+
+                dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
+                dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
+
+                txtAdelanto_Modificar.Enabled = false;
+                txtAdelanto_Modificar.Visible = false;
+
+                txtModificar_Columna_Trabajos.Enabled = false;
+                txtModificar_Columna_Trabajos.Visible = false;
+            }
+        }
+
+        private void btnEliminar_Trabajo_Click(object sender, EventArgs e)
+        {
+            if (txtID_Trabajo_Eliminar.Text != "")
+            {
+                idTrabajo = int.Parse(txtID_Trabajo_Eliminar.Text);
+                try
+                {
+                    conn.Open();
+                    eliminarTrabajos = "DELETE FROM trabajos WHERE ID = " + idTrabajo + ";";
+                    cmd = new MySqlCommand(eliminarTrabajos, conn);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No se elimino correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                        MostrarDatosEnLasTablasTrabajos();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnRecargar_Click(object sender, EventArgs e)
