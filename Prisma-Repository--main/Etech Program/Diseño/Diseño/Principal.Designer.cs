@@ -171,6 +171,8 @@
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.tablaCelulares = new System.Windows.Forms.DataGridView();
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
+            this.groupBox_Explicacion = new System.Windows.Forms.GroupBox();
+            this.label_Explicacion = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
@@ -189,6 +191,7 @@
             this.groupBox_EliminarCelulares.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).BeginInit();
+            this.groupBox_Explicacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelD
@@ -1621,6 +1624,7 @@
             // groupBox_EliminarCelulares
             // 
             this.groupBox_EliminarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_EliminarCelulares.Controls.Add(this.groupBox_Explicacion);
             this.groupBox_EliminarCelulares.Controls.Add(this.btnEliminar_Celular);
             this.groupBox_EliminarCelulares.Controls.Add(this.txtID_Celular_Eliminar);
             this.groupBox_EliminarCelulares.Controls.Add(this.label_ID_Celular_Eliminar);
@@ -1704,6 +1708,29 @@
             this.tablaTrabajos.Size = new System.Drawing.Size(786, 0);
             this.tablaTrabajos.TabIndex = 20;
             // 
+            // groupBox_Explicacion
+            // 
+            this.groupBox_Explicacion.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox_Explicacion.Controls.Add(this.label_Explicacion);
+            this.groupBox_Explicacion.Location = new System.Drawing.Point(9, 87);
+            this.groupBox_Explicacion.Name = "groupBox_Explicacion";
+            this.groupBox_Explicacion.Size = new System.Drawing.Size(208, 177);
+            this.groupBox_Explicacion.TabIndex = 7;
+            this.groupBox_Explicacion.TabStop = false;
+            this.groupBox_Explicacion.Text = "AVISO!";
+            // 
+            // label_Explicacion
+            // 
+            this.label_Explicacion.AutoSize = true;
+            this.label_Explicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Explicacion.Location = new System.Drawing.Point(6, 21);
+            this.label_Explicacion.Name = "label_Explicacion";
+            this.label_Explicacion.Size = new System.Drawing.Size(194, 144);
+            this.label_Explicacion.TabIndex = 0;
+            this.label_Explicacion.Text = "Tener en cuenta: no \r\npodras borrar un celular \r\nhasta que hayas borrado\r\ntodos l" +
+    "os trabajos con \r\nlos que esta vinculado,\r\nosea, todos los trabajos\r\nque tengan " +
+    "el ID de \r\nese celular en cuestión";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1753,6 +1780,8 @@
             this.groupBox_EliminarCelulares.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
+            this.groupBox_Explicacion.ResumeLayout(false);
+            this.groupBox_Explicacion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1899,6 +1928,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo_Modificar;
         private System.Windows.Forms.Label labelModificar_Columna_Trabajos;
         private System.Windows.Forms.TextBox txtModificar_Columna_Trabajos;
+        private System.Windows.Forms.GroupBox groupBox_Explicacion;
+        private System.Windows.Forms.Label label_Explicacion;
     }
 }
 
