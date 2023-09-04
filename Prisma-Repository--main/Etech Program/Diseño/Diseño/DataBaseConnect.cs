@@ -26,7 +26,7 @@ namespace Diseño
             catch (Exception e)
             {
                 MessageBox.Show("Error al conectar a la Base de Datos\n\nMensaje de Error:\n" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show("Mensaje técnico:\n\n" + e.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Mensaje técnico:\n\n" + e.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null;
             }
         }

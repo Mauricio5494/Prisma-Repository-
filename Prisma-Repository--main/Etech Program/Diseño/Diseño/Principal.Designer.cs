@@ -160,6 +160,8 @@
             this.radioButton_CELULARES_Eliminar = new System.Windows.Forms.RadioButton();
             this.label_Tabla_Eliminar = new System.Windows.Forms.Label();
             this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
+            this.groupBox_Explicacion = new System.Windows.Forms.GroupBox();
+            this.label_Explicacion = new System.Windows.Forms.Label();
             this.btnEliminar_Celular = new System.Windows.Forms.Button();
             this.txtID_Celular_Eliminar = new System.Windows.Forms.TextBox();
             this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
@@ -171,8 +173,6 @@
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.tablaCelulares = new System.Windows.Forms.DataGridView();
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
-            this.groupBox_Explicacion = new System.Windows.Forms.GroupBox();
-            this.label_Explicacion = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
@@ -189,15 +189,14 @@
             this.panel_Eliminar.SuspendLayout();
             this.groupBox_EliminarTrabajos.SuspendLayout();
             this.groupBox_EliminarCelulares.SuspendLayout();
+            this.groupBox_Explicacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).BeginInit();
-            this.groupBox_Explicacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelD
             // 
             this.panelD.BackColor = System.Drawing.Color.Firebrick;
-            this.panelD.Controls.Add(this.btnRecargar);
             this.panelD.Controls.Add(this.btnMenuPrincipal);
             this.panelD.Controls.Add(this.btnEliminar);
             this.panelD.Controls.Add(this.btnModificar);
@@ -213,7 +212,7 @@
             this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecargar.Enabled = false;
             this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 288);
+            this.btnRecargar.Location = new System.Drawing.Point(841, 78);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(25, 25);
             this.btnRecargar.TabIndex = 21;
@@ -1636,6 +1635,29 @@
             this.groupBox_EliminarCelulares.TabStop = false;
             this.groupBox_EliminarCelulares.Text = "Elimine un celular";
             // 
+            // groupBox_Explicacion
+            // 
+            this.groupBox_Explicacion.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox_Explicacion.Controls.Add(this.label_Explicacion);
+            this.groupBox_Explicacion.Location = new System.Drawing.Point(9, 87);
+            this.groupBox_Explicacion.Name = "groupBox_Explicacion";
+            this.groupBox_Explicacion.Size = new System.Drawing.Size(208, 177);
+            this.groupBox_Explicacion.TabIndex = 7;
+            this.groupBox_Explicacion.TabStop = false;
+            this.groupBox_Explicacion.Text = "AVISO!";
+            // 
+            // label_Explicacion
+            // 
+            this.label_Explicacion.AutoSize = true;
+            this.label_Explicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Explicacion.Location = new System.Drawing.Point(6, 21);
+            this.label_Explicacion.Name = "label_Explicacion";
+            this.label_Explicacion.Size = new System.Drawing.Size(194, 144);
+            this.label_Explicacion.TabIndex = 0;
+            this.label_Explicacion.Text = "Tener en cuenta: no \r\npodras borrar un celular \r\nhasta que hayas borrado\r\ntodos l" +
+    "os trabajos con \r\nlos que esta vinculado,\r\nosea, todos los trabajos\r\nque tengan " +
+    "el ID de \r\nese celular en cuestión";
+            // 
             // btnEliminar_Celular
             // 
             this.btnEliminar_Celular.Location = new System.Drawing.Point(6, 457);
@@ -1708,35 +1730,13 @@
             this.tablaTrabajos.Size = new System.Drawing.Size(786, 0);
             this.tablaTrabajos.TabIndex = 20;
             // 
-            // groupBox_Explicacion
-            // 
-            this.groupBox_Explicacion.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox_Explicacion.Controls.Add(this.label_Explicacion);
-            this.groupBox_Explicacion.Location = new System.Drawing.Point(9, 87);
-            this.groupBox_Explicacion.Name = "groupBox_Explicacion";
-            this.groupBox_Explicacion.Size = new System.Drawing.Size(208, 177);
-            this.groupBox_Explicacion.TabIndex = 7;
-            this.groupBox_Explicacion.TabStop = false;
-            this.groupBox_Explicacion.Text = "AVISO!";
-            // 
-            // label_Explicacion
-            // 
-            this.label_Explicacion.AutoSize = true;
-            this.label_Explicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Explicacion.Location = new System.Drawing.Point(6, 21);
-            this.label_Explicacion.Name = "label_Explicacion";
-            this.label_Explicacion.Size = new System.Drawing.Size(194, 144);
-            this.label_Explicacion.TabIndex = 0;
-            this.label_Explicacion.Text = "Tener en cuenta: no \r\npodras borrar un celular \r\nhasta que hayas borrado\r\ntodos l" +
-    "os trabajos con \r\nlos que esta vinculado,\r\nosea, todos los trabajos\r\nque tengan " +
-    "el ID de \r\nese celular en cuestión";
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1350, 689);
+            this.Controls.Add(this.btnRecargar);
             this.Controls.Add(this.tablaTrabajos);
             this.Controls.Add(this.tablaCelulares);
             this.Controls.Add(this.panelE);
@@ -1746,6 +1746,7 @@
             this.Controls.Add(this.panel_Agregar);
             this.Controls.Add(this.panel_Modificar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1778,10 +1779,10 @@
             this.groupBox_EliminarTrabajos.PerformLayout();
             this.groupBox_EliminarCelulares.ResumeLayout(false);
             this.groupBox_EliminarCelulares.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
             this.groupBox_Explicacion.ResumeLayout(false);
             this.groupBox_Explicacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
             this.ResumeLayout(false);
 
         }
