@@ -28,6 +28,9 @@ namespace Diseño
         MySqlDataReader reader;
         Principal Taller = new Principal();
 
+        //Utilidades:
+        bool userRootOk = false;
+        bool passRootOK = false;
 
         //Método para cambiar la imágen del ojo y la sintaxis de ingreso de caracteres al TextBox de la Contraseña:
         private void checkBox1_CheckedChanged(object sender, System.EventArgs e)
@@ -156,9 +159,36 @@ namespace Diseño
 
         private void LabelRegistrarse_Click(object sender, EventArgs e)
         {
-            RegistroUsuarios mostrar = new RegistroUsuarios();
-            mostrar.Show();
-            this.Hide();
+
+            //Se supone que igual esto es un ejemplo para poder hacer que el programa sea más seguro, sino cualquiera entra, mete un usuario y ve la BD.
+
+            if (txtNombre.Text.Equals("etech"))
+            {
+                userRootOk = true;
+            }
+            else
+            {
+                MessageBox.Show("Usuario Incorrecto", "Dato Erroneo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            if (txtPass.Text.Equals("123"))
+            {
+                passRootOK = true;
+            }
+            else
+            {
+                MessageBox.Show("Contraseña Incorrecta", "Dato Erroneo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            if (userRootOk && passRootOK)
+            {
+                RegistroUsuarios mostrar = new RegistroUsuarios();
+                mostrar.Show();
+                this.Hide();
+            }
+
+            //Si, ya se que se puede acortar el código, pero es solo un ejemplo... de momento.
+
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
