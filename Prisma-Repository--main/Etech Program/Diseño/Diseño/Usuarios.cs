@@ -43,12 +43,13 @@ namespace Diseño
         {
             try
             {
-                tabla_Usuarios.Rows.Clear();
+                tabla_Usuarios.Rows.Clear();   /*<-- Ésta línea era la que estaba dando problemas, como un bug porque se recargaba y funciona, pero terminaba en catch.*/
                 conn.Open();
                 cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
+                cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 dataTableUsuarios.Load(reader);
-                label_BD_Mostrada.Text = "Mostrando Usuarios";
+                label_BD_Mostrada.Text = "Mostrando Usuarios";  
             }
             catch (Exception ex)
             {
@@ -71,14 +72,7 @@ namespace Diseño
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             
-            if (conn.State == ConnectionState.Open)
-            {
-                mostrarBaseDeDatosDeLaTablaUsuarios();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo contectar con la Base de Datos", "FATAL ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            mostrarBaseDeDatosDeLaTablaUsuarios();
 
         }
 
@@ -235,5 +229,9 @@ namespace Diseño
 
         }
 
+        private void timer_RecargarBD_Tick(object sender, EventArgs e)
+        {
+            //mostrarBaseDeDatosDeLaTablaUsuarios();
+        }
     }
 }
