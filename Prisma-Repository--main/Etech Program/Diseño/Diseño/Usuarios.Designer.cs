@@ -60,6 +60,7 @@
             this.timer_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Encoger = new System.Windows.Forms.Timer(this.components);
             this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.timer_RecargarBD = new System.Windows.Forms.Timer(this.components);
             this.panelE.SuspendLayout();
             this.panelD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).BeginInit();
@@ -395,6 +396,11 @@
             this.txtNombre.Size = new System.Drawing.Size(299, 20);
             this.txtNombre.TabIndex = 0;
             // 
+            // timer_Agrandar
+            // 
+            this.timer_Agrandar.Enabled = true;
+            this.timer_Agrandar.Interval = 800;
+            // 
             // btnRecargar
             // 
             this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -405,6 +411,12 @@
             this.btnRecargar.TabIndex = 22;
             this.btnRecargar.TabStop = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // timer_RecargarBD
+            // 
+            this.timer_RecargarBD.Enabled = true;
+            this.timer_RecargarBD.Interval = 1000;
+            this.timer_RecargarBD.Tick += new System.EventHandler(this.timer_RecargarBD_Tick);
             // 
             // Usuarios
             // 
@@ -469,5 +481,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Timer timer_RecargarBD;
     }
 }
