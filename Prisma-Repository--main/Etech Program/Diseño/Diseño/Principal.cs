@@ -72,7 +72,7 @@ namespace Diseño
                 DataTableCelulares.Rows.Clear(); 
                 conn.Open();
                 cmd = new MySqlCommand("SELECT * FROM celulares;", conn);
-                //cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 DataTableCelulares.Load(reader);    
             }
