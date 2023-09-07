@@ -663,15 +663,31 @@ namespace Diseño
             }
         }
 
-        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        //Función para una ayuda visual al usuario, no muy elegante pero intenta hacer su función principal.
+        private void AyudaVisual_Tabla_Mostrar()
         {
-            Application.Exit();
+            if (radioButton_TablaCelulares.Checked || radioButton_TablaTrabajos.Checked)
+            {
+                panelAyudaVisual_Tabla.Visible = false;
+                panelAyudaVisual_Tabla.Enabled = false;
+            }
+            else
+            {
+                panelAyudaVisual_Tabla.Visible = true;
+                panelAyudaVisual_Tabla.Enabled = true;
+            }
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
             
         }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
 
         //Codigo referente al menu secundario:
         private void btnMenu_Click(object sender, EventArgs e)
@@ -715,7 +731,10 @@ namespace Diseño
                 tablaTrabajos.Location = new Point(49, 78);
             }
         }
+
+
         //Codigo referente a los botones del menu secundario:
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (Seguridad.getInvitado == false)
@@ -2274,6 +2293,7 @@ namespace Diseño
 
         private void radioButton_TablaCelulares_CheckedChanged(object sender, EventArgs e)
         {
+            AyudaVisual_Tabla_Mostrar();
             btnRecargar.Enabled = true;
             btnRecargar.Visible = true;
 
@@ -2298,6 +2318,7 @@ namespace Diseño
 
         private void radioButton_TablaTrabajo_CheckedChanged(object sender, EventArgs e)
         {
+            AyudaVisual_Tabla_Mostrar();
             btnRecargar.Enabled = true;
             btnRecargar.Visible = true;
 
@@ -2316,6 +2337,22 @@ namespace Diseño
             {
                 MostrarDatosEnLasTablasTrabajos();
             }
+        }
+
+        //Botón de cierre del programa con shortcut Default: "Escape"
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult seguridad = MessageBox.Show("¿Está seguro de querer Cerrar el programa?", "Saliendo del Programa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (seguridad == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                //seguridad = DialogResult.No;
+            }
+
         }
     }
 }
