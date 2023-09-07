@@ -36,9 +36,12 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.LabelRegistrarse = new System.Windows.Forms.Label();
             this.btnIngreso = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnInvitado = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picMostrar = new System.Windows.Forms.PictureBox();
+            this.NonFunctional_labByPrisma = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +68,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(68, 119);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(156, 20);
@@ -75,6 +79,7 @@
             // 
             // txtPass
             // 
+            this.txtPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(68, 171);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -132,6 +137,16 @@
             this.btnIngreso.UseVisualStyleBackColor = false;
             this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Diseño.Properties.Resources.Prisma_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(312, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(255, 248);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnInvitado
             // 
             this.btnInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -172,13 +187,26 @@
             this.picMostrar.TabIndex = 7;
             this.picMostrar.TabStop = false;
             // 
+            // NonFunctional_labByPrisma
+            // 
+            this.NonFunctional_labByPrisma.AutoSize = true;
+            this.NonFunctional_labByPrisma.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NonFunctional_labByPrisma.ForeColor = System.Drawing.Color.Blue;
+            this.NonFunctional_labByPrisma.Location = new System.Drawing.Point(331, 47);
+            this.NonFunctional_labByPrisma.Name = "NonFunctional_labByPrisma";
+            this.NonFunctional_labByPrisma.Size = new System.Drawing.Size(37, 16);
+            this.NonFunctional_labByPrisma.TabIndex = 11;
+            this.NonFunctional_labByPrisma.Text = "By:";
+            // 
             // Login
             // 
             this.AcceptButton = this.btnIngreso;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.ClientSize = new System.Drawing.Size(304, 281);
+            this.ClientSize = new System.Drawing.Size(615, 281);
+            this.Controls.Add(this.NonFunctional_labByPrisma);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.LabelRegistrarse);
             this.Controls.Add(this.btnInvitado);
             this.Controls.Add(this.txtPass);
@@ -198,6 +226,7 @@
             this.Text = "Iniciar Sesion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).EndInit();
             this.ResumeLayout(false);
@@ -217,5 +246,7 @@
         private System.Windows.Forms.PictureBox picMostrar;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label LabelRegistrarse;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label NonFunctional_labByPrisma;
     }
 }
