@@ -127,29 +127,16 @@ namespace Diseño
         {
             if (txtNombre.Text == "")
             {
-                txtNombre.Text = "ID de Empleado...";
+                txtNombre.Text = "Nombre del Empleado...";
                 txtNombre.ForeColor = Color.Gray;
             }
         }
 
-        private void button1_MouseEnter(object sender, System.EventArgs e)
-        {
-            toolTip1.SetToolTip(btnInvitado, "Entra como invitado, solo tienes permiso de ver.");
-        }
-
-        private void txtPass_MouseEnter(object sender, System.EventArgs e)
-        {
-            toolTip1.SetToolTip(txtPass, "La contraseña que ustéd ha elegido, o que \nsu Jefe o Empleador le ha proporcionado.");
-        }
-
-        private void txtNombre_MouseEnter(object sender, System.EventArgs e)
-        {
-            toolTip1.SetToolTip(txtNombre, "Acá va el ID que le proporcionó su Jefe o Empleador.");
-        }
 
         private void LabelRegistrarse_MouseEnter(object sender, EventArgs e)
         {
             LabelRegistrarse.ForeColor = Color.DodgerBlue;
+            toolTip1.SetToolTip(LabelRegistrarse, "Ingrese el usuario y contraseña que el equipo\nPrisma le ha prporcionado, luego podrá registar usuarios");
         }
 
         private void LabelRegistrarse_MouseLeave(object sender, EventArgs e)
@@ -194,6 +181,23 @@ namespace Diseño
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        //Tooltips:
+
+        private void button1_MouseEnter(object sender, System.EventArgs e)
+        {
+            toolTip1.SetToolTip(btnInvitado, "Entra como invitado, solo tienes permiso de ver.");
+        }
+
+        private void txtPass_MouseEnter(object sender, System.EventArgs e)
+        {
+            toolTip1.SetToolTip(txtPass, "La contraseña que ustéd ha elegido o que \nsu Jefe o Empleador le ha proporcionado.");
+        }
+
+        private void txtNombre_MouseEnter(object sender, System.EventArgs e)
+        {
+            toolTip1.SetToolTip(txtNombre, "Acá va el ID que le proporcionó su Jefe o Empleador.");
         }
     }
 }
