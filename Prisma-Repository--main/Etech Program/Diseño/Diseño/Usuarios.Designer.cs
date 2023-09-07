@@ -275,7 +275,7 @@
             this.panel_Registro.Controls.Add(this.groupBox1);
             this.panel_Registro.Location = new System.Drawing.Point(929, 76);
             this.panel_Registro.Name = "panel_Registro";
-            this.panel_Registro.Size = new System.Drawing.Size(419, 599);
+            this.panel_Registro.Size = new System.Drawing.Size(419, 0);
             this.panel_Registro.TabIndex = 16;
             // 
             // groupBox1
@@ -415,7 +415,7 @@
             // timer_RecargarBD
             // 
             this.timer_RecargarBD.Enabled = true;
-            this.timer_RecargarBD.Interval = 1000;
+            this.timer_RecargarBD.Interval = 3500;
             this.timer_RecargarBD.Tick += new System.EventHandler(this.timer_RecargarBD_Tick);
             // 
             // Usuarios
