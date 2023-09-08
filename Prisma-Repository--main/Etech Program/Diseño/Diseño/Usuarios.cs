@@ -216,7 +216,7 @@ namespace Diseño
             }
             catch (Exception)
             {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falló la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
