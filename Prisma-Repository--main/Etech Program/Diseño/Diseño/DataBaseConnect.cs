@@ -14,7 +14,7 @@ namespace Diseño
             string pwd = "";
             string servidor = "localhost";
             string port = "3306";
-            string database = "Etech_db";
+            string database = "etech_db";
             string requisitos = $"Server={servidor}; Uid={uid}; Pwd={pwd}; Port={port}; Database={database}";
             //instancia del metodo:
             MySqlConnection ConnectionDB = new MySqlConnection(requisitos);
