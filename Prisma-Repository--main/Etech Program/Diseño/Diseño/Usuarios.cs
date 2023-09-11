@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using MySql.Data.MySqlClient;
+using MySql.Utility.Enums;
 using System;
 using System.Data;
 using System.Drawing;
@@ -53,10 +55,17 @@ namespace Diseño
             }
             catch (Exception ex)
             {
+                if (conn.Equals(ConnectionState.Open))
+                {
+                    
+                }
+                else
+                {    
                 MessageBox.Show("No se pudo contectar con la Base de Datos", "FATAL ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show(ex.Message, "Información acerca del Error", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 label_BD_Mostrada.Text = "No se pudo mostrar la Tabla";
                 label_BD_Mostrada.ForeColor = System.Drawing.Color.Red;
+                }
             }
             finally
             {
