@@ -23,6 +23,17 @@ namespace Diseño
         string option;
         string busqueda;
 
+        
+
+        //De tabla
+        int lonigtudDeColumna_Corta = 50;
+        int lonigtudDeColumna_Media = 80;
+        int lonigtudDeColumna_Larga = 120;
+        int lonigtudDeColumna_LargaM = 160;
+        int longitudDeColumna_LargaL = 180;
+        int longitudDeColumna_LargaXL = 200;
+        int longitudDeColumna_XLXL = 250;
+
         int mesPlazo;
         int diaPlazo;
         int mesFechaIngreso;
@@ -69,16 +80,16 @@ namespace Diseño
         {
             try
             {
-                DataTableCelulares.Rows.Clear(); 
+                DataTableCelulares.Rows.Clear();
                 conn.Open();
                 cmd = new MySqlCommand("SELECT * FROM celulares;", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
-                DataTableCelulares.Load(reader);    
+                DataTableCelulares.Load(reader);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" +ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -99,7 +110,7 @@ namespace Diseño
             }
             catch (Exception x)
             {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -111,7 +122,7 @@ namespace Diseño
 
         //Métodos de los ComboBox:
         private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
-        {    
+        {
             txtCampo_Busqueda.Enabled = true;
             btnBuscar.Enabled = true;
         }
@@ -471,7 +482,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -494,7 +505,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" +x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -517,7 +528,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -540,7 +551,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -574,7 +585,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -582,7 +593,7 @@ namespace Diseño
                             }
                             tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
                             break;
-                      
+
                         case "Problema":
                             labelError_MenuOpciones.Visible = false;
                             labelError_MenuOpciones.Visible = false;
@@ -598,7 +609,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -606,7 +617,7 @@ namespace Diseño
                             }
                             tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
                             break;
-                 
+
                         case "Fecha de ingreso":
                             labelError_MenuOpciones.Visible = false;
                             labelError_MenuOpciones.Visible = false;
@@ -622,7 +633,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -630,7 +641,7 @@ namespace Diseño
                             }
                             tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
                             break;
-               
+
                         case "ID del celular":
                             labelError_MenuOpciones.Visible = false;
                             labelError_MenuOpciones.Visible = false;
@@ -646,7 +657,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -654,7 +665,7 @@ namespace Diseño
                             }
                             tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
                             break;
-                        
+
                         default:
                             labelError_MenuOpciones.Visible = true;
                             break;
@@ -680,7 +691,7 @@ namespace Diseño
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
@@ -1001,10 +1012,10 @@ namespace Diseño
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("No se ingreso correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        } 
+                            MessageBox.Show("No se ingreso correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
@@ -1016,9 +1027,9 @@ namespace Diseño
                     MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -1036,7 +1047,7 @@ namespace Diseño
                 labelError_Modificar_Celulares.Visible = false;
 
                 //Codigo para modificar el Celular:
-                if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && txtID_Celular_Modificar.Text != "" && txtTecnico_Modificar.Text != "") 
+                if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && txtID_Celular_Modificar.Text != "" && txtTecnico_Modificar.Text != "")
                 {
                     if (radioButton_Arreglado_Modificar.Checked == true || radioButton_Averiado_Modificar.Checked == true)
                     {
@@ -1065,14 +1076,14 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        catch 
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         finally
                         {
@@ -1114,15 +1125,15 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
                                 conn.Close();
                                 MostrarDatosEnLasTablasCelulares();
-                            } 
+                            }
                         }
                         else
                         {
@@ -1143,9 +1154,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1172,9 +1183,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1201,9 +1212,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1230,9 +1241,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1252,16 +1263,16 @@ namespace Diseño
                             conn.Open();
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             idUsuario = int.Parse(txtModificar_Columna_Celulares.Text);
-                            modifcarCelulares = "UPDATE celulares SET Marca = " + idUsuario +" WHERE celulares.ID = " + idCelular + ";";
+                            modifcarCelulares = "UPDATE celulares SET Marca = " + idUsuario + " WHERE celulares.ID = " + idCelular + ";";
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1397,9 +1408,9 @@ namespace Diseño
                     {
                         cmd.ExecuteNonQuery();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No se elimino correctamente el celular", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se elimino correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -1407,9 +1418,9 @@ namespace Diseño
                         MostrarDatosEnLasTablasCelulares();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -1431,7 +1442,7 @@ namespace Diseño
                     diaPlazo = plazo.Day;
                     if (mesPlazo < 10)
                     {
-                        if (diaPlazo < 10) 
+                        if (diaPlazo < 10)
                         {
                             stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
                         }
@@ -1442,14 +1453,14 @@ namespace Diseño
                     }
                     else
                     {
-                        if (diaPlazo <10)
+                        if (diaPlazo < 10)
                         {
                             stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
                         }
                         else
                         {
                             stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
-                        }      
+                        }
                     }
                     presupuesto = int.Parse(txtPresupuesto_Agregar.Text);
                     problema = txtProblema_Agregar.Text;
@@ -1486,14 +1497,14 @@ namespace Diseño
                     {
                         cmd.ExecuteNonQuery();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No se ingreso correctamente el Trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se ingreso correctamente el Trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -1583,14 +1594,14 @@ namespace Diseño
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -1651,9 +1662,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1681,9 +1692,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch(Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1711,9 +1722,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1765,9 +1776,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1794,9 +1805,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1808,7 +1819,7 @@ namespace Diseño
                         {
                             MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         }
-                        break; 
+                        break;
 
                     case "ID del celular":
                         if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
@@ -1824,9 +1835,9 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" +ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -1908,9 +1919,9 @@ namespace Diseño
                     {
                         cmd.ExecuteNonQuery();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No se elimino correctamente el trabajo", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se elimino correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -1918,9 +1929,9 @@ namespace Diseño
                         MostrarDatosEnLasTablasTrabajos();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -2307,10 +2318,10 @@ namespace Diseño
             if (tablaCelulares.Height < 600)
             {
                 tablaTrabajos.Height = 0;
-                tablaCelulares.Height = 600;
+                tablaCelulares.Height = 650;
                 MostrarDatosEnLasTablasCelulares();
             }
-            else 
+            else
             {
                 MostrarDatosEnLasTablasCelulares();
             }
@@ -2330,7 +2341,7 @@ namespace Diseño
             if (tablaTrabajos.Height < 600)
             {
                 tablaCelulares.Height = 0;
-                tablaTrabajos.Height = 600;
+                tablaTrabajos.Height = 650;
                 MostrarDatosEnLasTablasTrabajos();
             }
             else
@@ -2353,6 +2364,68 @@ namespace Diseño
                 //seguridad = DialogResult.No;
             }
 
+        }
+
+        /// <summary>
+        /// Esta parte del código es para la personalización programática para el cargar visualmente bien de las tablas.
+        /// </summary>
+
+        private void tablaCelulares_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+
+            /*
+             * Valor de longitudes:
+             * Corta: 50px
+             * Media: 80px
+             * Larga: 120px
+             * LargaM: 160px
+             * LargaL: 180px
+             * LargaXL: 200px
+             * XLXL: 250px
+             * 
+             * valores pero totalmente al pedo, se pueden poner como un número entero sin necesidad de declararlo con anterioridad.
+             * Pero bueno, le da un toque de profesionalizmo... no, lo contrario, mrd. *pain noises*
+             */
+
+            if (tablaCelulares.Columns.Contains("ID"))
+            {
+                //Largo de las columnas
+                tablaCelulares.Columns["ID"].Width = lonigtudDeColumna_Corta;
+                tablaCelulares.Columns["Marca"].Width = lonigtudDeColumna_Larga;
+                tablaCelulares.Columns["IMEI"].Width = longitudDeColumna_LargaL;
+                tablaCelulares.Columns["Modelo"].Width = lonigtudDeColumna_Larga;
+                tablaCelulares.Columns["ID_Usuario"].Width = 73;
+
+                //Renombre de columnas, más que nada es estético.
+                tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cedula";
+                tablaCelulares.Columns["ID_Usuario"].HeaderText = "Técnico";
+
+                //Tooltips al posar el mouse
+                tablaCelulares.Columns["ID"].ToolTipText = "Número identificatorio para cada celular en esta tabla";
+                tablaCelulares.Columns["Marca"].ToolTipText = "La marca del teléfono";
+                tablaCelulares.Columns["Modelo"].ToolTipText = "El modelo del teléfono";
+                tablaCelulares.Columns["IMEI"].ToolTipText = "El número único identificatorio para cada dispositivo, normalmente viene detrás de este como una pegatina";
+                tablaCelulares.Columns["Estado"].ToolTipText = "El estado en el que está actualmente el celular";
+                tablaCelulares.Columns["Cedula_Cliente"].ToolTipText = "La cédula del dueño del teléfono";
+                tablaCelulares.Columns["ID_Usuario"].ToolTipText = "El ID del Técnico a cargo del teléfono";
+            }
+        }
+
+        //Que se cague, no más de 8 caracteres, que es lo que sería la cédula sin los puntos ni el guión.
+        private void txtCI_Del_Dueño_Agregar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtCI_Del_Dueño_Agregar.MaxLength = 7 + 1;
+                int caracteresRestantes = txtCI_Del_Dueño_Agregar.MaxLength - (txtCI_Del_Dueño_Agregar.TextLength + 1);
+
+            if (txtCI_Del_Dueño_Agregar.TextLength <= txtCI_Del_Dueño_Agregar.MaxLength)
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres Restantes: " + caracteresRestantes + "/8";
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
