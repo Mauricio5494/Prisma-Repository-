@@ -1,5 +1,6 @@
 ﻿using Microsoft.ReportingServices.Diagnostics.Internal;
 using MySql.Data.MySqlClient;
+using MySql.Utility.Classes;
 using MySql.Utility.Enums;
 using System;
 using System.Data;
@@ -11,18 +12,20 @@ namespace Diseño
 {
     public partial class Usuarios : Form
     {
+        //Variables:
+        int idTecnico;
 
         //Instancias:
         DataTable dataTableUsuarios = new DataTable();
-        MySqlConnection conn = DataBaseConnect.conectarse();
+        MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd = new MySqlCommand();
         MySqlCommand cmd_Registro;
         MySqlCommand cmd_Seguridad;
         MySqlDataReader reader;
         ToolTip ayudaVisual = new ToolTip();
-        //Utilidades:
 
-
+        //Base de Datos:
+        private string eliminarTecnico; /* <-- totalmente al pedo la viriable, pero bueno ta, no hace ninguna diferencia su existencia igualmente, se puede quedar así. */
         private bool existe_otra_cuenta;
         private string sql_Registro;
         private string sql_Seguridad;
@@ -41,30 +44,32 @@ namespace Diseño
             InitializeComponent();
         }
 
-        private void mostrarBaseDeDatosDeLaTablaUsuarios()
+        private void MostrarBaseDeDatosDeLaTablaUsuarios()
         {
             try
             {
-                /*tabla_Usuarios.Rows.Clear();*/   /*<-- Ésta línea era la que estaba dando problemas, como un bug porque se recargaba y funciona, pero terminaba en catch.*/
+                dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL (Línea 19).*/
                 conn.Open();
                 cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 dataTableUsuarios.Load(reader);
-                label_BD_Mostrada.Text = "Mostrando Usuarios";  
+                label_BD_Mostrada.Text = "Mostrando Usuarios";
+                label_BD_Mostrada.ForeColor = Color.ForestGreen;
             }
             catch (Exception ex)
             {
                 if (conn.Equals(ConnectionState.Open))
                 {
-                    
+                    label_BD_Mostrada.Text = "Mostrando Usuarios";
+                    label_BD_Mostrada.ForeColor = Color.ForestGreen;
                 }
                 else
-                {    
-                MessageBox.Show("No se pudo contectar con la Base de Datos", "FATAL ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show(ex.Message, "Información acerca del Error", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                label_BD_Mostrada.Text = "No se pudo mostrar la Tabla";
-                label_BD_Mostrada.ForeColor = System.Drawing.Color.Red;
+                {
+                    MessageBox.Show("No se pudo contectar con la Base de Datos", "FATAL ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Información acerca del Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    label_BD_Mostrada.Text = "No se pudo mostrar la Tabla";
+                    label_BD_Mostrada.ForeColor = Color.DarkRed;
                 }
             }
             finally
@@ -74,15 +79,115 @@ namespace Diseño
             tabla_Usuarios.DataSource = dataTableUsuarios;
         }
 
+        private void MostrarBaseDeDatosDeLaTablaUsuariosd_SinMensajeDeError()
+        {
+            try
+            {
+                dataTableUsuarios.Rows.Clear();
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
+                cmd.CommandType = System.Data.CommandType.Text;
+                reader = cmd.ExecuteReader();
+                dataTableUsuarios.Load(reader);
+                label_BD_Mostrada.Text = "Mostrando Usuarios";
+                label_BD_Mostrada.ForeColor = Color.ForestGreen;
+            }
+            catch (Exception ex)
+            {
+                if (conn.Equals(ConnectionState.Open))
+                {
+                    label_BD_Mostrada.Text = "Mostrando Usuarios";
+                    label_BD_Mostrada.ForeColor = Color.ForestGreen;
+                }
+                else
+                {
+                    label_BD_Mostrada.Text = "No se pudo mostrar la Tabla";
+                    label_BD_Mostrada.ForeColor = Color.DarkRed;
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+            tabla_Usuarios.DataSource = dataTableUsuarios;
+        }
+
+        private void btnEliminar_panelBorrarTecnico_Click(object sender, EventArgs e)
+        {
+            if (txtID_panelBorrarUsuarios.Text != "")
+            {
+
+                DialogResult byebye = MessageBox.Show("¿Estás seguro de borrar este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (byebye == DialogResult.Yes)
+                {
+                    idTecnico = int.Parse(txtID_panelBorrarUsuarios.Text);
+
+                    try
+                    {
+                        conn.Open();
+                        eliminarTecnico = "DELETE FROM trabajos WHERE ID_Tecnico = "+ idTecnico + ";" + "DELETE FROM celulares WHERE ID_Usuario =" + idTecnico +
+                            ";" + "DELETE FROM usuarios WHERE ID =" + idTecnico + ";";
+                        cmd = new MySqlCommand(eliminarTecnico, conn);
+                        txtID_panelBorrarUsuarios.Text = "";
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo recargar la Tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ex.Message, "Ínformación Técnica del Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tabla_Usuarios.DataSource = dataTableUsuarios;
+                        tabla_Usuarios.Refresh();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo Borrar dicho usuario, puede deberse a que no existe el ID o hubo un fallo en la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Información Técnica del error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+
+                else
+                {
+                    MostrarBaseDeDatosDeLaTablaUsuarios();
+                    //Como para decir que no pasa nada... porque no tiene por qué pasar algo si dice que no.
+
+                    MessageBox.Show("Prueba");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No deje el campo ID vacío", "Por Favor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            if (panel_BorrarUsuario.Height == 0 && panel_Registro.Height == 0)
+            {
+                panel_BorrarUsuario.Height = 590;
+            }
+            else
+            {
+                panel_Registro.Height = 0;
+                panel_BorrarUsuario.Height = 0;
+            }
         }
+
         private void btnRecargar_Click(object sender, EventArgs e)
         {
-            
-            mostrarBaseDeDatosDeLaTablaUsuarios();
-
+            MostrarBaseDeDatosDeLaTablaUsuarios();
+            tabla_Usuarios.Refresh();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -131,14 +236,18 @@ namespace Diseño
         {
             Application.Exit();
 
-            
+
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            mostrarBaseDeDatosDeLaTablaUsuarios();
+            MostrarBaseDeDatosDeLaTablaUsuarios();
 
             panel_Registro.Height = 0;
+            panel_BorrarUsuario.Height = 0;
+
+            labelNota_panelBorrarTecnico.Text = "Nota:\n\nSi eliminas un técnico, se eliminarán\ntodos los celulares que se le \nasignaron al técnico en cuestión.";
+            ayudaVisual.SetToolTip(btnEliminar_panelBorrarTecnico, "¿Estás Seguro?");
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -240,7 +349,15 @@ namespace Diseño
 
         private void timer_RecargarBD_Tick(object sender, EventArgs e)
         {
-            mostrarBaseDeDatosDeLaTablaUsuarios();
+            MostrarBaseDeDatosDeLaTablaUsuariosd_SinMensajeDeError();
+        }
+
+        private void Usuarios_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.R)
+            {
+                MostrarBaseDeDatosDeLaTablaUsuarios();
+            }
         }
     }
 }
