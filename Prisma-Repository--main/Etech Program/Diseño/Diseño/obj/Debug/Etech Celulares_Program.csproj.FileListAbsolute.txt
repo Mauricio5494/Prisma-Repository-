@@ -256,3 +256,4 @@ C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Ete
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Etech Celulares_Program.csproj.CopyComplete
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.exe
 C:\Users\Usuario\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.pdb
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Prisma-Repository--main\Etech Program\Diseño\Diseño\obj\Debug\Diseño.Confirmacion_Con_ContraseñaMaestro.resources
