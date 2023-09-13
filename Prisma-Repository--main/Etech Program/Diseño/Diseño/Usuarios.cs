@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using MySql.Utility.Classes;
 using MySql.Utility.Enums;
+using MySql.Utility.Structs;
 using System;
 using System.Data;
 using System.Drawing;
@@ -13,7 +14,8 @@ namespace Diseño
     public partial class Usuarios : Form
     {
         //Variables:
-        int idTecnico;
+        private int idTecnico;
+        public bool PassSucess;
 
         //Instancias:
         DataTable dataTableUsuarios = new DataTable();
@@ -114,48 +116,71 @@ namespace Diseño
 
         private void btnEliminar_panelBorrarTecnico_Click(object sender, EventArgs e)
         {
+            //People will die... starting tonight. 
+
+
+            //  Único método para hacer que este programa tenga una confirmación mediante un form Externo
+            //  (No lo pienso hacer 2 veces, no es necesario en la premisa del programa).
+            Confirmacion_Con_ContraseñaMaestro confirmacion = new Confirmacion_Con_ContraseñaMaestro();
+
             if (txtID_panelBorrarUsuarios.Text != "")
             {
-
+                //Para que si toque que si, que se borre, sino que no haga nada más que refrescar la tabla.
                 DialogResult byebye = MessageBox.Show("¿Estás seguro de borrar este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (byebye == DialogResult.Yes)
                 {
                     idTecnico = int.Parse(txtID_panelBorrarUsuarios.Text);
+                    confirmacion.Show();
 
-                    try
+                    confirmacion.FormClosing += (s, args) =>  /* <-- Que paja entender la expresión lambda, pero al final lo entendí */
                     {
-                        conn.Open();
-                        eliminarTecnico = "DELETE FROM trabajos WHERE ID_Tecnico = "+ idTecnico + ";" + "DELETE FROM celulares WHERE ID_Usuario =" + idTecnico +
-                            ";" + "DELETE FROM usuarios WHERE ID =" + idTecnico + ";";
-                        cmd = new MySqlCommand(eliminarTecnico, conn);
-                        txtID_panelBorrarUsuarios.Text = "";
-                        try
+                        if (confirmacion.PassBien == true)
                         {
-                            cmd.ExecuteNonQuery();
+
+                            try
+                            {
+                                conn.Open();
+                                eliminarTecnico = "DELETE FROM trabajos WHERE ID_Tecnico = " + idTecnico + ";" + "DELETE FROM celulares WHERE ID_Usuario =" + idTecnico +
+                                    ";" + "DELETE FROM usuarios WHERE ID =" + idTecnico + ";";
+                                cmd = new MySqlCommand(eliminarTecnico, conn);
+                                txtID_panelBorrarUsuarios.Text = "";
+                                try
+                                {
+                                    cmd.ExecuteNonQuery();
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se pudo recargar la Tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show(ex.Message, "Ínformación Técnica del Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                finally
+                                {
+                                    conn.Close();
+                                }
+                                tabla_Usuarios.DataSource = dataTableUsuarios;
+                                tabla_Usuarios.Refresh();
+                                PassSucess = false;
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se pudo Borrar dicho usuario, puede deberse a que no existe el ID o hubo un fallo en la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(ex.Message, "Información Técnica del error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
 
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se pudo recargar la Tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            MessageBox.Show(ex.Message, "Ínformación Técnica del Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                        }
-                        tabla_Usuarios.DataSource = dataTableUsuarios;
-                        tabla_Usuarios.Refresh();
 
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("No se pudo Borrar dicho usuario, puede deberse a que no existe el ID o hubo un fallo en la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        MessageBox.Show(ex.Message, "Información Técnica del error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+
+                        else
+                        {
+                            MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    };
 
                 }
-
                 else
                 {
                     MostrarBaseDeDatosDeLaTablaUsuarios();
