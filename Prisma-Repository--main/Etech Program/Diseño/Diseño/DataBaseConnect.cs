@@ -7,7 +7,7 @@ namespace Diseño
 {
     class DataBaseConnect
     {
-        public static MySqlConnection conectarse()
+        public static MySqlConnection Conectarse()
         {
             //requisitos para la conexion (informacion del base de datos):
             string uid = "root";
