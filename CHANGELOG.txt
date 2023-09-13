@@ -1,21 +1,15 @@
-Cambios para la versión v0.4.8.1a (Actual) (No, la "a" no es de "Actual", sinó de "alpha").
+Cambios para la versión v0.4.8.2a (Actual) (No, la "a" no es de "Actual", sinó de "alpha").
 
 
 
 Agregados:
 
- 1 - Se hizo un mejor diseño de la tabla "Usuarios".
-
- 2 - Se hizo un mejor diseño de la tabla "Trabajos".
-
- 3 - Ahora se puede eliminar un usuario y con este, todo su registro de trabajos y celulares dejados a cargo al mismo
-tiempo (Y lo hice a la primera ¡VAMOO! Lógica leveled up to 100).
+ 1 - Se agregó un codigo de seguridad para eliminar usuarios, así solo el gerente de Etech puede eliminar a sus propios
+técnicos.
 
 Fixes:
 
- 1 - Se arregló el bug visual de la tabla de Usuarios, que al eliminar un usuario, este se eliminaba correctamente
-pero en la tabla, por más que se recargara, seguía mostrando a dicho usuario dentro de la misma.
-
+NADA.
 
 
 Known Issues:
