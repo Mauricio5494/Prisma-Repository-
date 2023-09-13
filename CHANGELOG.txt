@@ -1,0 +1,38 @@
+Cambios para la versión v0.4.8 (Actual)
+
+Agregados:
+
+ 1 - Se agregó un label que indica cuantos caracteres quedan para meter en la cédula del cliente cuando intentas agregar
+un teléfono nuevo a la tabla "Celulares"
+
+ 2 - Se hizo un mejor diseño de la tabla "Celulares"
+
+Known Issues:
+
+ 1 - A veces, por razones de C#, el contador de caracteres restantes para la CI del cliente queda en -1 indicando
+el mínimo o en 7 indicando el máximo en vez de 8 o 0 como sería lo correcto.
+
+ 2 - Cuando intentas eliminar un trabajo de un celular y luego intentas eliminar el celuar, a veces este se bugea
+y deja de funcionar apropiadamente, haciendo que el panel entero se congele dando como resultado un panel
+desactivado que solo se muestra visualmente pero que de nada sirve.
+
+Lo que se viene para la siguiente actualización mayor v0.4.9:
+
+ 1 - Cambios visuales para todas las tablas existentes, que sean iguales a la tabla "Celulares"
+
+ 2 - Cambios visuales en la fuente del programa, la que tiene es horriblemente antigüa, como un programa del 2007
+
+ 3 - Cambio en el color de la barra expandida ya que es demasiado oscuro el rojo que le pusimos, simplemente no queda
+bien.
+
+ 4 - Se intentará arreglar dichos bugs en la sección de "Known Issues" de este .txt
+
+ 5 - Se cuidará más la apariencia del programa, pero solo en pantallas que estén 100% funcionales y no necesiten
+cambios técnicos en el funcionamiento de su esencia como programa.
+
+ 6 - Se agregará la función de encriptación de contraseñas SHA2 para los usuarios, de forma que el programa no quede
+vulnerable a crackeos de base de datos (como le pasó a Facebook, que no tenía las contraseñas encriptadas y le robaron
+la cuenta a mi padre).
+
+Fin del changelog.
+
