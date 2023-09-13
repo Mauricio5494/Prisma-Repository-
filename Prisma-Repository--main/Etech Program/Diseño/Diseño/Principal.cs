@@ -9,6 +9,8 @@ using System.Security.Cryptography;
 using System.Windows.Forms;
 
 
+
+
 namespace Diseño
 {
     public partial class Principal : Form
