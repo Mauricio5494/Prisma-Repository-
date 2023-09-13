@@ -28,8 +28,8 @@ eliminar tecnico si este se encuentra presente. Para solucionarlo temporalmente 
 de eliminar tecnico para que este panel desaparezca, dejando así vía libre para el panel de agregar técnico.
 (Igual es fácil de arreglar de manera programática así que se arreglará para la siguiente actualización).
  
- 3 - Al apretar el "botón redondito" de el panel de agregar celulares y después el de agregar trabajo, hace que se
-buguee y el panel de agregar trabajos deje de funcionar, haciéndolo totalmente inútil.
+ 3 - Al apretar el "botón redondito" de el panel de modificar celulares y después el de modificar trabajo, hace que se
+buguee y el panel de modificar trabajos deje de funcionar, haciéndolo totalmente inútil.
 
 
 
