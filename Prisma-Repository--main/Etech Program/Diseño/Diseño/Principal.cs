@@ -22,8 +22,8 @@ namespace Diseño
         string eliminarTrabajos;
         string option;
         string busqueda;
+        int caracteresMaximos = 8;
 
-        
 
         //De tabla
         int lonigtudDeColumna_Corta = 50;
@@ -57,6 +57,7 @@ namespace Diseño
         DateTime fechaIngreso;
         string stringFechaIngreso;
         int adelanto;
+        int tecnicoACargo;
 
         //instancias:
         Usuarios Usuarios = new Usuarios();
@@ -65,7 +66,7 @@ namespace Diseño
         DataTable DataTableCelularesBusqueda = new DataTable();
         DataTable DataTableTrabajosBusqueda = new DataTable();
         Utilidades Seguridad = new Utilidades();
-        MySqlConnection conn = DataBaseConnect.conectarse();
+        MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataReader reader;
 
@@ -89,7 +90,7 @@ namespace Diseño
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" +ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -505,7 +506,7 @@ namespace Diseño
                             }
                             catch (Exception x)
                             {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" +x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -679,13 +680,13 @@ namespace Diseño
         {
             if (radioButton_TablaCelulares.Checked || radioButton_TablaTrabajos.Checked)
             {
-                panelAyudaVisual_Tabla.Visible = false;
-                panelAyudaVisual_Tabla.Enabled = false;
+                labAyudaVisual_SeleccionarTabla.Visible = false;
+                labAyudaVisual_SeleccionarTabla.Enabled = false;
             }
             else
             {
-                panelAyudaVisual_Tabla.Visible = true;
-                panelAyudaVisual_Tabla.Enabled = true;
+                labAyudaVisual_SeleccionarTabla.Visible = true;
+                labAyudaVisual_SeleccionarTabla.Enabled = true;
             }
         }
 
@@ -984,10 +985,12 @@ namespace Diseño
         //Botones con funciones SQL:
         private void btnAgregarCelular_Click(object sender, EventArgs e)
         {
+            txtCI_Del_Dueño_Agregar.MaxLength = 8;
             try
             {
                 if (txtModelo_Agregar.Text != "" && txtMarca_Agregar.Text != "" && txtIMEI_Agregar.Text != "" && txtCI_Del_Dueño_Agregar.Text != "" && txtTecnico_Agregar.Text != "")
                 {
+
                     if (radioButton_Arreglado_Agregar.Checked.Equals(true) || radioButton_Averiado_Agregar.Checked.Equals(true))
                     {
                         conn.Open();
@@ -1017,6 +1020,7 @@ namespace Diseño
                             MessageBox.Show("No se ingreso correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+
                     else
                     {
                         MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1431,12 +1435,13 @@ namespace Diseño
 
         private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
         {
-            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && txtID_Trabajo_Agregar.Text != "")
+            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != ""&& txtTecnicoACargo_groupBox_AgregarTrabajos.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && txtID_Trabajo_Agregar.Text != "")
             {
                 try
                 {
                     conn.Open();
                     idCelular = int.Parse(txtID_Trabajo_Agregar.Text);
+                    tecnicoACargo = int.Parse(txtTecnicoACargo_groupBox_AgregarTrabajos.Text);
                     plazo = dateTimePicker_Plazo_Agregar.Value;
                     mesPlazo = plazo.Month;
                     diaPlazo = plazo.Day;
@@ -1491,7 +1496,7 @@ namespace Diseño
                     }
                     adelanto = int.Parse(txtAdelanto_Agregar.Text);
 
-                    insertarTrabajos = "INSERT INTO Trabajos(Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES('" + stringPlazo + "', " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
+                    insertarTrabajos = "INSERT INTO Trabajos(Plazo, ID_Tecnico, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES('" + stringPlazo + "', " + tecnicoACargo + ", " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
                     cmd = new MySqlCommand(insertarTrabajos, conn);
                     try
                     {
@@ -1692,7 +1697,7 @@ namespace Diseño
                             {
                                 cmd.ExecuteNonQuery();
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
                                 MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
@@ -1837,7 +1842,7 @@ namespace Diseño
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" +ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -2414,8 +2419,8 @@ namespace Diseño
         //Que se cague, no más de 8 caracteres, que es lo que sería la cédula sin los puntos ni el guión.
         private void txtCI_Del_Dueño_Agregar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtCI_Del_Dueño_Agregar.MaxLength = 7 + 1;
-                int caracteresRestantes = txtCI_Del_Dueño_Agregar.MaxLength - (txtCI_Del_Dueño_Agregar.TextLength + 1);
+            txtCI_Del_Dueño_Agregar.MaxLength = 8;
+            int caracteresRestantes = txtCI_Del_Dueño_Agregar.MaxLength - txtCI_Del_Dueño_Agregar.TextLength;
 
             if (txtCI_Del_Dueño_Agregar.TextLength <= txtCI_Del_Dueño_Agregar.MaxLength)
             {
@@ -2426,6 +2431,11 @@ namespace Diseño
             {
                 e.Handled = true;
             }
+        }
+
+        private void ToolTips_de_los_Campos_de_Texto(object sender, EventArgs e)
+        {
+
         }
     }
 }
