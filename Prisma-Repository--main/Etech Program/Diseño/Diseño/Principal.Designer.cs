@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -70,6 +73,7 @@
             this.radioButton_CELULARES_Agregar = new System.Windows.Forms.RadioButton();
             this.label_Tabla_Agregar = new System.Windows.Forms.Label();
             this.groupBox_AgregarCelulares = new System.Windows.Forms.GroupBox();
+            this.label_CaracteresRestantesCI_AgregarCelulares = new System.Windows.Forms.Label();
             this.btnAgregar_Celular = new System.Windows.Forms.Button();
             this.radioButton_Averiado_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_Arreglado_Agregar = new System.Windows.Forms.RadioButton();
@@ -177,8 +181,8 @@
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.labAyudaVisual_SeleccionarTabla = new System.Windows.Forms.Label();
-            this.panelAyudaVisual_Tabla = new System.Windows.Forms.FlowLayoutPanel();
-            this.label_CaracteresRestantesCI_AgregarCelulares = new System.Windows.Forms.Label();
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos = new System.Windows.Forms.TextBox();
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -198,12 +202,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
-            this.panelAyudaVisual_Tabla.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelD
             // 
             this.panelD.BackColor = System.Drawing.Color.Firebrick;
+            this.panelD.Controls.Add(this.btnRecargar);
             this.panelD.Controls.Add(this.btnMenuPrincipal);
             this.panelD.Controls.Add(this.btnEliminar);
             this.panelD.Controls.Add(this.btnModificar);
@@ -309,11 +313,11 @@
             // 
             this.label_Filtrar.AutoSize = true;
             this.label_Filtrar.BackColor = System.Drawing.Color.Transparent;
-            this.label_Filtrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Filtrar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Filtrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label_Filtrar.Location = new System.Drawing.Point(74, 27);
             this.label_Filtrar.Name = "label_Filtrar";
-            this.label_Filtrar.Size = new System.Drawing.Size(64, 14);
+            this.label_Filtrar.Size = new System.Drawing.Size(69, 16);
             this.label_Filtrar.TabIndex = 6;
             this.label_Filtrar.Text = "Filtrar por:";
             // 
@@ -364,11 +368,11 @@
             // labelError_MenuOpciones
             // 
             this.labelError_MenuOpciones.AutoSize = true;
-            this.labelError_MenuOpciones.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelError_MenuOpciones.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError_MenuOpciones.ForeColor = System.Drawing.Color.Firebrick;
             this.labelError_MenuOpciones.Location = new System.Drawing.Point(144, 48);
             this.labelError_MenuOpciones.Name = "labelError_MenuOpciones";
-            this.labelError_MenuOpciones.Size = new System.Drawing.Size(259, 14);
+            this.labelError_MenuOpciones.Size = new System.Drawing.Size(280, 16);
             this.labelError_MenuOpciones.TabIndex = 23;
             this.labelError_MenuOpciones.Text = "Limítese a escoger alguna opcion predefinida";
             this.labelError_MenuOpciones.Visible = false;
@@ -383,6 +387,7 @@
             "Adelanto",
             "ID del celular"});
             this.MenuOpcionesTrabajos.Enabled = false;
+            this.MenuOpcionesTrabajos.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuOpcionesTrabajos.FormattingEnabled = true;
             this.MenuOpcionesTrabajos.Items.AddRange(new object[] {
             "Plazo",
@@ -391,9 +396,9 @@
             "Fecha de ingreso",
             "Adelanto",
             "ID del celular"});
-            this.MenuOpcionesTrabajos.Location = new System.Drawing.Point(144, 24);
+            this.MenuOpcionesTrabajos.Location = new System.Drawing.Point(144, 23);
             this.MenuOpcionesTrabajos.Name = "MenuOpcionesTrabajos";
-            this.MenuOpcionesTrabajos.Size = new System.Drawing.Size(121, 21);
+            this.MenuOpcionesTrabajos.Size = new System.Drawing.Size(121, 24);
             this.MenuOpcionesTrabajos.TabIndex = 22;
             this.MenuOpcionesTrabajos.Visible = false;
             this.MenuOpcionesTrabajos.SelectedIndexChanged += new System.EventHandler(this.MenuOpcionesTrabajos_SelectedIndexChanged);
@@ -412,23 +417,23 @@
             // 
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label_Name_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_Name_Form.Font = new System.Drawing.Font("Montserrat SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_Name_Form.Location = new System.Drawing.Point(1146, 19);
+            this.label_Name_Form.Location = new System.Drawing.Point(1148, 16);
             this.label_Name_Form.Name = "label_Name_Form";
-            this.label_Name_Form.Size = new System.Drawing.Size(125, 33);
+            this.label_Name_Form.Size = new System.Drawing.Size(122, 37);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "TALLER";
             // 
             // radioButton_TablaTrabajos
             // 
             this.radioButton_TablaTrabajos.AutoSize = true;
-            this.radioButton_TablaTrabajos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.radioButton_TablaTrabajos.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_TablaTrabajos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton_TablaTrabajos.Location = new System.Drawing.Point(835, 25);
             this.radioButton_TablaTrabajos.Name = "radioButton_TablaTrabajos";
-            this.radioButton_TablaTrabajos.Size = new System.Drawing.Size(112, 18);
+            this.radioButton_TablaTrabajos.Size = new System.Drawing.Size(118, 20);
             this.radioButton_TablaTrabajos.TabIndex = 13;
             this.radioButton_TablaTrabajos.Text = "Mostrar Trabajo";
             this.radioButton_TablaTrabajos.UseVisualStyleBackColor = true;
@@ -437,11 +442,11 @@
             // radioButton_TablaCelulares
             // 
             this.radioButton_TablaCelulares.AutoSize = true;
-            this.radioButton_TablaCelulares.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.radioButton_TablaCelulares.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_TablaCelulares.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton_TablaCelulares.Location = new System.Drawing.Point(695, 25);
             this.radioButton_TablaCelulares.Name = "radioButton_TablaCelulares";
-            this.radioButton_TablaCelulares.Size = new System.Drawing.Size(125, 18);
+            this.radioButton_TablaCelulares.Size = new System.Drawing.Size(129, 20);
             this.radioButton_TablaCelulares.TabIndex = 12;
             this.radioButton_TablaCelulares.Text = "Mostrar Celulares";
             this.radioButton_TablaCelulares.UseVisualStyleBackColor = true;
@@ -464,8 +469,8 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Enabled = false;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(600, 23);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(77, 22);
@@ -496,12 +501,14 @@
             this.panel_Agregar.Enabled = false;
             this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 599);
             this.panel_Agregar.TabIndex = 15;
             // 
             // groupBox_AgregarTrabajos
             // 
             this.groupBox_AgregarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtTecnicoACargo_groupBox_AgregarTrabajos);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelTecnicoACargo_groupBox_AgregarTrabajo);
             this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_FechaDeIngreso_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_Plazo_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.btnAgregar_Trabajo);
@@ -519,7 +526,7 @@
             this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(42, 77);
             this.groupBox_AgregarTrabajos.Name = "groupBox_AgregarTrabajos";
-            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(337, 500);
             this.groupBox_AgregarTrabajos.TabIndex = 16;
             this.groupBox_AgregarTrabajos.TabStop = false;
             this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
@@ -569,9 +576,9 @@
             this.labelFechaDeIngreso_Agregar.AutoSize = true;
             this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 277);
             this.labelFechaDeIngreso_Agregar.Name = "labelFechaDeIngreso_Agregar";
-            this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(109, 13);
+            this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(177, 13);
             this.labelFechaDeIngreso_Agregar.TabIndex = 8;
-            this.labelFechaDeIngreso_Agregar.Text = "Fecha de ingreso:";
+            this.labelFechaDeIngreso_Agregar.Text = "Cuando ingresó el dispositivo:";
             // 
             // txtProblema_Agregar
             // 
@@ -586,9 +593,9 @@
             this.labelProblema_Agregar.AutoSize = true;
             this.labelProblema_Agregar.Location = new System.Drawing.Point(3, 190);
             this.labelProblema_Agregar.Name = "labelProblema_Agregar";
-            this.labelProblema_Agregar.Size = new System.Drawing.Size(63, 13);
+            this.labelProblema_Agregar.Size = new System.Drawing.Size(130, 13);
             this.labelProblema_Agregar.TabIndex = 6;
-            this.labelProblema_Agregar.Text = "Problema:";
+            this.labelProblema_Agregar.Text = "Describa el problema:";
             // 
             // txtPresupuesto_Agregar
             // 
@@ -696,6 +703,15 @@
             this.groupBox_AgregarCelulares.TabIndex = 0;
             this.groupBox_AgregarCelulares.TabStop = false;
             this.groupBox_AgregarCelulares.Text = "Ingrese un celular";
+            // 
+            // label_CaracteresRestantesCI_AgregarCelulares
+            // 
+            this.label_CaracteresRestantesCI_AgregarCelulares.AutoSize = true;
+            this.label_CaracteresRestantesCI_AgregarCelulares.Location = new System.Drawing.Point(141, 79);
+            this.label_CaracteresRestantesCI_AgregarCelulares.Name = "label_CaracteresRestantesCI_AgregarCelulares";
+            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(128, 13);
+            this.label_CaracteresRestantesCI_AgregarCelulares.TabIndex = 14;
+            this.label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres restantes:";
             // 
             // btnAgregar_Celular
             // 
@@ -1728,28 +1744,36 @@
             this.tablaCelulares.AllowUserToResizeRows = false;
             this.tablaCelulares.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
             this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaCelulares.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaCelulares.DefaultCellStyle = dataGridViewCellStyle7;
             this.tablaCelulares.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaCelulares.Location = new System.Drawing.Point(49, 78);
             this.tablaCelulares.MultiSelect = false;
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaCelulares.Size = new System.Drawing.Size(786, 0);
@@ -1761,7 +1785,24 @@
             this.tablaTrabajos.AllowUserToAddRows = false;
             this.tablaTrabajos.AllowUserToDeleteRows = false;
             this.tablaTrabajos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.tablaTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTrabajos.DefaultCellStyle = dataGridViewCellStyle10;
+            this.tablaTrabajos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.tablaTrabajos.Location = new System.Drawing.Point(49, 78);
             this.tablaTrabajos.Name = "tablaTrabajos";
             this.tablaTrabajos.ReadOnly = true;
@@ -1773,7 +1814,7 @@
             this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecargar.Enabled = false;
             this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(841, 78);
+            this.btnRecargar.Location = new System.Drawing.Point(10, 342);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(25, 25);
             this.btnRecargar.TabIndex = 21;
@@ -1785,32 +1826,28 @@
             // 
             this.labAyudaVisual_SeleccionarTabla.AutoSize = true;
             this.labAyudaVisual_SeleccionarTabla.BackColor = System.Drawing.Color.IndianRed;
-            this.labAyudaVisual_SeleccionarTabla.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labAyudaVisual_SeleccionarTabla.Location = new System.Drawing.Point(417, 0);
+            this.labAyudaVisual_SeleccionarTabla.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labAyudaVisual_SeleccionarTabla.Location = new System.Drawing.Point(477, 80);
             this.labAyudaVisual_SeleccionarTabla.Name = "labAyudaVisual_SeleccionarTabla";
-            this.labAyudaVisual_SeleccionarTabla.Size = new System.Drawing.Size(365, 42);
+            this.labAyudaVisual_SeleccionarTabla.Size = new System.Drawing.Size(412, 51);
             this.labAyudaVisual_SeleccionarTabla.TabIndex = 22;
             this.labAyudaVisual_SeleccionarTabla.Text = "Seleccione una Tabla";
             // 
-            // panelAyudaVisual_Tabla
+            // txtTecnicoACargo_groupBox_AgregarTrabajos
             // 
-            this.panelAyudaVisual_Tabla.BackColor = System.Drawing.Color.Transparent;
-            this.panelAyudaVisual_Tabla.Controls.Add(this.labAyudaVisual_SeleccionarTabla);
-            this.panelAyudaVisual_Tabla.Cursor = System.Windows.Forms.Cursors.Help;
-            this.panelAyudaVisual_Tabla.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.panelAyudaVisual_Tabla.Location = new System.Drawing.Point(50, 78);
-            this.panelAyudaVisual_Tabla.Name = "panelAyudaVisual_Tabla";
-            this.panelAyudaVisual_Tabla.Size = new System.Drawing.Size(785, 599);
-            this.panelAyudaVisual_Tabla.TabIndex = 23;
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Location = new System.Drawing.Point(6, 392);
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Name = "txtTecnicoACargo_groupBox_AgregarTrabajos";
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Size = new System.Drawing.Size(325, 20);
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.TabIndex = 16;
             // 
-            // label_CaracteresRestantesCI_AgregarCelulares
+            // labelTecnicoACargo_groupBox_AgregarTrabajo
             // 
-            this.label_CaracteresRestantesCI_AgregarCelulares.AutoSize = true;
-            this.label_CaracteresRestantesCI_AgregarCelulares.Location = new System.Drawing.Point(141, 79);
-            this.label_CaracteresRestantesCI_AgregarCelulares.Name = "label_CaracteresRestantesCI_AgregarCelulares";
-            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(128, 13);
-            this.label_CaracteresRestantesCI_AgregarCelulares.TabIndex = 14;
-            this.label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres restantes:";
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.AutoSize = true;
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Location = new System.Drawing.Point(6, 376);
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Name = "labelTecnicoACargo_groupBox_AgregarTrabajo";
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Size = new System.Drawing.Size(142, 13);
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.TabIndex = 15;
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Text = "ID del Técnico a cargo:";
             // 
             // Principal
             // 
@@ -1820,8 +1857,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(1350, 689);
-            this.Controls.Add(this.panelAyudaVisual_Tabla);
-            this.Controls.Add(this.btnRecargar);
+            this.Controls.Add(this.labAyudaVisual_SeleccionarTabla);
             this.Controls.Add(this.tablaTrabajos);
             this.Controls.Add(this.tablaCelulares);
             this.Controls.Add(this.panelE);
@@ -1835,7 +1871,7 @@
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Etech Gestor de celulares";
+            this.Text = "Etech | Gestor de celulares";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -1869,9 +1905,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
-            this.panelAyudaVisual_Tabla.ResumeLayout(false);
-            this.panelAyudaVisual_Tabla.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2021,8 +2056,9 @@
         private System.Windows.Forms.Label label_Explicacion;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label labAyudaVisual_SeleccionarTabla;
-        private System.Windows.Forms.FlowLayoutPanel panelAyudaVisual_Tabla;
         private System.Windows.Forms.Label label_CaracteresRestantesCI_AgregarCelulares;
+        private System.Windows.Forms.TextBox txtTecnicoACargo_groupBox_AgregarTrabajos;
+        private System.Windows.Forms.Label labelTecnicoACargo_groupBox_AgregarTrabajo;
     }
 }
 
