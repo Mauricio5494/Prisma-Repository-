@@ -65,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBaseConnect.cs" />
+    <Compile Include="ConfirmacionDeClaveMaestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionDeClaveMaestra.Designer.cs">
+      <DependentUpon>ConfirmacionDeClaveMaestra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="ConfirmacionDeClaveMaestra.resx">
+      <DependentUpon>ConfirmacionDeClaveMaestra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
