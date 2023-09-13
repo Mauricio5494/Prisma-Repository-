@@ -1,20 +1,37 @@
-Cambios para la versión v0.4.8 (Actual)
+Cambios para la versión v0.4.8.1a (Actual) (No, la "a" no es de "Actual", sinó de "alpha").
+
+
 
 Agregados:
 
- 1 - Se agregó un label que indica cuantos caracteres quedan para meter en la cédula del cliente cuando intentas agregar
-un teléfono nuevo a la tabla "Celulares"
+ 1 - Se hizo un mejor diseño de la tabla "Usuarios".
 
- 2 - Se hizo un mejor diseño de la tabla "Celulares"
+ 2 - Se hizo un mejor diseño de la tabla "Trabajos".
+
+ 3 - Ahora se puede eliminar un usuario y con este, todo su registro de trabajos y celulares dejados a cargo al mismo
+tiempo (Y lo hice a la primera ¡VAMOO! Lógica leveled up to 100).
+
+Fixes:
+
+ 1 - Se arregló el bug visual de la tabla de Usuarios, que al eliminar un usuario, este se eliminaba correctamente
+pero en la tabla, por más que se recargara, seguía mostrando a dicho usuario dentro de la misma.
+
+
 
 Known Issues:
 
  1 - A veces, por razones de C#, el contador de caracteres restantes para la CI del cliente queda en -1 indicando
 el mínimo o en 7 indicando el máximo en vez de 8 o 0 como sería lo correcto.
 
- 2 - Cuando intentas eliminar un trabajo de un celular y luego intentas eliminar el celuar, a veces este se bugea
-y deja de funcionar apropiadamente, haciendo que el panel entero se congele dando como resultado un panel
-desactivado que solo se muestra visualmente pero que de nada sirve.
+ 2 - Al presionar click en el botón de agregar técnico en la sección de Usuarios se muestra detrás del panel de
+eliminar tecnico si este se encuentra presente. Para solucionarlo temporalmente uno debe de volver a apretar el botón
+de eliminar tecnico para que este panel desaparezca, dejando así vía libre para el panel de agregar técnico.
+(Igual es fácil de arreglar de manera programática así que se arreglará para la siguiente actualización).
+ 
+ 3 - Al apretar el "botón redondito" de el panel de agregar celulares y después el de agregar trabajo, hace que se
+buguee y el panel de agregar trabajos deje de funcionar, haciéndolo totalmente inútil.
+
+
 
 Lo que se viene para la siguiente actualización mayor v0.4.9:
 
@@ -25,14 +42,24 @@ Lo que se viene para la siguiente actualización mayor v0.4.9:
  3 - Cambio en el color de la barra expandida ya que es demasiado oscuro el rojo que le pusimos, simplemente no queda
 bien.
 
- 4 - Se intentará arreglar dichos bugs en la sección de "Known Issues" de este .txt
+ 4 - Se intentará arreglar dichos bugs problemáticos críticos en la sección de "Known Issues" de este .txt (Aunque
+todavía no hay ninguno crítico y ojalá y siga así... Bueno, seguir así obligatoriamente tiene que seguir así
+quiero decir... ¿te imaginas que subo una actualización con un error tan crítico que si apretas un botón
+te tire pantallazo ROJO? Eso sí sería un problema crítico... o quizás tenés un procesador de 1.9Mhz y 64kb de RAM
+como computadora... una IBM 5100 con Windows 97 (Aunque sería imposible) ¡Qué lo parió! Bruto Maquinón, 
+25 kilos de pura potencia).
 
  5 - Se cuidará más la apariencia del programa, pero solo en pantallas que estén 100% funcionales y no necesiten
-cambios técnicos en el funcionamiento de su esencia como programa.
+cambios técnicos en el funcionamiento de su esencia como programa (esto puede ser o no mentira, depende de nosotros
+a veces hago lo que se me sale de los huevos pero bueno, es lo que hay).
 
  6 - Se agregará la función de encriptación de contraseñas SHA2 para los usuarios, de forma que el programa no quede
 vulnerable a crackeos de base de datos (como le pasó a Facebook, que no tenía las contraseñas encriptadas y le robaron
-la cuenta a mi padre).
+la cuenta a mi padre y empezaron a hacer publicidad de Bitcoin en la página de noticias que él había hecho para
+su propio entretenimiento).
+
+
+
 
 Fin del changelog.
 
