@@ -6,6 +6,7 @@ using MySql.Utility.Structs;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Forms;
 
@@ -50,7 +51,7 @@ namespace Diseño
         {
             try
             {
-                dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL (Línea 19).*/
+                dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL (Línea 21).*/
                 conn.Open();
                 cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -116,7 +117,7 @@ namespace Diseño
 
         private void btnEliminar_panelBorrarTecnico_Click(object sender, EventArgs e)
         {
-            //People will die... starting tonight. 
+            //People will die... starting tonight... i'm a man of my word. 
 
 
             //  Único método para hacer que este programa tenga una confirmación mediante un form Externo
@@ -172,7 +173,6 @@ namespace Diseño
 
                         }
 
-
                         else
                         {
                             MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -186,7 +186,6 @@ namespace Diseño
                     MostrarBaseDeDatosDeLaTablaUsuarios();
                     //Como para decir que no pasa nada... porque no tiene por qué pasar algo si dice que no.
 
-                    MessageBox.Show("Prueba");
                 }
 
             }
@@ -225,11 +224,11 @@ namespace Diseño
                 btnEliminar.ForeColor = Color.Black;
                 btnCerrarSesion.ForeColor = Color.Black;
                 btnMenuPrincipal.ForeColor = Color.Black;
-                btnAgregar.BackColor = Color.DarkRed;
-                btnModificar.BackColor = Color.DarkRed;
-                btnEliminar.BackColor = Color.DarkRed;
-                btnCerrarSesion.BackColor = Color.DarkRed;
-                btnMenuPrincipal.BackColor = Color.DarkRed;
+                btnAgregar.BackColor = Color.FromArgb(255, 40, 40);
+                btnModificar.BackColor = Color.FromArgb(255, 40, 40);
+                btnEliminar.BackColor = Color.FromArgb(255, 40, 40);
+                btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
 
                 tabla_Usuarios.Location = new Point(124, 78);
 
@@ -260,8 +259,6 @@ namespace Diseño
         private void Usuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-
-
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
@@ -284,6 +281,7 @@ namespace Diseño
             else
             {
                 panel_Registro.Height = 0;
+                panel_BorrarUsuario.Height = 0;
             }
         }
         private void panelAgregarUsuario_btnAgregar_Click(object sender, EventArgs e)
@@ -379,9 +377,54 @@ namespace Diseño
 
         private void Usuarios_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.R)
+            if (e.KeyCode == Keys.F5)
             {
                 MostrarBaseDeDatosDeLaTablaUsuarios();
+            }
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            if (panel_Menu.Height == 0)
+            {
+                panel_Menu.Height = 599;
+                panel_BorrarUsuario.Height = 0;
+                panel_Registro.Height = 0;
+            }
+            else
+            {
+                panel_Menu.Height = 0;
+            }
+        }
+
+        private void tabla_Usuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (tabla_Usuarios.Columns.Contains("ID"))
+            {
+
+                //Cambia los tamaños de las columnas para que se acomplen mejor a la tabla y que no parezca una cosa mal hecha... no es que esté mal hecha.
+                tabla_Usuarios.Columns["ID"].Width = 40;
+                tabla_Usuarios.Columns["Nombre"].Width = 175;
+                tabla_Usuarios.Columns["CorreoElectronico"].Width = 250;
+                tabla_Usuarios.Columns["Celular"].Width = 79;
+                tabla_Usuarios.Columns["Contraseña"].Width = 185;
+
+                //Renombres del texto descriptivo de las columnas necesarias.
+                tabla_Usuarios.Columns["Contraseña"].HeaderText = "HASH";
+                tabla_Usuarios.Columns["CorreoElectronico"].HeaderText = "E-Mail";
+                tabla_Usuarios.Columns["Nombre"].HeaderText = "Nombre de Usuario";
+
+                //Tooltips
+                tabla_Usuarios.Columns["ID"].ToolTipText = "El Identificador (ID) de cada usuario, este es único y no hay 2 iguales.";
+                tabla_Usuarios.Columns["Nombre"].ToolTipText = "El nombre de usuario de cada cuenta creada.";
+                tabla_Usuarios.Columns["CorreoElectronico"].ToolTipText = "El Correo Electrónico, este solo funciona como una forma de intentar contactar con dicho empleado";
+                tabla_Usuarios.Columns["Celular"].ToolTipText = "El número de teléfono, otra vía por donde contactar al empleado";
+                tabla_Usuarios.Columns["Contraseña"].ToolTipText = "Este es el Hash de la contraeña, es así para que no se puedan robar las cuentas, está codificado";
+            }
+            else
+            {
+                MessageBox.Show("Parece que cambió algo en las tablas\nasí que no se pudo cargarlas como es debido", "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("¿Acaso alguien tocó la base de datos?\nEn cualquier caso, contacte con el Soporte Prisma", "Atención",MessageBoxButtons.OK ,MessageBoxIcon.Question);
             }
         }
     }

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             this.panelE = new System.Windows.Forms.Panel();
             this.labelError_MenuOpciones = new System.Windows.Forms.Label();
             this.MenuOpcionesTrabajos = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
             this.radioButton_TablaTrabajos = new System.Windows.Forms.RadioButton();
             this.radioButton_TablaCelulares = new System.Windows.Forms.RadioButton();
@@ -56,6 +57,8 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_AgregarTrabajos = new System.Windows.Forms.GroupBox();
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos = new System.Windows.Forms.TextBox();
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo = new System.Windows.Forms.Label();
             this.dateTimePicker_FechaDeIngreso_Agregar = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_Plazo_Agregar = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar_Trabajo = new System.Windows.Forms.Button();
@@ -95,7 +98,7 @@
             this.timer_GroupBox_AgregarT_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_AgregarT_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEstadisticas = new System.Windows.Forms.Button();
@@ -179,18 +182,16 @@
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.tablaCelulares = new System.Windows.Forms.DataGridView();
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.labAyudaVisual_SeleccionarTabla = new System.Windows.Forms.Label();
-            this.txtTecnicoACargo_groupBox_AgregarTrabajos = new System.Windows.Forms.TextBox();
-            this.labelTecnicoACargo_groupBox_AgregarTrabajo = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panel_Agregar.SuspendLayout();
             this.groupBox_AgregarTrabajos.SuspendLayout();
             this.groupBox_AgregarCelulares.SuspendLayout();
             this.panel_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
             this.groupBox_ModificarTrabajos.SuspendLayout();
@@ -201,7 +202,6 @@
             this.groupBox_Explicacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelD
@@ -217,6 +217,19 @@
             this.panelD.Name = "panelD";
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 5;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Enabled = false;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(10, 342);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.TabIndex = 21;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Visible = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnMenuPrincipal
             // 
@@ -350,7 +363,7 @@
             this.panelE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panelE.Controls.Add(this.labelError_MenuOpciones);
             this.panelE.Controls.Add(this.MenuOpcionesTrabajos);
-            this.panelE.Controls.Add(this.pictureBox2);
+            this.panelE.Controls.Add(this.pictureBox_Taller);
             this.panelE.Controls.Add(this.label_Name_Form);
             this.panelE.Controls.Add(this.radioButton_TablaTrabajos);
             this.panelE.Controls.Add(this.radioButton_TablaCelulares);
@@ -403,15 +416,15 @@
             this.MenuOpcionesTrabajos.Visible = false;
             this.MenuOpcionesTrabajos.SelectedIndexChanged += new System.EventHandler(this.MenuOpcionesTrabajos_SelectedIndexChanged);
             // 
-            // pictureBox2
+            // pictureBox_Taller
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1277, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox_Taller.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Taller.Image")));
+            this.pictureBox_Taller.Location = new System.Drawing.Point(1277, 14);
+            this.pictureBox_Taller.Name = "pictureBox_Taller";
+            this.pictureBox_Taller.Size = new System.Drawing.Size(44, 41);
+            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Taller.TabIndex = 21;
+            this.pictureBox_Taller.TabStop = false;
             // 
             // label_Name_Form
             // 
@@ -501,7 +514,7 @@
             this.panel_Agregar.Enabled = false;
             this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 599);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 15;
             // 
             // groupBox_AgregarTrabajos
@@ -530,6 +543,22 @@
             this.groupBox_AgregarTrabajos.TabIndex = 16;
             this.groupBox_AgregarTrabajos.TabStop = false;
             this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
+            // 
+            // txtTecnicoACargo_groupBox_AgregarTrabajos
+            // 
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Location = new System.Drawing.Point(6, 392);
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Name = "txtTecnicoACargo_groupBox_AgregarTrabajos";
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Size = new System.Drawing.Size(325, 20);
+            this.txtTecnicoACargo_groupBox_AgregarTrabajos.TabIndex = 16;
+            // 
+            // labelTecnicoACargo_groupBox_AgregarTrabajo
+            // 
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.AutoSize = true;
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Location = new System.Drawing.Point(6, 376);
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Name = "labelTecnicoACargo_groupBox_AgregarTrabajo";
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Size = new System.Drawing.Size(142, 13);
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.TabIndex = 15;
+            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Text = "ID del Técnico a cargo:";
             // 
             // dateTimePicker_FechaDeIngreso_Agregar
             // 
@@ -868,7 +897,7 @@
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.Firebrick;
-            this.panel_Menu.Controls.Add(this.pictureBox1);
+            this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
             this.panel_Menu.Enabled = false;
             this.panel_Menu.Location = new System.Drawing.Point(916, 81);
@@ -876,14 +905,14 @@
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 16;
             // 
-            // pictureBox1
+            // pictureBox_EtechLogo_PanelMenu
             // 
-            this.pictureBox1.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
-            this.pictureBox1.Location = new System.Drawing.Point(122, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(161, 71);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
+            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(122, 19);
+            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
+            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
+            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
+            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
             // 
             // groupBox_Menu
             // 
@@ -1744,36 +1773,36 @@
             this.tablaCelulares.AllowUserToResizeRows = false;
             this.tablaCelulares.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
             this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaCelulares.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaCelulares.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaCelulares.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaCelulares.Location = new System.Drawing.Point(49, 78);
             this.tablaCelulares.MultiSelect = false;
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCelulares.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaCelulares.Size = new System.Drawing.Size(786, 0);
@@ -1785,42 +1814,29 @@
             this.tablaTrabajos.AllowUserToAddRows = false;
             this.tablaTrabajos.AllowUserToDeleteRows = false;
             this.tablaTrabajos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaTrabajos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTrabajos.DefaultCellStyle = dataGridViewCellStyle5;
             this.tablaTrabajos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.tablaTrabajos.Location = new System.Drawing.Point(49, 78);
             this.tablaTrabajos.Name = "tablaTrabajos";
             this.tablaTrabajos.ReadOnly = true;
             this.tablaTrabajos.Size = new System.Drawing.Size(786, 0);
             this.tablaTrabajos.TabIndex = 20;
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Enabled = false;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 342);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.TabIndex = 21;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Visible = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // labAyudaVisual_SeleccionarTabla
             // 
@@ -1832,22 +1848,6 @@
             this.labAyudaVisual_SeleccionarTabla.Size = new System.Drawing.Size(412, 51);
             this.labAyudaVisual_SeleccionarTabla.TabIndex = 22;
             this.labAyudaVisual_SeleccionarTabla.Text = "Seleccione una Tabla";
-            // 
-            // txtTecnicoACargo_groupBox_AgregarTrabajos
-            // 
-            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Location = new System.Drawing.Point(6, 392);
-            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Name = "txtTecnicoACargo_groupBox_AgregarTrabajos";
-            this.txtTecnicoACargo_groupBox_AgregarTrabajos.Size = new System.Drawing.Size(325, 20);
-            this.txtTecnicoACargo_groupBox_AgregarTrabajos.TabIndex = 16;
-            // 
-            // labelTecnicoACargo_groupBox_AgregarTrabajo
-            // 
-            this.labelTecnicoACargo_groupBox_AgregarTrabajo.AutoSize = true;
-            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Location = new System.Drawing.Point(6, 376);
-            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Name = "labelTecnicoACargo_groupBox_AgregarTrabajo";
-            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Size = new System.Drawing.Size(142, 13);
-            this.labelTecnicoACargo_groupBox_AgregarTrabajo.TabIndex = 15;
-            this.labelTecnicoACargo_groupBox_AgregarTrabajo.Text = "ID del Técnico a cargo:";
             // 
             // Principal
             // 
@@ -1876,9 +1876,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panelD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
             this.panel_Agregar.ResumeLayout(false);
             this.panel_Agregar.PerformLayout();
             this.groupBox_AgregarTrabajos.ResumeLayout(false);
@@ -1886,7 +1887,7 @@
             this.groupBox_AgregarCelulares.ResumeLayout(false);
             this.groupBox_AgregarCelulares.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Modificar.ResumeLayout(false);
             this.panel_Modificar.PerformLayout();
@@ -1904,7 +1905,6 @@
             this.groupBox_Explicacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1950,7 +1950,7 @@
         private System.Windows.Forms.Button btnMenuPrincipal;
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.GroupBox groupBox_Menu;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox_EtechLogo_PanelMenu;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Button btnUsuarios;
@@ -2021,7 +2021,7 @@
         private System.Windows.Forms.RadioButton radioButton_TablaCelulares;
         private System.Windows.Forms.DataGridView tablaTrabajos;
         private System.Windows.Forms.Label label_Name_Form;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox_Taller;
         private System.Windows.Forms.GroupBox groupBox_AgregarTrabajos;
         private System.Windows.Forms.Button btnAgregar_Trabajo;
         private System.Windows.Forms.TextBox txtAdelanto_Agregar;

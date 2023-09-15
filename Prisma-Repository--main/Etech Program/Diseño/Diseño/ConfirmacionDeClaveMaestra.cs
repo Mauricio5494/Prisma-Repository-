@@ -63,7 +63,7 @@ namespace Diseño
             }
             else
             {
-                MessageBox.Show("");
+                
             }
         }
 
@@ -75,7 +75,7 @@ namespace Diseño
             }
             else
             {
-                MessageBox.Show("no");
+
             }
         }
     }
