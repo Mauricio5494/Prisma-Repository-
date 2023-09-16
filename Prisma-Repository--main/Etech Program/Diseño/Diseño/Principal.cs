@@ -980,8 +980,16 @@ namespace Diseño
         {
             Seguridad.SetInvitado = true;
             conn.Close();
-            MessageBox.Show("Cerrando Sesión", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Restart();
+            DialogResult siono = MessageBox.Show("¿Está seguro de Cerrar la Sesión?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (siono == DialogResult.OK)
+            {
+                Application.Restart(); 
+            }
+            else
+            {
+                
+            }
         }
 
         //Botones con funciones SQL:
@@ -2322,10 +2330,10 @@ namespace Diseño
 
 
 
-            if (tablaCelulares.Height < 600)
+            if (tablaCelulares.Height <= 599)
             {
                 tablaTrabajos.Height = 0;
-                tablaCelulares.Height = 650;
+                tablaCelulares.Height = 599;
                 MostrarDatosEnLasTablasCelulares();
             }
             else
