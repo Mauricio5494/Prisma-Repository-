@@ -1,14 +1,17 @@
-﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+﻿using Diseño.Properties;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using MySql.Data.MySqlClient;
 using MySql.Utility.Classes;
 using MySql.Utility.Enums;
 using MySql.Utility.Structs;
 using System;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Diseño
 {
@@ -27,9 +30,13 @@ namespace Diseño
         MySqlDataReader reader;
         ToolTip ayudaVisual = new ToolTip();
 
+        //Forms:
+
+
         //Base de Datos:
         private string eliminarTecnico; /* <-- totalmente al pedo la viriable, pero bueno ta, no hace ninguna diferencia su existencia igualmente, se puede quedar así. */
         private bool existe_otra_cuenta;
+        private bool ApareceLaContraseñaMaestra = false;
         private string sql_Registro;
         private string sql_Seguridad;
         private string Nombre;
@@ -51,7 +58,7 @@ namespace Diseño
         {
             try
             {
-                dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL (Línea 21).*/
+                dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL.*/
                 conn.Open();
                 cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -133,9 +140,11 @@ namespace Diseño
                 {
                     idTecnico = int.Parse(txtID_panelBorrarUsuarios.Text);
                     confirmacion.Show();
+                    ApareceLaContraseñaMaestra = true;
 
-                    confirmacion.FormClosing += (s, args) =>  /* <-- Que paja entender la expresión lambda, pero al final lo entendí */
+                    confirmacion.FormClosing += (s, args) =>    /* <-- Que paja entender la expresión (en este caso, sentencia) lambda, pero al final lo entendí */
                     {
+
                         if (confirmacion.PassBien == true)
                         {
 
@@ -146,19 +155,23 @@ namespace Diseño
                                     ";" + "DELETE FROM usuarios WHERE ID =" + idTecnico + ";";
                                 cmd = new MySqlCommand(eliminarTecnico, conn);
                                 txtID_panelBorrarUsuarios.Text = "";
+                                ApareceLaContraseñaMaestra = false;
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
+                                    ApareceLaContraseñaMaestra = false;
 
                                 }
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("No se pudo recargar la Tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     MessageBox.Show(ex.Message, "Ínformación Técnica del Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ApareceLaContraseñaMaestra = false;
                                 }
                                 finally
                                 {
                                     conn.Close();
+                                    ApareceLaContraseñaMaestra = false;
                                 }
                                 tabla_Usuarios.DataSource = dataTableUsuarios;
                                 tabla_Usuarios.Refresh();
@@ -169,14 +182,17 @@ namespace Diseño
                             {
                                 MessageBox.Show("No se pudo Borrar dicho usuario, puede deberse a que no existe el ID o hubo un fallo en la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 MessageBox.Show(ex.Message, "Información Técnica del error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ApareceLaContraseñaMaestra = false;
                             }
 
                         }
 
                         else
                         {
-                            MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
+
+                        ApareceLaContraseñaMaestra = false;
 
                     };
 
@@ -197,14 +213,27 @@ namespace Diseño
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (panel_BorrarUsuario.Height == 0 && panel_Registro.Height == 0)
+            if (panel_BorrarUsuario.Height == 0)
             {
                 panel_BorrarUsuario.Height = 590;
+                panel_BorrarUsuario.Visible = true;
+                panel_Menu.Height = 0;
+                panel_Registro.Height = 0;
+                panel_Modificar.Height = 0;
             }
             else
             {
-                panel_Registro.Height = 0;
                 panel_BorrarUsuario.Height = 0;
+                panel_BorrarUsuario.Visible = false;
+            }
+
+            if (tabla_Usuarios.Size.Equals(new Size(872, 599)) && panelD.Size.Equals(new Size(119, 1060)))  /* <-- Andá a adivinar que esto era así...*/
+            {
+                tabla_Usuarios.Size = new Size(800, 599);
+            }
+            else
+            {
+                tabla_Usuarios.Size = new Size(872, 599);
             }
         }
 
@@ -219,6 +248,8 @@ namespace Diseño
             if (panelD.Size.Width == 45)
             {
                 panelD.Width = 119;
+
+                //Botones:
                 btnAgregar.ForeColor = Color.Black;
                 btnModificar.ForeColor = Color.Black;
                 btnEliminar.ForeColor = Color.Black;
@@ -230,29 +261,39 @@ namespace Diseño
                 btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
                 btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
 
+                //La tabla:
                 tabla_Usuarios.Location = new Point(124, 78);
+
+                if (panel_BorrarUsuario.Visible == true || panel_Menu.Visible == true || panel_Registro.Visible == true || panel_Modificar.Visible == true)
+                {
+                    tabla_Usuarios.Size = new Size(800, 599);
+                }
+                else
+                {
+                    tabla_Usuarios.Size = new Size(872, 599);
+                }
 
             }
             else
             {
                 panelD.Width = 45;
-                btnAgregar.ForeColor = Color.Firebrick;
-                btnModificar.ForeColor = Color.Firebrick;
-                btnEliminar.ForeColor = Color.Firebrick;
-                btnCerrarSesion.ForeColor = Color.Firebrick;
-                btnMenuPrincipal.ForeColor = Color.Firebrick;
-                btnAgregar.BackColor = Color.Firebrick;
-                btnCerrarSesion.BackColor = Color.Firebrick;
-                btnEliminar.BackColor = Color.Firebrick;
-                btnModificar.BackColor = Color.Firebrick;
-                btnMenuPrincipal.BackColor = Color.Firebrick;
+                btnAgregar.ForeColor = Color.FromArgb(255, 40, 40);
+                btnModificar.ForeColor = Color.FromArgb(255, 40, 40);
+                btnEliminar.ForeColor = Color.FromArgb(255, 40, 40);
+                btnCerrarSesion.ForeColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal.ForeColor = Color.FromArgb(255, 40, 40);
+                btnAgregar.BackColor = Color.FromArgb(255, 40, 40);
+                btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
+                btnEliminar.BackColor = Color.FromArgb(255, 40, 40);
+                btnModificar.BackColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
 
                 btnAgregar.FlatStyle = FlatStyle.Flat;
                 btnModificar.FlatStyle = FlatStyle.Flat;
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
                 tabla_Usuarios.Location = new Point(49, 78);
-
+                tabla_Usuarios.Size = new Size(872, 599);
             }
         }
 
@@ -265,27 +306,49 @@ namespace Diseño
         {
             MostrarBaseDeDatosDeLaTablaUsuarios();
 
-            panel_Registro.Height = 0;
-            panel_BorrarUsuario.Height = 0;
-
             labelNota_panelBorrarTecnico.Text = "Nota:\n\nSi eliminas un técnico, se eliminarán\ntodos los celulares que se le \nasignaron al técnico en cuestión.";
             ayudaVisual.SetToolTip(btnEliminar_panelBorrarTecnico, "¿Estás Seguro?");
+            ayudaVisual.SetToolTip(chbMostrarContraseña_PanelRegistro, "Ocultar o Mostrar contraseña");
+            ayudaVisual.SetToolTip(chbOcultarContraseña_groupboxModificar_PanelModificar, "Ocultar o Mostrar contraseña");
+
+
+            comboBoxModifcar_groupBoxModificar_PanelModificar.Text = "Todos";
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (tabla_Usuarios.Size.Equals(new Size(872, 599)) && panelD.Size.Equals(new Size(119, 1060)))  /* <-- Andá a adivinar que esto era así...*/
+            {
+                tabla_Usuarios.Size = new Size(800, 599);
+            }
+            else
+            {
+                tabla_Usuarios.Size = new Size(872, 599);
+            }
+
             if (panel_Registro.Height == 0)
             {
                 panel_Registro.Height = 599;
+                panel_Registro.Visible = true;
+                panel_Menu.Height = 0;
+                panel_Modificar.Height = 0;
+                panel_BorrarUsuario.Height = 0;
+
+
             }
             else
             {
                 panel_Registro.Height = 0;
                 panel_BorrarUsuario.Height = 0;
+                panel_Registro.Visible = false;
             }
+
         }
         private void panelAgregarUsuario_btnAgregar_Click(object sender, EventArgs e)
         {
+            Confirmacion_Con_ContraseñaMaestro contraseñaMaestra = new Confirmacion_Con_ContraseñaMaestro();
+
             Comprobacion();
             Nombre = txtNombre.Text;
             Password = txtPassword.Text;
@@ -299,42 +362,58 @@ namespace Diseño
             }
             else
             {
-                if (existe_otra_cuenta == false)
+                contraseñaMaestra.Show();
+                contraseñaMaestra.FormClosing += (s, args) =>
                 {
-                    try
+                    ApareceLaContraseñaMaestra = true;
+                    if (contraseñaMaestra.PassBien)
                     {
-                        conn.Open();
-                        sql_Registro = "INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES ('" + Nombre + "', '" + Password + "','" + Telefono + "','" + Correo + "','" + Celular + "')";
-                        cmd_Registro = new MySqlCommand(sql_Registro, conn);
-                        try
+
+                        if (existe_otra_cuenta == false)
                         {
-                            cmd_Registro.ExecuteNonQuery();
+                            try
+                            {
+                                conn.Open();
+                                sql_Registro = "INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES ('" + Nombre + "', '" + Password + "','" + Telefono + "','" + Correo + "','" + Celular + "')";
+                                cmd_Registro = new MySqlCommand(sql_Registro, conn);
+                                try
+                                {
+                                    cmd_Registro.ExecuteNonQuery();
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se ingreso correctamente el usuario", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            catch (Exception E)
+                            {
+                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            txtNombre.Text = "";
+                            txtPassword.Text = "";
+                            txtTelefono.Text = "";
+                            txtCorreo.Text = "";
+                            txtCelular.Text = "";
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("No se ingreso correctamente el usuario", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Ya existe otra cuenta con esa informacion", "Ups...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                     }
-                    catch (Exception E)
+                    else
                     {
-                        MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Ya existe otra cuenta con esa informacion", "Ups...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                    ApareceLaContraseñaMaestra = false;
+                };
+
+
             }
 
-            txtNombre.Text = "";
-            txtPassword.Text = "";
-            txtTelefono.Text = "";
-            txtCorreo.Text = "";
-            txtCelular.Text = "";
         }
 
         private void Comprobacion()
@@ -365,11 +444,6 @@ namespace Diseño
             }
         }
 
-        private void MenuOpciones_VisibleChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer_RecargarBD_Tick(object sender, EventArgs e)
         {
             MostrarBaseDeDatosDeLaTablaUsuariosd_SinMensajeDeError();
@@ -390,13 +464,50 @@ namespace Diseño
                 panel_Menu.Height = 599;
                 panel_BorrarUsuario.Height = 0;
                 panel_Registro.Height = 0;
+                panel_Modificar.Height = 0;
+                panel_Menu.Visible = true;
+
             }
             else
             {
                 panel_Menu.Height = 0;
+                panel_Menu.Visible = false;
+            }
+            if (tabla_Usuarios.Size.Equals(new Size(872, 599)) && panelD.Size.Equals(new Size(119, 1060)))  /* <-- Andá a adivinar que esto era así...*/
+            {
+                tabla_Usuarios.Size = new Size(800, 599);
+            }
+            else
+            {
+                tabla_Usuarios.Size = new Size(872, 599);
             }
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (panel_Modificar.Height == 0)
+            {
+                panel_Modificar.Visible = true;
+                panel_Modificar.Height = 599;
+                panel_BorrarUsuario.Height = 0;
+                panel_Registro.Height = 0;
+                panel_Menu.Height = 0;
+
+            }
+            else
+            {
+                panel_Modificar.Height = 0;
+                panel_Modificar.Visible = false;
+            }
+            if (tabla_Usuarios.Size.Equals(new Size(872, 599)) && panelD.Size.Equals(new Size(119, 1060)))  /* <-- Andá a adivinar que esto era así...*/
+            {
+                tabla_Usuarios.Size = new Size(800, 599);
+            }
+            else
+            {
+                tabla_Usuarios.Size = new Size(872, 599);
+            }
+        }
         private void tabla_Usuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             if (tabla_Usuarios.Columns.Contains("ID"))
@@ -418,13 +529,422 @@ namespace Diseño
                 tabla_Usuarios.Columns["ID"].ToolTipText = "El Identificador (ID) de cada usuario, este es único y no hay 2 iguales.";
                 tabla_Usuarios.Columns["Nombre"].ToolTipText = "El nombre de usuario de cada cuenta creada.";
                 tabla_Usuarios.Columns["CorreoElectronico"].ToolTipText = "El Correo Electrónico, este solo funciona como una forma de intentar contactar con dicho empleado";
+                tabla_Usuarios.Columns["Telefono"].ToolTipText = "¡Hola! ¡Si, soy yo! Resulta que la Organización tiene teléfonos fijos... si... si... ¡Pero!.. Está bien... Te mantendré informado. El, Psy, Kongroo";
                 tabla_Usuarios.Columns["Celular"].ToolTipText = "El número de teléfono, otra vía por donde contactar al empleado";
                 tabla_Usuarios.Columns["Contraseña"].ToolTipText = "Este es el Hash de la contraeña, es así para que no se puedan robar las cuentas, está codificado";
             }
             else
             {
                 MessageBox.Show("Parece que cambió algo en las tablas\nasí que no se pudo cargarlas como es debido", "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MessageBox.Show("¿Acaso alguien tocó la base de datos?\nEn cualquier caso, contacte con el Soporte Prisma", "Atención",MessageBoxButtons.OK ,MessageBoxIcon.Question);
+                MessageBox.Show("¿Acaso alguien tocó la base de datos?\nEn cualquier caso, contacte con el Soporte Prisma", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+        }
+
+        private void chbMostrarContraseña_PanelRegistro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbMostrarContraseña_PanelRegistro.Checked)
+            {
+                //Se cambia la imagen y la sintaxis cambia a letras y números
+                picMostrar.Image = Resources.ojo;
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                //Se cambia la imagen y la sintaxis cambia a Asteriscos " * "
+                picMostrar.Image = Resources.ojo_tapado;
+                txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void chbOcultarContraseña_groupboxModificar_PanelModificar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbOcultarContraseña_groupboxModificar_PanelModificar.Checked)
+            {
+                //Se cambia la imagen y la sintaxis cambia a letras y números
+                picMostrar_groupBoxModificar_PanelModificar.Image = Resources.ojo;
+                txtContraseña_groupboxModificar_PanelModificar.PasswordChar = '\0';
+            }
+            else
+            {
+                //Se cambia la imagen y la sintaxis cambia a Asteriscos " * "
+                picMostrar_groupBoxModificar_PanelModificar.Image = Resources.ojo_tapado;
+                txtContraseña_groupboxModificar_PanelModificar.PasswordChar = '*';
+            }
+        }
+
+        private void comboBoxModifcar_groupBoxModificar_PanelModificar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Todos")
+            {
+                //Nombre:
+                labNombre_groupBoxModificar_PanelModificar.Visible = true;
+                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtNombre_groupboxModificar_PanelModificar.Visible = true;
+                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
+
+                //Contraseña:
+                labelContraseña_groupboxModificar_PanelModificar.Visible = true;
+                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                txtContraseña_groupboxModificar_PanelModificar.Visible = true;
+                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(6, 123);
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = true;
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Location = new Point(353, 126);
+                picMostrar_groupBoxModificar_PanelModificar.Location = new Point(353, 126);
+                picMostrar_groupBoxModificar_PanelModificar.Visible = true;
+
+
+                //Correo:
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 153);
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 168);
+
+                //Telefono:
+                labelTelefono_groupBoxModificar_PanelModificar.Visible = true;
+                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
+                txtTelefono_groupBoxModificar_PanelModificar.Visible = true;
+                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
+
+                //Celular:
+                labelCelular_groupBoxModificar_PanelModificar.Visible = true;
+                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
+                txtCelular_groupBoxModificar_PanelModificar.Visible = true;
+                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
+
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Nombre")
+            {
+                //Nombre:
+                labNombre_groupBoxModificar_PanelModificar.Visible = true;
+                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtNombre_groupboxModificar_PanelModificar.Visible = true;
+                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
+
+                //Contraseña:
+                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
+                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
+                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(6, 123);
+                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
+
+                //Correo:
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 153);
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 168);
+
+                //Teléfono:
+                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
+                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
+
+                //Celular:
+                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
+                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
+                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
+                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
+
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Contraseña")
+            {
+
+                //Ya me dió paja escribir de qué es cada sección espaciada.
+                labNombre_groupBoxModificar_PanelModificar.Visible = false;
+                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtNombre_groupboxModificar_PanelModificar.Visible = false;
+                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
+
+
+                labelContraseña_groupboxModificar_PanelModificar.Visible = true;
+                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 66);
+                txtContraseña_groupboxModificar_PanelModificar.Visible = true;
+                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 81);
+                picMostrar_groupBoxModificar_PanelModificar.Visible = true;
+                picMostrar_groupBoxModificar_PanelModificar.Location = new Point(353, 85);
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Location = new Point(353, 85);
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = true;
+
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 153);
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 168);
+
+                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
+                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
+
+                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
+                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
+                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
+                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
+
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Correo")
+            {
+                labNombre_groupBoxModificar_PanelModificar.Visible = false;
+                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtNombre_groupboxModificar_PanelModificar.Visible = false;
+                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
+
+
+                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
+                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
+                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
+
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
+
+                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
+                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
+
+                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
+                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
+                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
+                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Teléfono")
+            {
+                labNombre_groupBoxModificar_PanelModificar.Visible = false;
+                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtNombre_groupboxModificar_PanelModificar.Visible = false;
+                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
+
+
+                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
+                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
+                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
+
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
+
+                labelTelefono_groupBoxModificar_PanelModificar.Visible = true;
+                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtTelefono_groupBoxModificar_PanelModificar.Visible = true;
+                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
+
+                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
+                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
+                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
+                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Celular")
+            {
+                labNombre_groupBoxModificar_PanelModificar.Visible = false;
+                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtNombre_groupboxModificar_PanelModificar.Visible = false;
+                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
+
+
+                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
+                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
+                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
+                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
+                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
+
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
+
+                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
+                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
+
+                labelCelular_groupBoxModificar_PanelModificar.Visible = true;
+                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
+                txtCelular_groupBoxModificar_PanelModificar.Visible = true;
+                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
+            }
+
+            //Esto es muy caótico para leer sin duda.
+
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult siono = MessageBox.Show("¿Estás seguro de Cerrar Sesión?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (siono == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnTaller_PanelMenu_Click(object sender, EventArgs e)
+        {
+            if (ApareceLaContraseñaMaestra)
+            {
+                MessageBox.Show("Debe de cerrar todas las ventanas emergentes antes de cambiar de pantalla", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Principal mostrar = new Principal();
+                this.Hide();
+                mostrar.Show();
+            }
+        }
+
+        private void btnModificar_groupBoxModificar_PanelModificar_Click(object sender, EventArgs e)
+        {
+            //People will be modified... starting tonight... i'm a man of my word.
+
+            Confirmacion_Con_ContraseñaMaestro confirmacion = new Confirmacion_Con_ContraseñaMaestro();
+
+            if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Todos")
+            {
+                if (txtNombre_groupboxModificar_PanelModificar.Text == "" && txtContraseña_groupboxModificar_PanelModificar.Text == "" &&
+                    txtCorreoElectronico_groupBoxModificar_PanelModificar.Text == "" && txtCelular_groupBoxModificar_PanelModificar.Text == "")
+                {
+                    MessageBox.Show("No deje ningun campo obligatorio en blacno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    confirmacion.Show();
+
+                    confirmacion.FormClosing += (s, args) =>
+                    {
+                        ApareceLaContraseñaMaestra = true;
+                        //Código/query de la modificación para todos los campos:
+
+
+
+
+                    };
+                    ApareceLaContraseñaMaestra = false;
+
+
+
+                }
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Nombre")
+            {
+                if (txtNombre_groupboxModificar_PanelModificar.Text == "")
+                {
+                    MessageBox.Show("No deje el campo del Nombre en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    confirmacion.Show();
+
+                    confirmacion.FormClosing += (s, args) =>
+                    {
+                        //Código/query de la modificación del campo de Nombre
+
+
+
+
+                    };
+                    ApareceLaContraseñaMaestra = false;
+
+
+                }
+
+
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Contraseña")
+            {
+                if (txtContraseña_groupboxModificar_PanelModificar.Text == "")
+                {
+                    MessageBox.Show("No deje el campo de Contraseña en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    confirmacion.Show();
+
+                    confirmacion.FormClosing += (s, args) =>
+                    {
+                        //Código/query de modificación de la contraseña:
+
+
+
+                    };
+                    ApareceLaContraseñaMaestra = false;
+                }
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Correo")
+            {
+                if (txtCorreoElectronico_groupBoxModificar_PanelModificar.Text == "")
+                {
+                    MessageBox.Show("No deje el campo del Correo Electrónico en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    confirmacion.Show();
+
+                    confirmacion.FormClosing += (s, args) =>
+                    {
+                        //Código/query de modificación del correo:
+
+
+
+
+
+                    };
+                    ApareceLaContraseñaMaestra = false;
+                }
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Teléfono")
+            {
+                if (txtTelefono_groupBoxModificar_PanelModificar.Text == "")
+                {
+                    MessageBox.Show("No deje el campo de Teléfono en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    confirmacion.Show();
+
+                    confirmacion.FormClosing += (s, args) =>
+                    {
+                        //Código/query de la modificación del Teléfono Microondas (Nombre provicional).
+
+
+
+
+                    };
+                    ApareceLaContraseñaMaestra = false;
+                }
+            }
+            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Celular")
+            {
+                if (txtCelular_groupBoxModificar_PanelModificar.Text == "")
+                {
+                    MessageBox.Show("No deje el campo de Celular en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    confirmacion.Show();
+
+                    confirmacion.FormClosing += (s, args) =>
+                    {
+                        //Código/query de la modificacion del celular:   
+
+
+
+
+                    };
+                    ApareceLaContraseñaMaestra = false;
+                }
             }
         }
     }
