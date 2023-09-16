@@ -539,7 +539,7 @@
             this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(42, 77);
             this.groupBox_AgregarTrabajos.Name = "groupBox_AgregarTrabajos";
-            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(337, 500);
+            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(337, 0);
             this.groupBox_AgregarTrabajos.TabIndex = 16;
             this.groupBox_AgregarTrabajos.TabStop = false;
             this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
