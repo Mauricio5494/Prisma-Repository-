@@ -37,7 +37,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.Red;
+            this.btnAceptar.BackColor = System.Drawing.Color.Snow;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Location = new System.Drawing.Point(239, 88);
             this.btnAceptar.Name = "btnAceptar";
@@ -99,9 +99,11 @@
             // 
             // Confirmacion_Con_ContraseñaMaestro
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(325, 120);
             this.ControlBox = false;
             this.Controls.Add(this.chbOcultarContraseña);
@@ -110,7 +112,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAceptar);
             this.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
