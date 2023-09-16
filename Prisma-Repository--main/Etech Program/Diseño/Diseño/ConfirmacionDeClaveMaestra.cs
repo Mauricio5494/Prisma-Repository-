@@ -13,12 +13,13 @@ namespace Diseño
 {
     public partial class Confirmacion_Con_ContraseñaMaestro : Form
     {
-        
+
 
         public Confirmacion_Con_ContraseñaMaestro()
         {
             InitializeComponent();
             this.FormClosing += Confirmacion_Con_ContraseñaMaestro_FormClosing;
+
         }
 
         //Constantes:
@@ -26,7 +27,9 @@ namespace Diseño
 
         //Variables:
         string contraseñaCorrecta = "123";
-        public bool PassBien;
+        public bool PassBien = false;
+
+        private DialogResult dialogo = new DialogResult();
 
         //Métodos:
         Usuarios PassOK = new Usuarios();
@@ -41,7 +44,7 @@ namespace Diseño
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            ConfirmarContraseña();
+            dialogo = DialogResult.OK;
             this.Close();
         }
 
@@ -53,28 +56,36 @@ namespace Diseño
 
         private void button2_Click(object sender, EventArgs e)
         {
+            dialogo = DialogResult.Cancel;
             this.Close();
+            PassBien = false;
         }
         public void ConfirmarContraseña()
         {
+
             if (txtClaveMaestra.Text == contraseñaCorrecta)
             {
                 PassBien = true;
             }
             else
             {
-                
+                PassBien = false;
             }
         }
 
         private void Confirmacion_Con_ContraseñaMaestro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (txtClaveMaestra.Text == contraseñaCorrecta)
+            if (dialogo == DialogResult.OK)
             {
-                PassBien = true;
+                ConfirmarContraseña();
             }
             else
             {
+
+            }
+            if (dialogo == DialogResult.OK && PassBien == false)
+            {
+                MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
