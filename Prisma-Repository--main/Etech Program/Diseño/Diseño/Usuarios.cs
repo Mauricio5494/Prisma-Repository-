@@ -464,7 +464,7 @@ namespace Diseño
 
         private void Usuarios_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
@@ -821,6 +821,8 @@ namespace Diseño
 
             Confirmacion_Con_ContraseñaMaestro confirmacion = new Confirmacion_Con_ContraseñaMaestro();
 
+            int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
+
             if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Todos")
             {
                 if (txtNombre_groupboxModificar_PanelModificar.Text == "" && txtContraseña_groupboxModificar_PanelModificar.Text == "" &&
@@ -848,9 +850,7 @@ namespace Diseño
                                 try
                                 {
                                     conn.Open();
-                                    modificarAtributosDeUsuarios = "UPDATE usuarios SET Nombre=" + txtNombre_groupboxModificar_PanelModificar.Text + ", Contraseña=" + txtContraseña_groupboxModificar_PanelModificar.Text +
-                                    ", Telefono=" /*Microondas (Nombre Provicional)*/ + txtTelefono_groupBoxModificar_PanelModificar.Text + ", CorreoElectronico=" + txtCorreoElectronico_groupBoxModificar_PanelModificar.Text +
-                                    ", Celular=" + txtCelular_groupBoxModificar_PanelModificar.Text + " WHERE ID=" + txtIDseleccionado_groupBoxModificar_PanelModificar.Text + ";";
+                                    modificarAtributosDeUsuarios = $"UPDATE usuarios SET Nombre='{txtNombre_groupboxModificar_PanelModificar.Text}', Contraseña='{txtContraseña_groupboxModificar_PanelModificar.Text}', Telefono='{txtTelefono_groupBoxModificar_PanelModificar.Text}', CorreoElectronico='{txtCorreoElectronico_groupBoxModificar_PanelModificar.Text}', Celular='{txtCelular_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
                                     cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
 
                                     try
@@ -861,12 +861,14 @@ namespace Diseño
                                     catch (Exception ex)
                                     {
                                         MessageBox.Show("No se pudo modificar el usuario.\n\nCompruebe la existencia del Usuario y el ID del mismo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
 
                                 }
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("No se puedo conectar con la Base de Datos\n\n¿Alguien puso mala mano en la configuración interna de la Base de Datos?", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show(ex.Message,"Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 finally
                                 {
@@ -875,7 +877,7 @@ namespace Diseño
                             }
                             else
                             {
-
+                                //nada, nada.
                             }
                             ApareceLaContraseñaMaestra = false;
 
@@ -900,14 +902,14 @@ namespace Diseño
                 }
                 else
                 {
-                    confirmacion.Show();
-                    ApareceLaContraseñaMaestra = true;
 
                     DialogResult siono = MessageBox.Show("¿Estás seguro de modificar estos atributos?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (siono == DialogResult.Yes)
                     {
 
+                        confirmacion.Show();
+                        ApareceLaContraseñaMaestra = true;
                         confirmacion.FormClosing += (s, args) =>
                     {
                         //Código/query de la modificación del campo de Nombre
@@ -915,15 +917,17 @@ namespace Diseño
                         try
                         {
                             conn.Open();
-                            modificarAtributosDeUsuarios = "UPDATE usuarios SET Nombre =" + txtNombre_groupboxModificar_PanelModificar.Text + " WHERE ID =" + txtIDseleccionado_groupBoxModificar_PanelModificar.Text + ";";
+                            modificarAtributosDeUsuarios = $"UPDATE usuarios SET Nombre ='{txtNombre_groupboxModificar_PanelModificar.Text}' WHERE ID ={idUsuario};";
+                            cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
                             try
                             {
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Usuario modificado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Nombre de usuario modificado correctamente", "Éxito", MessageBoxButtons.OK,MessageBoxIcon.Information);
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("No se pudo modificar el usuario.\n\nCompruebe la existencia del Usuario y el ID del mismo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
 
@@ -963,32 +967,55 @@ namespace Diseño
                 }
                 else
                 {
-                    confirmacion.Show();
-
-                    confirmacion.FormClosing += (s, args) =>
+                    DialogResult siono = MessageBox.Show("¿Está Seguro de modificar la contraseña de este Usuario?.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (siono == DialogResult.Yes)
                     {
-                        //Código/query de modificación de la contraseña:
 
-                        try
+                        confirmacion.Show();
+                        ApareceLaContraseñaMaestra = true;
+
+                        confirmacion.FormClosing += (s, args) =>
                         {
+                            //Código/query de modificación de la contraseña:
+
+                            try
+                            {
+                                conn.Open();
+                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET contraseña='{txtContraseña_groupboxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
+                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
+                                try
+                                {
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("Contraseña del usuario cambiada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se pudo modificar la contraseña del Usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show(ex.Message, "Información Técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
 
 
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error al conectar con la Base de Datos, contacte al soporte Prisma.", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(ex.Message, "Información Técnica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
 
 
-                        }
-                        catch (Exception ex)
-                        {
-
-                        }
-                        finally
-                        {
-
-                        }
-
-
-                    };
-                    ApareceLaContraseñaMaestra = false;
+                        };
+                        ApareceLaContraseñaMaestra = false;
+                    }
+                    else
+                    {
+                        //Queda en nada.
+                    }
                 }
+
             }
             else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Correo")
             {
@@ -998,34 +1025,56 @@ namespace Diseño
                 }
                 else
                 {
-                    confirmacion.Show();
+                    DialogResult siono = MessageBox.Show("¿Está seguro que quiere modificar el Correo del usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    confirmacion.FormClosing += (s, args) =>
+                    if (siono == DialogResult.Yes)
                     {
-                        //Código/query de modificación del correo:
-
-                        try
+                        confirmacion.Show();
+                        ApareceLaContraseñaMaestra = true;
+                        confirmacion.FormClosing += (s, args) =>
                         {
+                            //Código/query de modificación del correo:
+
+                            try
+                            {
+                                conn.Open();
+                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET CorreoElectronico='{txtCorreoElectronico_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
+                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
+                                try
+                                {
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("E-Mail cambiado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se pudo modificar el correo del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se pudo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
 
 
 
 
-                        }
-                        catch (Exception ex)
-                        {
+                        };
+                        ApareceLaContraseñaMaestra = false;
+                    }
+                    else
+                    {
+                        //Queda en nada... otra vez.
+                    }
 
-                        }
-                        finally
-                        {
-
-                        }
-
-
-
-
-                    };
-                    ApareceLaContraseñaMaestra = false;
                 }
+
             }
             else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Teléfono")
             {
@@ -1035,32 +1084,52 @@ namespace Diseño
                 }
                 else
                 {
-                    confirmacion.Show();
+                    DialogResult siono = MessageBox.Show("¿Está seguro de modificar el Teléfono de este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    confirmacion.FormClosing += (s, args) =>
+                    if (siono == DialogResult.Yes)
                     {
-                        //Código/query de la modificación del Teléfono Microondas (Nombre provicional).
-
-                        try
+                        confirmacion.Show();
+                        ApareceLaContraseñaMaestra = true;
+                        confirmacion.FormClosing += (s, args) =>
                         {
+                            //Código/query de la modificación del Teléfono Microondas (Nombre provicional).
+
+                            try
+                            {
+                                conn.Open();
+                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET Telefono='{txtTelefono_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
+                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
+                                try
+                                {
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("Teléfono cambiado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se pudo modificar el Teléfono del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se pudo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(ex.Message, "Informacion técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
 
 
 
+                        };
+                        ApareceLaContraseñaMaestra = false;
+                    }
+                    else
+                    {
+                        //Queda en nada... si... una vez más.
+                    }
 
-                        }
-                        catch (Exception ex)
-                        {
-
-                        }
-                        finally
-                        {
-
-                        }
-
-
-
-                    };
-                    ApareceLaContraseñaMaestra = false;
                 }
             }
             else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Celular")
@@ -1071,32 +1140,52 @@ namespace Diseño
                 }
                 else
                 {
-                    confirmacion.Show();
+                    DialogResult siono = MessageBox.Show("¿Está seguro de modificar el Celular de este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    confirmacion.FormClosing += (s, args) =>
+                    if (siono == DialogResult.Yes)
                     {
-                        //Código/query de la modificacion del celular:   
-
-                        try
+                        confirmacion.Show();
+                        ApareceLaContraseñaMaestra = true;
+                        confirmacion.FormClosing += (s, args) =>
                         {
+                            //Código/query de la modificacion del celular:   
+
+                            try
+                            {
+                                conn.Open();
+                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET celular='{txtCelular_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
+                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
+                                try
+                                {
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("Número de celular cambiado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se pudo modificar el Celular de este usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show(ex.Message,"Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se pudo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(ex.Message,"Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                        };
+                        ApareceLaContraseñaMaestra = false;
 
 
 
-
-                        }
-                        catch (Exception ex)
-                        {
-
-                        }
-                        finally
-                        {
-
-                        }
-
-
-
-                    };
-                    ApareceLaContraseñaMaestra = false;
+                    }
+                    else
+                    {
+                        //No preguntes... ya sabemos lo que pasa acá.
+                    }
                 }
             }
         }
