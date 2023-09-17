@@ -171,6 +171,7 @@
     <None Include="Resources\busqueda.png" />
     <None Include="Resources\casa.png" />
     <None Include="Resources\Prisma Logo.png" />
+    <None Include="Resources\senal-de-advertencia.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
