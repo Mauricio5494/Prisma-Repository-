@@ -20,6 +20,7 @@ namespace Diseño
         //Variables:
         private int idTecnico;
         public bool PassSucess;
+        private string modificarAtributosDeUsuarios;
 
         //Instancias:
         DataTable dataTableUsuarios = new DataTable();
@@ -29,6 +30,7 @@ namespace Diseño
         MySqlCommand cmd_Seguridad;
         MySqlDataReader reader;
         ToolTip ayudaVisual = new ToolTip();
+        Utilidades seguridad = new Utilidades();
 
         //Forms:
 
@@ -56,37 +58,48 @@ namespace Diseño
 
         private void MostrarBaseDeDatosDeLaTablaUsuarios()
         {
-            try
+            if (seguridad.getInvitado)
             {
-                dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL.*/
-                conn.Open();
-                cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
-                cmd.CommandType = System.Data.CommandType.Text;
-                reader = cmd.ExecuteReader();
-                dataTableUsuarios.Load(reader);
-                label_BD_Mostrada.Text = "Mostrando Usuarios";
-                label_BD_Mostrada.ForeColor = Color.ForestGreen;
+                pictureBox_WarningLeft.Visible = true;
+                pictureBox_WarningRight.Visible = true;
+                label_InvitadoDetectado.Visible = true;
             }
-            catch (Exception ex)
+            else
             {
-                if (conn.Equals(ConnectionState.Open))
+
+                try
                 {
+                    dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL.*/
+                    conn.Open();
+                    cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    reader = cmd.ExecuteReader();
+                    dataTableUsuarios.Load(reader);
                     label_BD_Mostrada.Text = "Mostrando Usuarios";
                     label_BD_Mostrada.ForeColor = Color.ForestGreen;
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo contectar con la Base de Datos", "FATAL ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show(ex.Message, "Información acerca del Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    label_BD_Mostrada.Text = "No se pudo mostrar la Tabla";
-                    label_BD_Mostrada.ForeColor = Color.DarkRed;
+                    if (conn.Equals(ConnectionState.Open))
+                    {
+                        label_BD_Mostrada.Text = "Mostrando Usuarios";
+                        label_BD_Mostrada.ForeColor = Color.ForestGreen;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo contectar con la Base de Datos", "FATAL ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Información acerca del Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        label_BD_Mostrada.Text = "No se pudo mostrar la Tabla";
+                        label_BD_Mostrada.ForeColor = Color.DarkRed;
+                    }
                 }
+                finally
+                {
+                    conn.Close();
+                }
+                tabla_Usuarios.DataSource = dataTableUsuarios;
             }
-            finally
-            {
-                conn.Close();
-            }
-            tabla_Usuarios.DataSource = dataTableUsuarios;
+
         }
 
         private void MostrarBaseDeDatosDeLaTablaUsuariosd_SinMensajeDeError()
@@ -451,10 +464,7 @@ namespace Diseño
 
         private void Usuarios_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F5)
-            {
-                MostrarBaseDeDatosDeLaTablaUsuarios();
-            }
+            
         }
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
@@ -820,23 +830,68 @@ namespace Diseño
                 }
                 else
                 {
-                    confirmacion.Show();
+                    DialogResult siono = MessageBox.Show("¿Estás seguro de modificar estos atributos?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    confirmacion.FormClosing += (s, args) =>
+                    if (siono == DialogResult.Yes)
                     {
+                        confirmacion.Show();
                         ApareceLaContraseñaMaestra = true;
-                        //Código/query de la modificación para todos los campos:
 
+                        confirmacion.FormClosing += (s, args) =>
+                        {
 
+                            //Código/query de la modificación para todos los campos:
 
+                            if (confirmacion.PassBien == true)
+                            {
 
-                    };
-                    ApareceLaContraseñaMaestra = false;
+                                try
+                                {
+                                    conn.Open();
+                                    modificarAtributosDeUsuarios = "UPDATE usuarios SET Nombre=" + txtNombre_groupboxModificar_PanelModificar.Text + ", Contraseña=" + txtContraseña_groupboxModificar_PanelModificar.Text +
+                                    ", Telefono=" /*Microondas (Nombre Provicional)*/ + txtTelefono_groupBoxModificar_PanelModificar.Text + ", CorreoElectronico=" + txtCorreoElectronico_groupBoxModificar_PanelModificar.Text +
+                                    ", Celular=" + txtCelular_groupBoxModificar_PanelModificar.Text + " WHERE ID=" + txtIDseleccionado_groupBoxModificar_PanelModificar.Text + ";";
+                                    cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
 
+                                    try
+                                    {
+                                        cmd.ExecuteNonQuery();
+                                        MessageBox.Show("Usuario modificado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("No se pudo modificar el usuario.\n\nCompruebe la existencia del Usuario y el ID del mismo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se puedo conectar con la Base de Datos\n\n¿Alguien puso mala mano en la configuración interna de la Base de Datos?", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                finally
+                                {
+                                    conn.Close();
+                                }
+                            }
+                            else
+                            {
+
+                            }
+                            ApareceLaContraseñaMaestra = false;
+
+                        };
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Okay, esto si que es raro\n\nHay algo mal con esta parte del programa, contacte con el soporte de Prisma", "Error Raro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
 
                 }
             }
+
+
             else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Nombre")
             {
                 if (txtNombre_groupboxModificar_PanelModificar.Text == "")
@@ -846,18 +901,56 @@ namespace Diseño
                 else
                 {
                     confirmacion.Show();
+                    ApareceLaContraseñaMaestra = true;
 
-                    confirmacion.FormClosing += (s, args) =>
+                    DialogResult siono = MessageBox.Show("¿Estás seguro de modificar estos atributos?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (siono == DialogResult.Yes)
+                    {
+
+                        confirmacion.FormClosing += (s, args) =>
                     {
                         //Código/query de la modificación del campo de Nombre
+
+                        try
+                        {
+                            conn.Open();
+                            modificarAtributosDeUsuarios = "UPDATE usuarios SET Nombre =" + txtNombre_groupboxModificar_PanelModificar.Text + " WHERE ID =" + txtIDseleccionado_groupBoxModificar_PanelModificar.Text + ";";
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Usuario modificado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se pudo modificar el usuario.\n\nCompruebe la existencia del Usuario y el ID del mismo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show("No se puedo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
 
 
 
 
                     };
-                    ApareceLaContraseñaMaestra = false;
+                        ApareceLaContraseñaMaestra = false;
 
 
+                    }
+                    else
+                    {
+                        //Nada.
+                    }
                 }
 
 
@@ -876,6 +969,21 @@ namespace Diseño
                     {
                         //Código/query de modificación de la contraseña:
 
+                        try
+                        {
+
+
+
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                        finally
+                        {
+
+                        }
 
 
                     };
@@ -896,6 +1004,21 @@ namespace Diseño
                     {
                         //Código/query de modificación del correo:
 
+                        try
+                        {
+
+
+
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                        finally
+                        {
+
+                        }
 
 
 
@@ -918,6 +1041,21 @@ namespace Diseño
                     {
                         //Código/query de la modificación del Teléfono Microondas (Nombre provicional).
 
+                        try
+                        {
+
+
+
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                        finally
+                        {
+
+                        }
 
 
 
@@ -939,6 +1077,21 @@ namespace Diseño
                     {
                         //Código/query de la modificacion del celular:   
 
+                        try
+                        {
+
+
+
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                        finally
+                        {
+
+                        }
 
 
 
@@ -946,6 +1099,11 @@ namespace Diseño
                     ApareceLaContraseñaMaestra = false;
                 }
             }
+        }
+
+        private void Usuarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
