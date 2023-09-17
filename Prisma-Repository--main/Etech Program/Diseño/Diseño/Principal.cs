@@ -1089,10 +1089,11 @@ namespace Diseño
                             try
                             {
                                 cmd.ExecuteNonQuery();
+                                MessageBox.Show("Celular correctamente modificado", "Éxito", MessageBoxButtons.OK,MessageBoxIcon.Information);
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("No se modifico correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("No se pudo modificar el celular.\n\nCompruebe la existencia del celular y el ID del mismo." + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         catch (Exception ex)
