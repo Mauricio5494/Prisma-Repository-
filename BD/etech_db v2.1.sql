@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2023 a las 05:59:45
+-- Tiempo de generación: 17-09-2023 a las 19:23:56
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -85,9 +85,9 @@ CREATE TABLE `trabajos` (
 CREATE TABLE `usuarios` (
   `ID` int(11) NOT NULL,
   `Nombre` varchar(30) NOT NULL,
-  `Contraseña` varchar(30) NOT NULL,
+  `Contraseña` varchar(255) NOT NULL,
   `Telefono` varchar(8) DEFAULT NULL,
-  `CorreoElectronico` varchar(30) NOT NULL,
+  `CorreoElectronico` varchar(255) NOT NULL,
   `Celular` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -131,7 +131,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `celulares`
 --
 ALTER TABLE `celulares`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `trabajos`
@@ -143,7 +143,7 @@ ALTER TABLE `trabajos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas
