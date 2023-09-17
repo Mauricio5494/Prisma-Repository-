@@ -28,11 +28,11 @@ namespace Diseño
         //Variables:
         string contraseñaCorrecta = "123";
         public bool PassBien = false;
-
         private DialogResult dialogo = new DialogResult();
 
         //Métodos:
         Usuarios PassOK = new Usuarios();
+
         private void OcultarContraseña()
         {
             if (chbOcultarContraseña.Checked)
