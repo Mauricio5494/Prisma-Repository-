@@ -1,13 +1,21 @@
-Cambios para la versión v0.4.8.2a (Actual) (No, la "a" no es de "Actual", sinó de "alpha").
+Cambios para la versión v0.4.8.3a (Actual) (No, la "a" no es de "Actual", sinó de "alpha").
 
 
 
 Agregados:
 
- 1 - Se agregó un codigo de seguridad para eliminar usuarios, así solo el gerente de Etech puede eliminar a sus propios
-técnicos.
+ 1 - Se agregó el panel completo de modificación de usuarios totalmente funcional.
+
+ 2 - Se agregó una comprobación por contraseña maestra para modificar y eliminar usuarios.
+
+ 3 - Se agregó el panel de menú, el cuál el único botón funcional es el de Taller.
 
 Fixes:
+
+ 1 - El problema visual del panel de agregar técnicos se solucionó.
+
+ 2 - problemas visuales al cargar paneles a la derecha cuando se desplegaba el panel del menú lateral solucionados en
+la pantalla de Usuarios.
 
 NADA.
 
@@ -16,14 +24,14 @@ Known Issues:
 
  1 - A veces, por razones de C#, el contador de caracteres restantes para la CI del cliente queda en -1 indicando
 el mínimo o en 7 indicando el máximo en vez de 8 o 0 como sería lo correcto.
-
- 2 - Al presionar click en el botón de agregar técnico en la sección de Usuarios se muestra detrás del panel de
-eliminar tecnico si este se encuentra presente. Para solucionarlo temporalmente uno debe de volver a apretar el botón
-de eliminar tecnico para que este panel desaparezca, dejando así vía libre para el panel de agregar técnico.
-(Igual es fácil de arreglar de manera programática así que se arreglará para la siguiente actualización).
  
- 3 - Al apretar el "botón redondito" de el panel de modificar celulares y después el de modificar trabajo, hace que se
+ 2 - Al apretar el "botón redondito" de el panel de modificar celulares y después el de modificar trabajo, hace que se
 buguee y el panel de modificar trabajos deje de funcionar, haciéndolo totalmente inútil.
+
+ 3 - El botón de mostrar contraseña en el panel de modificacion de usuarios aparece como contraseña oculta al cargarse
+pero la contraseña no se oculta tras cargarse el panel, sino después de hacerle 2 clicks al ojo.
+
+ 4 - problemas visuales varios en la pantalla principal.
 
 
 
