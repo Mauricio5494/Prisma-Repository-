@@ -213,6 +213,16 @@ namespace Diseño.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap senal_de_advertencia {
+            get {
+                object obj = ResourceManager.GetObject("senal-de-advertencia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Taller {
             get {
                 object obj = ResourceManager.GetObject("Taller", resourceCulture);
