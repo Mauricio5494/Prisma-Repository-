@@ -29,27 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelE = new System.Windows.Forms.Panel();
             this.label_BD_Mostrada = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.label_Filtrar = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.MenuOpciones = new System.Windows.Forms.ComboBox();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
             this.panelD = new System.Windows.Forms.Panel();
-            this.btnMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.tabla_Usuarios = new System.Windows.Forms.DataGridView();
             this.panel_Registro = new System.Windows.Forms.Panel();
             this.groupBoxInterno_panelRegistroUsuarios = new System.Windows.Forms.GroupBox();
-            this.picMostrar = new System.Windows.Forms.PictureBox();
             this.chbMostrarContraseña_PanelRegistro = new System.Windows.Forms.CheckBox();
             this.panelAgregarUsuario_btnAgregar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -73,18 +65,12 @@
             this.txtID_panelBorrarUsuarios = new System.Windows.Forms.TextBox();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.groupBox_Menu_PanelMenu = new System.Windows.Forms.GroupBox();
-            this.btnEstadisticas_groupboxManu_PanelMenu = new System.Windows.Forms.Button();
-            this.btnTaller_PanelMenu = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel_Modificar = new System.Windows.Forms.Panel();
             this.groupBoxModificar_PanelModificar = new System.Windows.Forms.GroupBox();
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar = new System.Windows.Forms.TextBox();
+            this.labelDelID_groupBoxModificar_PanelModificar = new System.Windows.Forms.Label();
             this.btnModificar_groupBoxModificar_PanelModificar = new System.Windows.Forms.Button();
-            this.picMostrar_groupBoxModificar_PanelModificar = new System.Windows.Forms.PictureBox();
             this.chbOcultarContraseña_groupboxModificar_PanelModificar = new System.Windows.Forms.CheckBox();
             this.comboBoxModifcar_groupBoxModificar_PanelModificar = new System.Windows.Forms.ComboBox();
             this.labelCelular_groupBoxModificar_PanelModificar = new System.Windows.Forms.Label();
@@ -98,28 +84,47 @@
             this.txtTelefono_groupBoxModificar_PanelModificar = new System.Windows.Forms.TextBox();
             this.txtNombre_groupboxModificar_PanelModificar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_InvitadoDetectado = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.pictureBox_WarningLeft = new System.Windows.Forms.PictureBox();
+            this.picMostrar_groupBoxModificar_PanelModificar = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.labelDelID_groupBoxModificar_PanelModificar = new System.Windows.Forms.Label();
-            this.txtIDseleccionado_groupBoxModificar_PanelModificar = new System.Windows.Forms.TextBox();
+            this.btnEstadisticas_groupboxManu_PanelMenu = new System.Windows.Forms.Button();
+            this.btnTaller_PanelMenu = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.picMostrar = new System.Windows.Forms.PictureBox();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.pictureBox_WarningRight = new System.Windows.Forms.PictureBox();
             this.panelE.SuspendLayout();
             this.panelD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).BeginInit();
             this.panel_Registro.SuspendLayout();
             this.groupBoxInterno_panelRegistroUsuarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
             this.panel_BorrarUsuario.SuspendLayout();
             this.groupboxInterno_panelBorrarTecnico.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             this.groupBox_Menu_PanelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
             this.groupBoxModificar_PanelModificar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMostrar_groupBoxModificar_PanelModificar)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar_groupBoxModificar_PanelModificar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).BeginInit();
             this.SuspendLayout();
             // 
             // panelE
@@ -149,21 +154,6 @@
             this.label_BD_Mostrada.Size = new System.Drawing.Size(16, 15);
             this.label_BD_Mostrada.TabIndex = 12;
             this.label_BD_Mostrada.Text = "...";
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.PanSE;
-            this.btnMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(0, 18);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(44, 41);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // label_Filtrar
             // 
@@ -235,138 +225,28 @@
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 14;
             // 
-            // btnMenuPrincipal
-            // 
-            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
-            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 236);
-            this.btnMenuPrincipal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
-            this.btnMenuPrincipal.TabIndex = 16;
-            this.btnMenuPrincipal.Text = "Menu";
-            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
-            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Enabled = false;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 342);
-            this.btnRecargar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnRecargar.TabIndex = 22;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Visible = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
-            this.btnEliminar.TabIndex = 14;
-            this.btnEliminar.Text = "Quitar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(0, 132);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 46);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
-            this.btnAgregar.TabIndex = 1;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.Text = "Cerrar Sesión";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
             // tabla_Usuarios
             // 
             this.tabla_Usuarios.AllowUserToAddRows = false;
             this.tabla_Usuarios.AllowUserToDeleteRows = false;
             this.tabla_Usuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla_Usuarios.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla_Usuarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.tabla_Usuarios.Location = new System.Drawing.Point(49, 76);
             this.tabla_Usuarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabla_Usuarios.Name = "tabla_Usuarios";
@@ -412,17 +292,6 @@
             this.groupBoxInterno_panelRegistroUsuarios.TabIndex = 1;
             this.groupBoxInterno_panelRegistroUsuarios.TabStop = false;
             this.groupBoxInterno_panelRegistroUsuarios.Text = "Resgistro";
-            // 
-            // picMostrar
-            // 
-            this.picMostrar.Enabled = false;
-            this.picMostrar.Image = global::Diseño.Properties.Resources.ojo_tapado;
-            this.picMostrar.Location = new System.Drawing.Point(351, 144);
-            this.picMostrar.Name = "picMostrar";
-            this.picMostrar.Size = new System.Drawing.Size(16, 16);
-            this.picMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picMostrar.TabIndex = 14;
-            this.picMostrar.TabStop = false;
             // 
             // chbMostrarContraseña_PanelRegistro
             // 
@@ -648,55 +517,6 @@
             this.groupBox_Menu_PanelMenu.TabStop = false;
             this.groupBox_Menu_PanelMenu.Text = "Menú";
             // 
-            // btnEstadisticas_groupboxManu_PanelMenu
-            // 
-            this.btnEstadisticas_groupboxManu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas_groupboxManu_PanelMenu.Image = global::Diseño.Properties.Resources.Estadisticas;
-            this.btnEstadisticas_groupboxManu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas_groupboxManu_PanelMenu.Location = new System.Drawing.Point(3, 254);
-            this.btnEstadisticas_groupboxManu_PanelMenu.Name = "btnEstadisticas_groupboxManu_PanelMenu";
-            this.btnEstadisticas_groupboxManu_PanelMenu.Size = new System.Drawing.Size(406, 107);
-            this.btnEstadisticas_groupboxManu_PanelMenu.TabIndex = 2;
-            this.btnEstadisticas_groupboxManu_PanelMenu.Text = "Estadísticas";
-            this.btnEstadisticas_groupboxManu_PanelMenu.UseVisualStyleBackColor = true;
-            // 
-            // btnTaller_PanelMenu
-            // 
-            this.btnTaller_PanelMenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaller_PanelMenu.Image = global::Diseño.Properties.Resources.Taller2;
-            this.btnTaller_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaller_PanelMenu.Location = new System.Drawing.Point(3, 28);
-            this.btnTaller_PanelMenu.Name = "btnTaller_PanelMenu";
-            this.btnTaller_PanelMenu.Size = new System.Drawing.Size(406, 107);
-            this.btnTaller_PanelMenu.TabIndex = 0;
-            this.btnTaller_PanelMenu.Text = "Taller";
-            this.btnTaller_PanelMenu.UseVisualStyleBackColor = true;
-            this.btnTaller_PanelMenu.Click += new System.EventHandler(this.btnTaller_PanelMenu_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Diseño.Properties.Resources.Clientes1;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 141);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(406, 107);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Clientes";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox_EtechLogo_PanelMenu
-            // 
-            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
-            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(125, 2);
-            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
-            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
-            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
-            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
-            // 
             // groupBox_Menu
             // 
             this.groupBox_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -710,43 +530,6 @@
             this.groupBox_Menu.TabIndex = 0;
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "MENU";
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Image = global::Diseño.Properties.Resources.Clientes1;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnClientes.Location = new System.Drawing.Point(4, 105);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(377, 80);
-            this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "CLIENTES";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.Estadisticas;
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(4, 191);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(377, 80);
-            this.btnEstadisticas.TabIndex = 1;
-            this.btnEstadisticas.Text = "ESTADISTICAS";
-            this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::Diseño.Properties.Resources.Usuarios;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(377, 80);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "USUARIOS";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
             // panel_Modificar
             // 
@@ -786,6 +569,24 @@
             this.groupBoxModificar_PanelModificar.TabStop = false;
             this.groupBoxModificar_PanelModificar.Text = "Modificar";
             // 
+            // txtIDseleccionado_groupBoxModificar_PanelModificar
+            // 
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(178, 18);
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Name = "txtIDseleccionado_groupBoxModificar_PanelModificar";
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(228, 23);
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.TabIndex = 16;
+            // 
+            // labelDelID_groupBoxModificar_PanelModificar
+            // 
+            this.labelDelID_groupBoxModificar_PanelModificar.AutoSize = true;
+            this.labelDelID_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDelID_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(135, 21);
+            this.labelDelID_groupBoxModificar_PanelModificar.Name = "labelDelID_groupBoxModificar_PanelModificar";
+            this.labelDelID_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(45, 16);
+            this.labelDelID_groupBoxModificar_PanelModificar.TabIndex = 15;
+            this.labelDelID_groupBoxModificar_PanelModificar.Text = "del ID:";
+            // 
             // btnModificar_groupBoxModificar_PanelModificar
             // 
             this.btnModificar_groupBoxModificar_PanelModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -801,18 +602,6 @@
             this.btnModificar_groupBoxModificar_PanelModificar.Text = "Modificar";
             this.btnModificar_groupBoxModificar_PanelModificar.UseVisualStyleBackColor = false;
             this.btnModificar_groupBoxModificar_PanelModificar.Click += new System.EventHandler(this.btnModificar_groupBoxModificar_PanelModificar_Click);
-            // 
-            // picMostrar_groupBoxModificar_PanelModificar
-            // 
-            this.picMostrar_groupBoxModificar_PanelModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMostrar_groupBoxModificar_PanelModificar.Enabled = false;
-            this.picMostrar_groupBoxModificar_PanelModificar.Image = global::Diseño.Properties.Resources.ojo_tapado;
-            this.picMostrar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(352, 128);
-            this.picMostrar_groupBoxModificar_PanelModificar.Name = "picMostrar_groupBoxModificar_PanelModificar";
-            this.picMostrar_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(16, 16);
-            this.picMostrar_groupBoxModificar_PanelModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picMostrar_groupBoxModificar_PanelModificar.TabIndex = 13;
-            this.picMostrar_groupBoxModificar_PanelModificar.TabStop = false;
             // 
             // chbOcultarContraseña_groupboxModificar_PanelModificar
             // 
@@ -947,6 +736,76 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "MENU";
             // 
+            // label_InvitadoDetectado
+            // 
+            this.label_InvitadoDetectado.AutoSize = true;
+            this.label_InvitadoDetectado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label_InvitadoDetectado.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_InvitadoDetectado.Location = new System.Drawing.Point(161, 288);
+            this.label_InvitadoDetectado.Name = "label_InvitadoDetectado";
+            this.label_InvitadoDetectado.Size = new System.Drawing.Size(650, 33);
+            this.label_InvitadoDetectado.TabIndex = 26;
+            this.label_InvitadoDetectado.Text = "Ingrese como Usuario para poder Visualizar la tabla";
+            this.label_InvitadoDetectado.Visible = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.PanSE;
+            this.btnMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(0, 18);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(44, 41);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // pictureBox_WarningLeft
+            // 
+            this.pictureBox_WarningLeft.Image = global::Diseño.Properties.Resources.senal_de_advertencia;
+            this.pictureBox_WarningLeft.Location = new System.Drawing.Point(98, 281);
+            this.pictureBox_WarningLeft.Name = "pictureBox_WarningLeft";
+            this.pictureBox_WarningLeft.Size = new System.Drawing.Size(57, 56);
+            this.pictureBox_WarningLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_WarningLeft.TabIndex = 27;
+            this.pictureBox_WarningLeft.TabStop = false;
+            this.pictureBox_WarningLeft.Visible = false;
+            // 
+            // picMostrar_groupBoxModificar_PanelModificar
+            // 
+            this.picMostrar_groupBoxModificar_PanelModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMostrar_groupBoxModificar_PanelModificar.Enabled = false;
+            this.picMostrar_groupBoxModificar_PanelModificar.Image = global::Diseño.Properties.Resources.ojo_tapado;
+            this.picMostrar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(352, 128);
+            this.picMostrar_groupBoxModificar_PanelModificar.Name = "picMostrar_groupBoxModificar_PanelModificar";
+            this.picMostrar_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(16, 16);
+            this.picMostrar_groupBoxModificar_PanelModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picMostrar_groupBoxModificar_PanelModificar.TabIndex = 13;
+            this.picMostrar_groupBoxModificar_PanelModificar.TabStop = false;
+            // 
             // button5
             // 
             this.button5.Image = global::Diseño.Properties.Resources.Clientes1;
@@ -984,23 +843,203 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // labelDelID_groupBoxModificar_PanelModificar
+            // btnEstadisticas_groupboxManu_PanelMenu
             // 
-            this.labelDelID_groupBoxModificar_PanelModificar.AutoSize = true;
-            this.labelDelID_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDelID_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(135, 21);
-            this.labelDelID_groupBoxModificar_PanelModificar.Name = "labelDelID_groupBoxModificar_PanelModificar";
-            this.labelDelID_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(45, 16);
-            this.labelDelID_groupBoxModificar_PanelModificar.TabIndex = 15;
-            this.labelDelID_groupBoxModificar_PanelModificar.Text = "del ID:";
+            this.btnEstadisticas_groupboxManu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas_groupboxManu_PanelMenu.Image = global::Diseño.Properties.Resources.Estadisticas;
+            this.btnEstadisticas_groupboxManu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas_groupboxManu_PanelMenu.Location = new System.Drawing.Point(3, 254);
+            this.btnEstadisticas_groupboxManu_PanelMenu.Name = "btnEstadisticas_groupboxManu_PanelMenu";
+            this.btnEstadisticas_groupboxManu_PanelMenu.Size = new System.Drawing.Size(406, 107);
+            this.btnEstadisticas_groupboxManu_PanelMenu.TabIndex = 2;
+            this.btnEstadisticas_groupboxManu_PanelMenu.Text = "Estadísticas";
+            this.btnEstadisticas_groupboxManu_PanelMenu.UseVisualStyleBackColor = true;
             // 
-            // txtIDseleccionado_groupBoxModificar_PanelModificar
+            // btnTaller_PanelMenu
             // 
-            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(178, 18);
-            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Name = "txtIDseleccionado_groupBoxModificar_PanelModificar";
-            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(228, 23);
-            this.txtIDseleccionado_groupBoxModificar_PanelModificar.TabIndex = 16;
+            this.btnTaller_PanelMenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller_PanelMenu.Image = global::Diseño.Properties.Resources.Taller2;
+            this.btnTaller_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaller_PanelMenu.Location = new System.Drawing.Point(3, 28);
+            this.btnTaller_PanelMenu.Name = "btnTaller_PanelMenu";
+            this.btnTaller_PanelMenu.Size = new System.Drawing.Size(406, 107);
+            this.btnTaller_PanelMenu.TabIndex = 0;
+            this.btnTaller_PanelMenu.Text = "Taller";
+            this.btnTaller_PanelMenu.UseVisualStyleBackColor = true;
+            this.btnTaller_PanelMenu.Click += new System.EventHandler(this.btnTaller_PanelMenu_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Diseño.Properties.Resources.Clientes1;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(3, 141);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(406, 107);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Clientes";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox_EtechLogo_PanelMenu
+            // 
+            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
+            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(125, 2);
+            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
+            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
+            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
+            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Image = global::Diseño.Properties.Resources.Clientes1;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnClientes.Location = new System.Drawing.Point(4, 105);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(377, 80);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.Estadisticas;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(4, 191);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(377, 80);
+            this.btnEstadisticas.TabIndex = 1;
+            this.btnEstadisticas.Text = "ESTADISTICAS";
+            this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Image = global::Diseño.Properties.Resources.Usuarios;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(377, 80);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // picMostrar
+            // 
+            this.picMostrar.Enabled = false;
+            this.picMostrar.Image = global::Diseño.Properties.Resources.ojo_tapado;
+            this.picMostrar.Location = new System.Drawing.Point(351, 144);
+            this.picMostrar.Name = "picMostrar";
+            this.picMostrar.Size = new System.Drawing.Size(16, 16);
+            this.picMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picMostrar.TabIndex = 14;
+            this.picMostrar.TabStop = false;
+            // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
+            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 236);
+            this.btnMenuPrincipal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
+            this.btnMenuPrincipal.TabIndex = 16;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Enabled = false;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(10, 342);
+            this.btnRecargar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRecargar.TabIndex = 22;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Visible = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Quitar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(0, 132);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 46);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // pictureBox_WarningRight
+            // 
+            this.pictureBox_WarningRight.Image = global::Diseño.Properties.Resources.senal_de_advertencia;
+            this.pictureBox_WarningRight.Location = new System.Drawing.Point(817, 278);
+            this.pictureBox_WarningRight.Name = "pictureBox_WarningRight";
+            this.pictureBox_WarningRight.Size = new System.Drawing.Size(57, 56);
+            this.pictureBox_WarningRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_WarningRight.TabIndex = 28;
+            this.pictureBox_WarningRight.TabStop = false;
+            this.pictureBox_WarningRight.Visible = false;
             // 
             // Usuarios
             // 
@@ -1010,6 +1049,9 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnMenu;
             this.ClientSize = new System.Drawing.Size(1350, 689);
+            this.Controls.Add(this.pictureBox_WarningRight);
+            this.Controls.Add(this.pictureBox_WarningLeft);
+            this.Controls.Add(this.label_InvitadoDetectado);
             this.Controls.Add(this.panel_Modificar);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_BorrarUsuario);
@@ -1023,31 +1065,35 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etech | Registro de Técnicos en Celulares";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Usuarios_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Usuarios_FormClosed);
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Usuarios_KeyDown);
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
             this.panelD.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).EndInit();
             this.panel_Registro.ResumeLayout(false);
             this.groupBoxInterno_panelRegistroUsuarios.ResumeLayout(false);
             this.groupBoxInterno_panelRegistroUsuarios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).EndInit();
             this.panel_BorrarUsuario.ResumeLayout(false);
             this.groupboxInterno_panelBorrarTecnico.ResumeLayout(false);
             this.groupboxInterno_panelBorrarTecnico.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
             this.groupBox_Menu_PanelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Modificar.ResumeLayout(false);
             this.groupBoxModificar_PanelModificar.ResumeLayout(false);
             this.groupBoxModificar_PanelModificar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMostrar_groupBoxModificar_PanelModificar)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar_groupBoxModificar_PanelModificar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1124,5 +1170,8 @@
         private System.Windows.Forms.Label labelTelefono_groupBoxModificar_PanelModificar;
         private System.Windows.Forms.TextBox txtIDseleccionado_groupBoxModificar_PanelModificar;
         private System.Windows.Forms.Label labelDelID_groupBoxModificar_PanelModificar;
+        private System.Windows.Forms.Label label_InvitadoDetectado;
+        private System.Windows.Forms.PictureBox pictureBox_WarningLeft;
+        private System.Windows.Forms.PictureBox pictureBox_WarningRight;
     }
 }
