@@ -982,7 +982,7 @@ namespace Diseño
             conn.Close();
             DialogResult siono = MessageBox.Show("¿Está seguro de Cerrar la Sesión?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (siono == DialogResult.OK)
+            if (siono == DialogResult.Yes)
             {
                 Application.Restart(); 
             }
@@ -2413,7 +2413,7 @@ namespace Diseño
                 tablaCelulares.Columns["ID_Usuario"].Width = 73;
 
                 //Renombre de columnas, más que nada es estético.
-                tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cedula";
+                tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cédula";
                 tablaCelulares.Columns["ID_Usuario"].HeaderText = "Técnico";
 
                 //Tooltips al posar el mouse

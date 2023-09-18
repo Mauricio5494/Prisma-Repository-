@@ -821,17 +821,18 @@ namespace Diseño
 
             Confirmacion_Con_ContraseñaMaestro confirmacion = new Confirmacion_Con_ContraseñaMaestro();
 
-            int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
 
             if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Todos")
             {
                 if (txtNombre_groupboxModificar_PanelModificar.Text == "" && txtContraseña_groupboxModificar_PanelModificar.Text == "" &&
-                    txtCorreoElectronico_groupBoxModificar_PanelModificar.Text == "" && txtCelular_groupBoxModificar_PanelModificar.Text == "")
+                    txtCorreoElectronico_groupBoxModificar_PanelModificar.Text == "" && txtCelular_groupBoxModificar_PanelModificar.Text == "" && txtIDseleccionado_groupBoxModificar_PanelModificar.Text == "")
                 {
-                    MessageBox.Show("No deje ningun campo obligatorio en blacno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No deje ningun campo obligatorio en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
+
                     DialogResult siono = MessageBox.Show("¿Estás seguro de modificar estos atributos?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (siono == DialogResult.Yes)
@@ -868,7 +869,7 @@ namespace Diseño
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("No se puedo conectar con la Base de Datos\n\n¿Alguien puso mala mano en la configuración interna de la Base de Datos?", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    MessageBox.Show(ex.Message,"Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 finally
                                 {
@@ -905,6 +906,8 @@ namespace Diseño
 
                     DialogResult siono = MessageBox.Show("¿Estás seguro de modificar estos atributos?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
+
                     if (siono == DialogResult.Yes)
                     {
 
@@ -922,7 +925,7 @@ namespace Diseño
                             try
                             {
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Nombre de usuario modificado correctamente", "Éxito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                MessageBox.Show("Nombre de usuario modificado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             catch (Exception ex)
                             {
@@ -961,13 +964,17 @@ namespace Diseño
             }
             else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Contraseña")
             {
-                if (txtContraseña_groupboxModificar_PanelModificar.Text == "")
+                if (txtContraseña_groupboxModificar_PanelModificar.Text == "" && txtIDseleccionado_groupBoxModificar_PanelModificar.Text == "")
                 {
                     MessageBox.Show("No deje el campo de Contraseña en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+
                     DialogResult siono = MessageBox.Show("¿Está Seguro de modificar la contraseña de este Usuario?.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
+
                     if (siono == DialogResult.Yes)
                     {
 
@@ -1026,6 +1033,7 @@ namespace Diseño
                 else
                 {
                     DialogResult siono = MessageBox.Show("¿Está seguro que quiere modificar el Correo del usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
 
                     if (siono == DialogResult.Yes)
                     {
@@ -1086,6 +1094,8 @@ namespace Diseño
                 {
                     DialogResult siono = MessageBox.Show("¿Está seguro de modificar el Teléfono de este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
+
                     if (siono == DialogResult.Yes)
                     {
                         confirmacion.Show();
@@ -1141,6 +1151,8 @@ namespace Diseño
                 else
                 {
                     DialogResult siono = MessageBox.Show("¿Está seguro de modificar el Celular de este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    
+                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
 
                     if (siono == DialogResult.Yes)
                     {
@@ -1163,14 +1175,14 @@ namespace Diseño
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("No se pudo modificar el Celular de este usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    MessageBox.Show(ex.Message,"Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
 
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("No se pudo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                MessageBox.Show(ex.Message,"Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             finally
                             {
@@ -1187,6 +1199,10 @@ namespace Diseño
                         //No preguntes... ya sabemos lo que pasa acá.
                     }
                 }
+            }
+            else
+            {
+                //Por las dudas... no vaya a ser que salga un error de windows inesperado y que se cierre el programa.
             }
         }
 
