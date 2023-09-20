@@ -1,1 +1,0 @@
-Versiones antigüas de la base de datos
