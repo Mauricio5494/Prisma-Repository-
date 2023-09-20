@@ -1,0 +1,1 @@
+"Placeholder file for use in NuGet when no localization files exist" 
