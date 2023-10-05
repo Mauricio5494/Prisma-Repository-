@@ -35,6 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+<<<<<<< Updated upstream
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> Stashed changes
             this.panelD = new System.Windows.Forms.Panel();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
@@ -57,8 +63,13 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_AgregarTrabajos = new System.Windows.Forms.GroupBox();
+<<<<<<< Updated upstream
             this.txtTecnicoACargo_groupBox_AgregarTrabajos = new System.Windows.Forms.TextBox();
             this.labelTecnicoACargo_groupBox_AgregarTrabajo = new System.Windows.Forms.Label();
+=======
+            this.txtID_Tecnico_Agregar_Trabajos = new System.Windows.Forms.TextBox();
+            this.labelID_Tecnico_Agregar = new System.Windows.Forms.Label();
+>>>>>>> Stashed changes
             this.dateTimePicker_FechaDeIngreso_Agregar = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_Plazo_Agregar = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar_Trabajo = new System.Windows.Forms.Button();
@@ -80,7 +91,11 @@
             this.btnAgregar_Celular = new System.Windows.Forms.Button();
             this.radioButton_Averiado_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_Arreglado_Agregar = new System.Windows.Forms.RadioButton();
+<<<<<<< Updated upstream
             this.txtTecnico_Agregar = new System.Windows.Forms.TextBox();
+=======
+            this.txtID_Tecnico_Agregar_Celulares = new System.Windows.Forms.TextBox();
+>>>>>>> Stashed changes
             this.labelTecnico_A_Cargo_Agregar = new System.Windows.Forms.Label();
             this.labelEstado_Agregar = new System.Windows.Forms.Label();
             this.txtMarca_Agregar = new System.Windows.Forms.TextBox();
@@ -111,11 +126,20 @@
             this.timer_GroupBox_ModificarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.panel_Modificar = new System.Windows.Forms.Panel();
             this.groupBox_ModificarTrabajos = new System.Windows.Forms.GroupBox();
+<<<<<<< Updated upstream
+=======
+            this.txtID_Tecnico_Trabajo_Modficar = new System.Windows.Forms.TextBox();
+            this.labelID_Tecnico_Trabajo_Modificar = new System.Windows.Forms.Label();
+>>>>>>> Stashed changes
             this.labelError_Modificar_Trabajos = new System.Windows.Forms.Label();
             this.labelModificar_Columna_Trabajos = new System.Windows.Forms.Label();
             this.txtModificar_Columna_Trabajos = new System.Windows.Forms.TextBox();
             this.comboBoxColumnas_Trabajos = new System.Windows.Forms.ComboBox();
+<<<<<<< Updated upstream
             this.label2 = new System.Windows.Forms.Label();
+=======
+            this.labelColumnaQueDesea_Modificar = new System.Windows.Forms.Label();
+>>>>>>> Stashed changes
             this.dateTimePicker_FechaDeIngreso_Modificar = new System.Windows.Forms.DateTimePicker();
             this.btnModificar_Trabajo = new System.Windows.Forms.Button();
             this.dateTimePicker_Plazo_Modificar = new System.Windows.Forms.DateTimePicker();
@@ -129,8 +153,11 @@
             this.labelPlazo_Modificar = new System.Windows.Forms.Label();
             this.txtTrabajo_ID_Modificar = new System.Windows.Forms.TextBox();
             this.labelTrabajo_ID_Modificar = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
             this.txtID_Trabajo_Modificar = new System.Windows.Forms.TextBox();
             this.IDTabla_Trabajos_Modificar = new System.Windows.Forms.Label();
+=======
+>>>>>>> Stashed changes
             this.groupBox_ModificarCelulares = new System.Windows.Forms.GroupBox();
             this.labelError_Modificar_Celulares = new System.Windows.Forms.Label();
             this.labelModificar_Columna_Celulares = new System.Windows.Forms.Label();
@@ -138,9 +165,13 @@
             this.txtModificar_Columna_Celulares = new System.Windows.Forms.TextBox();
             this.radioButton_Averiado_Modificar = new System.Windows.Forms.RadioButton();
             this.comboBoxColumnas_Celulares = new System.Windows.Forms.ComboBox();
+<<<<<<< Updated upstream
             this.txtID_Celular_Modificar = new System.Windows.Forms.TextBox();
             this.radioButton_Arreglado_Modificar = new System.Windows.Forms.RadioButton();
             this.labelID_Celular_Modificar = new System.Windows.Forms.Label();
+=======
+            this.radioButton_Arreglado_Modificar = new System.Windows.Forms.RadioButton();
+>>>>>>> Stashed changes
             this.btnModificar_Celular = new System.Windows.Forms.Button();
             this.txtTecnico_Modificar = new System.Windows.Forms.TextBox();
             this.labelID_Dueño_Modificar = new System.Windows.Forms.Label();
@@ -164,13 +195,20 @@
             this.groupBox_EliminarTrabajos = new System.Windows.Forms.GroupBox();
             this.btnEliminar_Trabajo = new System.Windows.Forms.Button();
             this.txtID_Trabajo_Eliminar = new System.Windows.Forms.TextBox();
+<<<<<<< Updated upstream
             this.label1 = new System.Windows.Forms.Label();
+=======
+            this.labelTrabajoQueDesea_Eliminar = new System.Windows.Forms.Label();
+>>>>>>> Stashed changes
             this.radioButton_TRABAJO_Eliminar = new System.Windows.Forms.RadioButton();
             this.radioButton_CELULARES_Eliminar = new System.Windows.Forms.RadioButton();
             this.label_Tabla_Eliminar = new System.Windows.Forms.Label();
             this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
+<<<<<<< Updated upstream
             this.groupBox_Explicacion = new System.Windows.Forms.GroupBox();
             this.label_Explicacion = new System.Windows.Forms.Label();
+=======
+>>>>>>> Stashed changes
             this.btnEliminar_Celular = new System.Windows.Forms.Button();
             this.txtID_Celular_Eliminar = new System.Windows.Forms.TextBox();
             this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
@@ -182,7 +220,10 @@
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.tablaCelulares = new System.Windows.Forms.DataGridView();
             this.tablaTrabajos = new System.Windows.Forms.DataGridView();
+<<<<<<< Updated upstream
             this.labAyudaVisual_SeleccionarTabla = new System.Windows.Forms.Label();
+=======
+>>>>>>> Stashed changes
             this.panelD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
@@ -199,14 +240,21 @@
             this.panel_Eliminar.SuspendLayout();
             this.groupBox_EliminarTrabajos.SuspendLayout();
             this.groupBox_EliminarCelulares.SuspendLayout();
+<<<<<<< Updated upstream
             this.groupBox_Explicacion.SuspendLayout();
+=======
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).BeginInit();
             this.SuspendLayout();
             // 
             // panelD
             // 
+<<<<<<< Updated upstream
             this.panelD.BackColor = System.Drawing.Color.Firebrick;
+=======
+            this.panelD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.panelD.Controls.Add(this.btnRecargar);
             this.panelD.Controls.Add(this.btnMenuPrincipal);
             this.panelD.Controls.Add(this.btnEliminar);
@@ -223,7 +271,11 @@
             this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecargar.Enabled = false;
             this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+<<<<<<< Updated upstream
             this.btnRecargar.Location = new System.Drawing.Point(10, 342);
+=======
+            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
+>>>>>>> Stashed changes
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(25, 25);
             this.btnRecargar.TabIndex = 21;
@@ -233,6 +285,7 @@
             // 
             // btnMenuPrincipal
             // 
+<<<<<<< Updated upstream
             this.btnMenuPrincipal.BackColor = System.Drawing.Color.Firebrick;
             this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -241,6 +294,16 @@
             this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 236);
+=======
+            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
+            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
+>>>>>>> Stashed changes
             this.btnMenuPrincipal.Name = "btnMenuPrincipal";
             this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
             this.btnMenuPrincipal.TabIndex = 16;
@@ -251,11 +314,19 @@
             // 
             // btnEliminar
             // 
+<<<<<<< Updated upstream
             this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Firebrick;
+=======
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(0, 184);
@@ -269,11 +340,19 @@
             // 
             // btnModificar
             // 
+<<<<<<< Updated upstream
             this.btnModificar.BackColor = System.Drawing.Color.Firebrick;
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Firebrick;
+=======
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.Location = new System.Drawing.Point(0, 132);
@@ -287,11 +366,19 @@
             // 
             // btnAgregar
             // 
+<<<<<<< Updated upstream
             this.btnAgregar.BackColor = System.Drawing.Color.Firebrick;
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Firebrick;
+=======
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(0, 80);
@@ -326,11 +413,19 @@
             // 
             this.label_Filtrar.AutoSize = true;
             this.label_Filtrar.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.label_Filtrar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Filtrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label_Filtrar.Location = new System.Drawing.Point(74, 27);
             this.label_Filtrar.Name = "label_Filtrar";
             this.label_Filtrar.Size = new System.Drawing.Size(69, 16);
+=======
+            this.label_Filtrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Filtrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Filtrar.Location = new System.Drawing.Point(74, 27);
+            this.label_Filtrar.Name = "label_Filtrar";
+            this.label_Filtrar.Size = new System.Drawing.Size(62, 15);
+>>>>>>> Stashed changes
             this.label_Filtrar.TabIndex = 6;
             this.label_Filtrar.Text = "Filtrar por:";
             // 
@@ -381,11 +476,19 @@
             // labelError_MenuOpciones
             // 
             this.labelError_MenuOpciones.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelError_MenuOpciones.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError_MenuOpciones.ForeColor = System.Drawing.Color.Firebrick;
             this.labelError_MenuOpciones.Location = new System.Drawing.Point(144, 48);
             this.labelError_MenuOpciones.Name = "labelError_MenuOpciones";
             this.labelError_MenuOpciones.Size = new System.Drawing.Size(280, 16);
+=======
+            this.labelError_MenuOpciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError_MenuOpciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelError_MenuOpciones.Location = new System.Drawing.Point(144, 48);
+            this.labelError_MenuOpciones.Name = "labelError_MenuOpciones";
+            this.labelError_MenuOpciones.Size = new System.Drawing.Size(301, 15);
+>>>>>>> Stashed changes
             this.labelError_MenuOpciones.TabIndex = 23;
             this.labelError_MenuOpciones.Text = "Limítese a escoger alguna opcion predefinida";
             this.labelError_MenuOpciones.Visible = false;
@@ -399,8 +502,14 @@
             "Fecha de ingreso",
             "Adelanto",
             "ID del celular"});
+<<<<<<< Updated upstream
             this.MenuOpcionesTrabajos.Enabled = false;
             this.MenuOpcionesTrabajos.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.MenuOpcionesTrabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MenuOpcionesTrabajos.Enabled = false;
+            this.MenuOpcionesTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.MenuOpcionesTrabajos.FormattingEnabled = true;
             this.MenuOpcionesTrabajos.Items.AddRange(new object[] {
             "Plazo",
@@ -411,7 +520,11 @@
             "ID del celular"});
             this.MenuOpcionesTrabajos.Location = new System.Drawing.Point(144, 23);
             this.MenuOpcionesTrabajos.Name = "MenuOpcionesTrabajos";
+<<<<<<< Updated upstream
             this.MenuOpcionesTrabajos.Size = new System.Drawing.Size(121, 24);
+=======
+            this.MenuOpcionesTrabajos.Size = new System.Drawing.Size(121, 23);
+>>>>>>> Stashed changes
             this.MenuOpcionesTrabajos.TabIndex = 22;
             this.MenuOpcionesTrabajos.Visible = false;
             this.MenuOpcionesTrabajos.SelectedIndexChanged += new System.EventHandler(this.MenuOpcionesTrabajos_SelectedIndexChanged);
@@ -431,22 +544,38 @@
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label_Name_Form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< Updated upstream
             this.label_Name_Form.Font = new System.Drawing.Font("Montserrat SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label_Name_Form.Location = new System.Drawing.Point(1148, 16);
             this.label_Name_Form.Name = "label_Name_Form";
             this.label_Name_Form.Size = new System.Drawing.Size(122, 37);
+=======
+            this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Name_Form.Location = new System.Drawing.Point(1148, 18);
+            this.label_Name_Form.Name = "label_Name_Form";
+            this.label_Name_Form.Size = new System.Drawing.Size(123, 31);
+>>>>>>> Stashed changes
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "TALLER";
             // 
             // radioButton_TablaTrabajos
             // 
             this.radioButton_TablaTrabajos.AutoSize = true;
+<<<<<<< Updated upstream
             this.radioButton_TablaTrabajos.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_TablaTrabajos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton_TablaTrabajos.Location = new System.Drawing.Point(835, 25);
             this.radioButton_TablaTrabajos.Name = "radioButton_TablaTrabajos";
             this.radioButton_TablaTrabajos.Size = new System.Drawing.Size(118, 20);
+=======
+            this.radioButton_TablaTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold);
+            this.radioButton_TablaTrabajos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton_TablaTrabajos.Location = new System.Drawing.Point(840, 26);
+            this.radioButton_TablaTrabajos.Name = "radioButton_TablaTrabajos";
+            this.radioButton_TablaTrabajos.Size = new System.Drawing.Size(127, 19);
+>>>>>>> Stashed changes
             this.radioButton_TablaTrabajos.TabIndex = 13;
             this.radioButton_TablaTrabajos.Text = "Mostrar Trabajo";
             this.radioButton_TablaTrabajos.UseVisualStyleBackColor = true;
@@ -455,11 +584,19 @@
             // radioButton_TablaCelulares
             // 
             this.radioButton_TablaCelulares.AutoSize = true;
+<<<<<<< Updated upstream
             this.radioButton_TablaCelulares.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_TablaCelulares.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton_TablaCelulares.Location = new System.Drawing.Point(695, 25);
             this.radioButton_TablaCelulares.Name = "radioButton_TablaCelulares";
             this.radioButton_TablaCelulares.Size = new System.Drawing.Size(129, 20);
+=======
+            this.radioButton_TablaCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_TablaCelulares.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton_TablaCelulares.Location = new System.Drawing.Point(695, 25);
+            this.radioButton_TablaCelulares.Name = "radioButton_TablaCelulares";
+            this.radioButton_TablaCelulares.Size = new System.Drawing.Size(139, 19);
+>>>>>>> Stashed changes
             this.radioButton_TablaCelulares.TabIndex = 12;
             this.radioButton_TablaCelulares.Text = "Mostrar Celulares";
             this.radioButton_TablaCelulares.UseVisualStyleBackColor = true;
@@ -482,8 +619,13 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Enabled = false;
+<<<<<<< Updated upstream
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.btnBuscar.Location = new System.Drawing.Point(600, 23);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(77, 22);
@@ -505,7 +647,11 @@
             // 
             // panel_Agregar
             // 
+<<<<<<< Updated upstream
             this.panel_Agregar.BackColor = System.Drawing.Color.Firebrick;
+=======
+            this.panel_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.panel_Agregar.Controls.Add(this.groupBox_AgregarTrabajos);
             this.panel_Agregar.Controls.Add(this.radioButton_TRABAJO_Agregar);
             this.panel_Agregar.Controls.Add(this.radioButton_CELULARES_Agregar);
@@ -520,8 +666,13 @@
             // groupBox_AgregarTrabajos
             // 
             this.groupBox_AgregarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
+<<<<<<< Updated upstream
             this.groupBox_AgregarTrabajos.Controls.Add(this.txtTecnicoACargo_groupBox_AgregarTrabajos);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelTecnicoACargo_groupBox_AgregarTrabajo);
+=======
+            this.groupBox_AgregarTrabajos.Controls.Add(this.txtID_Tecnico_Agregar_Trabajos);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.labelID_Tecnico_Agregar);
+>>>>>>> Stashed changes
             this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_FechaDeIngreso_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_Plazo_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.btnAgregar_Trabajo);
@@ -544,6 +695,7 @@
             this.groupBox_AgregarTrabajos.TabStop = false;
             this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
             // 
+<<<<<<< Updated upstream
             // txtTecnicoACargo_groupBox_AgregarTrabajos
             // 
             this.txtTecnicoACargo_groupBox_AgregarTrabajos.Location = new System.Drawing.Point(6, 392);
@@ -563,6 +715,27 @@
             // dateTimePicker_FechaDeIngreso_Agregar
             // 
             this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 293);
+=======
+            // txtID_Tecnico_Agregar_Trabajos
+            // 
+            this.txtID_Tecnico_Agregar_Trabajos.Location = new System.Drawing.Point(6, 363);
+            this.txtID_Tecnico_Agregar_Trabajos.Name = "txtID_Tecnico_Agregar_Trabajos";
+            this.txtID_Tecnico_Agregar_Trabajos.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Tecnico_Agregar_Trabajos.TabIndex = 16;
+            // 
+            // labelID_Tecnico_Agregar
+            // 
+            this.labelID_Tecnico_Agregar.AutoSize = true;
+            this.labelID_Tecnico_Agregar.Location = new System.Drawing.Point(6, 347);
+            this.labelID_Tecnico_Agregar.Name = "labelID_Tecnico_Agregar";
+            this.labelID_Tecnico_Agregar.Size = new System.Drawing.Size(138, 13);
+            this.labelID_Tecnico_Agregar.TabIndex = 15;
+            this.labelID_Tecnico_Agregar.Text = "ID del tecnico a cargo:";
+            // 
+            // dateTimePicker_FechaDeIngreso_Agregar
+            // 
+            this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 270);
+>>>>>>> Stashed changes
             this.dateTimePicker_FechaDeIngreso_Agregar.Name = "dateTimePicker_FechaDeIngreso_Agregar";
             this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_FechaDeIngreso_Agregar.TabIndex = 14;
@@ -586,7 +759,11 @@
             // 
             // txtAdelanto_Agregar
             // 
+<<<<<<< Updated upstream
             this.txtAdelanto_Agregar.Location = new System.Drawing.Point(6, 343);
+=======
+            this.txtAdelanto_Agregar.Location = new System.Drawing.Point(6, 313);
+>>>>>>> Stashed changes
             this.txtAdelanto_Agregar.Name = "txtAdelanto_Agregar";
             this.txtAdelanto_Agregar.Size = new System.Drawing.Size(325, 20);
             this.txtAdelanto_Agregar.TabIndex = 11;
@@ -594,7 +771,11 @@
             // labelAdelanto_Agregar
             // 
             this.labelAdelanto_Agregar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelAdelanto_Agregar.Location = new System.Drawing.Point(6, 327);
+=======
+            this.labelAdelanto_Agregar.Location = new System.Drawing.Point(6, 297);
+>>>>>>> Stashed changes
             this.labelAdelanto_Agregar.Name = "labelAdelanto_Agregar";
             this.labelAdelanto_Agregar.Size = new System.Drawing.Size(61, 13);
             this.labelAdelanto_Agregar.TabIndex = 10;
@@ -603,7 +784,11 @@
             // labelFechaDeIngreso_Agregar
             // 
             this.labelFechaDeIngreso_Agregar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 277);
+=======
+            this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 254);
+>>>>>>> Stashed changes
             this.labelFechaDeIngreso_Agregar.Name = "labelFechaDeIngreso_Agregar";
             this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(177, 13);
             this.labelFechaDeIngreso_Agregar.TabIndex = 8;
@@ -611,7 +796,11 @@
             // 
             // txtProblema_Agregar
             // 
+<<<<<<< Updated upstream
             this.txtProblema_Agregar.Location = new System.Drawing.Point(6, 206);
+=======
+            this.txtProblema_Agregar.Location = new System.Drawing.Point(6, 193);
+>>>>>>> Stashed changes
             this.txtProblema_Agregar.Multiline = true;
             this.txtProblema_Agregar.Name = "txtProblema_Agregar";
             this.txtProblema_Agregar.Size = new System.Drawing.Size(325, 53);
@@ -620,7 +809,11 @@
             // labelProblema_Agregar
             // 
             this.labelProblema_Agregar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelProblema_Agregar.Location = new System.Drawing.Point(3, 190);
+=======
+            this.labelProblema_Agregar.Location = new System.Drawing.Point(3, 177);
+>>>>>>> Stashed changes
             this.labelProblema_Agregar.Name = "labelProblema_Agregar";
             this.labelProblema_Agregar.Size = new System.Drawing.Size(130, 13);
             this.labelProblema_Agregar.TabIndex = 6;
@@ -628,7 +821,11 @@
             // 
             // txtPresupuesto_Agregar
             // 
+<<<<<<< Updated upstream
             this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(6, 156);
+=======
+            this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(6, 143);
+>>>>>>> Stashed changes
             this.txtPresupuesto_Agregar.Name = "txtPresupuesto_Agregar";
             this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(325, 20);
             this.txtPresupuesto_Agregar.TabIndex = 5;
@@ -636,7 +833,11 @@
             // labelPresupuesto_Agregar
             // 
             this.labelPresupuesto_Agregar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(3, 140);
+=======
+            this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(3, 127);
+>>>>>>> Stashed changes
             this.labelPresupuesto_Agregar.Name = "labelPresupuesto_Agregar";
             this.labelPresupuesto_Agregar.Size = new System.Drawing.Size(81, 13);
             this.labelPresupuesto_Agregar.TabIndex = 4;
@@ -713,7 +914,11 @@
             this.groupBox_AgregarCelulares.Controls.Add(this.btnAgregar_Celular);
             this.groupBox_AgregarCelulares.Controls.Add(this.radioButton_Averiado_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.radioButton_Arreglado_Agregar);
+<<<<<<< Updated upstream
             this.groupBox_AgregarCelulares.Controls.Add(this.txtTecnico_Agregar);
+=======
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtID_Tecnico_Agregar_Celulares);
+>>>>>>> Stashed changes
             this.groupBox_AgregarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelEstado_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.txtMarca_Agregar);
@@ -741,6 +946,10 @@
             this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(128, 13);
             this.label_CaracteresRestantesCI_AgregarCelulares.TabIndex = 14;
             this.label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres restantes:";
+<<<<<<< Updated upstream
+=======
+            this.label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
+>>>>>>> Stashed changes
             // 
             // btnAgregar_Celular
             // 
@@ -774,12 +983,21 @@
             this.radioButton_Arreglado_Agregar.Text = "Arreglado";
             this.radioButton_Arreglado_Agregar.UseVisualStyleBackColor = true;
             // 
+<<<<<<< Updated upstream
             // txtTecnico_Agregar
             // 
             this.txtTecnico_Agregar.Location = new System.Drawing.Point(6, 256);
             this.txtTecnico_Agregar.Name = "txtTecnico_Agregar";
             this.txtTecnico_Agregar.Size = new System.Drawing.Size(322, 20);
             this.txtTecnico_Agregar.TabIndex = 10;
+=======
+            // txtID_Tecnico_Agregar_Celulares
+            // 
+            this.txtID_Tecnico_Agregar_Celulares.Location = new System.Drawing.Point(6, 256);
+            this.txtID_Tecnico_Agregar_Celulares.Name = "txtID_Tecnico_Agregar_Celulares";
+            this.txtID_Tecnico_Agregar_Celulares.Size = new System.Drawing.Size(322, 20);
+            this.txtID_Tecnico_Agregar_Celulares.TabIndex = 10;
+>>>>>>> Stashed changes
             // 
             // labelTecnico_A_Cargo_Agregar
             // 
@@ -850,10 +1068,18 @@
             // txtCI_Del_Dueño_Agregar
             // 
             this.txtCI_Del_Dueño_Agregar.Location = new System.Drawing.Point(6, 56);
+<<<<<<< Updated upstream
             this.txtCI_Del_Dueño_Agregar.Name = "txtCI_Del_Dueño_Agregar";
             this.txtCI_Del_Dueño_Agregar.Size = new System.Drawing.Size(322, 20);
             this.txtCI_Del_Dueño_Agregar.TabIndex = 1;
             this.txtCI_Del_Dueño_Agregar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCI_Del_Dueño_Agregar_KeyPress);
+=======
+            this.txtCI_Del_Dueño_Agregar.MaxLength = 8;
+            this.txtCI_Del_Dueño_Agregar.Name = "txtCI_Del_Dueño_Agregar";
+            this.txtCI_Del_Dueño_Agregar.Size = new System.Drawing.Size(322, 20);
+            this.txtCI_Del_Dueño_Agregar.TabIndex = 1;
+            this.txtCI_Del_Dueño_Agregar.TextChanged += new System.EventHandler(this.txtCI_Del_Dueño_Agregar_TextChanged);
+>>>>>>> Stashed changes
             // 
             // labelID_Dueño_Agregar
             // 
@@ -896,6 +1122,7 @@
             // 
             // panel_Menu
             // 
+<<<<<<< Updated upstream
             this.panel_Menu.BackColor = System.Drawing.Color.Firebrick;
             this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
@@ -903,6 +1130,15 @@
             this.panel_Menu.Location = new System.Drawing.Point(916, 81);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
+=======
+            this.panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
+            this.panel_Menu.Controls.Add(this.groupBox_Menu);
+            this.panel_Menu.Enabled = false;
+            this.panel_Menu.Location = new System.Drawing.Point(916, 78);
+            this.panel_Menu.Name = "panel_Menu";
+            this.panel_Menu.Size = new System.Drawing.Size(419, 600);
+>>>>>>> Stashed changes
             this.panel_Menu.TabIndex = 16;
             // 
             // pictureBox_EtechLogo_PanelMenu
@@ -923,7 +1159,11 @@
             this.groupBox_Menu.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox_Menu.Location = new System.Drawing.Point(16, 104);
             this.groupBox_Menu.Name = "groupBox_Menu";
+<<<<<<< Updated upstream
             this.groupBox_Menu.Size = new System.Drawing.Size(387, 0);
+=======
+            this.groupBox_Menu.Size = new System.Drawing.Size(387, 500);
+>>>>>>> Stashed changes
             this.groupBox_Menu.TabIndex = 0;
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "MENU";
@@ -939,6 +1179,10 @@
             this.btnClientes.Text = "CLIENTES";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClientes.UseVisualStyleBackColor = true;
+<<<<<<< Updated upstream
+=======
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+>>>>>>> Stashed changes
             // 
             // btnEstadisticas
             // 
@@ -998,14 +1242,22 @@
             // 
             // panel_Modificar
             // 
+<<<<<<< Updated upstream
             this.panel_Modificar.BackColor = System.Drawing.Color.Firebrick;
+=======
+            this.panel_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.panel_Modificar.Controls.Add(this.groupBox_ModificarTrabajos);
             this.panel_Modificar.Controls.Add(this.groupBox_ModificarCelulares);
             this.panel_Modificar.Controls.Add(this.radioButton_TRABAJO_Modificar);
             this.panel_Modificar.Controls.Add(this.radioButton_CELULARES_Modificar);
             this.panel_Modificar.Controls.Add(this.label_Tabla_Modificar);
             this.panel_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.panel_Modificar.Location = new System.Drawing.Point(916, 81);
+=======
+            this.panel_Modificar.Location = new System.Drawing.Point(916, 78);
+>>>>>>> Stashed changes
             this.panel_Modificar.Name = "panel_Modificar";
             this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 17;
@@ -1013,11 +1265,20 @@
             // groupBox_ModificarTrabajos
             // 
             this.groupBox_ModificarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
+<<<<<<< Updated upstream
+=======
+            this.groupBox_ModificarTrabajos.Controls.Add(this.txtID_Tecnico_Trabajo_Modficar);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.labelID_Tecnico_Trabajo_Modificar);
+>>>>>>> Stashed changes
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelError_Modificar_Trabajos);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelModificar_Columna_Trabajos);
             this.groupBox_ModificarTrabajos.Controls.Add(this.txtModificar_Columna_Trabajos);
             this.groupBox_ModificarTrabajos.Controls.Add(this.comboBoxColumnas_Trabajos);
+<<<<<<< Updated upstream
             this.groupBox_ModificarTrabajos.Controls.Add(this.label2);
+=======
+            this.groupBox_ModificarTrabajos.Controls.Add(this.labelColumnaQueDesea_Modificar);
+>>>>>>> Stashed changes
             this.groupBox_ModificarTrabajos.Controls.Add(this.dateTimePicker_FechaDeIngreso_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.btnModificar_Trabajo);
             this.groupBox_ModificarTrabajos.Controls.Add(this.dateTimePicker_Plazo_Modificar);
@@ -1031,8 +1292,11 @@
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelPlazo_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.txtTrabajo_ID_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelTrabajo_ID_Modificar);
+<<<<<<< Updated upstream
             this.groupBox_ModificarTrabajos.Controls.Add(this.txtID_Trabajo_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.IDTabla_Trabajos_Modificar);
+=======
+>>>>>>> Stashed changes
             this.groupBox_ModificarTrabajos.Enabled = false;
             this.groupBox_ModificarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox_ModificarTrabajos.Location = new System.Drawing.Point(42, 77);
@@ -1042,13 +1306,40 @@
             this.groupBox_ModificarTrabajos.TabStop = false;
             this.groupBox_ModificarTrabajos.Text = "Modificar tabla trabajos";
             // 
+<<<<<<< Updated upstream
+=======
+            // txtID_Tecnico_Trabajo_Modficar
+            // 
+            this.txtID_Tecnico_Trabajo_Modficar.Enabled = false;
+            this.txtID_Tecnico_Trabajo_Modficar.Location = new System.Drawing.Point(6, 363);
+            this.txtID_Tecnico_Trabajo_Modficar.Name = "txtID_Tecnico_Trabajo_Modficar";
+            this.txtID_Tecnico_Trabajo_Modficar.Size = new System.Drawing.Size(325, 20);
+            this.txtID_Tecnico_Trabajo_Modficar.TabIndex = 33;
+            this.txtID_Tecnico_Trabajo_Modficar.Visible = false;
+            // 
+            // labelID_Tecnico_Trabajo_Modificar
+            // 
+            this.labelID_Tecnico_Trabajo_Modificar.AutoSize = true;
+            this.labelID_Tecnico_Trabajo_Modificar.Enabled = false;
+            this.labelID_Tecnico_Trabajo_Modificar.Location = new System.Drawing.Point(3, 347);
+            this.labelID_Tecnico_Trabajo_Modificar.Name = "labelID_Tecnico_Trabajo_Modificar";
+            this.labelID_Tecnico_Trabajo_Modificar.Size = new System.Drawing.Size(91, 13);
+            this.labelID_Tecnico_Trabajo_Modificar.TabIndex = 32;
+            this.labelID_Tecnico_Trabajo_Modificar.Text = "ID del tecnico:";
+            this.labelID_Tecnico_Trabajo_Modificar.Visible = false;
+            // 
+>>>>>>> Stashed changes
             // labelError_Modificar_Trabajos
             // 
             this.labelError_Modificar_Trabajos.AutoSize = true;
             this.labelError_Modificar_Trabajos.Enabled = false;
             this.labelError_Modificar_Trabajos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelError_Modificar_Trabajos.ForeColor = System.Drawing.Color.Firebrick;
+<<<<<<< Updated upstream
             this.labelError_Modificar_Trabajos.Location = new System.Drawing.Point(3, 119);
+=======
+            this.labelError_Modificar_Trabajos.Location = new System.Drawing.Point(3, 79);
+>>>>>>> Stashed changes
             this.labelError_Modificar_Trabajos.Name = "labelError_Modificar_Trabajos";
             this.labelError_Modificar_Trabajos.Size = new System.Drawing.Size(259, 14);
             this.labelError_Modificar_Trabajos.TabIndex = 30;
@@ -1060,7 +1351,11 @@
             this.labelModificar_Columna_Trabajos.AutoSize = true;
             this.labelModificar_Columna_Trabajos.Enabled = false;
             this.labelModificar_Columna_Trabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+<<<<<<< Updated upstream
             this.labelModificar_Columna_Trabajos.Location = new System.Drawing.Point(3, 119);
+=======
+            this.labelModificar_Columna_Trabajos.Location = new System.Drawing.Point(3, 79);
+>>>>>>> Stashed changes
             this.labelModificar_Columna_Trabajos.Name = "labelModificar_Columna_Trabajos";
             this.labelModificar_Columna_Trabajos.Size = new System.Drawing.Size(89, 13);
             this.labelModificar_Columna_Trabajos.TabIndex = 31;
@@ -1070,7 +1365,11 @@
             // txtModificar_Columna_Trabajos
             // 
             this.txtModificar_Columna_Trabajos.Enabled = false;
+<<<<<<< Updated upstream
             this.txtModificar_Columna_Trabajos.Location = new System.Drawing.Point(6, 135);
+=======
+            this.txtModificar_Columna_Trabajos.Location = new System.Drawing.Point(6, 95);
+>>>>>>> Stashed changes
             this.txtModificar_Columna_Trabajos.Name = "txtModificar_Columna_Trabajos";
             this.txtModificar_Columna_Trabajos.Size = new System.Drawing.Size(325, 20);
             this.txtModificar_Columna_Trabajos.TabIndex = 30;
@@ -1085,6 +1384,10 @@
             "Fecha de ingreso",
             "Adelanto",
             "Todas..."});
+<<<<<<< Updated upstream
+=======
+            this.comboBoxColumnas_Trabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> Stashed changes
             this.comboBoxColumnas_Trabajos.FormattingEnabled = true;
             this.comboBoxColumnas_Trabajos.Items.AddRange(new object[] {
             "Plazo",
@@ -1093,13 +1396,20 @@
             "Fecha de ingreso",
             "Adelanto",
             "ID del celular",
+<<<<<<< Updated upstream
             "Todas..."});
             this.comboBoxColumnas_Trabajos.Location = new System.Drawing.Point(6, 95);
+=======
+            "ID del tecnico",
+            "Todas..."});
+            this.comboBoxColumnas_Trabajos.Location = new System.Drawing.Point(6, 55);
+>>>>>>> Stashed changes
             this.comboBoxColumnas_Trabajos.Name = "comboBoxColumnas_Trabajos";
             this.comboBoxColumnas_Trabajos.Size = new System.Drawing.Size(121, 21);
             this.comboBoxColumnas_Trabajos.TabIndex = 30;
             this.comboBoxColumnas_Trabajos.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumnas_Trabajos_SelectedIndexChanged);
             // 
+<<<<<<< Updated upstream
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1108,11 +1418,25 @@
             this.label2.Size = new System.Drawing.Size(177, 13);
             this.label2.TabIndex = 30;
             this.label2.Text = "Columna que desea modificar:";
+=======
+            // labelColumnaQueDesea_Modificar
+            // 
+            this.labelColumnaQueDesea_Modificar.AutoSize = true;
+            this.labelColumnaQueDesea_Modificar.Location = new System.Drawing.Point(3, 39);
+            this.labelColumnaQueDesea_Modificar.Name = "labelColumnaQueDesea_Modificar";
+            this.labelColumnaQueDesea_Modificar.Size = new System.Drawing.Size(177, 13);
+            this.labelColumnaQueDesea_Modificar.TabIndex = 30;
+            this.labelColumnaQueDesea_Modificar.Text = "Columna que desea modificar:";
+>>>>>>> Stashed changes
             // 
             // dateTimePicker_FechaDeIngreso_Modificar
             // 
             this.dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.dateTimePicker_FechaDeIngreso_Modificar.Location = new System.Drawing.Point(6, 324);
+=======
+            this.dateTimePicker_FechaDeIngreso_Modificar.Location = new System.Drawing.Point(6, 284);
+>>>>>>> Stashed changes
             this.dateTimePicker_FechaDeIngreso_Modificar.Name = "dateTimePicker_FechaDeIngreso_Modificar";
             this.dateTimePicker_FechaDeIngreso_Modificar.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_FechaDeIngreso_Modificar.TabIndex = 22;
@@ -1131,7 +1455,11 @@
             // dateTimePicker_Plazo_Modificar
             // 
             this.dateTimePicker_Plazo_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.dateTimePicker_Plazo_Modificar.Location = new System.Drawing.Point(6, 173);
+=======
+            this.dateTimePicker_Plazo_Modificar.Location = new System.Drawing.Point(6, 133);
+>>>>>>> Stashed changes
             this.dateTimePicker_Plazo_Modificar.Name = "dateTimePicker_Plazo_Modificar";
             this.dateTimePicker_Plazo_Modificar.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_Plazo_Modificar.TabIndex = 21;
@@ -1140,7 +1468,11 @@
             // txtAdelanto_Modificar
             // 
             this.txtAdelanto_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtAdelanto_Modificar.Location = new System.Drawing.Point(6, 363);
+=======
+            this.txtAdelanto_Modificar.Location = new System.Drawing.Point(6, 323);
+>>>>>>> Stashed changes
             this.txtAdelanto_Modificar.Name = "txtAdelanto_Modificar";
             this.txtAdelanto_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtAdelanto_Modificar.TabIndex = 23;
@@ -1150,7 +1482,11 @@
             // 
             this.labelAdelanto_Modificar.AutoSize = true;
             this.labelAdelanto_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelAdelanto_Modificar.Location = new System.Drawing.Point(3, 347);
+=======
+            this.labelAdelanto_Modificar.Location = new System.Drawing.Point(3, 307);
+>>>>>>> Stashed changes
             this.labelAdelanto_Modificar.Name = "labelAdelanto_Modificar";
             this.labelAdelanto_Modificar.Size = new System.Drawing.Size(61, 13);
             this.labelAdelanto_Modificar.TabIndex = 22;
@@ -1161,7 +1497,11 @@
             // 
             this.labelFechaDeIngreso_Modificar.AutoSize = true;
             this.labelFechaDeIngreso_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelFechaDeIngreso_Modificar.Location = new System.Drawing.Point(3, 308);
+=======
+            this.labelFechaDeIngreso_Modificar.Location = new System.Drawing.Point(3, 268);
+>>>>>>> Stashed changes
             this.labelFechaDeIngreso_Modificar.Name = "labelFechaDeIngreso_Modificar";
             this.labelFechaDeIngreso_Modificar.Size = new System.Drawing.Size(109, 13);
             this.labelFechaDeIngreso_Modificar.TabIndex = 20;
@@ -1171,7 +1511,11 @@
             // txtProblema_Modificar
             // 
             this.txtProblema_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtProblema_Modificar.Location = new System.Drawing.Point(6, 252);
+=======
+            this.txtProblema_Modificar.Location = new System.Drawing.Point(6, 212);
+>>>>>>> Stashed changes
             this.txtProblema_Modificar.Multiline = true;
             this.txtProblema_Modificar.Name = "txtProblema_Modificar";
             this.txtProblema_Modificar.Size = new System.Drawing.Size(325, 53);
@@ -1182,7 +1526,11 @@
             // 
             this.labelProblema_Modificar.AutoSize = true;
             this.labelProblema_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelProblema_Modificar.Location = new System.Drawing.Point(3, 236);
+=======
+            this.labelProblema_Modificar.Location = new System.Drawing.Point(3, 196);
+>>>>>>> Stashed changes
             this.labelProblema_Modificar.Name = "labelProblema_Modificar";
             this.labelProblema_Modificar.Size = new System.Drawing.Size(63, 13);
             this.labelProblema_Modificar.TabIndex = 18;
@@ -1192,7 +1540,11 @@
             // txtPresupuesto_Modificar
             // 
             this.txtPresupuesto_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtPresupuesto_Modificar.Location = new System.Drawing.Point(6, 213);
+=======
+            this.txtPresupuesto_Modificar.Location = new System.Drawing.Point(6, 173);
+>>>>>>> Stashed changes
             this.txtPresupuesto_Modificar.Name = "txtPresupuesto_Modificar";
             this.txtPresupuesto_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtPresupuesto_Modificar.TabIndex = 17;
@@ -1202,7 +1554,11 @@
             // 
             this.labelPresupuesto_Modificar.AutoSize = true;
             this.labelPresupuesto_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelPresupuesto_Modificar.Location = new System.Drawing.Point(3, 197);
+=======
+            this.labelPresupuesto_Modificar.Location = new System.Drawing.Point(3, 157);
+>>>>>>> Stashed changes
             this.labelPresupuesto_Modificar.Name = "labelPresupuesto_Modificar";
             this.labelPresupuesto_Modificar.Size = new System.Drawing.Size(81, 13);
             this.labelPresupuesto_Modificar.TabIndex = 16;
@@ -1213,7 +1569,11 @@
             // 
             this.labelPlazo_Modificar.AutoSize = true;
             this.labelPlazo_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelPlazo_Modificar.Location = new System.Drawing.Point(3, 158);
+=======
+            this.labelPlazo_Modificar.Location = new System.Drawing.Point(3, 118);
+>>>>>>> Stashed changes
             this.labelPlazo_Modificar.Name = "labelPlazo_Modificar";
             this.labelPlazo_Modificar.Size = new System.Drawing.Size(42, 13);
             this.labelPlazo_Modificar.TabIndex = 14;
@@ -1223,7 +1583,11 @@
             // txtTrabajo_ID_Modificar
             // 
             this.txtTrabajo_ID_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtTrabajo_ID_Modificar.Location = new System.Drawing.Point(6, 135);
+=======
+            this.txtTrabajo_ID_Modificar.Location = new System.Drawing.Point(6, 95);
+>>>>>>> Stashed changes
             this.txtTrabajo_ID_Modificar.Name = "txtTrabajo_ID_Modificar";
             this.txtTrabajo_ID_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtTrabajo_ID_Modificar.TabIndex = 13;
@@ -1233,13 +1597,18 @@
             // 
             this.labelTrabajo_ID_Modificar.AutoSize = true;
             this.labelTrabajo_ID_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelTrabajo_ID_Modificar.Location = new System.Drawing.Point(3, 119);
+=======
+            this.labelTrabajo_ID_Modificar.Location = new System.Drawing.Point(3, 79);
+>>>>>>> Stashed changes
             this.labelTrabajo_ID_Modificar.Name = "labelTrabajo_ID_Modificar";
             this.labelTrabajo_ID_Modificar.Size = new System.Drawing.Size(87, 13);
             this.labelTrabajo_ID_Modificar.TabIndex = 12;
             this.labelTrabajo_ID_Modificar.Text = "ID del celular:";
             this.labelTrabajo_ID_Modificar.Visible = false;
             // 
+<<<<<<< Updated upstream
             // txtID_Trabajo_Modificar
             // 
             this.txtID_Trabajo_Modificar.Location = new System.Drawing.Point(6, 56);
@@ -1256,6 +1625,8 @@
             this.IDTabla_Trabajos_Modificar.TabIndex = 0;
             this.IDTabla_Trabajos_Modificar.Text = "ID de la fila:";
             // 
+=======
+>>>>>>> Stashed changes
             // groupBox_ModificarCelulares
             // 
             this.groupBox_ModificarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1265,9 +1636,13 @@
             this.groupBox_ModificarCelulares.Controls.Add(this.txtModificar_Columna_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Averiado_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.comboBoxColumnas_Celulares);
+<<<<<<< Updated upstream
             this.groupBox_ModificarCelulares.Controls.Add(this.txtID_Celular_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Arreglado_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Celular_Modificar);
+=======
+            this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Arreglado_Modificar);
+>>>>>>> Stashed changes
             this.groupBox_ModificarCelulares.Controls.Add(this.btnModificar_Celular);
             this.groupBox_ModificarCelulares.Controls.Add(this.txtTecnico_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelID_Dueño_Modificar);
@@ -1295,7 +1670,11 @@
             this.labelError_Modificar_Celulares.Enabled = false;
             this.labelError_Modificar_Celulares.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelError_Modificar_Celulares.ForeColor = System.Drawing.Color.Firebrick;
+<<<<<<< Updated upstream
             this.labelError_Modificar_Celulares.Location = new System.Drawing.Point(3, 119);
+=======
+            this.labelError_Modificar_Celulares.Location = new System.Drawing.Point(3, 80);
+>>>>>>> Stashed changes
             this.labelError_Modificar_Celulares.Name = "labelError_Modificar_Celulares";
             this.labelError_Modificar_Celulares.Size = new System.Drawing.Size(259, 14);
             this.labelError_Modificar_Celulares.TabIndex = 24;
@@ -1307,7 +1686,11 @@
             this.labelModificar_Columna_Celulares.AutoSize = true;
             this.labelModificar_Columna_Celulares.Enabled = false;
             this.labelModificar_Columna_Celulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+<<<<<<< Updated upstream
             this.labelModificar_Columna_Celulares.Location = new System.Drawing.Point(3, 119);
+=======
+            this.labelModificar_Columna_Celulares.Location = new System.Drawing.Point(3, 80);
+>>>>>>> Stashed changes
             this.labelModificar_Columna_Celulares.Name = "labelModificar_Columna_Celulares";
             this.labelModificar_Columna_Celulares.Size = new System.Drawing.Size(89, 13);
             this.labelModificar_Columna_Celulares.TabIndex = 29;
@@ -1317,7 +1700,11 @@
             // labelModificar_Columna_Celular
             // 
             this.labelModificar_Columna_Celular.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelModificar_Columna_Celular.Location = new System.Drawing.Point(3, 79);
+=======
+            this.labelModificar_Columna_Celular.Location = new System.Drawing.Point(3, 40);
+>>>>>>> Stashed changes
             this.labelModificar_Columna_Celular.Name = "labelModificar_Columna_Celular";
             this.labelModificar_Columna_Celular.Size = new System.Drawing.Size(177, 13);
             this.labelModificar_Columna_Celular.TabIndex = 25;
@@ -1326,7 +1713,11 @@
             // txtModificar_Columna_Celulares
             // 
             this.txtModificar_Columna_Celulares.Enabled = false;
+<<<<<<< Updated upstream
             this.txtModificar_Columna_Celulares.Location = new System.Drawing.Point(6, 135);
+=======
+            this.txtModificar_Columna_Celulares.Location = new System.Drawing.Point(6, 96);
+>>>>>>> Stashed changes
             this.txtModificar_Columna_Celulares.Name = "txtModificar_Columna_Celulares";
             this.txtModificar_Columna_Celulares.Size = new System.Drawing.Size(325, 20);
             this.txtModificar_Columna_Celulares.TabIndex = 26;
@@ -1336,7 +1727,11 @@
             // 
             this.radioButton_Averiado_Modificar.AutoSize = true;
             this.radioButton_Averiado_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.radioButton_Averiado_Modificar.Location = new System.Drawing.Point(93, 329);
+=======
+            this.radioButton_Averiado_Modificar.Location = new System.Drawing.Point(93, 290);
+>>>>>>> Stashed changes
             this.radioButton_Averiado_Modificar.Name = "radioButton_Averiado_Modificar";
             this.radioButton_Averiado_Modificar.Size = new System.Drawing.Size(75, 17);
             this.radioButton_Averiado_Modificar.TabIndex = 28;
@@ -1355,6 +1750,10 @@
             "Cedula del cliente",
             "ID del Tecnico/Usuario",
             "Todas..."});
+<<<<<<< Updated upstream
+=======
+            this.comboBoxColumnas_Celulares.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> Stashed changes
             this.comboBoxColumnas_Celulares.FormattingEnabled = true;
             this.comboBoxColumnas_Celulares.Items.AddRange(new object[] {
             "Modelo",
@@ -1364,12 +1763,17 @@
             "Cedula del dueño",
             "ID del usuario/tecnico",
             "Todas..."});
+<<<<<<< Updated upstream
             this.comboBoxColumnas_Celulares.Location = new System.Drawing.Point(6, 95);
+=======
+            this.comboBoxColumnas_Celulares.Location = new System.Drawing.Point(6, 56);
+>>>>>>> Stashed changes
             this.comboBoxColumnas_Celulares.Name = "comboBoxColumnas_Celulares";
             this.comboBoxColumnas_Celulares.Size = new System.Drawing.Size(121, 21);
             this.comboBoxColumnas_Celulares.TabIndex = 24;
             this.comboBoxColumnas_Celulares.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumnas_Celulares_SelectedIndexChanged);
             // 
+<<<<<<< Updated upstream
             // txtID_Celular_Modificar
             // 
             this.txtID_Celular_Modificar.Location = new System.Drawing.Point(6, 56);
@@ -1377,11 +1781,17 @@
             this.txtID_Celular_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtID_Celular_Modificar.TabIndex = 15;
             // 
+=======
+>>>>>>> Stashed changes
             // radioButton_Arreglado_Modificar
             // 
             this.radioButton_Arreglado_Modificar.AutoSize = true;
             this.radioButton_Arreglado_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.radioButton_Arreglado_Modificar.Location = new System.Drawing.Point(6, 329);
+=======
+            this.radioButton_Arreglado_Modificar.Location = new System.Drawing.Point(6, 290);
+>>>>>>> Stashed changes
             this.radioButton_Arreglado_Modificar.Name = "radioButton_Arreglado_Modificar";
             this.radioButton_Arreglado_Modificar.Size = new System.Drawing.Size(79, 17);
             this.radioButton_Arreglado_Modificar.TabIndex = 27;
@@ -1390,6 +1800,7 @@
             this.radioButton_Arreglado_Modificar.UseVisualStyleBackColor = true;
             this.radioButton_Arreglado_Modificar.Visible = false;
             // 
+<<<<<<< Updated upstream
             // labelID_Celular_Modificar
             // 
             this.labelID_Celular_Modificar.AutoSize = true;
@@ -1399,6 +1810,8 @@
             this.labelID_Celular_Modificar.TabIndex = 14;
             this.labelID_Celular_Modificar.Text = "ID de la fila:";
             // 
+=======
+>>>>>>> Stashed changes
             // btnModificar_Celular
             // 
             this.btnModificar_Celular.Location = new System.Drawing.Point(9, 457);
@@ -1412,7 +1825,11 @@
             // txtTecnico_Modificar
             // 
             this.txtTecnico_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtTecnico_Modificar.Location = new System.Drawing.Point(6, 290);
+=======
+            this.txtTecnico_Modificar.Location = new System.Drawing.Point(6, 251);
+>>>>>>> Stashed changes
             this.txtTecnico_Modificar.Name = "txtTecnico_Modificar";
             this.txtTecnico_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtTecnico_Modificar.TabIndex = 26;
@@ -1422,7 +1839,11 @@
             // 
             this.labelID_Dueño_Modificar.AutoSize = true;
             this.labelID_Dueño_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(3, 119);
+=======
+            this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(3, 80);
+>>>>>>> Stashed changes
             this.labelID_Dueño_Modificar.Name = "labelID_Dueño_Modificar";
             this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(83, 13);
             this.labelID_Dueño_Modificar.TabIndex = 16;
@@ -1432,7 +1853,11 @@
             // txtCI_Del_Dueño_Modificar
             // 
             this.txtCI_Del_Dueño_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtCI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 135);
+=======
+            this.txtCI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 96);
+>>>>>>> Stashed changes
             this.txtCI_Del_Dueño_Modificar.Name = "txtCI_Del_Dueño_Modificar";
             this.txtCI_Del_Dueño_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtCI_Del_Dueño_Modificar.TabIndex = 17;
@@ -1442,7 +1867,11 @@
             // 
             this.labelTecnico_A_Cargo_Modificar.AutoSize = true;
             this.labelTecnico_A_Cargo_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelTecnico_A_Cargo_Modificar.Location = new System.Drawing.Point(3, 275);
+=======
+            this.labelTecnico_A_Cargo_Modificar.Location = new System.Drawing.Point(3, 236);
+>>>>>>> Stashed changes
             this.labelTecnico_A_Cargo_Modificar.Name = "labelTecnico_A_Cargo_Modificar";
             this.labelTecnico_A_Cargo_Modificar.Size = new System.Drawing.Size(138, 13);
             this.labelTecnico_A_Cargo_Modificar.TabIndex = 25;
@@ -1453,7 +1882,11 @@
             // 
             this.labelIMEI_Modificar.AutoSize = true;
             this.labelIMEI_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelIMEI_Modificar.Location = new System.Drawing.Point(3, 158);
+=======
+            this.labelIMEI_Modificar.Location = new System.Drawing.Point(3, 119);
+>>>>>>> Stashed changes
             this.labelIMEI_Modificar.Name = "labelIMEI_Modificar";
             this.labelIMEI_Modificar.Size = new System.Drawing.Size(37, 13);
             this.labelIMEI_Modificar.TabIndex = 18;
@@ -1463,7 +1896,11 @@
             // txtIMEI_Modificar
             // 
             this.txtIMEI_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtIMEI_Modificar.Location = new System.Drawing.Point(6, 174);
+=======
+            this.txtIMEI_Modificar.Location = new System.Drawing.Point(6, 135);
+>>>>>>> Stashed changes
             this.txtIMEI_Modificar.Name = "txtIMEI_Modificar";
             this.txtIMEI_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtIMEI_Modificar.TabIndex = 19;
@@ -1473,7 +1910,11 @@
             // 
             this.labelEstado_Modificar.AutoSize = true;
             this.labelEstado_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelEstado_Modificar.Location = new System.Drawing.Point(3, 313);
+=======
+            this.labelEstado_Modificar.Location = new System.Drawing.Point(3, 274);
+>>>>>>> Stashed changes
             this.labelEstado_Modificar.Name = "labelEstado_Modificar";
             this.labelEstado_Modificar.Size = new System.Drawing.Size(50, 13);
             this.labelEstado_Modificar.TabIndex = 24;
@@ -1484,7 +1925,11 @@
             // 
             this.labelModelo_Modificar.AutoSize = true;
             this.labelModelo_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelModelo_Modificar.Location = new System.Drawing.Point(3, 197);
+=======
+            this.labelModelo_Modificar.Location = new System.Drawing.Point(3, 158);
+>>>>>>> Stashed changes
             this.labelModelo_Modificar.Name = "labelModelo_Modificar";
             this.labelModelo_Modificar.Size = new System.Drawing.Size(52, 13);
             this.labelModelo_Modificar.TabIndex = 20;
@@ -1494,7 +1939,11 @@
             // txtModelo_Modificar
             // 
             this.txtModelo_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 213);
+=======
+            this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 174);
+>>>>>>> Stashed changes
             this.txtModelo_Modificar.Name = "txtModelo_Modificar";
             this.txtModelo_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtModelo_Modificar.TabIndex = 21;
@@ -1503,7 +1952,11 @@
             // txtMarca_Modificar
             // 
             this.txtMarca_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.txtMarca_Modificar.Location = new System.Drawing.Point(6, 252);
+=======
+            this.txtMarca_Modificar.Location = new System.Drawing.Point(6, 213);
+>>>>>>> Stashed changes
             this.txtMarca_Modificar.Name = "txtMarca_Modificar";
             this.txtMarca_Modificar.Size = new System.Drawing.Size(325, 20);
             this.txtMarca_Modificar.TabIndex = 23;
@@ -1513,7 +1966,11 @@
             // 
             this.labelMarca_Modificar.AutoSize = true;
             this.labelMarca_Modificar.Enabled = false;
+<<<<<<< Updated upstream
             this.labelMarca_Modificar.Location = new System.Drawing.Point(3, 236);
+=======
+            this.labelMarca_Modificar.Location = new System.Drawing.Point(3, 197);
+>>>>>>> Stashed changes
             this.labelMarca_Modificar.Name = "labelMarca_Modificar";
             this.labelMarca_Modificar.Size = new System.Drawing.Size(46, 13);
             this.labelMarca_Modificar.TabIndex = 22;
@@ -1581,14 +2038,22 @@
             // 
             // panel_Eliminar
             // 
+<<<<<<< Updated upstream
             this.panel_Eliminar.BackColor = System.Drawing.Color.Firebrick;
+=======
+            this.panel_Eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.panel_Eliminar.Controls.Add(this.groupBox_EliminarTrabajos);
             this.panel_Eliminar.Controls.Add(this.radioButton_TRABAJO_Eliminar);
             this.panel_Eliminar.Controls.Add(this.radioButton_CELULARES_Eliminar);
             this.panel_Eliminar.Controls.Add(this.label_Tabla_Eliminar);
             this.panel_Eliminar.Controls.Add(this.groupBox_EliminarCelulares);
             this.panel_Eliminar.Enabled = false;
+<<<<<<< Updated upstream
             this.panel_Eliminar.Location = new System.Drawing.Point(916, 81);
+=======
+            this.panel_Eliminar.Location = new System.Drawing.Point(916, 78);
+>>>>>>> Stashed changes
             this.panel_Eliminar.Name = "panel_Eliminar";
             this.panel_Eliminar.Size = new System.Drawing.Size(419, 0);
             this.panel_Eliminar.TabIndex = 18;
@@ -1598,7 +2063,11 @@
             this.groupBox_EliminarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox_EliminarTrabajos.Controls.Add(this.btnEliminar_Trabajo);
             this.groupBox_EliminarTrabajos.Controls.Add(this.txtID_Trabajo_Eliminar);
+<<<<<<< Updated upstream
             this.groupBox_EliminarTrabajos.Controls.Add(this.label1);
+=======
+            this.groupBox_EliminarTrabajos.Controls.Add(this.labelTrabajoQueDesea_Eliminar);
+>>>>>>> Stashed changes
             this.groupBox_EliminarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox_EliminarTrabajos.Location = new System.Drawing.Point(42, 77);
             this.groupBox_EliminarTrabajos.Name = "groupBox_EliminarTrabajos";
@@ -1624,6 +2093,7 @@
             this.txtID_Trabajo_Eliminar.Size = new System.Drawing.Size(325, 20);
             this.txtID_Trabajo_Eliminar.TabIndex = 1;
             // 
+<<<<<<< Updated upstream
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1632,6 +2102,16 @@
             this.label1.Size = new System.Drawing.Size(198, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID del trabajo que desea eliminar:";
+=======
+            // labelTrabajoQueDesea_Eliminar
+            // 
+            this.labelTrabajoQueDesea_Eliminar.AutoSize = true;
+            this.labelTrabajoQueDesea_Eliminar.Location = new System.Drawing.Point(3, 40);
+            this.labelTrabajoQueDesea_Eliminar.Name = "labelTrabajoQueDesea_Eliminar";
+            this.labelTrabajoQueDesea_Eliminar.Size = new System.Drawing.Size(198, 13);
+            this.labelTrabajoQueDesea_Eliminar.TabIndex = 0;
+            this.labelTrabajoQueDesea_Eliminar.Text = "ID del trabajo que desea eliminar:";
+>>>>>>> Stashed changes
             // 
             // radioButton_TRABAJO_Eliminar
             // 
@@ -1675,7 +2155,10 @@
             // groupBox_EliminarCelulares
             // 
             this.groupBox_EliminarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+<<<<<<< Updated upstream
             this.groupBox_EliminarCelulares.Controls.Add(this.groupBox_Explicacion);
+=======
+>>>>>>> Stashed changes
             this.groupBox_EliminarCelulares.Controls.Add(this.btnEliminar_Celular);
             this.groupBox_EliminarCelulares.Controls.Add(this.txtID_Celular_Eliminar);
             this.groupBox_EliminarCelulares.Controls.Add(this.label_ID_Celular_Eliminar);
@@ -1687,6 +2170,7 @@
             this.groupBox_EliminarCelulares.TabStop = false;
             this.groupBox_EliminarCelulares.Text = "Elimine un celular";
             // 
+<<<<<<< Updated upstream
             // groupBox_Explicacion
             // 
             this.groupBox_Explicacion.BackColor = System.Drawing.Color.Gainsboro;
@@ -1710,6 +2194,8 @@
     "os trabajos con \r\nlos que esta vinculado,\r\nosea, todos los trabajos\r\nque tengan " +
     "el ID de \r\nese celular en cuestión";
             // 
+=======
+>>>>>>> Stashed changes
             // btnEliminar_Celular
             // 
             this.btnEliminar_Celular.Location = new System.Drawing.Point(6, 457);
@@ -1771,11 +2257,20 @@
             this.tablaCelulares.AllowUserToAddRows = false;
             this.tablaCelulares.AllowUserToDeleteRows = false;
             this.tablaCelulares.AllowUserToResizeRows = false;
+<<<<<<< Updated upstream
             this.tablaCelulares.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
             this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.tablaCelulares.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tablaCelulares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1784,35 +2279,61 @@
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+<<<<<<< Updated upstream
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaCelulares.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaCelulares.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+<<<<<<< Updated upstream
+=======
+            this.tablaCelulares.EnableHeadersVisualStyles = false;
+            this.tablaCelulares.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+>>>>>>> Stashed changes
             this.tablaCelulares.Location = new System.Drawing.Point(49, 78);
             this.tablaCelulares.MultiSelect = false;
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+<<<<<<< Updated upstream
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaCelulares.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+<<<<<<< Updated upstream
+=======
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle4;
+>>>>>>> Stashed changes
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaCelulares.Size = new System.Drawing.Size(786, 0);
             this.tablaCelulares.TabIndex = 19;
+<<<<<<< Updated upstream
+=======
+            this.tablaCelulares.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCelulares_CellClick);
+>>>>>>> Stashed changes
             this.tablaCelulares.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tablaCelulares_DataBindingComplete);
             // 
             // tablaTrabajos
             // 
             this.tablaTrabajos.AllowUserToAddRows = false;
             this.tablaTrabajos.AllowUserToDeleteRows = false;
+<<<<<<< Updated upstream
             this.tablaTrabajos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -1848,6 +2369,54 @@
             this.labAyudaVisual_SeleccionarTabla.Size = new System.Drawing.Size(412, 51);
             this.labAyudaVisual_SeleccionarTabla.TabIndex = 22;
             this.labAyudaVisual_SeleccionarTabla.Text = "Seleccione una Tabla";
+=======
+            this.tablaTrabajos.AllowUserToResizeRows = false;
+            this.tablaTrabajos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaTrabajos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tablaTrabajos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.tablaTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTrabajos.DefaultCellStyle = dataGridViewCellStyle6;
+            this.tablaTrabajos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.tablaTrabajos.EnableHeadersVisualStyles = false;
+            this.tablaTrabajos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tablaTrabajos.Location = new System.Drawing.Point(49, 78);
+            this.tablaTrabajos.MultiSelect = false;
+            this.tablaTrabajos.Name = "tablaTrabajos";
+            this.tablaTrabajos.ReadOnly = true;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTrabajos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.tablaTrabajos.RowTemplate.ReadOnly = true;
+            this.tablaTrabajos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.tablaTrabajos.Size = new System.Drawing.Size(786, 0);
+            this.tablaTrabajos.TabIndex = 20;
+            this.tablaTrabajos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTrabajos_CellClick);
+>>>>>>> Stashed changes
             // 
             // Principal
             // 
@@ -1857,7 +2426,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(1350, 689);
+<<<<<<< Updated upstream
             this.Controls.Add(this.labAyudaVisual_SeleccionarTabla);
+=======
+>>>>>>> Stashed changes
             this.Controls.Add(this.tablaTrabajos);
             this.Controls.Add(this.tablaCelulares);
             this.Controls.Add(this.panelE);
@@ -1872,7 +2444,10 @@
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etech | Gestor de celulares";
+<<<<<<< Updated upstream
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+=======
+>>>>>>> Stashed changes
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panelD.ResumeLayout(false);
@@ -1901,12 +2476,18 @@
             this.groupBox_EliminarTrabajos.PerformLayout();
             this.groupBox_EliminarCelulares.ResumeLayout(false);
             this.groupBox_EliminarCelulares.PerformLayout();
+<<<<<<< Updated upstream
             this.groupBox_Explicacion.ResumeLayout(false);
             this.groupBox_Explicacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaTrabajos)).EndInit();
+            this.ResumeLayout(false);
+>>>>>>> Stashed changes
 
         }
 
@@ -1933,7 +2514,11 @@
         private System.Windows.Forms.Button btnAgregar_Celular;
         private System.Windows.Forms.RadioButton radioButton_Averiado_Agregar;
         private System.Windows.Forms.RadioButton radioButton_Arreglado_Agregar;
+<<<<<<< Updated upstream
         private System.Windows.Forms.TextBox txtTecnico_Agregar;
+=======
+        private System.Windows.Forms.TextBox txtID_Tecnico_Agregar_Celulares;
+>>>>>>> Stashed changes
         private System.Windows.Forms.Label labelTecnico_A_Cargo_Agregar;
         private System.Windows.Forms.Label labelEstado_Agregar;
         private System.Windows.Forms.TextBox txtMarca_Agregar;
@@ -1966,8 +2551,11 @@
         private System.Windows.Forms.RadioButton radioButton_TRABAJO_Modificar;
         private System.Windows.Forms.RadioButton radioButton_CELULARES_Modificar;
         private System.Windows.Forms.Label label_Tabla_Modificar;
+<<<<<<< Updated upstream
         private System.Windows.Forms.TextBox txtID_Celular_Modificar;
         private System.Windows.Forms.Label labelID_Celular_Modificar;
+=======
+>>>>>>> Stashed changes
         private System.Windows.Forms.RadioButton radioButton_Averiado_Modificar;
         private System.Windows.Forms.RadioButton radioButton_Arreglado_Modificar;
         private System.Windows.Forms.Label labelTecnico_A_Cargo_Modificar;
@@ -1993,8 +2581,11 @@
         private System.Windows.Forms.Label labelPlazo_Modificar;
         private System.Windows.Forms.TextBox txtTrabajo_ID_Modificar;
         private System.Windows.Forms.Label labelTrabajo_ID_Modificar;
+<<<<<<< Updated upstream
         private System.Windows.Forms.TextBox txtID_Trabajo_Modificar;
         private System.Windows.Forms.Label IDTabla_Trabajos_Modificar;
+=======
+>>>>>>> Stashed changes
         private System.Windows.Forms.Button btnModificar_Trabajo;
         private System.Windows.Forms.Timer timer_Modificar_Agrandar;
         private System.Windows.Forms.Timer timer_Modificar_Reducir;
@@ -2010,7 +2601,11 @@
         private System.Windows.Forms.Label label_Tabla_Eliminar;
         private System.Windows.Forms.GroupBox groupBox_EliminarTrabajos;
         private System.Windows.Forms.TextBox txtID_Trabajo_Eliminar;
+<<<<<<< Updated upstream
         private System.Windows.Forms.Label label1;
+=======
+        private System.Windows.Forms.Label labelTrabajoQueDesea_Eliminar;
+>>>>>>> Stashed changes
         private System.Windows.Forms.Button btnEliminar_Trabajo;
         private System.Windows.Forms.Timer timer_GroupBox_EliminarT_Reducir;
         private System.Windows.Forms.Timer timer_GroupBox_EliminarT_Agrandar;
@@ -2019,7 +2614,10 @@
         private System.Windows.Forms.DataGridView tablaCelulares;
         private System.Windows.Forms.RadioButton radioButton_TablaTrabajos;
         private System.Windows.Forms.RadioButton radioButton_TablaCelulares;
+<<<<<<< Updated upstream
         private System.Windows.Forms.DataGridView tablaTrabajos;
+=======
+>>>>>>> Stashed changes
         private System.Windows.Forms.Label label_Name_Form;
         private System.Windows.Forms.PictureBox pictureBox_Taller;
         private System.Windows.Forms.GroupBox groupBox_AgregarTrabajos;
@@ -2047,11 +2645,16 @@
         private System.Windows.Forms.Label labelError_Modificar_Celulares;
         private System.Windows.Forms.Label labelError_Modificar_Trabajos;
         private System.Windows.Forms.ComboBox comboBoxColumnas_Trabajos;
+<<<<<<< Updated upstream
         private System.Windows.Forms.Label label2;
+=======
+        private System.Windows.Forms.Label labelColumnaQueDesea_Modificar;
+>>>>>>> Stashed changes
         private System.Windows.Forms.DateTimePicker dateTimePicker_FechaDeIngreso_Modificar;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo_Modificar;
         private System.Windows.Forms.Label labelModificar_Columna_Trabajos;
         private System.Windows.Forms.TextBox txtModificar_Columna_Trabajos;
+<<<<<<< Updated upstream
         private System.Windows.Forms.GroupBox groupBox_Explicacion;
         private System.Windows.Forms.Label label_Explicacion;
         private System.Windows.Forms.Button btnCerrar;
@@ -2059,6 +2662,15 @@
         private System.Windows.Forms.Label label_CaracteresRestantesCI_AgregarCelulares;
         private System.Windows.Forms.TextBox txtTecnicoACargo_groupBox_AgregarTrabajos;
         private System.Windows.Forms.Label labelTecnicoACargo_groupBox_AgregarTrabajo;
+=======
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label label_CaracteresRestantesCI_AgregarCelulares;
+        private System.Windows.Forms.DataGridView tablaTrabajos;
+        private System.Windows.Forms.TextBox txtID_Tecnico_Agregar_Trabajos;
+        private System.Windows.Forms.Label labelID_Tecnico_Agregar;
+        private System.Windows.Forms.TextBox txtID_Tecnico_Trabajo_Modficar;
+        private System.Windows.Forms.Label labelID_Tecnico_Trabajo_Modificar;
+>>>>>>> Stashed changes
     }
 }
 

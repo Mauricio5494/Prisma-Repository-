@@ -136,7 +136,11 @@ namespace Diseño
         private void LabelRegistrarse_MouseEnter(object sender, EventArgs e)
         {
             LabelRegistrarse.ForeColor = Color.DodgerBlue;
+<<<<<<< Updated upstream
             toolTip1.SetToolTip(LabelRegistrarse, "Ingrese el usuario y contraseña que el equipo\nPrisma le ha prporcionado, luego podrá registar usuarios");
+=======
+            toolTip1.SetToolTip(LabelRegistrarse, "Ingrese el usuario y contraseña que el equipo\nPrisma le ha proporcionado, luego podrá registar usuarios");
+>>>>>>> Stashed changes
         }
 
         private void LabelRegistrarse_MouseLeave(object sender, EventArgs e)

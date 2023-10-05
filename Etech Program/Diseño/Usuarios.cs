@@ -1190,9 +1190,12 @@ namespace Diseño
                             }
                         };
                         ApareceLaContraseñaMaestra = false;
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes
                     }
                     else
                     {

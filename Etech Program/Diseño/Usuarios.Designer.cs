@@ -30,8 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
+<<<<<<< Updated upstream
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> Stashed changes
             this.panelE = new System.Windows.Forms.Panel();
             this.label_BD_Mostrada = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -188,7 +194,11 @@
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Enabled = false;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< Updated upstream
             this.btnBuscar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.Location = new System.Drawing.Point(602, 18);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -355,6 +365,7 @@
             this.tabla_Usuarios.AllowUserToAddRows = false;
             this.tabla_Usuarios.AllowUserToDeleteRows = false;
             this.tabla_Usuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+<<<<<<< Updated upstream
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,10 +383,34 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tabla_Usuarios.DefaultCellStyle = dataGridViewCellStyle4;
+=======
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tabla_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla_Usuarios.DefaultCellStyle = dataGridViewCellStyle2;
+>>>>>>> Stashed changes
             this.tabla_Usuarios.Location = new System.Drawing.Point(49, 76);
             this.tabla_Usuarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabla_Usuarios.Name = "tabla_Usuarios";
             this.tabla_Usuarios.ReadOnly = true;
+<<<<<<< Updated upstream
+=======
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
+>>>>>>> Stashed changes
             this.tabla_Usuarios.Size = new System.Drawing.Size(872, 599);
             this.tabla_Usuarios.TabIndex = 15;
             this.tabla_Usuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tabla_Usuarios_DataBindingComplete);
@@ -407,7 +442,11 @@
             this.groupBoxInterno_panelRegistroUsuarios.Controls.Add(this.txtPassword);
             this.groupBoxInterno_panelRegistroUsuarios.Controls.Add(this.txtCorreo);
             this.groupBoxInterno_panelRegistroUsuarios.Controls.Add(this.txtNombre);
+<<<<<<< Updated upstream
             this.groupBoxInterno_panelRegistroUsuarios.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.groupBoxInterno_panelRegistroUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.groupBoxInterno_panelRegistroUsuarios.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBoxInterno_panelRegistroUsuarios.Location = new System.Drawing.Point(4, 3);
             this.groupBoxInterno_panelRegistroUsuarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -463,7 +502,11 @@
             this.txtTelefono.Location = new System.Drawing.Point(6, 238);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTelefono.Name = "txtTelefono";
+<<<<<<< Updated upstream
             this.txtTelefono.Size = new System.Drawing.Size(395, 23);
+=======
+            this.txtTelefono.Size = new System.Drawing.Size(395, 22);
+>>>>>>> Stashed changes
             this.txtTelefono.TabIndex = 11;
             // 
             // label_Telefono
@@ -472,7 +515,11 @@
             this.label_Telefono.Location = new System.Drawing.Point(6, 222);
             this.label_Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Telefono.Name = "label_Telefono";
+<<<<<<< Updated upstream
             this.label_Telefono.Size = new System.Drawing.Size(160, 18);
+=======
+            this.label_Telefono.Size = new System.Drawing.Size(154, 16);
+>>>>>>> Stashed changes
             this.label_Telefono.TabIndex = 10;
             this.label_Telefono.Text = "Telefono Fijo (Opcional):";
             // 
@@ -482,7 +529,11 @@
             this.label_Celular.Location = new System.Drawing.Point(6, 172);
             this.label_Celular.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Celular.Name = "label_Celular";
+<<<<<<< Updated upstream
             this.label_Celular.Size = new System.Drawing.Size(56, 18);
+=======
+            this.label_Celular.Size = new System.Drawing.Size(52, 16);
+>>>>>>> Stashed changes
             this.label_Celular.TabIndex = 8;
             this.label_Celular.Text = "Celular:";
             // 
@@ -492,7 +543,11 @@
             this.label_Correo.Location = new System.Drawing.Point(6, 75);
             this.label_Correo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Correo.Name = "label_Correo";
+<<<<<<< Updated upstream
             this.label_Correo.Size = new System.Drawing.Size(54, 18);
+=======
+            this.label_Correo.Size = new System.Drawing.Size(51, 16);
+>>>>>>> Stashed changes
             this.label_Correo.TabIndex = 7;
             this.label_Correo.Text = "Correo:";
             // 
@@ -502,7 +557,11 @@
             this.label_Password.Location = new System.Drawing.Point(4, 124);
             this.label_Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Password.Name = "label_Password";
+<<<<<<< Updated upstream
             this.label_Password.Size = new System.Drawing.Size(85, 18);
+=======
+            this.label_Password.Size = new System.Drawing.Size(79, 16);
+>>>>>>> Stashed changes
             this.label_Password.TabIndex = 6;
             this.label_Password.Text = "Contraseña:";
             // 
@@ -512,7 +571,11 @@
             this.label_Nombre.Location = new System.Drawing.Point(4, 26);
             this.label_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Nombre.Name = "label_Nombre";
+<<<<<<< Updated upstream
             this.label_Nombre.Size = new System.Drawing.Size(66, 18);
+=======
+            this.label_Nombre.Size = new System.Drawing.Size(59, 16);
+>>>>>>> Stashed changes
             this.label_Nombre.TabIndex = 5;
             this.label_Nombre.Text = "Nombre:";
             // 
@@ -521,7 +584,11 @@
             this.txtCelular.Location = new System.Drawing.Point(6, 188);
             this.txtCelular.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCelular.Name = "txtCelular";
+<<<<<<< Updated upstream
             this.txtCelular.Size = new System.Drawing.Size(395, 23);
+=======
+            this.txtCelular.Size = new System.Drawing.Size(395, 22);
+>>>>>>> Stashed changes
             this.txtCelular.TabIndex = 3;
             // 
             // txtPassword
@@ -529,7 +596,11 @@
             this.txtPassword.Location = new System.Drawing.Point(6, 140);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPassword.Name = "txtPassword";
+<<<<<<< Updated upstream
             this.txtPassword.Size = new System.Drawing.Size(339, 23);
+=======
+            this.txtPassword.Size = new System.Drawing.Size(339, 22);
+>>>>>>> Stashed changes
             this.txtPassword.TabIndex = 2;
             // 
             // txtCorreo
@@ -537,7 +608,11 @@
             this.txtCorreo.Location = new System.Drawing.Point(6, 91);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCorreo.Name = "txtCorreo";
+<<<<<<< Updated upstream
             this.txtCorreo.Size = new System.Drawing.Size(395, 23);
+=======
+            this.txtCorreo.Size = new System.Drawing.Size(395, 22);
+>>>>>>> Stashed changes
             this.txtCorreo.TabIndex = 1;
             // 
             // txtNombre
@@ -545,7 +620,11 @@
             this.txtNombre.Location = new System.Drawing.Point(6, 42);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNombre.Name = "txtNombre";
+<<<<<<< Updated upstream
             this.txtNombre.Size = new System.Drawing.Size(395, 23);
+=======
+            this.txtNombre.Size = new System.Drawing.Size(395, 22);
+>>>>>>> Stashed changes
             this.txtNombre.TabIndex = 0;
             // 
             // timer_Agrandar
@@ -578,7 +657,11 @@
             this.groupboxInterno_panelBorrarTecnico.Controls.Add(this.label1);
             this.groupboxInterno_panelBorrarTecnico.Controls.Add(this.txtID_panelBorrarUsuarios);
             this.groupboxInterno_panelBorrarTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< Updated upstream
             this.groupboxInterno_panelBorrarTecnico.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.groupboxInterno_panelBorrarTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.groupboxInterno_panelBorrarTecnico.Location = new System.Drawing.Point(13, 13);
             this.groupboxInterno_panelBorrarTecnico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupboxInterno_panelBorrarTecnico.Name = "groupboxInterno_panelBorrarTecnico";
@@ -594,7 +677,11 @@
             this.labelNota_panelBorrarTecnico.BackColor = System.Drawing.Color.IndianRed;
             this.labelNota_panelBorrarTecnico.Location = new System.Drawing.Point(11, 103);
             this.labelNota_panelBorrarTecnico.Name = "labelNota_panelBorrarTecnico";
+<<<<<<< Updated upstream
             this.labelNota_panelBorrarTecnico.Size = new System.Drawing.Size(17, 18);
+=======
+            this.labelNota_panelBorrarTecnico.Size = new System.Drawing.Size(16, 16);
+>>>>>>> Stashed changes
             this.labelNota_panelBorrarTecnico.TabIndex = 3;
             this.labelNota_panelBorrarTecnico.Text = "...";
             // 
@@ -615,7 +702,11 @@
             this.label1.Location = new System.Drawing.Point(10, 41);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
+<<<<<<< Updated upstream
             this.label1.Size = new System.Drawing.Size(23, 18);
+=======
+            this.label1.Size = new System.Drawing.Size(20, 16);
+>>>>>>> Stashed changes
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
             // 
@@ -624,7 +715,11 @@
             this.txtID_panelBorrarUsuarios.Location = new System.Drawing.Point(13, 64);
             this.txtID_panelBorrarUsuarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtID_panelBorrarUsuarios.Name = "txtID_panelBorrarUsuarios";
+<<<<<<< Updated upstream
             this.txtID_panelBorrarUsuarios.Size = new System.Drawing.Size(131, 23);
+=======
+            this.txtID_panelBorrarUsuarios.Size = new System.Drawing.Size(131, 22);
+>>>>>>> Stashed changes
             this.txtID_panelBorrarUsuarios.TabIndex = 0;
             // 
             // panel_Menu
@@ -645,7 +740,11 @@
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnEstadisticas_groupboxManu_PanelMenu);
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnTaller_PanelMenu);
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnClientes_groupBoxMenu_PanelMenu);
+<<<<<<< Updated upstream
             this.groupBox_Menu_PanelMenu.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.groupBox_Menu_PanelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.groupBox_Menu_PanelMenu.Location = new System.Drawing.Point(3, 79);
             this.groupBox_Menu_PanelMenu.Name = "groupBox_Menu_PanelMenu";
             this.groupBox_Menu_PanelMenu.Size = new System.Drawing.Size(412, 517);
@@ -656,7 +755,11 @@
             // btnEstadisticas_groupboxManu_PanelMenu
             // 
             this.btnEstadisticas_groupboxManu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+<<<<<<< Updated upstream
             this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.btnEstadisticas_groupboxManu_PanelMenu.Image = global::Diseño.Properties.Resources.Estadisticas;
             this.btnEstadisticas_groupboxManu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstadisticas_groupboxManu_PanelMenu.Location = new System.Drawing.Point(3, 254);
@@ -668,7 +771,11 @@
             // 
             // btnTaller_PanelMenu
             // 
+<<<<<<< Updated upstream
             this.btnTaller_PanelMenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnTaller_PanelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.btnTaller_PanelMenu.Image = global::Diseño.Properties.Resources.Taller2;
             this.btnTaller_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaller_PanelMenu.Location = new System.Drawing.Point(3, 28);
@@ -683,7 +790,11 @@
             // 
             this.btnClientes_groupBoxMenu_PanelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClientes_groupBoxMenu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+<<<<<<< Updated upstream
             this.btnClientes_groupBoxMenu_PanelMenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnClientes_groupBoxMenu_PanelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.btnClientes_groupBoxMenu_PanelMenu.Image = global::Diseño.Properties.Resources.Clientes1;
             this.btnClientes_groupBoxMenu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes_groupBoxMenu_PanelMenu.Location = new System.Drawing.Point(3, 141);
@@ -783,7 +894,11 @@
             this.groupBoxModificar_PanelModificar.Controls.Add(this.txtCorreoElectronico_groupBoxModificar_PanelModificar);
             this.groupBoxModificar_PanelModificar.Controls.Add(this.txtTelefono_groupBoxModificar_PanelModificar);
             this.groupBoxModificar_PanelModificar.Controls.Add(this.txtNombre_groupboxModificar_PanelModificar);
+<<<<<<< Updated upstream
             this.groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 3);
             this.groupBoxModificar_PanelModificar.Name = "groupBoxModificar_PanelModificar";
             this.groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(412, 593);
@@ -793,19 +908,33 @@
             // 
             // txtIDseleccionado_groupBoxModificar_PanelModificar
             // 
+<<<<<<< Updated upstream
             this.txtIDseleccionado_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDseleccionado_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(178, 18);
             this.txtIDseleccionado_groupBoxModificar_PanelModificar.Name = "txtIDseleccionado_groupBoxModificar_PanelModificar";
             this.txtIDseleccionado_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(228, 23);
+=======
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(178, 18);
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Name = "txtIDseleccionado_groupBoxModificar_PanelModificar";
+            this.txtIDseleccionado_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(228, 22);
+>>>>>>> Stashed changes
             this.txtIDseleccionado_groupBoxModificar_PanelModificar.TabIndex = 16;
             // 
             // labelDelID_groupBoxModificar_PanelModificar
             // 
             this.labelDelID_groupBoxModificar_PanelModificar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelDelID_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDelID_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(135, 21);
             this.labelDelID_groupBoxModificar_PanelModificar.Name = "labelDelID_groupBoxModificar_PanelModificar";
             this.labelDelID_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(45, 16);
+=======
+            this.labelDelID_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDelID_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(135, 21);
+            this.labelDelID_groupBoxModificar_PanelModificar.Name = "labelDelID_groupBoxModificar_PanelModificar";
+            this.labelDelID_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(42, 15);
+>>>>>>> Stashed changes
             this.labelDelID_groupBoxModificar_PanelModificar.TabIndex = 15;
             this.labelDelID_groupBoxModificar_PanelModificar.Text = "del ID:";
             // 
@@ -855,7 +984,11 @@
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.BackColor = System.Drawing.SystemColors.Info;
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+<<<<<<< Updated upstream
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.comboBoxModifcar_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.FormattingEnabled = true;
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.Items.AddRange(new object[] {
             "Todos",
@@ -866,17 +999,28 @@
             "Celular"});
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(8, 18);
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.Name = "comboBoxModifcar_groupBoxModificar_PanelModificar";
+<<<<<<< Updated upstream
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(121, 26);
+=======
+            this.comboBoxModifcar_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(121, 24);
+>>>>>>> Stashed changes
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.TabIndex = 11;
             this.comboBoxModifcar_groupBoxModificar_PanelModificar.SelectedIndexChanged += new System.EventHandler(this.comboBoxModifcar_groupBoxModificar_PanelModificar_SelectedIndexChanged);
             // 
             // labelCelular_groupBoxModificar_PanelModificar
             // 
             this.labelCelular_groupBoxModificar_PanelModificar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelCelular_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCelular_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 249);
             this.labelCelular_groupBoxModificar_PanelModificar.Name = "labelCelular_groupBoxModificar_PanelModificar";
             this.labelCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(49, 16);
+=======
+            this.labelCelular_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCelular_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 249);
+            this.labelCelular_groupBoxModificar_PanelModificar.Name = "labelCelular_groupBoxModificar_PanelModificar";
+            this.labelCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(46, 15);
+>>>>>>> Stashed changes
             this.labelCelular_groupBoxModificar_PanelModificar.TabIndex = 10;
             this.labelCelular_groupBoxModificar_PanelModificar.Text = "Celular";
             this.labelCelular_groupBoxModificar_PanelModificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -885,46 +1029,78 @@
             // 
             this.txtCelular_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 263);
             this.txtCelular_groupBoxModificar_PanelModificar.Name = "txtCelular_groupBoxModificar_PanelModificar";
+<<<<<<< Updated upstream
             this.txtCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 23);
+=======
+            this.txtCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 22);
+>>>>>>> Stashed changes
             this.txtCelular_groupBoxModificar_PanelModificar.TabIndex = 9;
             // 
             // labelContraseña_groupboxModificar_PanelModificar
             // 
             this.labelContraseña_groupboxModificar_PanelModificar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelContraseña_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(3, 109);
             this.labelContraseña_groupboxModificar_PanelModificar.Name = "labelContraseña_groupboxModificar_PanelModificar";
             this.labelContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(76, 16);
+=======
+            this.labelContraseña_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(3, 109);
+            this.labelContraseña_groupboxModificar_PanelModificar.Name = "labelContraseña_groupboxModificar_PanelModificar";
+            this.labelContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(70, 15);
+>>>>>>> Stashed changes
             this.labelContraseña_groupboxModificar_PanelModificar.TabIndex = 8;
             this.labelContraseña_groupboxModificar_PanelModificar.Text = "Contraseña";
             // 
             // labelCorreoElectronico_groupBoxModificar_PanelModificar
             // 
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 153);
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Name = "labelCorreoElectronico_groupBoxModificar_PanelModificar";
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(121, 16);
+=======
+            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 153);
+            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Name = "labelCorreoElectronico_groupBoxModificar_PanelModificar";
+            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(108, 15);
+>>>>>>> Stashed changes
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.TabIndex = 7;
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Text = "Correo Electrónico";
             // 
             // labelTelefono_groupBoxModificar_PanelModificar
             // 
             this.labelTelefono_groupBoxModificar_PanelModificar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelTelefono_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTelefono_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 201);
             this.labelTelefono_groupBoxModificar_PanelModificar.Name = "labelTelefono_groupBoxModificar_PanelModificar";
             this.labelTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(123, 16);
+=======
+            this.labelTelefono_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 201);
+            this.labelTelefono_groupBoxModificar_PanelModificar.Name = "labelTelefono_groupBoxModificar_PanelModificar";
+            this.labelTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(115, 15);
+>>>>>>> Stashed changes
             this.labelTelefono_groupBoxModificar_PanelModificar.TabIndex = 6;
             this.labelTelefono_groupBoxModificar_PanelModificar.Text = "Teléfono (Opcional)";
             // 
             // labNombre_groupBoxModificar_PanelModificar
             // 
             this.labNombre_groupBoxModificar_PanelModificar.AutoSize = true;
+<<<<<<< Updated upstream
             this.labNombre_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labNombre_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 66);
             this.labNombre_groupBoxModificar_PanelModificar.Name = "labNombre_groupBoxModificar_PanelModificar";
             this.labNombre_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(58, 16);
+=======
+            this.labNombre_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNombre_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 66);
+            this.labNombre_groupBoxModificar_PanelModificar.Name = "labNombre_groupBoxModificar_PanelModificar";
+            this.labNombre_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(52, 15);
+>>>>>>> Stashed changes
             this.labNombre_groupBoxModificar_PanelModificar.TabIndex = 5;
             this.labNombre_groupBoxModificar_PanelModificar.Text = "Nombre";
             // 
@@ -932,28 +1108,44 @@
             // 
             this.txtContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(6, 123);
             this.txtContraseña_groupboxModificar_PanelModificar.Name = "txtContraseña_groupboxModificar_PanelModificar";
+<<<<<<< Updated upstream
             this.txtContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(340, 23);
+=======
+            this.txtContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(340, 22);
+>>>>>>> Stashed changes
             this.txtContraseña_groupboxModificar_PanelModificar.TabIndex = 4;
             // 
             // txtCorreoElectronico_groupBoxModificar_PanelModificar
             // 
             this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 168);
             this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Name = "txtCorreoElectronico_groupBoxModificar_PanelModificar";
+<<<<<<< Updated upstream
             this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(400, 23);
+=======
+            this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(400, 22);
+>>>>>>> Stashed changes
             this.txtCorreoElectronico_groupBoxModificar_PanelModificar.TabIndex = 3;
             // 
             // txtTelefono_groupBoxModificar_PanelModificar
             // 
             this.txtTelefono_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 215);
             this.txtTelefono_groupBoxModificar_PanelModificar.Name = "txtTelefono_groupBoxModificar_PanelModificar";
+<<<<<<< Updated upstream
             this.txtTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 23);
+=======
+            this.txtTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 22);
+>>>>>>> Stashed changes
             this.txtTelefono_groupBoxModificar_PanelModificar.TabIndex = 1;
             // 
             // txtNombre_groupboxModificar_PanelModificar
             // 
             this.txtNombre_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(6, 81);
             this.txtNombre_groupboxModificar_PanelModificar.Name = "txtNombre_groupboxModificar_PanelModificar";
+<<<<<<< Updated upstream
             this.txtNombre_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(399, 23);
+=======
+            this.txtNombre_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(399, 22);
+>>>>>>> Stashed changes
             this.txtNombre_groupboxModificar_PanelModificar.TabIndex = 0;
             // 
             // groupBox2
@@ -1011,10 +1203,17 @@
             // 
             this.label_InvitadoDetectado.AutoSize = true;
             this.label_InvitadoDetectado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+<<<<<<< Updated upstream
             this.label_InvitadoDetectado.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_InvitadoDetectado.Location = new System.Drawing.Point(161, 288);
             this.label_InvitadoDetectado.Name = "label_InvitadoDetectado";
             this.label_InvitadoDetectado.Size = new System.Drawing.Size(650, 33);
+=======
+            this.label_InvitadoDetectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_InvitadoDetectado.Location = new System.Drawing.Point(161, 288);
+            this.label_InvitadoDetectado.Name = "label_InvitadoDetectado";
+            this.label_InvitadoDetectado.Size = new System.Drawing.Size(616, 29);
+>>>>>>> Stashed changes
             this.label_InvitadoDetectado.TabIndex = 26;
             this.label_InvitadoDetectado.Text = "Ingrese como Usuario para poder Visualizar la tabla";
             this.label_InvitadoDetectado.Visible = false;

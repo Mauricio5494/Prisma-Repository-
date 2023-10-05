@@ -16,6 +16,13 @@ namespace Diseño
     public partial class Principal : Form
     {
         //Atributos o variables:
+<<<<<<< Updated upstream
+=======
+        int numeroDeFilaCelulares;
+        int numeroDeFilaTrabajos;
+        string clavePrimariaCelulares;
+        string clavePrimariaTrabajos;
+>>>>>>> Stashed changes
         string insertarCelulares;
         string insertarTrabajos;
         string modifcarCelulares;
@@ -63,6 +70,10 @@ namespace Diseño
 
         //instancias:
         Usuarios Usuarios = new Usuarios();
+<<<<<<< Updated upstream
+=======
+        Clientes Clientes = new Clientes();
+>>>>>>> Stashed changes
         DataTable DataTableCelulares = new DataTable();
         DataTable DataTableTrabajos = new DataTable();
         DataTable DataTableCelularesBusqueda = new DataTable();
@@ -85,7 +96,11 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
+<<<<<<< Updated upstream
                 cmd = new MySqlCommand("SELECT * FROM celulares;", conn);
+=======
+                cmd = new MySqlCommand("SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Baja = 1;", conn);
+>>>>>>> Stashed changes
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 DataTableCelulares.Load(reader);
@@ -106,7 +121,11 @@ namespace Diseño
             {
                 DataTableTrabajos.Rows.Clear();
                 conn.Open();
+<<<<<<< Updated upstream
                 cmd = new MySqlCommand("SELECT * FROM trabajos;", conn);
+=======
+                cmd = new MySqlCommand("SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Baja = 1;", conn);
+>>>>>>> Stashed changes
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 DataTableTrabajos.Load(reader);
@@ -184,6 +203,12 @@ namespace Diseño
                 radioButton_Averiado_Modificar.Enabled = true;
                 radioButton_Averiado_Modificar.Visible = true;
 
+<<<<<<< Updated upstream
+=======
+                radioButton_Arreglado_Modificar.Location = new Point(6, 290);
+                radioButton_Averiado_Modificar.Location = new Point(93, 290);
+
+>>>>>>> Stashed changes
                 //Modificar Columna:
                 labelModificar_Columna_Celulares.Enabled = false;
                 labelModificar_Columna_Celulares.Visible = false;
@@ -191,6 +216,67 @@ namespace Diseño
                 txtModificar_Columna_Celulares.Enabled = false;
                 txtModificar_Columna_Celulares.Visible = false;
             }
+<<<<<<< Updated upstream
+=======
+            else if (comboBoxColumnas_Celulares.Text.Equals("Estado"))
+            {
+                //Modificar Columna:
+                labelModificar_Columna_Celulares.Enabled = false;
+                labelModificar_Columna_Celulares.Visible = false;
+
+                txtModificar_Columna_Celulares.Enabled = false;
+                txtModificar_Columna_Celulares.Visible = false;
+
+                //Labels:
+                labelError_Modificar_Celulares.Enabled = false;
+                labelError_Modificar_Celulares.Visible = false;
+
+                labelID_Dueño_Modificar.Enabled = false;
+                labelID_Dueño_Modificar.Visible = false;
+
+                labelIMEI_Modificar.Enabled = false;
+                labelIMEI_Modificar.Visible = false;
+
+                labelModelo_Modificar.Enabled = false;
+                labelModelo_Modificar.Visible = false;
+
+                labelMarca_Modificar.Enabled = false;
+                labelMarca_Modificar.Visible = false;
+
+                labelTecnico_A_Cargo_Modificar.Enabled = false;
+                labelTecnico_A_Cargo_Modificar.Visible = false;
+
+                labelEstado_Modificar.Enabled = true;
+                labelEstado_Modificar.Visible = true;
+
+                labelEstado_Modificar.Location = new Point(3, 80);
+
+                //TextBox y RadioButtons:
+                txtCI_Del_Dueño_Modificar.Enabled = false;
+                txtCI_Del_Dueño_Modificar.Visible = false;
+
+                txtIMEI_Modificar.Enabled = false;
+                txtIMEI_Modificar.Visible = false;
+
+                txtModelo_Modificar.Enabled = false;
+                txtModelo_Modificar.Visible = false;
+
+                txtMarca_Modificar.Enabled = false;
+                txtMarca_Modificar.Visible = false;
+
+                txtTecnico_Modificar.Enabled = false;
+                txtTecnico_Modificar.Visible = false;
+
+                radioButton_Arreglado_Modificar.Enabled = true;
+                radioButton_Arreglado_Modificar.Visible = true;
+
+                radioButton_Averiado_Modificar.Enabled = true;
+                radioButton_Averiado_Modificar.Visible = true;
+
+                radioButton_Arreglado_Modificar.Location = new Point(6, 96);
+                radioButton_Averiado_Modificar.Location = new Point(93, 96);
+            }
+>>>>>>> Stashed changes
             else
             {
                 //Modificar Columna:
@@ -243,6 +329,12 @@ namespace Diseño
 
                 radioButton_Averiado_Modificar.Enabled = false;
                 radioButton_Averiado_Modificar.Visible = false;
+<<<<<<< Updated upstream
+=======
+
+                radioButton_Arreglado_Modificar.Location = new Point(6, 96);
+                radioButton_Averiado_Modificar.Location = new Point(93, 96);
+>>>>>>> Stashed changes
             }
         }
 
@@ -272,6 +364,12 @@ namespace Diseño
                 labelAdelanto_Modificar.Enabled = true;
                 labelAdelanto_Modificar.Visible = true;
 
+<<<<<<< Updated upstream
+=======
+                labelID_Tecnico_Trabajo_Modificar.Enabled = true;
+                labelID_Tecnico_Trabajo_Modificar.Visible = true;
+
+>>>>>>> Stashed changes
                 //TextBox y DateTimePicker:
                 txtTrabajo_ID_Modificar.Enabled = true;
                 txtTrabajo_ID_Modificar.Visible = true;
@@ -279,7 +377,11 @@ namespace Diseño
                 dateTimePicker_Plazo_Modificar.Enabled = true;
                 dateTimePicker_Plazo_Modificar.Visible = true;
 
+<<<<<<< Updated upstream
                 dateTimePicker_Plazo_Modificar.Location = new Point(6, 173);
+=======
+                dateTimePicker_Plazo_Modificar.Location = new Point(6, 133);
+>>>>>>> Stashed changes
 
                 txtPresupuesto_Modificar.Enabled = true;
                 txtPresupuesto_Modificar.Visible = true;
@@ -290,11 +392,21 @@ namespace Diseño
                 dateTimePicker_FechaDeIngreso_Modificar.Enabled = true;
                 dateTimePicker_FechaDeIngreso_Modificar.Visible = true;
 
+<<<<<<< Updated upstream
                 dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 324);
+=======
+                dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 284);
+>>>>>>> Stashed changes
 
                 txtAdelanto_Modificar.Enabled = true;
                 txtAdelanto_Modificar.Visible = true;
 
+<<<<<<< Updated upstream
+=======
+                txtID_Tecnico_Trabajo_Modficar.Enabled = true;
+                txtID_Tecnico_Trabajo_Modficar.Visible = true;
+
+>>>>>>> Stashed changes
                 //Modificar Columna:
                 labelModificar_Columna_Trabajos.Enabled = false;
                 labelModificar_Columna_Trabajos.Visible = false;
@@ -307,11 +419,21 @@ namespace Diseño
                 dateTimePicker_Plazo_Modificar.Enabled = true;
                 dateTimePicker_Plazo_Modificar.Visible = true;
 
+<<<<<<< Updated upstream
                 dateTimePicker_Plazo_Modificar.Location = new Point(6, 135);
+=======
+                dateTimePicker_Plazo_Modificar.Location = new Point(6, 95);
+>>>>>>> Stashed changes
 
                 labelModificar_Columna_Trabajos.Enabled = true;
                 labelModificar_Columna_Trabajos.Visible = true;
 
+<<<<<<< Updated upstream
+=======
+                labelID_Tecnico_Trabajo_Modificar.Enabled = false;
+                labelID_Tecnico_Trabajo_Modificar.Visible = false;
+
+>>>>>>> Stashed changes
                 //Labels:
                 labelError_Modificar_Trabajos.Enabled = false;
                 labelError_Modificar_Trabajos.Visible = false;
@@ -322,6 +444,11 @@ namespace Diseño
                 labelPlazo_Modificar.Enabled = false;
                 labelPlazo_Modificar.Visible = false;
 
+<<<<<<< Updated upstream
+=======
+                labelPlazo_Modificar.Location = new Point(3, 79);
+
+>>>>>>> Stashed changes
                 labelPresupuesto_Modificar.Enabled = false;
                 labelPresupuesto_Modificar.Visible = false;
 
@@ -352,16 +479,30 @@ namespace Diseño
 
                 txtModificar_Columna_Trabajos.Enabled = false;
                 txtModificar_Columna_Trabajos.Visible = false;
+<<<<<<< Updated upstream
+=======
+
+                txtID_Tecnico_Trabajo_Modficar.Enabled = false;
+                txtID_Tecnico_Trabajo_Modficar.Visible = false;
+>>>>>>> Stashed changes
             }
             else if (comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso"))
             {
                 dateTimePicker_FechaDeIngreso_Modificar.Enabled = true;
                 dateTimePicker_FechaDeIngreso_Modificar.Visible = true;
+<<<<<<< Updated upstream
 
                 labelModificar_Columna_Trabajos.Enabled = true;
                 labelModificar_Columna_Trabajos.Visible = true;
 
                 dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 135);
+=======
+                dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 95);
+
+                labelModificar_Columna_Trabajos.Enabled = true;
+                labelModificar_Columna_Trabajos.Visible = true;
+                labelModificar_Columna_Trabajos.Location = new Point(3, 79);
+>>>>>>> Stashed changes
 
                 //Labels:
                 labelError_Modificar_Trabajos.Enabled = false;
@@ -385,6 +526,12 @@ namespace Diseño
                 labelAdelanto_Modificar.Enabled = false;
                 labelAdelanto_Modificar.Visible = false;
 
+<<<<<<< Updated upstream
+=======
+                labelID_Tecnico_Trabajo_Modificar.Enabled = false;
+                labelID_Tecnico_Trabajo_Modificar.Visible = false;
+
+>>>>>>> Stashed changes
                 //TextBox y DateTimePicker:
                 txtTrabajo_ID_Modificar.Enabled = false;
                 txtTrabajo_ID_Modificar.Visible = false;
@@ -403,6 +550,12 @@ namespace Diseño
 
                 txtModificar_Columna_Trabajos.Enabled = false;
                 txtModificar_Columna_Trabajos.Visible = false;
+<<<<<<< Updated upstream
+=======
+
+                txtID_Tecnico_Trabajo_Modficar.Enabled = false;
+                txtID_Tecnico_Trabajo_Modficar.Visible = false;
+>>>>>>> Stashed changes
             }
             else
             {
@@ -435,6 +588,12 @@ namespace Diseño
                 labelAdelanto_Modificar.Enabled = false;
                 labelAdelanto_Modificar.Visible = false;
 
+<<<<<<< Updated upstream
+=======
+                labelID_Tecnico_Trabajo_Modificar.Enabled = false;
+                labelID_Tecnico_Trabajo_Modificar.Visible = false;
+
+>>>>>>> Stashed changes
                 //TextBox y DateTimePicker:
                 txtTrabajo_ID_Modificar.Enabled = false;
                 txtTrabajo_ID_Modificar.Visible = false;
@@ -453,6 +612,12 @@ namespace Diseño
 
                 txtAdelanto_Modificar.Enabled = false;
                 txtAdelanto_Modificar.Visible = false;
+<<<<<<< Updated upstream
+=======
+
+                txtID_Tecnico_Trabajo_Modficar.Enabled = false;
+                txtID_Tecnico_Trabajo_Modficar.Visible = false;
+>>>>>>> Stashed changes
             }
         }
 
@@ -477,7 +642,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM celulares WHERE Cedula_Cliente = (SELECT cedula FROM clientes WHERE Nombre = '" + txtCampo_Busqueda.Text + "')";
+=======
+                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Cedula_Cliente = (SELECT cedula FROM clientes WHERE Nombre = '" + txtCampo_Busqueda.Text + "') AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -500,7 +669,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM celulares WHERE Marca = '" + txtCampo_Busqueda.Text + "'";
+=======
+                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Marca = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -523,7 +696,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM celulares WHERE Modelo = '" + txtCampo_Busqueda.Text + "'";
+=======
+                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Modelo = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -546,7 +723,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM celulares WHERE ID = " + txtCampo_Busqueda.Text + "";
+=======
+                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE ID = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -580,7 +761,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM trabajos WHERE Presupuesto = " + txtCampo_Busqueda.Text + ";";
+=======
+                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Presupuesto = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -604,7 +789,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM trabajos WHERE Problema = '" + txtCampo_Busqueda.Text + "';";
+=======
+                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Problema = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -628,7 +817,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM trabajos WHERE Fecha_Ingreso = '" + txtCampo_Busqueda.Text + "';";
+=======
+                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Fecha_Ingreso = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -652,7 +845,11 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
+<<<<<<< Updated upstream
                                 busqueda = "SELECT * FROM trabajos WHERE ID_Celular = " + txtCampo_Busqueda.Text + ";";
+=======
+                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE ID_Celular = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
+>>>>>>> Stashed changes
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -680,6 +877,10 @@ namespace Diseño
         //Función para una ayuda visual al usuario, no muy elegante pero intenta hacer su función principal.
         private void AyudaVisual_Tabla_Mostrar()
         {
+<<<<<<< Updated upstream
+=======
+            /*
+>>>>>>> Stashed changes
             if (radioButton_TablaCelulares.Checked || radioButton_TablaTrabajos.Checked)
             {
                 labAyudaVisual_SeleccionarTabla.Visible = false;
@@ -690,6 +891,10 @@ namespace Diseño
                 labAyudaVisual_SeleccionarTabla.Visible = true;
                 labAyudaVisual_SeleccionarTabla.Enabled = true;
             }
+<<<<<<< Updated upstream
+=======
+            */
+>>>>>>> Stashed changes
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -714,11 +919,19 @@ namespace Diseño
                 btnEliminar.ForeColor = Color.Black;
                 btnCerrarSesion.ForeColor = Color.Black;
                 btnMenuPrincipal.ForeColor = Color.Black;
+<<<<<<< Updated upstream
                 btnAgregar.BackColor = Color.DarkRed;
                 btnModificar.BackColor = Color.DarkRed;
                 btnEliminar.BackColor = Color.DarkRed;
                 btnCerrarSesion.BackColor = Color.DarkRed;
                 btnMenuPrincipal.BackColor = Color.DarkRed;
+=======
+                btnAgregar.BackColor = Color.FromArgb(255, 40, 40);
+                btnModificar.BackColor = Color.FromArgb(255, 40, 40);
+                btnEliminar.BackColor = Color.FromArgb(255, 40, 40);
+                btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
+>>>>>>> Stashed changes
 
                 tablaCelulares.Location = new Point(124, 78);
                 tablaTrabajos.Location = new Point(124, 78);
@@ -726,6 +939,7 @@ namespace Diseño
             else
             {
                 panelD.Width = 45;
+<<<<<<< Updated upstream
                 btnAgregar.ForeColor = Color.Firebrick;
                 btnModificar.ForeColor = Color.Firebrick;
                 btnEliminar.ForeColor = Color.Firebrick;
@@ -736,6 +950,18 @@ namespace Diseño
                 btnEliminar.BackColor = Color.Firebrick;
                 btnModificar.BackColor = Color.Firebrick;
                 btnMenuPrincipal.BackColor = Color.Firebrick;
+=======
+                btnAgregar.ForeColor = Color.FromArgb(255, 40, 40);
+                btnModificar.ForeColor = Color.FromArgb(255, 40, 40);
+                btnEliminar.ForeColor = Color.FromArgb(255, 40, 40);
+                btnCerrarSesion.ForeColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal.ForeColor = Color.FromArgb(255, 40, 40);
+                btnAgregar.BackColor = Color.FromArgb(255, 40, 40);
+                btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
+                btnEliminar.BackColor = Color.FromArgb(255, 40, 40);
+                btnModificar.BackColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
+>>>>>>> Stashed changes
 
                 btnAgregar.FlatStyle = FlatStyle.Flat;
                 btnModificar.FlatStyle = FlatStyle.Flat;
@@ -993,12 +1219,45 @@ namespace Diseño
         }
 
         //Botones con funciones SQL:
+<<<<<<< Updated upstream
+=======
+        private void tablaCelulares_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                numeroDeFilaCelulares = e.RowIndex;
+                clavePrimariaCelulares = tablaCelulares.Rows[numeroDeFilaCelulares].Cells["ID"].Value.ToString();
+                if (groupBox_EliminarCelulares.Height > 300)
+                {
+                    txtID_Celular_Eliminar.Text = clavePrimariaCelulares;
+                }
+            }
+        }
+
+        private void tablaTrabajos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                numeroDeFilaTrabajos = e.RowIndex;
+                clavePrimariaTrabajos = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["ID"].Value.ToString();
+                if (groupBox_EliminarTrabajos.Height > 300)
+                {
+                    txtID_Trabajo_Eliminar.Text = clavePrimariaTrabajos;
+                }
+            }
+        }
+
+>>>>>>> Stashed changes
         private void btnAgregarCelular_Click(object sender, EventArgs e)
         {
             txtCI_Del_Dueño_Agregar.MaxLength = 8;
             try
             {
+<<<<<<< Updated upstream
                 if (txtModelo_Agregar.Text != "" && txtMarca_Agregar.Text != "" && txtIMEI_Agregar.Text != "" && txtCI_Del_Dueño_Agregar.Text != "" && txtTecnico_Agregar.Text != "")
+=======
+                if (txtModelo_Agregar.Text != "" && txtMarca_Agregar.Text != "" && txtCI_Del_Dueño_Agregar.Text != "" && txtID_Tecnico_Agregar_Celulares.Text != "")
+>>>>>>> Stashed changes
                 {
 
                     if (radioButton_Arreglado_Agregar.Checked.Equals(true) || radioButton_Averiado_Agregar.Checked.Equals(true))
@@ -1016,7 +1275,11 @@ namespace Diseño
                             estado = "Averiado";
                         }
                         ciCliente = txtCI_Del_Dueño_Agregar.Text;
+<<<<<<< Updated upstream
                         idUsuario = int.Parse(txtTecnico_Agregar.Text);
+=======
+                        idUsuario = int.Parse(txtID_Tecnico_Agregar_Celulares.Text);
+>>>>>>> Stashed changes
 
                         insertarCelulares = "INSERT INTO celulares(Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario) VALUES('" + modelo + "', '" + marca + "', '" + imei + "', '" + estado + "', '" + ciCliente + "', " + idUsuario + ")";
                         cmd = new MySqlCommand(insertarCelulares, conn);
@@ -1061,14 +1324,21 @@ namespace Diseño
                 labelError_Modificar_Celulares.Visible = false;
 
                 //Codigo para modificar el Celular:
+<<<<<<< Updated upstream
                 if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && txtID_Celular_Modificar.Text != "" && txtTecnico_Modificar.Text != "")
+=======
+                if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && txtTecnico_Modificar.Text != "")
+>>>>>>> Stashed changes
                 {
                     if (radioButton_Arreglado_Modificar.Checked == true || radioButton_Averiado_Modificar.Checked == true)
                     {
                         try
                         {
                             conn.Open();
+<<<<<<< Updated upstream
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
+=======
+>>>>>>> Stashed changes
                             modelo = txtModelo_Modificar.Text;
                             marca = txtMarca_Modificar.Text;
                             imei = txtIMEI_Modificar.Text;
@@ -1083,13 +1353,20 @@ namespace Diseño
                             ciCliente = txtCI_Del_Dueño_Modificar.Text;
                             idUsuario = int.Parse(txtTecnico_Modificar.Text);
 
+<<<<<<< Updated upstream
                             modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "', Marca = '" + marca + "', IMEI = '" + imei + "', Estado = '" + estado + "', Cedula_Cliente = '" + ciCliente + "', ID_Usuario = " + idUsuario + " WHERE celulares.ID = " + idCelular + ";";
+=======
+                            modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "', Marca = '" + marca + "', IMEI = '" + imei + "', Estado = '" + estado + "', Cedula_Cliente = '" + ciCliente + "', ID_Usuario = " + idUsuario + " WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
                             {
                                 cmd.ExecuteNonQuery();
+<<<<<<< Updated upstream
                                 MessageBox.Show("Celular correctamente modificado", "Éxito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+=======
+>>>>>>> Stashed changes
                             }
                             catch (Exception ex)
                             {
@@ -1128,12 +1405,20 @@ namespace Diseño
                 switch (option)
                 {
                     case "Modelo":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
                         {
                             conn.Open();
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             modelo = txtModificar_Columna_Celulares.Text;
                             modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "' WHERE celulares.ID = " + idCelular + ";";
+=======
+                        if (txtModificar_Columna_Celulares.Text != "")
+                        {
+                            conn.Open();
+                            modelo = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "' WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
@@ -1157,12 +1442,20 @@ namespace Diseño
                         break;
 
                     case "Marca":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
                         {
                             conn.Open();
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             marca = txtModificar_Columna_Celulares.Text;
                             modifcarCelulares = "UPDATE celulares SET Marca = '" + marca + "' WHERE celulares.ID = " + idCelular + ";";
+=======
+                        if (txtModificar_Columna_Celulares.Text != "")
+                        {
+                            conn.Open();
+                            marca = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Marca = '" + marca + "' WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
@@ -1186,12 +1479,20 @@ namespace Diseño
                         break;
 
                     case "IMEI":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
                         {
                             conn.Open();
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             imei = txtModificar_Columna_Celulares.Text;
                             modifcarCelulares = "UPDATE celulares SET Marca = '" + imei + "' WHERE celulares.ID = " + idCelular + ";";
+=======
+                        if (txtModificar_Columna_Celulares.Text != "")
+                        {
+                            conn.Open();
+                            imei = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET IMEI = '" + imei + "' WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
@@ -1215,12 +1516,28 @@ namespace Diseño
                         break;
 
                     case "Estado":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
                         {
                             conn.Open();
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             estado = txtModificar_Columna_Celulares.Text;
                             modifcarCelulares = "UPDATE celulares SET Marca = '" + estado + "' WHERE celulares.ID = " + idCelular + ";";
+=======
+                        if (radioButton_Averiado_Modificar.Checked.Equals(true) || radioButton_Arreglado_Modificar.Checked.Equals(true))
+                        {
+                            if (radioButton_Arreglado_Modificar.Checked)
+                            {
+                                estado = "Arreglado";
+                            }
+                            else
+                            {
+                                estado = "Averiado";
+                            }
+
+                            conn.Open();
+                            modifcarCelulares = "UPDATE celulares SET Estado = '" + estado + "' WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
@@ -1244,12 +1561,20 @@ namespace Diseño
                         break;
 
                     case "Cedula del dueño":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
                         {
                             conn.Open();
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             ciCliente = txtModificar_Columna_Celulares.Text;
                             modifcarCelulares = "UPDATE celulares SET Marca = '" + ciCliente + "' WHERE celulares.ID = " + idCelular + ";";
+=======
+                        if (txtModificar_Columna_Celulares.Text != "")
+                        {
+                            conn.Open();
+                            ciCliente = txtModificar_Columna_Celulares.Text;
+                            modifcarCelulares = "UPDATE celulares SET Cedula_Cliente = '" + ciCliente + "' WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
@@ -1273,12 +1598,20 @@ namespace Diseño
                         break;
 
                     case "ID del usuario/tecnico":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Celulares.Text != "" && txtID_Celular_Modificar.Text != "")
                         {
                             conn.Open();
                             idCelular = int.Parse(txtID_Celular_Modificar.Text);
                             idUsuario = int.Parse(txtModificar_Columna_Celulares.Text);
                             modifcarCelulares = "UPDATE celulares SET Marca = " + idUsuario + " WHERE celulares.ID = " + idCelular + ";";
+=======
+                        if (txtModificar_Columna_Celulares.Text != "")
+                        {
+                            conn.Open();
+                            idUsuario = int.Parse(txtModificar_Columna_Celulares.Text);
+                            modifcarCelulares = "UPDATE celulares SET ID_Usuario = " + idUsuario + " WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             try
@@ -1416,7 +1749,11 @@ namespace Diseño
                 try
                 {
                     conn.Open();
+<<<<<<< Updated upstream
                     eliminarCelulares = "DELETE FROM celulares WHERE ID = " + idCelular + ";";
+=======
+                    eliminarCelulares = "UPDATE celulares SET Baja = 0 WHERE ID = " + idCelular + ";";
+>>>>>>> Stashed changes
                     cmd = new MySqlCommand(eliminarCelulares, conn);
 
                     try
@@ -1446,13 +1783,20 @@ namespace Diseño
 
         private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != ""&& txtTecnicoACargo_groupBox_AgregarTrabajos.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && txtID_Trabajo_Agregar.Text != "")
+=======
+            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && txtID_Trabajo_Agregar.Text != "" || txtID_Tecnico_Agregar_Trabajos.Text != "")
+>>>>>>> Stashed changes
             {
                 try
                 {
                     conn.Open();
                     idCelular = int.Parse(txtID_Trabajo_Agregar.Text);
+<<<<<<< Updated upstream
                     tecnicoACargo = int.Parse(txtTecnicoACargo_groupBox_AgregarTrabajos.Text);
+=======
+>>>>>>> Stashed changes
                     plazo = dateTimePicker_Plazo_Agregar.Value;
                     mesPlazo = plazo.Month;
                     diaPlazo = plazo.Day;
@@ -1506,8 +1850,14 @@ namespace Diseño
                         }
                     }
                     adelanto = int.Parse(txtAdelanto_Agregar.Text);
+<<<<<<< Updated upstream
 
                     insertarTrabajos = "INSERT INTO Trabajos(Plazo, ID_Tecnico, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES('" + stringPlazo + "', " + tecnicoACargo + ", " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
+=======
+                    tecnicoACargo = int.Parse(txtID_Tecnico_Agregar_Trabajos.Text);
+
+                    insertarTrabajos = "INSERT INTO Trabajos(ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES(" + tecnicoACargo + ",'" + stringPlazo + "', " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
+>>>>>>> Stashed changes
                     cmd = new MySqlCommand(insertarTrabajos, conn);
                     try
                     {
@@ -1543,12 +1893,20 @@ namespace Diseño
                 labelError_Modificar_Trabajos.Visible = false;
 
                 //Codigo para modificar el Trabajos:
+<<<<<<< Updated upstream
                 if (txtTrabajo_ID_Modificar.Text != "" && txtID_Trabajo_Modificar.Text != "" && dateTimePicker_Plazo_Modificar.Value != null && txtPresupuesto_Modificar.Text != "" && txtProblema_Modificar.Text != "" && dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtAdelanto_Modificar.Text != null)
+=======
+                if (txtTrabajo_ID_Modificar.Text != "" && dateTimePicker_Plazo_Modificar.Value != null && txtPresupuesto_Modificar.Text != "" && txtProblema_Modificar.Text != "" && dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtAdelanto_Modificar.Text != null)
+>>>>>>> Stashed changes
                 {
                     try
                     {
                         conn.Open();
+<<<<<<< Updated upstream
                         idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+=======
+                        tecnicoACargo = int.Parse(txtID_Tecnico_Trabajo_Modficar.Text);
+>>>>>>> Stashed changes
                         idCelular = int.Parse(txtTrabajo_ID_Modificar.Text);
                         plazo = dateTimePicker_FechaDeIngreso_Modificar.Value;
                         mesPlazo = plazo.Month;
@@ -1604,11 +1962,21 @@ namespace Diseño
                         }
                         adelanto = int.Parse(txtAdelanto_Modificar.Text);
 
+<<<<<<< Updated upstream
                         modifcarTrabajos = "UPDATE trabajos SET Plazo = '" + stringPlazo + "', Presupuesto = " + presupuesto + ", Problema = '" + problema + "', Fecha_Ingreso = '" + stringFechaIngreso + "', Adelanto = " + adelanto + ", ID_Celular = " + idCelular + " WHERE trabajos.ID = " + idTrabajo + ";";
+=======
+                        modifcarTrabajos = "UPDATE trabajos SET ID_Tecnico = '" + tecnicoACargo + "' Plazo = '" + stringPlazo + "', Presupuesto = " + presupuesto + ", Problema = '" + problema + "', Fecha_Ingreso = '" + stringFechaIngreso + "', Adelanto = " + adelanto + ", ID_Celular = " + idCelular + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+>>>>>>> Stashed changes
                         cmd = new MySqlCommand(modifcarTrabajos, conn);
                         try
                         {
                             cmd.ExecuteNonQuery();
+<<<<<<< Updated upstream
+=======
+                            txtTrabajo_ID_Modificar.Text = "";
+                            txtPresupuesto_Modificar.Text = "";
+                            txtProblema_Modificar.Text = "";
+>>>>>>> Stashed changes
                         }
                         catch (Exception ex)
                         {
@@ -1631,7 +1999,11 @@ namespace Diseño
                 }
             }
 
+<<<<<<< Updated upstream
             else if (comboBoxColumnas_Trabajos.Text.Equals("Adelanto") || comboBoxColumnas_Trabajos.Text.Equals("Plazo") || comboBoxColumnas_Trabajos.Text.Equals("Presupuesto") || comboBoxColumnas_Trabajos.Text.Equals("Problema") || comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso") || comboBoxColumnas_Trabajos.Text.Equals("ID del celular"))
+=======
+            else if (comboBoxColumnas_Trabajos.Text.Equals("Adelanto") || comboBoxColumnas_Trabajos.Text.Equals("Plazo") || comboBoxColumnas_Trabajos.Text.Equals("Presupuesto") || comboBoxColumnas_Trabajos.Text.Equals("Problema") || comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso") || comboBoxColumnas_Trabajos.Text.Equals("ID del celular") || comboBoxColumnas_Trabajos.Text.Equals("ID del tecnico"))
+>>>>>>> Stashed changes
             {
                 labelError_Modificar_Trabajos.Enabled = false;
                 labelError_Modificar_Trabajos.Visible = false;
@@ -1641,10 +2013,16 @@ namespace Diseño
                 switch (option)
                 {
                     case "Plazo":
+<<<<<<< Updated upstream
                         if (dateTimePicker_Plazo_Modificar.Value != null && txtID_Trabajo_Modificar.Text != "")
                         {
                             conn.Open();
                             idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+=======
+                        if (dateTimePicker_Plazo_Modificar.Value != null)
+                        {
+                            conn.Open();
+>>>>>>> Stashed changes
                             plazo = dateTimePicker_Plazo_Modificar.Value;
                             mesPlazo = plazo.Month;
                             diaPlazo = plazo.Day;
@@ -1671,7 +2049,11 @@ namespace Diseño
                                 }
                             }
 
+<<<<<<< Updated upstream
                             modifcarTrabajos = "UPDATE trabajos SET Plazo = '" + stringPlazo + "' WHERE trabajos.ID = " + idTrabajo + ";";
+=======
+                            modifcarTrabajos = "UPDATE trabajos SET Plazo = '" + stringPlazo + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarTrabajos, conn);
 
                             try
@@ -1695,6 +2077,7 @@ namespace Diseño
                         break;
 
                     case "Presupuesto":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
                         {
                             conn.Open();
@@ -1702,6 +2085,14 @@ namespace Diseño
                             presupuesto = int.Parse(txtModificar_Columna_Trabajos.Text);
 
                             modifcarTrabajos = "UPDATE trabajos SET Presupuesto = " + presupuesto + " WHERE trabajos.ID = " + idTrabajo + ";";
+=======
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            presupuesto = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET Presupuesto = " + presupuesto + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarTrabajos, conn);
 
                             try
@@ -1725,6 +2116,7 @@ namespace Diseño
                         break;
 
                     case "Problema":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
                         {
                             conn.Open();
@@ -1732,6 +2124,14 @@ namespace Diseño
                             problema = txtModificar_Columna_Trabajos.Text;
 
                             modifcarTrabajos = "UPDATE trabajos SET Problema = '" + problema + "' WHERE trabajos.ID = " + idTrabajo + ";";
+=======
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            problema = txtModificar_Columna_Trabajos.Text;
+
+                            modifcarTrabajos = "UPDATE trabajos SET Problema = '" + problema + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarTrabajos, conn);
 
                             try
@@ -1755,10 +2155,16 @@ namespace Diseño
                         break;
 
                     case "Fecha de ingreso":
+<<<<<<< Updated upstream
                         if (dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtID_Trabajo_Modificar.Text != "")
                         {
                             conn.Open();
                             idTrabajo = int.Parse(txtID_Trabajo_Modificar.Text);
+=======
+                        if (dateTimePicker_FechaDeIngreso_Modificar.Value != null)
+                        {
+                            conn.Open();
+>>>>>>> Stashed changes
                             fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
                             mesFechaIngreso = fechaIngreso.Month;
                             diaFechaIngreso = fechaIngreso.Day;
@@ -1785,7 +2191,11 @@ namespace Diseño
                                 }
                             }
 
+<<<<<<< Updated upstream
                             modifcarTrabajos = "UPDATE trabajos SET Fecha_Ingreso = '" + stringFechaIngreso + "' WHERE trabajos.ID = " + idTrabajo + ";";
+=======
+                            modifcarTrabajos = "UPDATE trabajos SET Fecha_Ingreso = '" + stringFechaIngreso + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarTrabajos, conn);
 
                             try
@@ -1808,6 +2218,7 @@ namespace Diseño
                         }
                         break;
                     case "Adelanto":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
                         {
                             conn.Open();
@@ -1815,6 +2226,14 @@ namespace Diseño
                             adelanto = int.Parse(txtModificar_Columna_Trabajos.Text);
 
                             modifcarTrabajos = "UPDATE trabajos SET Adelanto = " + adelanto + " WHERE trabajos.ID = " + idTrabajo + ";";
+=======
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            adelanto = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET Adelanto = " + adelanto + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarTrabajos, conn);
 
                             try
@@ -1838,6 +2257,7 @@ namespace Diseño
                         break;
 
                     case "ID del celular":
+<<<<<<< Updated upstream
                         if (txtModificar_Columna_Trabajos.Text != "" && txtID_Trabajo_Modificar.Text != "")
                         {
                             conn.Open();
@@ -1845,6 +2265,14 @@ namespace Diseño
                             idCelular = int.Parse(txtModificar_Columna_Trabajos.Text);
 
                             modifcarTrabajos = "UPDATE trabajos SET ID_Celular = " + idCelular + " WHERE trabajos.ID = " + idTrabajo + ";";
+=======
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET ID_Celular = " + idCelular + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+>>>>>>> Stashed changes
                             cmd = new MySqlCommand(modifcarTrabajos, conn);
 
                             try
@@ -1866,6 +2294,37 @@ namespace Diseño
                             MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         }
                         break;
+<<<<<<< Updated upstream
+=======
+                    case "ID del tecnico":
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            tecnicoACargo = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET ID_Tecnico = " + tecnicoACargo + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break; 
+>>>>>>> Stashed changes
                 }
             }
             else
@@ -1928,7 +2387,11 @@ namespace Diseño
                 try
                 {
                     conn.Open();
+<<<<<<< Updated upstream
                     eliminarTrabajos = "DELETE FROM trabajos WHERE ID = " + idTrabajo + ";";
+=======
+                    eliminarTrabajos = "UPDATE trabajos SET Baja = 0 WHERE ID = " + idTrabajo + ";";
+>>>>>>> Stashed changes
                     cmd = new MySqlCommand(eliminarTrabajos, conn);
 
                     try
@@ -1974,6 +2437,14 @@ namespace Diseño
             Usuarios.Show();
             this.Hide();
         }
+<<<<<<< Updated upstream
+=======
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            Clientes.Show();
+            this.Hide();
+        }
+>>>>>>> Stashed changes
 
         //Timers de los paneles:
         private void timer_Agregar_Reducir_Tick(object sender, EventArgs e)
@@ -2151,7 +2622,11 @@ namespace Diseño
 
         private void timer_GroupBox_Menu_Agrandar_Tick(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             if (groupBox_Menu.Height < 475)
+=======
+            if (groupBox_Menu.Height < 480)
+>>>>>>> Stashed changes
             {
                 groupBox_Menu.Height = groupBox_Menu.Height + 12;
                 groupBox_Menu.Enabled = true;
@@ -2258,6 +2733,10 @@ namespace Diseño
             if (groupBox_EliminarTrabajos.Height < 486)
             {
                 groupBox_EliminarTrabajos.Height = groupBox_EliminarTrabajos.Height + 12;
+<<<<<<< Updated upstream
+=======
+                groupBox_EliminarTrabajos.Enabled = true;
+>>>>>>> Stashed changes
             }
             else
             {
@@ -2331,10 +2810,17 @@ namespace Diseño
 
 
 
+<<<<<<< Updated upstream
             if (tablaCelulares.Height <= 599)
             {
                 tablaTrabajos.Height = 0;
                 tablaCelulares.Height = 599;
+=======
+            if (tablaCelulares.Height <= 600)
+            {
+                tablaTrabajos.Height = 0;
+                tablaCelulares.Height = 600;
+>>>>>>> Stashed changes
                 MostrarDatosEnLasTablasCelulares();
             }
             else
@@ -2357,7 +2843,11 @@ namespace Diseño
             if (tablaTrabajos.Height < 600)
             {
                 tablaCelulares.Height = 0;
+<<<<<<< Updated upstream
                 tablaTrabajos.Height = 650;
+=======
+                tablaTrabajos.Height = 600;
+>>>>>>> Stashed changes
                 MostrarDatosEnLasTablasTrabajos();
             }
             else
@@ -2428,6 +2918,7 @@ namespace Diseño
         }
 
         //Que se cague, no más de 8 caracteres, que es lo que sería la cédula sin los puntos ni el guión.
+<<<<<<< Updated upstream
         private void txtCI_Del_Dueño_Agregar_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtCI_Del_Dueño_Agregar.MaxLength = 8;
@@ -2441,6 +2932,19 @@ namespace Diseño
             else
             {
                 e.Handled = true;
+=======
+        private void txtCI_Del_Dueño_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCI_Del_Dueño_Agregar.Text.Length <= 8 && txtCI_Del_Dueño_Agregar.Text.Length > 0)
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
+                int caracteresRestantes = 8 - txtCI_Del_Dueño_Agregar.TextLength;
+                label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres Restantes: " + caracteresRestantes + "/8"; 
+            }
+            else
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
+>>>>>>> Stashed changes
             }
         }
 
