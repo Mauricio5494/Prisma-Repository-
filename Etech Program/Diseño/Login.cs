@@ -26,7 +26,6 @@ namespace Diseño
         MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd_sql;
         MySqlDataReader reader;
-        Principal Taller = new Principal();
 
         //Utilidades:
         bool userRootOk = false;
@@ -51,6 +50,7 @@ namespace Diseño
 
         private void btnIngreso_Click(object sender, System.EventArgs e)
         {
+            Principal Taller = new Principal();
             Nombre = txtNombre.Text;
             Password = txtPass.Text;
 
@@ -84,6 +84,7 @@ namespace Diseño
         private void btnInvitado_Click(object sender, EventArgs e)
         {
             //Menu mostrar = new Menu();
+            Principal Taller = new Principal();
             Taller.Show();
             Seguridad.SetInvitado = true;
             this.Hide();

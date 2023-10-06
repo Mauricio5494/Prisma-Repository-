@@ -22,7 +22,7 @@ namespace Diseño
         public bool PassSucess;
         private string modificarAtributosDeUsuarios;
 
-        //Instancias:
+        //Instancias
         DataTable dataTableUsuarios = new DataTable();
         MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd = new MySqlCommand();

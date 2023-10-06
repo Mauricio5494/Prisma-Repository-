@@ -66,8 +66,8 @@ namespace Diseño
         int tecnicoACargo;
 
         //instancias:
-        Usuarios Usuarios = new Usuarios();
-        Clientes Clientes = new Clientes();
+        private Usuarios Usuarios;
+        private Clientes clientes;
         DataTable DataTableCelulares = new DataTable();
         DataTable DataTableTrabajos = new DataTable();
         DataTable DataTableCelularesBusqueda = new DataTable();
@@ -2119,12 +2119,14 @@ namespace Diseño
         //Botones del Menu principal:
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Usuarios.Show();
+            Usuarios mostrar = new Usuarios();
+            mostrar.Show();
             this.Hide();
         }
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            Clientes.Show();
+            Clientes mostrar = new Clientes();
+            mostrar.Show();
             this.Hide();
         }
 
