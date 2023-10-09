@@ -6,12 +6,19 @@ using System.Windows.Forms;
 namespace Diseño
 {
     class DataBaseConnect
+
+
     {
-        public static MySqlConnection Conectarse()
+
+
+
+
+
+        public static MySqlConnection Conectarse(string uid, string pwd)
         {
             //requisitos para la conexion (informacion del base de datos):
-            string uid = "root";
-            string pwd = "";
+
+
             string servidor = "localhost";
             string port = "3306";
             string database = "etech_db";
