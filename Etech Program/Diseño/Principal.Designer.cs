@@ -170,8 +170,8 @@
             this.radioButton_CELULARES_Eliminar = new System.Windows.Forms.RadioButton();
             this.label_Tabla_Eliminar = new System.Windows.Forms.Label();
             this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
+            this.labMostrarIDdelCelularSeleccionado = new System.Windows.Forms.Label();
             this.btnEliminar_Celular = new System.Windows.Forms.Button();
-            this.txtID_Celular_Eliminar = new System.Windows.Forms.TextBox();
             this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
             this.timer_GroupBox_EliminarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_EliminarC_Reducir = new System.Windows.Forms.Timer(this.components);
@@ -902,7 +902,7 @@
             this.panel_Menu.Enabled = false;
             this.panel_Menu.Location = new System.Drawing.Point(916, 78);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(419, 600);
+            this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 16;
             // 
             // pictureBox_EtechLogo_PanelMenu
@@ -1665,8 +1665,8 @@
             // groupBox_EliminarCelulares
             // 
             this.groupBox_EliminarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_EliminarCelulares.Controls.Add(this.labMostrarIDdelCelularSeleccionado);
             this.groupBox_EliminarCelulares.Controls.Add(this.btnEliminar_Celular);
-            this.groupBox_EliminarCelulares.Controls.Add(this.txtID_Celular_Eliminar);
             this.groupBox_EliminarCelulares.Controls.Add(this.label_ID_Celular_Eliminar);
             this.groupBox_EliminarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox_EliminarCelulares.Location = new System.Drawing.Point(42, 77);
@@ -1676,22 +1676,31 @@
             this.groupBox_EliminarCelulares.TabStop = false;
             this.groupBox_EliminarCelulares.Text = "Elimine un celular";
             // 
+            // labMostrarIDdelCelularSeleccionado
+            // 
+            this.labMostrarIDdelCelularSeleccionado.AutoSize = true;
+            this.labMostrarIDdelCelularSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labMostrarIDdelCelularSeleccionado.ForeColor = System.Drawing.Color.Brown;
+            this.labMostrarIDdelCelularSeleccionado.Location = new System.Drawing.Point(3, 70);
+            this.labMostrarIDdelCelularSeleccionado.Name = "labMostrarIDdelCelularSeleccionado";
+            this.labMostrarIDdelCelularSeleccionado.Size = new System.Drawing.Size(207, 13);
+            this.labMostrarIDdelCelularSeleccionado.TabIndex = 15;
+            this.labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla";
+            // 
             // btnEliminar_Celular
             // 
-            this.btnEliminar_Celular.Location = new System.Drawing.Point(6, 457);
+            this.btnEliminar_Celular.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Celular.Image = global::Diseño.Properties.Resources.cruz_16px_roja;
+            this.btnEliminar_Celular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Celular.Location = new System.Drawing.Point(9, 114);
             this.btnEliminar_Celular.Name = "btnEliminar_Celular";
             this.btnEliminar_Celular.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar_Celular.TabIndex = 14;
             this.btnEliminar_Celular.Text = "Eliminar";
-            this.btnEliminar_Celular.UseVisualStyleBackColor = true;
+            this.btnEliminar_Celular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Celular.UseVisualStyleBackColor = false;
             this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
-            // 
-            // txtID_Celular_Eliminar
-            // 
-            this.txtID_Celular_Eliminar.Location = new System.Drawing.Point(6, 56);
-            this.txtID_Celular_Eliminar.Name = "txtID_Celular_Eliminar";
-            this.txtID_Celular_Eliminar.Size = new System.Drawing.Size(325, 20);
-            this.txtID_Celular_Eliminar.TabIndex = 1;
             // 
             // label_ID_Celular_Eliminar
             // 
@@ -1853,10 +1862,10 @@
             this.Controls.Add(this.panel_Modificar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etech | Gestor de celulares";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panelD.ResumeLayout(false);
@@ -1978,7 +1987,6 @@
         private System.Windows.Forms.Panel panel_Eliminar;
         private System.Windows.Forms.GroupBox groupBox_EliminarCelulares;
         private System.Windows.Forms.Button btnEliminar_Celular;
-        private System.Windows.Forms.TextBox txtID_Celular_Eliminar;
         private System.Windows.Forms.Label label_ID_Celular_Eliminar;
         private System.Windows.Forms.Timer timer_GroupBox_EliminarC_Agrandar;
         private System.Windows.Forms.Timer timer_GroupBox_EliminarC_Reducir;
@@ -2035,6 +2043,7 @@
         private System.Windows.Forms.Label labelID_Tecnico_Agregar;
         private System.Windows.Forms.TextBox txtID_Tecnico_Trabajo_Modficar;
         private System.Windows.Forms.Label labelID_Tecnico_Trabajo_Modificar;
+        private System.Windows.Forms.Label labMostrarIDdelCelularSeleccionado;
     }
 }
 
