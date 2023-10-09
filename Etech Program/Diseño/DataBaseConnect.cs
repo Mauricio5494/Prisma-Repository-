@@ -6,14 +6,7 @@ using System.Windows.Forms;
 namespace Diseño
 {
     class DataBaseConnect
-
-
     {
-
-
-
-
-
         public static MySqlConnection Conectarse(string uid, string pwd)
         {
             //requisitos para la conexion (informacion del base de datos):

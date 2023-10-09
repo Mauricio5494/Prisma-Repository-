@@ -1103,10 +1103,15 @@ namespace Diseño
                     labMostrarIDdelCelularSeleccionado.ForeColor = Color.Black;
                     labMostrarIDdelCelularSeleccionado.Text = clavePrimariaCelulares;
                 }
+                else if (groupBox_ModificarCelulares.Height > 300)
+                {
+
+                }
                 else
                 {
                     labMostrarIDdelCelularSeleccionado.ForeColor = Color.Brown;
                     labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla.";
+
                 }
             }
         }
@@ -1542,8 +1547,8 @@ namespace Diseño
         private void btnEliminar_Celular_Click(object sender, EventArgs e)
         {
 
-        
-            
+
+
             try
             {
                 conn.Open();
@@ -1568,125 +1573,27 @@ namespace Diseño
             {
                 MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
-
-
-    }
 
 
 
-
-
-
-
-
-    private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
-    {
-        if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && txtID_Trabajo_Agregar.Text != "" || txtID_Tecnico_Agregar_Trabajos.Text != "")
-        {
-            try
-            {
-                conn.Open();
-                idCelular = int.Parse(txtID_Trabajo_Agregar.Text);
-                plazo = dateTimePicker_Plazo_Agregar.Value;
-                mesPlazo = plazo.Month;
-                diaPlazo = plazo.Day;
-                if (mesPlazo < 10)
-                {
-                    if (diaPlazo < 10)
-                    {
-                        stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
-                    }
-                    else
-                    {
-                        stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
-                    }
-                }
-                else
-                {
-                    if (diaPlazo < 10)
-                    {
-                        stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
-                    }
-                    else
-                    {
-                        stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
-                    }
-                }
-                presupuesto = int.Parse(txtPresupuesto_Agregar.Text);
-                problema = txtProblema_Agregar.Text;
-                fechaIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
-                mesFechaIngreso = fechaIngreso.Month;
-                diaFechaIngreso = fechaIngreso.Day;
-                if (mesFechaIngreso < 10)
-                {
-                    if (diaFechaIngreso < 10)
-                    {
-                        stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
-                    }
-                    else
-                    {
-                        stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
-                    }
-                }
-                else
-                {
-                    if (diaFechaIngreso < 10)
-                    {
-                        stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
-                    }
-                    else
-                    {
-                        stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
-                    }
-                }
-                adelanto = int.Parse(txtAdelanto_Agregar.Text);
-                tecnicoACargo = int.Parse(txtID_Tecnico_Agregar_Trabajos.Text);
-
-                insertarTrabajos = "INSERT INTO Trabajos(ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES(" + tecnicoACargo + ",'" + stringPlazo + "', " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
-                cmd = new MySqlCommand(insertarTrabajos, conn);
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se ingreso correctamente el Trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-                MostrarDatosEnLasTablasTrabajos();
-            }
         }
-        else
-        {
-            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-        }
-    }
 
-    private void btnModificar_Trabajo_Click(object sender, EventArgs e)
-    {
-        if (comboBoxColumnas_Trabajos.Text.Equals("Todas..."))
-        {
-            //Label de error:
-            labelError_Modificar_Trabajos.Enabled = false;
-            labelError_Modificar_Trabajos.Visible = false;
 
-            //Codigo para modificar el Trabajos:
-            if (txtTrabajo_ID_Modificar.Text != "" && dateTimePicker_Plazo_Modificar.Value != null && txtPresupuesto_Modificar.Text != "" && txtProblema_Modificar.Text != "" && dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtAdelanto_Modificar.Text != null)
+
+
+
+
+
+
+        private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
+        {
+            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && txtID_Trabajo_Agregar.Text != "" || txtID_Tecnico_Agregar_Trabajos.Text != "")
             {
                 try
                 {
                     conn.Open();
-                    tecnicoACargo = int.Parse(txtID_Tecnico_Trabajo_Modficar.Text);
-                    idCelular = int.Parse(txtTrabajo_ID_Modificar.Text);
-                    plazo = dateTimePicker_FechaDeIngreso_Modificar.Value;
+                    idCelular = int.Parse(txtID_Trabajo_Agregar.Text);
+                    plazo = dateTimePicker_Plazo_Agregar.Value;
                     mesPlazo = plazo.Month;
                     diaPlazo = plazo.Day;
                     if (mesPlazo < 10)
@@ -1711,9 +1618,9 @@ namespace Diseño
                             stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
                         }
                     }
-                    presupuesto = int.Parse(txtPresupuesto_Modificar.Text);
-                    problema = txtProblema_Modificar.Text;
-                    fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
+                    presupuesto = int.Parse(txtPresupuesto_Agregar.Text);
+                    problema = txtProblema_Agregar.Text;
+                    fechaIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
                     mesFechaIngreso = fechaIngreso.Month;
                     diaFechaIngreso = fechaIngreso.Day;
                     if (mesFechaIngreso < 10)
@@ -1738,20 +1645,18 @@ namespace Diseño
                             stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
                         }
                     }
-                    adelanto = int.Parse(txtAdelanto_Modificar.Text);
+                    adelanto = int.Parse(txtAdelanto_Agregar.Text);
+                    tecnicoACargo = int.Parse(txtID_Tecnico_Agregar_Trabajos.Text);
 
-                    modifcarTrabajos = "UPDATE trabajos SET ID_Tecnico = '" + tecnicoACargo + "' Plazo = '" + stringPlazo + "', Presupuesto = " + presupuesto + ", Problema = '" + problema + "', Fecha_Ingreso = '" + stringFechaIngreso + "', Adelanto = " + adelanto + ", ID_Celular = " + idCelular + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
-                    cmd = new MySqlCommand(modifcarTrabajos, conn);
+                    insertarTrabajos = "INSERT INTO Trabajos(ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES(" + tecnicoACargo + ",'" + stringPlazo + "', " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
+                    cmd = new MySqlCommand(insertarTrabajos, conn);
                     try
                     {
                         cmd.ExecuteNonQuery();
-                        txtTrabajo_ID_Modificar.Text = "";
-                        txtPresupuesto_Modificar.Text = "";
-                        txtProblema_Modificar.Text = "";
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se ingreso correctamente el Trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -1770,20 +1675,23 @@ namespace Diseño
             }
         }
 
-        else if (comboBoxColumnas_Trabajos.Text.Equals("Adelanto") || comboBoxColumnas_Trabajos.Text.Equals("Plazo") || comboBoxColumnas_Trabajos.Text.Equals("Presupuesto") || comboBoxColumnas_Trabajos.Text.Equals("Problema") || comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso") || comboBoxColumnas_Trabajos.Text.Equals("ID del celular") || comboBoxColumnas_Trabajos.Text.Equals("ID del tecnico"))
+        private void btnModificar_Trabajo_Click(object sender, EventArgs e)
         {
-            labelError_Modificar_Trabajos.Enabled = false;
-            labelError_Modificar_Trabajos.Visible = false;
-
-            option = comboBoxColumnas_Trabajos.Text;
-
-            switch (option)
+            if (comboBoxColumnas_Trabajos.Text.Equals("Todas..."))
             {
-                case "Plazo":
-                    if (dateTimePicker_Plazo_Modificar.Value != null)
+                //Label de error:
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
+
+                //Codigo para modificar el Trabajos:
+                if (txtTrabajo_ID_Modificar.Text != "" && dateTimePicker_Plazo_Modificar.Value != null && txtPresupuesto_Modificar.Text != "" && txtProblema_Modificar.Text != "" && dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtAdelanto_Modificar.Text != null)
+                {
+                    try
                     {
                         conn.Open();
-                        plazo = dateTimePicker_Plazo_Modificar.Value;
+                        tecnicoACargo = int.Parse(txtID_Tecnico_Trabajo_Modficar.Text);
+                        idCelular = int.Parse(txtTrabajo_ID_Modificar.Text);
+                        plazo = dateTimePicker_FechaDeIngreso_Modificar.Value;
                         mesPlazo = plazo.Month;
                         diaPlazo = plazo.Day;
                         if (mesPlazo < 10)
@@ -1808,92 +1716,8 @@ namespace Diseño
                                 stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
                             }
                         }
-
-                        modifcarTrabajos = "UPDATE trabajos SET Plazo = '" + stringPlazo + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
-                        cmd = new MySqlCommand(modifcarTrabajos, conn);
-
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                            MostrarDatosEnLasTablasTrabajos();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                    break;
-
-                case "Presupuesto":
-                    if (txtModificar_Columna_Trabajos.Text != "")
-                    {
-                        conn.Open();
-                        presupuesto = int.Parse(txtModificar_Columna_Trabajos.Text);
-
-                        modifcarTrabajos = "UPDATE trabajos SET Presupuesto = " + presupuesto + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
-                        cmd = new MySqlCommand(modifcarTrabajos, conn);
-
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                            MostrarDatosEnLasTablasTrabajos();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                    break;
-
-                case "Problema":
-                    if (txtModificar_Columna_Trabajos.Text != "")
-                    {
-                        conn.Open();
-                        problema = txtModificar_Columna_Trabajos.Text;
-
-                        modifcarTrabajos = "UPDATE trabajos SET Problema = '" + problema + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
-                        cmd = new MySqlCommand(modifcarTrabajos, conn);
-
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                            MostrarDatosEnLasTablasTrabajos();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                    break;
-
-                case "Fecha de ingreso":
-                    if (dateTimePicker_FechaDeIngreso_Modificar.Value != null)
-                    {
-                        conn.Open();
+                        presupuesto = int.Parse(txtPresupuesto_Modificar.Text);
+                        problema = txtProblema_Modificar.Text;
                         fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
                         mesFechaIngreso = fechaIngreso.Month;
                         diaFechaIngreso = fechaIngreso.Day;
@@ -1919,701 +1743,882 @@ namespace Diseño
                                 stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
                             }
                         }
+                        adelanto = int.Parse(txtAdelanto_Modificar.Text);
 
-                        modifcarTrabajos = "UPDATE trabajos SET Fecha_Ingreso = '" + stringFechaIngreso + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                        modifcarTrabajos = "UPDATE trabajos SET ID_Tecnico = '" + tecnicoACargo + "' Plazo = '" + stringPlazo + "', Presupuesto = " + presupuesto + ", Problema = '" + problema + "', Fecha_Ingreso = '" + stringFechaIngreso + "', Adelanto = " + adelanto + ", ID_Celular = " + idCelular + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
                         cmd = new MySqlCommand(modifcarTrabajos, conn);
-
                         try
                         {
                             cmd.ExecuteNonQuery();
+                            txtTrabajo_ID_Modificar.Text = "";
+                            txtPresupuesto_Modificar.Text = "";
+                            txtProblema_Modificar.Text = "";
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        finally
-                        {
-                            conn.Close();
-                            MostrarDatosEnLasTablasTrabajos();
-                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    break;
-                case "Adelanto":
-                    if (txtModificar_Columna_Trabajos.Text != "")
+                    finally
                     {
-                        conn.Open();
-                        adelanto = int.Parse(txtModificar_Columna_Trabajos.Text);
-
-                        modifcarTrabajos = "UPDATE trabajos SET Adelanto = " + adelanto + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
-                        cmd = new MySqlCommand(modifcarTrabajos, conn);
-
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                            MostrarDatosEnLasTablasTrabajos();
-                        }
+                        conn.Close();
+                        MostrarDatosEnLasTablasTrabajos();
                     }
-                    else
-                    {
-                        MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                    break;
+                }
+                else
+                {
+                    MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
 
-                case "ID del celular":
-                    if (txtModificar_Columna_Trabajos.Text != "")
-                    {
-                        conn.Open();
-                        idCelular = int.Parse(txtModificar_Columna_Trabajos.Text);
+            else if (comboBoxColumnas_Trabajos.Text.Equals("Adelanto") || comboBoxColumnas_Trabajos.Text.Equals("Plazo") || comboBoxColumnas_Trabajos.Text.Equals("Presupuesto") || comboBoxColumnas_Trabajos.Text.Equals("Problema") || comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso") || comboBoxColumnas_Trabajos.Text.Equals("ID del celular") || comboBoxColumnas_Trabajos.Text.Equals("ID del tecnico"))
+            {
+                labelError_Modificar_Trabajos.Enabled = false;
+                labelError_Modificar_Trabajos.Visible = false;
 
-                        modifcarTrabajos = "UPDATE trabajos SET ID_Celular = " + idCelular + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
-                        cmd = new MySqlCommand(modifcarTrabajos, conn);
+                option = comboBoxColumnas_Trabajos.Text;
 
-                        try
+                switch (option)
+                {
+                    case "Plazo":
+                        if (dateTimePicker_Plazo_Modificar.Value != null)
                         {
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                            MostrarDatosEnLasTablasTrabajos();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                    break;
-                case "ID del tecnico":
-                    if (txtModificar_Columna_Trabajos.Text != "")
-                    {
-                        conn.Open();
-                        tecnicoACargo = int.Parse(txtModificar_Columna_Trabajos.Text);
+                            conn.Open();
+                            plazo = dateTimePicker_Plazo_Modificar.Value;
+                            mesPlazo = plazo.Month;
+                            diaPlazo = plazo.Day;
+                            if (mesPlazo < 10)
+                            {
+                                if (diaPlazo < 10)
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                                }
+                            }
+                            else
+                            {
+                                if (diaPlazo < 10)
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
+                                }
+                            }
 
-                        modifcarTrabajos = "UPDATE trabajos SET ID_Tecnico = " + tecnicoACargo + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
-                        cmd = new MySqlCommand(modifcarTrabajos, conn);
+                            modifcarTrabajos = "UPDATE trabajos SET Plazo = '" + stringPlazo + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
 
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         }
-                        finally
+                        break;
+
+                    case "Presupuesto":
+                        if (txtModificar_Columna_Trabajos.Text != "")
                         {
-                            conn.Close();
-                            MostrarDatosEnLasTablasTrabajos();
+                            conn.Open();
+                            presupuesto = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET Presupuesto = " + presupuesto + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                    break;
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Problema":
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            problema = txtModificar_Columna_Trabajos.Text;
+
+                            modifcarTrabajos = "UPDATE trabajos SET Problema = '" + problema + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "Fecha de ingreso":
+                        if (dateTimePicker_FechaDeIngreso_Modificar.Value != null)
+                        {
+                            conn.Open();
+                            fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
+                            mesFechaIngreso = fechaIngreso.Month;
+                            diaFechaIngreso = fechaIngreso.Day;
+                            if (mesFechaIngreso < 10)
+                            {
+                                if (diaFechaIngreso < 10)
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                                }
+                            }
+                            else
+                            {
+                                if (diaFechaIngreso < 10)
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
+                                }
+                                else
+                                {
+                                    stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
+                                }
+                            }
+
+                            modifcarTrabajos = "UPDATE trabajos SET Fecha_Ingreso = '" + stringFechaIngreso + "' WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+                    case "Adelanto":
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            adelanto = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET Adelanto = " + adelanto + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+
+                    case "ID del celular":
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            idCelular = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET ID_Celular = " + idCelular + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+                    case "ID del tecnico":
+                        if (txtModificar_Columna_Trabajos.Text != "")
+                        {
+                            conn.Open();
+                            tecnicoACargo = int.Parse(txtModificar_Columna_Trabajos.Text);
+
+                            modifcarTrabajos = "UPDATE trabajos SET ID_Tecnico = " + tecnicoACargo + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                            cmd = new MySqlCommand(modifcarTrabajos, conn);
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasTrabajos();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                comboBoxColumnas_Trabajos.Text = null;
+                //Labels:
+                labelError_Modificar_Trabajos.Enabled = true;
+                labelError_Modificar_Trabajos.Visible = true;
+
+                labelTrabajo_ID_Modificar.Enabled = false;
+                labelTrabajo_ID_Modificar.Visible = false;
+
+                labelPlazo_Modificar.Enabled = false;
+                labelPlazo_Modificar.Visible = false;
+
+                labelPresupuesto_Modificar.Enabled = false;
+                labelPresupuesto_Modificar.Visible = false;
+
+                labelProblema_Modificar.Enabled = false;
+                labelProblema_Modificar.Visible = false;
+
+                labelFechaDeIngreso_Modificar.Enabled = false;
+                labelFechaDeIngreso_Modificar.Visible = false;
+
+                labelAdelanto_Modificar.Enabled = false;
+                labelAdelanto_Modificar.Visible = false;
+
+                labelModificar_Columna_Trabajos.Enabled = false;
+                labelModificar_Columna_Trabajos.Visible = false;
+
+                //TextBox y DateTimePicker:
+                txtTrabajo_ID_Modificar.Enabled = false;
+                txtTrabajo_ID_Modificar.Visible = false;
+
+                dateTimePicker_Plazo_Modificar.Enabled = false;
+                dateTimePicker_Plazo_Modificar.Visible = false;
+
+                txtPresupuesto_Modificar.Enabled = false;
+                txtPresupuesto_Modificar.Visible = false;
+
+                txtProblema_Modificar.Enabled = false;
+                txtProblema_Modificar.Visible = false;
+
+                dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
+                dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
+
+                txtAdelanto_Modificar.Enabled = false;
+                txtAdelanto_Modificar.Visible = false;
+
+                txtModificar_Columna_Trabajos.Enabled = false;
+                txtModificar_Columna_Trabajos.Visible = false;
             }
         }
-        else
+
+        private void btnEliminar_Trabajo_Click(object sender, EventArgs e)
         {
-            comboBoxColumnas_Trabajos.Text = null;
-            //Labels:
-            labelError_Modificar_Trabajos.Enabled = true;
-            labelError_Modificar_Trabajos.Visible = true;
-
-            labelTrabajo_ID_Modificar.Enabled = false;
-            labelTrabajo_ID_Modificar.Visible = false;
-
-            labelPlazo_Modificar.Enabled = false;
-            labelPlazo_Modificar.Visible = false;
-
-            labelPresupuesto_Modificar.Enabled = false;
-            labelPresupuesto_Modificar.Visible = false;
-
-            labelProblema_Modificar.Enabled = false;
-            labelProblema_Modificar.Visible = false;
-
-            labelFechaDeIngreso_Modificar.Enabled = false;
-            labelFechaDeIngreso_Modificar.Visible = false;
-
-            labelAdelanto_Modificar.Enabled = false;
-            labelAdelanto_Modificar.Visible = false;
-
-            labelModificar_Columna_Trabajos.Enabled = false;
-            labelModificar_Columna_Trabajos.Visible = false;
-
-            //TextBox y DateTimePicker:
-            txtTrabajo_ID_Modificar.Enabled = false;
-            txtTrabajo_ID_Modificar.Visible = false;
-
-            dateTimePicker_Plazo_Modificar.Enabled = false;
-            dateTimePicker_Plazo_Modificar.Visible = false;
-
-            txtPresupuesto_Modificar.Enabled = false;
-            txtPresupuesto_Modificar.Visible = false;
-
-            txtProblema_Modificar.Enabled = false;
-            txtProblema_Modificar.Visible = false;
-
-            dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
-            dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
-
-            txtAdelanto_Modificar.Enabled = false;
-            txtAdelanto_Modificar.Visible = false;
-
-            txtModificar_Columna_Trabajos.Enabled = false;
-            txtModificar_Columna_Trabajos.Visible = false;
-        }
-    }
-
-    private void btnEliminar_Trabajo_Click(object sender, EventArgs e)
-    {
-        if (txtID_Trabajo_Eliminar.Text != "")
-        {
-            idTrabajo = int.Parse(txtID_Trabajo_Eliminar.Text);
-            try
+            if (txtID_Trabajo_Eliminar.Text != "")
             {
-                conn.Open();
-                eliminarTrabajos = "UPDATE trabajos SET Baja = 0 WHERE ID = " + idTrabajo + ";";
-                cmd = new MySqlCommand(eliminarTrabajos, conn);
-
+                idTrabajo = int.Parse(txtID_Trabajo_Eliminar.Text);
                 try
                 {
-                    cmd.ExecuteNonQuery();
+                    conn.Open();
+                    eliminarTrabajos = "UPDATE trabajos SET Baja = 0 WHERE ID = " + idTrabajo + ";";
+                    cmd = new MySqlCommand(eliminarTrabajos, conn);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se elimino correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                        MostrarDatosEnLasTablasTrabajos();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se elimino correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    conn.Close();
-                    MostrarDatosEnLasTablasTrabajos();
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-        else
-        {
-            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-        }
-    }
 
-    private void btnRecargar_Click(object sender, EventArgs e)
-    {
-        if (radioButton_TablaCelulares.Checked == true)
+        private void btnRecargar_Click(object sender, EventArgs e)
         {
-            MostrarDatosEnLasTablasCelulares();
+            if (radioButton_TablaCelulares.Checked == true)
+            {
+                MostrarDatosEnLasTablasCelulares();
+            }
+            else if (radioButton_TablaTrabajos.Checked == true)
+            {
+                MostrarDatosEnLasTablasTrabajos();
+            }
         }
-        else if (radioButton_TablaTrabajos.Checked == true)
-        {
-            MostrarDatosEnLasTablasTrabajos();
-        }
-    }
 
-    //Botones del Menu principal:
-    private void btnUsuarios_Click(object sender, EventArgs e)
-    {
-        Usuarios mostrar = new Usuarios();
-        mostrar.Show();
-        this.Hide();
-    }
-    private void btnClientes_Click(object sender, EventArgs e)
-    {
-        Clientes mostrar = new Clientes();
-        mostrar.Show();
-        this.Hide();
-    }
+        //Botones del Menu principal:
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Usuarios mostrar = new Usuarios();
+            mostrar.Show();
+            this.Hide();
+        }
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            Clientes mostrar = new Clientes();
+            mostrar.Show();
+            this.Hide();
+        }
 
-    //Timers de los paneles:
-    private void timer_Agregar_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (panel_Agregar.Height > 0)
+        //Timers de los paneles:
+        private void timer_Agregar_Reducir_Tick(object sender, EventArgs e)
         {
-            panel_Agregar.Height = panel_Agregar.Height - 12;
-            panel_Agregar.Enabled = false;
+            if (panel_Agregar.Height > 0)
+            {
+                panel_Agregar.Height = panel_Agregar.Height - 12;
+                panel_Agregar.Enabled = false;
+            }
+            else
+            {
+                timer_Agregar_Reducir.Enabled = false;
+            }
         }
-        else
-        {
-            timer_Agregar_Reducir.Enabled = false;
-        }
-    }
 
-    private void timer_Agregar_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (panel_Agregar.Height < 600)
+        private void timer_Agregar_Agrandar_Tick(object sender, EventArgs e)
         {
-            panel_Agregar.Height = panel_Agregar.Height + 12;
-            panel_Agregar.Enabled = true;
+            if (panel_Agregar.Height < 600)
+            {
+                panel_Agregar.Height = panel_Agregar.Height + 12;
+                panel_Agregar.Enabled = true;
+            }
+            else
+            {
+                timer_Agregar_Agrandar.Enabled = false;
+            }
         }
-        else
-        {
-            timer_Agregar_Agrandar.Enabled = false;
-        }
-    }
 
-    private void timer_Modificar_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (panel_Modificar.Height > 0)
+        private void timer_Modificar_Reducir_Tick(object sender, EventArgs e)
         {
-            panel_Modificar.Height = panel_Modificar.Height - 12;
-            panel_Modificar.Enabled = false;
+            if (panel_Modificar.Height > 0)
+            {
+                panel_Modificar.Height = panel_Modificar.Height - 12;
+                panel_Modificar.Enabled = false;
+            }
+            else
+            {
+                timer_Modificar_Reducir.Enabled = false;
+            }
         }
-        else
-        {
-            timer_Modificar_Reducir.Enabled = false;
-        }
-    }
 
-    private void timer_Modificar_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (panel_Modificar.Height < 600)
+        private void timer_Modificar_Agrandar_Tick(object sender, EventArgs e)
         {
-            panel_Modificar.Height = panel_Modificar.Height + 12;
-            panel_Modificar.Enabled = true;
+            if (panel_Modificar.Height < 600)
+            {
+                panel_Modificar.Height = panel_Modificar.Height + 12;
+                panel_Modificar.Enabled = true;
+            }
+            else
+            {
+                timer_Modificar_Agrandar.Enabled = false;
+            }
         }
-        else
-        {
-            timer_Modificar_Agrandar.Enabled = false;
-        }
-    }
 
-    private void timer_Menu_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (panel_Menu.Height > 0)
+        private void timer_Menu_Reducir_Tick(object sender, EventArgs e)
         {
-            panel_Menu.Height = panel_Menu.Height - 12;
-            panel_Menu.Enabled = true;
+            if (panel_Menu.Height > 0)
+            {
+                panel_Menu.Height = panel_Menu.Height - 12;
+                panel_Menu.Enabled = true;
+            }
+            else
+            {
+                timer_Menu_Reducir.Enabled = false;
+            }
         }
-        else
-        {
-            timer_Menu_Reducir.Enabled = false;
-        }
-    }
 
-    private void timer_Menu_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (panel_Menu.Height < 600)
+        private void timer_Menu_Agrandar_Tick(object sender, EventArgs e)
         {
-            panel_Menu.Height = panel_Menu.Height + 12;
-            panel_Menu.Enabled = true;
+            if (panel_Menu.Height < 600)
+            {
+                panel_Menu.Height = panel_Menu.Height + 12;
+                panel_Menu.Enabled = true;
+            }
+            else
+            {
+                timer_Menu_Agrandar.Enabled = false;
+            }
         }
-        else
+        private void timer_Eliminar_Reducir_Tick(object sender, EventArgs e)
         {
-            timer_Menu_Agrandar.Enabled = false;
+            if (panel_Eliminar.Height > 0)
+            {
+                panel_Eliminar.Height = panel_Eliminar.Height - 12;
+                panel_Eliminar.Enabled = false;
+            }
+            else
+            {
+                timer_Eliminar_Reducir.Enabled = false;
+            }
         }
-    }
-    private void timer_Eliminar_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (panel_Eliminar.Height > 0)
-        {
-            panel_Eliminar.Height = panel_Eliminar.Height - 12;
-            panel_Eliminar.Enabled = false;
-        }
-        else
-        {
-            timer_Eliminar_Reducir.Enabled = false;
-        }
-    }
 
-    private void timer_Eliminar_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (panel_Eliminar.Height < 600)
+        private void timer_Eliminar_Agrandar_Tick(object sender, EventArgs e)
         {
-            panel_Eliminar.Height = panel_Eliminar.Height + 12;
-            panel_Eliminar.Enabled = true;
+            if (panel_Eliminar.Height < 600)
+            {
+                panel_Eliminar.Height = panel_Eliminar.Height + 12;
+                panel_Eliminar.Enabled = true;
+            }
+            else
+            {
+                timer_Eliminar_Agrandar.Enabled = false;
+            }
         }
-        else
-        {
-            timer_Eliminar_Agrandar.Enabled = false;
-        }
-    }
 
-    //Timers de los GroupBoxes:
-    private void timer_GroupBox_AgregarC_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_AgregarCelulares.Height > 0)
+        //Timers de los GroupBoxes:
+        private void timer_GroupBox_AgregarC_Reducir_Tick(object sender, EventArgs e)
         {
-            groupBox_AgregarCelulares.Height = groupBox_AgregarCelulares.Height - 12;
-            groupBox_AgregarCelulares.Enabled = false;
-            groupBox_AgregarCelulares.SendToBack();
+            if (groupBox_AgregarCelulares.Height > 0)
+            {
+                groupBox_AgregarCelulares.Height = groupBox_AgregarCelulares.Height - 12;
+                groupBox_AgregarCelulares.Enabled = false;
+                groupBox_AgregarCelulares.SendToBack();
+            }
+            else
+            {
+                timer_GroupBox_AgregarC_Reducir.Enabled = false;
+            }
         }
-        else
+
+        private void timer_GroupBox_AgregarC_Agrandar_Tick(object sender, EventArgs e)
         {
+            if (groupBox_AgregarCelulares.Height < 486)
+            {
+                groupBox_AgregarCelulares.Height = groupBox_AgregarCelulares.Height + 12;
+                groupBox_AgregarCelulares.Enabled = true;
+                groupBox_AgregarCelulares.BringToFront();
+            }
+            else
+            {
+                timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_AgregarT_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_AgregarTrabajos.Height > 0)
+            {
+                groupBox_AgregarTrabajos.Height = groupBox_AgregarTrabajos.Height - 12;
+                groupBox_AgregarTrabajos.Enabled = false;
+                groupBox_AgregarTrabajos.SendToBack();
+            }
+            else
+            {
+                timer_GroupBox_AgregarT_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_AgregarT_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_AgregarTrabajos.Height < 486)
+            {
+                groupBox_AgregarTrabajos.Height = groupBox_AgregarTrabajos.Height + 12;
+                groupBox_AgregarTrabajos.Enabled = true;
+                groupBox_AgregarTrabajos.BringToFront();
+            }
+            else
+            {
+                timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_Menu_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_Menu.Height > 0)
+            {
+                groupBox_Menu.Height = groupBox_Menu.Height - 12;
+                groupBox_Menu.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_Menu_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_Menu_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_Menu.Height < 480)
+            {
+                groupBox_Menu.Height = groupBox_Menu.Height + 12;
+                groupBox_Menu.Enabled = true;
+            }
+            else
+            {
+                timer_GroupBox_Menu_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_ModificarC_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_ModificarCelulares.Height > 0)
+            {
+                groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height - 12;
+                groupBox_ModificarCelulares.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_ModificarC_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_ModificarC_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_ModificarCelulares.Height < 486)
+            {
+                groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height + 12;
+                groupBox_ModificarCelulares.Enabled = true;
+            }
+            else
+            {
+                timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_ModificarT_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_ModificarTrabajos.Height > 0)
+            {
+                groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height - 12;
+                groupBox_ModificarTrabajos.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_ModificarT_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_ModificarT_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_ModificarTrabajos.Height < 486)
+            {
+                groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height + 12;
+                groupBox_ModificarTrabajos.Enabled = true;
+            }
+            else
+            {
+                timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_EliminarC_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarCelulares.Height > 0)
+            {
+                groupBox_EliminarCelulares.Height = groupBox_EliminarCelulares.Height - 12;
+                groupBox_EliminarCelulares.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_EliminarC_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_EliminarC_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarCelulares.Height < 486)
+            {
+                groupBox_EliminarCelulares.Height = groupBox_EliminarCelulares.Height + 12;
+                groupBox_EliminarCelulares.Enabled = true;
+            }
+            else
+            {
+                timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_EliminarT_Reducir_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarTrabajos.Height > 0)
+            {
+                groupBox_EliminarTrabajos.Height = groupBox_EliminarTrabajos.Height - 12;
+                groupBox_EliminarTrabajos.Enabled = false;
+            }
+            else
+            {
+                timer_GroupBox_EliminarT_Reducir.Enabled = false;
+            }
+        }
+
+        private void timer_GroupBox_EliminarT_Agrandar_Tick(object sender, EventArgs e)
+        {
+            if (groupBox_EliminarTrabajos.Height < 486)
+            {
+                groupBox_EliminarTrabajos.Height = groupBox_EliminarTrabajos.Height + 12;
+                groupBox_EliminarTrabajos.Enabled = true;
+            }
+            else
+            {
+                timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+            }
+        }
+
+        //RadioButtons:
+        private void radioButton_CELULARES_Agregar_CheckedChanged(object sender, EventArgs e)
+        {
+            timer_GroupBox_AgregarC_Agrandar.Enabled = true;
             timer_GroupBox_AgregarC_Reducir.Enabled = false;
-        }
-    }
 
-    private void timer_GroupBox_AgregarC_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_AgregarCelulares.Height < 486)
-        {
-            groupBox_AgregarCelulares.Height = groupBox_AgregarCelulares.Height + 12;
-            groupBox_AgregarCelulares.Enabled = true;
-            groupBox_AgregarCelulares.BringToFront();
+            timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+            timer_GroupBox_AgregarT_Reducir.Enabled = true;
         }
-        else
+        private void radioButton_TRABAJO_Agregar_CheckedChanged(object sender, EventArgs e)
         {
+            timer_GroupBox_AgregarT_Agrandar.Enabled = true;
+            timer_GroupBox_AgregarT_Reducir.Enabled = false;
+
+            timer_GroupBox_AgregarC_Reducir.Enabled = true;
             timer_GroupBox_AgregarC_Agrandar.Enabled = false;
         }
-    }
-
-    private void timer_GroupBox_AgregarT_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_AgregarTrabajos.Height > 0)
+        private void radioButton_CELULARES_Modificar_CheckedChanged(object sender, EventArgs e)
         {
-            groupBox_AgregarTrabajos.Height = groupBox_AgregarTrabajos.Height - 12;
-            groupBox_AgregarTrabajos.Enabled = false;
-            groupBox_AgregarTrabajos.SendToBack();
-        }
-        else
-        {
-            timer_GroupBox_AgregarT_Reducir.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_AgregarT_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_AgregarTrabajos.Height < 486)
-        {
-            groupBox_AgregarTrabajos.Height = groupBox_AgregarTrabajos.Height + 12;
-            groupBox_AgregarTrabajos.Enabled = true;
-            groupBox_AgregarTrabajos.BringToFront();
-        }
-        else
-        {
-            timer_GroupBox_AgregarT_Agrandar.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_Menu_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_Menu.Height > 0)
-        {
-            groupBox_Menu.Height = groupBox_Menu.Height - 12;
-            groupBox_Menu.Enabled = false;
-        }
-        else
-        {
-            timer_GroupBox_Menu_Reducir.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_Menu_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_Menu.Height < 480)
-        {
-            groupBox_Menu.Height = groupBox_Menu.Height + 12;
-            groupBox_Menu.Enabled = true;
-        }
-        else
-        {
-            timer_GroupBox_Menu_Agrandar.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_ModificarC_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_ModificarCelulares.Height > 0)
-        {
-            groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height - 12;
-            groupBox_ModificarCelulares.Enabled = false;
-        }
-        else
-        {
+            timer_GroupBox_ModificarC_Agrandar.Enabled = true;
             timer_GroupBox_ModificarC_Reducir.Enabled = false;
-        }
-    }
 
-    private void timer_GroupBox_ModificarC_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_ModificarCelulares.Height < 486)
-        {
-            groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height + 12;
-            groupBox_ModificarCelulares.Enabled = true;
-        }
-        else
-        {
-            timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_ModificarT_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_ModificarTrabajos.Height > 0)
-        {
-            groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height - 12;
-            groupBox_ModificarTrabajos.Enabled = false;
-        }
-        else
-        {
-            timer_GroupBox_ModificarT_Reducir.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_ModificarT_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_ModificarTrabajos.Height < 486)
-        {
-            groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height + 12;
-            groupBox_ModificarTrabajos.Enabled = true;
-        }
-        else
-        {
             timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+            timer_GroupBox_ModificarT_Reducir.Enabled = true;
         }
-    }
 
-    private void timer_GroupBox_EliminarC_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_EliminarCelulares.Height > 0)
+        private void radioButton_TRABAJO_Modificar_CheckedChanged(object sender, EventArgs e)
         {
-            groupBox_EliminarCelulares.Height = groupBox_EliminarCelulares.Height - 12;
-            groupBox_EliminarCelulares.Enabled = false;
+            timer_GroupBox_ModificarT_Agrandar.Enabled = true;
+            timer_GroupBox_ModificarT_Reducir.Enabled = false;
+
+            timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+            timer_GroupBox_ModificarC_Reducir.Enabled = true;
         }
-        else
+
+        private void radioButton_CELULARES_Eliminar_CheckedChanged(object sender, EventArgs e)
         {
+            timer_GroupBox_EliminarC_Agrandar.Enabled = true;
             timer_GroupBox_EliminarC_Reducir.Enabled = false;
-        }
-    }
 
-    private void timer_GroupBox_EliminarC_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_EliminarCelulares.Height < 486)
-        {
-            groupBox_EliminarCelulares.Height = groupBox_EliminarCelulares.Height + 12;
-            groupBox_EliminarCelulares.Enabled = true;
-        }
-        else
-        {
-            timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_EliminarT_Reducir_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_EliminarTrabajos.Height > 0)
-        {
-            groupBox_EliminarTrabajos.Height = groupBox_EliminarTrabajos.Height - 12;
-            groupBox_EliminarTrabajos.Enabled = false;
-        }
-        else
-        {
-            timer_GroupBox_EliminarT_Reducir.Enabled = false;
-        }
-    }
-
-    private void timer_GroupBox_EliminarT_Agrandar_Tick(object sender, EventArgs e)
-    {
-        if (groupBox_EliminarTrabajos.Height < 486)
-        {
-            groupBox_EliminarTrabajos.Height = groupBox_EliminarTrabajos.Height + 12;
-            groupBox_EliminarTrabajos.Enabled = true;
-        }
-        else
-        {
             timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+            timer_GroupBox_EliminarT_Reducir.Enabled = true;
         }
-    }
 
-    //RadioButtons:
-    private void radioButton_CELULARES_Agregar_CheckedChanged(object sender, EventArgs e)
-    {
-        timer_GroupBox_AgregarC_Agrandar.Enabled = true;
-        timer_GroupBox_AgregarC_Reducir.Enabled = false;
-
-        timer_GroupBox_AgregarT_Agrandar.Enabled = false;
-        timer_GroupBox_AgregarT_Reducir.Enabled = true;
-    }
-    private void radioButton_TRABAJO_Agregar_CheckedChanged(object sender, EventArgs e)
-    {
-        timer_GroupBox_AgregarT_Agrandar.Enabled = true;
-        timer_GroupBox_AgregarT_Reducir.Enabled = false;
-
-        timer_GroupBox_AgregarC_Reducir.Enabled = true;
-        timer_GroupBox_AgregarC_Agrandar.Enabled = false;
-    }
-    private void radioButton_CELULARES_Modificar_CheckedChanged(object sender, EventArgs e)
-    {
-        timer_GroupBox_ModificarC_Agrandar.Enabled = true;
-        timer_GroupBox_ModificarC_Reducir.Enabled = false;
-
-        timer_GroupBox_ModificarT_Agrandar.Enabled = false;
-        timer_GroupBox_ModificarT_Reducir.Enabled = true;
-    }
-
-    private void radioButton_TRABAJO_Modificar_CheckedChanged(object sender, EventArgs e)
-    {
-        timer_GroupBox_ModificarT_Agrandar.Enabled = true;
-        timer_GroupBox_ModificarT_Reducir.Enabled = false;
-
-        timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-        timer_GroupBox_ModificarC_Reducir.Enabled = true;
-    }
-
-    private void radioButton_CELULARES_Eliminar_CheckedChanged(object sender, EventArgs e)
-    {
-        timer_GroupBox_EliminarC_Agrandar.Enabled = true;
-        timer_GroupBox_EliminarC_Reducir.Enabled = false;
-
-        timer_GroupBox_EliminarT_Agrandar.Enabled = false;
-        timer_GroupBox_EliminarT_Reducir.Enabled = true;
-    }
-
-    private void radioButton_TRABAJO_Eliminar_CheckedChanged(object sender, EventArgs e)
-    {
-        timer_GroupBox_EliminarT_Agrandar.Enabled = true;
-        timer_GroupBox_EliminarT_Reducir.Enabled = false;
-
-        timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-        timer_GroupBox_EliminarC_Reducir.Enabled = true;
-    }
-
-    private void radioButton_TablaCelulares_CheckedChanged(object sender, EventArgs e)
-    {
-        AyudaVisual_Tabla_Mostrar();
-        btnRecargar.Enabled = true;
-        btnRecargar.Visible = true;
-
-        MenuOpcionesCelular.Enabled = true;
-        MenuOpcionesCelular.Visible = true;
-        MenuOpcionesTrabajos.Enabled = false;
-        MenuOpcionesTrabajos.Visible = false;
-
-
-
-        if (tablaCelulares.Height <= 600)
+        private void radioButton_TRABAJO_Eliminar_CheckedChanged(object sender, EventArgs e)
         {
-            tablaTrabajos.Height = 0;
-            tablaCelulares.Height = 600;
-            MostrarDatosEnLasTablasCelulares();
+            timer_GroupBox_EliminarT_Agrandar.Enabled = true;
+            timer_GroupBox_EliminarT_Reducir.Enabled = false;
+
+            timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+            timer_GroupBox_EliminarC_Reducir.Enabled = true;
         }
-        else
+
+        private void radioButton_TablaCelulares_CheckedChanged(object sender, EventArgs e)
         {
-            MostrarDatosEnLasTablasCelulares();
+            AyudaVisual_Tabla_Mostrar();
+            btnRecargar.Enabled = true;
+            btnRecargar.Visible = true;
+
+            MenuOpcionesCelular.Enabled = true;
+            MenuOpcionesCelular.Visible = true;
+            MenuOpcionesTrabajos.Enabled = false;
+            MenuOpcionesTrabajos.Visible = false;
+
+
+
+            if (tablaCelulares.Height <= 600)
+            {
+                tablaTrabajos.Height = 0;
+                tablaCelulares.Height = 600;
+                MostrarDatosEnLasTablasCelulares();
+            }
+            else
+            {
+                MostrarDatosEnLasTablasCelulares();
+            }
+        }
+
+        private void radioButton_TablaTrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            AyudaVisual_Tabla_Mostrar();
+            btnRecargar.Enabled = true;
+            btnRecargar.Visible = true;
+
+            MenuOpcionesTrabajos.Enabled = true;
+            MenuOpcionesTrabajos.Visible = true;
+            MenuOpcionesCelular.Enabled = false;
+            MenuOpcionesCelular.Visible = false;
+
+            if (tablaTrabajos.Height < 600)
+            {
+                tablaCelulares.Height = 0;
+                tablaTrabajos.Height = 600;
+                MostrarDatosEnLasTablasTrabajos();
+            }
+            else
+            {
+                MostrarDatosEnLasTablasTrabajos();
+            }
+        }
+
+        //Botón de cierre del programa con shortcut Default: "Escape"
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult seguridad = MessageBox.Show("¿Está seguro de querer Cerrar el programa?", "Saliendo del Programa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (seguridad == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                //seguridad = DialogResult.No;
+            }
+
+        }
+
+        /// <summary>
+        /// Esta parte del código es para la personalización programática para el cargar visualmente bien de las tablas.
+        /// </summary>
+
+        private void tablaCelulares_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+
+            /*
+             * Valor de longitudes:
+             * Corta: 50px
+             * Media: 80px
+             * Larga: 120px
+             * LargaM: 160px
+             * LargaL: 180px
+             * LargaXL: 200px
+             * XLXL: 250px
+             * 
+             * valores pero totalmente al pedo, se pueden poner como un número entero sin necesidad de declararlo con anterioridad.
+             * Pero bueno, le da un toque de profesionalizmo... no, lo contrario, mrd. *pain noises*
+             */
+
+            if (tablaCelulares.Columns.Contains("ID"))
+            {
+                //Largo de las columnas
+                tablaCelulares.Columns["ID"].Width = lonigtudDeColumna_Corta;
+                tablaCelulares.Columns["Marca"].Width = lonigtudDeColumna_Larga;
+                tablaCelulares.Columns["IMEI"].Width = longitudDeColumna_LargaL;
+                tablaCelulares.Columns["Modelo"].Width = lonigtudDeColumna_Larga;
+                tablaCelulares.Columns["ID_Usuario"].Width = 73;
+
+                //Renombre de columnas, más que nada es estético.
+                tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cédula";
+                tablaCelulares.Columns["ID_Usuario"].HeaderText = "Técnico";
+
+                //Tooltips al posar el mouse
+                tablaCelulares.Columns["ID"].ToolTipText = "Número identificatorio para cada celular en esta tabla";
+                tablaCelulares.Columns["Marca"].ToolTipText = "La marca del teléfono";
+                tablaCelulares.Columns["Modelo"].ToolTipText = "El modelo del teléfono";
+                tablaCelulares.Columns["IMEI"].ToolTipText = "El número único identificatorio para cada dispositivo, normalmente viene detrás de este como una pegatina";
+                tablaCelulares.Columns["Estado"].ToolTipText = "El estado en el que está actualmente el celular";
+                tablaCelulares.Columns["Cedula_Cliente"].ToolTipText = "La cédula del dueño del teléfono";
+                tablaCelulares.Columns["ID_Usuario"].ToolTipText = "El ID del Técnico a cargo del teléfono";
+            }
+        }
+
+        //Que se cague, no más de 8 caracteres, que es lo que sería la cédula sin los puntos ni el guión.
+        private void txtCI_Del_Dueño_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCI_Del_Dueño_Agregar.Text.Length <= 8 && txtCI_Del_Dueño_Agregar.Text.Length > 0)
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
+                int caracteresRestantes = 8 - txtCI_Del_Dueño_Agregar.TextLength;
+                label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres Restantes: " + caracteresRestantes + "/8";
+            }
+            else
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
+            }
+        }
+
+        private void ToolTips_de_los_Campos_de_Texto(object sender, EventArgs e)
+        {
+
         }
     }
-
-    private void radioButton_TablaTrabajo_CheckedChanged(object sender, EventArgs e)
-    {
-        AyudaVisual_Tabla_Mostrar();
-        btnRecargar.Enabled = true;
-        btnRecargar.Visible = true;
-
-        MenuOpcionesTrabajos.Enabled = true;
-        MenuOpcionesTrabajos.Visible = true;
-        MenuOpcionesCelular.Enabled = false;
-        MenuOpcionesCelular.Visible = false;
-
-        if (tablaTrabajos.Height < 600)
-        {
-            tablaCelulares.Height = 0;
-            tablaTrabajos.Height = 600;
-            MostrarDatosEnLasTablasTrabajos();
-        }
-        else
-        {
-            MostrarDatosEnLasTablasTrabajos();
-        }
-    }
-
-    //Botón de cierre del programa con shortcut Default: "Escape"
-    private void btnCerrar_Click(object sender, EventArgs e)
-    {
-        DialogResult seguridad = MessageBox.Show("¿Está seguro de querer Cerrar el programa?", "Saliendo del Programa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-        if (seguridad == DialogResult.Yes)
-        {
-            Application.Exit();
-        }
-        else
-        {
-            //seguridad = DialogResult.No;
-        }
-
-    }
-
-    /// <summary>
-    /// Esta parte del código es para la personalización programática para el cargar visualmente bien de las tablas.
-    /// </summary>
-
-    private void tablaCelulares_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-    {
-
-        /*
-         * Valor de longitudes:
-         * Corta: 50px
-         * Media: 80px
-         * Larga: 120px
-         * LargaM: 160px
-         * LargaL: 180px
-         * LargaXL: 200px
-         * XLXL: 250px
-         * 
-         * valores pero totalmente al pedo, se pueden poner como un número entero sin necesidad de declararlo con anterioridad.
-         * Pero bueno, le da un toque de profesionalizmo... no, lo contrario, mrd. *pain noises*
-         */
-
-        if (tablaCelulares.Columns.Contains("ID"))
-        {
-            //Largo de las columnas
-            tablaCelulares.Columns["ID"].Width = lonigtudDeColumna_Corta;
-            tablaCelulares.Columns["Marca"].Width = lonigtudDeColumna_Larga;
-            tablaCelulares.Columns["IMEI"].Width = longitudDeColumna_LargaL;
-            tablaCelulares.Columns["Modelo"].Width = lonigtudDeColumna_Larga;
-            tablaCelulares.Columns["ID_Usuario"].Width = 73;
-
-            //Renombre de columnas, más que nada es estético.
-            tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cédula";
-            tablaCelulares.Columns["ID_Usuario"].HeaderText = "Técnico";
-
-            //Tooltips al posar el mouse
-            tablaCelulares.Columns["ID"].ToolTipText = "Número identificatorio para cada celular en esta tabla";
-            tablaCelulares.Columns["Marca"].ToolTipText = "La marca del teléfono";
-            tablaCelulares.Columns["Modelo"].ToolTipText = "El modelo del teléfono";
-            tablaCelulares.Columns["IMEI"].ToolTipText = "El número único identificatorio para cada dispositivo, normalmente viene detrás de este como una pegatina";
-            tablaCelulares.Columns["Estado"].ToolTipText = "El estado en el que está actualmente el celular";
-            tablaCelulares.Columns["Cedula_Cliente"].ToolTipText = "La cédula del dueño del teléfono";
-            tablaCelulares.Columns["ID_Usuario"].ToolTipText = "El ID del Técnico a cargo del teléfono";
-        }
-    }
-
-    //Que se cague, no más de 8 caracteres, que es lo que sería la cédula sin los puntos ni el guión.
-    private void txtCI_Del_Dueño_Agregar_TextChanged(object sender, EventArgs e)
-    {
-        if (txtCI_Del_Dueño_Agregar.Text.Length <= 8 && txtCI_Del_Dueño_Agregar.Text.Length > 0)
-        {
-            label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
-            int caracteresRestantes = 8 - txtCI_Del_Dueño_Agregar.TextLength;
-            label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres Restantes: " + caracteresRestantes + "/8";
-        }
-        else
-        {
-            label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
-        }
-    }
-
-    private void ToolTips_de_los_Campos_de_Texto(object sender, EventArgs e)
-    {
-
-    }
-}
 }
