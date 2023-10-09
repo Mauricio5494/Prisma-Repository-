@@ -29,7 +29,7 @@ namespace Diseño
         //Instancias:
         Usuarios Usuarios = new Usuarios();
         Principal Taller = new Principal();
-        MySqlConnection conn = DataBaseConnect.Conectarse();
+        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataAdapter adapter = new MySqlDataAdapter();
         MySqlDataReader reader;
@@ -87,7 +87,7 @@ namespace Diseño
                         {
                             DataTable.Rows.Clear();
                             conn.Open();
-                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 1 AND Cedula = '" + txtCampo_Busqueda.Text + "';", conn);
+                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 1 AND Cedula ='" + txtCampo_Busqueda.Text + "';", conn);
                             cmd.CommandType = System.Data.CommandType.Text;
                             reader = cmd.ExecuteReader();
                             DataTable.Load(reader);
@@ -108,7 +108,7 @@ namespace Diseño
                         {
                             DataTable.Rows.Clear();
                             conn.Open();
-                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 1 AND Nombre = '" + txtCampo_Busqueda.Text + "';", conn);
+                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja =1 AND Nombre ='" + txtCampo_Busqueda.Text + "';", conn);
                             cmd.CommandType = System.Data.CommandType.Text;
                             reader = cmd.ExecuteReader();
                             DataTable.Load(reader);
@@ -129,7 +129,7 @@ namespace Diseño
                         {
                             DataTable.Rows.Clear();
                             conn.Open();
-                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 1 AND Telefono = '" + txtCampo_Busqueda.Text + "';", conn);
+                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 1 AND Telefono ='" + txtCampo_Busqueda.Text + "';", conn);
                             cmd.CommandType = System.Data.CommandType.Text;
                             reader = cmd.ExecuteReader();
                             DataTable.Load(reader);
@@ -150,7 +150,7 @@ namespace Diseño
                         {
                             DataTable.Rows.Clear();
                             conn.Open();
-                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 1 AND CorreoElectronico = '" + txtCampo_Busqueda.Text + "';", conn);
+                            cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja =1 AND CorreoElectronico ='" + txtCampo_Busqueda.Text + "';", conn);
                             cmd.CommandType = System.Data.CommandType.Text;
                             reader = cmd.ExecuteReader();
                             DataTable.Load(reader);
