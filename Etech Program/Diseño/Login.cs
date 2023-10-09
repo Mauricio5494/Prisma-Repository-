@@ -23,7 +23,7 @@ namespace Diseño
         //Instancias:
         ToolTip toolTip1 = new ToolTip();
         Utilidades Seguridad = new Utilidades();
-        MySqlConnection conn = DataBaseConnect.Conectarse();
+        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
         MySqlCommand cmd_sql;
         MySqlDataReader reader;
 
@@ -58,7 +58,7 @@ namespace Diseño
             try
             {
                 conn.Open();
-                sql = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' AND Contraseña = '" + Password + "'";
+                sql = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "', Contraseña = '" + Password + "' AND Baja = 0";
                 cmd_sql = new MySqlCommand(sql, conn);
                 reader = cmd_sql.ExecuteReader();
                 if (reader.Read())
@@ -74,7 +74,7 @@ namespace Diseño
             }
             catch (Exception b)
             {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha encontrado el Usuario especificado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
