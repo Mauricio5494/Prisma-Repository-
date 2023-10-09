@@ -21,10 +21,11 @@ namespace Diseño
         private int idTecnico;
         public bool PassSucess;
         private string modificarAtributosDeUsuarios;
+        DataBaseConnect connect = new DataBaseConnect();
 
         //Instancias
         DataTable dataTableUsuarios = new DataTable();
-        MySqlConnection conn = DataBaseConnect.Conectarse();
+        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
         MySqlCommand cmd = new MySqlCommand();
         MySqlCommand cmd_Registro;
         MySqlCommand cmd_Seguridad;
@@ -71,7 +72,7 @@ namespace Diseño
                 {
                     dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL.*/
                     conn.Open();
-                    cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
+                    cmd = new MySqlCommand("SELECT * FROM usuarios WHERE Baja = 0", conn);
                     cmd.CommandType = System.Data.CommandType.Text;
                     reader = cmd.ExecuteReader();
                     dataTableUsuarios.Load(reader);
@@ -108,7 +109,7 @@ namespace Diseño
             {
                 dataTableUsuarios.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT * FROM usuarios", conn);
+                cmd = new MySqlCommand("SELECT * FROM usuarios WHERE Baja = 0 ", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 dataTableUsuarios.Load(reader);
@@ -164,8 +165,7 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                eliminarTecnico = "DELETE FROM trabajos WHERE ID_Tecnico = " + idTecnico + ";" + "DELETE FROM celulares WHERE ID_Usuario =" + idTecnico +
-                                    ";" + "DELETE FROM usuarios WHERE ID =" + idTecnico + ";";
+                                eliminarTecnico = $"UPDATE trabajos SET Baja = 0 WHERE ID_Tecnico = {idTecnico}; UPDATE celulares SET Baja = 0 WHERE ID_Usuario = {idTecnico}; DELETE FROM usuarios WHERE ID = {idTecnico};";
                                 cmd = new MySqlCommand(eliminarTecnico, conn);
                                 txtID_panelBorrarUsuarios.Text = "";
                                 ApareceLaContraseñaMaestra = false;
