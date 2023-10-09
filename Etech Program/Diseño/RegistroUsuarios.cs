@@ -18,7 +18,7 @@ namespace Diseño
         private string Telefono;
 
         //Instancias:
-        MySqlConnection conn = DataBaseConnect.Conectarse();
+        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
         MySqlCommand cmd_conn = new MySqlCommand();
         MySqlCommand cmd_Registro;
         MySqlCommand cmd_Seguridad;
