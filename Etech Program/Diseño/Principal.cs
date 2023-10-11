@@ -1,7 +1,9 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using MySql.Data.MySqlClient;
 using MySql.Utility.Forms;
 using MySqlX.XDevAPI.Relational;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
@@ -109,6 +111,30 @@ namespace Diseño
             }
             tablaCelulares.DataSource = DataTableCelulares;
         }
+
+        private void MostrarDatosEnLasTablasCelulares_SinMensajeDeError()
+        {
+            try
+            {
+                DataTableCelulares.Rows.Clear();
+                conn.Open();
+                cmd = new MySqlCommand("SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
+                cmd.CommandType = CommandType.Text;
+                reader = cmd.ExecuteReader();
+                DataTableCelulares.Load(reader);
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                conn.Close();
+            }
+            tablaCelulares.DataSource = DataTableCelulares;
+        }
         private void MostrarDatosEnLasTablasTrabajos()
         {
             try
@@ -123,6 +149,27 @@ namespace Diseño
             catch (Exception x)
             {
                 MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            tablaTrabajos.DataSource = DataTableTrabajos;
+        }
+
+        private void MostrarDatosEnLasTablasTrabajos_SinMensajeDeError()
+        {
+            try
+            {
+                DataTableTrabajos.Rows.Clear();
+                conn.Open();
+                cmd = new MySqlCommand("SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Baja = 0;", conn);
+                cmd.CommandType = System.Data.CommandType.Text;
+                reader = cmd.ExecuteReader();
+                DataTableTrabajos.Load(reader);
+            }
+            catch (Exception x)
+            {
             }
             finally
             {
@@ -186,9 +233,6 @@ namespace Diseño
                 txtMarca_Modificar.Enabled = true;
                 txtMarca_Modificar.Visible = true;
 
-                txtTecnico_Modificar.Enabled = true;
-                txtTecnico_Modificar.Visible = true;
-
                 radioButton_Arreglado_Modificar.Enabled = true;
                 radioButton_Arreglado_Modificar.Visible = true;
 
@@ -251,9 +295,6 @@ namespace Diseño
                 txtMarca_Modificar.Enabled = false;
                 txtMarca_Modificar.Visible = false;
 
-                txtTecnico_Modificar.Enabled = false;
-                txtTecnico_Modificar.Visible = false;
-
                 radioButton_Arreglado_Modificar.Enabled = true;
                 radioButton_Arreglado_Modificar.Visible = true;
 
@@ -306,9 +347,6 @@ namespace Diseño
 
                 txtMarca_Modificar.Enabled = false;
                 txtMarca_Modificar.Visible = false;
-
-                txtTecnico_Modificar.Enabled = false;
-                txtTecnico_Modificar.Visible = false;
 
                 radioButton_Arreglado_Modificar.Enabled = false;
                 radioButton_Arreglado_Modificar.Visible = false;
@@ -799,6 +837,7 @@ namespace Diseño
         {
             MostrarDatosEnLasTablasCelulares();
             MostrarDatosEnLasTablasTrabajos();
+            MostrarNombreYelIDdelTecnicoEnUnComboBoxParaModificacionDeLosCelulares();
 
             MenuOpcionesCelular.Enabled = true;
             MenuOpcionesCelular.Visible = true;
@@ -1119,12 +1158,17 @@ namespace Diseño
 
                 string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
 
-                string nombreDelCliente = ObtenerNombreHaciendoClickEnCedula(cedula);
 
-                MessageBox.Show("Información del Cliente:\n\n" + "Nombre y Apellido: " + nombreDelCliente, "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string nombreDelCliente = ObtenerNombreHaciendoClickEnCedula(cedula);
+                string celularDelCliente = ObtenerCelularHaciendoClickEnCedula(cedula);
+                string telefonoDelCliente = ObtenerTelefonoHaciendoClickEnCedula(cedula);
+                string correoElectrionicoDelCliente = ObtenerCorreoElectronicoHaciendoClickEnCedula(cedula);
+
+
+                MessageBox.Show($"Información del Cliente:\n\nNombre y Apellido:{nombreDelCliente}\n\nCelular Adicional: {celularDelCliente}\n\nTelefono Fijo: {telefonoDelCliente}\n\nCorreo Electrónico: {correoElectrionicoDelCliente}", "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            //Sino que solo seleccione el ID para borrar o modificar el celular que todavía el modificar no está pronto.
+            //Sino que solo seleccione el ID para borrar o modificar el celular.
             else if (e.RowIndex >= 0)
             {
                 numeroDeFilaCelulares = e.RowIndex;
@@ -1136,7 +1180,7 @@ namespace Diseño
                 }
                 else if (groupBox_ModificarCelulares.Height > 300)
                 {
-
+                    label_groupboxModificar_IDUsuarioModiifcar.Text = "Selección: " + clavePrimariaCelulares;
                 }
                 else
                 {
@@ -1186,6 +1230,116 @@ namespace Diseño
             }
 
             return nombreDelCliente;
+        }
+        private string ObtenerTelefonoHaciendoClickEnCedula(string cedula)
+        {
+            string telefonoDelCliente = string.Empty;
+
+
+            try
+            {
+                conn.Open();
+                string query = $"SELECT Telefono FROM Clientes WHERE cedula = @cedula";
+                cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@cedula", cedula);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        telefonoDelCliente = reader["Telefono"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return telefonoDelCliente;
+        }
+
+        private string ObtenerCorreoElectronicoHaciendoClickEnCedula(string cedula)
+        {
+            string correoElectronicoDelCliente = string.Empty;
+
+
+            try
+            {
+                conn.Open();
+                string query = $"SELECT CorreoElectronico FROM Clientes WHERE Cedula = @cedula";
+                cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@cedula", cedula);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        correoElectronicoDelCliente = reader["CorreoElectronico"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return correoElectronicoDelCliente;
+        }
+
+        private string ObtenerCelularHaciendoClickEnCedula(string cedula)
+        {
+            string celularDelCliente = string.Empty;
+
+
+            try
+            {
+                conn.Open();
+                string query = $"SELECT celular FROM Clientes WHERE cedula = @cedula";
+                cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@cedula", cedula);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        celularDelCliente = reader["Celular"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return celularDelCliente;
         }
 
         private void tablaTrabajos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1262,54 +1416,66 @@ namespace Diseño
 
         private void btnModificar_Celular_Click(object sender, EventArgs e)
         {
+            Tecnicos idDelTecnicoSeleccionado = (Tecnicos)comboBox_ModificarTecnicoACargo.SelectedItem;
+
             if (comboBoxColumnas_Celulares.Text.Equals("Todas..."))
             {
                 //Label error:
                 labelError_Modificar_Celulares.Enabled = false;
                 labelError_Modificar_Celulares.Visible = false;
 
-                //Codigo para modificar el Celular:
-                if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && txtTecnico_Modificar.Text != "")
+
+                if (idDelTecnicoSeleccionado != null)
                 {
-                    if (radioButton_Arreglado_Modificar.Checked == true || radioButton_Averiado_Modificar.Checked == true)
+
+                    //Codigo para modificar el Celular:
+                    if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && txtCI_Del_Dueño_Modificar.Text != "" && comboBox_ModificarTecnicoACargo.SelectedItem == null)
                     {
-                        try
+                        string idUsuario = idDelTecnicoSeleccionado.ID;
+
+                        if (radioButton_Arreglado_Modificar.Checked == true || radioButton_Averiado_Modificar.Checked == true)
                         {
-                            conn.Open();
-                            modelo = txtModelo_Modificar.Text;
-                            marca = txtMarca_Modificar.Text;
-                            imei = txtIMEI_Modificar.Text;
-                            if (radioButton_Arreglado_Modificar.Checked)
-                            {
-                                estado = "Arreglado";
-                            }
-                            else
-                            {
-                                estado = "Averiado";
-                            }
-                            ciCliente = txtCI_Del_Dueño_Modificar.Text;
-                            idUsuario = int.Parse(txtTecnico_Modificar.Text);
-
-                            modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "', Marca = '" + marca + "', IMEI = '" + imei + "', Estado = '" + estado + "', Cedula_Cliente = '" + ciCliente + "', ID_Usuario = " + idUsuario + " WHERE celulares.ID = " + clavePrimariaCelulares + ";";
-                            cmd = new MySqlCommand(modifcarCelulares, conn);
-
                             try
                             {
-                                cmd.ExecuteNonQuery();
+                                conn.Open();
+                                modelo = txtModelo_Modificar.Text;
+                                marca = txtMarca_Modificar.Text;
+                                imei = txtIMEI_Modificar.Text;
+                                if (radioButton_Arreglado_Modificar.Checked)
+                                {
+                                    estado = "Arreglado";
+                                }
+                                else
+                                {
+                                    estado = "Averiado";
+                                }
+                                ciCliente = txtCI_Del_Dueño_Modificar.Text;
+
+                                modifcarCelulares = "UPDATE celulares SET Modelo = '" + modelo + "', Marca = '" + marca + "', IMEI = '" + imei + "', Estado = '" + estado + "', Cedula_Cliente = '" + ciCliente + "', ID_Usuario = " + idUsuario + " WHERE celulares.ID = " + clavePrimariaCelulares + ";";
+                                cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                                try
+                                {
+                                    cmd.ExecuteNonQuery();
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se pudo modificar el celular.\n\nCompruebe la existencia del celular y el ID del mismo." + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("No se pudo modificar el celular.\n\nCompruebe la existencia del celular y el ID del mismo." + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                MostrarDatosEnLasTablasCelulares();
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                            MostrarDatosEnLasTablasCelulares();
+                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         }
                     }
                     else
@@ -1317,11 +1483,8 @@ namespace Diseño
                         MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
             }
+
             else if (comboBoxColumnas_Celulares.Text.Equals("Modelo") || comboBoxColumnas_Celulares.Text.Equals("Marca") || comboBoxColumnas_Celulares.Text.Equals("IMEI") || comboBoxColumnas_Celulares.Text.Equals("Estado") || comboBoxColumnas_Celulares.Text.Equals("Cedula del dueño") || comboBoxColumnas_Celulares.Text.Equals("ID del usuario/ tecnico"))
             {
                 //Label error:
@@ -1482,10 +1645,10 @@ namespace Diseño
                         break;
 
                     case "ID del usuario/tecnico":
-                        if (txtModificar_Columna_Celulares.Text != "")
+                        if (comboBox_ModificarTecnicoACargo.SelectedItem == null)
                         {
                             conn.Open();
-                            idUsuario = int.Parse(txtModificar_Columna_Celulares.Text);
+                            string idUsuario = idDelTecnicoSeleccionado.ID;
                             modifcarCelulares = "UPDATE celulares SET ID_Usuario = " + idUsuario + " WHERE celulares.ID = " + clavePrimariaCelulares + ";";
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
@@ -1548,9 +1711,6 @@ namespace Diseño
                         txtMarca_Modificar.Enabled = false;
                         txtMarca_Modificar.Visible = false;
 
-                        txtTecnico_Modificar.Enabled = false;
-                        txtTecnico_Modificar.Visible = false;
-
                         radioButton_Arreglado_Modificar.Enabled = false;
                         radioButton_Arreglado_Modificar.Visible = false;
 
@@ -1559,6 +1719,11 @@ namespace Diseño
 
                         txtModificar_Columna_Celulares.Enabled = false;
                         txtModificar_Columna_Celulares.Visible = false;
+
+
+                        //Comboboxes:
+                        comboBox_ModificarTecnicoACargo.Visible = false;
+                        comboBox_ModificarTecnicoACargo.Enabled = false;
                         break;
                 }
             }
@@ -1601,9 +1766,6 @@ namespace Diseño
 
                 txtMarca_Modificar.Enabled = false;
                 txtMarca_Modificar.Visible = false;
-
-                txtTecnico_Modificar.Enabled = false;
-                txtTecnico_Modificar.Visible = false;
 
                 radioButton_Arreglado_Modificar.Enabled = false;
                 radioButton_Arreglado_Modificar.Visible = false;
@@ -2629,7 +2791,7 @@ namespace Diseño
                 tablaCelulares.Columns["IMEI"].ToolTipText = "El número único identificatorio para cada dispositivo, normalmente viene detrás de este como una pegatina";
                 tablaCelulares.Columns["Estado"].ToolTipText = "El estado en el que está actualmente el celular";
                 tablaCelulares.Columns["Cedula_Cliente"].ToolTipText = "La cédula del dueño del teléfono";
-                tablaCelulares.Columns["Nombre"].ToolTipText = "El ID del Técnico a cargo del teléfono";
+                tablaCelulares.Columns["Nombre"].ToolTipText = "El Nombre del Técnico a cargo del teléfono";
             }
 
             int columnIndexCedula = 5;
@@ -2673,7 +2835,7 @@ namespace Diseño
         {
             if (txtCampo_Busqueda.Text.Equals(""))
             {
-                MostrarDatosEnLasTablasTrabajos();
+                MostrarDatosEnLasTablasCelulares_SinMensajeDeError();
             }
             else
             {
@@ -2689,7 +2851,12 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Dueño LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                           "FROM celulares " +
+                                           "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                           $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Cedula_Cliente LIKE '%{txtCampo_Busqueda.Text}%'";
+
+
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -2712,7 +2879,9 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Marca LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.nombre"
+                                    + "FORM celulares INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID"
+                                    + $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Marca LIKE '%{txtCampo_Busqueda.Text}%'";
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -2735,8 +2904,9 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Modelo LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
-                                cmd = new MySqlCommand(busqueda, conn);
+                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.nombre"
+                                            + "FORM celulares INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID"
+                                            + $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Modelo LIKE '%{txtCampo_Busqueda.Text}%'"; cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
                                 DataTableCelularesBusqueda.Load(reader);
@@ -2847,6 +3017,50 @@ namespace Diseño
 
         }
 
+        private void MostrarNombreYelIDdelTecnicoEnUnComboBoxParaModificacionDeLosCelulares()
+        {
+
+            try
+            {
+                string query = $"SELECT ID, Nombre FROM usuarios WHERE Baja = 0";
+                conn.Open();
+                cmd = new MySqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+
+                comboBox_ModificarTecnicoACargo.Items.Clear();
+
+                List<Tecnicos> listaUsuarios = new List<Tecnicos>();
+
+                while (reader.Read())
+                {
+                    string nombre = reader["Nombre"].ToString();
+                    string id = reader["ID"].ToString();
+
+                    comboBox_ModificarTecnicoACargo.Items.Add(new Tecnicos
+                    {
+                        Nombre = nombre,
+                        ID = id
+                    });
+
+                }
+
+
+                comboBox_ModificarTecnicoACargo.DisplayMember = "";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         private void tabIndex_Pestañas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
@@ -2903,6 +3117,12 @@ namespace Diseño
             {
                 tablaCelulares.Cursor = Cursors.Default;
             }
+        }
+
+        private void timer_RecargarBDs_Tick(object sender, EventArgs e)
+        {
+            MostrarDatosEnLasTablasCelulares_SinMensajeDeError();
+            MostrarDatosEnLasTablasTrabajos_SinMensajeDeError();
         }
     }
 }

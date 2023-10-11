@@ -67,6 +67,27 @@ namespace Diseño
             }
             tablaClientes.DataSource = DataTable;
         }
+        private void MostrarDatosEnLaTablaClientes_SinMensajeDeError()
+        {
+            try
+            {
+                DataTable.Rows.Clear();
+                conn.Open();
+                cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 0;", conn);
+                cmd.CommandType = System.Data.CommandType.Text;
+                reader = cmd.ExecuteReader();
+                DataTable.Load(reader);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            tablaClientes.DataSource = DataTable;
+        }
 
         private void MenuOpcionesClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -331,7 +352,7 @@ namespace Diseño
                 nombre = txtNombre_Agregar.Text;
                 telefono = txtTelefono_Agregar.Text;
                 correoElectronico = txtCorreoElectronico_Agregar.Text;
-                celular = txtCedula_Agregar.Text;
+                celular = txtCelular_Agregar.Text;
 
                 insertar = "INSERT INTO clientes(Cedula, Nombre, Telefono, CorreoElectronico, Celular, Baja) VALUES('" + cedula + "', '" + nombre + "', '" + telefono + "', '" + correoElectronico + "', '" + cedula + "', Baja = 1);";
 
@@ -973,6 +994,11 @@ namespace Diseño
                 tablaClientes.Columns["CorreoElectronico"].ToolTipText = "El E-Mail del cliente, otra forma de contactar con el mismo";
                 tablaClientes.Columns["Celular"].ToolTipText = "Número de celular el cuál no sea el que está para arreglar";
             }
+        }
+
+        private void timer_RecargarBD_Tick(object sender, EventArgs e)
+        {
+            MostrarDatosEnLaTablaClientes_SinMensajeDeError();
         }
     }
 }
