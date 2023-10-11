@@ -21,6 +21,7 @@ namespace Diseño
         }
 
         //Instancias:
+        Principal Taller;
         ToolTip toolTip1 = new ToolTip();
         Utilidades Seguridad = new Utilidades();
         MySqlConnection conn = DataBaseConnect.Conectarse("", "");
@@ -50,7 +51,7 @@ namespace Diseño
 
         private void btnIngreso_Click(object sender, System.EventArgs e)
         {
-            Principal Taller = new Principal();
+            Taller = new Principal();
             Nombre = txtNombre.Text;
             Password = txtPass.Text;
 
@@ -58,7 +59,7 @@ namespace Diseño
             try
             {
                 conn.Open();
-                sql = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "', Contraseña = '" + Password + "' AND Baja = 0'";
+                sql = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' AND Contraseña = '" + Password + "' AND Baja = 0";
                 cmd_sql = new MySqlCommand(sql, conn);
                 reader = cmd_sql.ExecuteReader();
                 if (reader.Read())
@@ -74,7 +75,8 @@ namespace Diseño
             }
             catch (Exception b)
             {
-                MessageBox.Show("No se ha encontrado el Usuario especificado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fallo la conexion con la base de datos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(b.Message);
             }
             finally
             {

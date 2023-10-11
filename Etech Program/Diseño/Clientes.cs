@@ -52,7 +52,7 @@ namespace Diseño
             {
                 DataTable.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 1;", conn);
+                cmd = new MySqlCommand("SELECT Cedula, Nombre, Telefono, CorreoElectronico, Celular FROM clientes WHERE Baja = 0;", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 DataTable.Load(reader);
@@ -71,7 +71,7 @@ namespace Diseño
         private void MenuOpcionesClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtCampo_Busqueda.Enabled = true;
-            btnBuscar.Enabled = true;
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -325,7 +325,7 @@ namespace Diseño
         //Botones con sentencias SQL:
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            if (txtCedula_Agregar.Text != "" && txtNombre_Agregar.Text != "" && txtTelefono_Agregar.Text != "" && txtCorreoElectronico_Agregar.Text != "" && txtCelular_Agregar.Text != "")
+            if (txtCedula_Agregar.Text != "" && txtNombre_Agregar.Text != "" && txtCorreoElectronico_Agregar.Text != "" && txtCelular_Agregar.Text != "")
             {
                 cedula = txtCedula_Agregar.Text;
                 nombre = txtNombre_Agregar.Text;
@@ -935,6 +935,44 @@ namespace Diseño
         {
             Taller.Show();
             this.Hide();
+        }
+
+        private void txtCampo_Busqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void Clientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tablaClientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (tablaClientes.Columns.Contains("Cedula"))
+            {
+                //Largo de las columnas
+
+                tablaClientes.Columns["Cedula"].Width = 100;
+                tablaClientes.Columns["Nombre"].Width = 185; 
+                tablaClientes.Columns["Telefono"].Width = 100;
+                tablaClientes.Columns["CorreoElectronico"].Width = 235; 
+                tablaClientes.Columns["Celular"].Width = 200;
+
+
+                //Renombre de columnas, más que nada es estético.
+                tablaClientes.Columns["Telefono"].HeaderText = "Teléfono fijo";
+                tablaClientes.Columns["Nombre"].HeaderText = "Nombre y Apellido";
+                tablaClientes.Columns["CorreoElectronico"].HeaderText = "Correo Electrónico";
+                tablaClientes.Columns["Celular"].HeaderText = "N° Celular provicional";
+
+                //Tooltips al posar el mouse
+                tablaClientes.Columns["Cedula"].ToolTipText = "Cédula de identidad del cliente, necesaria para identificar los dueños de los celulares en el taller";
+                tablaClientes.Columns["Nombre"].ToolTipText = "Nombre de pila y apellido del cliente";
+                tablaClientes.Columns["Telefono"].ToolTipText = "Teléfono fijo, como forma de contactar al cliente.";
+                tablaClientes.Columns["CorreoElectronico"].ToolTipText = "El E-Mail del cliente, otra forma de contactar con el mismo";
+                tablaClientes.Columns["Celular"].ToolTipText = "Número de celular el cuál no sea el que está para arreglar";
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using MySql.Utility.Forms;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
@@ -7,9 +8,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Windows.Forms;
-
-
-
+using System.Xml;
 
 namespace Diseño
 {
@@ -92,7 +91,10 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario, Baja FROM celulares WHERE Baja = 0;", conn);
+                cmd = new MySqlCommand("SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
                 cmd.CommandType = CommandType.Text;
                 reader = cmd.ExecuteReader();
                 DataTableCelulares.Load(reader);
@@ -134,13 +136,13 @@ namespace Diseño
         private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtCampo_Busqueda.Enabled = true;
-            btnBuscar.Enabled = true;
+
         }
 
         private void MenuOpcionesTrabajos_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtCampo_Busqueda.Enabled = true;
-            btnBuscar.Enabled = true;
+
         }
 
         private void comboBoxColumnas_Celulares_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,6 +171,8 @@ namespace Diseño
                 labelEstado_Modificar.Enabled = true;
                 labelEstado_Modificar.Visible = true;
 
+                labelEstado_Modificar.Location = new Point(3, 305);
+
                 //TextBox y RadioButtons:
                 txtCI_Del_Dueño_Modificar.Enabled = true;
                 txtCI_Del_Dueño_Modificar.Visible = true;
@@ -191,8 +195,8 @@ namespace Diseño
                 radioButton_Averiado_Modificar.Enabled = true;
                 radioButton_Averiado_Modificar.Visible = true;
 
-                radioButton_Arreglado_Modificar.Location = new Point(6, 290);
-                radioButton_Averiado_Modificar.Location = new Point(93, 290);
+                radioButton_Arreglado_Modificar.Location = new Point(6, 320);
+                radioButton_Averiado_Modificar.Location = new Point(93, 320);
 
                 //Modificar Columna:
                 labelModificar_Columna_Celulares.Enabled = false;
@@ -256,8 +260,8 @@ namespace Diseño
                 radioButton_Averiado_Modificar.Enabled = true;
                 radioButton_Averiado_Modificar.Visible = true;
 
-                radioButton_Arreglado_Modificar.Location = new Point(6, 96);
-                radioButton_Averiado_Modificar.Location = new Point(93, 96);
+                radioButton_Arreglado_Modificar.Location = new Point(6, 110);
+                radioButton_Averiado_Modificar.Location = new Point(93, 110);
             }
             else
             {
@@ -569,7 +573,7 @@ namespace Diseño
                     switch (option)
                     {
                         case "Dueño":
-                            labelError_MenuOpciones.Visible = false;
+
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
@@ -592,7 +596,7 @@ namespace Diseño
                             break;
 
                         case "Marca":
-                            labelError_MenuOpciones.Visible = false;
+
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
@@ -615,7 +619,7 @@ namespace Diseño
                             break;
 
                         case "Modelo":
-                            labelError_MenuOpciones.Visible = false;
+
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
@@ -638,7 +642,7 @@ namespace Diseño
                             break;
 
                         case "ID":
-                            labelError_MenuOpciones.Visible = false;
+
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
@@ -661,7 +665,7 @@ namespace Diseño
                             break;
 
                         default:
-                            labelError_MenuOpciones.Visible = true;
+
                             break;
                     }
                 }
@@ -672,7 +676,7 @@ namespace Diseño
                     switch (option)
                     {
                         case "Presupuesto":
-                            labelError_MenuOpciones.Visible = false;
+
                             DataTableTrabajosBusqueda.Rows.Clear();
                             try
                             {
@@ -695,8 +699,8 @@ namespace Diseño
                             break;
 
                         case "Problema":
-                            labelError_MenuOpciones.Visible = false;
-                            labelError_MenuOpciones.Visible = false;
+
+
                             DataTableTrabajosBusqueda.Rows.Clear();
                             try
                             {
@@ -719,8 +723,8 @@ namespace Diseño
                             break;
 
                         case "Fecha de ingreso":
-                            labelError_MenuOpciones.Visible = false;
-                            labelError_MenuOpciones.Visible = false;
+
+
                             DataTableTrabajosBusqueda.Rows.Clear();
                             try
                             {
@@ -743,8 +747,8 @@ namespace Diseño
                             break;
 
                         case "ID del celular":
-                            labelError_MenuOpciones.Visible = false;
-                            labelError_MenuOpciones.Visible = false;
+
+
                             DataTableTrabajosBusqueda.Rows.Clear();
                             try
                             {
@@ -767,7 +771,7 @@ namespace Diseño
                             break;
 
                         default:
-                            labelError_MenuOpciones.Visible = true;
+
                             break;
                     }
                 }
@@ -793,6 +797,12 @@ namespace Diseño
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            MostrarDatosEnLasTablasCelulares();
+            MostrarDatosEnLasTablasTrabajos();
+
+            MenuOpcionesCelular.Enabled = true;
+            MenuOpcionesCelular.Visible = true;
+
 
         }
 
@@ -819,8 +829,8 @@ namespace Diseño
                 btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
                 btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
 
-                tablaCelulares.Location = new Point(124, 78);
-                tablaTrabajos.Location = new Point(124, 78);
+                tabIndex_Pestañas.Location = new Point(124, 78);
+                //tablaTrabajos.Location = new Point(124, 78);
             }
             else
             {
@@ -840,8 +850,9 @@ namespace Diseño
                 btnModificar.FlatStyle = FlatStyle.Flat;
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-                tablaCelulares.Location = new Point(49, 78);
-                tablaTrabajos.Location = new Point(49, 78);
+                //tablaCelulares.Location = new Point(49, 78);
+                //tablaTrabajos.Location = new Point(49, 78);
+                tabIndex_Pestañas.Location = new Point(49, 78);
             }
         }
 
@@ -1029,8 +1040,10 @@ namespace Diseño
                 //Panel-Menu y GroupBoxes-Menu:
                 timer_Menu_Agrandar.Enabled = true;
                 timer_Menu_Reducir.Enabled = false;
+
                 timer_GroupBox_Menu_Agrandar.Enabled = true;
                 timer_GroupBox_Menu_Reducir.Enabled = false;
+
                 panel_Menu.Enabled = true;
                 panel_Menu.BringToFront();
 
@@ -1057,10 +1070,13 @@ namespace Diseño
                 //Panel-Eliminar y GroupBoxes-Eliminar:
                 timer_Eliminar_Reducir.Enabled = true;
                 timer_Eliminar_Agrandar.Enabled = false;
+
                 timer_GroupBox_EliminarC_Reducir.Enabled = true;
                 timer_GroupBox_EliminarT_Reducir.Enabled = true;
+
                 timer_GroupBox_EliminarC_Agrandar.Enabled = false;
                 timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+
                 panel_Eliminar.Enabled = false;
                 panel_Eliminar.SendToBack();
             }
@@ -1068,8 +1084,10 @@ namespace Diseño
             {
                 timer_Menu_Reducir.Enabled = true;
                 timer_Menu_Agrandar.Enabled = false;
+
                 timer_GroupBox_Menu_Reducir.Enabled = true;
                 timer_GroupBox_Menu_Agrandar.Enabled = false;
+
                 panel_Menu.Enabled = false;
                 panel_Menu.SendToBack();
             }
@@ -1094,7 +1112,20 @@ namespace Diseño
         //Botones con funciones SQL:
         private void tablaCelulares_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+
+            //linkeo de la cedula del cliente:
+            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
+            {
+
+                string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
+
+                string nombreDelCliente = ObtenerNombreHaciendoClickEnCedula(cedula);
+
+                MessageBox.Show("Información del Cliente:\n\n" + "Nombre y Apellido: " + nombreDelCliente, "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //Sino que solo seleccione el ID para borrar o modificar el celular que todavía el modificar no está pronto.
+            else if (e.RowIndex >= 0)
             {
                 numeroDeFilaCelulares = e.RowIndex;
                 clavePrimariaCelulares = tablaCelulares.Rows[numeroDeFilaCelulares].Cells["ID"].Value.ToString();
@@ -1114,6 +1145,47 @@ namespace Diseño
 
                 }
             }
+            else
+            {
+
+
+            }
+        }
+
+        private string ObtenerNombreHaciendoClickEnCedula(string cedula)
+        {
+            string nombreDelCliente = string.Empty;
+
+            try
+            {
+                conn.Open();
+                string query = $"SELECT Nombre FROM Clientes WHERE Cedula = @cedula";
+                cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@cedula", cedula);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        nombreDelCliente = reader["Nombre"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return nombreDelCliente;
         }
 
         private void tablaTrabajos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1546,13 +1618,10 @@ namespace Diseño
 
         private void btnEliminar_Celular_Click(object sender, EventArgs e)
         {
-
-
-
             try
             {
                 conn.Open();
-                eliminarCelulares = "UPDATE celulares SET Baja = 0 WHERE ID = " + idCelular + ";";
+                eliminarCelulares = $"UPDATE celulares SET Baja =1 WHERE ID ={idCelular};";
                 cmd = new MySqlCommand(eliminarCelulares, conn);
 
                 try
@@ -1573,17 +1642,7 @@ namespace Diseño
             {
                 MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
-
-
-
-
-
-
-
 
         private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
         {
@@ -2094,7 +2153,7 @@ namespace Diseño
                 try
                 {
                     conn.Open();
-                    eliminarTrabajos = "UPDATE trabajos SET Baja = 0 WHERE ID = " + idTrabajo + ";";
+                    eliminarTrabajos = "UPDATE trabajos SET Baja = 1 WHERE ID = " + idTrabajo + ";";
                     cmd = new MySqlCommand(eliminarTrabajos, conn);
 
                     try
@@ -2122,17 +2181,7 @@ namespace Diseño
             }
         }
 
-        private void btnRecargar_Click(object sender, EventArgs e)
-        {
-            if (radioButton_TablaCelulares.Checked == true)
-            {
-                MostrarDatosEnLasTablasCelulares();
-            }
-            else if (radioButton_TablaTrabajos.Checked == true)
-            {
-                MostrarDatosEnLasTablasTrabajos();
-            }
-        }
+
 
         //Botones del Menu principal:
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -2352,12 +2401,14 @@ namespace Diseño
         {
             if (groupBox_ModificarCelulares.Height < 486)
             {
-                groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height + 12;
+                groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height + 45;
                 groupBox_ModificarCelulares.Enabled = true;
             }
             else
             {
                 timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                groupBox_ModificarCelulares.Width = 413;
+                groupBox_ModificarCelulares.Height = 564;
             }
         }
 
@@ -2365,7 +2416,7 @@ namespace Diseño
         {
             if (groupBox_ModificarTrabajos.Height > 0)
             {
-                groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height - 12;
+                groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height - 45;
                 groupBox_ModificarTrabajos.Enabled = false;
             }
             else
@@ -2378,12 +2429,14 @@ namespace Diseño
         {
             if (groupBox_ModificarTrabajos.Height < 486)
             {
-                groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height + 12;
+                groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height + 45;
                 groupBox_ModificarTrabajos.Enabled = true;
             }
             else
             {
                 timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                groupBox_ModificarTrabajos.Width = 413;
+                groupBox_ModificarTrabajos.Height = 564;
             }
         }
 
@@ -2517,29 +2570,6 @@ namespace Diseño
             }
         }
 
-        private void radioButton_TablaTrabajo_CheckedChanged(object sender, EventArgs e)
-        {
-            AyudaVisual_Tabla_Mostrar();
-            btnRecargar.Enabled = true;
-            btnRecargar.Visible = true;
-
-            MenuOpcionesTrabajos.Enabled = true;
-            MenuOpcionesTrabajos.Visible = true;
-            MenuOpcionesCelular.Enabled = false;
-            MenuOpcionesCelular.Visible = false;
-
-            if (tablaTrabajos.Height < 600)
-            {
-                tablaCelulares.Height = 0;
-                tablaTrabajos.Height = 600;
-                MostrarDatosEnLasTablasTrabajos();
-            }
-            else
-            {
-                MostrarDatosEnLasTablasTrabajos();
-            }
-        }
-
         //Botón de cierre del programa con shortcut Default: "Escape"
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -2580,15 +2610,17 @@ namespace Diseño
             if (tablaCelulares.Columns.Contains("ID"))
             {
                 //Largo de las columnas
+
                 tablaCelulares.Columns["ID"].Width = lonigtudDeColumna_Corta;
                 tablaCelulares.Columns["Marca"].Width = lonigtudDeColumna_Larga;
-                tablaCelulares.Columns["IMEI"].Width = longitudDeColumna_LargaL;
+                tablaCelulares.Columns["IMEI"].Width = 200;
                 tablaCelulares.Columns["Modelo"].Width = lonigtudDeColumna_Larga;
-                tablaCelulares.Columns["ID_Usuario"].Width = 73;
+                tablaCelulares.Columns["Nombre"].Width = 115;
+
 
                 //Renombre de columnas, más que nada es estético.
                 tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cédula";
-                tablaCelulares.Columns["ID_Usuario"].HeaderText = "Técnico";
+                tablaCelulares.Columns["Nombre"].HeaderText = "Técnico";
 
                 //Tooltips al posar el mouse
                 tablaCelulares.Columns["ID"].ToolTipText = "Número identificatorio para cada celular en esta tabla";
@@ -2597,7 +2629,18 @@ namespace Diseño
                 tablaCelulares.Columns["IMEI"].ToolTipText = "El número único identificatorio para cada dispositivo, normalmente viene detrás de este como una pegatina";
                 tablaCelulares.Columns["Estado"].ToolTipText = "El estado en el que está actualmente el celular";
                 tablaCelulares.Columns["Cedula_Cliente"].ToolTipText = "La cédula del dueño del teléfono";
-                tablaCelulares.Columns["ID_Usuario"].ToolTipText = "El ID del Técnico a cargo del teléfono";
+                tablaCelulares.Columns["Nombre"].ToolTipText = "El ID del Técnico a cargo del teléfono";
+            }
+
+            int columnIndexCedula = 5;
+
+            foreach (DataGridViewRow row in tablaCelulares.Rows)
+            {
+                if (row.Cells[columnIndexCedula].Value != null)
+                {
+                    DataGridViewCell cell = row.Cells[columnIndexCedula];
+                    cell.Style.ForeColor = Color.Blue;
+                }
             }
         }
 
@@ -2619,6 +2662,247 @@ namespace Diseño
         private void ToolTips_de_los_Campos_de_Texto(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCampo_Busqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtCampo_Busqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCampo_Busqueda.Text.Equals(""))
+            {
+                MostrarDatosEnLasTablasTrabajos();
+            }
+            else
+            {
+                //busqueda para celulares:
+                if (MenuOpcionesCelular.Enabled == true)
+                {
+                    option = MenuOpcionesCelular.Text;
+                    switch (option)
+                    {
+                        case "Dueño":
+
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Dueño LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        case "Marca":
+
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Marca LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        case "Modelo":
+
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Modelo LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        default:
+
+                            break;
+                    }
+                }
+                else
+                {
+                    //Busqueda para Trabajos:
+                    option = MenuOpcionesTrabajos.Text;
+                    switch (option)
+                    {
+                        case "Presupuesto":
+
+                            DataTableTrabajosBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Presupuesto LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableTrabajosBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+                            break;
+
+                        case "Problema":
+
+
+                            DataTableTrabajosBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Problema LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableTrabajosBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+                            break;
+
+                        case "Fecha de ingreso":
+
+
+                            DataTableTrabajosBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Fecha_Ingreso LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableTrabajosBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+                            break;
+
+                        default:
+
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void radioButton_TablaTrabajos_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabIndex_Pestañas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+            {
+                MenuOpcionesCelular.Enabled = true;
+                MenuOpcionesCelular.Visible = true;
+
+                MenuOpcionesTrabajos.Enabled = false;
+                MenuOpcionesTrabajos.Visible = false;
+            }
+            else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+            {
+                MenuOpcionesTrabajos.Enabled = true;
+                MenuOpcionesTrabajos.Visible = true;
+
+                MenuOpcionesCelular.Enabled = false;
+                MenuOpcionesCelular.Visible = false;
+            }
+        }
+
+        private void tabIndex_Pestañas_TabIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tablaCelulares_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            {
+                string estado = tablaCelulares.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                if (estado == "Averiado")
+                {
+                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else if (estado == "Arreglado")
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        private void tablaCelulares_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
+            {
+                DataGridViewCell cell = tablaCelulares.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                cell.Style.ForeColor = Color.Blue;
+                tablaCelulares.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                tablaCelulares.Cursor = Cursors.Default;
+            }
         }
     }
 }

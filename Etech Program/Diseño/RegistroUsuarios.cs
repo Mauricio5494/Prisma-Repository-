@@ -105,7 +105,7 @@ namespace Diseño
             try
             {
                 conn.Open();
-                sql_Seguridad = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' and Contraseña = '" + Password + "'";
+                sql_Seguridad = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' and Contraseña = '" + Password + "' ";
                 cmd_Seguridad = new MySqlCommand(sql_Seguridad, conn);
                 reader = cmd_Seguridad.ExecuteReader();
 

@@ -11,7 +11,6 @@ namespace Diseño
         {
             //requisitos para la conexion (informacion del base de datos):
 
-
             string servidor = "localhost";
             string port = "3306";
             string database = "etech_db";

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
@@ -47,7 +47,6 @@
             this.label_Name_Form = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.label_Filtrar = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
@@ -146,7 +145,7 @@
             this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,7 +163,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -182,7 +181,7 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,7 +199,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,7 +218,7 @@
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,7 +239,6 @@
             this.panelE.Controls.Add(this.label_Name_Form);
             this.panelE.Controls.Add(this.btnMenu);
             this.panelE.Controls.Add(this.label_Filtrar);
-            this.panelE.Controls.Add(this.btnBuscar);
             this.panelE.Controls.Add(this.txtCampo_Busqueda);
             this.panelE.Controls.Add(this.btnCerrar);
             this.panelE.Location = new System.Drawing.Point(-2, -2);
@@ -258,7 +256,7 @@
             "Adelanto",
             "ID del celular"});
             this.MenuOpcionesClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MenuOpcionesClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuOpcionesClientes.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuOpcionesClientes.FormattingEnabled = true;
             this.MenuOpcionesClientes.Items.AddRange(new object[] {
             "Cedula",
@@ -287,11 +285,11 @@
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label_Name_Form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label_Name_Form.Location = new System.Drawing.Point(1115, 18);
             this.label_Name_Form.Name = "label_Name_Form";
-            this.label_Name_Form.Size = new System.Drawing.Size(156, 31);
+            this.label_Name_Form.Size = new System.Drawing.Size(154, 37);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "CLIENTES";
             // 
@@ -320,27 +318,15 @@
             this.label_Filtrar.TabIndex = 6;
             this.label_Filtrar.Text = "Filtrar por:";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.Enabled = false;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(600, 23);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(77, 22);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // txtCampo_Busqueda
             // 
             this.txtCampo_Busqueda.Enabled = false;
+            this.txtCampo_Busqueda.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCampo_Busqueda.Location = new System.Drawing.Point(271, 24);
             this.txtCampo_Busqueda.Name = "txtCampo_Busqueda";
-            this.txtCampo_Busqueda.Size = new System.Drawing.Size(323, 20);
+            this.txtCampo_Busqueda.Size = new System.Drawing.Size(323, 23);
             this.txtCampo_Busqueda.TabIndex = 8;
+            this.txtCampo_Busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCampo_Busqueda_KeyPress);
             // 
             // btnCerrar
             // 
@@ -360,57 +346,59 @@
             this.tablaClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaClientes.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaClientes.DefaultCellStyle = dataGridViewCellStyle6;
             this.tablaClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaClientes.EnableHeadersVisualStyles = false;
-            this.tablaClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tablaClientes.GridColor = System.Drawing.Color.Black;
             this.tablaClientes.Location = new System.Drawing.Point(49, 78);
             this.tablaClientes.MultiSelect = false;
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.tablaClientes.RowTemplate.ReadOnly = true;
             this.tablaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaClientes.Size = new System.Drawing.Size(786, 600);
+            this.tablaClientes.Size = new System.Drawing.Size(861, 600);
             this.tablaClientes.TabIndex = 20;
             this.tablaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellClick);
+            this.tablaClientes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tablaClientes_DataBindingComplete);
             // 
             // panel_Agregar
             // 
             this.panel_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Agregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Agregar.Controls.Add(this.groupBox_Agregar);
+            this.panel_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
             this.panel_Agregar.TabIndex = 21;
             // 
             // groupBox_Agregar
@@ -427,103 +415,114 @@
             this.groupBox_Agregar.Controls.Add(this.labelTelefono_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelNombre_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelCedula_Agregar);
-            this.groupBox_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox_Agregar.Location = new System.Drawing.Point(42, 34);
+            this.groupBox_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Agregar.Location = new System.Drawing.Point(3, 2);
             this.groupBox_Agregar.Name = "groupBox_Agregar";
-            this.groupBox_Agregar.Size = new System.Drawing.Size(337, 535);
+            this.groupBox_Agregar.Size = new System.Drawing.Size(411, 593);
             this.groupBox_Agregar.TabIndex = 0;
             this.groupBox_Agregar.TabStop = false;
             this.groupBox_Agregar.Text = "Ingrese un cliente";
             // 
             // txtCelular_Agregar
             // 
-            this.txtCelular_Agregar.Location = new System.Drawing.Point(6, 256);
+            this.txtCelular_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular_Agregar.Location = new System.Drawing.Point(6, 151);
             this.txtCelular_Agregar.Name = "txtCelular_Agregar";
-            this.txtCelular_Agregar.Size = new System.Drawing.Size(325, 20);
-            this.txtCelular_Agregar.TabIndex = 10;
+            this.txtCelular_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtCelular_Agregar.TabIndex = 9;
             // 
             // labelCelular_Agregar
             // 
             this.labelCelular_Agregar.AutoSize = true;
-            this.labelCelular_Agregar.Location = new System.Drawing.Point(3, 240);
+            this.labelCelular_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCelular_Agregar.Location = new System.Drawing.Point(3, 135);
             this.labelCelular_Agregar.Name = "labelCelular_Agregar";
-            this.labelCelular_Agregar.Size = new System.Drawing.Size(50, 13);
+            this.labelCelular_Agregar.Size = new System.Drawing.Size(49, 15);
             this.labelCelular_Agregar.TabIndex = 9;
             this.labelCelular_Agregar.Text = "Celular:";
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(6, 506);
+            this.btnAgregarCliente.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCliente.Location = new System.Drawing.Point(6, 342);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCliente.TabIndex = 8;
+            this.btnAgregarCliente.TabIndex = 12;
             this.btnAgregarCliente.Text = "Agregar";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // txtCedula_Agregar
             // 
+            this.txtCedula_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula_Agregar.Location = new System.Drawing.Point(6, 56);
             this.txtCedula_Agregar.Name = "txtCedula_Agregar";
-            this.txtCedula_Agregar.Size = new System.Drawing.Size(325, 20);
+            this.txtCedula_Agregar.Size = new System.Drawing.Size(325, 21);
             this.txtCedula_Agregar.TabIndex = 7;
             // 
             // txtTelefono_Agregar
             // 
-            this.txtTelefono_Agregar.Location = new System.Drawing.Point(6, 156);
+            this.txtTelefono_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono_Agregar.Location = new System.Drawing.Point(6, 256);
             this.txtTelefono_Agregar.Name = "txtTelefono_Agregar";
-            this.txtTelefono_Agregar.Size = new System.Drawing.Size(325, 20);
-            this.txtTelefono_Agregar.TabIndex = 6;
+            this.txtTelefono_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtTelefono_Agregar.TabIndex = 11;
             // 
             // txtNombre_Agregar
             // 
+            this.txtNombre_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre_Agregar.Location = new System.Drawing.Point(6, 106);
             this.txtNombre_Agregar.Name = "txtNombre_Agregar";
-            this.txtNombre_Agregar.Size = new System.Drawing.Size(325, 20);
-            this.txtNombre_Agregar.TabIndex = 5;
+            this.txtNombre_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtNombre_Agregar.TabIndex = 8;
             // 
             // txtCorreoElectronico_Agregar
             // 
+            this.txtCorreoElectronico_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoElectronico_Agregar.Location = new System.Drawing.Point(6, 206);
             this.txtCorreoElectronico_Agregar.Name = "txtCorreoElectronico_Agregar";
-            this.txtCorreoElectronico_Agregar.Size = new System.Drawing.Size(325, 20);
-            this.txtCorreoElectronico_Agregar.TabIndex = 4;
+            this.txtCorreoElectronico_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtCorreoElectronico_Agregar.TabIndex = 10;
             // 
             // labelCorreoElectronico_Agregar
             // 
             this.labelCorreoElectronico_Agregar.AutoSize = true;
+            this.labelCorreoElectronico_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCorreoElectronico_Agregar.Location = new System.Drawing.Point(3, 190);
             this.labelCorreoElectronico_Agregar.Name = "labelCorreoElectronico_Agregar";
-            this.labelCorreoElectronico_Agregar.Size = new System.Drawing.Size(115, 13);
+            this.labelCorreoElectronico_Agregar.Size = new System.Drawing.Size(114, 15);
             this.labelCorreoElectronico_Agregar.TabIndex = 3;
             this.labelCorreoElectronico_Agregar.Text = "Correo electronico:";
             // 
             // labelTelefono_Agregar
             // 
             this.labelTelefono_Agregar.AutoSize = true;
-            this.labelTelefono_Agregar.Location = new System.Drawing.Point(3, 140);
+            this.labelTelefono_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono_Agregar.Location = new System.Drawing.Point(3, 240);
             this.labelTelefono_Agregar.Name = "labelTelefono_Agregar";
-            this.labelTelefono_Agregar.Size = new System.Drawing.Size(61, 13);
+            this.labelTelefono_Agregar.Size = new System.Drawing.Size(140, 15);
             this.labelTelefono_Agregar.TabIndex = 2;
-            this.labelTelefono_Agregar.Text = "Telefono:";
+            this.labelTelefono_Agregar.Text = "Telefono Fijo (Opcional):";
             // 
             // labelNombre_Agregar
             // 
             this.labelNombre_Agregar.AutoSize = true;
+            this.labelNombre_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre_Agregar.Location = new System.Drawing.Point(3, 90);
             this.labelNombre_Agregar.Name = "labelNombre_Agregar";
-            this.labelNombre_Agregar.Size = new System.Drawing.Size(54, 13);
+            this.labelNombre_Agregar.Size = new System.Drawing.Size(116, 15);
             this.labelNombre_Agregar.TabIndex = 1;
-            this.labelNombre_Agregar.Text = "Nombre:";
+            this.labelNombre_Agregar.Text = "Nombre y Apellido:";
             // 
             // labelCedula_Agregar
             // 
             this.labelCedula_Agregar.AutoSize = true;
+            this.labelCedula_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCedula_Agregar.Location = new System.Drawing.Point(3, 40);
             this.labelCedula_Agregar.Name = "labelCedula_Agregar";
-            this.labelCedula_Agregar.Size = new System.Drawing.Size(50, 13);
+            this.labelCedula_Agregar.Size = new System.Drawing.Size(49, 15);
             this.labelCedula_Agregar.TabIndex = 0;
-            this.labelCedula_Agregar.Text = "Cedula:";
+            this.labelCedula_Agregar.Text = "Cédula:";
             // 
             // timerAgregar_Agrandar
             // 
@@ -812,13 +811,13 @@
             this.panel_Menu.Enabled = false;
             this.panel_Menu.Location = new System.Drawing.Point(916, 78);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(419, 600);
+            this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 24;
             // 
             // pictureBox_EtechLogo_PanelMenu
             // 
             this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
-            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(132, 9);
+            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(132, 3);
             this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
             this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
             this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
@@ -830,21 +829,23 @@
             this.groupBox_Menu.Controls.Add(this.btnTaller);
             this.groupBox_Menu.Controls.Add(this.btnEstadisticas);
             this.groupBox_Menu.Controls.Add(this.btnUsuarios);
-            this.groupBox_Menu.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox_Menu.Location = new System.Drawing.Point(16, 104);
+            this.groupBox_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox_Menu.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Menu.Location = new System.Drawing.Point(3, 83);
             this.groupBox_Menu.Name = "groupBox_Menu";
-            this.groupBox_Menu.Size = new System.Drawing.Size(387, 480);
+            this.groupBox_Menu.Size = new System.Drawing.Size(413, 517);
             this.groupBox_Menu.TabIndex = 0;
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "MENU";
             // 
             // btnTaller
             // 
+            this.btnTaller.Font = new System.Drawing.Font("Montserrat SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaller.Image = global::Diseño.Properties.Resources.Taller2;
             this.btnTaller.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaller.Location = new System.Drawing.Point(4, 105);
+            this.btnTaller.Location = new System.Drawing.Point(6, 35);
             this.btnTaller.Name = "btnTaller";
-            this.btnTaller.Size = new System.Drawing.Size(377, 80);
+            this.btnTaller.Size = new System.Drawing.Size(401, 80);
             this.btnTaller.TabIndex = 2;
             this.btnTaller.Text = "TALLER";
             this.btnTaller.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -853,11 +854,12 @@
             // 
             // btnEstadisticas
             // 
+            this.btnEstadisticas.Font = new System.Drawing.Font("Montserrat SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadisticas.Image = global::Diseño.Properties.Resources.Estadisticas;
             this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(4, 191);
+            this.btnEstadisticas.Location = new System.Drawing.Point(6, 208);
             this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(377, 80);
+            this.btnEstadisticas.Size = new System.Drawing.Size(401, 80);
             this.btnEstadisticas.TabIndex = 1;
             this.btnEstadisticas.Text = "ESTADISTICAS";
             this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -865,12 +867,12 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Montserrat SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.Image = global::Diseño.Properties.Resources.Usuarios;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
+            this.btnUsuarios.Location = new System.Drawing.Point(6, 122);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(377, 80);
+            this.btnUsuarios.Size = new System.Drawing.Size(401, 80);
             this.btnUsuarios.TabIndex = 0;
             this.btnUsuarios.Text = "USUARIOS";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -891,6 +893,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrarSesion;
             this.ClientSize = new System.Drawing.Size(1350, 689);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_Eliminar);
@@ -900,7 +903,10 @@
             this.Controls.Add(this.panelE);
             this.Controls.Add(this.panelD);
             this.Name = "Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Clientes_FormClosed);
             this.Load += new System.EventHandler(this.Clientes_Load);
             this.panelD.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
@@ -939,7 +945,6 @@
         private System.Windows.Forms.Label label_Name_Form;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label label_Filtrar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtCampo_Busqueda;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridView tablaClientes;
