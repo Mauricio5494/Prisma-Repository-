@@ -29,31 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelD = new System.Windows.Forms.Panel();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label_Filtrar = new System.Windows.Forms.Label();
             this.MenuOpcionesCelular = new System.Windows.Forms.ComboBox();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
             this.panelE = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuOpcionesTrabajos = new System.Windows.Forms.ComboBox();
-            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_AgregarTrabajos = new System.Windows.Forms.GroupBox();
-            this.txtID_Tecnico_Agregar_Trabajos = new System.Windows.Forms.TextBox();
             this.labelID_Tecnico_Agregar = new System.Windows.Forms.Label();
             this.dateTimePicker_FechaDeIngreso_Agregar = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_Plazo_Agregar = new System.Windows.Forms.DateTimePicker();
@@ -66,17 +59,16 @@
             this.txtPresupuesto_Agregar = new System.Windows.Forms.TextBox();
             this.labelPresupuesto_Agregar = new System.Windows.Forms.Label();
             this.labelPlazo_Agregar = new System.Windows.Forms.Label();
-            this.txtID_Trabajo_Agregar = new System.Windows.Forms.TextBox();
             this.labelTrabajo_ID_Agregar = new System.Windows.Forms.Label();
             this.radioButton_TRABAJO_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_CELULARES_Agregar = new System.Windows.Forms.RadioButton();
             this.label_Tabla_Agregar = new System.Windows.Forms.Label();
             this.groupBox_AgregarCelulares = new System.Windows.Forms.GroupBox();
-            this.label_CaracteresRestantesCI_AgregarCelulares = new System.Windows.Forms.Label();
+            this.comboBox_AgregarCelular_CedulaDelDueño = new System.Windows.Forms.ComboBox();
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo = new System.Windows.Forms.ComboBox();
             this.btnAgregar_Celular = new System.Windows.Forms.Button();
             this.radioButton_Averiado_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_Arreglado_Agregar = new System.Windows.Forms.RadioButton();
-            this.txtID_Tecnico_Agregar_Celulares = new System.Windows.Forms.TextBox();
             this.labelTecnico_A_Cargo_Agregar = new System.Windows.Forms.Label();
             this.labelEstado_Agregar = new System.Windows.Forms.Label();
             this.txtMarca_Agregar = new System.Windows.Forms.TextBox();
@@ -85,7 +77,6 @@
             this.labelModelo_Agregar = new System.Windows.Forms.Label();
             this.txtIMEI_Agregar = new System.Windows.Forms.TextBox();
             this.labelIMEI_Agregar = new System.Windows.Forms.Label();
-            this.txtCI_Del_Dueño_Agregar = new System.Windows.Forms.TextBox();
             this.labelID_Dueño_Agregar = new System.Windows.Forms.Label();
             this.timer_Agregar_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_AgregarC_Agrandar = new System.Windows.Forms.Timer(this.components);
@@ -94,11 +85,7 @@
             this.timer_GroupBox_AgregarT_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_AgregarT_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.timer_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Menu_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
@@ -107,7 +94,6 @@
             this.timer_GroupBox_ModificarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.panel_Modificar = new System.Windows.Forms.Panel();
             this.groupBox_ModificarTrabajos = new System.Windows.Forms.GroupBox();
-            this.txtID_Tecnico_Trabajo_Modficar = new System.Windows.Forms.TextBox();
             this.labelID_Tecnico_Trabajo_Modificar = new System.Windows.Forms.Label();
             this.labelError_Modificar_Trabajos = new System.Windows.Forms.Label();
             this.labelModificar_Columna_Trabajos = new System.Windows.Forms.Label();
@@ -128,12 +114,12 @@
             this.txtTrabajo_ID_Modificar = new System.Windows.Forms.TextBox();
             this.labelTrabajo_ID_Modificar = new System.Windows.Forms.Label();
             this.groupBox_ModificarCelulares = new System.Windows.Forms.GroupBox();
+            this.txtModificar_Columna_Celulares = new System.Windows.Forms.TextBox();
             this.comboBox_ModificarTecnicoACargo = new System.Windows.Forms.ComboBox();
             this.label_groupboxModificar_IDUsuarioModiifcar = new System.Windows.Forms.Label();
             this.labelError_Modificar_Celulares = new System.Windows.Forms.Label();
             this.labelModificar_Columna_Celulares = new System.Windows.Forms.Label();
             this.labelModificar_Columna_Celular = new System.Windows.Forms.Label();
-            this.txtModificar_Columna_Celulares = new System.Windows.Forms.TextBox();
             this.radioButton_Averiado_Modificar = new System.Windows.Forms.RadioButton();
             this.comboBoxColumnas_Celulares = new System.Windows.Forms.ComboBox();
             this.radioButton_Arreglado_Modificar = new System.Windows.Forms.RadioButton();
@@ -165,7 +151,6 @@
             this.label_Tabla_Eliminar = new System.Windows.Forms.Label();
             this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
             this.labMostrarIDdelCelularSeleccionado = new System.Windows.Forms.Label();
-            this.btnEliminar_Celular = new System.Windows.Forms.Button();
             this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
             this.timer_GroupBox_EliminarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_EliminarC_Reducir = new System.Windows.Forms.Timer(this.components);
@@ -179,15 +164,28 @@
             this.tab_Celulares = new System.Windows.Forms.TabPage();
             this.tab_Trabajos = new System.Windows.Forms.TabPage();
             this.timer_RecargarBDs = new System.Windows.Forms.Timer(this.components);
+            this.combobox_IDTecnico_Modificar_Trabajo = new System.Windows.Forms.ComboBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnEliminar_Celular = new System.Windows.Forms.Button();
+            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.combobox_IDdelTecnico_AgregarTrabajos = new System.Windows.Forms.ComboBox();
+            this.combobox_IDdelCelular_Trabajo_Agregar = new System.Windows.Forms.ComboBox();
             this.panelD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panel_Agregar.SuspendLayout();
             this.groupBox_AgregarTrabajos.SuspendLayout();
             this.groupBox_AgregarCelulares.SuspendLayout();
             this.panel_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
             this.groupBox_ModificarTrabajos.SuspendLayout();
@@ -200,6 +198,9 @@
             this.tabIndex_Pestañas.SuspendLayout();
             this.tab_Celulares.SuspendLayout();
             this.tab_Trabajos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelD
@@ -215,109 +216,6 @@
             this.panelD.Name = "panelD";
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 5;
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Enabled = false;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.TabIndex = 21;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Visible = false;
-            // 
-            // btnMenuPrincipal
-            // 
-            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
-            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
-            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
-            this.btnMenuPrincipal.TabIndex = 16;
-            this.btnMenuPrincipal.Text = "Menu";
-            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
-            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenu_Principal);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
-            this.btnEliminar.TabIndex = 14;
-            this.btnEliminar.Text = "Quitar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(0, 132);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 46);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
-            this.btnAgregar.TabIndex = 1;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.Text = "Salir";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // label_Filtrar
             // 
@@ -336,9 +234,11 @@
             this.MenuOpcionesCelular.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MenuOpcionesCelular.Enabled = false;
             this.MenuOpcionesCelular.Items.AddRange(new object[] {
-            "Dueño",
+            "Cedula del dueño",
+            "Estado",
             "Marca",
-            "Modelo"});
+            "Modelo",
+            "Tecnico a cargo"});
             this.MenuOpcionesCelular.Location = new System.Drawing.Point(144, 24);
             this.MenuOpcionesCelular.Name = "MenuOpcionesCelular";
             this.MenuOpcionesCelular.Size = new System.Drawing.Size(121, 21);
@@ -356,7 +256,6 @@
             this.txtCampo_Busqueda.Size = new System.Drawing.Size(323, 22);
             this.txtCampo_Busqueda.TabIndex = 8;
             this.txtCampo_Busqueda.TextChanged += new System.EventHandler(this.txtCampo_Busqueda_TextChanged);
-            this.txtCampo_Busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCampo_Busqueda_KeyPress);
             // 
             // panelE
             // 
@@ -396,6 +295,7 @@
             "Fecha de ingreso",
             "Adelanto",
             "ID del celular"});
+            this.MenuOpcionesTrabajos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuOpcionesTrabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MenuOpcionesTrabajos.Enabled = false;
             this.MenuOpcionesTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,16 +313,6 @@
             this.MenuOpcionesTrabajos.Visible = false;
             this.MenuOpcionesTrabajos.SelectedIndexChanged += new System.EventHandler(this.MenuOpcionesTrabajos_SelectedIndexChanged);
             // 
-            // pictureBox_Taller
-            // 
-            this.pictureBox_Taller.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Taller.Image")));
-            this.pictureBox_Taller.Location = new System.Drawing.Point(1277, 14);
-            this.pictureBox_Taller.Name = "pictureBox_Taller";
-            this.pictureBox_Taller.Size = new System.Drawing.Size(44, 41);
-            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Taller.TabIndex = 21;
-            this.pictureBox_Taller.TabStop = false;
-            // 
             // label_Name_Form
             // 
             this.label_Name_Form.AutoSize = true;
@@ -435,19 +325,6 @@
             this.label_Name_Form.Size = new System.Drawing.Size(124, 37);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "TALLER";
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.PanSE;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(0, 18);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(45, 41);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnCerrar
             // 
@@ -469,15 +346,17 @@
             this.panel_Agregar.Controls.Add(this.label_Tabla_Agregar);
             this.panel_Agregar.Controls.Add(this.groupBox_AgregarCelulares);
             this.panel_Agregar.Enabled = false;
+            this.panel_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
             this.panel_Agregar.TabIndex = 15;
             // 
             // groupBox_AgregarTrabajos
             // 
             this.groupBox_AgregarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_AgregarTrabajos.Controls.Add(this.txtID_Tecnico_Agregar_Trabajos);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.combobox_IDdelCelular_Trabajo_Agregar);
+            this.groupBox_AgregarTrabajos.Controls.Add(this.combobox_IDdelTecnico_AgregarTrabajos);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelID_Tecnico_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_FechaDeIngreso_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_Plazo_Agregar);
@@ -490,53 +369,48 @@
             this.groupBox_AgregarTrabajos.Controls.Add(this.txtPresupuesto_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelPresupuesto_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelPlazo_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.txtID_Trabajo_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelTrabajo_ID_Agregar);
             this.groupBox_AgregarTrabajos.Enabled = false;
-            this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(42, 77);
+            this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(3, 35);
             this.groupBox_AgregarTrabajos.Name = "groupBox_AgregarTrabajos";
-            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(413, 563);
             this.groupBox_AgregarTrabajos.TabIndex = 16;
             this.groupBox_AgregarTrabajos.TabStop = false;
             this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
-            // 
-            // txtID_Tecnico_Agregar_Trabajos
-            // 
-            this.txtID_Tecnico_Agregar_Trabajos.Location = new System.Drawing.Point(6, 363);
-            this.txtID_Tecnico_Agregar_Trabajos.Name = "txtID_Tecnico_Agregar_Trabajos";
-            this.txtID_Tecnico_Agregar_Trabajos.Size = new System.Drawing.Size(325, 20);
-            this.txtID_Tecnico_Agregar_Trabajos.TabIndex = 16;
             // 
             // labelID_Tecnico_Agregar
             // 
             this.labelID_Tecnico_Agregar.AutoSize = true;
             this.labelID_Tecnico_Agregar.Location = new System.Drawing.Point(6, 347);
             this.labelID_Tecnico_Agregar.Name = "labelID_Tecnico_Agregar";
-            this.labelID_Tecnico_Agregar.Size = new System.Drawing.Size(138, 13);
+            this.labelID_Tecnico_Agregar.Size = new System.Drawing.Size(93, 15);
             this.labelID_Tecnico_Agregar.TabIndex = 15;
-            this.labelID_Tecnico_Agregar.Text = "ID del tecnico a cargo:";
+            this.labelID_Tecnico_Agregar.Text = "Tecnico a cargo:";
             // 
             // dateTimePicker_FechaDeIngreso_Agregar
             // 
+            this.dateTimePicker_FechaDeIngreso_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 270);
             this.dateTimePicker_FechaDeIngreso_Agregar.Name = "dateTimePicker_FechaDeIngreso_Agregar";
-            this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker_FechaDeIngreso_Agregar.TabIndex = 14;
+            this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(243, 21);
+            this.dateTimePicker_FechaDeIngreso_Agregar.TabIndex = 22;
             // 
             // dateTimePicker_Plazo_Agregar
             // 
+            this.dateTimePicker_Plazo_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker_Plazo_Agregar.CustomFormat = "";
             this.dateTimePicker_Plazo_Agregar.Location = new System.Drawing.Point(6, 99);
             this.dateTimePicker_Plazo_Agregar.Name = "dateTimePicker_Plazo_Agregar";
-            this.dateTimePicker_Plazo_Agregar.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker_Plazo_Agregar.TabIndex = 13;
+            this.dateTimePicker_Plazo_Agregar.Size = new System.Drawing.Size(243, 21);
+            this.dateTimePicker_Plazo_Agregar.TabIndex = 19;
             // 
             // btnAgregar_Trabajo
             // 
-            this.btnAgregar_Trabajo.Location = new System.Drawing.Point(6, 457);
+            this.btnAgregar_Trabajo.Location = new System.Drawing.Point(6, 426);
             this.btnAgregar_Trabajo.Name = "btnAgregar_Trabajo";
             this.btnAgregar_Trabajo.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar_Trabajo.TabIndex = 12;
+            this.btnAgregar_Trabajo.TabIndex = 25;
             this.btnAgregar_Trabajo.Text = "Agregar";
             this.btnAgregar_Trabajo.UseVisualStyleBackColor = true;
             this.btnAgregar_Trabajo.Click += new System.EventHandler(this.btnAgregar_Trabajo_Click);
@@ -545,15 +419,15 @@
             // 
             this.txtAdelanto_Agregar.Location = new System.Drawing.Point(6, 313);
             this.txtAdelanto_Agregar.Name = "txtAdelanto_Agregar";
-            this.txtAdelanto_Agregar.Size = new System.Drawing.Size(325, 20);
-            this.txtAdelanto_Agregar.TabIndex = 11;
+            this.txtAdelanto_Agregar.Size = new System.Drawing.Size(401, 21);
+            this.txtAdelanto_Agregar.TabIndex = 23;
             // 
             // labelAdelanto_Agregar
             // 
             this.labelAdelanto_Agregar.AutoSize = true;
             this.labelAdelanto_Agregar.Location = new System.Drawing.Point(6, 297);
             this.labelAdelanto_Agregar.Name = "labelAdelanto_Agregar";
-            this.labelAdelanto_Agregar.Size = new System.Drawing.Size(61, 13);
+            this.labelAdelanto_Agregar.Size = new System.Drawing.Size(58, 15);
             this.labelAdelanto_Agregar.TabIndex = 10;
             this.labelAdelanto_Agregar.Text = "Adelanto:";
             // 
@@ -562,7 +436,7 @@
             this.labelFechaDeIngreso_Agregar.AutoSize = true;
             this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 254);
             this.labelFechaDeIngreso_Agregar.Name = "labelFechaDeIngreso_Agregar";
-            this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(177, 13);
+            this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(168, 15);
             this.labelFechaDeIngreso_Agregar.TabIndex = 8;
             this.labelFechaDeIngreso_Agregar.Text = "Cuando ingresó el dispositivo:";
             // 
@@ -571,15 +445,15 @@
             this.txtProblema_Agregar.Location = new System.Drawing.Point(6, 193);
             this.txtProblema_Agregar.Multiline = true;
             this.txtProblema_Agregar.Name = "txtProblema_Agregar";
-            this.txtProblema_Agregar.Size = new System.Drawing.Size(325, 53);
-            this.txtProblema_Agregar.TabIndex = 7;
+            this.txtProblema_Agregar.Size = new System.Drawing.Size(401, 53);
+            this.txtProblema_Agregar.TabIndex = 21;
             // 
             // labelProblema_Agregar
             // 
             this.labelProblema_Agregar.AutoSize = true;
             this.labelProblema_Agregar.Location = new System.Drawing.Point(3, 177);
             this.labelProblema_Agregar.Name = "labelProblema_Agregar";
-            this.labelProblema_Agregar.Size = new System.Drawing.Size(130, 13);
+            this.labelProblema_Agregar.Size = new System.Drawing.Size(125, 15);
             this.labelProblema_Agregar.TabIndex = 6;
             this.labelProblema_Agregar.Text = "Describa el problema:";
             // 
@@ -587,15 +461,15 @@
             // 
             this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(6, 143);
             this.txtPresupuesto_Agregar.Name = "txtPresupuesto_Agregar";
-            this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(325, 20);
-            this.txtPresupuesto_Agregar.TabIndex = 5;
+            this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(401, 21);
+            this.txtPresupuesto_Agregar.TabIndex = 20;
             // 
             // labelPresupuesto_Agregar
             // 
             this.labelPresupuesto_Agregar.AutoSize = true;
             this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(3, 127);
             this.labelPresupuesto_Agregar.Name = "labelPresupuesto_Agregar";
-            this.labelPresupuesto_Agregar.Size = new System.Drawing.Size(81, 13);
+            this.labelPresupuesto_Agregar.Size = new System.Drawing.Size(77, 15);
             this.labelPresupuesto_Agregar.TabIndex = 4;
             this.labelPresupuesto_Agregar.Text = "Presupuesto:";
             // 
@@ -604,34 +478,28 @@
             this.labelPlazo_Agregar.AutoSize = true;
             this.labelPlazo_Agregar.Location = new System.Drawing.Point(3, 83);
             this.labelPlazo_Agregar.Name = "labelPlazo_Agregar";
-            this.labelPlazo_Agregar.Size = new System.Drawing.Size(42, 13);
+            this.labelPlazo_Agregar.Size = new System.Drawing.Size(39, 15);
             this.labelPlazo_Agregar.TabIndex = 2;
             this.labelPlazo_Agregar.Text = "Plazo:";
-            // 
-            // txtID_Trabajo_Agregar
-            // 
-            this.txtID_Trabajo_Agregar.Location = new System.Drawing.Point(6, 56);
-            this.txtID_Trabajo_Agregar.Name = "txtID_Trabajo_Agregar";
-            this.txtID_Trabajo_Agregar.Size = new System.Drawing.Size(325, 20);
-            this.txtID_Trabajo_Agregar.TabIndex = 1;
             // 
             // labelTrabajo_ID_Agregar
             // 
             this.labelTrabajo_ID_Agregar.AutoSize = true;
             this.labelTrabajo_ID_Agregar.Location = new System.Drawing.Point(3, 40);
             this.labelTrabajo_ID_Agregar.Name = "labelTrabajo_ID_Agregar";
-            this.labelTrabajo_ID_Agregar.Size = new System.Drawing.Size(87, 13);
+            this.labelTrabajo_ID_Agregar.Size = new System.Drawing.Size(47, 15);
             this.labelTrabajo_ID_Agregar.TabIndex = 0;
-            this.labelTrabajo_ID_Agregar.Text = "ID del celular:";
+            this.labelTrabajo_ID_Agregar.Text = "Celular:";
             // 
             // radioButton_TRABAJO_Agregar
             // 
             this.radioButton_TRABAJO_Agregar.AutoSize = true;
-            this.radioButton_TRABAJO_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_TRABAJO_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_TRABAJO_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_TRABAJO_Agregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radioButton_TRABAJO_Agregar.Location = new System.Drawing.Point(288, 31);
+            this.radioButton_TRABAJO_Agregar.Location = new System.Drawing.Point(296, 10);
             this.radioButton_TRABAJO_Agregar.Name = "radioButton_TRABAJO_Agregar";
-            this.radioButton_TRABAJO_Agregar.Size = new System.Drawing.Size(81, 17);
+            this.radioButton_TRABAJO_Agregar.Size = new System.Drawing.Size(79, 19);
             this.radioButton_TRABAJO_Agregar.TabIndex = 3;
             this.radioButton_TRABAJO_Agregar.TabStop = true;
             this.radioButton_TRABAJO_Agregar.Text = "TRABAJO";
@@ -641,11 +509,12 @@
             // radioButton_CELULARES_Agregar
             // 
             this.radioButton_CELULARES_Agregar.AutoSize = true;
-            this.radioButton_CELULARES_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_CELULARES_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_CELULARES_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_CELULARES_Agregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radioButton_CELULARES_Agregar.Location = new System.Drawing.Point(186, 31);
+            this.radioButton_CELULARES_Agregar.Location = new System.Drawing.Point(194, 10);
             this.radioButton_CELULARES_Agregar.Name = "radioButton_CELULARES_Agregar";
-            this.radioButton_CELULARES_Agregar.Size = new System.Drawing.Size(97, 17);
+            this.radioButton_CELULARES_Agregar.Size = new System.Drawing.Size(93, 19);
             this.radioButton_CELULARES_Agregar.TabIndex = 2;
             this.radioButton_CELULARES_Agregar.TabStop = true;
             this.radioButton_CELULARES_Agregar.Text = "CELULARES";
@@ -655,22 +524,22 @@
             // label_Tabla_Agregar
             // 
             this.label_Tabla_Agregar.AutoSize = true;
-            this.label_Tabla_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tabla_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Tabla_Agregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Tabla_Agregar.Location = new System.Drawing.Point(31, 33);
+            this.label_Tabla_Agregar.Location = new System.Drawing.Point(39, 12);
             this.label_Tabla_Agregar.Name = "label_Tabla_Agregar";
-            this.label_Tabla_Agregar.Size = new System.Drawing.Size(149, 13);
+            this.label_Tabla_Agregar.Size = new System.Drawing.Size(138, 15);
             this.label_Tabla_Agregar.TabIndex = 1;
             this.label_Tabla_Agregar.Text = "AGREGAR A  LA TABLA:";
             // 
             // groupBox_AgregarCelulares
             // 
             this.groupBox_AgregarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_AgregarCelulares.Controls.Add(this.label_CaracteresRestantesCI_AgregarCelulares);
+            this.groupBox_AgregarCelulares.Controls.Add(this.comboBox_AgregarCelular_CedulaDelDueño);
+            this.groupBox_AgregarCelulares.Controls.Add(this.comboBox_AgregarCelular_IdDelTecnicoAcargo);
             this.groupBox_AgregarCelulares.Controls.Add(this.btnAgregar_Celular);
             this.groupBox_AgregarCelulares.Controls.Add(this.radioButton_Averiado_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.radioButton_Arreglado_Agregar);
-            this.groupBox_AgregarCelulares.Controls.Add(this.txtID_Tecnico_Agregar_Celulares);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelEstado_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.txtMarca_Agregar);
@@ -679,33 +548,43 @@
             this.groupBox_AgregarCelulares.Controls.Add(this.labelModelo_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.txtIMEI_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelIMEI_Agregar);
-            this.groupBox_AgregarCelulares.Controls.Add(this.txtCI_Del_Dueño_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelID_Dueño_Agregar);
             this.groupBox_AgregarCelulares.Enabled = false;
-            this.groupBox_AgregarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_AgregarCelulares.Location = new System.Drawing.Point(42, 77);
+            this.groupBox_AgregarCelulares.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_AgregarCelulares.Location = new System.Drawing.Point(3, 35);
             this.groupBox_AgregarCelulares.Name = "groupBox_AgregarCelulares";
-            this.groupBox_AgregarCelulares.Size = new System.Drawing.Size(337, 0);
+            this.groupBox_AgregarCelulares.Size = new System.Drawing.Size(413, 0);
             this.groupBox_AgregarCelulares.TabIndex = 0;
             this.groupBox_AgregarCelulares.TabStop = false;
             this.groupBox_AgregarCelulares.Text = "Ingrese un celular";
             // 
-            // label_CaracteresRestantesCI_AgregarCelulares
+            // comboBox_AgregarCelular_CedulaDelDueño
             // 
-            this.label_CaracteresRestantesCI_AgregarCelulares.AutoSize = true;
-            this.label_CaracteresRestantesCI_AgregarCelulares.Location = new System.Drawing.Point(141, 79);
-            this.label_CaracteresRestantesCI_AgregarCelulares.Name = "label_CaracteresRestantesCI_AgregarCelulares";
-            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(128, 13);
-            this.label_CaracteresRestantesCI_AgregarCelulares.TabIndex = 14;
-            this.label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres restantes:";
-            this.label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
+            this.comboBox_AgregarCelular_CedulaDelDueño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_AgregarCelular_CedulaDelDueño.FormattingEnabled = true;
+            this.comboBox_AgregarCelular_CedulaDelDueño.Location = new System.Drawing.Point(6, 58);
+            this.comboBox_AgregarCelular_CedulaDelDueño.Name = "comboBox_AgregarCelular_CedulaDelDueño";
+            this.comboBox_AgregarCelular_CedulaDelDueño.Size = new System.Drawing.Size(401, 23);
+            this.comboBox_AgregarCelular_CedulaDelDueño.Sorted = true;
+            this.comboBox_AgregarCelular_CedulaDelDueño.TabIndex = 16;
+            // 
+            // comboBox_AgregarCelular_IdDelTecnicoAcargo
+            // 
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.FormattingEnabled = true;
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(6, 255);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Name = "comboBox_AgregarCelular_IdDelTecnicoAcargo";
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(398, 23);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Sorted = true;
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.TabIndex = 20;
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Click += new System.EventHandler(this.comboBox_AgregarCelular_IdDelTecnicoAcargo_Click);
             // 
             // btnAgregar_Celular
             // 
-            this.btnAgregar_Celular.Location = new System.Drawing.Point(6, 457);
+            this.btnAgregar_Celular.Location = new System.Drawing.Point(6, 384);
             this.btnAgregar_Celular.Name = "btnAgregar_Celular";
             this.btnAgregar_Celular.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar_Celular.TabIndex = 13;
+            this.btnAgregar_Celular.TabIndex = 23;
             this.btnAgregar_Celular.Text = "Agregar";
             this.btnAgregar_Celular.UseVisualStyleBackColor = true;
             this.btnAgregar_Celular.Click += new System.EventHandler(this.btnAgregarCelular_Click);
@@ -713,10 +592,10 @@
             // radioButton_Averiado_Agregar
             // 
             this.radioButton_Averiado_Agregar.AutoSize = true;
-            this.radioButton_Averiado_Agregar.Location = new System.Drawing.Point(99, 320);
+            this.radioButton_Averiado_Agregar.Location = new System.Drawing.Point(96, 309);
             this.radioButton_Averiado_Agregar.Name = "radioButton_Averiado_Agregar";
-            this.radioButton_Averiado_Agregar.Size = new System.Drawing.Size(75, 17);
-            this.radioButton_Averiado_Agregar.TabIndex = 12;
+            this.radioButton_Averiado_Agregar.Size = new System.Drawing.Size(73, 19);
+            this.radioButton_Averiado_Agregar.TabIndex = 22;
             this.radioButton_Averiado_Agregar.TabStop = true;
             this.radioButton_Averiado_Agregar.Text = "Averiado";
             this.radioButton_Averiado_Agregar.UseVisualStyleBackColor = true;
@@ -724,104 +603,88 @@
             // radioButton_Arreglado_Agregar
             // 
             this.radioButton_Arreglado_Agregar.AutoSize = true;
-            this.radioButton_Arreglado_Agregar.Location = new System.Drawing.Point(9, 320);
+            this.radioButton_Arreglado_Agregar.Location = new System.Drawing.Point(6, 309);
             this.radioButton_Arreglado_Agregar.Name = "radioButton_Arreglado_Agregar";
-            this.radioButton_Arreglado_Agregar.Size = new System.Drawing.Size(79, 17);
-            this.radioButton_Arreglado_Agregar.TabIndex = 11;
+            this.radioButton_Arreglado_Agregar.Size = new System.Drawing.Size(79, 19);
+            this.radioButton_Arreglado_Agregar.TabIndex = 21;
             this.radioButton_Arreglado_Agregar.TabStop = true;
             this.radioButton_Arreglado_Agregar.Text = "Arreglado";
             this.radioButton_Arreglado_Agregar.UseVisualStyleBackColor = true;
-            // 
-            // txtID_Tecnico_Agregar_Celulares
-            // 
-            this.txtID_Tecnico_Agregar_Celulares.Location = new System.Drawing.Point(6, 256);
-            this.txtID_Tecnico_Agregar_Celulares.Name = "txtID_Tecnico_Agregar_Celulares";
-            this.txtID_Tecnico_Agregar_Celulares.Size = new System.Drawing.Size(322, 20);
-            this.txtID_Tecnico_Agregar_Celulares.TabIndex = 10;
             // 
             // labelTecnico_A_Cargo_Agregar
             // 
             this.labelTecnico_A_Cargo_Agregar.AutoSize = true;
             this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 240);
             this.labelTecnico_A_Cargo_Agregar.Name = "labelTecnico_A_Cargo_Agregar";
-            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(138, 13);
+            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(111, 15);
             this.labelTecnico_A_Cargo_Agregar.TabIndex = 9;
-            this.labelTecnico_A_Cargo_Agregar.Text = "ID del tecnico a cargo:";
+            this.labelTecnico_A_Cargo_Agregar.Text = "Tecnico resposable:";
             // 
             // labelEstado_Agregar
             // 
             this.labelEstado_Agregar.AutoSize = true;
             this.labelEstado_Agregar.Location = new System.Drawing.Point(3, 290);
             this.labelEstado_Agregar.Name = "labelEstado_Agregar";
-            this.labelEstado_Agregar.Size = new System.Drawing.Size(50, 13);
+            this.labelEstado_Agregar.Size = new System.Drawing.Size(45, 15);
             this.labelEstado_Agregar.TabIndex = 8;
             this.labelEstado_Agregar.Text = "Estado:";
             // 
             // txtMarca_Agregar
             // 
-            this.txtMarca_Agregar.Location = new System.Drawing.Point(6, 206);
+            this.txtMarca_Agregar.Location = new System.Drawing.Point(6, 111);
             this.txtMarca_Agregar.Name = "txtMarca_Agregar";
-            this.txtMarca_Agregar.Size = new System.Drawing.Size(322, 20);
-            this.txtMarca_Agregar.TabIndex = 7;
+            this.txtMarca_Agregar.Size = new System.Drawing.Size(398, 21);
+            this.txtMarca_Agregar.TabIndex = 17;
             // 
             // labelMarca_Agregar
             // 
             this.labelMarca_Agregar.AutoSize = true;
-            this.labelMarca_Agregar.Location = new System.Drawing.Point(3, 190);
+            this.labelMarca_Agregar.Location = new System.Drawing.Point(3, 95);
             this.labelMarca_Agregar.Name = "labelMarca_Agregar";
-            this.labelMarca_Agregar.Size = new System.Drawing.Size(46, 13);
+            this.labelMarca_Agregar.Size = new System.Drawing.Size(42, 15);
             this.labelMarca_Agregar.TabIndex = 6;
             this.labelMarca_Agregar.Text = "Marca:";
             // 
             // txtModelo_Agregar
             // 
-            this.txtModelo_Agregar.Location = new System.Drawing.Point(6, 156);
+            this.txtModelo_Agregar.Location = new System.Drawing.Point(7, 158);
             this.txtModelo_Agregar.Name = "txtModelo_Agregar";
-            this.txtModelo_Agregar.Size = new System.Drawing.Size(322, 20);
-            this.txtModelo_Agregar.TabIndex = 5;
+            this.txtModelo_Agregar.Size = new System.Drawing.Size(398, 21);
+            this.txtModelo_Agregar.TabIndex = 18;
             // 
             // labelModelo_Agregar
             // 
             this.labelModelo_Agregar.AutoSize = true;
-            this.labelModelo_Agregar.Location = new System.Drawing.Point(3, 140);
+            this.labelModelo_Agregar.Location = new System.Drawing.Point(4, 142);
             this.labelModelo_Agregar.Name = "labelModelo_Agregar";
-            this.labelModelo_Agregar.Size = new System.Drawing.Size(52, 13);
+            this.labelModelo_Agregar.Size = new System.Drawing.Size(51, 15);
             this.labelModelo_Agregar.TabIndex = 4;
             this.labelModelo_Agregar.Text = "Modelo:";
             // 
             // txtIMEI_Agregar
             // 
-            this.txtIMEI_Agregar.Location = new System.Drawing.Point(6, 106);
+            this.txtIMEI_Agregar.Location = new System.Drawing.Point(6, 204);
             this.txtIMEI_Agregar.Name = "txtIMEI_Agregar";
-            this.txtIMEI_Agregar.Size = new System.Drawing.Size(322, 20);
-            this.txtIMEI_Agregar.TabIndex = 3;
+            this.txtIMEI_Agregar.Size = new System.Drawing.Size(398, 21);
+            this.txtIMEI_Agregar.TabIndex = 19;
             // 
             // labelIMEI_Agregar
             // 
             this.labelIMEI_Agregar.AutoSize = true;
-            this.labelIMEI_Agregar.Location = new System.Drawing.Point(3, 90);
+            this.labelIMEI_Agregar.Location = new System.Drawing.Point(3, 188);
             this.labelIMEI_Agregar.Name = "labelIMEI_Agregar";
-            this.labelIMEI_Agregar.Size = new System.Drawing.Size(37, 13);
+            this.labelIMEI_Agregar.Size = new System.Drawing.Size(33, 15);
             this.labelIMEI_Agregar.TabIndex = 2;
             this.labelIMEI_Agregar.Text = "IMEI:";
-            // 
-            // txtCI_Del_Dueño_Agregar
-            // 
-            this.txtCI_Del_Dueño_Agregar.Location = new System.Drawing.Point(6, 56);
-            this.txtCI_Del_Dueño_Agregar.MaxLength = 8;
-            this.txtCI_Del_Dueño_Agregar.Name = "txtCI_Del_Dueño_Agregar";
-            this.txtCI_Del_Dueño_Agregar.Size = new System.Drawing.Size(322, 20);
-            this.txtCI_Del_Dueño_Agregar.TabIndex = 1;
-            this.txtCI_Del_Dueño_Agregar.TextChanged += new System.EventHandler(this.txtCI_Del_Dueño_Agregar_TextChanged);
             // 
             // labelID_Dueño_Agregar
             // 
             this.labelID_Dueño_Agregar.AutoSize = true;
             this.labelID_Dueño_Agregar.Location = new System.Drawing.Point(3, 40);
             this.labelID_Dueño_Agregar.Name = "labelID_Dueño_Agregar";
-            this.labelID_Dueño_Agregar.Size = new System.Drawing.Size(83, 13);
+            this.labelID_Dueño_Agregar.Size = new System.Drawing.Size(130, 15);
             this.labelID_Dueño_Agregar.TabIndex = 0;
-            this.labelID_Dueño_Agregar.Text = "CI del dueño:";
+            this.labelID_Dueño_Agregar.Text = "Propietario del Celular:";
             // 
             // timer_Agregar_Agrandar
             // 
@@ -864,15 +727,6 @@
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 16;
             // 
-            // pictureBox_EtechLogo_PanelMenu
-            // 
-            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
-            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(122, 6);
-            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
-            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
-            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
-            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
-            // 
             // groupBox_Menu
             // 
             this.groupBox_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -886,45 +740,6 @@
             this.groupBox_Menu.TabIndex = 0;
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "Menú";
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Image = global::Diseño.Properties.Resources.Clientes1;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnClientes.Location = new System.Drawing.Point(4, 105);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(401, 80);
-            this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "CLIENTES";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.Estadisticas;
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(4, 191);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(401, 80);
-            this.btnEstadisticas.TabIndex = 1;
-            this.btnEstadisticas.Text = "ESTADISTICAS";
-            this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::Diseño.Properties.Resources.Usuarios;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(401, 80);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "USUARIOS";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // timer_Menu_Agrandar
             // 
@@ -968,13 +783,13 @@
             this.panel_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Modificar.Location = new System.Drawing.Point(916, 78);
             this.panel_Modificar.Name = "panel_Modificar";
-            this.panel_Modificar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 17;
             // 
             // groupBox_ModificarTrabajos
             // 
             this.groupBox_ModificarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_ModificarTrabajos.Controls.Add(this.txtID_Tecnico_Trabajo_Modficar);
+            this.groupBox_ModificarTrabajos.Controls.Add(this.combobox_IDTecnico_Modificar_Trabajo);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelID_Tecnico_Trabajo_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelError_Modificar_Trabajos);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelModificar_Columna_Trabajos);
@@ -1003,24 +818,15 @@
             this.groupBox_ModificarTrabajos.TabStop = false;
             this.groupBox_ModificarTrabajos.Text = "Modificar tabla trabajos";
             // 
-            // txtID_Tecnico_Trabajo_Modficar
-            // 
-            this.txtID_Tecnico_Trabajo_Modficar.Enabled = false;
-            this.txtID_Tecnico_Trabajo_Modficar.Location = new System.Drawing.Point(6, 363);
-            this.txtID_Tecnico_Trabajo_Modficar.Name = "txtID_Tecnico_Trabajo_Modficar";
-            this.txtID_Tecnico_Trabajo_Modficar.Size = new System.Drawing.Size(325, 21);
-            this.txtID_Tecnico_Trabajo_Modficar.TabIndex = 33;
-            this.txtID_Tecnico_Trabajo_Modficar.Visible = false;
-            // 
             // labelID_Tecnico_Trabajo_Modificar
             // 
             this.labelID_Tecnico_Trabajo_Modificar.AutoSize = true;
             this.labelID_Tecnico_Trabajo_Modificar.Enabled = false;
             this.labelID_Tecnico_Trabajo_Modificar.Location = new System.Drawing.Point(3, 347);
             this.labelID_Tecnico_Trabajo_Modificar.Name = "labelID_Tecnico_Trabajo_Modificar";
-            this.labelID_Tecnico_Trabajo_Modificar.Size = new System.Drawing.Size(86, 15);
+            this.labelID_Tecnico_Trabajo_Modificar.Size = new System.Drawing.Size(124, 15);
             this.labelID_Tecnico_Trabajo_Modificar.TabIndex = 32;
-            this.labelID_Tecnico_Trabajo_Modificar.Text = "ID del tecnico:";
+            this.labelID_Tecnico_Trabajo_Modificar.Text = "Tecnico responsable:";
             this.labelID_Tecnico_Trabajo_Modificar.Visible = false;
             // 
             // labelError_Modificar_Trabajos
@@ -1051,9 +857,9 @@
             // txtModificar_Columna_Trabajos
             // 
             this.txtModificar_Columna_Trabajos.Enabled = false;
-            this.txtModificar_Columna_Trabajos.Location = new System.Drawing.Point(6, 95);
+            this.txtModificar_Columna_Trabajos.Location = new System.Drawing.Point(6, 94);
             this.txtModificar_Columna_Trabajos.Name = "txtModificar_Columna_Trabajos";
-            this.txtModificar_Columna_Trabajos.Size = new System.Drawing.Size(325, 21);
+            this.txtModificar_Columna_Trabajos.Size = new System.Drawing.Size(401, 21);
             this.txtModificar_Columna_Trabajos.TabIndex = 30;
             this.txtModificar_Columna_Trabajos.Visible = false;
             // 
@@ -1097,7 +903,7 @@
             this.dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
             this.dateTimePicker_FechaDeIngreso_Modificar.Location = new System.Drawing.Point(6, 284);
             this.dateTimePicker_FechaDeIngreso_Modificar.Name = "dateTimePicker_FechaDeIngreso_Modificar";
-            this.dateTimePicker_FechaDeIngreso_Modificar.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker_FechaDeIngreso_Modificar.Size = new System.Drawing.Size(256, 21);
             this.dateTimePicker_FechaDeIngreso_Modificar.TabIndex = 22;
             this.dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
             // 
@@ -1116,7 +922,7 @@
             this.dateTimePicker_Plazo_Modificar.Enabled = false;
             this.dateTimePicker_Plazo_Modificar.Location = new System.Drawing.Point(6, 133);
             this.dateTimePicker_Plazo_Modificar.Name = "dateTimePicker_Plazo_Modificar";
-            this.dateTimePicker_Plazo_Modificar.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker_Plazo_Modificar.Size = new System.Drawing.Size(256, 21);
             this.dateTimePicker_Plazo_Modificar.TabIndex = 21;
             this.dateTimePicker_Plazo_Modificar.Visible = false;
             // 
@@ -1125,7 +931,7 @@
             this.txtAdelanto_Modificar.Enabled = false;
             this.txtAdelanto_Modificar.Location = new System.Drawing.Point(6, 323);
             this.txtAdelanto_Modificar.Name = "txtAdelanto_Modificar";
-            this.txtAdelanto_Modificar.Size = new System.Drawing.Size(325, 21);
+            this.txtAdelanto_Modificar.Size = new System.Drawing.Size(401, 21);
             this.txtAdelanto_Modificar.TabIndex = 23;
             this.txtAdelanto_Modificar.Visible = false;
             // 
@@ -1157,7 +963,7 @@
             this.txtProblema_Modificar.Location = new System.Drawing.Point(6, 212);
             this.txtProblema_Modificar.Multiline = true;
             this.txtProblema_Modificar.Name = "txtProblema_Modificar";
-            this.txtProblema_Modificar.Size = new System.Drawing.Size(325, 53);
+            this.txtProblema_Modificar.Size = new System.Drawing.Size(401, 53);
             this.txtProblema_Modificar.TabIndex = 19;
             this.txtProblema_Modificar.Visible = false;
             // 
@@ -1177,7 +983,7 @@
             this.txtPresupuesto_Modificar.Enabled = false;
             this.txtPresupuesto_Modificar.Location = new System.Drawing.Point(6, 173);
             this.txtPresupuesto_Modificar.Name = "txtPresupuesto_Modificar";
-            this.txtPresupuesto_Modificar.Size = new System.Drawing.Size(325, 21);
+            this.txtPresupuesto_Modificar.Size = new System.Drawing.Size(401, 21);
             this.txtPresupuesto_Modificar.TabIndex = 17;
             this.txtPresupuesto_Modificar.Visible = false;
             // 
@@ -1208,7 +1014,7 @@
             this.txtTrabajo_ID_Modificar.Enabled = false;
             this.txtTrabajo_ID_Modificar.Location = new System.Drawing.Point(6, 95);
             this.txtTrabajo_ID_Modificar.Name = "txtTrabajo_ID_Modificar";
-            this.txtTrabajo_ID_Modificar.Size = new System.Drawing.Size(325, 21);
+            this.txtTrabajo_ID_Modificar.Size = new System.Drawing.Size(401, 21);
             this.txtTrabajo_ID_Modificar.TabIndex = 13;
             this.txtTrabajo_ID_Modificar.Visible = false;
             // 
@@ -1226,12 +1032,12 @@
             // groupBox_ModificarCelulares
             // 
             this.groupBox_ModificarCelulares.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_ModificarCelulares.Controls.Add(this.txtModificar_Columna_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.comboBox_ModificarTecnicoACargo);
             this.groupBox_ModificarCelulares.Controls.Add(this.label_groupboxModificar_IDUsuarioModiifcar);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelError_Modificar_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelModificar_Columna_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelModificar_Columna_Celular);
-            this.groupBox_ModificarCelulares.Controls.Add(this.txtModificar_Columna_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Averiado_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.comboBoxColumnas_Celulares);
             this.groupBox_ModificarCelulares.Controls.Add(this.radioButton_Arreglado_Modificar);
@@ -1255,21 +1061,33 @@
             this.groupBox_ModificarCelulares.TabStop = false;
             this.groupBox_ModificarCelulares.Text = "Modificar Celular";
             // 
+            // txtModificar_Columna_Celulares
+            // 
+            this.txtModificar_Columna_Celulares.Enabled = false;
+            this.txtModificar_Columna_Celulares.Location = new System.Drawing.Point(6, 125);
+            this.txtModificar_Columna_Celulares.Name = "txtModificar_Columna_Celulares";
+            this.txtModificar_Columna_Celulares.Size = new System.Drawing.Size(325, 21);
+            this.txtModificar_Columna_Celulares.TabIndex = 32;
+            this.txtModificar_Columna_Celulares.Visible = false;
+            // 
             // comboBox_ModificarTecnicoACargo
             // 
             this.comboBox_ModificarTecnicoACargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_ModificarTecnicoACargo.Enabled = false;
             this.comboBox_ModificarTecnicoACargo.FormattingEnabled = true;
-            this.comboBox_ModificarTecnicoACargo.Location = new System.Drawing.Point(6, 284);
+            this.comboBox_ModificarTecnicoACargo.Location = new System.Drawing.Point(6, 281);
             this.comboBox_ModificarTecnicoACargo.Name = "comboBox_ModificarTecnicoACargo";
-            this.comboBox_ModificarTecnicoACargo.Size = new System.Drawing.Size(322, 23);
+            this.comboBox_ModificarTecnicoACargo.Size = new System.Drawing.Size(325, 23);
             this.comboBox_ModificarTecnicoACargo.TabIndex = 31;
+            this.comboBox_ModificarTecnicoACargo.Visible = false;
             // 
             // label_groupboxModificar_IDUsuarioModiifcar
             // 
             this.label_groupboxModificar_IDUsuarioModiifcar.AutoSize = true;
+            this.label_groupboxModificar_IDUsuarioModiifcar.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_groupboxModificar_IDUsuarioModiifcar.Location = new System.Drawing.Point(3, 37);
             this.label_groupboxModificar_IDUsuarioModiifcar.Name = "label_groupboxModificar_IDUsuarioModiifcar";
-            this.label_groupboxModificar_IDUsuarioModiifcar.Size = new System.Drawing.Size(62, 15);
+            this.label_groupboxModificar_IDUsuarioModiifcar.Size = new System.Drawing.Size(64, 15);
             this.label_groupboxModificar_IDUsuarioModiifcar.TabIndex = 30;
             this.label_groupboxModificar_IDUsuarioModiifcar.Text = "Selección:";
             // 
@@ -1306,15 +1124,6 @@
             this.labelModificar_Columna_Celular.Size = new System.Drawing.Size(59, 15);
             this.labelModificar_Columna_Celular.TabIndex = 25;
             this.labelModificar_Columna_Celular.Text = "Columna:";
-            // 
-            // txtModificar_Columna_Celulares
-            // 
-            this.txtModificar_Columna_Celulares.Enabled = false;
-            this.txtModificar_Columna_Celulares.Location = new System.Drawing.Point(6, 126);
-            this.txtModificar_Columna_Celulares.Name = "txtModificar_Columna_Celulares";
-            this.txtModificar_Columna_Celulares.Size = new System.Drawing.Size(325, 21);
-            this.txtModificar_Columna_Celulares.TabIndex = 26;
-            this.txtModificar_Columna_Celulares.Visible = false;
             // 
             // radioButton_Averiado_Modificar
             // 
@@ -1657,21 +1466,6 @@
             this.labMostrarIDdelCelularSeleccionado.TabIndex = 15;
             this.labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla";
             // 
-            // btnEliminar_Celular
-            // 
-            this.btnEliminar_Celular.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Celular.Image = global::Diseño.Properties.Resources.cruz_16px_roja;
-            this.btnEliminar_Celular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar_Celular.Location = new System.Drawing.Point(9, 114);
-            this.btnEliminar_Celular.Name = "btnEliminar_Celular";
-            this.btnEliminar_Celular.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar_Celular.TabIndex = 14;
-            this.btnEliminar_Celular.Text = "Eliminar";
-            this.btnEliminar_Celular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Celular.UseVisualStyleBackColor = false;
-            this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
-            // 
             // label_ID_Celular_Eliminar
             // 
             this.label_ID_Celular_Eliminar.AutoSize = true;
@@ -1759,32 +1553,50 @@
             this.tablaTrabajos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaTrabajos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTrabajos.DefaultCellStyle = dataGridViewCellStyle4;
             this.tablaTrabajos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaTrabajos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaTrabajos.EnableHeadersVisualStyles = false;
-            this.tablaTrabajos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tablaTrabajos.GridColor = System.Drawing.Color.DimGray;
             this.tablaTrabajos.Location = new System.Drawing.Point(3, 3);
             this.tablaTrabajos.MultiSelect = false;
             this.tablaTrabajos.Name = "tablaTrabajos";
             this.tablaTrabajos.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTrabajos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tablaTrabajos.RowTemplate.ReadOnly = true;
             this.tablaTrabajos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaTrabajos.Size = new System.Drawing.Size(847, 570);
             this.tablaTrabajos.TabIndex = 20;
             this.tablaTrabajos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTrabajos_CellClick);
+            this.tablaTrabajos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tablaTrabajos_CellFormatting);
+            this.tablaTrabajos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tablaTrabajos_DataBindingComplete);
             // 
             // tabIndex_Pestañas
             // 
@@ -1830,6 +1642,226 @@
             this.timer_RecargarBDs.Interval = 1300;
             this.timer_RecargarBDs.Tick += new System.EventHandler(this.timer_RecargarBDs_Tick);
             // 
+            // combobox_IDTecnico_Modificar_Trabajo
+            // 
+            this.combobox_IDTecnico_Modificar_Trabajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_IDTecnico_Modificar_Trabajo.Enabled = false;
+            this.combobox_IDTecnico_Modificar_Trabajo.FormattingEnabled = true;
+            this.combobox_IDTecnico_Modificar_Trabajo.Location = new System.Drawing.Point(6, 365);
+            this.combobox_IDTecnico_Modificar_Trabajo.Name = "combobox_IDTecnico_Modificar_Trabajo";
+            this.combobox_IDTecnico_Modificar_Trabajo.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDTecnico_Modificar_Trabajo.TabIndex = 34;
+            this.combobox_IDTecnico_Modificar_Trabajo.Visible = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // pictureBox_Taller
+            // 
+            this.pictureBox_Taller.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Taller.Image")));
+            this.pictureBox_Taller.Location = new System.Drawing.Point(1277, 14);
+            this.pictureBox_Taller.Name = "pictureBox_Taller";
+            this.pictureBox_Taller.Size = new System.Drawing.Size(44, 41);
+            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Taller.TabIndex = 21;
+            this.pictureBox_Taller.TabStop = false;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(0, 18);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(45, 41);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Enabled = false;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.TabIndex = 21;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Visible = false;
+            // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
+            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
+            this.btnMenuPrincipal.TabIndex = 16;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenu_Principal);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Quitar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(0, 132);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 46);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Salir";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnEliminar_Celular
+            // 
+            this.btnEliminar_Celular.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Celular.Image = global::Diseño.Properties.Resources.cruz_16px_roja;
+            this.btnEliminar_Celular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Celular.Location = new System.Drawing.Point(9, 114);
+            this.btnEliminar_Celular.Name = "btnEliminar_Celular";
+            this.btnEliminar_Celular.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar_Celular.TabIndex = 14;
+            this.btnEliminar_Celular.Text = "Eliminar";
+            this.btnEliminar_Celular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Celular.UseVisualStyleBackColor = false;
+            this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
+            // 
+            // pictureBox_EtechLogo_PanelMenu
+            // 
+            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
+            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(122, 6);
+            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
+            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
+            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
+            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Image = global::Diseño.Properties.Resources.Clientes1;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnClientes.Location = new System.Drawing.Point(4, 105);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(401, 80);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.Estadisticas;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(4, 191);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(401, 80);
+            this.btnEstadisticas.TabIndex = 1;
+            this.btnEstadisticas.Text = "ESTADISTICAS";
+            this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Image = global::Diseño.Properties.Resources.Usuarios;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(401, 80);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // combobox_IDdelTecnico_AgregarTrabajos
+            // 
+            this.combobox_IDdelTecnico_AgregarTrabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_IDdelTecnico_AgregarTrabajos.FormattingEnabled = true;
+            this.combobox_IDdelTecnico_AgregarTrabajos.Location = new System.Drawing.Point(6, 365);
+            this.combobox_IDdelTecnico_AgregarTrabajos.Name = "combobox_IDdelTecnico_AgregarTrabajos";
+            this.combobox_IDdelTecnico_AgregarTrabajos.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDdelTecnico_AgregarTrabajos.TabIndex = 24;
+            // 
+            // combobox_IDdelCelular_Trabajo_Agregar
+            // 
+            this.combobox_IDdelCelular_Trabajo_Agregar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_IDdelCelular_Trabajo_Agregar.FormattingEnabled = true;
+            this.combobox_IDdelCelular_Trabajo_Agregar.Location = new System.Drawing.Point(6, 58);
+            this.combobox_IDdelCelular_Trabajo_Agregar.Name = "combobox_IDdelCelular_Trabajo_Agregar";
+            this.combobox_IDdelCelular_Trabajo_Agregar.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDdelCelular_Trabajo_Agregar.Sorted = true;
+            this.combobox_IDdelCelular_Trabajo_Agregar.TabIndex = 18;
+            this.combobox_IDdelCelular_Trabajo_Agregar.Click += new System.EventHandler(this.combobox_IDdelCelular_Trabajo_Agregar_Click);
+            // 
             // Principal
             // 
             this.AcceptButton = this.btnAgregar;
@@ -1854,10 +1886,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panelD.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
             this.panel_Agregar.ResumeLayout(false);
             this.panel_Agregar.PerformLayout();
             this.groupBox_AgregarTrabajos.ResumeLayout(false);
@@ -1865,7 +1895,6 @@
             this.groupBox_AgregarCelulares.ResumeLayout(false);
             this.groupBox_AgregarCelulares.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Modificar.ResumeLayout(false);
             this.panel_Modificar.PerformLayout();
@@ -1884,6 +1913,9 @@
             this.tabIndex_Pestañas.ResumeLayout(false);
             this.tab_Celulares.ResumeLayout(false);
             this.tab_Trabajos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1902,7 +1934,6 @@
         private System.Windows.Forms.Panel panel_Agregar;
         private System.Windows.Forms.Timer timer_Agregar_Agrandar;
         private System.Windows.Forms.GroupBox groupBox_AgregarCelulares;
-        private System.Windows.Forms.TextBox txtCI_Del_Dueño_Agregar;
         private System.Windows.Forms.Label labelID_Dueño_Agregar;
         private System.Windows.Forms.TextBox txtIMEI_Agregar;
         private System.Windows.Forms.Label labelIMEI_Agregar;
@@ -1910,7 +1941,6 @@
         private System.Windows.Forms.Button btnAgregar_Celular;
         private System.Windows.Forms.RadioButton radioButton_Averiado_Agregar;
         private System.Windows.Forms.RadioButton radioButton_Arreglado_Agregar;
-        private System.Windows.Forms.TextBox txtID_Tecnico_Agregar_Celulares;
         private System.Windows.Forms.Label labelTecnico_A_Cargo_Agregar;
         private System.Windows.Forms.Label labelEstado_Agregar;
         private System.Windows.Forms.TextBox txtMarca_Agregar;
@@ -2001,7 +2031,6 @@
         private System.Windows.Forms.TextBox txtPresupuesto_Agregar;
         private System.Windows.Forms.Label labelPresupuesto_Agregar;
         private System.Windows.Forms.Label labelPlazo_Agregar;
-        private System.Windows.Forms.TextBox txtID_Trabajo_Agregar;
         private System.Windows.Forms.Label labelTrabajo_ID_Agregar;
         private System.Windows.Forms.DateTimePicker dateTimePicker_FechaDeIngreso_Agregar;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo_Agregar;
@@ -2009,7 +2038,6 @@
         private System.Windows.Forms.ComboBox MenuOpcionesTrabajos;
         private System.Windows.Forms.Label labelModificar_Columna_Celular;
         private System.Windows.Forms.ComboBox comboBoxColumnas_Celulares;
-        private System.Windows.Forms.TextBox txtModificar_Columna_Celulares;
         private System.Windows.Forms.Label labelModificar_Columna_Celulares;
         private System.Windows.Forms.Label labelError_Modificar_Celulares;
         private System.Windows.Forms.Label labelError_Modificar_Trabajos;
@@ -2020,11 +2048,8 @@
         private System.Windows.Forms.Label labelModificar_Columna_Trabajos;
         private System.Windows.Forms.TextBox txtModificar_Columna_Trabajos;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Label label_CaracteresRestantesCI_AgregarCelulares;
         private System.Windows.Forms.DataGridView tablaTrabajos;
-        private System.Windows.Forms.TextBox txtID_Tecnico_Agregar_Trabajos;
         private System.Windows.Forms.Label labelID_Tecnico_Agregar;
-        private System.Windows.Forms.TextBox txtID_Tecnico_Trabajo_Modficar;
         private System.Windows.Forms.Label labelID_Tecnico_Trabajo_Modificar;
         private System.Windows.Forms.Label labMostrarIDdelCelularSeleccionado;
         private System.Windows.Forms.TabControl tabIndex_Pestañas;
@@ -2034,6 +2059,12 @@
         private System.Windows.Forms.Label label_groupboxModificar_IDUsuarioModiifcar;
         private System.Windows.Forms.Timer timer_RecargarBDs;
         private System.Windows.Forms.ComboBox comboBox_ModificarTecnicoACargo;
+        private System.Windows.Forms.TextBox txtModificar_Columna_Celulares;
+        private System.Windows.Forms.ComboBox comboBox_AgregarCelular_IdDelTecnicoAcargo;
+        private System.Windows.Forms.ComboBox comboBox_AgregarCelular_CedulaDelDueño;
+        private System.Windows.Forms.ComboBox combobox_IDTecnico_Modificar_Trabajo;
+        private System.Windows.Forms.ComboBox combobox_IDdelCelular_Trabajo_Agregar;
+        private System.Windows.Forms.ComboBox combobox_IDdelTecnico_AgregarTrabajos;
     }
 }
 

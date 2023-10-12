@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
@@ -42,6 +42,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelE = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.MenuOpcionesClientes = new System.Windows.Forms.ComboBox();
             this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_Agregar = new System.Windows.Forms.GroupBox();
+            this.label_CaracteresRestantesCI_AgregarCelulares = new System.Windows.Forms.Label();
             this.txtCelular_Agregar = new System.Windows.Forms.TextBox();
             this.labelCelular_Agregar = new System.Windows.Forms.Label();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
@@ -99,8 +101,8 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.timer_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Menu_Reducir = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.timer_RecargarBD = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
@@ -249,6 +251,18 @@
             this.panelE.Size = new System.Drawing.Size(2000, 74);
             this.panelE.TabIndex = 13;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(268, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Buscar:";
+            // 
             // MenuOpcionesClientes
             // 
             this.MenuOpcionesClientes.AutoCompleteCustomSource.AddRange(new string[] {
@@ -263,13 +277,14 @@
             this.MenuOpcionesClientes.FormattingEnabled = true;
             this.MenuOpcionesClientes.Items.AddRange(new object[] {
             "Cedula",
+            "Celular",
+            "Correo Electrónico",
             "Nombre",
-            "Telefono",
-            "Correo electronico",
-            "Celular"});
+            "Telefono"});
             this.MenuOpcionesClientes.Location = new System.Drawing.Point(144, 24);
             this.MenuOpcionesClientes.Name = "MenuOpcionesClientes";
             this.MenuOpcionesClientes.Size = new System.Drawing.Size(121, 23);
+            this.MenuOpcionesClientes.Sorted = true;
             this.MenuOpcionesClientes.TabIndex = 22;
             this.MenuOpcionesClientes.SelectedIndexChanged += new System.EventHandler(this.MenuOpcionesClientes_SelectedIndexChanged);
             // 
@@ -329,6 +344,7 @@
             this.txtCampo_Busqueda.Name = "txtCampo_Busqueda";
             this.txtCampo_Busqueda.Size = new System.Drawing.Size(323, 23);
             this.txtCampo_Busqueda.TabIndex = 8;
+            this.txtCampo_Busqueda.TextChanged += new System.EventHandler(this.txtCampo_Busqueda_TextChanged);
             this.txtCampo_Busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCampo_Busqueda_KeyPress);
             // 
             // btnCerrar
@@ -349,43 +365,43 @@
             this.tablaClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaClientes.DefaultCellStyle = dataGridViewCellStyle26;
             this.tablaClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaClientes.EnableHeadersVisualStyles = false;
-            this.tablaClientes.GridColor = System.Drawing.Color.Black;
+            this.tablaClientes.GridColor = System.Drawing.Color.DimGray;
             this.tablaClientes.Location = new System.Drawing.Point(49, 78);
             this.tablaClientes.MultiSelect = false;
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.tablaClientes.RowTemplate.ReadOnly = true;
             this.tablaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaClientes.Size = new System.Drawing.Size(861, 600);
@@ -401,12 +417,13 @@
             this.panel_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 21;
             // 
             // groupBox_Agregar
             // 
             this.groupBox_Agregar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_Agregar.Controls.Add(this.label_CaracteresRestantesCI_AgregarCelulares);
             this.groupBox_Agregar.Controls.Add(this.txtCelular_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelCelular_Agregar);
             this.groupBox_Agregar.Controls.Add(this.btnAgregarCliente);
@@ -425,6 +442,16 @@
             this.groupBox_Agregar.TabIndex = 0;
             this.groupBox_Agregar.TabStop = false;
             this.groupBox_Agregar.Text = "Ingrese un cliente";
+            // 
+            // label_CaracteresRestantesCI_AgregarCelulares
+            // 
+            this.label_CaracteresRestantesCI_AgregarCelulares.AutoSize = true;
+            this.label_CaracteresRestantesCI_AgregarCelulares.Location = new System.Drawing.Point(157, 80);
+            this.label_CaracteresRestantesCI_AgregarCelulares.Name = "label_CaracteresRestantesCI_AgregarCelulares";
+            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(132, 15);
+            this.label_CaracteresRestantesCI_AgregarCelulares.TabIndex = 15;
+            this.label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres restantes:";
+            this.label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
             // 
             // txtCelular_Agregar
             // 
@@ -462,6 +489,7 @@
             this.txtCedula_Agregar.Name = "txtCedula_Agregar";
             this.txtCedula_Agregar.Size = new System.Drawing.Size(325, 21);
             this.txtCedula_Agregar.TabIndex = 7;
+            this.txtCedula_Agregar.TextChanged += new System.EventHandler(this.txtCedula_Agregar_TextChanged);
             // 
             // txtTelefono_Agregar
             // 
@@ -549,6 +577,7 @@
             // groupBox_Modificar
             // 
             this.groupBox_Modificar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_Modificar.Controls.Add(this.label2);
             this.groupBox_Modificar.Controls.Add(this.txtNuevaInformacion);
             this.groupBox_Modificar.Controls.Add(this.labelNueva_Informacion);
             this.groupBox_Modificar.Controls.Add(this.txtCelular_Modificar);
@@ -564,10 +593,10 @@
             this.groupBox_Modificar.Controls.Add(this.labelNombre_Modificar);
             this.groupBox_Modificar.Controls.Add(this.labelCedula_Modficiar);
             this.groupBox_Modificar.Controls.Add(this.labelColumna_Modificar);
-            this.groupBox_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox_Modificar.Location = new System.Drawing.Point(42, 34);
+            this.groupBox_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Modificar.Location = new System.Drawing.Point(4, 3);
             this.groupBox_Modificar.Name = "groupBox_Modificar";
-            this.groupBox_Modificar.Size = new System.Drawing.Size(337, 535);
+            this.groupBox_Modificar.Size = new System.Drawing.Size(411, 593);
             this.groupBox_Modificar.TabIndex = 0;
             this.groupBox_Modificar.TabStop = false;
             this.groupBox_Modificar.Text = "Modifique un cliente";
@@ -575,9 +604,9 @@
             // txtNuevaInformacion
             // 
             this.txtNuevaInformacion.Enabled = false;
-            this.txtNuevaInformacion.Location = new System.Drawing.Point(6, 91);
+            this.txtNuevaInformacion.Location = new System.Drawing.Point(5, 130);
             this.txtNuevaInformacion.Name = "txtNuevaInformacion";
-            this.txtNuevaInformacion.Size = new System.Drawing.Size(325, 20);
+            this.txtNuevaInformacion.Size = new System.Drawing.Size(400, 21);
             this.txtNuevaInformacion.TabIndex = 31;
             this.txtNuevaInformacion.Visible = false;
             // 
@@ -585,9 +614,9 @@
             // 
             this.labelNueva_Informacion.AutoSize = true;
             this.labelNueva_Informacion.Enabled = false;
-            this.labelNueva_Informacion.Location = new System.Drawing.Point(3, 75);
+            this.labelNueva_Informacion.Location = new System.Drawing.Point(2, 114);
             this.labelNueva_Informacion.Name = "labelNueva_Informacion";
-            this.labelNueva_Informacion.Size = new System.Drawing.Size(175, 13);
+            this.labelNueva_Informacion.Size = new System.Drawing.Size(167, 15);
             this.labelNueva_Informacion.TabIndex = 30;
             this.labelNueva_Informacion.Text = "Ingrese la nueva informacion:";
             this.labelNueva_Informacion.Visible = false;
@@ -595,18 +624,18 @@
             // txtCelular_Modificar
             // 
             this.txtCelular_Modificar.Enabled = false;
-            this.txtCelular_Modificar.Location = new System.Drawing.Point(6, 291);
+            this.txtCelular_Modificar.Location = new System.Drawing.Point(5, 330);
             this.txtCelular_Modificar.Name = "txtCelular_Modificar";
-            this.txtCelular_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtCelular_Modificar.Size = new System.Drawing.Size(400, 21);
             this.txtCelular_Modificar.TabIndex = 29;
             this.txtCelular_Modificar.Visible = false;
             // 
             // txtCorreoElectronico_Modificar
             // 
             this.txtCorreoElectronico_Modificar.Enabled = false;
-            this.txtCorreoElectronico_Modificar.Location = new System.Drawing.Point(6, 241);
+            this.txtCorreoElectronico_Modificar.Location = new System.Drawing.Point(5, 280);
             this.txtCorreoElectronico_Modificar.Name = "txtCorreoElectronico_Modificar";
-            this.txtCorreoElectronico_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtCorreoElectronico_Modificar.Size = new System.Drawing.Size(400, 21);
             this.txtCorreoElectronico_Modificar.TabIndex = 28;
             this.txtCorreoElectronico_Modificar.Visible = false;
             // 
@@ -614,9 +643,9 @@
             // 
             this.labelCelular_Modificar.AutoSize = true;
             this.labelCelular_Modificar.Enabled = false;
-            this.labelCelular_Modificar.Location = new System.Drawing.Point(3, 275);
+            this.labelCelular_Modificar.Location = new System.Drawing.Point(2, 314);
             this.labelCelular_Modificar.Name = "labelCelular_Modificar";
-            this.labelCelular_Modificar.Size = new System.Drawing.Size(50, 13);
+            this.labelCelular_Modificar.Size = new System.Drawing.Size(47, 15);
             this.labelCelular_Modificar.TabIndex = 27;
             this.labelCelular_Modificar.Text = "Celular:";
             this.labelCelular_Modificar.Visible = false;
@@ -625,11 +654,11 @@
             // 
             this.labelCorreoElectronico_Modificar.AutoSize = true;
             this.labelCorreoElectronico_Modificar.Enabled = false;
-            this.labelCorreoElectronico_Modificar.Location = new System.Drawing.Point(3, 225);
+            this.labelCorreoElectronico_Modificar.Location = new System.Drawing.Point(2, 264);
             this.labelCorreoElectronico_Modificar.Name = "labelCorreoElectronico_Modificar";
-            this.labelCorreoElectronico_Modificar.Size = new System.Drawing.Size(115, 13);
+            this.labelCorreoElectronico_Modificar.Size = new System.Drawing.Size(110, 15);
             this.labelCorreoElectronico_Modificar.TabIndex = 26;
-            this.labelCorreoElectronico_Modificar.Text = "Correo electronico:";
+            this.labelCorreoElectronico_Modificar.Text = "Correo electrónico:";
             this.labelCorreoElectronico_Modificar.Visible = false;
             // 
             // comboBoxModificar
@@ -651,18 +680,18 @@
             "Correo Electronico",
             "Celular",
             "Todas..."});
-            this.comboBoxModificar.Location = new System.Drawing.Point(6, 41);
+            this.comboBoxModificar.Location = new System.Drawing.Point(5, 80);
             this.comboBoxModificar.Name = "comboBoxModificar";
-            this.comboBoxModificar.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxModificar.Size = new System.Drawing.Size(232, 23);
             this.comboBoxModificar.TabIndex = 25;
             this.comboBoxModificar.SelectedIndexChanged += new System.EventHandler(this.comboBoxModificar_SelectedIndexChanged);
             // 
             // txtTelefono_Modificar
             // 
             this.txtTelefono_Modificar.Enabled = false;
-            this.txtTelefono_Modificar.Location = new System.Drawing.Point(6, 191);
+            this.txtTelefono_Modificar.Location = new System.Drawing.Point(5, 230);
             this.txtTelefono_Modificar.Name = "txtTelefono_Modificar";
-            this.txtTelefono_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtTelefono_Modificar.Size = new System.Drawing.Size(400, 21);
             this.txtTelefono_Modificar.TabIndex = 10;
             this.txtTelefono_Modificar.Visible = false;
             // 
@@ -670,11 +699,11 @@
             // 
             this.labelTelefono_Modificar.AutoSize = true;
             this.labelTelefono_Modificar.Enabled = false;
-            this.labelTelefono_Modificar.Location = new System.Drawing.Point(3, 175);
+            this.labelTelefono_Modificar.Location = new System.Drawing.Point(2, 214);
             this.labelTelefono_Modificar.Name = "labelTelefono_Modificar";
-            this.labelTelefono_Modificar.Size = new System.Drawing.Size(61, 13);
+            this.labelTelefono_Modificar.Size = new System.Drawing.Size(56, 15);
             this.labelTelefono_Modificar.TabIndex = 9;
-            this.labelTelefono_Modificar.Text = "Telefono:";
+            this.labelTelefono_Modificar.Text = "Teléfono:";
             this.labelTelefono_Modificar.Visible = false;
             // 
             // btnModificarCliente
@@ -690,18 +719,18 @@
             // txtCedula_Modificar
             // 
             this.txtCedula_Modificar.Enabled = false;
-            this.txtCedula_Modificar.Location = new System.Drawing.Point(6, 91);
+            this.txtCedula_Modificar.Location = new System.Drawing.Point(5, 130);
             this.txtCedula_Modificar.Name = "txtCedula_Modificar";
-            this.txtCedula_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtCedula_Modificar.Size = new System.Drawing.Size(400, 21);
             this.txtCedula_Modificar.TabIndex = 6;
             this.txtCedula_Modificar.Visible = false;
             // 
             // txtNombre_Modificar
             // 
             this.txtNombre_Modificar.Enabled = false;
-            this.txtNombre_Modificar.Location = new System.Drawing.Point(6, 141);
+            this.txtNombre_Modificar.Location = new System.Drawing.Point(5, 180);
             this.txtNombre_Modificar.Name = "txtNombre_Modificar";
-            this.txtNombre_Modificar.Size = new System.Drawing.Size(325, 20);
+            this.txtNombre_Modificar.Size = new System.Drawing.Size(400, 21);
             this.txtNombre_Modificar.TabIndex = 4;
             this.txtNombre_Modificar.Visible = false;
             // 
@@ -709,9 +738,9 @@
             // 
             this.labelNombre_Modificar.AutoSize = true;
             this.labelNombre_Modificar.Enabled = false;
-            this.labelNombre_Modificar.Location = new System.Drawing.Point(3, 125);
+            this.labelNombre_Modificar.Location = new System.Drawing.Point(2, 164);
             this.labelNombre_Modificar.Name = "labelNombre_Modificar";
-            this.labelNombre_Modificar.Size = new System.Drawing.Size(54, 13);
+            this.labelNombre_Modificar.Size = new System.Drawing.Size(55, 15);
             this.labelNombre_Modificar.TabIndex = 3;
             this.labelNombre_Modificar.Text = "Nombre:";
             this.labelNombre_Modificar.Visible = false;
@@ -720,9 +749,9 @@
             // 
             this.labelCedula_Modficiar.AutoSize = true;
             this.labelCedula_Modficiar.Enabled = false;
-            this.labelCedula_Modficiar.Location = new System.Drawing.Point(3, 75);
+            this.labelCedula_Modficiar.Location = new System.Drawing.Point(2, 114);
             this.labelCedula_Modficiar.Name = "labelCedula_Modficiar";
-            this.labelCedula_Modficiar.Size = new System.Drawing.Size(50, 13);
+            this.labelCedula_Modficiar.Size = new System.Drawing.Size(47, 15);
             this.labelCedula_Modficiar.TabIndex = 2;
             this.labelCedula_Modficiar.Text = "Cedula:";
             this.labelCedula_Modficiar.Visible = false;
@@ -730,9 +759,9 @@
             // labelColumna_Modificar
             // 
             this.labelColumna_Modificar.AutoSize = true;
-            this.labelColumna_Modificar.Location = new System.Drawing.Point(3, 25);
+            this.labelColumna_Modificar.Location = new System.Drawing.Point(2, 64);
             this.labelColumna_Modificar.Name = "labelColumna_Modificar";
-            this.labelColumna_Modificar.Size = new System.Drawing.Size(177, 13);
+            this.labelColumna_Modificar.Size = new System.Drawing.Size(173, 15);
             this.labelColumna_Modificar.TabIndex = 1;
             this.labelColumna_Modificar.Text = "Columna que desea modificar:";
             // 
@@ -892,23 +921,20 @@
             this.timer_Menu_Reducir.Interval = 1;
             this.timer_Menu_Reducir.Tick += new System.EventHandler(this.timer_Menu_Reducir_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(268, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 15);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Buscar:";
-            // 
             // timer_RecargarBD
             // 
-            this.timer_RecargarBD.Enabled = true;
             this.timer_RecargarBD.Interval = 1300;
             this.timer_RecargarBD.Tick += new System.EventHandler(this.timer_RecargarBD_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 15);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Selección:";
             // 
             // Clientes
             // 
@@ -1020,5 +1046,7 @@
         private System.Windows.Forms.Timer timer_Menu_Reducir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer_RecargarBD;
+        private System.Windows.Forms.Label label_CaracteresRestantesCI_AgregarCelulares;
+        private System.Windows.Forms.Label label2;
     }
 }

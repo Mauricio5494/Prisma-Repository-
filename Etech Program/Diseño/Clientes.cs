@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Diseño
 {
@@ -25,6 +26,8 @@ namespace Diseño
         string insertar;
         string modificar;
         string columna;
+        string option;
+        string busqueda;
 
         //Instancias:
         Usuarios Usuarios = new Usuarios();
@@ -92,7 +95,7 @@ namespace Diseño
         private void MenuOpcionesClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtCampo_Busqueda.Enabled = true;
-            
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -207,7 +210,7 @@ namespace Diseño
                         }
                         tablaClientes.DataSource = DataTable;
                         break;
-                } 
+                }
             }
             else
             {
@@ -227,7 +230,7 @@ namespace Diseño
                 //panel Modificar:
                 timer_Modificar_Agrandar.Enabled = false;
                 timer_Modificar_Reducir.Enabled = true;
-                
+
                 //panel Eliminar:
                 timer_Eliminar_Agrandar.Enabled = false;
                 timer_Eliminar_Reducir.Enabled = true;
@@ -236,7 +239,7 @@ namespace Diseño
                 timer_Menu_Agrandar.Enabled = false;
                 timer_Menu_Reducir.Enabled = true;
             }
-            else 
+            else
             {
                 //Panel Agregar:
                 timerAgregar_Agrandar.Enabled = false;
@@ -346,7 +349,7 @@ namespace Diseño
         //Botones con sentencias SQL:
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            if (txtCedula_Agregar.Text != "" && txtNombre_Agregar.Text != "" && txtCorreoElectronico_Agregar.Text != "" && txtCelular_Agregar.Text != "")
+            if (txtCedula_Agregar.Text != "" && txtNombre_Agregar.Text != "" && txtCelular_Agregar.Text != "")
             {
                 cedula = txtCedula_Agregar.Text;
                 nombre = txtNombre_Agregar.Text;
@@ -354,7 +357,7 @@ namespace Diseño
                 correoElectronico = txtCorreoElectronico_Agregar.Text;
                 celular = txtCelular_Agregar.Text;
 
-                insertar = "INSERT INTO clientes(Cedula, Nombre, Telefono, CorreoElectronico, Celular, Baja) VALUES('" + cedula + "', '" + nombre + "', '" + telefono + "', '" + correoElectronico + "', '" + cedula + "', Baja = 1);";
+                insertar = "INSERT INTO clientes(Cedula, Nombre, Telefono, CorreoElectronico, Celular) VALUES('" + cedula + "', '" + nombre + "', '" + telefono + "', '" + correoElectronico + "', '" + celular + "');";
 
                 try
                 {
@@ -484,7 +487,7 @@ namespace Diseño
                         {
                             MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         }
-                        break; 
+                        break;
 
                     case "Nombre":
                         if (txtNuevaInformacion.Text != "")
@@ -662,7 +665,7 @@ namespace Diseño
             {
                 cedula = txtCI_Eliminar.Text;
 
-                modificar = "UPDATE clientes SET Baja = 0 WHERE Cedula = '" + cedula + "';";
+                modificar = "UPDATE clientes SET Baja = 1 WHERE Cedula = '" + cedula + "';";
 
                 try
                 {
@@ -709,7 +712,7 @@ namespace Diseño
                 btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
                 btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
 
-                tablaClientes.Location = new Point(124, 78); 
+                tablaClientes.Location = new Point(124, 78);
             }
             else
             {
@@ -770,7 +773,7 @@ namespace Diseño
                 panel_Modificar.Enabled = true;
                 panel_Agregar.BringToFront();
             }
-            else 
+            else
             {
                 timer_Modificar_Agrandar.Enabled = false;
             }
@@ -960,7 +963,7 @@ namespace Diseño
 
         private void txtCampo_Busqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void Clientes_FormClosed(object sender, FormClosedEventArgs e)
@@ -975,9 +978,9 @@ namespace Diseño
                 //Largo de las columnas
 
                 tablaClientes.Columns["Cedula"].Width = 100;
-                tablaClientes.Columns["Nombre"].Width = 185; 
+                tablaClientes.Columns["Nombre"].Width = 185;
                 tablaClientes.Columns["Telefono"].Width = 100;
-                tablaClientes.Columns["CorreoElectronico"].Width = 235; 
+                tablaClientes.Columns["CorreoElectronico"].Width = 235;
                 tablaClientes.Columns["Celular"].Width = 200;
 
 
@@ -999,6 +1002,160 @@ namespace Diseño
         private void timer_RecargarBD_Tick(object sender, EventArgs e)
         {
             MostrarDatosEnLaTablaClientes_SinMensajeDeError();
+        }
+
+        private void txtCedula_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCedula_Agregar.Text.Length <= 8 && txtCedula_Agregar.Text.Length > 0)
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
+                int caracteresRestantes = 8 - txtCedula_Agregar.TextLength;
+                label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres Restantes: " + caracteresRestantes + "/8";
+            }
+            else
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
+            }
+        }
+
+        private void txtCampo_Busqueda_TextChanged(object sender, EventArgs e)
+        {
+
+
+            if (txtCampo_Busqueda.Text.Equals(""))
+            {
+                MostrarDatosEnLaTablaClientes_SinMensajeDeError();
+            }
+            else
+            {
+                option = MenuOpcionesClientes.Text;
+                switch (option)
+                {
+                    case "Cedula":
+
+                        DataTable.Clear();
+                        try
+                        {
+                            conn.Open();
+                            busqueda = $"SELECT Cedula, nombre, telefono, correoelectronico, celular FROM clientes WHERE Baja = 0 AND Cedula LIKE '%{txtCampo_Busqueda.Text}%'";
+
+
+                            cmd = new MySqlCommand(busqueda, conn);
+                            cmd.CommandType = System.Data.CommandType.Text;
+                            reader = cmd.ExecuteReader();
+                            DataTable.Load(reader);
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tablaClientes.DataSource = DataTable;
+                        break;
+
+                    case "Nombre":
+
+                        DataTable.Rows.Clear();
+                        try
+                        {
+                            conn.Open();
+                            busqueda = $"SELECT Cedula, nombre, telefono, correoelectronico, celular FROM clientes WHERE Baja = 0 AND nombre LIKE '%{txtCampo_Busqueda.Text}%'";
+                            cmd = new MySqlCommand(busqueda, conn);
+                            cmd.CommandType = System.Data.CommandType.Text;
+                            reader = cmd.ExecuteReader();
+                            DataTable.Load(reader);
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tablaClientes.DataSource = DataTable;
+                        break;
+
+                    case "Telefono":
+
+                        DataTable.Rows.Clear();
+                        try
+                        {
+                            conn.Open();
+                            busqueda = $"SELECT Cedula, nombre, telefono, correoelectronico, celular FROM clientes WHERE Baja = 0 AND telefono LIKE '%{txtCampo_Busqueda.Text}%'";
+
+                            cmd = new MySqlCommand(busqueda, conn);
+                            cmd.CommandType = System.Data.CommandType.Text;
+                            reader = cmd.ExecuteReader();
+                            DataTable.Load(reader);
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tablaClientes.DataSource = DataTable;
+                        break;
+
+                    case "Correo Electrónico":
+
+                        DataTable.Rows.Clear();
+                        try
+                        {
+                            conn.Open();
+                            busqueda = $"SELECT Cedula, nombre, telefono, correoelectronico, celular FROM clientes WHERE Baja = 0 AND correoelectronico LIKE '%{txtCampo_Busqueda.Text}%'";
+
+                            cmd = new MySqlCommand(busqueda, conn);
+                            cmd.CommandType = System.Data.CommandType.Text;
+                            reader = cmd.ExecuteReader();
+                            DataTable.Load(reader);
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tablaClientes.DataSource = DataTable;
+                        break;
+
+                    case "Celular":
+
+                        DataTable.Rows.Clear();
+                        try
+                        {
+                            conn.Open();
+                            busqueda = $"SELECT Cedula, nombre, telefono, correoelectronico, celular FROM clientes WHERE Baja = 0 AND celular LIKE '%{txtCampo_Busqueda.Text}%'";
+
+                            cmd = new MySqlCommand(busqueda, conn);
+                            cmd.CommandType = System.Data.CommandType.Text;
+                            reader = cmd.ExecuteReader();
+                            DataTable.Load(reader);
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tablaClientes.DataSource = DataTable;
+                        break;
+
+                    default:
+
+                        break;
+                }
+            }
         }
     }
 }

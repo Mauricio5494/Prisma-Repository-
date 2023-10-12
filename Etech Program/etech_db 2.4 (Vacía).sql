@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2023 a las 06:44:26
+-- Tiempo de generación: 12-10-2023 a las 20:35:31
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `celulares` (
   `Estado` varchar(9) NOT NULL,
   `Cedula_Cliente` varchar(8) NOT NULL,
   `ID_Usuario` int(11) NOT NULL,
-  `Baja` tinyint(1) NOT NULL DEFAULT 1
+  `Baja` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -46,11 +46,11 @@ CREATE TABLE `celulares` (
 
 CREATE TABLE `clientes` (
   `Cedula` varchar(8) NOT NULL,
-  `Nombre` varchar(30) NOT NULL,
-  `Telefono` varchar(8) NOT NULL,
-  `CorreoElectronico` varchar(30) NOT NULL,
-  `Celular` varchar(8) DEFAULT NULL,
-  `Baja` tinyint(1) NOT NULL DEFAULT 1
+  `Nombre` varchar(255) NOT NULL,
+  `Telefono` varchar(8) DEFAULT NULL,
+  `CorreoElectronico` varchar(255) NOT NULL,
+  `Celular` varchar(9) DEFAULT NULL,
+  `Baja` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -68,7 +68,7 @@ CREATE TABLE `trabajos` (
   `Fecha_Ingreso` date NOT NULL,
   `Adelanto` int(11) DEFAULT NULL,
   `ID_Celular` int(11) NOT NULL,
-  `Baja` tinyint(1) NOT NULL DEFAULT 1
+  `Baja` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -84,7 +84,7 @@ CREATE TABLE `usuarios` (
   `Telefono` varchar(8) DEFAULT NULL,
   `CorreoElectronico` varchar(255) NOT NULL,
   `Celular` varchar(8) NOT NULL,
-  `Baja` tinyint(1) NOT NULL DEFAULT 1
+  `Baja` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -127,19 +127,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `celulares`
 --
 ALTER TABLE `celulares`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `trabajos`
 --
 ALTER TABLE `trabajos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

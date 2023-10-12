@@ -1207,5 +1207,12 @@ namespace Diseño
         {
 
         }
+
+        private void btnClientes_groupBoxMenu_PanelMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Clientes show = new Clientes();
+            show.Show();
+        }
     }
 }

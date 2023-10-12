@@ -63,6 +63,16 @@ namespace Diseño.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _20230313_234416_0000 {
+            get {
+                object obj = ResourceManager.GetObject("20230313_234416_0000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alt_de_inicio_de_sesion {
             get {
                 object obj = ResourceManager.GetObject("alt-de-inicio-de-sesion", resourceCulture);
@@ -146,6 +156,16 @@ namespace Diseño.Properties {
         internal static System.Drawing.Bitmap interrogatorio {
             get {
                 object obj = ResourceManager.GetObject("interrogatorio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Catalina_Harriague_de_Castaños___UTU {
+            get {
+                object obj = ResourceManager.GetObject("Logo Catalina Harriague de Castaños - UTU", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
