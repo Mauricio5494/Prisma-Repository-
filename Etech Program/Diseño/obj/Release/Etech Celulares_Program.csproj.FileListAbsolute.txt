@@ -24,9 +24,9 @@ C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Etech Celulares_Program.csproj.GenerateResource.cache
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Etech Celulares_Program.csproj.CoreCompileInputs.cache
 C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Etech Celulares_Program.csproj.CopyComplete
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Etech Gestion de Celulares.exe.config
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\bin\Release\Etech Gestion de Celulares.exe.config
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\bin\Release\Etech Gestion de Celulares.exe
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\bin\Release\Etech Gestion de Celulares.pdb
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Etech Gestion de Celulares.exe
-C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Etech Gestion de Celulares.pdb
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\bin\Release\Diseño.exe.config
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\bin\Release\Diseño.exe
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\bin\Release\Diseño.pdb
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Diseño.exe.config
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Diseño.exe
+C:\Users\Colàgeno\Documents\GitHub\Prisma-Repository-\Etech Program\Diseño\obj\Release\Diseño.pdb
