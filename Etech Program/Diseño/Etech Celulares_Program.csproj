@@ -7,7 +7,7 @@
     <ProjectGuid>{8894E0ED-A2D2-4D81-A045-DB733D9096B0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Diseño</RootNamespace>
-    <AssemblyName>Diseño</AssemblyName>
+    <AssemblyName>Etech Gestion de Celulares</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo-etech-uruguay-220-e1654881097513-_1_.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -187,6 +191,7 @@
     <None Include="Resources\cruz 16px roja1.png" />
     <None Include="Resources\20230313_234416_0000.png" />
     <None Include="Resources\Logo Catalina Harriague de Castaños - UTU.png" />
+    <Content Include="logo-etech-uruguay-220-e1654881097513-_1_.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

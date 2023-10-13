@@ -47,6 +47,8 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_AgregarTrabajos = new System.Windows.Forms.GroupBox();
+            this.combobox_IDdelCelular_Trabajo_Agregar = new System.Windows.Forms.ComboBox();
+            this.combobox_IDdelTecnico_AgregarTrabajos = new System.Windows.Forms.ComboBox();
             this.labelID_Tecnico_Agregar = new System.Windows.Forms.Label();
             this.dateTimePicker_FechaDeIngreso_Agregar = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_Plazo_Agregar = new System.Windows.Forms.DateTimePicker();
@@ -94,6 +96,7 @@
             this.timer_GroupBox_ModificarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.panel_Modificar = new System.Windows.Forms.Panel();
             this.groupBox_ModificarTrabajos = new System.Windows.Forms.GroupBox();
+            this.combobox_IDTecnico_Modificar_Trabajo = new System.Windows.Forms.ComboBox();
             this.labelID_Tecnico_Trabajo_Modificar = new System.Windows.Forms.Label();
             this.labelError_Modificar_Trabajos = new System.Windows.Forms.Label();
             this.labelModificar_Columna_Trabajos = new System.Windows.Forms.Label();
@@ -164,7 +167,6 @@
             this.tab_Celulares = new System.Windows.Forms.TabPage();
             this.tab_Trabajos = new System.Windows.Forms.TabPage();
             this.timer_RecargarBDs = new System.Windows.Forms.Timer(this.components);
-            this.combobox_IDTecnico_Modificar_Trabajo = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -178,8 +180,6 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.combobox_IDdelTecnico_AgregarTrabajos = new System.Windows.Forms.ComboBox();
-            this.combobox_IDdelCelular_Trabajo_Agregar = new System.Windows.Forms.ComboBox();
             this.panelD.SuspendLayout();
             this.panelE.SuspendLayout();
             this.panel_Agregar.SuspendLayout();
@@ -349,7 +349,7 @@
             this.panel_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 15;
             // 
             // groupBox_AgregarTrabajos
@@ -374,10 +374,30 @@
             this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(3, 35);
             this.groupBox_AgregarTrabajos.Name = "groupBox_AgregarTrabajos";
-            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(413, 563);
+            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(413, 0);
             this.groupBox_AgregarTrabajos.TabIndex = 16;
             this.groupBox_AgregarTrabajos.TabStop = false;
             this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
+            // 
+            // combobox_IDdelCelular_Trabajo_Agregar
+            // 
+            this.combobox_IDdelCelular_Trabajo_Agregar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_IDdelCelular_Trabajo_Agregar.FormattingEnabled = true;
+            this.combobox_IDdelCelular_Trabajo_Agregar.Location = new System.Drawing.Point(6, 58);
+            this.combobox_IDdelCelular_Trabajo_Agregar.Name = "combobox_IDdelCelular_Trabajo_Agregar";
+            this.combobox_IDdelCelular_Trabajo_Agregar.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDdelCelular_Trabajo_Agregar.Sorted = true;
+            this.combobox_IDdelCelular_Trabajo_Agregar.TabIndex = 18;
+            this.combobox_IDdelCelular_Trabajo_Agregar.Click += new System.EventHandler(this.combobox_IDdelCelular_Trabajo_Agregar_Click);
+            // 
+            // combobox_IDdelTecnico_AgregarTrabajos
+            // 
+            this.combobox_IDdelTecnico_AgregarTrabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_IDdelTecnico_AgregarTrabajos.FormattingEnabled = true;
+            this.combobox_IDdelTecnico_AgregarTrabajos.Location = new System.Drawing.Point(6, 365);
+            this.combobox_IDdelTecnico_AgregarTrabajos.Name = "combobox_IDdelTecnico_AgregarTrabajos";
+            this.combobox_IDdelTecnico_AgregarTrabajos.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDdelTecnico_AgregarTrabajos.TabIndex = 24;
             // 
             // labelID_Tecnico_Agregar
             // 
@@ -817,6 +837,17 @@
             this.groupBox_ModificarTrabajos.TabIndex = 8;
             this.groupBox_ModificarTrabajos.TabStop = false;
             this.groupBox_ModificarTrabajos.Text = "Modificar tabla trabajos";
+            // 
+            // combobox_IDTecnico_Modificar_Trabajo
+            // 
+            this.combobox_IDTecnico_Modificar_Trabajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_IDTecnico_Modificar_Trabajo.Enabled = false;
+            this.combobox_IDTecnico_Modificar_Trabajo.FormattingEnabled = true;
+            this.combobox_IDTecnico_Modificar_Trabajo.Location = new System.Drawing.Point(6, 365);
+            this.combobox_IDTecnico_Modificar_Trabajo.Name = "combobox_IDTecnico_Modificar_Trabajo";
+            this.combobox_IDTecnico_Modificar_Trabajo.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDTecnico_Modificar_Trabajo.TabIndex = 34;
+            this.combobox_IDTecnico_Modificar_Trabajo.Visible = false;
             // 
             // labelID_Tecnico_Trabajo_Modificar
             // 
@@ -1642,17 +1673,6 @@
             this.timer_RecargarBDs.Interval = 1300;
             this.timer_RecargarBDs.Tick += new System.EventHandler(this.timer_RecargarBDs_Tick);
             // 
-            // combobox_IDTecnico_Modificar_Trabajo
-            // 
-            this.combobox_IDTecnico_Modificar_Trabajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combobox_IDTecnico_Modificar_Trabajo.Enabled = false;
-            this.combobox_IDTecnico_Modificar_Trabajo.FormattingEnabled = true;
-            this.combobox_IDTecnico_Modificar_Trabajo.Location = new System.Drawing.Point(6, 365);
-            this.combobox_IDTecnico_Modificar_Trabajo.Name = "combobox_IDTecnico_Modificar_Trabajo";
-            this.combobox_IDTecnico_Modificar_Trabajo.Size = new System.Drawing.Size(401, 23);
-            this.combobox_IDTecnico_Modificar_Trabajo.TabIndex = 34;
-            this.combobox_IDTecnico_Modificar_Trabajo.Visible = false;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -1841,26 +1861,6 @@
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // combobox_IDdelTecnico_AgregarTrabajos
-            // 
-            this.combobox_IDdelTecnico_AgregarTrabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combobox_IDdelTecnico_AgregarTrabajos.FormattingEnabled = true;
-            this.combobox_IDdelTecnico_AgregarTrabajos.Location = new System.Drawing.Point(6, 365);
-            this.combobox_IDdelTecnico_AgregarTrabajos.Name = "combobox_IDdelTecnico_AgregarTrabajos";
-            this.combobox_IDdelTecnico_AgregarTrabajos.Size = new System.Drawing.Size(401, 23);
-            this.combobox_IDdelTecnico_AgregarTrabajos.TabIndex = 24;
-            // 
-            // combobox_IDdelCelular_Trabajo_Agregar
-            // 
-            this.combobox_IDdelCelular_Trabajo_Agregar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combobox_IDdelCelular_Trabajo_Agregar.FormattingEnabled = true;
-            this.combobox_IDdelCelular_Trabajo_Agregar.Location = new System.Drawing.Point(6, 58);
-            this.combobox_IDdelCelular_Trabajo_Agregar.Name = "combobox_IDdelCelular_Trabajo_Agregar";
-            this.combobox_IDdelCelular_Trabajo_Agregar.Size = new System.Drawing.Size(401, 23);
-            this.combobox_IDdelCelular_Trabajo_Agregar.Sorted = true;
-            this.combobox_IDdelCelular_Trabajo_Agregar.TabIndex = 18;
-            this.combobox_IDdelCelular_Trabajo_Agregar.Click += new System.EventHandler(this.combobox_IDdelCelular_Trabajo_Agregar_Click);
             // 
             // Principal
             // 
