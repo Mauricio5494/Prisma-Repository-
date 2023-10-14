@@ -7,10 +7,11 @@ namespace Diseño
 {
     class DataBaseConnect
     {
-        public static MySqlConnection Conectarse(string uid, string pwd)
+        public static MySqlConnection Conectarse()
         {
             //requisitos para la conexion (informacion del base de datos):
-
+            string uid = "root";
+            string pwd = "";
             string servidor = "localhost";
             string port = "3306";
             string database = "etech_db";

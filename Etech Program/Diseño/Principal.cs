@@ -76,7 +76,7 @@ namespace Diseño
         DataTable DataTableCelularesBusqueda = new DataTable();
         DataTable DataTableTrabajosBusqueda = new DataTable();
         Utilidades Seguridad = new Utilidades();
-        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
+        MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataReader reader;
 
@@ -85,7 +85,10 @@ namespace Diseño
         {
             InitializeComponent();
         }
-
+        /*
+         * 
+         * 
+         */
         //Metodos SQL:
         private void MostrarDatosEnLasTablasCelulares()
         {
@@ -1876,7 +1879,7 @@ namespace Diseño
             try
             {
                 conn.Open();
-                eliminarCelulares = $"UPDATE celulares SET Baja = 1 WHERE ID ={idCelular};";
+                eliminarCelulares = $"UPDATE celulares SET Baja = 1 WHERE ID ={clavePrimariaCelulares};";
                 cmd = new MySqlCommand(eliminarCelulares, conn);
 
                 try
@@ -3388,6 +3391,7 @@ namespace Diseño
 
         private void comboBox_AgregarCelular_IdDelTecnicoAcargo_Click(object sender, EventArgs e)
         {
+
         }
 
         private void combobox_IDdelCelular_Trabajo_Agregar_Click(object sender, EventArgs e)
@@ -3402,8 +3406,8 @@ namespace Diseño
             {
                 if (tablaTrabajos.Columns[e.ColumnIndex].Name == "Plazo")
                 {
-                    DateTime plazo = (DateTime)e.Value;
-                    DateTime diaDeHoy = DateTime.Now.Date;
+                     plazo = (DateTime)e.Value;
+                     DateTime diaDeHoy = DateTime.Now.Date;
 
                     if (plazo <= diaDeHoy)
                     {
@@ -3422,13 +3426,11 @@ namespace Diseño
                 }
             }
         }
-
-
     }
 }
 
 
 
-/* It just works
+/* It just works.
  * 
             - Tom Howard   */

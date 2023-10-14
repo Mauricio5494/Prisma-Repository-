@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1308AA7A09664A528D8842171FACE09B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1BFB99983D3F00E5B208E99A6B59DD6F"
         "OwnerKey" = "8:_2217610111E644229A8994D5D60FC538"
         "MsmSig" = "8:_UNDEFINED"
@@ -34,6 +40,12 @@
         "Entry"
         {
         "MsmKey" = "8:_2217610111E644229A8994D5D60FC538"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2B4922510DFF47F99EEAF6CB940F1DEA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -52,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_431ABC0BBCB58CF0645C6D218739D8E3"
-        "OwnerKey" = "8:_2217610111E644229A8994D5D60FC538"
+        "OwnerKey" = "8:_D4CB01FE70944604B8CB331E84654BED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_431ABC0BBCB58CF0645C6D218739D8E3"
-        "OwnerKey" = "8:_D4CB01FE70944604B8CB331E84654BED"
+        "OwnerKey" = "8:_2217610111E644229A8994D5D60FC538"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -189,20 +201,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D4CB01FE70944604B8CB331E84654BED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2217610111E644229A8994D5D60FC538"
+        "MsmKey" = "8:_FC7A16AC0B044D7780ACD098F0089998"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_97E65D1299510252D815510C62B021A5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2217610111E644229A8994D5D60FC538"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -268,6 +280,18 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CE5AE2F895BE76F79B7F9491F1534F77"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D4CB01FE70944604B8CB331E84654BED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_431ABC0BBCB58CF0645C6D218739D8E3"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -275,12 +299,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D9F6CDCE61A32E8C88DD33C144C70308"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CE5AE2F895BE76F79B7F9491F1534F77"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -301,6 +319,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -317,6 +343,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -362,7 +404,7 @@
             "SourcePath" = "8:Microsoft.ReportViewer.Common.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -375,6 +417,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1308AA7A09664A528D8842171FACE09B"
+            {
+            "SourcePath" = "8:..\\etech_db v2.5(Vacia).sql"
+            "TargetName" = "8:etech_db v2.5(Vacia).sql"
+            "Tag" = "8:"
+            "Folder" = "8:_0F5BE153905540B2BB01E1BF96FE7C60"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1BFB99983D3F00E5B208E99A6B59DD6F"
@@ -393,7 +455,7 @@
             "SourcePath" = "8:Microsoft.ReportViewer.WebForms.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -406,6 +468,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2B4922510DFF47F99EEAF6CB940F1DEA"
+            {
+            "SourcePath" = "8:E:\\Downloads\\ndp47-kb3186500-web.exe"
+            "TargetName" = "8:Dot.net 4.7.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_0F5BE153905540B2BB01E1BF96FE7C60"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3DDB659E19C923D17D1299BDF2C7CAB5"
@@ -424,7 +506,7 @@
             "SourcePath" = "8:System.Memory.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -455,7 +537,7 @@
             "SourcePath" = "8:System.IO.Compression.FileSystem.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -486,7 +568,7 @@
             "SourcePath" = "8:System.Numerics.Vectors.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -517,7 +599,7 @@
             "SourcePath" = "8:Microsoft.SqlServer.Types.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -537,7 +619,7 @@
             "SourcePath" = "8:E:\\Downloads\\logo-etech-uruguay-220-e1654881097513-_1_.ico"
             "TargetName" = "8:1.ico"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_C558A3267C284C039C96DC0FEEACB8AE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -568,7 +650,7 @@
             "SourcePath" = "8:System.Threading.Tasks.Extensions.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -599,7 +681,7 @@
             "SourcePath" = "8:Microsoft.ReportViewer.DataVisualization.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -630,7 +712,7 @@
             "SourcePath" = "8:System.Buffers.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -661,7 +743,7 @@
             "SourcePath" = "8:MySql.Data.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -692,7 +774,7 @@
             "SourcePath" = "8:System.IO.Compression.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -723,7 +805,7 @@
             "SourcePath" = "8:MySQL.Utility.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -754,7 +836,7 @@
             "SourcePath" = "8:System.IO.Compression.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -785,7 +867,7 @@
             "SourcePath" = "8:Microsoft.ReportViewer.ProcessingObjectModel.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -816,7 +898,7 @@
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -829,6 +911,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC7A16AC0B044D7780ACD098F0089998"
+            {
+            "SourcePath" = "8:E:\\Downloads\\xampp-windows-x64-8.2.4-0-VS16-installer.exe"
+            "TargetName" = "8:XAMPP.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_0F5BE153905540B2BB01E1BF96FE7C60"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -847,6 +949,39 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_0F5BE153905540B2BB01E1BF96FE7C60"
+                    {
+                    "Name" = "8:Programas necesarios para el funcionamiento del programa"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_5D811AD6BCCC4A58A6D9A598411EACD3"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_91B1029FF9164A5BB053C58A70AD7C34"
+                    {
+                    "Name" = "8:DLL's"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_6ECCF212379544F0BDB1033A91772E55"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_C558A3267C284C039C96DC0FEEACB8AE"
+                    {
+                    "Name" = "8:Icon"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_B3BACF46230B4848B620563FB1270E10"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_4B5E5F2ED34F4C45B9D6A5E5F6525E3A"
@@ -888,7 +1023,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Etech Gestion de Celulares"
         "ProductCode" = "8:{06144836-54CD-4288-BE12-78B89278BE6B}"
-        "PackageCode" = "8:{810E8ED6-EDD9-4E0E-A1F9-FEEF289BC05C}"
+        "PackageCode" = "8:{9ED76626-C1A1-4AA2-80C8-AB4918BBF180}"
         "UpgradeCode" = "8:{9B5327CE-FB3F-4E30-A1D5-D93186FA31C9}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -1018,8 +1153,22 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_2217610111E644229A8994D5D60FC538"
             "Folder" = "8:_A40D513424BB499184AD7D94B2AFE806"
-            "WorkingFolder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "WorkingFolder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Icon" = "8:_743F3D96E74A4EE0A6821606519DF97E"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_796D340024B64EF29A9A18AA71C6119F"
+            {
+            "Name" = "8:Etech Gestion de Celulares"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_2217610111E644229A8994D5D60FC538"
+            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "WorkingFolder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D46AFD873A3440E1B753E6E9E40BBEA2"
@@ -1032,7 +1181,7 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_2217610111E644229A8994D5D60FC538"
             "Folder" = "8:_4B5E5F2ED34F4C45B9D6A5E5F6525E3A"
-            "WorkingFolder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "WorkingFolder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Icon" = "8:_743F3D96E74A4EE0A6821606519DF97E"
             "Feature" = "8:"
             }
@@ -1437,14 +1586,14 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2217610111E644229A8994D5D60FC538"
             {
-            "SourcePath" = "8:..\\Diseño\\obj\\Release\\Etech Gestion de Celulares.exe"
+            "SourcePath" = "8:..\\Diseño\\obj\\Release\\Diseño.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_2CBDCF204CAA4BAD96DBF119B6DAC43E"
+            "Folder" = "8:_91B1029FF9164A5BB053C58A70AD7C34"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
+            "ReadOnly" = "11:TRUE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
@@ -1454,7 +1603,7 @@
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
+            "ProjectOutputGroupRegister" = "3:3"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{8894E0ED-A2D2-4D81-A045-DB733D9096B0}"

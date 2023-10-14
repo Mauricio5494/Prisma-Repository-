@@ -32,7 +32,7 @@ namespace Diseño
         //Instancias:
         Usuarios Usuarios = new Usuarios();
         Principal Taller = new Principal();
-        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
+        MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataAdapter adapter = new MySqlDataAdapter();
         MySqlDataReader reader;

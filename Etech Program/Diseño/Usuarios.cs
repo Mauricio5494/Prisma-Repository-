@@ -25,7 +25,7 @@ namespace Diseño
 
         //Instancias
         DataTable dataTableUsuarios = new DataTable();
-        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
+        MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd = new MySqlCommand();
         MySqlCommand cmd_Registro;
         MySqlCommand cmd_Seguridad;

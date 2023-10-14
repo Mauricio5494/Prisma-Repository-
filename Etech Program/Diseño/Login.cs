@@ -24,7 +24,7 @@ namespace Diseño
         Principal Taller;
         ToolTip toolTip1 = new ToolTip();
         Utilidades Seguridad = new Utilidades();
-        MySqlConnection conn = DataBaseConnect.Conectarse("", "");
+        MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd_sql;
         MySqlDataReader reader;
 
