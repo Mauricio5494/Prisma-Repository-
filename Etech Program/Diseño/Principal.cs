@@ -96,7 +96,7 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, celulares.Marca, celulares.Modelo, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
+                cmd = new MySqlCommand("SELECT celulares.Marca, celulares.Modelo, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
