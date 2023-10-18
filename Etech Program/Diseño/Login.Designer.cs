@@ -164,6 +164,7 @@
             // 
             this.btnInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnInvitado.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnInvitado.Enabled = false;
             this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInvitado.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
@@ -176,6 +177,7 @@
             this.btnInvitado.Text = "Dev";
             this.btnInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInvitado.UseVisualStyleBackColor = false;
+            this.btnInvitado.Visible = false;
             this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
             this.btnInvitado.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
