@@ -79,10 +79,7 @@ namespace Diseño
             {
                 ConfirmarContraseña();
             }
-            else
-            {
 
-            }
             if (dialogo == DialogResult.OK && PassBien == false)
             {
                 MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

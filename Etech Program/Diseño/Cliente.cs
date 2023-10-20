@@ -13,7 +13,7 @@ namespace Diseño
 
         public override string ToString()
         {
-            return "Nombre: " + Nombre + " - Cedula: " + Cedula;
+            return Nombre + " - " + Cedula;
         }
     }
 }

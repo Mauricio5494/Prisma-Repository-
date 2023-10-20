@@ -81,7 +81,7 @@ namespace Diseño
                 reader = cmd.ExecuteReader();
                 DataTable.Load(reader);
             }
-            catch (Exception ex)
+            catch
             {
 
             }

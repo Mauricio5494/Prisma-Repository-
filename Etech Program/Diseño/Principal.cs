@@ -9,6 +9,7 @@ using System.ComponentModel.Design;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -98,7 +99,7 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, celulares.Marca, celulares.Modelo, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
+                cmd = new MySqlCommand("SELECT celulares.ID, celulares.Localidad, celulares.Marca, celulares.Modelo, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
@@ -131,7 +132,7 @@ namespace Diseño
                 reader = cmd.ExecuteReader();
                 DataTableCelulares.Load(reader);
             }
-            catch (Exception ex)
+            catch
             {
             }
             finally
@@ -175,7 +176,7 @@ namespace Diseño
                 reader = cmd.ExecuteReader();
                 DataTableTrabajos.Load(reader);
             }
-            catch (Exception x)
+            catch
             {
             }
             finally
@@ -752,6 +753,8 @@ namespace Diseño
                     panel_Agregar.BringToFront();
                     timer_Agregar_Agrandar.Enabled = true;
                     timer_Agregar_Reducir.Enabled = false;
+                    timer_GroupBox_AgregarC_Agrandar.Enabled = true;
+                    timer_GroupBox_AgregarC_Reducir.Enabled = false;
 
                     //Panel-Modificar y GroupBoxes-Modificar:
                     timer_Modificar_Reducir.Enabled = true;
@@ -806,39 +809,54 @@ namespace Diseño
             {
                 if (panel_Modificar.Height < 600)
                 {
-                    //Panel-Modificar y GroupBoxes-Modificar:
-                    timer_Modificar_Agrandar.Enabled = true;
-                    timer_Modificar_Reducir.Enabled = false;
-                    panel_Modificar.Enabled = true;
-                    panel_Agregar.BringToFront();
+                    if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+                    {
 
-                    //Panel-Agregar y GroupBoxes-Agregar:
-                    timer_Agregar_Reducir.Enabled = true;
-                    timer_Agregar_Agrandar.Enabled = false;
-                    timer_GroupBox_AgregarC_Reducir.Enabled = true;
-                    timer_GroupBox_AgregarT_Reducir.Enabled = true;
-                    timer_GroupBox_AgregarC_Agrandar.Enabled = false;
-                    timer_GroupBox_AgregarT_Agrandar.Enabled = false;
-                    panel_Agregar.Enabled = false;
-                    panel_Agregar.SendToBack();
+                        //Panel-Modificar y GroupBoxes-Modificar:
+                        timer_Modificar_Agrandar.Enabled = true;
+                        timer_Modificar_Reducir.Enabled = false;
+                        timer_GroupBox_ModificarC_Agrandar.Enabled = true;
+                        timer_GroupBox_ModificarC_Reducir.Enabled = false;
+                        panel_Modificar.Enabled = true;
+                        panel_Agregar.BringToFront();
 
-                    //Panel-Eliminar y GroupBoxes-Eliminar:
-                    timer_Eliminar_Reducir.Enabled = true;
-                    timer_Eliminar_Agrandar.Enabled = false;
-                    timer_GroupBox_EliminarC_Reducir.Enabled = true;
-                    timer_GroupBox_EliminarT_Reducir.Enabled = true;
-                    timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-                    timer_GroupBox_EliminarT_Agrandar.Enabled = false;
-                    panel_Eliminar.Enabled = false;
-                    panel_Eliminar.SendToBack();
+                        //Panel-Agregar y GroupBoxes-Agregar:
+                        timer_Agregar_Reducir.Enabled = true;
+                        timer_Agregar_Agrandar.Enabled = false;
+                        timer_GroupBox_AgregarC_Reducir.Enabled = true;
+                        timer_GroupBox_AgregarT_Reducir.Enabled = true;
+                        timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+                        timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+                        panel_Agregar.Enabled = false;
+                        panel_Agregar.SendToBack();
 
-                    //Panel-Menu y GroupBoxes-Menu:
-                    timer_Menu_Reducir.Enabled = true;
-                    timer_Menu_Agrandar.Enabled = false;
-                    timer_GroupBox_Menu_Reducir.Enabled = true;
-                    timer_GroupBox_Menu_Agrandar.Enabled = false;
-                    panel_Menu.Enabled = false;
-                    panel_Menu.SendToBack();
+                        //Panel-Eliminar y GroupBoxes-Eliminar:
+                        timer_Eliminar_Reducir.Enabled = true;
+                        timer_Eliminar_Agrandar.Enabled = false;
+                        timer_GroupBox_EliminarC_Reducir.Enabled = true;
+                        timer_GroupBox_EliminarT_Reducir.Enabled = true;
+                        timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+                        timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+                        panel_Eliminar.Enabled = false;
+                        panel_Eliminar.SendToBack();
+
+                        //Panel-Menu y GroupBoxes-Menu:
+                        timer_Menu_Reducir.Enabled = true;
+                        timer_Menu_Agrandar.Enabled = false;
+                        timer_GroupBox_Menu_Reducir.Enabled = true;
+                        timer_GroupBox_Menu_Agrandar.Enabled = false;
+                        panel_Menu.Enabled = false;
+                        panel_Menu.SendToBack();
+                    }
+                    else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+                    {
+                        timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                        timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                        timer_GroupBox_ModificarT_Agrandar.Enabled = true;
+                        timer_GroupBox_ModificarT_Reducir.Enabled = false;
+
+
+                    }
                 }
                 else
                 {
@@ -986,10 +1004,7 @@ namespace Diseño
             {
                 Application.Restart();
             }
-            else
-            {
 
-            }
         }
 
         //Botones con funciones SQL:
@@ -998,7 +1013,7 @@ namespace Diseño
             MostrarNombreYelIDdelTecnicoEnUnComboBox();
 
             //linkeo de la cedula del cliente:
-            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
             {
 
                 string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
@@ -1082,39 +1097,20 @@ namespace Diseño
                             txtDetallesUobservaciones_Modificar.Text = detalles;
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No se pudo meter los detalles en el campo de texto de Detalles/Observaciones\n\n" + ex.Message, "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("No se pudo meter los detalles en el campo de texto de Detalles/Observaciones\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
                         conn.Close();
                     }
 
-
-                    //string query = $"SELECT detalles from celulares WHERE ID ={clavePrimariaCelulares}";
-
-                    //try
-                    //{
-                    //    conn.Open();
-                    //    cmd = new MySqlCommand(query, conn);
-                    //    string detalles = cmd.ExecuteNonQuery().ToString();
-                    //    txtDetallesUobservaciones_Modificar.Text = detalles;
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show("No se pudo poner los detalles en el campo de texto!\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //}
-                    //finally
-                    //{
-                    //    conn.Close();
-                    //}
-
                 }
-                else if (groupBox_ModificarTrabajos.Enabled == true && panel_Modificar.Enabled == true && groupBox_ModificarTrabajos.Visible == true && panel_Modificar.Visible == true)
-                {
+                //else if (groupBox_ModificarTrabajos.Enabled == true && panel_Modificar.Enabled == true && groupBox_ModificarTrabajos.Visible == true && panel_Modificar.Visible == true)
+                //{
 
-                }
+                //}
                 // para dar de baja los celulares.
                 else
                 {
@@ -1137,10 +1133,7 @@ namespace Diseño
                     }
                 }
             }
-            else
-            {
 
-            }
 
             if (e.RowIndex >= 0 && e.ColumnIndex == 4)
             {
@@ -2266,10 +2259,7 @@ namespace Diseño
             {
                 Application.Exit();
             }
-            else
-            {
-                //seguridad = DialogResult.No;
-            }
+
 
         }
 
@@ -2799,11 +2789,11 @@ namespace Diseño
                 }
                 else
                 {
-                 
+
                     timer_GroupBox_AgregarT_Agrandar.Enabled = true;
                     timer_GroupBox_AgregarT_Reducir.Enabled = false;
 
-           
+
                     timer_GroupBox_AgregarC_Reducir.Enabled = true;
                     timer_GroupBox_AgregarC_Agrandar.Enabled = false;
 
@@ -2811,7 +2801,7 @@ namespace Diseño
 
                 if (panel_Eliminar.Enabled == true && panel_Eliminar.Visible == true)
                 {
-                   
+
                     timer_GroupBox_EliminarC_Agrandar.Enabled = false;
                     timer_GroupBox_EliminarC_Reducir.Enabled = true;
 
@@ -2821,7 +2811,7 @@ namespace Diseño
                 }
                 else
                 {
-                    
+
                     timer_GroupBox_EliminarC_Agrandar.Enabled = true;
                     timer_GroupBox_EliminarC_Reducir.Enabled = false;
 
@@ -2969,6 +2959,43 @@ namespace Diseño
             }
         }
 
+        private List<Cliente> listaClientes = new List<Cliente>();
+
+        private void BusquedaPorNombre(string nombre)
+        {
+            if (!string.IsNullOrEmpty(nombre))
+            {
+
+                foreach (Cliente cliente in listaClientes)
+                {
+                    if (cliente.Nombre.Contains(nombre))
+                    {
+                        combobox_CI_Del_Dueño_Modificar.Items.Add(nombre);
+                    }
+                }
+            }
+            else
+            { 
+                combobox_CI_Del_Dueño_Modificar.Items.AddRange(listaClientes.ToArray());
+            }
+        }
+        
+
+        private void combobox_CI_Del_Dueño_Modificar_TextChanged(object sender, EventArgs e)
+        {
+
+            BusquedaPorNombre(combobox_CI_Del_Dueño_Modificar.Text);
+
+            //ComboBox evento = (ComboBox)sender;
+
+            //string busqueda = evento.Text;
+
+
+            //List<Cliente> filtroDeClientes = listaClientes.Where(clientes => clientes.Nombre.Contains(busqueda) || clientes.Cedula.Contains(busqueda)).ToList();
+
+
+            //evento.Items.AddRange(filtroDeClientes.ToArray());
+        }
 
     }
 }

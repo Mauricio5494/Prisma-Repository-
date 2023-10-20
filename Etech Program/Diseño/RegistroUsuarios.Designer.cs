@@ -42,8 +42,11 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.checkBox_MostrarContraseña = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,11 +64,13 @@
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Controls.Add(this.checkBox_MostrarContraseña);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(42, 64);
+            this.groupBox1.Location = new System.Drawing.Point(5, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(311, 374);
+            this.groupBox1.Size = new System.Drawing.Size(394, 417);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrate";
@@ -74,10 +79,11 @@
             // 
             this.labelRegresar.AutoSize = true;
             this.labelRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelRegresar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegresar.ForeColor = System.Drawing.Color.Gray;
-            this.labelRegresar.Location = new System.Drawing.Point(20, 346);
+            this.labelRegresar.Location = new System.Drawing.Point(17, 344);
             this.labelRegresar.Name = "labelRegresar";
-            this.labelRegresar.Size = new System.Drawing.Size(75, 13);
+            this.labelRegresar.Size = new System.Drawing.Size(76, 16);
             this.labelRegresar.TabIndex = 13;
             this.labelRegresar.Text = "REGRESAR";
             this.labelRegresar.Click += new System.EventHandler(this.labelRegresar_Click);
@@ -87,11 +93,11 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnAgregar.Location = new System.Drawing.Point(230, 338);
+            this.btnAgregar.Location = new System.Drawing.Point(303, 338);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 31);
             this.btnAgregar.TabIndex = 12;
@@ -103,7 +109,7 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(6, 238);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(299, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(382, 21);
             this.txtTelefono.TabIndex = 11;
             // 
             // label_Telefono
@@ -111,7 +117,7 @@
             this.label_Telefono.AutoSize = true;
             this.label_Telefono.Location = new System.Drawing.Point(6, 222);
             this.label_Telefono.Name = "label_Telefono";
-            this.label_Telefono.Size = new System.Drawing.Size(147, 13);
+            this.label_Telefono.Size = new System.Drawing.Size(138, 15);
             this.label_Telefono.TabIndex = 10;
             this.label_Telefono.Text = "Telefono Fijo (Opcional):";
             // 
@@ -120,7 +126,7 @@
             this.label_Celular.AutoSize = true;
             this.label_Celular.Location = new System.Drawing.Point(6, 172);
             this.label_Celular.Name = "label_Celular";
-            this.label_Celular.Size = new System.Drawing.Size(50, 13);
+            this.label_Celular.Size = new System.Drawing.Size(47, 15);
             this.label_Celular.TabIndex = 8;
             this.label_Celular.Text = "Celular:";
             // 
@@ -129,7 +135,7 @@
             this.label_Correo.AutoSize = true;
             this.label_Correo.Location = new System.Drawing.Point(3, 124);
             this.label_Correo.Name = "label_Correo";
-            this.label_Correo.Size = new System.Drawing.Size(48, 13);
+            this.label_Correo.Size = new System.Drawing.Size(46, 15);
             this.label_Correo.TabIndex = 7;
             this.label_Correo.Text = "Correo:";
             // 
@@ -138,7 +144,7 @@
             this.label_Password.AutoSize = true;
             this.label_Password.Location = new System.Drawing.Point(3, 75);
             this.label_Password.Name = "label_Password";
-            this.label_Password.Size = new System.Drawing.Size(75, 13);
+            this.label_Password.Size = new System.Drawing.Size(69, 15);
             this.label_Password.TabIndex = 6;
             this.label_Password.Text = "Contraseña:";
             // 
@@ -147,7 +153,7 @@
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Location = new System.Drawing.Point(3, 26);
             this.label_Nombre.Name = "label_Nombre";
-            this.label_Nombre.Size = new System.Drawing.Size(54, 13);
+            this.label_Nombre.Size = new System.Drawing.Size(55, 15);
             this.label_Nombre.TabIndex = 5;
             this.label_Nombre.Text = "Nombre:";
             // 
@@ -155,28 +161,28 @@
             // 
             this.txtCelular.Location = new System.Drawing.Point(6, 188);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(299, 20);
+            this.txtCelular.Size = new System.Drawing.Size(382, 21);
             this.txtCelular.TabIndex = 3;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(6, 91);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(299, 20);
+            this.txtPassword.Size = new System.Drawing.Size(351, 21);
             this.txtPassword.TabIndex = 2;
             // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(6, 140);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(299, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(382, 21);
             this.txtCorreo.TabIndex = 1;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(6, 42);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(299, 20);
+            this.txtNombre.Size = new System.Drawing.Size(382, 21);
             this.txtNombre.TabIndex = 0;
             // 
             // pictureBox1
@@ -188,20 +194,43 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = global::Diseño.Properties.Resources.ojo_tapado;
+            this.pictureBox2.Location = new System.Drawing.Point(360, 94);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // checkBox_MostrarContraseña
+            // 
+            this.checkBox_MostrarContraseña.AutoSize = true;
+            this.checkBox_MostrarContraseña.Checked = true;
+            this.checkBox_MostrarContraseña.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_MostrarContraseña.Location = new System.Drawing.Point(363, 95);
+            this.checkBox_MostrarContraseña.Name = "checkBox_MostrarContraseña";
+            this.checkBox_MostrarContraseña.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_MostrarContraseña.TabIndex = 15;
+            this.checkBox_MostrarContraseña.UseVisualStyleBackColor = true;
+            this.checkBox_MostrarContraseña.CheckedChanged += new System.EventHandler(this.checkBox_MostrarContraseña_CheckedChanged);
+            // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(404, 485);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroUsuarios";
-            this.Text = "Registro";
+            this.Text = "Etech | Registro Rápido";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroUsuarios_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,5 +251,7 @@
         private System.Windows.Forms.Label label_Telefono;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label labelRegresar;
+        private System.Windows.Forms.CheckBox checkBox_MostrarContraseña;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
