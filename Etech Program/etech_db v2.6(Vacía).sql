@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2023 a las 01:51:28
+-- Tiempo de generación: 21-10-2023 a las 01:25:21
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `etech_db`
 --
+CREATE DATABASE IF NOT EXISTS `etech_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `etech_db`;
 
 -- --------------------------------------------------------
 
@@ -29,10 +31,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `celulares` (
   `ID` int(11) NOT NULL,
+  `Localidad` varchar(255) NOT NULL,
   `Modelo` varchar(20) NOT NULL,
   `Marca` varchar(10) NOT NULL,
   `IMEI` varchar(15) DEFAULT NULL,
-  `Estado` varchar(9) NOT NULL,
+  `Estado` varchar(255) NOT NULL,
+  `Detalles` text NOT NULL,
   `Cedula_Cliente` varchar(8) NOT NULL,
   `ID_Usuario` int(11) NOT NULL,
   `Baja` int(1) NOT NULL DEFAULT 0
@@ -52,6 +56,19 @@ CREATE TABLE `clientes` (
   `Celular` varchar(9) DEFAULT NULL,
   `Baja` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sucursales`
+--
+
+CREATE TABLE `sucursales` (
+  `ID` int(11) NOT NULL,
+  `Departamento` varchar(30) NOT NULL,
+  `Sucursal` varchar(255) NOT NULL,
+  `Contacto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='si.';
 
 -- --------------------------------------------------------
 
@@ -83,7 +100,7 @@ CREATE TABLE `usuarios` (
   `Contraseña` varchar(255) NOT NULL,
   `Telefono` varchar(8) DEFAULT NULL,
   `CorreoElectronico` varchar(255) NOT NULL,
-  `Celular` varchar(8) NOT NULL,
+  `Celular` varchar(9) NOT NULL,
   `Baja` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -104,6 +121,12 @@ ALTER TABLE `celulares`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`Cedula`);
+
+--
+-- Indices de la tabla `sucursales`
+--
+ALTER TABLE `sucursales`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `trabajos`
@@ -127,6 +150,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `celulares`
 --
 ALTER TABLE `celulares`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `sucursales`
+--
+ALTER TABLE `sucursales`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
