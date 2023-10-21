@@ -75,7 +75,7 @@ namespace Diseño
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se ingreso correctamente el usuario\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No se ingreso correctamente el usuario", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception E)
@@ -130,19 +130,7 @@ namespace Diseño
 
         private void RegistroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Restart();
-        }
 
-        private void checkBox_MostrarContraseña_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!checkBox_MostrarContraseña.Checked)
-            {
-                txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                txtPassword.PasswordChar = '*';
-            }
         }
     }
 }

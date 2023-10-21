@@ -13,7 +13,7 @@ namespace Diseño
 
         public override string ToString()
         {
-            return Nombre + " - " + ID;
+            return "Técnico: " + Nombre + " - ID: " + ID;
         }
     }
 }
