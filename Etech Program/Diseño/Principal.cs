@@ -9,6 +9,7 @@ using System.ComponentModel.Design;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace Diseño
         string modifcarTrabajos;
         string eliminarCelulares;
         string eliminarTrabajos;
+        string selectID;
         string option;
         string busqueda;
         int caracteresMaximos = 8;
@@ -52,6 +54,7 @@ namespace Diseño
 
         //Tabla Celulares:
         int idCelular;
+        string nombreTecninco;
         string modelo;
         string marca;
         string imei;
@@ -70,11 +73,16 @@ namespace Diseño
         int adelanto;
         int tecnicoACargo;
 
+
+
+
         //instancias:
         private Usuarios Usuarios; /* <-- aunque no son instancias objetualizadas, sirven solo para sacar valores públicos de dentro como getters, setters, etc. */
         private Clientes clientes;
         DataTable DataTableCelulares = new DataTable();
+        DataTable DataTableCelularesID = new DataTable();
         DataTable DataTableTrabajos = new DataTable();
+        DataTable DataTableTrabajosID = new DataTable();
         DataTable DataTableCelularesBusqueda = new DataTable();
         DataTable DataTableTrabajosBusqueda = new DataTable();
         Utilidades Seguridad = new Utilidades();
@@ -92,6 +100,8 @@ namespace Diseño
          * 
          */
         //Metodos SQL:
+
+
         private void MostrarDatosEnLasTablasCelulares()
         {
             try
@@ -131,7 +141,7 @@ namespace Diseño
                 reader = cmd.ExecuteReader();
                 DataTableCelulares.Load(reader);
             }
-            catch (Exception ex)
+            catch
             {
             }
             finally
@@ -140,6 +150,7 @@ namespace Diseño
             }
             tablaCelulares.DataSource = DataTableCelulares;
         }
+
         private void MostrarDatosEnLasTablasTrabajos()
         {
             try
@@ -147,8 +158,7 @@ namespace Diseño
 
                 DataTableTrabajos.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT ID, ID_Tecnico, Presupuesto, Problema, Fecha_Ingreso, Plazo, Adelanto, ID_Celular FROM trabajos WHERE Baja = 0;", conn);
-                cmd.CommandType = System.Data.CommandType.Text;
+                cmd = new MySqlCommand($"SELECT trabajos.ID, usuarios.Nombre, trabajos.Presupuesto, trabajos.Problema, Fecha_Ingreso, Plazo, trabajos.Adelanto, trabajos.ID_Celular FROM trabajos INNER JOIN usuarios ON trabajos.ID_Tecnico = usuarios.ID WHERE trabajos.Baja = 0 AND usuarios.Baja = 0;", conn);
                 reader = cmd.ExecuteReader();
                 DataTableTrabajos.Load(reader);
 
@@ -170,12 +180,11 @@ namespace Diseño
             {
                 DataTableTrabajos.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Baja = 0;", conn);
-                cmd.CommandType = System.Data.CommandType.Text;
+                cmd = new MySqlCommand($"SELECT trabajos.ID, usuarios.Nombre, trabajos.Presupuesto, trabajos.Problema, trabajos.Fecha_Ingreso, trabajos.Plazo, trabajos.Adelanto, trabajos.ID_Celular FROM trabajos INNER JOIN usuarios ON trabajos.ID_Tecnico = usuarios.ID WHERE trabajos.Baja = 0 AND usuarios.Baja = 0;", conn);
                 reader = cmd.ExecuteReader();
                 DataTableTrabajos.Load(reader);
             }
-            catch (Exception x)
+            catch
             {
             }
             finally
@@ -197,242 +206,6 @@ namespace Diseño
         {
             txtCampo_Busqueda.Enabled = true;
 
-        }
-
-        private void comboBoxColumnas_Trabajos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxColumnas_Trabajos.Text.Equals("Todas..."))
-            {
-                //Labels:
-                labelError_Modificar_Trabajos.Enabled = false;
-                labelError_Modificar_Trabajos.Visible = false;
-
-                labelTrabajo_ID_Modificar.Enabled = true;
-                labelTrabajo_ID_Modificar.Visible = true;
-
-                labelPlazo_Modificar.Enabled = true;
-                labelPlazo_Modificar.Visible = true;
-
-                labelPresupuesto_Modificar.Enabled = true;
-                labelPresupuesto_Modificar.Visible = true;
-
-                labelProblema_Modificar.Enabled = true;
-                labelProblema_Modificar.Visible = true;
-
-                labelFechaDeIngreso_Modificar.Enabled = true;
-                labelFechaDeIngreso_Modificar.Visible = true;
-
-                labelAdelanto_Modificar.Enabled = true;
-                labelAdelanto_Modificar.Visible = true;
-
-                labelID_Tecnico_Trabajo_Modificar.Enabled = true;
-                labelID_Tecnico_Trabajo_Modificar.Visible = true;
-
-                //TextBox y DateTimePicker:
-                txtTrabajo_ID_Modificar.Enabled = true;
-                txtTrabajo_ID_Modificar.Visible = true;
-
-                dateTimePicker_Plazo_Modificar.Enabled = true;
-                dateTimePicker_Plazo_Modificar.Visible = true;
-
-                dateTimePicker_Plazo_Modificar.Location = new Point(6, 133);
-
-                txtPresupuesto_Modificar.Enabled = true;
-                txtPresupuesto_Modificar.Visible = true;
-
-                txtProblema_Modificar.Enabled = true;
-                txtProblema_Modificar.Visible = true;
-
-                dateTimePicker_FechaDeIngreso_Modificar.Enabled = true;
-                dateTimePicker_FechaDeIngreso_Modificar.Visible = true;
-
-                dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 284);
-
-                txtAdelanto_Modificar.Enabled = true;
-                txtAdelanto_Modificar.Visible = true;
-
-                combobox_IDTecnico_Modificar_Trabajo.Enabled = true;
-                combobox_IDTecnico_Modificar_Trabajo.Visible = true;
-
-                //Modificar Columna:
-                labelModificar_Columna_Trabajos.Enabled = false;
-                labelModificar_Columna_Trabajos.Visible = false;
-
-                txtModificar_Columna_Trabajos.Enabled = false;
-                txtModificar_Columna_Trabajos.Visible = false;
-            }
-            else if (comboBoxColumnas_Trabajos.Text.Equals("Plazo"))
-            {
-                dateTimePicker_Plazo_Modificar.Enabled = true;
-                dateTimePicker_Plazo_Modificar.Visible = true;
-
-                dateTimePicker_Plazo_Modificar.Location = new Point(6, 95);
-
-                labelModificar_Columna_Trabajos.Enabled = true;
-                labelModificar_Columna_Trabajos.Visible = true;
-
-                labelID_Tecnico_Trabajo_Modificar.Enabled = false;
-                labelID_Tecnico_Trabajo_Modificar.Visible = false;
-
-                //Labels:
-                labelError_Modificar_Trabajos.Enabled = false;
-                labelError_Modificar_Trabajos.Visible = false;
-
-                labelTrabajo_ID_Modificar.Enabled = false;
-                labelTrabajo_ID_Modificar.Visible = false;
-
-                labelPlazo_Modificar.Enabled = false;
-                labelPlazo_Modificar.Visible = false;
-
-                labelPlazo_Modificar.Location = new Point(3, 79);
-
-                labelPresupuesto_Modificar.Enabled = false;
-                labelPresupuesto_Modificar.Visible = false;
-
-                labelProblema_Modificar.Enabled = false;
-                labelProblema_Modificar.Visible = false;
-
-                labelFechaDeIngreso_Modificar.Enabled = false;
-                labelFechaDeIngreso_Modificar.Visible = false;
-
-                labelAdelanto_Modificar.Enabled = false;
-                labelAdelanto_Modificar.Visible = false;
-
-                //TextBox y DateTimePicker:
-                txtTrabajo_ID_Modificar.Enabled = false;
-                txtTrabajo_ID_Modificar.Visible = false;
-
-                txtPresupuesto_Modificar.Enabled = false;
-                txtPresupuesto_Modificar.Visible = false;
-
-                txtProblema_Modificar.Enabled = false;
-                txtProblema_Modificar.Visible = false;
-
-                dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
-                dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
-
-                txtAdelanto_Modificar.Enabled = false;
-                txtAdelanto_Modificar.Visible = false;
-
-                txtModificar_Columna_Trabajos.Enabled = false;
-                txtModificar_Columna_Trabajos.Visible = false;
-
-                combobox_IDTecnico_Modificar_Trabajo.Enabled = false;
-                combobox_IDTecnico_Modificar_Trabajo.Visible = false;
-            }
-            else if (comboBoxColumnas_Trabajos.Text.Equals("Fecha de ingreso"))
-            {
-                dateTimePicker_FechaDeIngreso_Modificar.Enabled = true;
-                dateTimePicker_FechaDeIngreso_Modificar.Visible = true;
-                dateTimePicker_FechaDeIngreso_Modificar.Location = new Point(6, 95);
-
-                labelModificar_Columna_Trabajos.Enabled = true;
-                labelModificar_Columna_Trabajos.Visible = true;
-                labelModificar_Columna_Trabajos.Location = new Point(3, 79);
-
-                //Labels:
-                labelError_Modificar_Trabajos.Enabled = false;
-                labelError_Modificar_Trabajos.Visible = false;
-
-                labelTrabajo_ID_Modificar.Enabled = false;
-                labelTrabajo_ID_Modificar.Visible = false;
-
-                labelPlazo_Modificar.Enabled = false;
-                labelPlazo_Modificar.Visible = false;
-
-                labelPresupuesto_Modificar.Enabled = false;
-                labelPresupuesto_Modificar.Visible = false;
-
-                labelProblema_Modificar.Enabled = false;
-                labelProblema_Modificar.Visible = false;
-
-                labelFechaDeIngreso_Modificar.Enabled = false;
-                labelFechaDeIngreso_Modificar.Visible = false;
-
-                labelAdelanto_Modificar.Enabled = false;
-                labelAdelanto_Modificar.Visible = false;
-
-                labelID_Tecnico_Trabajo_Modificar.Enabled = false;
-                labelID_Tecnico_Trabajo_Modificar.Visible = false;
-
-                //TextBox y DateTimePicker:
-                txtTrabajo_ID_Modificar.Enabled = false;
-                txtTrabajo_ID_Modificar.Visible = false;
-
-                dateTimePicker_Plazo_Modificar.Enabled = false;
-                dateTimePicker_Plazo_Modificar.Visible = false;
-
-                txtPresupuesto_Modificar.Enabled = false;
-                txtPresupuesto_Modificar.Visible = false;
-
-                txtProblema_Modificar.Enabled = false;
-                txtProblema_Modificar.Visible = false;
-
-                txtAdelanto_Modificar.Enabled = false;
-                txtAdelanto_Modificar.Visible = false;
-
-                txtModificar_Columna_Trabajos.Enabled = false;
-                txtModificar_Columna_Trabajos.Visible = false;
-
-                combobox_IDTecnico_Modificar_Trabajo.Enabled = false;
-                combobox_IDTecnico_Modificar_Trabajo.Visible = false;
-            }
-            else
-            {
-                //Modificar Columna:
-                labelModificar_Columna_Trabajos.Enabled = true;
-                labelModificar_Columna_Trabajos.Visible = true;
-
-                txtModificar_Columna_Trabajos.Enabled = true;
-                txtModificar_Columna_Trabajos.Visible = true;
-
-                //Labels:
-                labelError_Modificar_Trabajos.Enabled = false;
-                labelError_Modificar_Trabajos.Visible = false;
-
-                labelTrabajo_ID_Modificar.Enabled = false;
-                labelTrabajo_ID_Modificar.Visible = false;
-
-                labelPlazo_Modificar.Enabled = false;
-                labelPlazo_Modificar.Visible = false;
-
-                labelPresupuesto_Modificar.Enabled = false;
-                labelPresupuesto_Modificar.Visible = false;
-
-                labelProblema_Modificar.Enabled = false;
-                labelProblema_Modificar.Visible = false;
-
-                labelFechaDeIngreso_Modificar.Enabled = false;
-                labelFechaDeIngreso_Modificar.Visible = false;
-
-                labelAdelanto_Modificar.Enabled = false;
-                labelAdelanto_Modificar.Visible = false;
-
-                labelID_Tecnico_Trabajo_Modificar.Enabled = false;
-                labelID_Tecnico_Trabajo_Modificar.Visible = false;
-
-                //TextBox y DateTimePicker:
-                txtTrabajo_ID_Modificar.Enabled = false;
-                txtTrabajo_ID_Modificar.Visible = false;
-
-                dateTimePicker_Plazo_Modificar.Enabled = false;
-                dateTimePicker_Plazo_Modificar.Visible = false;
-
-                txtPresupuesto_Modificar.Enabled = false;
-                txtPresupuesto_Modificar.Visible = false;
-
-                txtProblema_Modificar.Enabled = false;
-                txtProblema_Modificar.Visible = false;
-
-                dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
-                dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
-
-                txtAdelanto_Modificar.Enabled = false;
-                txtAdelanto_Modificar.Visible = false;
-
-                combobox_IDTecnico_Modificar_Trabajo.Enabled = false;
-                combobox_IDTecnico_Modificar_Trabajo.Visible = false;
-            }
         }
 
         //Boton de busqueda
@@ -685,6 +458,8 @@ namespace Diseño
             MenuOpcionesCelular.Enabled = true;
             MenuOpcionesCelular.Visible = true;
 
+            pictureBox1.SendToBack();
+
 
         }
 
@@ -702,6 +477,13 @@ namespace Diseño
                 panelD.Width = 119;
                 btnAgregar.ForeColor = Color.Black;
                 btnModificar.ForeColor = Color.Black;
+
+                //resolución de conflictos:
+                panel_Modificar.SendToBack();
+                panel_Agregar.SendToBack();
+                panel_Eliminar.SendToBack();
+                panel_Menu.SendToBack();
+
                 btnEliminar.ForeColor = Color.Black;
                 btnCerrarSesion.ForeColor = Color.Black;
                 btnMenuPrincipal.ForeColor = Color.Black;
@@ -710,14 +492,18 @@ namespace Diseño
                 btnEliminar.BackColor = Color.FromArgb(255, 40, 40);
                 btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
                 btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
-
-                tabIndex_Pestañas.Location = new Point(124, 78);
-                //tablaTrabajos.Location = new Point(124, 78);
             }
             else
             {
                 panelD.Width = 45;
                 btnAgregar.ForeColor = Color.FromArgb(255, 40, 40);
+
+                //resolución de conflictos:
+                panel_Modificar.BringToFront();
+                panel_Agregar.BringToFront();
+                panel_Eliminar.BringToFront();
+                panel_Menu.BringToFront();
+
                 btnModificar.ForeColor = Color.FromArgb(255, 40, 40);
                 btnEliminar.ForeColor = Color.FromArgb(255, 40, 40);
                 btnCerrarSesion.ForeColor = Color.FromArgb(255, 40, 40);
@@ -732,9 +518,6 @@ namespace Diseño
                 btnModificar.FlatStyle = FlatStyle.Flat;
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-                //tablaCelulares.Location = new Point(49, 78);
-                //tablaTrabajos.Location = new Point(49, 78);
-                tabIndex_Pestañas.Location = new Point(49, 78);
             }
         }
 
@@ -745,54 +528,60 @@ namespace Diseño
         {
             if (Seguridad.getInvitado == false)
             {
-                if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+
+                if (panel_Agregar.Height <= 1)
                 {
-                    //Panel-Agregar y GroupBoxes-Agregar:
-                    panel_Agregar.Enabled = true;
-                    panel_Agregar.BringToFront();
+                    //panel agregar
                     timer_Agregar_Agrandar.Enabled = true;
                     timer_Agregar_Reducir.Enabled = false;
 
-                    //Panel-Modificar y GroupBoxes-Modificar:
-                    timer_Modificar_Reducir.Enabled = true;
-                    timer_Modificar_Agrandar.Enabled = false;
-                    timer_GroupBox_ModificarC_Reducir.Enabled = true;
-                    timer_GroupBox_ModificarT_Reducir.Enabled = true;
-                    timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
-                    panel_Modificar.Enabled = false;
-                    panel_Modificar.SendToBack();
-
-                    //Panel-Eliminar y GroupBoxes-Eliminar:
+                    //panel eliminar
                     timer_Eliminar_Reducir.Enabled = true;
                     timer_Eliminar_Agrandar.Enabled = false;
-                    timer_GroupBox_EliminarC_Reducir.Enabled = true;
-                    timer_GroupBox_EliminarT_Reducir.Enabled = true;
-                    timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-                    timer_GroupBox_EliminarT_Agrandar.Enabled = false;
-                    panel_Eliminar.Enabled = false;
-                    panel_Eliminar.SendToBack();
 
-                    //Panel-Menu y GroupBoxes-Menu:
-                    timer_Menu_Reducir.Enabled = true;
+                    //panel modificar
+                    timer_Modificar_Agrandar.Enabled = false;
+                    timer_Modificar_Reducir.Enabled = true;
+
+                    //panel menu
                     timer_Menu_Agrandar.Enabled = false;
-                    timer_GroupBox_Menu_Reducir.Enabled = true;
-                    timer_GroupBox_Menu_Agrandar.Enabled = false;
-                    panel_Menu.Enabled = false;
-                    panel_Menu.SendToBack();
+                    timer_Menu_Reducir.Enabled = true;
 
+                    //Detalles:
+                    pictureBox1.SendToBack();
+
+                    ////tabIndex, tamaño y locación.
+                    //tabIndex_Pestañas.Width = 880;
+                    //tabIndex_Pestañas.Location = new Point(474, 73);
+
+                    if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+                    {
+                        timer_GroupBox_AgregarC_Agrandar.Enabled = true;
+                        timer_GroupBox_AgregarC_Reducir.Enabled = false;
+
+                        timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+                        timer_GroupBox_AgregarT_Reducir.Enabled = true;
+                    }
+
+                    else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+                    {
+                        timer_GroupBox_AgregarT_Agrandar.Enabled = true;
+                        timer_GroupBox_AgregarT_Reducir.Enabled = false;
+
+                        timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+                        timer_GroupBox_AgregarC_Reducir.Enabled = true;
+                    }
                 }
                 else
                 {
-                    timer_Agregar_Reducir.Enabled = true;
                     timer_Agregar_Agrandar.Enabled = false;
-                    timer_GroupBox_AgregarC_Reducir.Enabled = true;
-                    timer_GroupBox_AgregarT_Reducir.Enabled = true;
-                    timer_GroupBox_AgregarC_Agrandar.Enabled = false;
-                    timer_GroupBox_AgregarT_Agrandar.Enabled = false;
-                    panel_Agregar.Enabled = false;
-                    panel_Agregar.SendToBack();
+                    timer_Agregar_Reducir.Enabled = true;
+
+                    //tabIndex_Pestañas.Width = 1305;
+                    //tabIndex_Pestañas.Location = new Point(49, 73);
                 }
+
+
             }
             else
             {
@@ -804,57 +593,96 @@ namespace Diseño
         {
             if (Seguridad.getInvitado == false)
             {
-                if (panel_Modificar.Height < 600)
+                if (panel_Modificar.Height <= 1)
                 {
-                    //Panel-Modificar y GroupBoxes-Modificar:
+                    //panel modificar
                     timer_Modificar_Agrandar.Enabled = true;
                     timer_Modificar_Reducir.Enabled = false;
-                    panel_Modificar.Enabled = true;
-                    panel_Agregar.BringToFront();
 
-                    //Panel-Agregar y GroupBoxes-Agregar:
-                    timer_Agregar_Reducir.Enabled = true;
+                    //panel agregar
                     timer_Agregar_Agrandar.Enabled = false;
-                    timer_GroupBox_AgregarC_Reducir.Enabled = true;
-                    timer_GroupBox_AgregarT_Reducir.Enabled = true;
-                    timer_GroupBox_AgregarC_Agrandar.Enabled = false;
-                    timer_GroupBox_AgregarT_Agrandar.Enabled = false;
-                    panel_Agregar.Enabled = false;
-                    panel_Agregar.SendToBack();
+                    timer_Agregar_Reducir.Enabled = true;
 
-                    //Panel-Eliminar y GroupBoxes-Eliminar:
+                    //panel eliminar
                     timer_Eliminar_Reducir.Enabled = true;
                     timer_Eliminar_Agrandar.Enabled = false;
-                    timer_GroupBox_EliminarC_Reducir.Enabled = true;
-                    timer_GroupBox_EliminarT_Reducir.Enabled = true;
-                    timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-                    timer_GroupBox_EliminarT_Agrandar.Enabled = false;
-                    panel_Eliminar.Enabled = false;
-                    panel_Eliminar.SendToBack();
 
-                    //Panel-Menu y GroupBoxes-Menu:
-                    timer_Menu_Reducir.Enabled = true;
+                    //panel menu
                     timer_Menu_Agrandar.Enabled = false;
-                    timer_GroupBox_Menu_Reducir.Enabled = true;
-                    timer_GroupBox_Menu_Agrandar.Enabled = false;
-                    panel_Menu.Enabled = false;
-                    panel_Menu.SendToBack();
+                    timer_Menu_Reducir.Enabled = true;
+
+                    //Detalles:
+                    pictureBox1.SendToBack();
+
+                    ////tabIndex, tamaño y locación.
+                    //tabIndex_Pestañas.Width = 880;
+                    //tabIndex_Pestañas.Location = new Point(474, 73);
+
+                    if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+                    {
+                        timer_GroupBox_ModificarC_Agrandar.Enabled = true;
+                        timer_GroupBox_ModificarC_Reducir.Enabled = false;
+
+                        timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                        timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                    }
+
+                    else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+                    {
+                        timer_GroupBox_ModificarT_Agrandar.Enabled = true;
+                        timer_GroupBox_ModificarT_Reducir.Enabled = false;
+
+                        timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                        timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                    }
                 }
                 else
                 {
-                    timer_Modificar_Reducir.Enabled = true;
                     timer_Modificar_Agrandar.Enabled = false;
-                    timer_GroupBox_ModificarC_Reducir.Enabled = true;
-                    timer_GroupBox_ModificarT_Reducir.Enabled = true;
-                    timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
-                    panel_Modificar.Enabled = false;
-                    panel_Modificar.SendToBack();
+                    timer_Modificar_Reducir.Enabled = true;
+
+                    //tabIndex_Pestañas.Width = 1305;
+                    //tabIndex_Pestañas.Location = new Point(49, 73);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+
+                //    if (panel_Modificar.Height <= 1)
+                //    {
+                //        timer_Modificar_Agrandar.Enabled = true;
+                //        timer_Modificar_Reducir.Enabled = false;
+
+                //        if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+                //        {
+                //            timer_GroupBox_ModificarC_Agrandar.Enabled = true;
+                //            timer_GroupBox_ModificarC_Reducir.Enabled = false;
+                //            timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                //            timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                //        }
+                //        else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+                //        {
+                //            timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                //            timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                //            timer_GroupBox_ModificarT_Agrandar.Enabled = true;
+                //            timer_GroupBox_ModificarT_Reducir.Enabled = false;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        timer_Modificar_Reducir.Enabled = true;
+                //        timer_Modificar_Agrandar.Enabled = false;
+                //        timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                //        timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                //        timer_GroupBox_ModificarC_Agrandar.Enabled = false;
+                //        timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                //        panel_Modificar.Enabled = false;
+                //        panel_Modificar.SendToBack();
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //}
+
             }
         }
 
@@ -897,6 +725,27 @@ namespace Diseño
                     timer_GroupBox_Menu_Agrandar.Enabled = false;
                     panel_Menu.Enabled = false;
                     panel_Menu.SendToBack();
+
+                    //Panel-Eliminar y Groupboxes-Eliminar:
+                    if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+                    {
+                        groupBox_EliminarCelulares.Enabled = true;
+                        groupBox_EliminarCelulares.Visible = true;
+                        timer_GroupBox_EliminarC_Agrandar.Enabled = true;
+                        timer_GroupBox_EliminarC_Reducir.Enabled = false;
+                        timer_GroupBox_EliminarT_Agrandar.Enabled = false;
+                        timer_GroupBox_EliminarT_Reducir.Enabled = true;
+
+                    }
+                    else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+                    {
+                        groupBox_EliminarCelulares.Enabled = true;
+                        groupBox_EliminarCelulares.Visible = true;
+                        timer_GroupBox_EliminarT_Agrandar.Enabled = true;
+                        timer_GroupBox_EliminarT_Reducir.Enabled = false;
+                        timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+                        timer_GroupBox_EliminarC_Reducir.Enabled = true;
+                    }
                 }
                 else
                 {
@@ -986,170 +835,10 @@ namespace Diseño
             {
                 Application.Restart();
             }
-            else
-            {
 
-            }
         }
 
         //Botones con funciones SQL:
-        private void tablaCelulares_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MostrarNombreYelIDdelTecnicoEnUnComboBox();
-
-            //linkeo de la cedula del cliente:
-            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
-            {
-
-                string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
-
-
-                string nombreDelCliente = ObtenerNombreHaciendoClickEnCedula(cedula);
-                string celularDelCliente = ObtenerCelularHaciendoClickEnCedula(cedula);
-                string telefonoDelCliente = ObtenerTelefonoHaciendoClickEnCedula(cedula);
-                string correoElectrionicoDelCliente = ObtenerCorreoElectronicoHaciendoClickEnCedula(cedula);
-
-
-                MessageBox.Show($"Información del Cliente:\n\nNombre y Apellido: {nombreDelCliente}\n\nCelular Adicional: {celularDelCliente}\n\nTelefono Fijo: {telefonoDelCliente}\n\nCorreo Electrónico: {correoElectrionicoDelCliente}", "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            //Sino que solo seleccione el ID para borrar o modificar el celular.
-            else if (e.RowIndex >= 0)
-            {
-
-                DataGridViewRow filaSeleccionada = tablaCelulares.Rows[e.RowIndex];
-
-                //para poner todos los valores en la tabla de modificación de celulares:
-                if (groupBox_ModificarCelulares.Enabled == true && panel_Modificar.Enabled == true && groupBox_ModificarCelulares.Visible == true && panel_Modificar.Visible == true)
-                {
-
-
-                    //Selección:
-                    string seleccion = filaSeleccionada.Cells["ID"].Value.ToString();
-                    clavePrimariaCelulares = seleccion;
-                    label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
-
-                    //textBoxes:
-                    string IMEI = filaSeleccionada.Cells["IMEI"].Value.ToString();
-                    string modelo = filaSeleccionada.Cells["Modelo"].Value.ToString();
-                    string marca = filaSeleccionada.Cells["Marca"].Value.ToString();
-
-
-                    //comboboxes:
-                    string nombreTecnico = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                    string CIcliente = filaSeleccionada.Cells["Cedula_Cliente"].Value.ToString();
-
-
-                    //aplicaciones:
-                    txtIMEI_Modificar.Text = IMEI;
-                    txtModelo_Modificar.Text = modelo;
-                    txtMarca_Modificar.Text = marca;
-
-                    //comboboxes:
-                    foreach (Cliente cliente in combobox_CI_Del_Dueño_Modificar.Items)
-                    {
-                        if (cliente.Cedula == CIcliente)
-                        {
-                            combobox_CI_Del_Dueño_Modificar.SelectedItem = cliente;
-                            break;
-                        }
-                    }
-
-                    foreach (Tecnicos tecnico in comboBox_ModificarTecnicoACargo.Items)
-                    {
-                        if (tecnico.Nombre == nombreTecnico)
-                        {
-                            comboBox_ModificarTecnicoACargo.SelectedItem = tecnico;
-                            break;
-                        }
-                    }
-
-                    //para los detalles:
-
-                    string detalles = string.Empty;
-
-                    try
-                    {
-                        conn.Open();
-                        string query = $"SELECT Detalles FROM celulares WHERE ID ={seleccion}";
-                        cmd = new MySqlCommand(query, conn);
-                        reader = cmd.ExecuteReader();
-
-                        if (reader.Read())
-                        {
-                            detalles = reader["Detalles"].ToString();
-
-                            txtDetallesUobservaciones_Modificar.Text = detalles;
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show("No se pudo meter los detalles en el campo de texto de Detalles/Observaciones\n\n" + ex.Message, "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-
-
-                    //string query = $"SELECT detalles from celulares WHERE ID ={clavePrimariaCelulares}";
-
-                    //try
-                    //{
-                    //    conn.Open();
-                    //    cmd = new MySqlCommand(query, conn);
-                    //    string detalles = cmd.ExecuteNonQuery().ToString();
-                    //    txtDetallesUobservaciones_Modificar.Text = detalles;
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show("No se pudo poner los detalles en el campo de texto!\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //}
-                    //finally
-                    //{
-                    //    conn.Close();
-                    //}
-
-                }
-                else if (groupBox_ModificarTrabajos.Enabled == true && panel_Modificar.Enabled == true && groupBox_ModificarTrabajos.Visible == true && panel_Modificar.Visible == true)
-                {
-
-                }
-                // para dar de baja los celulares.
-                else
-                {
-                    numeroDeFilaCelulares = e.RowIndex;
-                    clavePrimariaCelulares = tablaCelulares.Rows[numeroDeFilaCelulares].Cells["ID"].Value.ToString();
-                    if (groupBox_EliminarCelulares.Height > 300)
-                    {
-                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Black;
-                        labMostrarIDdelCelularSeleccionado.Text = clavePrimariaCelulares;
-                    }
-                    else if (groupBox_ModificarCelulares.Height > 300)
-                    {
-                        label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
-                    }
-                    else
-                    {
-                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Brown;
-                        labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla.";
-
-                    }
-                }
-            }
-            else
-            {
-
-            }
-
-            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
-            {
-                string detalles = ObtenerDetallesDesdeElEstado();
-
-                MessageBox.Show("Detalles/Observaciones:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-        }
 
         private string ObtenerNombreHaciendoClickEnCedula(string cedula)
         {
@@ -1332,18 +1021,7 @@ namespace Diseño
             return estadoDelCelular;
         }
 
-        private void tablaTrabajos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                numeroDeFilaTrabajos = e.RowIndex;
-                clavePrimariaTrabajos = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["ID"].Value.ToString();
-                if (groupBox_EliminarTrabajos.Height > 300)
-                {
-                    txtID_Trabajo_Eliminar.Text = clavePrimariaTrabajos;
-                }
-            }
-        }
+
 
         private void btnAgregarCelular_Click(object sender, EventArgs e)
         {
@@ -1512,7 +1190,7 @@ namespace Diseño
             try
             {
                 conn.Open();
-                eliminarCelulares = $"UPDATE celulares SET Baja = 1 WHERE ID ={clavePrimariaCelulares};";
+                eliminarCelulares = $"UPDATE celulares SET Baja = 1 WHERE ID ='{clavePrimariaCelulares}';";
                 cmd = new MySqlCommand(eliminarCelulares, conn);
                 DialogResult siono = MessageBox.Show("¿Está seguro que desea eliminar este celular?\n\n No lo volverá a ver nunca más.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (siono == DialogResult.Yes)
@@ -1541,6 +1219,139 @@ namespace Diseño
                 MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void tablaCelulares_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MostrarNombreYelIDdelTecnicoEnUnComboBox();
+
+            //linkeo de la cedula del cliente:
+            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
+            {
+
+                string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
+
+
+                string nombreDelCliente = ObtenerNombreHaciendoClickEnCedula(cedula);
+                string celularDelCliente = ObtenerCelularHaciendoClickEnCedula(cedula);
+                string telefonoDelCliente = ObtenerTelefonoHaciendoClickEnCedula(cedula);
+                string correoElectrionicoDelCliente = ObtenerCorreoElectronicoHaciendoClickEnCedula(cedula);
+
+
+                MessageBox.Show($"Información del Cliente:\n\nNombre y Apellido: {nombreDelCliente}\n\nCelular Adicional: {celularDelCliente}\n\nTelefono Fijo: {telefonoDelCliente}\n\nCorreo Electrónico: {correoElectrionicoDelCliente}", "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //Sino que solo seleccione el ID para borrar o modificar el celular.
+            else if (e.RowIndex >= 0)
+            {
+
+                DataGridViewRow filaSeleccionada = tablaCelulares.Rows[e.RowIndex];
+
+                //para poner todos los valores en la tabla de modificación de celulares:
+                if (groupBox_ModificarCelulares.Enabled == true && panel_Modificar.Enabled == true && groupBox_ModificarCelulares.Visible == true && panel_Modificar.Visible == true)
+                {
+
+
+                    //Selección:
+                    string seleccion = filaSeleccionada.Cells["ID"].Value.ToString();
+                    clavePrimariaCelulares = seleccion;
+                    label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
+
+                    //textBoxes:
+                    string IMEI = filaSeleccionada.Cells["IMEI"].Value.ToString();
+                    string modelo = filaSeleccionada.Cells["Modelo"].Value.ToString();
+                    string marca = filaSeleccionada.Cells["Marca"].Value.ToString();
+
+
+                    //comboboxes:
+                    string nombreTecnico = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                    string CIcliente = filaSeleccionada.Cells["Cedula_Cliente"].Value.ToString();
+
+
+                    //aplicaciones:
+                    txtIMEI_Modificar.Text = IMEI;
+                    txtModelo_Modificar.Text = modelo;
+                    txtMarca_Modificar.Text = marca;
+
+                    //comboboxes:
+                    foreach (Cliente cliente in combobox_CI_Del_Dueño_Modificar.Items)
+                    {
+                        if (cliente.Cedula == CIcliente)
+                        {
+                            combobox_CI_Del_Dueño_Modificar.SelectedItem = cliente;
+                            break;
+                        }
+                    }
+
+                    foreach (Tecnicos tecnico in comboBox_ModificarTecnicoACargo.Items)
+                    {
+                        if (tecnico.Nombre == nombreTecnico)
+                        {
+                            comboBox_ModificarTecnicoACargo.SelectedItem = tecnico;
+                            break;
+                        }
+                    }
+
+                    //para los detalles:
+
+                    string detalles = string.Empty;
+
+                    try
+                    {
+                        conn.Open();
+                        string query = $"SELECT Detalles FROM celulares WHERE ID ={seleccion}";
+                        cmd = new MySqlCommand(query, conn);
+                        reader = cmd.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            detalles = reader["Detalles"].ToString();
+
+                            txtDetallesUobservaciones_Modificar.Text = detalles;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo meter los detalles en el campo de texto de Detalles/Observaciones\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+
+                }
+                // para dar de baja los celulares.
+                else
+                {
+                    numeroDeFilaCelulares = e.RowIndex;
+                    clavePrimariaCelulares = tablaCelulares.Rows[numeroDeFilaCelulares].Cells["ID"].Value.ToString();
+
+
+                    if (groupBox_EliminarCelulares.Height > 300)
+                    {
+                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Black;
+                        labMostrarIDdelCelularSeleccionado.Text = clavePrimariaCelulares;
+                    }
+                    else if (groupBox_ModificarCelulares.Height > 300)
+                    {
+                        label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
+                    }
+                    else
+                    {
+                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Brown;
+                        labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla.";
+
+                    }
+                }
+            }
+
+
+            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
+            {
+                string detalles = ObtenerDetallesDesdeElEstado();
+
+                MessageBox.Show("Detalles/Observaciones:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
 
         private void btn_EliminarTrabajos_Click(object sender, EventArgs e)
         {
@@ -1567,7 +1378,7 @@ namespace Diseño
                     finally
                     {
                         conn.Close();
-                        MostrarDatosEnLasTablasCelulares();
+                        MostrarDatosEnLasTablasTrabajos();
                     }
                 }
             }
@@ -1643,7 +1454,7 @@ namespace Diseño
                     adelanto = int.Parse(txtAdelanto_Agregar.Text);
                     string tecnicoACargo = idDelTecnico.ID;
 
-                    insertarTrabajos = $"INSERT INTO Trabajos (ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES(" + tecnicoACargo + ",'" + stringPlazo + "', " + presupuesto + ", '" + problema + "', '" + stringFechaIngreso + "', " + adelanto + ", " + idCelular + ")";
+                    insertarTrabajos = $"INSERT INTO Trabajos (ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES({tecnicoACargo}, '{stringPlazo}', '{presupuesto}', '{problema}', '{stringFechaIngreso}', '{adelanto}', {idCelular})";
                     cmd = new MySqlCommand(insertarTrabajos, conn);
                     try
                     {
@@ -1672,17 +1483,12 @@ namespace Diseño
 
         private void btnModificar_Trabajo_Click(object sender, EventArgs e)
         {
-            if (txtIMEI_Modificar.Text == "" && txtMarca_Modificar.Text == "" && txtModelo_Modificar.Text == "" || combobox_CI_Del_Dueño_Modificar.Items == null && comboBox_ModificarTecnicoACargo.Items == null)
+            DialogResult siono = MessageBox.Show("¿Está seguro de que desea modificar este trabajo?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (siono == DialogResult.Yes)
             {
                 //instanciación de la clase "Tecnicos", objetualizada e inicializada en el combobox:
+                Celulares idCelular = (Celulares)combobox_IDCelular_Modificar_Trabajo.SelectedItem;
                 Tecnicos idDelTecnicoaCargo = (Tecnicos)combobox_IDTecnico_Modificar_Trabajo.SelectedItem;
-
-                //Label de error:
-                labelError_Modificar_Trabajos.Enabled = false;
-                labelError_Modificar_Trabajos.Visible = false;
-
-                //textBox:
-                txtTrabajo_ID_Modificar.BringToFront();
 
                 //Codigo para modificar el Trabajos:
                 if (combobox_IDTecnico_Modificar_Trabajo.Items != null && dateTimePicker_Plazo_Modificar.Value != null && txtPresupuesto_Modificar.Text != "" && txtProblema_Modificar.Text != "" && dateTimePicker_FechaDeIngreso_Modificar.Value != null && txtAdelanto_Modificar.Text != null)
@@ -1690,68 +1496,25 @@ namespace Diseño
                     try
                     {
                         conn.Open();
+
                         string tecnicoACargo = idDelTecnicoaCargo.ID;
-                        idCelular = int.Parse(txtTrabajo_ID_Modificar.Text);
-                        plazo = dateTimePicker_FechaDeIngreso_Modificar.Value;
-                        mesPlazo = plazo.Month;
-                        diaPlazo = plazo.Day;
-                        if (mesPlazo < 10)
-                        {
-                            if (diaPlazo < 10)
-                            {
-                                stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
-                            }
-                            else
-                            {
-                                stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
-                            }
-                        }
-                        else
-                        {
-                            if (diaPlazo < 10)
-                            {
-                                stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
-                            }
-                            else
-                            {
-                                stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
-                            }
-                        }
+                        string celular = idCelular.ID;
+
+                        string plazo = dateTimePicker_Plazo_Modificar.Value.Date.ToString("yyyy-MM-dd");
+                        string fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value.Date.ToString("yyyy-MM-dd");
+
+
                         presupuesto = int.Parse(txtPresupuesto_Modificar.Text);
                         problema = txtProblema_Modificar.Text;
-                        fechaIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
-                        mesFechaIngreso = fechaIngreso.Month;
-                        diaFechaIngreso = fechaIngreso.Day;
-                        if (mesFechaIngreso < 10)
-                        {
-                            if (diaFechaIngreso < 10)
-                            {
-                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
-                            }
-                            else
-                            {
-                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
-                            }
-                        }
-                        else
-                        {
-                            if (diaFechaIngreso < 10)
-                            {
-                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
-                            }
-                            else
-                            {
-                                stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
-                            }
-                        }
+
                         adelanto = int.Parse(txtAdelanto_Modificar.Text);
 
-                        modifcarTrabajos = "UPDATE trabajos SET ID_Tecnico = '" + tecnicoACargo + "' Plazo = '" + stringPlazo + "', Presupuesto = " + presupuesto + ", Problema = '" + problema + "', Fecha_Ingreso = '" + stringFechaIngreso + "', Adelanto = " + adelanto + ", ID_Celular = " + idCelular + " WHERE trabajos.ID = " + clavePrimariaTrabajos + ";";
+                        modifcarTrabajos = $"UPDATE trabajos SET trabajos.ID_Tecnico = '{tecnicoACargo}', trabajos.Plazo ='{plazo}', trabajos.Presupuesto = '{presupuesto}', trabajos.Problema = '{problema}', trabajos.Fecha_Ingreso ='{fechaIngreso}', trabajos.Adelanto = '{adelanto}', trabajos.ID_Celular = {celular}";
+
                         cmd = new MySqlCommand(modifcarTrabajos, conn);
                         try
                         {
                             cmd.ExecuteNonQuery();
-                            txtTrabajo_ID_Modificar.Text = "";
                             txtPresupuesto_Modificar.Text = "";
                             txtProblema_Modificar.Text = "";
                         }
@@ -1759,6 +1522,7 @@ namespace Diseño
                         {
                             MessageBox.Show("No se modifico correctamente el trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+
                     }
                     catch (Exception ex)
                     {
@@ -1769,63 +1533,10 @@ namespace Diseño
                         conn.Close();
                         MostrarDatosEnLasTablasTrabajos();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-            }
-            else
-            {
-                comboBoxColumnas_Trabajos.Text = null;
-                //Labels:
-                labelError_Modificar_Trabajos.Enabled = true;
-                labelError_Modificar_Trabajos.Visible = true;
-
-                labelTrabajo_ID_Modificar.Enabled = false;
-                labelTrabajo_ID_Modificar.Visible = false;
-
-                labelPlazo_Modificar.Enabled = false;
-                labelPlazo_Modificar.Visible = false;
-
-                labelPresupuesto_Modificar.Enabled = false;
-                labelPresupuesto_Modificar.Visible = false;
-
-                labelProblema_Modificar.Enabled = false;
-                labelProblema_Modificar.Visible = false;
-
-                labelFechaDeIngreso_Modificar.Enabled = false;
-                labelFechaDeIngreso_Modificar.Visible = false;
-
-                labelAdelanto_Modificar.Enabled = false;
-                labelAdelanto_Modificar.Visible = false;
-
-                labelModificar_Columna_Trabajos.Enabled = false;
-                labelModificar_Columna_Trabajos.Visible = false;
-
-                //TextBox y DateTimePicker:
-                txtTrabajo_ID_Modificar.Enabled = false;
-                txtTrabajo_ID_Modificar.Visible = false;
-
-                dateTimePicker_Plazo_Modificar.Enabled = false;
-                dateTimePicker_Plazo_Modificar.Visible = false;
-
-                txtPresupuesto_Modificar.Enabled = false;
-                txtPresupuesto_Modificar.Visible = false;
-
-                txtProblema_Modificar.Enabled = false;
-                txtProblema_Modificar.Visible = false;
-
-                dateTimePicker_FechaDeIngreso_Modificar.Enabled = false;
-                dateTimePicker_FechaDeIngreso_Modificar.Visible = false;
-
-                txtAdelanto_Modificar.Enabled = false;
-                txtAdelanto_Modificar.Visible = false;
-
-                txtModificar_Columna_Trabajos.Enabled = false;
-                txtModificar_Columna_Trabajos.Visible = false;
+                } 
             }
         }
+
 
 
 
@@ -2086,14 +1797,14 @@ namespace Diseño
         {
             if (groupBox_ModificarCelulares.Height < 486)
             {
-                groupBox_ModificarCelulares.Height = groupBox_ModificarCelulares.Height + 45;
+                groupBox_ModificarCelulares.Height = 594;
                 groupBox_ModificarCelulares.Enabled = true;
             }
             else
             {
                 timer_GroupBox_ModificarC_Agrandar.Enabled = false;
                 groupBox_ModificarCelulares.Width = 413;
-                groupBox_ModificarCelulares.Height = 564;
+                groupBox_ModificarCelulares.Height = 594;
             }
         }
 
@@ -2112,16 +1823,16 @@ namespace Diseño
 
         private void timer_GroupBox_ModificarT_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (groupBox_ModificarTrabajos.Height < 486)
+            if (groupBox_ModificarTrabajos.Height < 493)
             {
-                groupBox_ModificarTrabajos.Height = groupBox_ModificarTrabajos.Height + 45;
+                groupBox_ModificarTrabajos.Height = 594;
                 groupBox_ModificarTrabajos.Enabled = true;
             }
             else
             {
                 timer_GroupBox_ModificarT_Agrandar.Enabled = false;
                 groupBox_ModificarTrabajos.Width = 413;
-                groupBox_ModificarTrabajos.Height = 564;
+                groupBox_ModificarTrabajos.Height = 594;
             }
         }
 
@@ -2266,10 +1977,7 @@ namespace Diseño
             {
                 Application.Exit();
             }
-            else
-            {
-                //seguridad = DialogResult.No;
-            }
+
 
         }
 
@@ -2292,10 +2000,9 @@ namespace Diseño
              * Pero bueno, le da un toque de profesionalizmo... no, lo contrario, mrd. *pain noises*
              */
 
-            if (tablaCelulares.Columns.Contains("ID"))
+            if (tablaCelulares.Columns.Contains("IMEI"))
             {
                 //Largo de las columnas
-
                 tablaCelulares.Columns["ID"].Width = lonigtudDeColumna_Corta;
                 tablaCelulares.Columns["Marca"].Width = lonigtudDeColumna_Larga;
                 tablaCelulares.Columns["IMEI"].Width = 200;
@@ -2308,13 +2015,12 @@ namespace Diseño
                 tablaCelulares.Columns["Nombre"].HeaderText = "Técnico";
 
                 //Tooltips al posar el mouse
-                tablaCelulares.Columns["ID"].ToolTipText = "Número identificatorio para cada celular en esta tabla";
                 tablaCelulares.Columns["Marca"].ToolTipText = "La marca del teléfono";
                 tablaCelulares.Columns["Modelo"].ToolTipText = "El modelo del teléfono";
                 tablaCelulares.Columns["IMEI"].ToolTipText = "El número único identificatorio para cada dispositivo, normalmente viene detrás de este como una pegatina";
                 tablaCelulares.Columns["Estado"].ToolTipText = "El estado en el que está actualmente el celular";
                 tablaCelulares.Columns["Cedula_Cliente"].ToolTipText = "La cédula del dueño del teléfono";
-                tablaCelulares.Columns["Nombre"].ToolTipText = "El Nombre del Técnico a cargo del teléfono";
+                tablaCelulares.Columns["Nombre"].ToolTipText = "El técnico a cargo del teléfono.";
             }
 
             int columnIndexCedula = 5;
@@ -2331,16 +2037,8 @@ namespace Diseño
 
         private void tablaTrabajos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            if (tablaTrabajos.Columns.Contains("ID"))
-            {
-
-                //Largo de las tablas:
-                tablaTrabajos.Columns["ID"].Width = 50;
-                tablaTrabajos.Columns["ID"].Width = 50;
-                tablaTrabajos.Columns["ID"].Width = 50;
-                tablaTrabajos.Columns["ID"].Width = 50;
-                tablaTrabajos.Columns["ID"].Width = 50;
-            }
+            tablaTrabajos.Columns["Nombre"].HeaderText = "Tecnico a Cargo";
+            tablaTrabajos.Columns["Adelanto"].HeaderText = "Adelanto/Seña";
         }
 
         //Que se cague, no más de 8 caracteres, que es lo que sería la cédula sin los puntos ni el guión.
@@ -2581,10 +2279,41 @@ namespace Diseño
             }
         }
 
-        private void radioButton_TablaTrabajos_CheckedChanged(object sender, EventArgs e)
-        {
+        //public List<Tecnicos> ObtenerParaFiltrarTecnicos()
+        //{
+        //    List<Tecnicos> listatecnicos = new List<Tecnicos>();
+        //    try
+        //    {
+        //        conn.Open();
+        //        string query = $"SELECT ID, Nombre FROM tecnicos WHERE Baja = 0 AND LIKE '%{comboBox_AgregarCelular_IdDelTecnicoAcargo.Text}%'";
+        //        cmd = new MySqlCommand(query, conn);
+        //        reader = cmd.ExecuteReader();
 
-        }
+        //        while (reader.Read())
+        //        {
+        //            string nombre = reader["Nombre"].ToString();
+        //            string id = reader["ID"].ToString();
+
+        //            Tecnicos tecnico = new Tecnicos
+        //            {
+        //                Nombre = nombre,
+        //                ID = id
+        //            };
+
+        //            listatecnicos.Add(tecnico);
+        //        }
+        //    }
+        //    catch
+        //    {
+
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
+
+        //    return listatecnicos;
+        //}
 
         private void MostrarNombreYelIDdelTecnicoEnUnComboBox()
         {
@@ -2725,7 +2454,13 @@ namespace Diseño
                         CI_Cliente = ci_Cliente,
                         ID = id
                     });
-
+                    combobox_IDCelular_Modificar_Trabajo.Items.Add(new Celulares
+                    {
+                        Marca = marca,
+                        Modelo = modelo,
+                        CI_Cliente = ci_Cliente,
+                        ID = id
+                    });
                 }
 
 
@@ -2751,11 +2486,11 @@ namespace Diseño
 
                 if (panel_Modificar.Enabled == true && panel_Modificar.Visible == true)
                 {
-                    timer_GroupBox_ModificarC_Agrandar.Enabled = true;
                     timer_GroupBox_ModificarC_Reducir.Enabled = false;
+                    timer_GroupBox_ModificarC_Agrandar.Enabled = true;
 
-                    timer_GroupBox_ModificarT_Agrandar.Enabled = true;
                     timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
                 }
                 else
                 {
@@ -2786,6 +2521,19 @@ namespace Diseño
                     timer_GroupBox_EliminarT_Agrandar.Enabled = true;
                     timer_GroupBox_EliminarT_Reducir.Enabled = false;
                 }
+
+                if (panel_Agregar.Visible && panel_Agregar.Enabled)
+                {
+                    timer_GroupBox_AgregarC_Reducir.Enabled = false;
+                    timer_GroupBox_AgregarC_Agrandar.Enabled = true;
+
+                    timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+                    timer_GroupBox_AgregarT_Reducir.Enabled = true;
+                }
+                else
+                {
+
+                }
             }
             else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
             {
@@ -2794,24 +2542,24 @@ namespace Diseño
                     timer_GroupBox_ModificarC_Agrandar.Enabled = false;
                     timer_GroupBox_ModificarC_Reducir.Enabled = true;
 
-                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarT_Agrandar.Enabled = true;
                     timer_GroupBox_ModificarT_Reducir.Enabled = false;
                 }
                 else
                 {
-                 
-                    timer_GroupBox_AgregarT_Agrandar.Enabled = true;
-                    timer_GroupBox_AgregarT_Reducir.Enabled = false;
+                    timer_GroupBox_ModificarC_Reducir.Enabled = true;
+                    timer_GroupBox_ModificarC_Agrandar.Enabled = false;
 
-           
-                    timer_GroupBox_AgregarC_Reducir.Enabled = true;
-                    timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarT_Reducir.Enabled = true;
+
+
 
                 }
 
                 if (panel_Eliminar.Enabled == true && panel_Eliminar.Visible == true)
                 {
-                   
+
                     timer_GroupBox_EliminarC_Agrandar.Enabled = false;
                     timer_GroupBox_EliminarC_Reducir.Enabled = true;
 
@@ -2821,7 +2569,7 @@ namespace Diseño
                 }
                 else
                 {
-                    
+
                     timer_GroupBox_EliminarC_Agrandar.Enabled = true;
                     timer_GroupBox_EliminarC_Reducir.Enabled = false;
 
@@ -2829,6 +2577,14 @@ namespace Diseño
                     timer_GroupBox_EliminarT_Reducir.Enabled = true;
                 }
 
+                if (panel_Agregar.Visible && panel_Agregar.Enabled)
+                {
+                    timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+                    timer_GroupBox_AgregarC_Reducir.Enabled = true;
+
+                    timer_GroupBox_AgregarT_Reducir.Enabled = false;
+                    timer_GroupBox_AgregarT_Agrandar.Enabled = true;
+                }
             }
         }
 
@@ -2887,16 +2643,47 @@ namespace Diseño
             MostrarDatosEnLasTablasTrabajos_SinMensajeDeError();
         }
 
-        private void comboBox_AgregarCelular_IdDelTecnicoAcargo_Click(object sender, EventArgs e)
+        private void tablaTrabajos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                numeroDeFilaTrabajos = e.RowIndex;
 
+                clavePrimariaTrabajos = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["ID"].Value.ToString();
+
+                if (groupBox_EliminarTrabajos.Height >= 300)
+                {
+                    txtID_Trabajo_Eliminar.Text = clavePrimariaTrabajos;
+                }
+
+                labelSeleccion_ID_Modificar.Text = $"Selección: {clavePrimariaTrabajos}";
+
+
+                txtPresupuesto_Modificar.Text = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Presupuesto"].Value.ToString();
+                txtProblema_Modificar.Text = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Problema"].Value.ToString();
+                txtAdelanto_Modificar.Text = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Adelanto"].Value.ToString();
+                string NombreTecnico = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Nombre"].Value.ToString();
+                string idCelular = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["ID_Celular"].Value.ToString();
+
+                foreach (Tecnicos tecnico in combobox_IDTecnico_Modificar_Trabajo.Items)
+                {
+                    if (tecnico.Nombre == NombreTecnico)
+                    {
+                        combobox_IDTecnico_Modificar_Trabajo.SelectedItem = tecnico;
+                        break;
+                    }
+                }
+
+                foreach (Celulares celular in combobox_IDCelular_Modificar_Trabajo.Items)
+                {
+                    if (celular.ID == idCelular)
+                    {
+                        combobox_IDCelular_Modificar_Trabajo.SelectedItem = celular;
+                        break;
+                    }
+                }
+            }
         }
-
-        private void combobox_IDdelCelular_Trabajo_Agregar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tablaTrabajos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //para que se ponga de colores los plazos.
@@ -2912,7 +2699,7 @@ namespace Diseño
                         e.CellStyle.BackColor = Color.DarkRed;
                         e.CellStyle.ForeColor = Color.White;
                     }
-                    else if ((plazo - diaDeHoy).Days <= 3)
+                    else if ((plazo - diaDeHoy).Days <= 2)
                     {
                         e.CellStyle.BackColor = Color.Yellow;
                     }
@@ -2927,19 +2714,19 @@ namespace Diseño
 
         private void txtDetallesUobservaciones_Agregar_TextChanged(object sender, EventArgs e)
         {
-            int caracteresRestantes = 255 - txtDetallesUobservaciones_Agregar.Text.Length;
+            int caracteresRestantes = 65535 - txtDetallesUobservaciones_Agregar.Text.Length;
 
             if (caracteresRestantes < 0)
             {
                 caracteresRestantes = 0;
             }
 
-            label_CaracteresRestantes_Detalles_Agregar.Text = $"{caracteresRestantes}/255";
+            label_CaracteresRestantes_Detalles_Agregar.Text = $"{caracteresRestantes}/65535";
         }
 
         private void txtDetallesUobservaciones_Agregar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int caracteresRestantes = 255;
+            int caracteresRestantes = 65535;
 
             if (txtDetallesUobservaciones_Agregar.Text.Length >= caracteresRestantes && e.KeyChar != (char)Keys.Back)
             {
@@ -2949,19 +2736,19 @@ namespace Diseño
 
         private void txtDetallesUobservaciones_Modificar_TextChanged(object sender, EventArgs e)
         {
-            int caracteresRestantes = 255 - txtDetallesUobservaciones_Modificar.Text.Length;
+            int caracteresRestantes = 65535 - txtDetallesUobservaciones_Modificar.Text.Length;
 
             if (caracteresRestantes < 0)
             {
                 caracteresRestantes = 0;
             }
 
-            label_caracteresRestantes_Detalles_Modificar.Text = $"{caracteresRestantes}/255";
+            label_caracteresRestantes_Detalles_Modificar.Text = $"{caracteresRestantes}/65535";
         }
 
         private void txtDetallesUobservaciones_Modificar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int caracteresRestantes = 255;
+            int caracteresRestantes = 65535;
 
             if (txtDetallesUobservaciones_Modificar.Text.Length >= caracteresRestantes && e.KeyChar != (char)Keys.Back)
             {
@@ -2969,7 +2756,76 @@ namespace Diseño
             }
         }
 
+        private List<Cliente> listaClientes = new List<Cliente>();
 
+        private void BusquedaPorNombre(string nombre)
+        {
+            if (!string.IsNullOrEmpty(nombre))
+            {
+
+                foreach (Cliente cliente in listaClientes)
+                {
+                    if (cliente.Nombre.Contains(nombre))
+                    {
+                        combobox_CI_Del_Dueño_Modificar.Items.Add(nombre);
+                    }
+                }
+            }
+            else
+            {
+                combobox_CI_Del_Dueño_Modificar.Items.AddRange(listaClientes.ToArray());
+            }
+        }
+
+
+        private void combobox_CI_Del_Dueño_Modificar_TextChanged(object sender, EventArgs e)
+        {
+
+            BusquedaPorNombre(combobox_CI_Del_Dueño_Modificar.Text);
+
+            //ComboBox evento = (ComboBox)sender;
+
+            //string busqueda = evento.Text;
+
+
+            //List<Cliente> filtroDeClientes = listaClientes.Where(clientes => clientes.Nombre.Contains(busqueda) || clientes.Cedula.Contains(busqueda)).ToList();
+
+
+            //evento.Items.AddRange(filtroDeClientes.ToArray());
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            MostrarDatosEnLasTablasCelulares();
+        }
+
+        private void tablaTrabajos_CellBorderStyleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tablaTrabajos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void combobox_IDCelular_Modificar_Trabajo_Click(object sender, EventArgs e)
+        {
+            combobox_IDCelular_Modificar_Trabajo.Items.Clear(); 
+            MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
+        }
+
+        private void combobox_IDTecnico_Modificar_Trabajo_Click(object sender, EventArgs e)
+        {
+            combobox_IDTecnico_Modificar_Trabajo.Items.Clear();
+            MostrarNombreYelIDdelTecnicoEnUnComboBox();
+        }
+
+        private void combobox_IDdelCelular_Trabajo_Agregar_Click(object sender, EventArgs e)
+        {
+            combobox_IDdelCelular_Trabajo_Agregar.Items.Clear();
+            MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
+        }
     }
 }
 

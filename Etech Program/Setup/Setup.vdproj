@@ -63,12 +63,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_51374132971C48E88DB7DE46F5580373"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_64EEE81CF094D3E1631568BAE41C7C22"
         "OwnerKey" = "8:_0CC95CB2C576118E3931874419D4DF66"
         "MsmSig" = "8:_UNDEFINED"
@@ -95,6 +89,12 @@
         {
         "MsmKey" = "8:_6EAD34560965CE62C88CB73808CA5D15"
         "OwnerKey" = "8:_2217610111E644229A8994D5D60FC538"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6F435D6A8BBF4FFFBD44A9E918ACE803"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -432,7 +432,7 @@
             "SourcePath" = "8:E:\\Downloads\\ndp47-kb3186500-web.exe"
             "TargetName" = "8:Dot.net 4.7.exe"
             "Tag" = "8:"
-            "Folder" = "8:_0F5BE153905540B2BB01E1BF96FE7C60"
+            "Folder" = "8:_3457E71156914C98AC0CF846A08E071A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -507,26 +507,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_51374132971C48E88DB7DE46F5580373"
-            {
-            "SourcePath" = "8:E:\\Downloads\\etech_db v2.5(Vacía).sql"
-            "TargetName" = "8:etech_db v2.5(Vacía).sql"
-            "Tag" = "8:"
-            "Folder" = "8:_0F5BE153905540B2BB01E1BF96FE7C60"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_64EEE81CF094D3E1631568BAE41C7C22"
@@ -620,6 +600,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6F435D6A8BBF4FFFBD44A9E918ACE803"
+            {
+            "SourcePath" = "8:E:\\Downloads\\etech_db (1).sql"
+            "TargetName" = "8:etech_db v2.6(Vacía).sql"
+            "Tag" = "8:"
+            "Folder" = "8:_3457E71156914C98AC0CF846A08E071A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_743F3D96E74A4EE0A6821606519DF97E"
@@ -926,7 +926,7 @@
             "SourcePath" = "8:E:\\Downloads\\xampp-windows-x64-8.2.4-0-VS16-installer.exe"
             "TargetName" = "8:XAMPP.exe"
             "Tag" = "8:"
-            "Folder" = "8:_0F5BE153905540B2BB01E1BF96FE7C60"
+            "Folder" = "8:_3457E71156914C98AC0CF846A08E071A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -957,17 +957,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_0F5BE153905540B2BB01E1BF96FE7C60"
-                    {
-                    "Name" = "8:Programas necesarios para el funcionamiento del programa"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_5D811AD6BCCC4A58A6D9A598411EACD3"
-                        "Folders"
-                        {
-                        }
-                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_91B1029FF9164A5BB053C58A70AD7C34"
                     {
                     "Name" = "8:DLL's"
@@ -1012,6 +1001,17 @@
             "Property" = "8:DesktopFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_3457E71156914C98AC0CF846A08E071A"
+                    {
+                    "Name" = "8:Programas necesarios para el funcionamiento del programa"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_5D811AD6BCCC4A58A6D9A598411EACD3"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -1031,7 +1031,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Etech Gestion de Celulares"
         "ProductCode" = "8:{06144836-54CD-4288-BE12-78B89278BE6B}"
-        "PackageCode" = "8:{A949A89D-A206-41FF-A6BD-E9C3AE09DB3A}"
+        "PackageCode" = "8:{8D0C309A-2A6A-48B3-AC1D-52A2798A141C}"
         "UpgradeCode" = "8:{9B5327CE-FB3F-4E30-A1D5-D93186FA31C9}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

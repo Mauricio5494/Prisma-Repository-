@@ -89,6 +89,7 @@
             this.timer_Modificar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Eliminar = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnEliminarCliente = new System.Windows.Forms.Button();
             this.txtCI_Eliminar = new System.Windows.Forms.TextBox();
             this.label_Eliminar = new System.Windows.Forms.Label();
@@ -385,7 +386,7 @@
             this.tablaClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaClientes.EnableHeadersVisualStyles = false;
             this.tablaClientes.GridColor = System.Drawing.Color.DimGray;
-            this.tablaClientes.Location = new System.Drawing.Point(49, 78);
+            this.tablaClientes.Location = new System.Drawing.Point(486, 74);
             this.tablaClientes.MultiSelect = false;
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
@@ -404,7 +405,7 @@
             this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaClientes.RowTemplate.ReadOnly = true;
             this.tablaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaClientes.Size = new System.Drawing.Size(861, 600);
+            this.tablaClientes.Size = new System.Drawing.Size(861, 608);
             this.tablaClientes.TabIndex = 20;
             this.tablaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellClick);
             this.tablaClientes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tablaClientes_DataBindingComplete);
@@ -415,7 +416,7 @@
             this.panel_Agregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Agregar.Controls.Add(this.groupBox_Agregar);
             this.panel_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Agregar.Location = new System.Drawing.Point(916, 78);
+            this.panel_Agregar.Location = new System.Drawing.Point(49, 81);
             this.panel_Agregar.Name = "panel_Agregar";
             this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 21;
@@ -569,7 +570,7 @@
             // 
             this.panel_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Modificar.Controls.Add(this.groupBox_Modificar);
-            this.panel_Modificar.Location = new System.Drawing.Point(916, 78);
+            this.panel_Modificar.Location = new System.Drawing.Point(49, 81);
             this.panel_Modificar.Name = "panel_Modificar";
             this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 22;
@@ -790,7 +791,7 @@
             this.panel_Eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Eliminar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Eliminar.Controls.Add(this.groupBox1);
-            this.panel_Eliminar.Location = new System.Drawing.Point(916, 78);
+            this.panel_Eliminar.Location = new System.Drawing.Point(49, 81);
             this.panel_Eliminar.Name = "panel_Eliminar";
             this.panel_Eliminar.Size = new System.Drawing.Size(419, 0);
             this.panel_Eliminar.TabIndex = 23;
@@ -798,20 +799,31 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnEliminarCliente);
             this.groupBox1.Controls.Add(this.txtCI_Eliminar);
             this.groupBox1.Controls.Add(this.label_Eliminar);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(42, 34);
+            this.groupBox1.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 535);
+            this.groupBox1.Size = new System.Drawing.Size(411, 590);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese un cliente";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightCoral;
+            this.label3.Location = new System.Drawing.Point(3, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(270, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Puede seleccionar al cliente haciendo click en él";
+            // 
             // btnEliminarCliente
             // 
-            this.btnEliminarCliente.Location = new System.Drawing.Point(6, 506);
+            this.btnEliminarCliente.Location = new System.Drawing.Point(330, 141);
             this.btnEliminarCliente.Name = "btnEliminarCliente";
             this.btnEliminarCliente.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarCliente.TabIndex = 8;
@@ -821,9 +833,9 @@
             // 
             // txtCI_Eliminar
             // 
-            this.txtCI_Eliminar.Location = new System.Drawing.Point(6, 56);
+            this.txtCI_Eliminar.Location = new System.Drawing.Point(5, 56);
             this.txtCI_Eliminar.Name = "txtCI_Eliminar";
-            this.txtCI_Eliminar.Size = new System.Drawing.Size(325, 20);
+            this.txtCI_Eliminar.Size = new System.Drawing.Size(401, 21);
             this.txtCI_Eliminar.TabIndex = 7;
             // 
             // label_Eliminar
@@ -831,7 +843,7 @@
             this.label_Eliminar.AutoSize = true;
             this.label_Eliminar.Location = new System.Drawing.Point(3, 40);
             this.label_Eliminar.Name = "label_Eliminar";
-            this.label_Eliminar.Size = new System.Drawing.Size(196, 13);
+            this.label_Eliminar.Size = new System.Drawing.Size(187, 15);
             this.label_Eliminar.TabIndex = 0;
             this.label_Eliminar.Text = "CI del cliente que desea eliminar:";
             // 
@@ -851,7 +863,7 @@
             this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
             this.panel_Menu.Enabled = false;
-            this.panel_Menu.Location = new System.Drawing.Point(916, 78);
+            this.panel_Menu.Location = new System.Drawing.Point(49, 81);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 24;
@@ -1049,5 +1061,6 @@
         private System.Windows.Forms.Timer timer_RecargarBD;
         private System.Windows.Forms.Label label_CaracteresRestantesCI_AgregarCelulares;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

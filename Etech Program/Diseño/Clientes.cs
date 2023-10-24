@@ -81,7 +81,7 @@ namespace Diseño
                 reader = cmd.ExecuteReader();
                 DataTable.Load(reader);
             }
-            catch (Exception ex)
+            catch
             {
 
             }
@@ -357,7 +357,7 @@ namespace Diseño
                 correoElectronico = txtCorreoElectronico_Agregar.Text;
                 celular = txtCelular_Agregar.Text;
 
-                insertar = "INSERT INTO clientes(Cedula, Nombre, Telefono, CorreoElectronico, Celular) VALUES('" + cedula + "', '" + nombre + "', '" + telefono + "', '" + correoElectronico + "', '" + celular + "');";
+                insertar = $"INSERT INTO clientes(Cedula, Nombre, Telefono, CorreoElectronico, Celular, Baja) VALUES ('{cedula}', '{nombre}', '{telefono}', '{correoElectronico}', '{celular}', '0')";
 
                 try
                 {
@@ -366,11 +366,12 @@ namespace Diseño
                     try
                     {
                         cmd.ExecuteNonQuery();
+
                         txtCedula_Agregar.Text = "";
                         txtNombre_Agregar.Text = "";
                         txtTelefono_Agregar.Text = "";
                         txtCorreoElectronico_Agregar.Text = "";
-                        txtCedula_Agregar.Text = "";
+                        txtCelular_Agregar.Text = "";
                     }
                     catch (Exception ex)
                     {

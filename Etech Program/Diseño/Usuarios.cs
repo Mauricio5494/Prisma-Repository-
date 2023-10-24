@@ -6,6 +6,7 @@ using MySql.Utility.Enums;
 using MySql.Utility.Structs;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -18,6 +19,7 @@ namespace Diseño
     public partial class Usuarios : Form
     {
         //Variables:
+        string clavePrimariaDelTecnico;
         private int idTecnico;
         public bool PassSucess;
         private string modificarAtributosDeUsuarios;
@@ -72,7 +74,7 @@ namespace Diseño
                 {
                     dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL.*/
                     conn.Open();
-                    cmd = new MySqlCommand("SELECT * FROM usuarios WHERE Baja = 0", conn);
+                    cmd = new MySqlCommand("SELECT ID, Nombre, Contraseña, Celular, CorreoElectronico, Telefono FROM usuarios WHERE Baja = 0 ", conn);
                     cmd.CommandType = System.Data.CommandType.Text;
                     reader = cmd.ExecuteReader();
                     dataTableUsuarios.Load(reader);
@@ -109,14 +111,14 @@ namespace Diseño
             {
                 dataTableUsuarios.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT * FROM usuarios WHERE Baja = 0 ", conn);
+                cmd = new MySqlCommand("SELECT ID, Nombre, Contraseña, Celular, CorreoElectronico, Telefono FROM usuarios WHERE Baja = 0 ", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 dataTableUsuarios.Load(reader);
                 label_BD_Mostrada.Text = "Mostrando Usuarios";
                 label_BD_Mostrada.ForeColor = Color.ForestGreen;
             }
-            catch (Exception ex)
+            catch
             {
                 if (conn.Equals(ConnectionState.Open))
                 {
@@ -325,7 +327,6 @@ namespace Diseño
             ayudaVisual.SetToolTip(chbOcultarContraseña_groupboxModificar_PanelModificar, "Ocultar o Mostrar contraseña");
 
 
-            comboBoxModifcar_groupBoxModificar_PanelModificar.Text = "Todos";
 
         }
 
@@ -532,7 +533,7 @@ namespace Diseño
 
                 //Renombres del texto descriptivo de las columnas necesarias.
                 tabla_Usuarios.Columns["Contraseña"].HeaderText = "HASH";
-                tabla_Usuarios.Columns["CorreoElectronico"].HeaderText = "E-Mail";
+                tabla_Usuarios.Columns["CorreoElectronico"].HeaderText = "Correo Electrónico";
                 tabla_Usuarios.Columns["Nombre"].HeaderText = "Nombre de Usuario";
 
                 //Tooltips
@@ -541,7 +542,7 @@ namespace Diseño
                 tabla_Usuarios.Columns["CorreoElectronico"].ToolTipText = "El Correo Electrónico, este solo funciona como una forma de intentar contactar con dicho empleado";
                 tabla_Usuarios.Columns["Telefono"].ToolTipText = "¡Hola! ¡Si, soy yo! Resulta que la Organización tiene teléfonos fijos... si... si... ¡Pero!.. Está bien... Te mantendré informado. El, Psy, Kongroo";
                 tabla_Usuarios.Columns["Celular"].ToolTipText = "El número de teléfono, otra vía por donde contactar al empleado";
-                tabla_Usuarios.Columns["Contraseña"].ToolTipText = "Este es el Hash de la contraeña, es así para que no se puedan robar las cuentas, está codificado";
+                tabla_Usuarios.Columns["Contraseña"].ToolTipText = "Este es el Hash de la contraeña, es así para que no se puedan robar las cuentas, está enctriptado";
             }
             else
             {
@@ -584,206 +585,9 @@ namespace Diseño
 
         private void comboBoxModifcar_groupBoxModificar_PanelModificar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Todos")
-            {
-                //Nombre:
-                labNombre_groupBoxModificar_PanelModificar.Visible = true;
-                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtNombre_groupboxModificar_PanelModificar.Visible = true;
-                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
-
-                //Contraseña:
-                labelContraseña_groupboxModificar_PanelModificar.Visible = true;
-                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                txtContraseña_groupboxModificar_PanelModificar.Visible = true;
-                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(6, 123);
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = true;
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Location = new Point(353, 126);
-                picMostrar_groupBoxModificar_PanelModificar.Location = new Point(353, 126);
-                picMostrar_groupBoxModificar_PanelModificar.Visible = true;
 
 
-                //Correo:
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 153);
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 168);
 
-                //Telefono:
-                labelTelefono_groupBoxModificar_PanelModificar.Visible = true;
-                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
-                txtTelefono_groupBoxModificar_PanelModificar.Visible = true;
-                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
-
-                //Celular:
-                labelCelular_groupBoxModificar_PanelModificar.Visible = true;
-                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
-                txtCelular_groupBoxModificar_PanelModificar.Visible = true;
-                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
-
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Nombre")
-            {
-                //Nombre:
-                labNombre_groupBoxModificar_PanelModificar.Visible = true;
-                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtNombre_groupboxModificar_PanelModificar.Visible = true;
-                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
-
-                //Contraseña:
-                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
-                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
-                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(6, 123);
-                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
-
-                //Correo:
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 153);
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 168);
-
-                //Teléfono:
-                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
-                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
-
-                //Celular:
-                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
-                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
-                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
-                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
-
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Contraseña")
-            {
-
-                //Ya me dió paja escribir de qué es cada sección espaciada.
-                labNombre_groupBoxModificar_PanelModificar.Visible = false;
-                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtNombre_groupboxModificar_PanelModificar.Visible = false;
-                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
-
-
-                labelContraseña_groupboxModificar_PanelModificar.Visible = true;
-                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 66);
-                txtContraseña_groupboxModificar_PanelModificar.Visible = true;
-                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 81);
-                picMostrar_groupBoxModificar_PanelModificar.Visible = true;
-                picMostrar_groupBoxModificar_PanelModificar.Location = new Point(353, 85);
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Location = new Point(353, 85);
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = true;
-
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 153);
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 168);
-
-                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
-                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
-
-                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
-                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
-                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
-                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
-
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Correo")
-            {
-                labNombre_groupBoxModificar_PanelModificar.Visible = false;
-                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtNombre_groupboxModificar_PanelModificar.Visible = false;
-                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
-
-
-                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
-                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
-                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
-
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = true;
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
-
-                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 201);
-                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 215);
-
-                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
-                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
-                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
-                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Teléfono")
-            {
-                labNombre_groupBoxModificar_PanelModificar.Visible = false;
-                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtNombre_groupboxModificar_PanelModificar.Visible = false;
-                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
-
-
-                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
-                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
-                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
-
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
-
-                labelTelefono_groupBoxModificar_PanelModificar.Visible = true;
-                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtTelefono_groupBoxModificar_PanelModificar.Visible = true;
-                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
-
-                labelCelular_groupBoxModificar_PanelModificar.Visible = false;
-                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 249);
-                txtCelular_groupBoxModificar_PanelModificar.Visible = false;
-                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 263);
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Celular")
-            {
-                labNombre_groupBoxModificar_PanelModificar.Visible = false;
-                labNombre_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtNombre_groupboxModificar_PanelModificar.Visible = false;
-                txtNombre_groupboxModificar_PanelModificar.Location = new Point(6, 81);
-
-
-                labelContraseña_groupboxModificar_PanelModificar.Visible = false;
-                labelContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                txtContraseña_groupboxModificar_PanelModificar.Visible = false;
-                txtContraseña_groupboxModificar_PanelModificar.Location = new Point(3, 109);
-                picMostrar_groupBoxModificar_PanelModificar.Visible = false;
-                chbOcultarContraseña_groupboxModificar_PanelModificar.Visible = false;
-
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Visible = false;
-                txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
-
-                labelTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                labelTelefono_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtTelefono_groupBoxModificar_PanelModificar.Visible = false;
-                txtTelefono_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
-
-                labelCelular_groupBoxModificar_PanelModificar.Visible = true;
-                labelCelular_groupBoxModificar_PanelModificar.Location = new Point(3, 66);
-                txtCelular_groupBoxModificar_PanelModificar.Visible = true;
-                txtCelular_groupBoxModificar_PanelModificar.Location = new Point(6, 81);
-            }
-
-            //Esto es muy caótico para leer sin duda.
 
         }
 
@@ -821,386 +625,59 @@ namespace Diseño
 
             Confirmacion_Con_ContraseñaMaestro confirmacion = new Confirmacion_Con_ContraseñaMaestro();
 
-
-            if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Todos")
+            if (txtNombre_groupboxModificar_PanelModificar.Text != "" && txtContraseña_groupboxModificar_PanelModificar.Text != "" && txtCorreoElectronico_groupBoxModificar_PanelModificar.Text != "" && txtCelular_groupBoxModificar_PanelModificar.Text != "")
             {
-                if (txtNombre_groupboxModificar_PanelModificar.Text == "" && txtContraseña_groupboxModificar_PanelModificar.Text == "" &&
-                    txtCorreoElectronico_groupBoxModificar_PanelModificar.Text == "" && txtCelular_groupBoxModificar_PanelModificar.Text == "" && txtIDseleccionado_groupBoxModificar_PanelModificar.Text == "")
+                DialogResult siono = MessageBox.Show("¿Está seguro que desea modificar este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (siono == DialogResult.Yes)
                 {
-                    MessageBox.Show("No deje ningun campo obligatorio en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
+                    confirmacion.Show();
 
-                    DialogResult siono = MessageBox.Show("¿Estás seguro de modificar estos atributos?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (siono == DialogResult.Yes)
+                    confirmacion.FormClosing += (s, args) =>
                     {
-                        confirmacion.Show();
-                        ApareceLaContraseñaMaestra = true;
-
-                        confirmacion.FormClosing += (s, args) =>
+                        if (confirmacion.PassBien)
                         {
-
-                            //Código/query de la modificación para todos los campos:
-
-                            if (confirmacion.PassBien == true)
+                            try
                             {
+                                conn.Open();
+                                string query = $"UPDATE usuarios SET Nombre ='{txtNombre_groupboxModificar_PanelModificar.Text}', Contraseña ='{txtContraseña_groupboxModificar_PanelModificar.Text}', Telefono ='{txtTelefono_groupBoxModificar_PanelModificar.Text}', CorreoElectronico ='{txtCorreoElectronico_groupBoxModificar_PanelModificar.Text}', Celular ='{txtCelular_groupBoxModificar_PanelModificar.Text}' WHERE ID ={clavePrimariaDelTecnico}";
+                                cmd = new MySqlCommand(query, conn);
 
                                 try
                                 {
-                                    conn.Open();
-                                    modificarAtributosDeUsuarios = $"UPDATE usuarios SET Nombre='{txtNombre_groupboxModificar_PanelModificar.Text}', Contraseña='{txtContraseña_groupboxModificar_PanelModificar.Text}', Telefono='{txtTelefono_groupBoxModificar_PanelModificar.Text}', CorreoElectronico='{txtCorreoElectronico_groupBoxModificar_PanelModificar.Text}', Celular='{txtCelular_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
-                                    cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
-
-                                    try
-                                    {
-                                        cmd.ExecuteNonQuery();
-                                        MessageBox.Show("Usuario modificado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        MessageBox.Show("No se pudo modificar el usuario.\n\nCompruebe la existencia del Usuario y el ID del mismo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    }
-
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("Los cambios se realizaron con éxito", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 catch (Exception ex)
                                 {
-                                    MessageBox.Show("No se puedo conectar con la Base de Datos\n\n¿Alguien puso mala mano en la configuración interna de la Base de Datos?", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Error en la Base de Datos:\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-                            }
-                            else
-                            {
-                                //nada, nada.
-                            }
-                            ApareceLaContraseñaMaestra = false;
-
-                        };
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Okay, esto si que es raro\n\nHay algo mal con esta parte del programa, contacte con el soporte de Prisma", "Error Raro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-
-                }
-            }
-
-
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Nombre")
-            {
-                if (txtNombre_groupboxModificar_PanelModificar.Text == "")
-                {
-                    MessageBox.Show("No deje el campo del Nombre en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-
-                    DialogResult siono = MessageBox.Show("¿Estás seguro de modificar estos atributos?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
-
-                    if (siono == DialogResult.Yes)
-                    {
-
-                        confirmacion.Show();
-                        ApareceLaContraseñaMaestra = true;
-                        confirmacion.FormClosing += (s, args) =>
-                    {
-                        //Código/query de la modificación del campo de Nombre
-
-                        try
-                        {
-                            conn.Open();
-                            modificarAtributosDeUsuarios = $"UPDATE usuarios SET Nombre ='{txtNombre_groupboxModificar_PanelModificar.Text}' WHERE ID ={idUsuario};";
-                            cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
-                            try
-                            {
-                                cmd.ExecuteNonQuery();
-                                MessageBox.Show("Nombre de usuario modificado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("No se pudo modificar el usuario.\n\nCompruebe la existencia del Usuario y el ID del mismo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("No se pudo realizar los cambios\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
                             }
                         }
-
-                        catch (Exception ex)
+                        else
                         {
-
-                            MessageBox.Show("No se puedo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        finally
-                        {
-                            conn.Close();
-                        }
-
-
-
-
                     };
-                        ApareceLaContraseñaMaestra = false;
-
-
-                    }
-                    else
-                    {
-                        //Nada.
-                    }
-                }
-
-
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Contraseña")
-            {
-                if (txtContraseña_groupboxModificar_PanelModificar.Text == "" && txtIDseleccionado_groupBoxModificar_PanelModificar.Text == "")
-                {
-                    MessageBox.Show("No deje el campo de Contraseña en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-
-                    DialogResult siono = MessageBox.Show("¿Está Seguro de modificar la contraseña de este Usuario?.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
-
-                    if (siono == DialogResult.Yes)
-                    {
-
-                        confirmacion.Show();
-                        ApareceLaContraseñaMaestra = true;
-
-                        confirmacion.FormClosing += (s, args) =>
-                        {
-                            //Código/query de modificación de la contraseña:
-
-                            try
-                            {
-                                conn.Open();
-                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET contraseña='{txtContraseña_groupboxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
-                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Contraseña del usuario cambiada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se pudo modificar la contraseña del Usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    MessageBox.Show(ex.Message, "Información Técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-
-
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Error al conectar con la Base de Datos, contacte al soporte Prisma.", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                MessageBox.Show(ex.Message, "Información Técnica", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-
-                        };
-                        ApareceLaContraseñaMaestra = false;
-                    }
-                    else
-                    {
-                        //Queda en nada.
-                    }
-                }
-
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Correo")
-            {
-                if (txtCorreoElectronico_groupBoxModificar_PanelModificar.Text == "")
-                {
-                    MessageBox.Show("No deje el campo del Correo Electrónico en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    DialogResult siono = MessageBox.Show("¿Está seguro que quiere modificar el Correo del usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
-
-                    if (siono == DialogResult.Yes)
-                    {
-                        confirmacion.Show();
-                        ApareceLaContraseñaMaestra = true;
-                        confirmacion.FormClosing += (s, args) =>
-                        {
-                            //Código/query de modificación del correo:
-
-                            try
-                            {
-                                conn.Open();
-                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET CorreoElectronico='{txtCorreoElectronico_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
-                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("E-Mail cambiado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se pudo modificar el correo del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("No se pudo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-
-
-
-                        };
-                        ApareceLaContraseñaMaestra = false;
-                    }
-                    else
-                    {
-                        //Queda en nada... otra vez.
-                    }
-
-                }
-
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Teléfono")
-            {
-                if (txtTelefono_groupBoxModificar_PanelModificar.Text == "")
-                {
-                    MessageBox.Show("No deje el campo de Teléfono en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    DialogResult siono = MessageBox.Show("¿Está seguro de modificar el Teléfono de este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
-
-                    if (siono == DialogResult.Yes)
-                    {
-                        confirmacion.Show();
-                        ApareceLaContraseñaMaestra = true;
-                        confirmacion.FormClosing += (s, args) =>
-                        {
-                            //Código/query de la modificación del Teléfono Microondas (Nombre provicional).
-
-                            try
-                            {
-                                conn.Open();
-                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET Telefono='{txtTelefono_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
-                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Teléfono cambiado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se pudo modificar el Teléfono del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("No se pudo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                MessageBox.Show(ex.Message, "Informacion técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-
-
-                        };
-                        ApareceLaContraseñaMaestra = false;
-                    }
-                    else
-                    {
-                        //Queda en nada... si... una vez más.
-                    }
-
-                }
-            }
-            else if (comboBoxModifcar_groupBoxModificar_PanelModificar.Text == "Celular")
-            {
-                if (txtCelular_groupBoxModificar_PanelModificar.Text == "")
-                {
-                    MessageBox.Show("No deje el campo de Celular en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    DialogResult siono = MessageBox.Show("¿Está seguro de modificar el Celular de este usuario?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    
-                    int idUsuario = int.Parse(txtIDseleccionado_groupBoxModificar_PanelModificar.Text);
-
-                    if (siono == DialogResult.Yes)
-                    {
-                        confirmacion.Show();
-                        ApareceLaContraseñaMaestra = true;
-                        confirmacion.FormClosing += (s, args) =>
-                        {
-                            //Código/query de la modificacion del celular:   
-
-                            try
-                            {
-                                conn.Open();
-                                modificarAtributosDeUsuarios = $"UPDATE usuarios SET celular='{txtCelular_groupBoxModificar_PanelModificar.Text}' WHERE ID={idUsuario}";
-                                cmd = new MySqlCommand(modificarAtributosDeUsuarios, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Número de celular cambiado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se pudo modificar el Celular de este usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("No se pudo conectar con la Base de Datos", "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                MessageBox.Show(ex.Message, "Información técnica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                        };
-                        ApareceLaContraseñaMaestra = false;
-                    }
-                    else
-                    {
-                        //No preguntes... ya sabemos lo que pasa acá.
-                    }
+                    MessageBox.Show("No se realizarán lo cambios", "Entendido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                //Por las dudas... no vaya a ser que salga un error de windows inesperado y que se cierre el programa.
+                MessageBox.Show("No deje un campo de texto obligatorio vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
 
         private void Usuarios_FormClosing(object sender, FormClosingEventArgs e)
@@ -1213,6 +690,29 @@ namespace Diseño
             this.Hide();
             Clientes show = new Clientes();
             show.Show();
+        }
+
+        private void tabla_Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = tabla_Usuarios.Rows[e.RowIndex];
+
+                clavePrimariaDelTecnico = filaSeleccionada.Cells["ID"].Value.ToString();
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                string contraseña = filaSeleccionada.Cells["contraseña"].Value.ToString();
+                string correoElectronico = filaSeleccionada.Cells["CorreoElectronico"].Value.ToString();
+                string telefonoOpcional = filaSeleccionada.Cells["Telefono"].Value.ToString();
+                string celular = filaSeleccionada.Cells["Celular"].Value.ToString();
+
+                labelDelID_groupBoxModificar_PanelModificar.Text = $"Selección: {clavePrimariaDelTecnico}";
+                txtNombre_groupboxModificar_PanelModificar.Text = nombre;
+                txtContraseña_groupboxModificar_PanelModificar.Text = contraseña;
+                txtCorreoElectronico_groupBoxModificar_PanelModificar.Text = correoElectronico;
+                txtTelefono_groupBoxModificar_PanelModificar.Text = telefonoOpcional;
+                txtCelular_groupBoxModificar_PanelModificar.Text = celular;
+            }
         }
     }
 }
