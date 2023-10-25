@@ -79,6 +79,7 @@ namespace Diseño
         //instancias:
         private Usuarios Usuarios; /* <-- aunque no son instancias objetualizadas, sirven solo para sacar valores públicos de dentro como getters, setters, etc. */
         private Clientes clientes;
+        private Estadisticas estadisticas;
         DataTable DataTableCelulares = new DataTable();
         DataTable DataTableCelularesID = new DataTable();
         DataTable DataTableTrabajos = new DataTable();
@@ -1589,6 +1590,13 @@ namespace Diseño
         private void btnClientes_Click(object sender, EventArgs e)
         {
             Clientes mostrar = new Clientes();
+            mostrar.Show();
+            this.Hide();
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            Estadisticas mostrar = new Estadisticas();
             mostrar.Show();
             this.Hide();
         }

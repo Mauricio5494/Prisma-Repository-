@@ -229,7 +229,7 @@
             this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMenuPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuPrincipal.Image")));
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -247,7 +247,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,7 +265,7 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,7 +283,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,7 +302,7 @@
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -426,11 +426,11 @@
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label_Name_Form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Name_Form.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label_Name_Form.Location = new System.Drawing.Point(1148, 18);
             this.label_Name_Form.Name = "label_Name_Form";
-            this.label_Name_Form.Size = new System.Drawing.Size(124, 37);
+            this.label_Name_Form.Size = new System.Drawing.Size(123, 31);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "TALLER";
             // 
@@ -464,7 +464,7 @@
             this.panel_Agregar.Controls.Add(this.groupBox_AgregarTrabajos);
             this.panel_Agregar.Controls.Add(this.groupBox_AgregarCelulares);
             this.panel_Agregar.Enabled = false;
-            this.panel_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(49, 78);
             this.panel_Agregar.Name = "panel_Agregar";
             this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
@@ -488,7 +488,7 @@
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelPresupuesto_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelPlazo_Agregar);
             this.groupBox_AgregarTrabajos.Controls.Add(this.labelTrabajo_ID_Agregar);
-            this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(3, 3);
             this.groupBox_AgregarTrabajos.Name = "groupBox_AgregarTrabajos";
             this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(413, 0);
@@ -502,7 +502,7 @@
             this.combobox_IDdelCelular_Trabajo_Agregar.FormattingEnabled = true;
             this.combobox_IDdelCelular_Trabajo_Agregar.Location = new System.Drawing.Point(6, 58);
             this.combobox_IDdelCelular_Trabajo_Agregar.Name = "combobox_IDdelCelular_Trabajo_Agregar";
-            this.combobox_IDdelCelular_Trabajo_Agregar.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDdelCelular_Trabajo_Agregar.Size = new System.Drawing.Size(401, 21);
             this.combobox_IDdelCelular_Trabajo_Agregar.Sorted = true;
             this.combobox_IDdelCelular_Trabajo_Agregar.TabIndex = 18;
             this.combobox_IDdelCelular_Trabajo_Agregar.Click += new System.EventHandler(this.combobox_IDdelCelular_Trabajo_Agregar_Click);
@@ -513,7 +513,7 @@
             this.combobox_IDdelTecnico_AgregarTrabajos.FormattingEnabled = true;
             this.combobox_IDdelTecnico_AgregarTrabajos.Location = new System.Drawing.Point(6, 365);
             this.combobox_IDdelTecnico_AgregarTrabajos.Name = "combobox_IDdelTecnico_AgregarTrabajos";
-            this.combobox_IDdelTecnico_AgregarTrabajos.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDdelTecnico_AgregarTrabajos.Size = new System.Drawing.Size(401, 21);
             this.combobox_IDdelTecnico_AgregarTrabajos.TabIndex = 24;
             // 
             // labelID_Tecnico_Agregar
@@ -521,7 +521,7 @@
             this.labelID_Tecnico_Agregar.AutoSize = true;
             this.labelID_Tecnico_Agregar.Location = new System.Drawing.Point(6, 347);
             this.labelID_Tecnico_Agregar.Name = "labelID_Tecnico_Agregar";
-            this.labelID_Tecnico_Agregar.Size = new System.Drawing.Size(93, 15);
+            this.labelID_Tecnico_Agregar.Size = new System.Drawing.Size(88, 13);
             this.labelID_Tecnico_Agregar.TabIndex = 15;
             this.labelID_Tecnico_Agregar.Text = "Tecnico a cargo:";
             // 
@@ -530,7 +530,7 @@
             this.dateTimePicker_FechaDeIngreso_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 270);
             this.dateTimePicker_FechaDeIngreso_Agregar.Name = "dateTimePicker_FechaDeIngreso_Agregar";
-            this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(243, 21);
+            this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(243, 20);
             this.dateTimePicker_FechaDeIngreso_Agregar.TabIndex = 22;
             // 
             // dateTimePicker_Plazo_Agregar
@@ -539,7 +539,7 @@
             this.dateTimePicker_Plazo_Agregar.CustomFormat = "";
             this.dateTimePicker_Plazo_Agregar.Location = new System.Drawing.Point(6, 99);
             this.dateTimePicker_Plazo_Agregar.Name = "dateTimePicker_Plazo_Agregar";
-            this.dateTimePicker_Plazo_Agregar.Size = new System.Drawing.Size(243, 21);
+            this.dateTimePicker_Plazo_Agregar.Size = new System.Drawing.Size(243, 20);
             this.dateTimePicker_Plazo_Agregar.TabIndex = 19;
             // 
             // btnAgregar_Trabajo
@@ -556,7 +556,7 @@
             // 
             this.txtAdelanto_Agregar.Location = new System.Drawing.Point(6, 313);
             this.txtAdelanto_Agregar.Name = "txtAdelanto_Agregar";
-            this.txtAdelanto_Agregar.Size = new System.Drawing.Size(401, 21);
+            this.txtAdelanto_Agregar.Size = new System.Drawing.Size(401, 20);
             this.txtAdelanto_Agregar.TabIndex = 23;
             // 
             // labelAdelanto_Agregar
@@ -564,7 +564,7 @@
             this.labelAdelanto_Agregar.AutoSize = true;
             this.labelAdelanto_Agregar.Location = new System.Drawing.Point(6, 297);
             this.labelAdelanto_Agregar.Name = "labelAdelanto_Agregar";
-            this.labelAdelanto_Agregar.Size = new System.Drawing.Size(89, 15);
+            this.labelAdelanto_Agregar.Size = new System.Drawing.Size(82, 13);
             this.labelAdelanto_Agregar.TabIndex = 10;
             this.labelAdelanto_Agregar.Text = "Adelanto/Seña:";
             // 
@@ -573,7 +573,7 @@
             this.labelFechaDeIngreso_Agregar.AutoSize = true;
             this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 254);
             this.labelFechaDeIngreso_Agregar.Name = "labelFechaDeIngreso_Agregar";
-            this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(168, 15);
+            this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(147, 13);
             this.labelFechaDeIngreso_Agregar.TabIndex = 8;
             this.labelFechaDeIngreso_Agregar.Text = "Cuando ingresó el dispositivo:";
             // 
@@ -590,7 +590,7 @@
             this.labelProblema_Agregar.AutoSize = true;
             this.labelProblema_Agregar.Location = new System.Drawing.Point(3, 177);
             this.labelProblema_Agregar.Name = "labelProblema_Agregar";
-            this.labelProblema_Agregar.Size = new System.Drawing.Size(125, 15);
+            this.labelProblema_Agregar.Size = new System.Drawing.Size(109, 13);
             this.labelProblema_Agregar.TabIndex = 6;
             this.labelProblema_Agregar.Text = "Describa el problema:";
             // 
@@ -598,7 +598,7 @@
             // 
             this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(6, 143);
             this.txtPresupuesto_Agregar.Name = "txtPresupuesto_Agregar";
-            this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(401, 21);
+            this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(401, 20);
             this.txtPresupuesto_Agregar.TabIndex = 20;
             // 
             // labelPresupuesto_Agregar
@@ -606,7 +606,7 @@
             this.labelPresupuesto_Agregar.AutoSize = true;
             this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(3, 127);
             this.labelPresupuesto_Agregar.Name = "labelPresupuesto_Agregar";
-            this.labelPresupuesto_Agregar.Size = new System.Drawing.Size(77, 15);
+            this.labelPresupuesto_Agregar.Size = new System.Drawing.Size(69, 13);
             this.labelPresupuesto_Agregar.TabIndex = 4;
             this.labelPresupuesto_Agregar.Text = "Presupuesto:";
             // 
@@ -615,7 +615,7 @@
             this.labelPlazo_Agregar.AutoSize = true;
             this.labelPlazo_Agregar.Location = new System.Drawing.Point(3, 83);
             this.labelPlazo_Agregar.Name = "labelPlazo_Agregar";
-            this.labelPlazo_Agregar.Size = new System.Drawing.Size(39, 15);
+            this.labelPlazo_Agregar.Size = new System.Drawing.Size(36, 13);
             this.labelPlazo_Agregar.TabIndex = 2;
             this.labelPlazo_Agregar.Text = "Plazo:";
             // 
@@ -624,7 +624,7 @@
             this.labelTrabajo_ID_Agregar.AutoSize = true;
             this.labelTrabajo_ID_Agregar.Location = new System.Drawing.Point(3, 40);
             this.labelTrabajo_ID_Agregar.Name = "labelTrabajo_ID_Agregar";
-            this.labelTrabajo_ID_Agregar.Size = new System.Drawing.Size(47, 15);
+            this.labelTrabajo_ID_Agregar.Size = new System.Drawing.Size(42, 13);
             this.labelTrabajo_ID_Agregar.TabIndex = 0;
             this.labelTrabajo_ID_Agregar.Text = "Celular:";
             // 
@@ -643,7 +643,7 @@
             this.groupBox_AgregarCelulares.Controls.Add(this.txtIMEI_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelIMEI_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelID_Dueño_Agregar);
-            this.groupBox_AgregarCelulares.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_AgregarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_AgregarCelulares.Location = new System.Drawing.Point(3, 3);
             this.groupBox_AgregarCelulares.Name = "groupBox_AgregarCelulares";
             this.groupBox_AgregarCelulares.Size = new System.Drawing.Size(413, 0);
@@ -672,7 +672,7 @@
             this.label_CaracteresRestantes_Detalles_Agregar.AutoSize = true;
             this.label_CaracteresRestantes_Detalles_Agregar.Location = new System.Drawing.Point(315, 79);
             this.label_CaracteresRestantes_Detalles_Agregar.Name = "label_CaracteresRestantes_Detalles_Agregar";
-            this.label_CaracteresRestantes_Detalles_Agregar.Size = new System.Drawing.Size(73, 15);
+            this.label_CaracteresRestantes_Detalles_Agregar.Size = new System.Drawing.Size(72, 13);
             this.label_CaracteresRestantes_Detalles_Agregar.TabIndex = 38;
             this.label_CaracteresRestantes_Detalles_Agregar.Text = "65535/65535";
             // 
@@ -681,7 +681,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 15);
+            this.label3.Size = new System.Drawing.Size(121, 13);
             this.label3.TabIndex = 37;
             this.label3.Text = "Detalles/Observaciones";
             // 
@@ -701,11 +701,11 @@
             this.radioButton_Arreglado_Agregar.AutoSize = true;
             this.radioButton_Arreglado_Agregar.BackColor = System.Drawing.Color.LightGreen;
             this.radioButton_Arreglado_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Arreglado_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_Arreglado_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_Arreglado_Agregar.ForeColor = System.Drawing.Color.Black;
             this.radioButton_Arreglado_Agregar.Location = new System.Drawing.Point(7, 20);
             this.radioButton_Arreglado_Agregar.Name = "radioButton_Arreglado_Agregar";
-            this.radioButton_Arreglado_Agregar.Size = new System.Drawing.Size(83, 19);
+            this.radioButton_Arreglado_Agregar.Size = new System.Drawing.Size(79, 17);
             this.radioButton_Arreglado_Agregar.TabIndex = 27;
             this.radioButton_Arreglado_Agregar.TabStop = true;
             this.radioButton_Arreglado_Agregar.Text = "Arreglado";
@@ -716,11 +716,11 @@
             this.radioButton_EnProceso_Agregar.AutoSize = true;
             this.radioButton_EnProceso_Agregar.BackColor = System.Drawing.Color.MidnightBlue;
             this.radioButton_EnProceso_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_EnProceso_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_EnProceso_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_EnProceso_Agregar.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton_EnProceso_Agregar.Location = new System.Drawing.Point(6, 46);
             this.radioButton_EnProceso_Agregar.Name = "radioButton_EnProceso_Agregar";
-            this.radioButton_EnProceso_Agregar.Size = new System.Drawing.Size(93, 19);
+            this.radioButton_EnProceso_Agregar.Size = new System.Drawing.Size(93, 17);
             this.radioButton_EnProceso_Agregar.TabIndex = 35;
             this.radioButton_EnProceso_Agregar.TabStop = true;
             this.radioButton_EnProceso_Agregar.Text = "En  proceso";
@@ -731,10 +731,10 @@
             this.radioButton_EnEspera_Agregar.AutoSize = true;
             this.radioButton_EnEspera_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(221)))), ((int)(((byte)(51)))));
             this.radioButton_EnEspera_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_EnEspera_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_EnEspera_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_EnEspera_Agregar.Location = new System.Drawing.Point(135, 48);
             this.radioButton_EnEspera_Agregar.Name = "radioButton_EnEspera_Agregar";
-            this.radioButton_EnEspera_Agregar.Size = new System.Drawing.Size(82, 19);
+            this.radioButton_EnEspera_Agregar.Size = new System.Drawing.Size(82, 17);
             this.radioButton_EnEspera_Agregar.TabIndex = 34;
             this.radioButton_EnEspera_Agregar.TabStop = true;
             this.radioButton_EnEspera_Agregar.Text = "En espera";
@@ -745,11 +745,11 @@
             this.radioButton_Averiado_Agregar.AutoSize = true;
             this.radioButton_Averiado_Agregar.BackColor = System.Drawing.Color.DarkRed;
             this.radioButton_Averiado_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Averiado_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_Averiado_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_Averiado_Agregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.radioButton_Averiado_Agregar.Location = new System.Drawing.Point(135, 20);
             this.radioButton_Averiado_Agregar.Name = "radioButton_Averiado_Agregar";
-            this.radioButton_Averiado_Agregar.Size = new System.Drawing.Size(77, 19);
+            this.radioButton_Averiado_Agregar.Size = new System.Drawing.Size(75, 17);
             this.radioButton_Averiado_Agregar.TabIndex = 28;
             this.radioButton_Averiado_Agregar.TabStop = true;
             this.radioButton_Averiado_Agregar.Text = "Averiado";
@@ -760,7 +760,7 @@
             this.comboBox_AgregarCelular_CedulaDelDueño.FormattingEnabled = true;
             this.comboBox_AgregarCelular_CedulaDelDueño.Location = new System.Drawing.Point(6, 58);
             this.comboBox_AgregarCelular_CedulaDelDueño.Name = "comboBox_AgregarCelular_CedulaDelDueño";
-            this.comboBox_AgregarCelular_CedulaDelDueño.Size = new System.Drawing.Size(401, 23);
+            this.comboBox_AgregarCelular_CedulaDelDueño.Size = new System.Drawing.Size(401, 21);
             this.comboBox_AgregarCelular_CedulaDelDueño.Sorted = true;
             this.comboBox_AgregarCelular_CedulaDelDueño.TabIndex = 16;
             // 
@@ -769,13 +769,13 @@
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.FormattingEnabled = true;
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(6, 255);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Name = "comboBox_AgregarCelular_IdDelTecnicoAcargo";
-            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(398, 23);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(398, 21);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Sorted = true;
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.TabIndex = 20;
             // 
             // btnAgregar_Celular
             // 
-            this.btnAgregar_Celular.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar_Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar_Celular.Location = new System.Drawing.Point(306, 502);
             this.btnAgregar_Celular.Name = "btnAgregar_Celular";
             this.btnAgregar_Celular.Size = new System.Drawing.Size(92, 30);
@@ -789,7 +789,7 @@
             this.labelTecnico_A_Cargo_Agregar.AutoSize = true;
             this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 240);
             this.labelTecnico_A_Cargo_Agregar.Name = "labelTecnico_A_Cargo_Agregar";
-            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(111, 15);
+            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(103, 13);
             this.labelTecnico_A_Cargo_Agregar.TabIndex = 9;
             this.labelTecnico_A_Cargo_Agregar.Text = "Tecnico resposable:";
             // 
@@ -797,7 +797,7 @@
             // 
             this.txtMarca_Agregar.Location = new System.Drawing.Point(6, 111);
             this.txtMarca_Agregar.Name = "txtMarca_Agregar";
-            this.txtMarca_Agregar.Size = new System.Drawing.Size(398, 21);
+            this.txtMarca_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtMarca_Agregar.TabIndex = 17;
             // 
             // labelMarca_Agregar
@@ -805,7 +805,7 @@
             this.labelMarca_Agregar.AutoSize = true;
             this.labelMarca_Agregar.Location = new System.Drawing.Point(3, 95);
             this.labelMarca_Agregar.Name = "labelMarca_Agregar";
-            this.labelMarca_Agregar.Size = new System.Drawing.Size(42, 15);
+            this.labelMarca_Agregar.Size = new System.Drawing.Size(40, 13);
             this.labelMarca_Agregar.TabIndex = 6;
             this.labelMarca_Agregar.Text = "Marca:";
             // 
@@ -813,7 +813,7 @@
             // 
             this.txtModelo_Agregar.Location = new System.Drawing.Point(7, 158);
             this.txtModelo_Agregar.Name = "txtModelo_Agregar";
-            this.txtModelo_Agregar.Size = new System.Drawing.Size(398, 21);
+            this.txtModelo_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtModelo_Agregar.TabIndex = 18;
             // 
             // labelModelo_Agregar
@@ -821,7 +821,7 @@
             this.labelModelo_Agregar.AutoSize = true;
             this.labelModelo_Agregar.Location = new System.Drawing.Point(4, 142);
             this.labelModelo_Agregar.Name = "labelModelo_Agregar";
-            this.labelModelo_Agregar.Size = new System.Drawing.Size(51, 15);
+            this.labelModelo_Agregar.Size = new System.Drawing.Size(45, 13);
             this.labelModelo_Agregar.TabIndex = 4;
             this.labelModelo_Agregar.Text = "Modelo:";
             // 
@@ -829,7 +829,7 @@
             // 
             this.txtIMEI_Agregar.Location = new System.Drawing.Point(6, 204);
             this.txtIMEI_Agregar.Name = "txtIMEI_Agregar";
-            this.txtIMEI_Agregar.Size = new System.Drawing.Size(398, 21);
+            this.txtIMEI_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtIMEI_Agregar.TabIndex = 19;
             // 
             // labelIMEI_Agregar
@@ -837,7 +837,7 @@
             this.labelIMEI_Agregar.AutoSize = true;
             this.labelIMEI_Agregar.Location = new System.Drawing.Point(3, 188);
             this.labelIMEI_Agregar.Name = "labelIMEI_Agregar";
-            this.labelIMEI_Agregar.Size = new System.Drawing.Size(33, 15);
+            this.labelIMEI_Agregar.Size = new System.Drawing.Size(32, 13);
             this.labelIMEI_Agregar.TabIndex = 2;
             this.labelIMEI_Agregar.Text = "IMEI:";
             // 
@@ -846,7 +846,7 @@
             this.labelID_Dueño_Agregar.AutoSize = true;
             this.labelID_Dueño_Agregar.Location = new System.Drawing.Point(3, 40);
             this.labelID_Dueño_Agregar.Name = "labelID_Dueño_Agregar";
-            this.labelID_Dueño_Agregar.Size = new System.Drawing.Size(130, 15);
+            this.labelID_Dueño_Agregar.Size = new System.Drawing.Size(112, 13);
             this.labelID_Dueño_Agregar.TabIndex = 0;
             this.labelID_Dueño_Agregar.Text = "Propietario del Celular:";
             // 
@@ -906,7 +906,7 @@
             this.groupBox_Menu.Controls.Add(this.btnClientes);
             this.groupBox_Menu.Controls.Add(this.btnEstadisticas);
             this.groupBox_Menu.Controls.Add(this.btnUsuarios);
-            this.groupBox_Menu.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Menu.Location = new System.Drawing.Point(3, 83);
             this.groupBox_Menu.Name = "groupBox_Menu";
             this.groupBox_Menu.Size = new System.Drawing.Size(413, 514);
@@ -936,10 +936,11 @@
             this.btnEstadisticas.TabIndex = 1;
             this.btnEstadisticas.Text = "ESTADISTICAS";
             this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
@@ -986,10 +987,10 @@
             this.panel_Modificar.Controls.Add(this.groupBox_ModificarTrabajos);
             this.panel_Modificar.Controls.Add(this.groupBox_ModificarCelulares);
             this.panel_Modificar.Enabled = false;
-            this.panel_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Modificar.Location = new System.Drawing.Point(49, 78);
             this.panel_Modificar.Name = "panel_Modificar";
-            this.panel_Modificar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 17;
             // 
             // groupBox_ModificarTrabajos
@@ -1012,7 +1013,7 @@
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelPresupuesto_Modificar);
             this.groupBox_ModificarTrabajos.Controls.Add(this.labelSeleccion_ID_Modificar);
             this.groupBox_ModificarTrabajos.Enabled = false;
-            this.groupBox_ModificarTrabajos.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_ModificarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_ModificarTrabajos.Location = new System.Drawing.Point(3, 3);
             this.groupBox_ModificarTrabajos.Name = "groupBox_ModificarTrabajos";
             this.groupBox_ModificarTrabajos.Size = new System.Drawing.Size(413, 594);
@@ -1025,7 +1026,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 15);
+            this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 37;
             this.label6.Text = "Celular:";
             // 
@@ -1034,7 +1035,7 @@
             this.combobox_IDCelular_Modificar_Trabajo.FormattingEnabled = true;
             this.combobox_IDCelular_Modificar_Trabajo.Location = new System.Drawing.Point(3, 90);
             this.combobox_IDCelular_Modificar_Trabajo.Name = "combobox_IDCelular_Modificar_Trabajo";
-            this.combobox_IDCelular_Modificar_Trabajo.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDCelular_Modificar_Trabajo.Size = new System.Drawing.Size(401, 21);
             this.combobox_IDCelular_Modificar_Trabajo.TabIndex = 36;
             this.combobox_IDCelular_Modificar_Trabajo.Click += new System.EventHandler(this.combobox_IDCelular_Modificar_Trabajo_Click);
             // 
@@ -1043,7 +1044,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(4, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 15);
+            this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 35;
             this.label4.Text = "Plazo:";
             // 
@@ -1052,7 +1053,7 @@
             this.combobox_IDTecnico_Modificar_Trabajo.FormattingEnabled = true;
             this.combobox_IDTecnico_Modificar_Trabajo.Location = new System.Drawing.Point(6, 429);
             this.combobox_IDTecnico_Modificar_Trabajo.Name = "combobox_IDTecnico_Modificar_Trabajo";
-            this.combobox_IDTecnico_Modificar_Trabajo.Size = new System.Drawing.Size(401, 23);
+            this.combobox_IDTecnico_Modificar_Trabajo.Size = new System.Drawing.Size(401, 21);
             this.combobox_IDTecnico_Modificar_Trabajo.TabIndex = 34;
             this.combobox_IDTecnico_Modificar_Trabajo.Click += new System.EventHandler(this.combobox_IDTecnico_Modificar_Trabajo_Click);
             // 
@@ -1061,7 +1062,7 @@
             this.labelID_Tecnico_Trabajo_Modificar.AutoSize = true;
             this.labelID_Tecnico_Trabajo_Modificar.Location = new System.Drawing.Point(3, 411);
             this.labelID_Tecnico_Trabajo_Modificar.Name = "labelID_Tecnico_Trabajo_Modificar";
-            this.labelID_Tecnico_Trabajo_Modificar.Size = new System.Drawing.Size(124, 15);
+            this.labelID_Tecnico_Trabajo_Modificar.Size = new System.Drawing.Size(129, 13);
             this.labelID_Tecnico_Trabajo_Modificar.TabIndex = 32;
             this.labelID_Tecnico_Trabajo_Modificar.Text = "Tecnico responsable:";
             // 
@@ -1072,7 +1073,7 @@
             this.dateTimePicker_FechaDeIngreso_Modificar.Location = new System.Drawing.Point(6, 325);
             this.dateTimePicker_FechaDeIngreso_Modificar.Name = "dateTimePicker_FechaDeIngreso_Modificar";
             this.dateTimePicker_FechaDeIngreso_Modificar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker_FechaDeIngreso_Modificar.Size = new System.Drawing.Size(401, 21);
+            this.dateTimePicker_FechaDeIngreso_Modificar.Size = new System.Drawing.Size(401, 20);
             this.dateTimePicker_FechaDeIngreso_Modificar.TabIndex = 22;
             this.dateTimePicker_FechaDeIngreso_Modificar.Value = new System.DateTime(2023, 10, 24, 0, 0, 0, 0);
             // 
@@ -1092,7 +1093,7 @@
             this.dateTimePicker_Plazo_Modificar.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_Plazo_Modificar.Location = new System.Drawing.Point(3, 141);
             this.dateTimePicker_Plazo_Modificar.Name = "dateTimePicker_Plazo_Modificar";
-            this.dateTimePicker_Plazo_Modificar.Size = new System.Drawing.Size(401, 21);
+            this.dateTimePicker_Plazo_Modificar.Size = new System.Drawing.Size(401, 20);
             this.dateTimePicker_Plazo_Modificar.TabIndex = 21;
             this.dateTimePicker_Plazo_Modificar.Value = new System.DateTime(2023, 10, 24, 0, 0, 0, 0);
             // 
@@ -1100,7 +1101,7 @@
             // 
             this.txtAdelanto_Modificar.Location = new System.Drawing.Point(6, 376);
             this.txtAdelanto_Modificar.Name = "txtAdelanto_Modificar";
-            this.txtAdelanto_Modificar.Size = new System.Drawing.Size(401, 21);
+            this.txtAdelanto_Modificar.Size = new System.Drawing.Size(401, 20);
             this.txtAdelanto_Modificar.TabIndex = 23;
             // 
             // labelAdelanto_Modificar
@@ -1108,7 +1109,7 @@
             this.labelAdelanto_Modificar.AutoSize = true;
             this.labelAdelanto_Modificar.Location = new System.Drawing.Point(3, 360);
             this.labelAdelanto_Modificar.Name = "labelAdelanto_Modificar";
-            this.labelAdelanto_Modificar.Size = new System.Drawing.Size(93, 15);
+            this.labelAdelanto_Modificar.Size = new System.Drawing.Size(96, 13);
             this.labelAdelanto_Modificar.TabIndex = 22;
             this.labelAdelanto_Modificar.Text = "Adelanto/Seña:";
             // 
@@ -1117,7 +1118,7 @@
             this.labelFechaDeIngreso_Modificar.AutoSize = true;
             this.labelFechaDeIngreso_Modificar.Location = new System.Drawing.Point(3, 309);
             this.labelFechaDeIngreso_Modificar.Name = "labelFechaDeIngreso_Modificar";
-            this.labelFechaDeIngreso_Modificar.Size = new System.Drawing.Size(107, 15);
+            this.labelFechaDeIngreso_Modificar.Size = new System.Drawing.Size(109, 13);
             this.labelFechaDeIngreso_Modificar.TabIndex = 20;
             this.labelFechaDeIngreso_Modificar.Text = "Fecha de ingreso:";
             // 
@@ -1134,7 +1135,7 @@
             this.labelProblema_Modificar.AutoSize = true;
             this.labelProblema_Modificar.Location = new System.Drawing.Point(2, 225);
             this.labelProblema_Modificar.Name = "labelProblema_Modificar";
-            this.labelProblema_Modificar.Size = new System.Drawing.Size(66, 15);
+            this.labelProblema_Modificar.Size = new System.Drawing.Size(63, 13);
             this.labelProblema_Modificar.TabIndex = 18;
             this.labelProblema_Modificar.Text = "Problema:";
             // 
@@ -1142,7 +1143,7 @@
             // 
             this.txtPresupuesto_Modificar.Location = new System.Drawing.Point(4, 192);
             this.txtPresupuesto_Modificar.Name = "txtPresupuesto_Modificar";
-            this.txtPresupuesto_Modificar.Size = new System.Drawing.Size(401, 21);
+            this.txtPresupuesto_Modificar.Size = new System.Drawing.Size(401, 20);
             this.txtPresupuesto_Modificar.TabIndex = 17;
             // 
             // labelPresupuesto_Modificar
@@ -1150,17 +1151,17 @@
             this.labelPresupuesto_Modificar.AutoSize = true;
             this.labelPresupuesto_Modificar.Location = new System.Drawing.Point(1, 176);
             this.labelPresupuesto_Modificar.Name = "labelPresupuesto_Modificar";
-            this.labelPresupuesto_Modificar.Size = new System.Drawing.Size(82, 15);
+            this.labelPresupuesto_Modificar.Size = new System.Drawing.Size(81, 13);
             this.labelPresupuesto_Modificar.TabIndex = 16;
             this.labelPresupuesto_Modificar.Text = "Presupuesto:";
             // 
             // labelSeleccion_ID_Modificar
             // 
             this.labelSeleccion_ID_Modificar.AutoSize = true;
-            this.labelSeleccion_ID_Modificar.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeleccion_ID_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSeleccion_ID_Modificar.Location = new System.Drawing.Point(3, 37);
             this.labelSeleccion_ID_Modificar.Name = "labelSeleccion_ID_Modificar";
-            this.labelSeleccion_ID_Modificar.Size = new System.Drawing.Size(64, 15);
+            this.labelSeleccion_ID_Modificar.Size = new System.Drawing.Size(67, 13);
             this.labelSeleccion_ID_Modificar.TabIndex = 12;
             this.labelSeleccion_ID_Modificar.Text = "Selección:";
             // 
@@ -1180,7 +1181,7 @@
             this.groupBox_ModificarCelulares.Controls.Add(this.txtMarca_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.labelMarca_Modificar);
             this.groupBox_ModificarCelulares.Controls.Add(this.groupBox_ModificarCelular_Estados);
-            this.groupBox_ModificarCelulares.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_ModificarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_ModificarCelulares.Location = new System.Drawing.Point(3, 3);
             this.groupBox_ModificarCelulares.Name = "groupBox_ModificarCelulares";
             this.groupBox_ModificarCelulares.Size = new System.Drawing.Size(413, 0);
@@ -1195,7 +1196,7 @@
             this.combobox_CI_Del_Dueño_Modificar.FormattingEnabled = true;
             this.combobox_CI_Del_Dueño_Modificar.Location = new System.Drawing.Point(7, 76);
             this.combobox_CI_Del_Dueño_Modificar.Name = "combobox_CI_Del_Dueño_Modificar";
-            this.combobox_CI_Del_Dueño_Modificar.Size = new System.Drawing.Size(401, 23);
+            this.combobox_CI_Del_Dueño_Modificar.Size = new System.Drawing.Size(401, 21);
             this.combobox_CI_Del_Dueño_Modificar.TabIndex = 33;
             this.combobox_CI_Del_Dueño_Modificar.TextChanged += new System.EventHandler(this.combobox_CI_Del_Dueño_Modificar_TextChanged);
             // 
@@ -1204,23 +1205,23 @@
             this.comboBox_ModificarTecnicoACargo.FormattingEnabled = true;
             this.comboBox_ModificarTecnicoACargo.Location = new System.Drawing.Point(6, 235);
             this.comboBox_ModificarTecnicoACargo.Name = "comboBox_ModificarTecnicoACargo";
-            this.comboBox_ModificarTecnicoACargo.Size = new System.Drawing.Size(400, 23);
+            this.comboBox_ModificarTecnicoACargo.Size = new System.Drawing.Size(400, 21);
             this.comboBox_ModificarTecnicoACargo.TabIndex = 31;
             // 
             // label_modificarCelular_Seleccion
             // 
             this.label_modificarCelular_Seleccion.AutoSize = true;
-            this.label_modificarCelular_Seleccion.Font = new System.Drawing.Font("Montserrat", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_modificarCelular_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_modificarCelular_Seleccion.Location = new System.Drawing.Point(3, 37);
             this.label_modificarCelular_Seleccion.Name = "label_modificarCelular_Seleccion";
-            this.label_modificarCelular_Seleccion.Size = new System.Drawing.Size(66, 15);
+            this.label_modificarCelular_Seleccion.Size = new System.Drawing.Size(67, 13);
             this.label_modificarCelular_Seleccion.TabIndex = 30;
             this.label_modificarCelular_Seleccion.Text = "Selección:";
             // 
             // btnModificar_Celular
             // 
             this.btnModificar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar_Celular.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar_Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar_Celular.Location = new System.Drawing.Point(305, 485);
             this.btnModificar_Celular.Name = "btnModificar_Celular";
             this.btnModificar_Celular.Size = new System.Drawing.Size(92, 30);
@@ -1234,7 +1235,7 @@
             this.labelID_Dueño_Modificar.AutoSize = true;
             this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(4, 60);
             this.labelID_Dueño_Modificar.Name = "labelID_Dueño_Modificar";
-            this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(105, 15);
+            this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(93, 13);
             this.labelID_Dueño_Modificar.TabIndex = 16;
             this.labelID_Dueño_Modificar.Text = "Dueño del celular:";
             // 
@@ -1243,7 +1244,7 @@
             this.labelTecnico_A_Cargo_Modificar.AutoSize = true;
             this.labelTecnico_A_Cargo_Modificar.Location = new System.Drawing.Point(3, 220);
             this.labelTecnico_A_Cargo_Modificar.Name = "labelTecnico_A_Cargo_Modificar";
-            this.labelTecnico_A_Cargo_Modificar.Size = new System.Drawing.Size(93, 15);
+            this.labelTecnico_A_Cargo_Modificar.Size = new System.Drawing.Size(88, 13);
             this.labelTecnico_A_Cargo_Modificar.TabIndex = 25;
             this.labelTecnico_A_Cargo_Modificar.Text = "Técnico a cargo:";
             // 
@@ -1252,7 +1253,7 @@
             this.labelIMEI_Modificar.AutoSize = true;
             this.labelIMEI_Modificar.Location = new System.Drawing.Point(3, 103);
             this.labelIMEI_Modificar.Name = "labelIMEI_Modificar";
-            this.labelIMEI_Modificar.Size = new System.Drawing.Size(33, 15);
+            this.labelIMEI_Modificar.Size = new System.Drawing.Size(32, 13);
             this.labelIMEI_Modificar.TabIndex = 18;
             this.labelIMEI_Modificar.Text = "IMEI:";
             // 
@@ -1260,7 +1261,7 @@
             // 
             this.txtIMEI_Modificar.Location = new System.Drawing.Point(6, 119);
             this.txtIMEI_Modificar.Name = "txtIMEI_Modificar";
-            this.txtIMEI_Modificar.Size = new System.Drawing.Size(401, 21);
+            this.txtIMEI_Modificar.Size = new System.Drawing.Size(401, 20);
             this.txtIMEI_Modificar.TabIndex = 19;
             // 
             // labelModelo_Modificar
@@ -1268,7 +1269,7 @@
             this.labelModelo_Modificar.AutoSize = true;
             this.labelModelo_Modificar.Location = new System.Drawing.Point(1, 180);
             this.labelModelo_Modificar.Name = "labelModelo_Modificar";
-            this.labelModelo_Modificar.Size = new System.Drawing.Size(51, 15);
+            this.labelModelo_Modificar.Size = new System.Drawing.Size(45, 13);
             this.labelModelo_Modificar.TabIndex = 20;
             this.labelModelo_Modificar.Text = "Modelo:";
             // 
@@ -1276,14 +1277,14 @@
             // 
             this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 159);
             this.txtModelo_Modificar.Name = "txtModelo_Modificar";
-            this.txtModelo_Modificar.Size = new System.Drawing.Size(401, 21);
+            this.txtModelo_Modificar.Size = new System.Drawing.Size(401, 20);
             this.txtModelo_Modificar.TabIndex = 22;
             // 
             // txtMarca_Modificar
             // 
             this.txtMarca_Modificar.Location = new System.Drawing.Point(6, 198);
             this.txtMarca_Modificar.Name = "txtMarca_Modificar";
-            this.txtMarca_Modificar.Size = new System.Drawing.Size(401, 21);
+            this.txtMarca_Modificar.Size = new System.Drawing.Size(401, 20);
             this.txtMarca_Modificar.TabIndex = 21;
             // 
             // labelMarca_Modificar
@@ -1291,7 +1292,7 @@
             this.labelMarca_Modificar.AutoSize = true;
             this.labelMarca_Modificar.Location = new System.Drawing.Point(3, 141);
             this.labelMarca_Modificar.Name = "labelMarca_Modificar";
-            this.labelMarca_Modificar.Size = new System.Drawing.Size(42, 15);
+            this.labelMarca_Modificar.Size = new System.Drawing.Size(40, 13);
             this.labelMarca_Modificar.TabIndex = 22;
             this.labelMarca_Modificar.Text = "Marca:";
             // 
@@ -1316,7 +1317,7 @@
             this.label_caracteresRestantes_Detalles_Modificar.AutoSize = true;
             this.label_caracteresRestantes_Detalles_Modificar.Location = new System.Drawing.Point(317, 79);
             this.label_caracteresRestantes_Detalles_Modificar.Name = "label_caracteresRestantes_Detalles_Modificar";
-            this.label_caracteresRestantes_Detalles_Modificar.Size = new System.Drawing.Size(73, 15);
+            this.label_caracteresRestantes_Detalles_Modificar.Size = new System.Drawing.Size(72, 13);
             this.label_caracteresRestantes_Detalles_Modificar.TabIndex = 38;
             this.label_caracteresRestantes_Detalles_Modificar.Text = "65535/65535";
             // 
@@ -1325,7 +1326,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 15);
+            this.label2.Size = new System.Drawing.Size(121, 13);
             this.label2.TabIndex = 37;
             this.label2.Text = "Detalles/Observaciones";
             // 
@@ -1345,11 +1346,11 @@
             this.radioButton_Arreglado_Modificar.AutoSize = true;
             this.radioButton_Arreglado_Modificar.BackColor = System.Drawing.Color.LightGreen;
             this.radioButton_Arreglado_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Arreglado_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_Arreglado_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_Arreglado_Modificar.ForeColor = System.Drawing.Color.Black;
             this.radioButton_Arreglado_Modificar.Location = new System.Drawing.Point(7, 20);
             this.radioButton_Arreglado_Modificar.Name = "radioButton_Arreglado_Modificar";
-            this.radioButton_Arreglado_Modificar.Size = new System.Drawing.Size(83, 19);
+            this.radioButton_Arreglado_Modificar.Size = new System.Drawing.Size(79, 17);
             this.radioButton_Arreglado_Modificar.TabIndex = 27;
             this.radioButton_Arreglado_Modificar.TabStop = true;
             this.radioButton_Arreglado_Modificar.Text = "Arreglado";
@@ -1360,11 +1361,11 @@
             this.radioButton_EnProceso_Modificar.AutoSize = true;
             this.radioButton_EnProceso_Modificar.BackColor = System.Drawing.Color.MidnightBlue;
             this.radioButton_EnProceso_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_EnProceso_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_EnProceso_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_EnProceso_Modificar.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton_EnProceso_Modificar.Location = new System.Drawing.Point(6, 46);
             this.radioButton_EnProceso_Modificar.Name = "radioButton_EnProceso_Modificar";
-            this.radioButton_EnProceso_Modificar.Size = new System.Drawing.Size(93, 19);
+            this.radioButton_EnProceso_Modificar.Size = new System.Drawing.Size(93, 17);
             this.radioButton_EnProceso_Modificar.TabIndex = 35;
             this.radioButton_EnProceso_Modificar.TabStop = true;
             this.radioButton_EnProceso_Modificar.Text = "En  proceso";
@@ -1375,10 +1376,10 @@
             this.radioButton_EnEspera_Modificar.AutoSize = true;
             this.radioButton_EnEspera_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(221)))), ((int)(((byte)(51)))));
             this.radioButton_EnEspera_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_EnEspera_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_EnEspera_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_EnEspera_Modificar.Location = new System.Drawing.Point(135, 48);
             this.radioButton_EnEspera_Modificar.Name = "radioButton_EnEspera_Modificar";
-            this.radioButton_EnEspera_Modificar.Size = new System.Drawing.Size(82, 19);
+            this.radioButton_EnEspera_Modificar.Size = new System.Drawing.Size(82, 17);
             this.radioButton_EnEspera_Modificar.TabIndex = 34;
             this.radioButton_EnEspera_Modificar.TabStop = true;
             this.radioButton_EnEspera_Modificar.Text = "En espera";
@@ -1389,11 +1390,11 @@
             this.radioButton_Averiado_Modificar.AutoSize = true;
             this.radioButton_Averiado_Modificar.BackColor = System.Drawing.Color.DarkRed;
             this.radioButton_Averiado_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Averiado_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_Averiado_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_Averiado_Modificar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.radioButton_Averiado_Modificar.Location = new System.Drawing.Point(135, 20);
             this.radioButton_Averiado_Modificar.Name = "radioButton_Averiado_Modificar";
-            this.radioButton_Averiado_Modificar.Size = new System.Drawing.Size(77, 19);
+            this.radioButton_Averiado_Modificar.Size = new System.Drawing.Size(75, 17);
             this.radioButton_Averiado_Modificar.TabIndex = 28;
             this.radioButton_Averiado_Modificar.TabStop = true;
             this.radioButton_Averiado_Modificar.Text = "Averiado";
@@ -1436,7 +1437,7 @@
             this.groupBox_EliminarTrabajos.Controls.Add(this.txtID_Trabajo_Eliminar);
             this.groupBox_EliminarTrabajos.Controls.Add(this.btn_EliminarTrabajos);
             this.groupBox_EliminarTrabajos.Controls.Add(this.label5);
-            this.groupBox_EliminarTrabajos.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_EliminarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_EliminarTrabajos.Location = new System.Drawing.Point(3, 3);
             this.groupBox_EliminarTrabajos.Name = "groupBox_EliminarTrabajos";
             this.groupBox_EliminarTrabajos.Size = new System.Drawing.Size(413, 0);
@@ -1447,11 +1448,11 @@
             // txtID_Trabajo_Eliminar
             // 
             this.txtID_Trabajo_Eliminar.AutoSize = true;
-            this.txtID_Trabajo_Eliminar.Font = new System.Drawing.Font("Montserrat", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID_Trabajo_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID_Trabajo_Eliminar.ForeColor = System.Drawing.Color.Brown;
             this.txtID_Trabajo_Eliminar.Location = new System.Drawing.Point(3, 62);
             this.txtID_Trabajo_Eliminar.Name = "txtID_Trabajo_Eliminar";
-            this.txtID_Trabajo_Eliminar.Size = new System.Drawing.Size(212, 15);
+            this.txtID_Trabajo_Eliminar.Size = new System.Drawing.Size(207, 13);
             this.txtID_Trabajo_Eliminar.TabIndex = 15;
             this.txtID_Trabajo_Eliminar.Text = "Seleccione un elemento de la tabla";
             // 
@@ -1475,7 +1476,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 15);
+            this.label5.Size = new System.Drawing.Size(163, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "ID del celular que desea eliminar:";
             // 
@@ -1485,7 +1486,7 @@
             this.groupBox_EliminarCelulares.Controls.Add(this.labMostrarIDdelCelularSeleccionado);
             this.groupBox_EliminarCelulares.Controls.Add(this.btnEliminar_Celular);
             this.groupBox_EliminarCelulares.Controls.Add(this.label_ID_Celular_Eliminar);
-            this.groupBox_EliminarCelulares.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_EliminarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_EliminarCelulares.Location = new System.Drawing.Point(3, 3);
             this.groupBox_EliminarCelulares.Name = "groupBox_EliminarCelulares";
             this.groupBox_EliminarCelulares.Size = new System.Drawing.Size(413, 0);
@@ -1496,11 +1497,11 @@
             // labMostrarIDdelCelularSeleccionado
             // 
             this.labMostrarIDdelCelularSeleccionado.AutoSize = true;
-            this.labMostrarIDdelCelularSeleccionado.Font = new System.Drawing.Font("Montserrat", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labMostrarIDdelCelularSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labMostrarIDdelCelularSeleccionado.ForeColor = System.Drawing.Color.Brown;
             this.labMostrarIDdelCelularSeleccionado.Location = new System.Drawing.Point(3, 62);
             this.labMostrarIDdelCelularSeleccionado.Name = "labMostrarIDdelCelularSeleccionado";
-            this.labMostrarIDdelCelularSeleccionado.Size = new System.Drawing.Size(212, 15);
+            this.labMostrarIDdelCelularSeleccionado.Size = new System.Drawing.Size(207, 13);
             this.labMostrarIDdelCelularSeleccionado.TabIndex = 15;
             this.labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla";
             // 
@@ -1524,7 +1525,7 @@
             this.label_ID_Celular_Eliminar.AutoSize = true;
             this.label_ID_Celular_Eliminar.Location = new System.Drawing.Point(3, 40);
             this.label_ID_Celular_Eliminar.Name = "label_ID_Celular_Eliminar";
-            this.label_ID_Celular_Eliminar.Size = new System.Drawing.Size(187, 15);
+            this.label_ID_Celular_Eliminar.Size = new System.Drawing.Size(163, 13);
             this.label_ID_Celular_Eliminar.TabIndex = 0;
             this.label_ID_Celular_Eliminar.Text = "ID del celular que desea eliminar:";
             // 
@@ -1568,7 +1569,7 @@
             this.tablaCelulares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1584,13 +1585,13 @@
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaCelulares.Size = new System.Drawing.Size(866, 570);
+            this.tablaCelulares.Size = new System.Drawing.Size(866, 572);
             this.tablaCelulares.TabIndex = 19;
             this.tablaCelulares.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCelulares_CellClick);
             this.tablaCelulares.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tablaCelulares_CellFormatting);
@@ -1607,7 +1608,7 @@
             this.tablaTrabajos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1616,7 +1617,7 @@
             this.tablaTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1632,20 +1633,20 @@
             this.tablaTrabajos.ReadOnly = true;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaTrabajos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Montserrat", 8.249999F);
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.tablaTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.tablaTrabajos.RowTemplate.ReadOnly = true;
             this.tablaTrabajos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaTrabajos.Size = new System.Drawing.Size(866, 570);
+            this.tablaTrabajos.Size = new System.Drawing.Size(866, 572);
             this.tablaTrabajos.TabIndex = 20;
             this.tablaTrabajos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTrabajos_CellClick);
             this.tablaTrabajos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tablaTrabajos_CellFormatting);
@@ -1655,7 +1656,7 @@
             // 
             this.tabIndex_Pestañas.Controls.Add(this.tab_Celulares);
             this.tabIndex_Pestañas.Controls.Add(this.tab_Trabajos);
-            this.tabIndex_Pestañas.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabIndex_Pestañas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabIndex_Pestañas.Location = new System.Drawing.Point(474, 73);
             this.tabIndex_Pestañas.Name = "tabIndex_Pestañas";
             this.tabIndex_Pestañas.SelectedIndex = 0;
@@ -1668,11 +1669,11 @@
             // 
             this.tab_Celulares.Controls.Add(this.tablaCelulares);
             this.tab_Celulares.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tab_Celulares.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab_Celulares.Location = new System.Drawing.Point(4, 24);
+            this.tab_Celulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab_Celulares.Location = new System.Drawing.Point(4, 22);
             this.tab_Celulares.Name = "tab_Celulares";
             this.tab_Celulares.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Celulares.Size = new System.Drawing.Size(872, 576);
+            this.tab_Celulares.Size = new System.Drawing.Size(872, 578);
             this.tab_Celulares.TabIndex = 0;
             this.tab_Celulares.Text = "Celulares";
             this.tab_Celulares.UseVisualStyleBackColor = true;
@@ -1681,11 +1682,11 @@
             // 
             this.tab_Trabajos.Controls.Add(this.tablaTrabajos);
             this.tab_Trabajos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tab_Trabajos.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab_Trabajos.Location = new System.Drawing.Point(4, 24);
+            this.tab_Trabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab_Trabajos.Location = new System.Drawing.Point(4, 22);
             this.tab_Trabajos.Name = "tab_Trabajos";
             this.tab_Trabajos.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Trabajos.Size = new System.Drawing.Size(872, 576);
+            this.tab_Trabajos.Size = new System.Drawing.Size(872, 578);
             this.tab_Trabajos.TabIndex = 1;
             this.tab_Trabajos.Text = "Trabajos";
             this.tab_Trabajos.UseVisualStyleBackColor = true;

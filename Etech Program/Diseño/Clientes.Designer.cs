@@ -150,7 +150,7 @@
             this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -168,7 +168,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +186,7 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,7 +204,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,7 +223,7 @@
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Montserrat Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,7 +274,7 @@
             "Adelanto",
             "ID del celular"});
             this.MenuOpcionesClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MenuOpcionesClientes.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuOpcionesClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuOpcionesClientes.FormattingEnabled = true;
             this.MenuOpcionesClientes.Items.AddRange(new object[] {
             "Cedula",
@@ -284,7 +284,7 @@
             "Telefono"});
             this.MenuOpcionesClientes.Location = new System.Drawing.Point(144, 24);
             this.MenuOpcionesClientes.Name = "MenuOpcionesClientes";
-            this.MenuOpcionesClientes.Size = new System.Drawing.Size(121, 23);
+            this.MenuOpcionesClientes.Size = new System.Drawing.Size(121, 21);
             this.MenuOpcionesClientes.Sorted = true;
             this.MenuOpcionesClientes.TabIndex = 22;
             this.MenuOpcionesClientes.SelectedIndexChanged += new System.EventHandler(this.MenuOpcionesClientes_SelectedIndexChanged);
@@ -304,11 +304,11 @@
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label_Name_Form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Name_Form.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label_Name_Form.Location = new System.Drawing.Point(1115, 18);
             this.label_Name_Form.Name = "label_Name_Form";
-            this.label_Name_Form.Size = new System.Drawing.Size(154, 37);
+            this.label_Name_Form.Size = new System.Drawing.Size(156, 31);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "CLIENTES";
             // 
@@ -340,10 +340,10 @@
             // txtCampo_Busqueda
             // 
             this.txtCampo_Busqueda.Enabled = false;
-            this.txtCampo_Busqueda.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCampo_Busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCampo_Busqueda.Location = new System.Drawing.Point(271, 24);
             this.txtCampo_Busqueda.Name = "txtCampo_Busqueda";
-            this.txtCampo_Busqueda.Size = new System.Drawing.Size(323, 23);
+            this.txtCampo_Busqueda.Size = new System.Drawing.Size(323, 22);
             this.txtCampo_Busqueda.TabIndex = 8;
             this.txtCampo_Busqueda.TextChanged += new System.EventHandler(this.txtCampo_Busqueda_TextChanged);
             this.txtCampo_Busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCampo_Busqueda_KeyPress);
@@ -368,7 +368,7 @@
             this.tablaClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
@@ -377,7 +377,7 @@
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -392,14 +392,14 @@
             this.tablaClientes.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -415,10 +415,10 @@
             this.panel_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Agregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Agregar.Controls.Add(this.groupBox_Agregar);
-            this.panel_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(49, 81);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
             this.panel_Agregar.TabIndex = 21;
             // 
             // groupBox_Agregar
@@ -436,7 +436,7 @@
             this.groupBox_Agregar.Controls.Add(this.labelTelefono_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelNombre_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelCedula_Agregar);
-            this.groupBox_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Agregar.Location = new System.Drawing.Point(3, 2);
             this.groupBox_Agregar.Name = "groupBox_Agregar";
             this.groupBox_Agregar.Size = new System.Drawing.Size(411, 593);
@@ -449,32 +449,32 @@
             this.label_CaracteresRestantesCI_AgregarCelulares.AutoSize = true;
             this.label_CaracteresRestantesCI_AgregarCelulares.Location = new System.Drawing.Point(157, 80);
             this.label_CaracteresRestantesCI_AgregarCelulares.Name = "label_CaracteresRestantesCI_AgregarCelulares";
-            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(132, 15);
+            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(128, 13);
             this.label_CaracteresRestantesCI_AgregarCelulares.TabIndex = 15;
             this.label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres restantes:";
             this.label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
             // 
             // txtCelular_Agregar
             // 
-            this.txtCelular_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular_Agregar.Location = new System.Drawing.Point(6, 151);
             this.txtCelular_Agregar.Name = "txtCelular_Agregar";
-            this.txtCelular_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtCelular_Agregar.Size = new System.Drawing.Size(325, 20);
             this.txtCelular_Agregar.TabIndex = 9;
             // 
             // labelCelular_Agregar
             // 
             this.labelCelular_Agregar.AutoSize = true;
-            this.labelCelular_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCelular_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCelular_Agregar.Location = new System.Drawing.Point(3, 135);
             this.labelCelular_Agregar.Name = "labelCelular_Agregar";
-            this.labelCelular_Agregar.Size = new System.Drawing.Size(49, 15);
+            this.labelCelular_Agregar.Size = new System.Drawing.Size(50, 13);
             this.labelCelular_Agregar.TabIndex = 9;
             this.labelCelular_Agregar.Text = "Celular:";
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCliente.Location = new System.Drawing.Point(6, 342);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(75, 23);
@@ -485,74 +485,74 @@
             // 
             // txtCedula_Agregar
             // 
-            this.txtCedula_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCedula_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula_Agregar.Location = new System.Drawing.Point(6, 56);
             this.txtCedula_Agregar.Name = "txtCedula_Agregar";
-            this.txtCedula_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtCedula_Agregar.Size = new System.Drawing.Size(325, 20);
             this.txtCedula_Agregar.TabIndex = 7;
             this.txtCedula_Agregar.TextChanged += new System.EventHandler(this.txtCedula_Agregar_TextChanged);
             // 
             // txtTelefono_Agregar
             // 
-            this.txtTelefono_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono_Agregar.Location = new System.Drawing.Point(6, 256);
             this.txtTelefono_Agregar.Name = "txtTelefono_Agregar";
-            this.txtTelefono_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtTelefono_Agregar.Size = new System.Drawing.Size(325, 20);
             this.txtTelefono_Agregar.TabIndex = 11;
             // 
             // txtNombre_Agregar
             // 
-            this.txtNombre_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre_Agregar.Location = new System.Drawing.Point(6, 106);
             this.txtNombre_Agregar.Name = "txtNombre_Agregar";
-            this.txtNombre_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtNombre_Agregar.Size = new System.Drawing.Size(325, 20);
             this.txtNombre_Agregar.TabIndex = 8;
             // 
             // txtCorreoElectronico_Agregar
             // 
-            this.txtCorreoElectronico_Agregar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoElectronico_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoElectronico_Agregar.Location = new System.Drawing.Point(6, 206);
             this.txtCorreoElectronico_Agregar.Name = "txtCorreoElectronico_Agregar";
-            this.txtCorreoElectronico_Agregar.Size = new System.Drawing.Size(325, 21);
+            this.txtCorreoElectronico_Agregar.Size = new System.Drawing.Size(325, 20);
             this.txtCorreoElectronico_Agregar.TabIndex = 10;
             // 
             // labelCorreoElectronico_Agregar
             // 
             this.labelCorreoElectronico_Agregar.AutoSize = true;
-            this.labelCorreoElectronico_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreoElectronico_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCorreoElectronico_Agregar.Location = new System.Drawing.Point(3, 190);
             this.labelCorreoElectronico_Agregar.Name = "labelCorreoElectronico_Agregar";
-            this.labelCorreoElectronico_Agregar.Size = new System.Drawing.Size(114, 15);
+            this.labelCorreoElectronico_Agregar.Size = new System.Drawing.Size(115, 13);
             this.labelCorreoElectronico_Agregar.TabIndex = 3;
             this.labelCorreoElectronico_Agregar.Text = "Correo electronico:";
             // 
             // labelTelefono_Agregar
             // 
             this.labelTelefono_Agregar.AutoSize = true;
-            this.labelTelefono_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTelefono_Agregar.Location = new System.Drawing.Point(3, 240);
             this.labelTelefono_Agregar.Name = "labelTelefono_Agregar";
-            this.labelTelefono_Agregar.Size = new System.Drawing.Size(140, 15);
+            this.labelTelefono_Agregar.Size = new System.Drawing.Size(147, 13);
             this.labelTelefono_Agregar.TabIndex = 2;
             this.labelTelefono_Agregar.Text = "Telefono Fijo (Opcional):";
             // 
             // labelNombre_Agregar
             // 
             this.labelNombre_Agregar.AutoSize = true;
-            this.labelNombre_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre_Agregar.Location = new System.Drawing.Point(3, 90);
             this.labelNombre_Agregar.Name = "labelNombre_Agregar";
-            this.labelNombre_Agregar.Size = new System.Drawing.Size(116, 15);
+            this.labelNombre_Agregar.Size = new System.Drawing.Size(113, 13);
             this.labelNombre_Agregar.TabIndex = 1;
             this.labelNombre_Agregar.Text = "Nombre y Apellido:";
             // 
             // labelCedula_Agregar
             // 
             this.labelCedula_Agregar.AutoSize = true;
-            this.labelCedula_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCedula_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCedula_Agregar.Location = new System.Drawing.Point(3, 40);
             this.labelCedula_Agregar.Name = "labelCedula_Agregar";
-            this.labelCedula_Agregar.Size = new System.Drawing.Size(49, 15);
+            this.labelCedula_Agregar.Size = new System.Drawing.Size(50, 13);
             this.labelCedula_Agregar.TabIndex = 0;
             this.labelCedula_Agregar.Text = "Cédula:";
             // 
@@ -572,7 +572,7 @@
             this.panel_Modificar.Controls.Add(this.groupBox_Modificar);
             this.panel_Modificar.Location = new System.Drawing.Point(49, 81);
             this.panel_Modificar.Name = "panel_Modificar";
-            this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Modificar.Size = new System.Drawing.Size(419, 600);
             this.panel_Modificar.TabIndex = 22;
             // 
             // groupBox_Modificar
@@ -594,7 +594,7 @@
             this.groupBox_Modificar.Controls.Add(this.labelNombre_Modificar);
             this.groupBox_Modificar.Controls.Add(this.labelCedula_Modficiar);
             this.groupBox_Modificar.Controls.Add(this.labelColumna_Modificar);
-            this.groupBox_Modificar.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Modificar.Location = new System.Drawing.Point(4, 3);
             this.groupBox_Modificar.Name = "groupBox_Modificar";
             this.groupBox_Modificar.Size = new System.Drawing.Size(411, 593);
@@ -605,10 +605,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 15);
+            this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 32;
             this.label2.Text = "Selección:";
             // 
@@ -617,7 +617,7 @@
             this.txtNuevaInformacion.Enabled = false;
             this.txtNuevaInformacion.Location = new System.Drawing.Point(5, 130);
             this.txtNuevaInformacion.Name = "txtNuevaInformacion";
-            this.txtNuevaInformacion.Size = new System.Drawing.Size(400, 21);
+            this.txtNuevaInformacion.Size = new System.Drawing.Size(400, 20);
             this.txtNuevaInformacion.TabIndex = 31;
             this.txtNuevaInformacion.Visible = false;
             // 
@@ -627,7 +627,7 @@
             this.labelNueva_Informacion.Enabled = false;
             this.labelNueva_Informacion.Location = new System.Drawing.Point(2, 114);
             this.labelNueva_Informacion.Name = "labelNueva_Informacion";
-            this.labelNueva_Informacion.Size = new System.Drawing.Size(167, 15);
+            this.labelNueva_Informacion.Size = new System.Drawing.Size(146, 13);
             this.labelNueva_Informacion.TabIndex = 30;
             this.labelNueva_Informacion.Text = "Ingrese la nueva informacion:";
             this.labelNueva_Informacion.Visible = false;
@@ -637,7 +637,7 @@
             this.txtCelular_Modificar.Enabled = false;
             this.txtCelular_Modificar.Location = new System.Drawing.Point(5, 330);
             this.txtCelular_Modificar.Name = "txtCelular_Modificar";
-            this.txtCelular_Modificar.Size = new System.Drawing.Size(400, 21);
+            this.txtCelular_Modificar.Size = new System.Drawing.Size(400, 20);
             this.txtCelular_Modificar.TabIndex = 29;
             this.txtCelular_Modificar.Visible = false;
             // 
@@ -646,7 +646,7 @@
             this.txtCorreoElectronico_Modificar.Enabled = false;
             this.txtCorreoElectronico_Modificar.Location = new System.Drawing.Point(5, 280);
             this.txtCorreoElectronico_Modificar.Name = "txtCorreoElectronico_Modificar";
-            this.txtCorreoElectronico_Modificar.Size = new System.Drawing.Size(400, 21);
+            this.txtCorreoElectronico_Modificar.Size = new System.Drawing.Size(400, 20);
             this.txtCorreoElectronico_Modificar.TabIndex = 28;
             this.txtCorreoElectronico_Modificar.Visible = false;
             // 
@@ -656,7 +656,7 @@
             this.labelCelular_Modificar.Enabled = false;
             this.labelCelular_Modificar.Location = new System.Drawing.Point(2, 314);
             this.labelCelular_Modificar.Name = "labelCelular_Modificar";
-            this.labelCelular_Modificar.Size = new System.Drawing.Size(47, 15);
+            this.labelCelular_Modificar.Size = new System.Drawing.Size(42, 13);
             this.labelCelular_Modificar.TabIndex = 27;
             this.labelCelular_Modificar.Text = "Celular:";
             this.labelCelular_Modificar.Visible = false;
@@ -667,7 +667,7 @@
             this.labelCorreoElectronico_Modificar.Enabled = false;
             this.labelCorreoElectronico_Modificar.Location = new System.Drawing.Point(2, 264);
             this.labelCorreoElectronico_Modificar.Name = "labelCorreoElectronico_Modificar";
-            this.labelCorreoElectronico_Modificar.Size = new System.Drawing.Size(110, 15);
+            this.labelCorreoElectronico_Modificar.Size = new System.Drawing.Size(96, 13);
             this.labelCorreoElectronico_Modificar.TabIndex = 26;
             this.labelCorreoElectronico_Modificar.Text = "Correo electrónico:";
             this.labelCorreoElectronico_Modificar.Visible = false;
@@ -702,7 +702,7 @@
             this.txtTelefono_Modificar.Enabled = false;
             this.txtTelefono_Modificar.Location = new System.Drawing.Point(5, 230);
             this.txtTelefono_Modificar.Name = "txtTelefono_Modificar";
-            this.txtTelefono_Modificar.Size = new System.Drawing.Size(400, 21);
+            this.txtTelefono_Modificar.Size = new System.Drawing.Size(400, 20);
             this.txtTelefono_Modificar.TabIndex = 10;
             this.txtTelefono_Modificar.Visible = false;
             // 
@@ -712,7 +712,7 @@
             this.labelTelefono_Modificar.Enabled = false;
             this.labelTelefono_Modificar.Location = new System.Drawing.Point(2, 214);
             this.labelTelefono_Modificar.Name = "labelTelefono_Modificar";
-            this.labelTelefono_Modificar.Size = new System.Drawing.Size(56, 15);
+            this.labelTelefono_Modificar.Size = new System.Drawing.Size(52, 13);
             this.labelTelefono_Modificar.TabIndex = 9;
             this.labelTelefono_Modificar.Text = "Teléfono:";
             this.labelTelefono_Modificar.Visible = false;
@@ -732,7 +732,7 @@
             this.txtCedula_Modificar.Enabled = false;
             this.txtCedula_Modificar.Location = new System.Drawing.Point(5, 130);
             this.txtCedula_Modificar.Name = "txtCedula_Modificar";
-            this.txtCedula_Modificar.Size = new System.Drawing.Size(400, 21);
+            this.txtCedula_Modificar.Size = new System.Drawing.Size(400, 20);
             this.txtCedula_Modificar.TabIndex = 6;
             this.txtCedula_Modificar.Visible = false;
             // 
@@ -741,7 +741,7 @@
             this.txtNombre_Modificar.Enabled = false;
             this.txtNombre_Modificar.Location = new System.Drawing.Point(5, 180);
             this.txtNombre_Modificar.Name = "txtNombre_Modificar";
-            this.txtNombre_Modificar.Size = new System.Drawing.Size(400, 21);
+            this.txtNombre_Modificar.Size = new System.Drawing.Size(400, 20);
             this.txtNombre_Modificar.TabIndex = 4;
             this.txtNombre_Modificar.Visible = false;
             // 
@@ -751,7 +751,7 @@
             this.labelNombre_Modificar.Enabled = false;
             this.labelNombre_Modificar.Location = new System.Drawing.Point(2, 164);
             this.labelNombre_Modificar.Name = "labelNombre_Modificar";
-            this.labelNombre_Modificar.Size = new System.Drawing.Size(55, 15);
+            this.labelNombre_Modificar.Size = new System.Drawing.Size(47, 13);
             this.labelNombre_Modificar.TabIndex = 3;
             this.labelNombre_Modificar.Text = "Nombre:";
             this.labelNombre_Modificar.Visible = false;
@@ -762,7 +762,7 @@
             this.labelCedula_Modficiar.Enabled = false;
             this.labelCedula_Modficiar.Location = new System.Drawing.Point(2, 114);
             this.labelCedula_Modficiar.Name = "labelCedula_Modficiar";
-            this.labelCedula_Modficiar.Size = new System.Drawing.Size(47, 15);
+            this.labelCedula_Modficiar.Size = new System.Drawing.Size(43, 13);
             this.labelCedula_Modficiar.TabIndex = 2;
             this.labelCedula_Modficiar.Text = "Cedula:";
             this.labelCedula_Modficiar.Visible = false;
@@ -772,7 +772,7 @@
             this.labelColumna_Modificar.AutoSize = true;
             this.labelColumna_Modificar.Location = new System.Drawing.Point(2, 64);
             this.labelColumna_Modificar.Name = "labelColumna_Modificar";
-            this.labelColumna_Modificar.Size = new System.Drawing.Size(173, 15);
+            this.labelColumna_Modificar.Size = new System.Drawing.Size(149, 13);
             this.labelColumna_Modificar.TabIndex = 1;
             this.labelColumna_Modificar.Text = "Columna que desea modificar:";
             // 
@@ -793,7 +793,7 @@
             this.panel_Eliminar.Controls.Add(this.groupBox1);
             this.panel_Eliminar.Location = new System.Drawing.Point(49, 81);
             this.panel_Eliminar.Name = "panel_Eliminar";
-            this.panel_Eliminar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Eliminar.Size = new System.Drawing.Size(419, 600);
             this.panel_Eliminar.TabIndex = 23;
             // 
             // groupBox1
@@ -803,7 +803,7 @@
             this.groupBox1.Controls.Add(this.btnEliminarCliente);
             this.groupBox1.Controls.Add(this.txtCI_Eliminar);
             this.groupBox1.Controls.Add(this.label_Eliminar);
-            this.groupBox1.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(411, 590);
@@ -817,7 +817,7 @@
             this.label3.BackColor = System.Drawing.Color.LightCoral;
             this.label3.Location = new System.Drawing.Point(3, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 15);
+            this.label3.Size = new System.Drawing.Size(238, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Puede seleccionar al cliente haciendo click en él";
             // 
@@ -835,7 +835,7 @@
             // 
             this.txtCI_Eliminar.Location = new System.Drawing.Point(5, 56);
             this.txtCI_Eliminar.Name = "txtCI_Eliminar";
-            this.txtCI_Eliminar.Size = new System.Drawing.Size(401, 21);
+            this.txtCI_Eliminar.Size = new System.Drawing.Size(401, 20);
             this.txtCI_Eliminar.TabIndex = 7;
             // 
             // label_Eliminar
@@ -843,7 +843,7 @@
             this.label_Eliminar.AutoSize = true;
             this.label_Eliminar.Location = new System.Drawing.Point(3, 40);
             this.label_Eliminar.Name = "label_Eliminar";
-            this.label_Eliminar.Size = new System.Drawing.Size(187, 15);
+            this.label_Eliminar.Size = new System.Drawing.Size(162, 13);
             this.label_Eliminar.TabIndex = 0;
             this.label_Eliminar.Text = "CI del cliente que desea eliminar:";
             // 
@@ -865,7 +865,7 @@
             this.panel_Menu.Enabled = false;
             this.panel_Menu.Location = new System.Drawing.Point(49, 81);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(419, 0);
+            this.panel_Menu.Size = new System.Drawing.Size(419, 600);
             this.panel_Menu.TabIndex = 24;
             // 
             // pictureBox_EtechLogo_PanelMenu
@@ -884,7 +884,7 @@
             this.groupBox_Menu.Controls.Add(this.btnEstadisticas);
             this.groupBox_Menu.Controls.Add(this.btnUsuarios);
             this.groupBox_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox_Menu.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Menu.Location = new System.Drawing.Point(3, 83);
             this.groupBox_Menu.Name = "groupBox_Menu";
             this.groupBox_Menu.Size = new System.Drawing.Size(413, 517);
@@ -894,7 +894,7 @@
             // 
             // btnTaller
             // 
-            this.btnTaller.Font = new System.Drawing.Font("Montserrat SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaller.Image = global::Diseño.Properties.Resources.Taller2;
             this.btnTaller.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaller.Location = new System.Drawing.Point(6, 35);
@@ -908,7 +908,7 @@
             // 
             // btnEstadisticas
             // 
-            this.btnEstadisticas.Font = new System.Drawing.Font("Montserrat SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadisticas.Image = global::Diseño.Properties.Resources.Estadisticas;
             this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstadisticas.Location = new System.Drawing.Point(6, 208);
@@ -918,10 +918,11 @@
             this.btnEstadisticas.Text = "ESTADISTICAS";
             this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Montserrat SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.Image = global::Diseño.Properties.Resources.Usuarios;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.Location = new System.Drawing.Point(6, 122);

@@ -30,8 +30,9 @@ namespace Diseño
         string busqueda;
 
         //Instancias:
-        Usuarios Usuarios = new Usuarios();
         Principal Taller = new Principal();
+        Usuarios Usuarios = new Usuarios();
+        Estadisticas Estadisticas = new Estadisticas();
         MySqlConnection conn = DataBaseConnect.Conectarse();
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -950,15 +951,21 @@ namespace Diseño
             }
         }
 
+        private void btnTaller_Click(object sender, EventArgs e)
+        {
+            Taller.Show();
+            this.Hide();
+        }
+
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             Usuarios.Show();
             this.Hide();
         }
 
-        private void btnTaller_Click(object sender, EventArgs e)
+        private void btnEstadisticas_Click(object sender, EventArgs e)
         {
-            Taller.Show();
+            Estadisticas.Show();
             this.Hide();
         }
 

@@ -599,10 +599,6 @@ namespace Diseño
             {
                 Application.Restart();
             }
-            else
-            {
-
-            }
         }
 
         private void btnTaller_PanelMenu_Click(object sender, EventArgs e)
@@ -617,6 +613,25 @@ namespace Diseño
                 this.Hide();
                 mostrar.Show();
             }
+        }
+
+        private void btnClientes_groupBoxMenu_PanelMenu_Click(object sender, EventArgs e)
+        {
+            Clientes mostrar = new Clientes();
+            mostrar.Show();
+            this.Hide();
+        }
+
+        private void btnEstadisticas_groupboxManu_PanelMenu_Click(object sender, EventArgs e)
+        {
+            Estadisticas mostrar = new Estadisticas();
+            mostrar.Show();
+            this.Hide();
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnModificar_groupBoxModificar_PanelModificar_Click(object sender, EventArgs e)
@@ -683,13 +698,6 @@ namespace Diseño
         private void Usuarios_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-        }
-
-        private void btnClientes_groupBoxMenu_PanelMenu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Clientes show = new Clientes();
-            show.Show();
         }
 
         private void tabla_Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
