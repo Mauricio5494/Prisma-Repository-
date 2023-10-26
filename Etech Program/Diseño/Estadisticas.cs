@@ -24,11 +24,11 @@ namespace Diseño
             {
                 panelD.Width = 119;
                 btnInformacion.ForeColor = Color.Black;
-                btnMenuPrincipal.ForeColor = Color.Black;
+                btnMenuPrincipal_Panel.ForeColor = Color.Black;
                 btnCerrarSesion.ForeColor = Color.Black;
 
                 btnInformacion.BackColor = Color.FromArgb(255, 40, 40);
-                btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal_Panel.BackColor = Color.FromArgb(255, 40, 40);
                 btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
 
                 panel_Informacion.Location = new Point(122, 78);
@@ -39,11 +39,11 @@ namespace Diseño
             {
                 panelD.Width = 45;
                 btnInformacion.ForeColor = Color.FromArgb(255, 40, 40);
-                btnMenuPrincipal.ForeColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal_Panel.ForeColor = Color.FromArgb(255, 40, 40);
                 btnCerrarSesion.ForeColor = Color.FromArgb(255, 40, 40);
 
                 btnInformacion.BackColor = Color.FromArgb(255, 40, 40);
-                btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
+                btnMenuPrincipal_Panel.BackColor = Color.FromArgb(255, 40, 40);
                 btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
 
@@ -131,6 +131,28 @@ namespace Diseño
         private void timer_Reducir_Informacion_Tick(object sender, EventArgs e)
         {
             panel_Informacion.Height = 0;
+        }
+
+        private void btnTaller_Click(object sender, EventArgs e)
+        {
+            Principal show = new Principal();
+            this.Hide();
+            show.Show();
+
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Usuarios show = new Usuarios();
+            this.Hide();
+            show.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            Clientes show = new Clientes();
+            this.Hide();
+            show.Show();
         }
     }
 }

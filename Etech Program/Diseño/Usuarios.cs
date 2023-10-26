@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Diseño
@@ -359,6 +360,18 @@ namespace Diseño
             }
 
         }
+
+        //Finalmente, algo de seguridad en nuestro programa.
+        private static string SHA256EncriptarContraseña(string teclado)
+        {
+            using (SHA256 cripto = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(teclado);
+                byte[] hashbytes = cripto.ComputeHash(bytes);
+                return BitConverter.ToString(hashbytes).Replace("-", "").ToLower();
+            }
+        }
+
         private void panelAgregarUsuario_btnAgregar_Click(object sender, EventArgs e)
         {
             Confirmacion_Con_ContraseñaMaestro contraseñaMaestra = new Confirmacion_Con_ContraseñaMaestro();
@@ -388,8 +401,21 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                sql_Registro = "INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES ('" + Nombre + "', '" + Password + "','" + Telefono + "','" + Correo + "','" + Celular + "')";
+
+                                string contraseñaHash = SHA256EncriptarContraseña(Password);
+
+
+                                sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, @Contraseña, @Telefono, @CorreoElectronico, @Celular)";
                                 cmd_Registro = new MySqlCommand(sql_Registro, conn);
+
+                                cmd_Registro.Parameters.AddWithValue("@Nombre", Nombre);
+                                cmd_Registro.Parameters.AddWithValue("@Contraseña", contraseñaHash);
+                                cmd_Registro.Parameters.AddWithValue("@Telefono", Telefono);
+                                cmd_Registro.Parameters.AddWithValue("@CorreoElectronico", Correo);
+                                cmd_Registro.Parameters.AddWithValue("@Celular", Celular);
+
+                                Console.WriteLine(contraseñaHash);
+
                                 try
                                 {
                                     cmd_Registro.ExecuteNonQuery();
@@ -401,7 +427,7 @@ namespace Diseño
                             }
                             catch (Exception E)
                             {
-                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + E.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
@@ -435,8 +461,16 @@ namespace Diseño
             try
             {
                 conn.Open();
-                sql_Seguridad = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' and Contraseña = '" + Password + "'";
+
+
+                sql_Seguridad = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre ='@Nombre' AND contraseña ='@Contraseña'";
                 cmd_Seguridad = new MySqlCommand(sql_Seguridad, conn);
+
+                string contraseñaHash = SHA256EncriptarContraseña(txtPassword.Text);
+
+                cmd_Seguridad.Parameters.AddWithValue("@Nombre", Nombre);
+                cmd_Seguridad.Parameters.AddWithValue("@Contraseña", contraseñaHash);
+
                 reader = cmd_Seguridad.ExecuteReader();
 
                 if (reader.Read())
@@ -448,9 +482,9 @@ namespace Diseño
                     existe_otra_cuenta = false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Falló la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falló la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -631,7 +665,7 @@ namespace Diseño
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnModificar_groupBoxModificar_PanelModificar_Click(object sender, EventArgs e)

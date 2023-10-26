@@ -1031,14 +1031,14 @@ namespace Diseño
 
             try
             {
-                if (txtModelo_Agregar.Text != "" && txtDetallesUobservaciones_Agregar.Text != "" && txtMarca_Agregar.Text != "" && comboBox_AgregarCelular_CedulaDelDueño.Items != null && comboBox_AgregarCelular_IdDelTecnicoAcargo.Items != null)
+                if (txtModelo_Agregar.Text != "" && txtDetallesUobservaciones_Agregar.Text != "" && comboBox_AgregarCelular_CedulaDelDueño.Items != null && comboBox_AgregarCelular_IdDelTecnicoAcargo.Items != null)
                 {
 
                     if (radioButton_Arreglado_Agregar.Checked.Equals(true) || radioButton_Averiado_Agregar.Checked.Equals(true) || radioButton_EnProceso_Agregar.Checked.Equals(true) || radioButton_EnEspera_Agregar.Checked.Equals(true))
                     {
                         conn.Open();
                         modelo = txtModelo_Agregar.Text;
-                        marca = txtMarca_Agregar.Text;
+                      
                         imei = txtIMEI_Agregar.Text;
                         string detalles = txtDetallesUobservaciones_Agregar.Text;
                         if (radioButton_Arreglado_Agregar.Checked)
@@ -1069,9 +1069,9 @@ namespace Diseño
 
                             txtModelo_Agregar.Text = "";
                             txtIMEI_Agregar.Text = "";
-                            txtMarca_Agregar.Text = "";
+                          
                             txtDetallesUobservaciones_Agregar.Text = "";
-                            combobox_IDdelTecnico_AgregarTrabajos.SelectedItem = null;
+                          
                             comboBox_AgregarCelular_CedulaDelDueño.SelectedItem = null;
                         }
                         catch (Exception ex)
@@ -1389,98 +1389,8 @@ namespace Diseño
             }
         }
 
-        private void btnAgregar_Trabajo_Click(object sender, EventArgs e)
-        {
-            Tecnicos idDelTecnico = (Tecnicos)combobox_IDdelTecnico_AgregarTrabajos.SelectedItem;
-            Celulares idDelCelular = (Celulares)combobox_IDdelCelular_Trabajo_Agregar.SelectedItem;
-
-            if (txtPresupuesto_Agregar.Text != "" && txtProblema_Agregar.Text != "" && dateTimePicker_FechaDeIngreso_Agregar.Value != null && combobox_IDdelCelular_Trabajo_Agregar.Text != "" || combobox_IDdelTecnico_AgregarTrabajos.Text != "")
-            {
-                try
-                {
-                    conn.Open();
-                    string idCelular = idDelCelular.ID;
-                    plazo = dateTimePicker_Plazo_Agregar.Value;
-                    mesPlazo = plazo.Month;
-                    diaPlazo = plazo.Day;
-                    if (mesPlazo < 10)
-                    {
-                        if (diaPlazo < 10)
-                        {
-                            stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
-                        }
-                        else
-                        {
-                            stringPlazo = plazo.Year.ToString() + "-0" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
-                        }
-                    }
-                    else
-                    {
-                        if (diaPlazo < 10)
-                        {
-                            stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-0" + plazo.Day.ToString();
-                        }
-                        else
-                        {
-                            stringPlazo = plazo.Year.ToString() + "-" + plazo.Month.ToString() + "-" + plazo.Day.ToString();
-                        }
-                    }
-                    presupuesto = int.Parse(txtPresupuesto_Agregar.Text);
-                    problema = txtProblema_Agregar.Text;
-                    fechaIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
-                    mesFechaIngreso = fechaIngreso.Month;
-                    diaFechaIngreso = fechaIngreso.Day;
-                    if (mesFechaIngreso < 10)
-                    {
-                        if (diaFechaIngreso < 10)
-                        {
-                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
-                        }
-                        else
-                        {
-                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-0" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
-                        }
-                    }
-                    else
-                    {
-                        if (diaFechaIngreso < 10)
-                        {
-                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-0" + fechaIngreso.Day.ToString();
-                        }
-                        else
-                        {
-                            stringFechaIngreso = fechaIngreso.Year.ToString() + "-" + fechaIngreso.Month.ToString() + "-" + fechaIngreso.Day.ToString();
-                        }
-                    }
-                    adelanto = int.Parse(txtAdelanto_Agregar.Text);
-                    string tecnicoACargo = idDelTecnico.ID;
-
-                    insertarTrabajos = $"INSERT INTO Trabajos (ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular) VALUES({tecnicoACargo}, '{stringPlazo}', '{presupuesto}', '{problema}', '{stringFechaIngreso}', '{adelanto}', {idCelular})";
-                    cmd = new MySqlCommand(insertarTrabajos, conn);
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("No se ingreso correctamente el Trabajo\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    conn.Close();
-                    MostrarDatosEnLasTablasTrabajos();
-                }
-            }
-            else
-            {
-                MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-        }
+     
+        
 
         private void btnModificar_Trabajo_Click(object sender, EventArgs e)
         {
@@ -1617,15 +1527,7 @@ namespace Diseño
 
         private void timer_Agregar_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (panel_Agregar.Height < 600)
-            {
-                panel_Agregar.Height = panel_Agregar.Height + 12;
-                panel_Agregar.Enabled = true;
-            }
-            else
-            {
-                timer_Agregar_Agrandar.Enabled = false;
-            }
+            
         }
 
         private void timer_Modificar_Reducir_Tick(object sender, EventArgs e)
@@ -1736,30 +1638,12 @@ namespace Diseño
 
         private void timer_GroupBox_AgregarT_Reducir_Tick(object sender, EventArgs e)
         {
-            if (groupBox_AgregarTrabajos.Height > 0)
-            {
-                groupBox_AgregarTrabajos.Height = groupBox_AgregarTrabajos.Height - 12;
-                groupBox_AgregarTrabajos.Enabled = false;
-                groupBox_AgregarTrabajos.SendToBack();
-            }
-            else
-            {
-                timer_GroupBox_AgregarT_Reducir.Enabled = false;
-            }
+           
         }
 
         private void timer_GroupBox_AgregarT_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (groupBox_AgregarTrabajos.Height < 486)
-            {
-                groupBox_AgregarTrabajos.Height = 593;
-                groupBox_AgregarTrabajos.Enabled = true;
-                groupBox_AgregarTrabajos.BringToFront();
-            }
-            else
-            {
-                timer_GroupBox_AgregarT_Agrandar.Enabled = false;
-            }
+           
         }
 
         private void timer_GroupBox_Menu_Reducir_Tick(object sender, EventArgs e)
@@ -2355,17 +2239,6 @@ namespace Diseño
                         ID = id
                     });
 
-                    combobox_IDTecnico_Modificar_Trabajo.Items.Add(new Tecnicos
-                    {
-                        Nombre = nombre,
-                        ID = id
-                    });
-
-                    combobox_IDdelTecnico_AgregarTrabajos.Items.Add(new Tecnicos
-                    {
-                        Nombre = nombre,
-                        ID = id
-                    });
                 }
 
 
@@ -2833,6 +2706,21 @@ namespace Diseño
         {
             combobox_IDdelCelular_Trabajo_Agregar.Items.Clear();
             MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
+        }
+
+        private void groupBox_AgregarCelulares_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_Agregar_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void comboBox_AgregarCelular_CedulaDelDueño_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

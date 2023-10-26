@@ -30,25 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estadisticas));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelE = new System.Windows.Forms.Panel();
-            this.label_Name_Form = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
+            this.label_Name_Form = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.panelD = new System.Windows.Forms.Panel();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnMenuPrincipal_Panel = new System.Windows.Forms.Button();
             this.btnInformacion = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.tabIndex_Pestañas = new System.Windows.Forms.TabControl();
-            this.tab_Tecnicos = new System.Windows.Forms.TabPage();
             this.tab_Celulares = new System.Windows.Forms.TabPage();
+            this.GraficoCelulares = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tab_Tecnicos = new System.Windows.Forms.TabPage();
+            this.GraficoTecnicos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
@@ -57,29 +59,27 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.timer_Agrandar_Menu = new System.Windows.Forms.Timer(this.components);
             this.timer_Reducir_Menu = new System.Windows.Forms.Timer(this.components);
-            this.GraficoCelulares = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.GraficoTecnicos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_Informacion = new System.Windows.Forms.Panel();
+            this.groupBox_InformacionTecnicos = new System.Windows.Forms.GroupBox();
+            this.groupBox_InformacionCelulares = new System.Windows.Forms.GroupBox();
+            this.label_CelularesEnEspera = new System.Windows.Forms.Label();
+            this.label_CelularesAveriados = new System.Windows.Forms.Label();
+            this.label_CelularesEnProceso = new System.Windows.Forms.Label();
+            this.label_CelularesArreglados = new System.Windows.Forms.Label();
             this.timer_Agrandar_Informacion = new System.Windows.Forms.Timer(this.components);
             this.timer_Reducir_Informacion = new System.Windows.Forms.Timer(this.components);
-            this.groupBox_InformacionCelulares = new System.Windows.Forms.GroupBox();
-            this.label_CelularesArreglados = new System.Windows.Forms.Label();
-            this.label_CelularesEnProceso = new System.Windows.Forms.Label();
-            this.label_CelularesAveriados = new System.Windows.Forms.Label();
-            this.label_CelularesEnEspera = new System.Windows.Forms.Label();
-            this.groupBox_InformacionTecnicos = new System.Windows.Forms.GroupBox();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panelD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.tabIndex_Pestañas.SuspendLayout();
-            this.tab_Tecnicos.SuspendLayout();
             this.tab_Celulares.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GraficoCelulares)).BeginInit();
+            this.tab_Tecnicos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GraficoTecnicos)).BeginInit();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoCelulares)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoTecnicos)).BeginInit();
             this.panel_Informacion.SuspendLayout();
             this.groupBox_InformacionCelulares.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,16 @@
             this.panelE.Size = new System.Drawing.Size(2000, 74);
             this.panelE.TabIndex = 14;
             // 
+            // pictureBox_Taller
+            // 
+            this.pictureBox_Taller.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Taller.Image")));
+            this.pictureBox_Taller.Location = new System.Drawing.Point(1268, 8);
+            this.pictureBox_Taller.Name = "pictureBox_Taller";
+            this.pictureBox_Taller.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Taller.TabIndex = 21;
+            this.pictureBox_Taller.TabStop = false;
+            // 
             // label_Name_Form
             // 
             this.label_Name_Form.AutoSize = true;
@@ -108,26 +118,6 @@
             this.label_Name_Form.Size = new System.Drawing.Size(224, 31);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "ESTADISTICAS";
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Location = new System.Drawing.Point(1168, 25);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(10, 10);
-            this.btnCerrar.TabIndex = 24;
-            this.btnCerrar.Text = "cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox_Taller
-            // 
-            this.pictureBox_Taller.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Taller.Image")));
-            this.pictureBox_Taller.Location = new System.Drawing.Point(1268, 8);
-            this.pictureBox_Taller.Name = "pictureBox_Taller";
-            this.pictureBox_Taller.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Taller.TabIndex = 21;
-            this.pictureBox_Taller.TabStop = false;
             // 
             // btnMenu
             // 
@@ -142,11 +132,21 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Location = new System.Drawing.Point(1168, 25);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(10, 10);
+            this.btnCerrar.TabIndex = 24;
+            this.btnCerrar.Text = "cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            // 
             // panelD
             // 
             this.panelD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panelD.Controls.Add(this.btnRecargar);
-            this.panelD.Controls.Add(this.btnMenuPrincipal);
+            this.panelD.Controls.Add(this.btnMenuPrincipal_Panel);
             this.panelD.Controls.Add(this.btnInformacion);
             this.panelD.Controls.Add(this.btnCerrarSesion);
             this.panelD.Location = new System.Drawing.Point(-2, -2);
@@ -164,23 +164,23 @@
             this.btnRecargar.TabIndex = 21;
             this.btnRecargar.TabStop = false;
             // 
-            // btnMenuPrincipal
+            // btnMenuPrincipal_Panel
             // 
-            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
-            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 132);
-            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
-            this.btnMenuPrincipal.TabIndex = 14;
-            this.btnMenuPrincipal.Text = "Menu";
-            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
-            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenu_Principal_Click);
+            this.btnMenuPrincipal_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal_Panel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPrincipal_Panel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPrincipal_Panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal_Panel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal_Panel.Image = global::Diseño.Properties.Resources.casa;
+            this.btnMenuPrincipal_Panel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPrincipal_Panel.Location = new System.Drawing.Point(0, 132);
+            this.btnMenuPrincipal_Panel.Name = "btnMenuPrincipal_Panel";
+            this.btnMenuPrincipal_Panel.Size = new System.Drawing.Size(120, 46);
+            this.btnMenuPrincipal_Panel.TabIndex = 14;
+            this.btnMenuPrincipal_Panel.Text = "Menu";
+            this.btnMenuPrincipal_Panel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuPrincipal_Panel.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal_Panel.Click += new System.EventHandler(this.btnMenu_Principal_Click);
             // 
             // btnInformacion
             // 
@@ -230,6 +230,36 @@
             this.tabIndex_Pestañas.Size = new System.Drawing.Size(880, 604);
             this.tabIndex_Pestañas.TabIndex = 22;
             // 
+            // tab_Celulares
+            // 
+            this.tab_Celulares.Controls.Add(this.GraficoCelulares);
+            this.tab_Celulares.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tab_Celulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab_Celulares.Location = new System.Drawing.Point(4, 22);
+            this.tab_Celulares.Name = "tab_Celulares";
+            this.tab_Celulares.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Celulares.Size = new System.Drawing.Size(872, 578);
+            this.tab_Celulares.TabIndex = 0;
+            this.tab_Celulares.Text = "Celulares";
+            this.tab_Celulares.UseVisualStyleBackColor = true;
+            // 
+            // GraficoCelulares
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.GraficoCelulares.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.GraficoCelulares.Legends.Add(legend5);
+            this.GraficoCelulares.Location = new System.Drawing.Point(6, 3);
+            this.GraficoCelulares.Name = "GraficoCelulares";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.GraficoCelulares.Series.Add(series5);
+            this.GraficoCelulares.Size = new System.Drawing.Size(854, 569);
+            this.GraficoCelulares.TabIndex = 0;
+            this.GraficoCelulares.Text = "chart1";
+            // 
             // tab_Tecnicos
             // 
             this.tab_Tecnicos.Controls.Add(this.GraficoTecnicos);
@@ -243,18 +273,21 @@
             this.tab_Tecnicos.Text = "Tecnicos";
             this.tab_Tecnicos.UseVisualStyleBackColor = true;
             // 
-            // tab_Celulares
+            // GraficoTecnicos
             // 
-            this.tab_Celulares.Controls.Add(this.GraficoCelulares);
-            this.tab_Celulares.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tab_Celulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab_Celulares.Location = new System.Drawing.Point(4, 22);
-            this.tab_Celulares.Name = "tab_Celulares";
-            this.tab_Celulares.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Celulares.Size = new System.Drawing.Size(872, 578);
-            this.tab_Celulares.TabIndex = 0;
-            this.tab_Celulares.Text = "Celulares";
-            this.tab_Celulares.UseVisualStyleBackColor = true;
+            chartArea6.Name = "ChartArea1";
+            this.GraficoTecnicos.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.GraficoTecnicos.Legends.Add(legend6);
+            this.GraficoTecnicos.Location = new System.Drawing.Point(6, 3);
+            this.GraficoTecnicos.Name = "GraficoTecnicos";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.GraficoTecnicos.Series.Add(series6);
+            this.GraficoTecnicos.Size = new System.Drawing.Size(854, 569);
+            this.GraficoTecnicos.TabIndex = 1;
+            this.GraficoTecnicos.Text = "chart2";
             // 
             // panel_Menu
             // 
@@ -300,6 +333,7 @@
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "CLIENTES";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnTaller
             // 
@@ -311,6 +345,7 @@
             this.btnTaller.TabIndex = 1;
             this.btnTaller.Text = "TALLER";
             this.btnTaller.UseVisualStyleBackColor = true;
+            this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
             // 
             // btnUsuarios
             // 
@@ -323,6 +358,7 @@
             this.btnUsuarios.TabIndex = 0;
             this.btnUsuarios.Text = "USUARIOS";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // timer_Agrandar_Menu
             // 
@@ -331,39 +367,6 @@
             // timer_Reducir_Menu
             // 
             this.timer_Reducir_Menu.Tick += new System.EventHandler(this.timer_Reducir_Menu_Tick);
-            // 
-            // GraficoCelulares
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.GraficoCelulares.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.GraficoCelulares.Legends.Add(legend1);
-            this.GraficoCelulares.Location = new System.Drawing.Point(6, 3);
-            this.GraficoCelulares.Name = "GraficoCelulares";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.GraficoCelulares.Series.Add(series1);
-            this.GraficoCelulares.Size = new System.Drawing.Size(854, 569);
-            this.GraficoCelulares.TabIndex = 0;
-            this.GraficoCelulares.Text = "chart1";
-            // 
-            // GraficoTecnicos
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.GraficoTecnicos.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.GraficoTecnicos.Legends.Add(legend2);
-            this.GraficoTecnicos.Location = new System.Drawing.Point(6, 3);
-            this.GraficoTecnicos.Name = "GraficoTecnicos";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.GraficoTecnicos.Series.Add(series2);
-            this.GraficoTecnicos.Size = new System.Drawing.Size(854, 569);
-            this.GraficoTecnicos.TabIndex = 1;
-            this.GraficoTecnicos.Text = "chart2";
             // 
             // panel_Informacion
             // 
@@ -375,13 +378,16 @@
             this.panel_Informacion.Size = new System.Drawing.Size(419, 600);
             this.panel_Informacion.TabIndex = 24;
             // 
-            // timer_Agrandar_Informacion
+            // groupBox_InformacionTecnicos
             // 
-            this.timer_Agrandar_Informacion.Tick += new System.EventHandler(this.timer_Agrandar_Informacion_Tick);
-            // 
-            // timer_Reducir_Informacion
-            // 
-            this.timer_Reducir_Informacion.Tick += new System.EventHandler(this.timer_Reducir_Informacion_Tick);
+            this.groupBox_InformacionTecnicos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_InformacionTecnicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_InformacionTecnicos.Location = new System.Drawing.Point(3, 284);
+            this.groupBox_InformacionTecnicos.Name = "groupBox_InformacionTecnicos";
+            this.groupBox_InformacionTecnicos.Size = new System.Drawing.Size(413, 310);
+            this.groupBox_InformacionTecnicos.TabIndex = 4;
+            this.groupBox_InformacionTecnicos.TabStop = false;
+            this.groupBox_InformacionTecnicos.Text = "Datos de tecnicos";
             // 
             // groupBox_InformacionCelulares
             // 
@@ -398,23 +404,14 @@
             this.groupBox_InformacionCelulares.TabStop = false;
             this.groupBox_InformacionCelulares.Text = "Datos de celulares";
             // 
-            // label_CelularesArreglados
+            // label_CelularesEnEspera
             // 
-            this.label_CelularesArreglados.AutoSize = true;
-            this.label_CelularesArreglados.Location = new System.Drawing.Point(6, 33);
-            this.label_CelularesArreglados.Name = "label_CelularesArreglados";
-            this.label_CelularesArreglados.Size = new System.Drawing.Size(169, 20);
-            this.label_CelularesArreglados.TabIndex = 0;
-            this.label_CelularesArreglados.Text = "Celulares arreglaos:";
-            // 
-            // label_CelularesEnProceso
-            // 
-            this.label_CelularesEnProceso.AutoSize = true;
-            this.label_CelularesEnProceso.Location = new System.Drawing.Point(6, 121);
-            this.label_CelularesEnProceso.Name = "label_CelularesEnProceso";
-            this.label_CelularesEnProceso.Size = new System.Drawing.Size(183, 20);
-            this.label_CelularesEnProceso.TabIndex = 1;
-            this.label_CelularesEnProceso.Text = "Celulares en proceso:";
+            this.label_CelularesEnEspera.AutoSize = true;
+            this.label_CelularesEnEspera.Location = new System.Drawing.Point(6, 170);
+            this.label_CelularesEnEspera.Name = "label_CelularesEnEspera";
+            this.label_CelularesEnEspera.Size = new System.Drawing.Size(174, 20);
+            this.label_CelularesEnEspera.TabIndex = 3;
+            this.label_CelularesEnEspera.Text = "Celulares en espera:";
             // 
             // label_CelularesAveriados
             // 
@@ -425,25 +422,31 @@
             this.label_CelularesAveriados.TabIndex = 2;
             this.label_CelularesAveriados.Text = "Celulares averiados:";
             // 
-            // label_CelularesEnEspera
+            // label_CelularesEnProceso
             // 
-            this.label_CelularesEnEspera.AutoSize = true;
-            this.label_CelularesEnEspera.Location = new System.Drawing.Point(6, 170);
-            this.label_CelularesEnEspera.Name = "label_CelularesEnEspera";
-            this.label_CelularesEnEspera.Size = new System.Drawing.Size(174, 20);
-            this.label_CelularesEnEspera.TabIndex = 3;
-            this.label_CelularesEnEspera.Text = "Celulares en espera:";
+            this.label_CelularesEnProceso.AutoSize = true;
+            this.label_CelularesEnProceso.Location = new System.Drawing.Point(6, 121);
+            this.label_CelularesEnProceso.Name = "label_CelularesEnProceso";
+            this.label_CelularesEnProceso.Size = new System.Drawing.Size(183, 20);
+            this.label_CelularesEnProceso.TabIndex = 1;
+            this.label_CelularesEnProceso.Text = "Celulares en proceso:";
             // 
-            // groupBox_InformacionTecnicos
+            // label_CelularesArreglados
             // 
-            this.groupBox_InformacionTecnicos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_InformacionTecnicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_InformacionTecnicos.Location = new System.Drawing.Point(3, 284);
-            this.groupBox_InformacionTecnicos.Name = "groupBox_InformacionTecnicos";
-            this.groupBox_InformacionTecnicos.Size = new System.Drawing.Size(413, 310);
-            this.groupBox_InformacionTecnicos.TabIndex = 4;
-            this.groupBox_InformacionTecnicos.TabStop = false;
-            this.groupBox_InformacionTecnicos.Text = "Datos de tecnicos";
+            this.label_CelularesArreglados.AutoSize = true;
+            this.label_CelularesArreglados.Location = new System.Drawing.Point(6, 33);
+            this.label_CelularesArreglados.Name = "label_CelularesArreglados";
+            this.label_CelularesArreglados.Size = new System.Drawing.Size(179, 20);
+            this.label_CelularesArreglados.TabIndex = 0;
+            this.label_CelularesArreglados.Text = "Celulares arreglados:";
+            // 
+            // timer_Agrandar_Informacion
+            // 
+            this.timer_Agrandar_Informacion.Tick += new System.EventHandler(this.timer_Agrandar_Informacion_Tick);
+            // 
+            // timer_Reducir_Informacion
+            // 
+            this.timer_Reducir_Informacion.Tick += new System.EventHandler(this.timer_Reducir_Informacion_Tick);
             // 
             // Estadisticas
             // 
@@ -463,13 +466,13 @@
             this.panelD.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.tabIndex_Pestañas.ResumeLayout(false);
-            this.tab_Tecnicos.ResumeLayout(false);
             this.tab_Celulares.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GraficoCelulares)).EndInit();
+            this.tab_Tecnicos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GraficoTecnicos)).EndInit();
             this.panel_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoCelulares)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoTecnicos)).EndInit();
             this.panel_Informacion.ResumeLayout(false);
             this.groupBox_InformacionCelulares.ResumeLayout(false);
             this.groupBox_InformacionCelulares.PerformLayout();
@@ -486,7 +489,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panelD;
         private System.Windows.Forms.PictureBox btnRecargar;
-        private System.Windows.Forms.Button btnMenuPrincipal;
+        private System.Windows.Forms.Button btnMenuPrincipal_Panel;
         private System.Windows.Forms.Button btnInformacion;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.TabControl tabIndex_Pestañas;

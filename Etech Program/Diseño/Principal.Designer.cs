@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
@@ -54,22 +54,12 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
-            this.groupBox_AgregarTrabajos = new System.Windows.Forms.GroupBox();
-            this.combobox_IDdelCelular_Trabajo_Agregar = new System.Windows.Forms.ComboBox();
-            this.combobox_IDdelTecnico_AgregarTrabajos = new System.Windows.Forms.ComboBox();
-            this.labelID_Tecnico_Agregar = new System.Windows.Forms.Label();
             this.dateTimePicker_FechaDeIngreso_Agregar = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_Plazo_Agregar = new System.Windows.Forms.DateTimePicker();
-            this.btnAgregar_Trabajo = new System.Windows.Forms.Button();
             this.txtAdelanto_Agregar = new System.Windows.Forms.TextBox();
             this.labelAdelanto_Agregar = new System.Windows.Forms.Label();
             this.labelFechaDeIngreso_Agregar = new System.Windows.Forms.Label();
-            this.txtProblema_Agregar = new System.Windows.Forms.TextBox();
-            this.labelProblema_Agregar = new System.Windows.Forms.Label();
             this.txtPresupuesto_Agregar = new System.Windows.Forms.TextBox();
             this.labelPresupuesto_Agregar = new System.Windows.Forms.Label();
-            this.labelPlazo_Agregar = new System.Windows.Forms.Label();
-            this.labelTrabajo_ID_Agregar = new System.Windows.Forms.Label();
             this.groupBox_AgregarCelulares = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_CaracteresRestantes_Detalles_Agregar = new System.Windows.Forms.Label();
@@ -83,8 +73,6 @@
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo = new System.Windows.Forms.ComboBox();
             this.btnAgregar_Celular = new System.Windows.Forms.Button();
             this.labelTecnico_A_Cargo_Agregar = new System.Windows.Forms.Label();
-            this.txtMarca_Agregar = new System.Windows.Forms.TextBox();
-            this.labelMarca_Agregar = new System.Windows.Forms.Label();
             this.txtModelo_Agregar = new System.Windows.Forms.TextBox();
             this.labelModelo_Agregar = new System.Windows.Forms.Label();
             this.txtIMEI_Agregar = new System.Windows.Forms.TextBox();
@@ -178,7 +166,6 @@
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panel_Agregar.SuspendLayout();
-            this.groupBox_AgregarTrabajos.SuspendLayout();
             this.groupBox_AgregarCelulares.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel_Menu.SuspendLayout();
@@ -461,100 +448,26 @@
             // panel_Agregar
             // 
             this.panel_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel_Agregar.Controls.Add(this.groupBox_AgregarTrabajos);
             this.panel_Agregar.Controls.Add(this.groupBox_AgregarCelulares);
             this.panel_Agregar.Enabled = false;
             this.panel_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(49, 78);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
             this.panel_Agregar.TabIndex = 15;
-            // 
-            // groupBox_AgregarTrabajos
-            // 
-            this.groupBox_AgregarTrabajos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_AgregarTrabajos.Controls.Add(this.combobox_IDdelCelular_Trabajo_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.combobox_IDdelTecnico_AgregarTrabajos);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.labelID_Tecnico_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_FechaDeIngreso_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.dateTimePicker_Plazo_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.btnAgregar_Trabajo);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.txtAdelanto_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.labelAdelanto_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.labelFechaDeIngreso_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.txtProblema_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.labelProblema_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.txtPresupuesto_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.labelPresupuesto_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.labelPlazo_Agregar);
-            this.groupBox_AgregarTrabajos.Controls.Add(this.labelTrabajo_ID_Agregar);
-            this.groupBox_AgregarTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_AgregarTrabajos.Location = new System.Drawing.Point(3, 3);
-            this.groupBox_AgregarTrabajos.Name = "groupBox_AgregarTrabajos";
-            this.groupBox_AgregarTrabajos.Size = new System.Drawing.Size(413, 0);
-            this.groupBox_AgregarTrabajos.TabIndex = 16;
-            this.groupBox_AgregarTrabajos.TabStop = false;
-            this.groupBox_AgregarTrabajos.Text = "Ingrese un trabajo";
-            // 
-            // combobox_IDdelCelular_Trabajo_Agregar
-            // 
-            this.combobox_IDdelCelular_Trabajo_Agregar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combobox_IDdelCelular_Trabajo_Agregar.FormattingEnabled = true;
-            this.combobox_IDdelCelular_Trabajo_Agregar.Location = new System.Drawing.Point(6, 58);
-            this.combobox_IDdelCelular_Trabajo_Agregar.Name = "combobox_IDdelCelular_Trabajo_Agregar";
-            this.combobox_IDdelCelular_Trabajo_Agregar.Size = new System.Drawing.Size(401, 21);
-            this.combobox_IDdelCelular_Trabajo_Agregar.Sorted = true;
-            this.combobox_IDdelCelular_Trabajo_Agregar.TabIndex = 18;
-            this.combobox_IDdelCelular_Trabajo_Agregar.Click += new System.EventHandler(this.combobox_IDdelCelular_Trabajo_Agregar_Click);
-            // 
-            // combobox_IDdelTecnico_AgregarTrabajos
-            // 
-            this.combobox_IDdelTecnico_AgregarTrabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combobox_IDdelTecnico_AgregarTrabajos.FormattingEnabled = true;
-            this.combobox_IDdelTecnico_AgregarTrabajos.Location = new System.Drawing.Point(6, 365);
-            this.combobox_IDdelTecnico_AgregarTrabajos.Name = "combobox_IDdelTecnico_AgregarTrabajos";
-            this.combobox_IDdelTecnico_AgregarTrabajos.Size = new System.Drawing.Size(401, 21);
-            this.combobox_IDdelTecnico_AgregarTrabajos.TabIndex = 24;
-            // 
-            // labelID_Tecnico_Agregar
-            // 
-            this.labelID_Tecnico_Agregar.AutoSize = true;
-            this.labelID_Tecnico_Agregar.Location = new System.Drawing.Point(6, 347);
-            this.labelID_Tecnico_Agregar.Name = "labelID_Tecnico_Agregar";
-            this.labelID_Tecnico_Agregar.Size = new System.Drawing.Size(88, 13);
-            this.labelID_Tecnico_Agregar.TabIndex = 15;
-            this.labelID_Tecnico_Agregar.Text = "Tecnico a cargo:";
+            this.panel_Agregar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Agregar_Paint);
             // 
             // dateTimePicker_FechaDeIngreso_Agregar
             // 
             this.dateTimePicker_FechaDeIngreso_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 270);
+            this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(2, 300);
             this.dateTimePicker_FechaDeIngreso_Agregar.Name = "dateTimePicker_FechaDeIngreso_Agregar";
             this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(243, 20);
             this.dateTimePicker_FechaDeIngreso_Agregar.TabIndex = 22;
             // 
-            // dateTimePicker_Plazo_Agregar
-            // 
-            this.dateTimePicker_Plazo_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker_Plazo_Agregar.CustomFormat = "";
-            this.dateTimePicker_Plazo_Agregar.Location = new System.Drawing.Point(6, 99);
-            this.dateTimePicker_Plazo_Agregar.Name = "dateTimePicker_Plazo_Agregar";
-            this.dateTimePicker_Plazo_Agregar.Size = new System.Drawing.Size(243, 20);
-            this.dateTimePicker_Plazo_Agregar.TabIndex = 19;
-            // 
-            // btnAgregar_Trabajo
-            // 
-            this.btnAgregar_Trabajo.Location = new System.Drawing.Point(6, 426);
-            this.btnAgregar_Trabajo.Name = "btnAgregar_Trabajo";
-            this.btnAgregar_Trabajo.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar_Trabajo.TabIndex = 25;
-            this.btnAgregar_Trabajo.Text = "Agregar";
-            this.btnAgregar_Trabajo.UseVisualStyleBackColor = true;
-            this.btnAgregar_Trabajo.Click += new System.EventHandler(this.btnAgregar_Trabajo_Click);
-            // 
             // txtAdelanto_Agregar
             // 
-            this.txtAdelanto_Agregar.Location = new System.Drawing.Point(6, 313);
+            this.txtAdelanto_Agregar.Location = new System.Drawing.Point(2, 72);
             this.txtAdelanto_Agregar.Name = "txtAdelanto_Agregar";
             this.txtAdelanto_Agregar.Size = new System.Drawing.Size(401, 20);
             this.txtAdelanto_Agregar.TabIndex = 23;
@@ -562,7 +475,7 @@
             // labelAdelanto_Agregar
             // 
             this.labelAdelanto_Agregar.AutoSize = true;
-            this.labelAdelanto_Agregar.Location = new System.Drawing.Point(6, 297);
+            this.labelAdelanto_Agregar.Location = new System.Drawing.Point(3, 56);
             this.labelAdelanto_Agregar.Name = "labelAdelanto_Agregar";
             this.labelAdelanto_Agregar.Size = new System.Drawing.Size(82, 13);
             this.labelAdelanto_Agregar.TabIndex = 10;
@@ -571,32 +484,15 @@
             // labelFechaDeIngreso_Agregar
             // 
             this.labelFechaDeIngreso_Agregar.AutoSize = true;
-            this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(6, 254);
+            this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(2, 279);
             this.labelFechaDeIngreso_Agregar.Name = "labelFechaDeIngreso_Agregar";
             this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(147, 13);
             this.labelFechaDeIngreso_Agregar.TabIndex = 8;
             this.labelFechaDeIngreso_Agregar.Text = "Cuando ingresó el dispositivo:";
             // 
-            // txtProblema_Agregar
-            // 
-            this.txtProblema_Agregar.Location = new System.Drawing.Point(6, 193);
-            this.txtProblema_Agregar.Multiline = true;
-            this.txtProblema_Agregar.Name = "txtProblema_Agregar";
-            this.txtProblema_Agregar.Size = new System.Drawing.Size(401, 53);
-            this.txtProblema_Agregar.TabIndex = 21;
-            // 
-            // labelProblema_Agregar
-            // 
-            this.labelProblema_Agregar.AutoSize = true;
-            this.labelProblema_Agregar.Location = new System.Drawing.Point(3, 177);
-            this.labelProblema_Agregar.Name = "labelProblema_Agregar";
-            this.labelProblema_Agregar.Size = new System.Drawing.Size(109, 13);
-            this.labelProblema_Agregar.TabIndex = 6;
-            this.labelProblema_Agregar.Text = "Describa el problema:";
-            // 
             // txtPresupuesto_Agregar
             // 
-            this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(6, 143);
+            this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(2, 249);
             this.txtPresupuesto_Agregar.Name = "txtPresupuesto_Agregar";
             this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(401, 20);
             this.txtPresupuesto_Agregar.TabIndex = 20;
@@ -604,29 +500,11 @@
             // labelPresupuesto_Agregar
             // 
             this.labelPresupuesto_Agregar.AutoSize = true;
-            this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(3, 127);
+            this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(5, 230);
             this.labelPresupuesto_Agregar.Name = "labelPresupuesto_Agregar";
             this.labelPresupuesto_Agregar.Size = new System.Drawing.Size(69, 13);
             this.labelPresupuesto_Agregar.TabIndex = 4;
             this.labelPresupuesto_Agregar.Text = "Presupuesto:";
-            // 
-            // labelPlazo_Agregar
-            // 
-            this.labelPlazo_Agregar.AutoSize = true;
-            this.labelPlazo_Agregar.Location = new System.Drawing.Point(3, 83);
-            this.labelPlazo_Agregar.Name = "labelPlazo_Agregar";
-            this.labelPlazo_Agregar.Size = new System.Drawing.Size(36, 13);
-            this.labelPlazo_Agregar.TabIndex = 2;
-            this.labelPlazo_Agregar.Text = "Plazo:";
-            // 
-            // labelTrabajo_ID_Agregar
-            // 
-            this.labelTrabajo_ID_Agregar.AutoSize = true;
-            this.labelTrabajo_ID_Agregar.Location = new System.Drawing.Point(3, 40);
-            this.labelTrabajo_ID_Agregar.Name = "labelTrabajo_ID_Agregar";
-            this.labelTrabajo_ID_Agregar.Size = new System.Drawing.Size(42, 13);
-            this.labelTrabajo_ID_Agregar.TabIndex = 0;
-            this.labelTrabajo_ID_Agregar.Text = "Celular:";
             // 
             // groupBox_AgregarCelulares
             // 
@@ -634,10 +512,14 @@
             this.groupBox_AgregarCelulares.Controls.Add(this.groupBox1);
             this.groupBox_AgregarCelulares.Controls.Add(this.comboBox_AgregarCelular_CedulaDelDueño);
             this.groupBox_AgregarCelulares.Controls.Add(this.comboBox_AgregarCelular_IdDelTecnicoAcargo);
+            this.groupBox_AgregarCelulares.Controls.Add(this.dateTimePicker_FechaDeIngreso_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.btnAgregar_Celular);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelAdelanto_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtAdelanto_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelTecnico_A_Cargo_Agregar);
-            this.groupBox_AgregarCelulares.Controls.Add(this.txtMarca_Agregar);
-            this.groupBox_AgregarCelulares.Controls.Add(this.labelMarca_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelFechaDeIngreso_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.labelPresupuesto_Agregar);
+            this.groupBox_AgregarCelulares.Controls.Add(this.txtPresupuesto_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.txtModelo_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.labelModelo_Agregar);
             this.groupBox_AgregarCelulares.Controls.Add(this.txtIMEI_Agregar);
@@ -646,10 +528,11 @@
             this.groupBox_AgregarCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_AgregarCelulares.Location = new System.Drawing.Point(3, 3);
             this.groupBox_AgregarCelulares.Name = "groupBox_AgregarCelulares";
-            this.groupBox_AgregarCelulares.Size = new System.Drawing.Size(413, 0);
+            this.groupBox_AgregarCelulares.Size = new System.Drawing.Size(413, 596);
             this.groupBox_AgregarCelulares.TabIndex = 0;
             this.groupBox_AgregarCelulares.TabStop = false;
             this.groupBox_AgregarCelulares.Text = "Ingrese un celular";
+            this.groupBox_AgregarCelulares.Enter += new System.EventHandler(this.groupBox_AgregarCelulares_Enter);
             // 
             // groupBox1
             // 
@@ -660,7 +543,7 @@
             this.groupBox1.Controls.Add(this.radioButton_EnProceso_Agregar);
             this.groupBox1.Controls.Add(this.radioButton_EnEspera_Agregar);
             this.groupBox1.Controls.Add(this.radioButton_Averiado_Agregar);
-            this.groupBox1.Location = new System.Drawing.Point(6, 297);
+            this.groupBox1.Location = new System.Drawing.Point(9, 365);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(395, 184);
             this.groupBox1.TabIndex = 37;
@@ -758,16 +641,17 @@
             // comboBox_AgregarCelular_CedulaDelDueño
             // 
             this.comboBox_AgregarCelular_CedulaDelDueño.FormattingEnabled = true;
-            this.comboBox_AgregarCelular_CedulaDelDueño.Location = new System.Drawing.Point(6, 58);
+            this.comboBox_AgregarCelular_CedulaDelDueño.Location = new System.Drawing.Point(2, 32);
             this.comboBox_AgregarCelular_CedulaDelDueño.Name = "comboBox_AgregarCelular_CedulaDelDueño";
             this.comboBox_AgregarCelular_CedulaDelDueño.Size = new System.Drawing.Size(401, 21);
             this.comboBox_AgregarCelular_CedulaDelDueño.Sorted = true;
             this.comboBox_AgregarCelular_CedulaDelDueño.TabIndex = 16;
+            this.comboBox_AgregarCelular_CedulaDelDueño.SelectedIndexChanged += new System.EventHandler(this.comboBox_AgregarCelular_CedulaDelDueño_SelectedIndexChanged);
             // 
             // comboBox_AgregarCelular_IdDelTecnicoAcargo
             // 
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.FormattingEnabled = true;
-            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(6, 255);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(3, 197);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Name = "comboBox_AgregarCelular_IdDelTecnicoAcargo";
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(398, 21);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Sorted = true;
@@ -776,7 +660,7 @@
             // btnAgregar_Celular
             // 
             this.btnAgregar_Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar_Celular.Location = new System.Drawing.Point(306, 502);
+            this.btnAgregar_Celular.Location = new System.Drawing.Point(315, 558);
             this.btnAgregar_Celular.Name = "btnAgregar_Celular";
             this.btnAgregar_Celular.Size = new System.Drawing.Size(92, 30);
             this.btnAgregar_Celular.TabIndex = 23;
@@ -787,31 +671,15 @@
             // labelTecnico_A_Cargo_Agregar
             // 
             this.labelTecnico_A_Cargo_Agregar.AutoSize = true;
-            this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 240);
+            this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(1, 182);
             this.labelTecnico_A_Cargo_Agregar.Name = "labelTecnico_A_Cargo_Agregar";
             this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(103, 13);
             this.labelTecnico_A_Cargo_Agregar.TabIndex = 9;
             this.labelTecnico_A_Cargo_Agregar.Text = "Tecnico resposable:";
             // 
-            // txtMarca_Agregar
-            // 
-            this.txtMarca_Agregar.Location = new System.Drawing.Point(6, 111);
-            this.txtMarca_Agregar.Name = "txtMarca_Agregar";
-            this.txtMarca_Agregar.Size = new System.Drawing.Size(398, 20);
-            this.txtMarca_Agregar.TabIndex = 17;
-            // 
-            // labelMarca_Agregar
-            // 
-            this.labelMarca_Agregar.AutoSize = true;
-            this.labelMarca_Agregar.Location = new System.Drawing.Point(3, 95);
-            this.labelMarca_Agregar.Name = "labelMarca_Agregar";
-            this.labelMarca_Agregar.Size = new System.Drawing.Size(40, 13);
-            this.labelMarca_Agregar.TabIndex = 6;
-            this.labelMarca_Agregar.Text = "Marca:";
-            // 
             // txtModelo_Agregar
             // 
-            this.txtModelo_Agregar.Location = new System.Drawing.Point(7, 158);
+            this.txtModelo_Agregar.Location = new System.Drawing.Point(2, 113);
             this.txtModelo_Agregar.Name = "txtModelo_Agregar";
             this.txtModelo_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtModelo_Agregar.TabIndex = 18;
@@ -819,7 +687,7 @@
             // labelModelo_Agregar
             // 
             this.labelModelo_Agregar.AutoSize = true;
-            this.labelModelo_Agregar.Location = new System.Drawing.Point(4, 142);
+            this.labelModelo_Agregar.Location = new System.Drawing.Point(4, 98);
             this.labelModelo_Agregar.Name = "labelModelo_Agregar";
             this.labelModelo_Agregar.Size = new System.Drawing.Size(45, 13);
             this.labelModelo_Agregar.TabIndex = 4;
@@ -827,7 +695,7 @@
             // 
             // txtIMEI_Agregar
             // 
-            this.txtIMEI_Agregar.Location = new System.Drawing.Point(6, 204);
+            this.txtIMEI_Agregar.Location = new System.Drawing.Point(3, 153);
             this.txtIMEI_Agregar.Name = "txtIMEI_Agregar";
             this.txtIMEI_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtIMEI_Agregar.TabIndex = 19;
@@ -835,7 +703,7 @@
             // labelIMEI_Agregar
             // 
             this.labelIMEI_Agregar.AutoSize = true;
-            this.labelIMEI_Agregar.Location = new System.Drawing.Point(3, 188);
+            this.labelIMEI_Agregar.Location = new System.Drawing.Point(6, 136);
             this.labelIMEI_Agregar.Name = "labelIMEI_Agregar";
             this.labelIMEI_Agregar.Size = new System.Drawing.Size(32, 13);
             this.labelIMEI_Agregar.TabIndex = 2;
@@ -844,7 +712,7 @@
             // labelID_Dueño_Agregar
             // 
             this.labelID_Dueño_Agregar.AutoSize = true;
-            this.labelID_Dueño_Agregar.Location = new System.Drawing.Point(3, 40);
+            this.labelID_Dueño_Agregar.Location = new System.Drawing.Point(2, 17);
             this.labelID_Dueño_Agregar.Name = "labelID_Dueño_Agregar";
             this.labelID_Dueño_Agregar.Size = new System.Drawing.Size(112, 13);
             this.labelID_Dueño_Agregar.TabIndex = 0;
@@ -852,7 +720,7 @@
             // 
             // timer_Agregar_Agrandar
             // 
-            this.timer_Agregar_Agrandar.Interval = 1;
+            this.timer_Agregar_Agrandar.Interval = 20;
             this.timer_Agregar_Agrandar.Tick += new System.EventHandler(this.timer_Agregar_Agrandar_Tick);
             // 
             // timer_GroupBox_AgregarC_Agrandar
@@ -1567,14 +1435,14 @@
             this.tablaCelulares.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaCelulares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCelulares.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaCelulares.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -1584,11 +1452,11 @@
             this.tablaCelulares.MultiSelect = false;
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle50;
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaCelulares.Size = new System.Drawing.Size(866, 572);
@@ -1606,23 +1474,23 @@
             this.tablaTrabajos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaTrabajos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaTrabajos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle51;
             this.tablaTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaTrabajos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTrabajos.DefaultCellStyle = dataGridViewCellStyle52;
             this.tablaTrabajos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaTrabajos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaTrabajos.EnableHeadersVisualStyles = false;
@@ -1631,19 +1499,19 @@
             this.tablaTrabajos.MultiSelect = false;
             this.tablaTrabajos.Name = "tablaTrabajos";
             this.tablaTrabajos.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaTrabajos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTrabajos.RowHeadersDefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle54.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle54;
             this.tablaTrabajos.RowTemplate.ReadOnly = true;
             this.tablaTrabajos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaTrabajos.Size = new System.Drawing.Size(866, 572);
@@ -1729,7 +1597,6 @@
             this.Name = "Principal";
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Etech | Gestor de celulares";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -1739,8 +1606,6 @@
             this.panelE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
             this.panel_Agregar.ResumeLayout(false);
-            this.groupBox_AgregarTrabajos.ResumeLayout(false);
-            this.groupBox_AgregarTrabajos.PerformLayout();
             this.groupBox_AgregarCelulares.ResumeLayout(false);
             this.groupBox_AgregarCelulares.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1790,8 +1655,6 @@
         private System.Windows.Forms.Label labelIMEI_Agregar;
         private System.Windows.Forms.Button btnAgregar_Celular;
         private System.Windows.Forms.Label labelTecnico_A_Cargo_Agregar;
-        private System.Windows.Forms.TextBox txtMarca_Agregar;
-        private System.Windows.Forms.Label labelMarca_Agregar;
         private System.Windows.Forms.TextBox txtModelo_Agregar;
         private System.Windows.Forms.Label labelModelo_Agregar;
         private System.Windows.Forms.Timer timer_GroupBox_AgregarC_Agrandar;
@@ -1852,26 +1715,18 @@
         private System.Windows.Forms.DataGridView tablaCelulares;
         private System.Windows.Forms.Label label_Name_Form;
         private System.Windows.Forms.PictureBox pictureBox_Taller;
-        private System.Windows.Forms.GroupBox groupBox_AgregarTrabajos;
-        private System.Windows.Forms.Button btnAgregar_Trabajo;
         private System.Windows.Forms.TextBox txtAdelanto_Agregar;
         private System.Windows.Forms.Label labelAdelanto_Agregar;
         private System.Windows.Forms.Label labelFechaDeIngreso_Agregar;
-        private System.Windows.Forms.TextBox txtProblema_Agregar;
-        private System.Windows.Forms.Label labelProblema_Agregar;
         private System.Windows.Forms.TextBox txtPresupuesto_Agregar;
         private System.Windows.Forms.Label labelPresupuesto_Agregar;
-        private System.Windows.Forms.Label labelPlazo_Agregar;
-        private System.Windows.Forms.Label labelTrabajo_ID_Agregar;
         private System.Windows.Forms.DateTimePicker dateTimePicker_FechaDeIngreso_Agregar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo_Agregar;
         private System.Windows.Forms.PictureBox btnRecargar;
         private System.Windows.Forms.ComboBox MenuOpcionesTrabajos;
         private System.Windows.Forms.DateTimePicker dateTimePicker_FechaDeIngreso_Modificar;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Plazo_Modificar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridView tablaTrabajos;
-        private System.Windows.Forms.Label labelID_Tecnico_Agregar;
         private System.Windows.Forms.Label labelID_Tecnico_Trabajo_Modificar;
         private System.Windows.Forms.Label labMostrarIDdelCelularSeleccionado;
         private System.Windows.Forms.TabControl tabIndex_Pestañas;
@@ -1884,8 +1739,6 @@
         private System.Windows.Forms.ComboBox comboBox_AgregarCelular_IdDelTecnicoAcargo;
         private System.Windows.Forms.ComboBox comboBox_AgregarCelular_CedulaDelDueño;
         private System.Windows.Forms.ComboBox combobox_IDTecnico_Modificar_Trabajo;
-        private System.Windows.Forms.ComboBox combobox_IDdelCelular_Trabajo_Agregar;
-        private System.Windows.Forms.ComboBox combobox_IDdelTecnico_AgregarTrabajos;
         private System.Windows.Forms.ComboBox combobox_CI_Del_Dueño_Modificar;
         private System.Windows.Forms.GroupBox groupBox_ModificarCelular_Estados;
         private System.Windows.Forms.RadioButton radioButton_EnProceso_Modificar;
