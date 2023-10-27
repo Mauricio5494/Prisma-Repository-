@@ -2317,8 +2317,6 @@ namespace Diseño
                 cmd = new MySqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
 
-                combobox_IDdelCelular_Trabajo_Agregar.Items.Clear();
-
                 List<Celulares> listaUsuarios = new List<Celulares>();
 
                 while (reader.Read())
@@ -2328,13 +2326,6 @@ namespace Diseño
                     string modelo = reader["Modelo"].ToString();
                     string ci_Cliente = reader["Cedula_Cliente"].ToString();
 
-                    combobox_IDdelCelular_Trabajo_Agregar.Items.Add(new Celulares
-                    {
-                        Marca = marca,
-                        Modelo = modelo,
-                        CI_Cliente = ci_Cliente,
-                        ID = id
-                    });
                     combobox_IDCelular_Modificar_Trabajo.Items.Add(new Celulares
                     {
                         Marca = marca,
@@ -2343,9 +2334,6 @@ namespace Diseño
                         ID = id
                     });
                 }
-
-
-                combobox_IDdelCelular_Trabajo_Agregar.DisplayMember = "";
 
             }
             catch (Exception ex)
@@ -2700,12 +2688,6 @@ namespace Diseño
         {
             combobox_IDTecnico_Modificar_Trabajo.Items.Clear();
             MostrarNombreYelIDdelTecnicoEnUnComboBox();
-        }
-
-        private void combobox_IDdelCelular_Trabajo_Agregar_Click(object sender, EventArgs e)
-        {
-            combobox_IDdelCelular_Trabajo_Agregar.Items.Clear();
-            MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
         }
 
         private void groupBox_AgregarCelulares_Enter(object sender, EventArgs e)
