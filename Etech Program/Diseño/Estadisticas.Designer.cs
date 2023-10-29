@@ -30,27 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estadisticas));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelE = new System.Windows.Forms.Panel();
             this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelD = new System.Windows.Forms.Panel();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal_Panel = new System.Windows.Forms.Button();
             this.btnInformacion = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.tabIndex_Pestañas = new System.Windows.Forms.TabControl();
             this.tab_Celulares = new System.Windows.Forms.TabPage();
-            this.GraficoCelulares = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.graficoCelulares = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tab_Tecnicos = new System.Windows.Forms.TabPage();
-            this.GraficoTecnicos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.graficoTecnicos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
@@ -71,12 +70,11 @@
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panelD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.tabIndex_Pestañas.SuspendLayout();
             this.tab_Celulares.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoCelulares)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCelulares)).BeginInit();
             this.tab_Tecnicos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoTecnicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoTecnicos)).BeginInit();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
@@ -145,7 +143,6 @@
             // panelD
             // 
             this.panelD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panelD.Controls.Add(this.btnRecargar);
             this.panelD.Controls.Add(this.btnMenuPrincipal_Panel);
             this.panelD.Controls.Add(this.btnInformacion);
             this.panelD.Controls.Add(this.btnCerrarSesion);
@@ -153,16 +150,6 @@
             this.panelD.Name = "panelD";
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 15;
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 185);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.TabIndex = 21;
-            this.btnRecargar.TabStop = false;
             // 
             // btnMenuPrincipal_Panel
             // 
@@ -232,7 +219,7 @@
             // 
             // tab_Celulares
             // 
-            this.tab_Celulares.Controls.Add(this.GraficoCelulares);
+            this.tab_Celulares.Controls.Add(this.graficoCelulares);
             this.tab_Celulares.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tab_Celulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tab_Celulares.Location = new System.Drawing.Point(4, 22);
@@ -243,26 +230,26 @@
             this.tab_Celulares.Text = "Celulares";
             this.tab_Celulares.UseVisualStyleBackColor = true;
             // 
-            // GraficoCelulares
+            // graficoCelulares
             // 
-            chartArea5.Name = "ChartArea1";
-            this.GraficoCelulares.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.GraficoCelulares.Legends.Add(legend5);
-            this.GraficoCelulares.Location = new System.Drawing.Point(6, 3);
-            this.GraficoCelulares.Name = "GraficoCelulares";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.GraficoCelulares.Series.Add(series5);
-            this.GraficoCelulares.Size = new System.Drawing.Size(854, 569);
-            this.GraficoCelulares.TabIndex = 0;
-            this.GraficoCelulares.Text = "chart1";
+            chartArea1.Name = "ChartArea1";
+            this.graficoCelulares.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.graficoCelulares.Legends.Add(legend1);
+            this.graficoCelulares.Location = new System.Drawing.Point(6, 3);
+            this.graficoCelulares.Name = "graficoCelulares";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.graficoCelulares.Series.Add(series1);
+            this.graficoCelulares.Size = new System.Drawing.Size(854, 569);
+            this.graficoCelulares.TabIndex = 0;
+            this.graficoCelulares.Text = "Grafico de celulares";
             // 
             // tab_Tecnicos
             // 
-            this.tab_Tecnicos.Controls.Add(this.GraficoTecnicos);
+            this.tab_Tecnicos.Controls.Add(this.graficoTecnicos);
             this.tab_Tecnicos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tab_Tecnicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tab_Tecnicos.Location = new System.Drawing.Point(4, 22);
@@ -273,21 +260,22 @@
             this.tab_Tecnicos.Text = "Tecnicos";
             this.tab_Tecnicos.UseVisualStyleBackColor = true;
             // 
-            // GraficoTecnicos
+            // graficoTecnicos
             // 
-            chartArea6.Name = "ChartArea1";
-            this.GraficoTecnicos.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.GraficoTecnicos.Legends.Add(legend6);
-            this.GraficoTecnicos.Location = new System.Drawing.Point(6, 3);
-            this.GraficoTecnicos.Name = "GraficoTecnicos";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.GraficoTecnicos.Series.Add(series6);
-            this.GraficoTecnicos.Size = new System.Drawing.Size(854, 569);
-            this.GraficoTecnicos.TabIndex = 1;
-            this.GraficoTecnicos.Text = "chart2";
+            chartArea2.Name = "ChartArea1";
+            this.graficoTecnicos.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.graficoTecnicos.Legends.Add(legend2);
+            this.graficoTecnicos.Location = new System.Drawing.Point(6, 3);
+            this.graficoTecnicos.Name = "graficoTecnicos";
+            this.graficoTecnicos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.graficoTecnicos.Series.Add(series2);
+            this.graficoTecnicos.Size = new System.Drawing.Size(854, 569);
+            this.graficoTecnicos.TabIndex = 1;
+            this.graficoTecnicos.Text = "chart2";
             // 
             // panel_Menu
             // 
@@ -460,16 +448,16 @@
             this.Controls.Add(this.panel_Menu);
             this.Name = "Estadisticas";
             this.Text = "Estadisticas";
+            this.Load += new System.EventHandler(this.Estadisticas_Load);
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
             this.panelD.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.tabIndex_Pestañas.ResumeLayout(false);
             this.tab_Celulares.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoCelulares)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCelulares)).EndInit();
             this.tab_Tecnicos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GraficoTecnicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoTecnicos)).EndInit();
             this.panel_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
@@ -488,7 +476,6 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panelD;
-        private System.Windows.Forms.PictureBox btnRecargar;
         private System.Windows.Forms.Button btnMenuPrincipal_Panel;
         private System.Windows.Forms.Button btnInformacion;
         private System.Windows.Forms.Button btnCerrarSesion;
@@ -503,8 +490,8 @@
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Timer timer_Agrandar_Menu;
         private System.Windows.Forms.Timer timer_Reducir_Menu;
-        private System.Windows.Forms.DataVisualization.Charting.Chart GraficoCelulares;
-        private System.Windows.Forms.DataVisualization.Charting.Chart GraficoTecnicos;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoCelulares;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoTecnicos;
         private System.Windows.Forms.Panel panel_Informacion;
         private System.Windows.Forms.Timer timer_Agrandar_Informacion;
         private System.Windows.Forms.Timer timer_Reducir_Informacion;

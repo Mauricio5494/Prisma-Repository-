@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Diseño
 {
@@ -15,6 +18,75 @@ namespace Diseño
         public Estadisticas()
         {
             InitializeComponent();
+        }
+        //atributos:
+        int celularesArreglados;
+        string celularesArregladosConversion;
+        int celularesAveriados;
+        string celularesAveriadosConversion;
+        int celularesProceso;
+        string celularesProcesoConversion;
+        int celularesEspera;
+        string celularesEsperaConversion;
+        string celularesArregladosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado'";
+        string celularesAveriadosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado'";
+        string celularesProcesoConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En espera'";
+        string celularesEsperaConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En proceso'";
+
+
+        //instancias:
+        MySqlConnection conn = DataBaseConnect.Conectarse();
+        MySqlCommand cmd = new MySqlCommand();
+        Series serie;
+
+        //Arreglos y atributos:
+        string[] seriesCelulares = {"C. Arreglados", "C. Averiados", "C. en proceso", "C. en espera"};
+
+        //Codigo de lo graficos:
+        private void mostrarGraficoCelulares()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand(celularesArregladosConsulta, conn);
+                celularesArregladosConversion = cmd.ExecuteScalar().ToString();
+                celularesArreglados = int.Parse(celularesArregladosConversion);
+
+                cmd = new MySqlCommand(celularesAveriadosConsulta, conn);
+                celularesAveriadosConversion = cmd.ExecuteScalar().ToString();
+                celularesAveriados = int.Parse(celularesAveriadosConversion);
+
+                cmd = new MySqlCommand(celularesEsperaConsulta, conn);
+                celularesEsperaConversion = cmd.ExecuteScalar().ToString();
+                celularesEspera = int.Parse(celularesEsperaConversion);
+
+                cmd = new MySqlCommand(celularesProcesoConsulta, conn);
+                celularesProcesoConversion = cmd.ExecuteScalar().ToString();
+                celularesProceso = int.Parse(celularesProcesoConversion);
+
+
+                for (int i = 0; i < seriesCelulares.Length; i++)
+                {
+                    serie = graficoCelulares.Series.Add(seriesCelulares[i]);
+                }
+            }
+            catch 
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+                label_CelularesArreglados.Text = "Celulares arreglados: " + celularesArreglados.ToString();
+                label_CelularesAveriados.Text = "Celulares averiados: " + celularesAveriados.ToString();
+                label_CelularesEnEspera.Text = "celulares en espera: " + celularesEspera.ToString();
+                label_CelularesEnProceso.Text = "celulares en proceso: " + celularesProceso.ToString();
+            }
+        }
+
+        private void Estadisticas_Load(object sender, EventArgs e)
+        {
+            mostrarGraficoCelulares();
         }
 
         //Botones del Menu latera:
