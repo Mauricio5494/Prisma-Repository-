@@ -1,9 +1,11 @@
 ﻿using Diseño.Properties;
+using K4os.Compression.LZ4.Streams;
 using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Diseño
 {
@@ -14,6 +16,7 @@ namespace Diseño
         private string Nombre;
         private string Password;
         string sql;
+        string transicion;
 
         public Login()
         {
@@ -50,6 +53,32 @@ namespace Diseño
             }
         }
 
+        private static string DecoderDelHash(string teclado)
+        {
+            SHA256 sHA256 = SHA256.Create();
+
+            byte[] bytesIngresados = Encoding.UTF8.GetBytes(teclado);
+            byte[] bytesHash = sHA256.ComputeHash(bytesIngresados);
+
+            StringBuilder uruguayo = new StringBuilder();
+
+            for (int i = 0; i < bytesHash.Length; i++)
+            {
+                uruguayo.Append(bytesHash[i].ToString("x2"));
+            }
+            return uruguayo.ToString();
+        }
+
+        private static string EncoderDelHash(string teclado)
+        {
+            SHA256 sha256 = SHA256.Create();
+
+            byte[] bytesIngresados = Encoding.UTF8.GetBytes(teclado);
+            byte[] bytesHash = sha256.ComputeHash(bytesIngresados);
+
+            return BitConverter.ToString(bytesHash).Replace("-", "").ToLower();
+        }
+
         private void btnIngreso_Click(object sender, System.EventArgs e)
         {
             Taller = new Principal();
@@ -60,18 +89,37 @@ namespace Diseño
             try
             {
                 conn.Open();
-                sql = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' AND Contraseña = '" + Password + "' AND Baja = 0";
+                sql = $"SELECT Nombre, Contraseña FROM usuarios WHERE nombre ='{Nombre}' AND Contraseña ='{Password}'";
                 cmd_sql = new MySqlCommand(sql, conn);
                 reader = cmd_sql.ExecuteReader();
-                if (reader.Read())
+                reader.Read();
+                try
                 {
-                    Seguridad.SetInvitado = false;
-                    Taller.Show();
-                    this.Hide();
+
+                        string contraseñaEnBD = reader["Contraseña"].ToString();
+
+                        string contraseñaDecodificada = DecoderDelHash(Password);
+
+                        if (contraseñaDecodificada == contraseñaEnBD)
+                        {
+                            Seguridad.SetInvitado = false;
+                            transicion = "FadeOut";
+                            timer_AparecerSuavemente.Start();
+                            Taller.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Contraseña Incorrecta", "Mal!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    
+                    
+
+
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No encontramos ninguna cuenta que coincida exactamente con los datos que ingresaste", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El lector no puede leer\n\n" + ex.Message);
                 }
             }
             catch (Exception b)
@@ -96,6 +144,10 @@ namespace Diseño
         //Métodos relacionados con el apartado visual del programa que lo hacen mas intuitivo (no afectan las funcionalidades):
         private void Form2_Load(object sender, System.EventArgs e)
         {
+            transicion = "FadeIn";
+            this.Top = this.Top + 20;
+            timer_AparecerSuavemente.Start();
+
             txtNombre.Text = "Nombre del Empleado...";
             txtNombre.ForeColor = Color.Gray;
         }
@@ -174,8 +226,9 @@ namespace Diseño
             if (userRootOk && passRootOK)
             {
                 RegistroUsuarios mostrar = new RegistroUsuarios();
+                transicion = "FadeOut";
+                timer_AparecerSuavemente.Start();
                 mostrar.Show();
-                this.Hide();
             }
 
             //Si, ya se que se puede acortar el código, pero es solo un ejemplo... de momento.
@@ -202,6 +255,55 @@ namespace Diseño
         private void txtNombre_MouseEnter(object sender, System.EventArgs e)
         {
             toolTip1.SetToolTip(txtNombre, "Acá va el ID que le proporcionó su Jefe o Empleador.");
+        }
+
+        private void timer_AparecerSuavemente_Tick(object sender, EventArgs e)
+        {
+            if (transicion == "FadeOut")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_AparecerSuavemente.Stop();
+                    this.Hide();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .15;
+                    this.Top = this.Top - 3;
+                }
+            }
+            else if (transicion == "FadeIn")
+            {
+                if (this.Opacity == 1)
+                {
+                    timer_AparecerSuavemente.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity + .15;
+                    this.Top = this.Top + 3;
+                }
+            }
+            else if (transicion == "FadeOutExit")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_AparecerSuavemente.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .15;
+                    this.Left = this.Left + 3;
+                }
+            }
+
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            transicion = "FadeOutExit";
+            timer_AparecerSuavemente.Start();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelRegresar = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -41,9 +42,10 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.checkBox_MostrarContraseña = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.checkBox_MostrarContraseña = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer_transicion = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -186,17 +188,6 @@
             this.txtNombre.Size = new System.Drawing.Size(382, 21);
             this.txtNombre.TabIndex = 0;
             // 
-            // checkBox_MostrarContraseña
-            // 
-            this.checkBox_MostrarContraseña.AutoSize = true;
-            this.checkBox_MostrarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox_MostrarContraseña.Location = new System.Drawing.Point(363, 95);
-            this.checkBox_MostrarContraseña.Name = "checkBox_MostrarContraseña";
-            this.checkBox_MostrarContraseña.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_MostrarContraseña.TabIndex = 15;
-            this.checkBox_MostrarContraseña.UseVisualStyleBackColor = true;
-            this.checkBox_MostrarContraseña.CheckedChanged += new System.EventHandler(this.checkBox_MostrarContraseña_CheckedChanged);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Enabled = false;
@@ -208,6 +199,17 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
+            // checkBox_MostrarContraseña
+            // 
+            this.checkBox_MostrarContraseña.AutoSize = true;
+            this.checkBox_MostrarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox_MostrarContraseña.Location = new System.Drawing.Point(363, 95);
+            this.checkBox_MostrarContraseña.Name = "checkBox_MostrarContraseña";
+            this.checkBox_MostrarContraseña.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_MostrarContraseña.TabIndex = 15;
+            this.checkBox_MostrarContraseña.UseVisualStyleBackColor = true;
+            this.checkBox_MostrarContraseña.CheckedChanged += new System.EventHandler(this.checkBox_MostrarContraseña_CheckedChanged);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
@@ -216,6 +218,12 @@
             this.pictureBox1.Size = new System.Drawing.Size(164, 64);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // timer_transicion
+            // 
+            this.timer_transicion.Enabled = true;
+            this.timer_transicion.Interval = 20;
+            this.timer_transicion.Tick += new System.EventHandler(this.timer_transicion_Tick);
             // 
             // RegistroUsuarios
             // 
@@ -226,8 +234,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroUsuarios";
+            this.Opacity = 0D;
             this.Text = "Etech | Registro Rápido";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroUsuarios_FormClosed);
+            this.Load += new System.EventHandler(this.RegistroUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -254,5 +264,6 @@
         private System.Windows.Forms.Label labelRegresar;
         private System.Windows.Forms.CheckBox checkBox_MostrarContraseña;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Timer timer_transicion;
     }
 }

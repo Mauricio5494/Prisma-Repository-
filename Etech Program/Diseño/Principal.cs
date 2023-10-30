@@ -4,11 +4,13 @@ using MySql.Utility.Classes;
 using MySql.Utility.Forms;
 using MySqlX.XDevAPI.Relational;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -35,6 +37,7 @@ namespace Diseño
         string selectID;
         string option;
         string busqueda;
+        string transicion;
         int caracteresMaximos = 8;
 
 
@@ -109,7 +112,7 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, celulares.Marca, celulares.Modelo, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
+                cmd = new MySqlCommand("SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Plazo, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
@@ -134,7 +137,7 @@ namespace Diseño
             {
                 DataTableCelulares.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, celulares.Marca, celulares.Modelo, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
+                cmd = new MySqlCommand("SELECT celulares.ID, celulares.ModeloYOmarca, calulares.Ingreso, celulares.Estado, celulares.Adelanto, celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre" +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
@@ -152,48 +155,10 @@ namespace Diseño
             tablaCelulares.DataSource = DataTableCelulares;
         }
 
-        private void MostrarDatosEnLasTablasTrabajos()
-        {
-            try
-            {
 
-                DataTableTrabajos.Clear();
-                conn.Open();
-                cmd = new MySqlCommand($"SELECT trabajos.ID, usuarios.Nombre, trabajos.Presupuesto, trabajos.Problema, Fecha_Ingreso, Plazo, trabajos.Adelanto, trabajos.ID_Celular FROM trabajos INNER JOIN usuarios ON trabajos.ID_Tecnico = usuarios.ID WHERE trabajos.Baja = 0 AND usuarios.Baja = 0;", conn);
-                reader = cmd.ExecuteReader();
-                DataTableTrabajos.Load(reader);
 
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            tablaTrabajos.DataSource = DataTableTrabajos;
-        }
 
-        private void MostrarDatosEnLasTablasTrabajos_SinMensajeDeError()
-        {
-            try
-            {
-                DataTableTrabajos.Rows.Clear();
-                conn.Open();
-                cmd = new MySqlCommand($"SELECT trabajos.ID, usuarios.Nombre, trabajos.Presupuesto, trabajos.Problema, trabajos.Fecha_Ingreso, trabajos.Plazo, trabajos.Adelanto, trabajos.ID_Celular FROM trabajos INNER JOIN usuarios ON trabajos.ID_Tecnico = usuarios.ID WHERE trabajos.Baja = 0 AND usuarios.Baja = 0;", conn);
-                reader = cmd.ExecuteReader();
-                DataTableTrabajos.Load(reader);
-            }
-            catch
-            {
-            }
-            finally
-            {
-                conn.Close();
-            }
-            tablaTrabajos.DataSource = DataTableTrabajos;
-        }
+
 
 
         //Métodos de los ComboBox:
@@ -230,7 +195,7 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Cedula_Cliente = (SELECT cedula FROM clientes WHERE Nombre = '" + txtCampo_Busqueda.Text + "') AND Baja = 1;";
+                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Cedula_Cliente = (SELECT cedula FROM clientes WHERE Nombre = '" + txtCampo_Busqueda.Text + "') AND Baja = 1;";
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -253,7 +218,7 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Marca = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
+                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Marca = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -276,7 +241,7 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Modelo = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
+                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Modelo = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -299,7 +264,7 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT ID, Modelo, Marca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE ID = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
+                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE ID = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -347,7 +312,7 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+
                             break;
 
                         case "Problema":
@@ -371,7 +336,7 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+
                             break;
 
                         case "Fecha de ingreso":
@@ -395,7 +360,7 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+
                             break;
 
                         case "ID del celular":
@@ -419,7 +384,7 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
+
                             break;
 
                         default:
@@ -449,15 +414,20 @@ namespace Diseño
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            transicion = "FadeIn";
+            timer_Transicion.Start();
+
             MostrarDatosEnLasTablasCelulares();
-            MostrarDatosEnLasTablasTrabajos();
             MostrarNombreYelIDdelTecnicoEnUnComboBox();
             MostrarNombreYlaCeduladelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
-            MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
+            //MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
 
 
             MenuOpcionesCelular.Enabled = true;
             MenuOpcionesCelular.Visible = true;
+
+            panel_Agregar.Enabled = true;
+            groupBox_AgregarCelulares.Enabled = true;
 
             pictureBox1.SendToBack();
 
@@ -527,11 +497,76 @@ namespace Diseño
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            //if (Seguridad.getInvitado == false)
+            //{
+
+            //    if (panel_Agregar.Height < 1)
+            //    {
+            //        //panel agregar
+            //        timer_Agregar_Agrandar.Enabled = false;
+            //        timer_Agregar_Reducir.Enabled = true;
+
+            //        //panel eliminar
+            //        timer_Eliminar_Reducir.Enabled = true;
+            //        timer_Eliminar_Agrandar.Enabled = false;
+
+            //        //panel modificar
+            //        timer_Modificar_Agrandar.Enabled = false;
+            //        timer_Modificar_Reducir.Enabled = true;
+
+            //        //panel menu
+            //        timer_Menu_Agrandar.Enabled = false;
+            //        timer_Menu_Reducir.Enabled = true;
+
+            //        //Detalles:
+            //        pictureBox1.SendToBack();
+
+            //        ////tabIndex, tamaño y locación.
+            //        //tabIndex_Pestañas.Width = 880;
+            //        //tabIndex_Pestañas.Location = new Point(474, 73);
+
+            //        if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
+            //        {
+            //            timer_GroupBox_AgregarC_Agrandar.Enabled = true;
+            //            timer_GroupBox_AgregarC_Reducir.Enabled = false;
+
+            //            timer_GroupBox_AgregarT_Agrandar.Enabled = false;
+            //            timer_GroupBox_AgregarT_Reducir.Enabled = true;
+            //        }
+
+            //        else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+            //        {
+            //            timer_GroupBox_AgregarT_Agrandar.Enabled = true;
+            //            timer_GroupBox_AgregarT_Reducir.Enabled = false;
+
+            //            timer_GroupBox_EliminarC_Agrandar.Enabled = false;
+            //            timer_GroupBox_AgregarC_Reducir.Enabled = true;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        timer_Agregar_Agrandar.Enabled = false;
+            //        timer_Agregar_Reducir.Enabled = true;
+
+            //        //tabIndex_Pestañas.Width = 1305;
+            //        //tabIndex_Pestañas.Location = new Point(49, 73);
+            //    }
+
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //}
+
             if (Seguridad.getInvitado == false)
             {
-
-                if (panel_Agregar.Height <= 1)
+                if (panel_Agregar.Height < 1)
                 {
+                    //panel modificar
+                    timer_Modificar_Agrandar.Enabled = false;
+                    timer_Modificar_Reducir.Enabled = true;
+
                     //panel agregar
                     timer_Agregar_Agrandar.Enabled = true;
                     timer_Agregar_Reducir.Enabled = false;
@@ -540,20 +575,12 @@ namespace Diseño
                     timer_Eliminar_Reducir.Enabled = true;
                     timer_Eliminar_Agrandar.Enabled = false;
 
-                    //panel modificar
-                    timer_Modificar_Agrandar.Enabled = false;
-                    timer_Modificar_Reducir.Enabled = true;
-
                     //panel menu
                     timer_Menu_Agrandar.Enabled = false;
                     timer_Menu_Reducir.Enabled = true;
 
                     //Detalles:
                     pictureBox1.SendToBack();
-
-                    ////tabIndex, tamaño y locación.
-                    //tabIndex_Pestañas.Width = 880;
-                    //tabIndex_Pestañas.Location = new Point(474, 73);
 
                     if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
                     {
@@ -563,14 +590,13 @@ namespace Diseño
                         timer_GroupBox_AgregarT_Agrandar.Enabled = false;
                         timer_GroupBox_AgregarT_Reducir.Enabled = true;
                     }
-
-                    else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
+                    else
                     {
+                        timer_GroupBox_AgregarC_Agrandar.Enabled = false;
+                        timer_GroupBox_AgregarC_Reducir.Enabled = true;
+
                         timer_GroupBox_AgregarT_Agrandar.Enabled = true;
                         timer_GroupBox_AgregarT_Reducir.Enabled = false;
-
-                        timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-                        timer_GroupBox_AgregarC_Reducir.Enabled = true;
                     }
                 }
                 else
@@ -581,12 +607,6 @@ namespace Diseño
                     //tabIndex_Pestañas.Width = 1305;
                     //tabIndex_Pestañas.Location = new Point(49, 73);
                 }
-
-
-            }
-            else
-            {
-                MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -615,27 +635,6 @@ namespace Diseño
                     //Detalles:
                     pictureBox1.SendToBack();
 
-                    ////tabIndex, tamaño y locación.
-                    //tabIndex_Pestañas.Width = 880;
-                    //tabIndex_Pestañas.Location = new Point(474, 73);
-
-                    if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
-                    {
-                        timer_GroupBox_ModificarC_Agrandar.Enabled = true;
-                        timer_GroupBox_ModificarC_Reducir.Enabled = false;
-
-                        timer_GroupBox_ModificarT_Agrandar.Enabled = false;
-                        timer_GroupBox_ModificarT_Reducir.Enabled = true;
-                    }
-
-                    else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
-                    {
-                        timer_GroupBox_ModificarT_Agrandar.Enabled = true;
-                        timer_GroupBox_ModificarT_Reducir.Enabled = false;
-
-                        timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-                        timer_GroupBox_ModificarC_Reducir.Enabled = true;
-                    }
                 }
                 else
                 {
@@ -738,15 +737,7 @@ namespace Diseño
                         timer_GroupBox_EliminarT_Reducir.Enabled = true;
 
                     }
-                    else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
-                    {
-                        groupBox_EliminarCelulares.Enabled = true;
-                        groupBox_EliminarCelulares.Visible = true;
-                        timer_GroupBox_EliminarT_Agrandar.Enabled = true;
-                        timer_GroupBox_EliminarT_Reducir.Enabled = false;
-                        timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-                        timer_GroupBox_EliminarC_Reducir.Enabled = true;
-                    }
+
                 }
                 else
                 {
@@ -1031,16 +1022,26 @@ namespace Diseño
 
             try
             {
-                if (txtModelo_Agregar.Text != "" && txtDetallesUobservaciones_Agregar.Text != "" && comboBox_AgregarCelular_CedulaDelDueño.Items != null && comboBox_AgregarCelular_IdDelTecnicoAcargo.Items != null)
+                if (txtModeloYOmarca_Agregar.Text != "" && txtDetallesUobservaciones_Agregar.Text != "" && comboBox_AgregarCelular_CedulaDelDueño.Items != null && comboBox_AgregarCelular_IdDelTecnicoAcargo.Items != null)
                 {
 
                     if (radioButton_Arreglado_Agregar.Checked.Equals(true) || radioButton_Averiado_Agregar.Checked.Equals(true) || radioButton_EnProceso_Agregar.Checked.Equals(true) || radioButton_EnEspera_Agregar.Checked.Equals(true))
                     {
                         conn.Open();
-                        modelo = txtModelo_Agregar.Text;
-                      
-                        imei = txtIMEI_Agregar.Text;
+                        string modeloYOmarca = txtModeloYOmarca_Agregar.Text;
                         string detalles = txtDetallesUobservaciones_Agregar.Text;
+
+                        DateTime tomarIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
+                        DateTime tomarPlazo = dateTimePicker_FechaPlazo_Agregar.Value;
+
+                        string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
+                        string ingresoFormat = tomarIngreso.ToString("yyyy-MM-dd");
+
+                        DateTime plazo = DateTime.ParseExact(ingresoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                        DateTime ingreso = DateTime.ParseExact(plazoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+
+
                         if (radioButton_Arreglado_Agregar.Checked)
                         {
                             estado = "Arreglado";
@@ -1057,22 +1058,32 @@ namespace Diseño
                         {
                             estado = "En Proceso";
                         }
+
                         string ciCliente = cedulaDelPropietarioDelCelular.Cedula;
                         string idUsuario = idDelTecnicoAcargo.ID;
+                        string adelato = txtAdelanto_Agregar.Text;
+                        string presupuesto = txtPresupuesto_Agregar.Text;
 
-                        insertarCelulares = "INSERT INTO celulares(Modelo, Marca, IMEI, Detalles, Estado, Cedula_Cliente, ID_Usuario) VALUES('" + modelo + "', '" + marca + "', '" + imei + "', '" + detalles + "', '" + estado + "', '" + ciCliente + "', " + idUsuario + ")";
+                        insertarCelulares = $"INSERT INTO celulares(ModeloYOmarca, IMEI, Estado, Adelanto, Presupuesto, Ingreso, Plazo, Detalles, Cedula_Cliente, ID_Usuario) VALUES ('{modeloYOmarca}', '{imei}', '{estado}', '{adelanto}', '{presupuesto}','{ingresoFormat}','{plazoFormat}', '{detalles}', '{ciCliente}', {idUsuario})";
                         cmd = new MySqlCommand(insertarCelulares, conn);
 
                         try
                         {
                             cmd.ExecuteNonQuery();
 
-                            txtModelo_Agregar.Text = "";
+                            txtModeloYOmarca_Agregar.Text = "";
                             txtIMEI_Agregar.Text = "";
-                          
+                            comboBox_AgregarCelular_CedulaDelDueño.Text = "";
+                            comboBox_AgregarCelular_IdDelTecnicoAcargo.Text = "";
+                            txtAdelanto_Agregar.Text = "";
                             txtDetallesUobservaciones_Agregar.Text = "";
-                          
-                            comboBox_AgregarCelular_CedulaDelDueño.SelectedItem = null;
+
+                            radioButton_Arreglado_Agregar.Checked = false;
+                            radioButton_EnProceso_Agregar.Checked = false;
+                            radioButton_Averiado_Agregar.Checked = false;
+                            radioButton_EnEspera_Agregar.Checked = false;
+
+                            txtDetallesUobservaciones_Agregar.Text = "";
                         }
                         catch (Exception ex)
                         {
@@ -1220,139 +1231,6 @@ namespace Diseño
                 MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void tablaCelulares_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MostrarNombreYelIDdelTecnicoEnUnComboBox();
-
-            //linkeo de la cedula del cliente:
-            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
-            {
-
-                string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
-
-
-                string nombreDelCliente = ObtenerNombreHaciendoClickEnCedula(cedula);
-                string celularDelCliente = ObtenerCelularHaciendoClickEnCedula(cedula);
-                string telefonoDelCliente = ObtenerTelefonoHaciendoClickEnCedula(cedula);
-                string correoElectrionicoDelCliente = ObtenerCorreoElectronicoHaciendoClickEnCedula(cedula);
-
-
-                MessageBox.Show($"Información del Cliente:\n\nNombre y Apellido: {nombreDelCliente}\n\nCelular Adicional: {celularDelCliente}\n\nTelefono Fijo: {telefonoDelCliente}\n\nCorreo Electrónico: {correoElectrionicoDelCliente}", "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            //Sino que solo seleccione el ID para borrar o modificar el celular.
-            else if (e.RowIndex >= 0)
-            {
-
-                DataGridViewRow filaSeleccionada = tablaCelulares.Rows[e.RowIndex];
-
-                //para poner todos los valores en la tabla de modificación de celulares:
-                if (groupBox_ModificarCelulares.Enabled == true && panel_Modificar.Enabled == true && groupBox_ModificarCelulares.Visible == true && panel_Modificar.Visible == true)
-                {
-
-
-                    //Selección:
-                    string seleccion = filaSeleccionada.Cells["ID"].Value.ToString();
-                    clavePrimariaCelulares = seleccion;
-                    label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
-
-                    //textBoxes:
-                    string IMEI = filaSeleccionada.Cells["IMEI"].Value.ToString();
-                    string modelo = filaSeleccionada.Cells["Modelo"].Value.ToString();
-                    string marca = filaSeleccionada.Cells["Marca"].Value.ToString();
-
-
-                    //comboboxes:
-                    string nombreTecnico = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                    string CIcliente = filaSeleccionada.Cells["Cedula_Cliente"].Value.ToString();
-
-
-                    //aplicaciones:
-                    txtIMEI_Modificar.Text = IMEI;
-                    txtModelo_Modificar.Text = modelo;
-                    txtMarca_Modificar.Text = marca;
-
-                    //comboboxes:
-                    foreach (Cliente cliente in combobox_CI_Del_Dueño_Modificar.Items)
-                    {
-                        if (cliente.Cedula == CIcliente)
-                        {
-                            combobox_CI_Del_Dueño_Modificar.SelectedItem = cliente;
-                            break;
-                        }
-                    }
-
-                    foreach (Tecnicos tecnico in comboBox_ModificarTecnicoACargo.Items)
-                    {
-                        if (tecnico.Nombre == nombreTecnico)
-                        {
-                            comboBox_ModificarTecnicoACargo.SelectedItem = tecnico;
-                            break;
-                        }
-                    }
-
-                    //para los detalles:
-
-                    string detalles = string.Empty;
-
-                    try
-                    {
-                        conn.Open();
-                        string query = $"SELECT Detalles FROM celulares WHERE ID ={seleccion}";
-                        cmd = new MySqlCommand(query, conn);
-                        reader = cmd.ExecuteReader();
-
-                        if (reader.Read())
-                        {
-                            detalles = reader["Detalles"].ToString();
-
-                            txtDetallesUobservaciones_Modificar.Text = detalles;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("No se pudo meter los detalles en el campo de texto de Detalles/Observaciones\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-
-                }
-                // para dar de baja los celulares.
-                else
-                {
-                    numeroDeFilaCelulares = e.RowIndex;
-                    clavePrimariaCelulares = tablaCelulares.Rows[numeroDeFilaCelulares].Cells["ID"].Value.ToString();
-
-
-                    if (groupBox_EliminarCelulares.Height > 300)
-                    {
-                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Black;
-                        labMostrarIDdelCelularSeleccionado.Text = clavePrimariaCelulares;
-                    }
-                    else if (groupBox_ModificarCelulares.Height > 300)
-                    {
-                        label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
-                    }
-                    else
-                    {
-                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Brown;
-                        labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla.";
-
-                    }
-                }
-            }
-
-
-            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
-            {
-                string detalles = ObtenerDetallesDesdeElEstado();
-
-                MessageBox.Show("Detalles/Observaciones:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-        }
 
         private void btn_EliminarTrabajos_Click(object sender, EventArgs e)
         {
@@ -1379,7 +1257,6 @@ namespace Diseño
                     finally
                     {
                         conn.Close();
-                        MostrarDatosEnLasTablasTrabajos();
                     }
                 }
             }
@@ -1389,8 +1266,8 @@ namespace Diseño
             }
         }
 
-     
-        
+
+
 
         private void btnModificar_Trabajo_Click(object sender, EventArgs e)
         {
@@ -1442,9 +1319,8 @@ namespace Diseño
                     finally
                     {
                         conn.Close();
-                        MostrarDatosEnLasTablasTrabajos();
                     }
-                } 
+                }
             }
         }
 
@@ -1474,7 +1350,6 @@ namespace Diseño
                     finally
                     {
                         conn.Close();
-                        MostrarDatosEnLasTablasTrabajos();
                     }
                 }
                 catch (Exception ex)
@@ -1519,15 +1394,19 @@ namespace Diseño
                 panel_Agregar.Height = panel_Agregar.Height - 12;
                 panel_Agregar.Enabled = false;
             }
-            else
-            {
-                timer_Agregar_Reducir.Enabled = false;
-            }
+
         }
 
         private void timer_Agregar_Agrandar_Tick(object sender, EventArgs e)
         {
-            
+            if (panel_Agregar.Height < 1)
+            {
+                panel_Agregar.Height = panel_Agregar.Height + 600;
+                panel_Agregar.Enabled = true;
+
+            }
+
+
         }
 
         private void timer_Modificar_Reducir_Tick(object sender, EventArgs e)
@@ -1624,9 +1503,10 @@ namespace Diseño
 
         private void timer_GroupBox_AgregarC_Agrandar_Tick(object sender, EventArgs e)
         {
-            if (groupBox_AgregarCelulares.Height < 486)
+            if (groupBox_AgregarCelulares.Height < 1)
             {
-                groupBox_AgregarCelulares.Height = 593;
+
+                groupBox_AgregarCelulares.Height = groupBox_AgregarCelulares.Height + 593;
                 groupBox_AgregarCelulares.Enabled = true;
                 groupBox_AgregarCelulares.BringToFront();
             }
@@ -1638,12 +1518,12 @@ namespace Diseño
 
         private void timer_GroupBox_AgregarT_Reducir_Tick(object sender, EventArgs e)
         {
-           
+
         }
 
         private void timer_GroupBox_AgregarT_Agrandar_Tick(object sender, EventArgs e)
         {
-           
+
         }
 
         private void timer_GroupBox_Menu_Reducir_Tick(object sender, EventArgs e)
@@ -1850,7 +1730,6 @@ namespace Diseño
 
             if (tablaCelulares.Height <= 600)
             {
-                tablaTrabajos.Height = 0;
                 tablaCelulares.Height = 600;
                 MostrarDatosEnLasTablasCelulares();
             }
@@ -1895,27 +1774,26 @@ namespace Diseño
             if (tablaCelulares.Columns.Contains("IMEI"))
             {
                 //Largo de las columnas
-                tablaCelulares.Columns["ID"].Width = lonigtudDeColumna_Corta;
-                tablaCelulares.Columns["Marca"].Width = lonigtudDeColumna_Larga;
-                tablaCelulares.Columns["IMEI"].Width = 200;
-                tablaCelulares.Columns["Modelo"].Width = lonigtudDeColumna_Larga;
+                tablaCelulares.Columns["ID"].Width = 20;
+                tablaCelulares.Columns["ModeloYOmarca"].Width = lonigtudDeColumna_Larga;
+                tablaCelulares.Columns["IMEI"].Width = 80;
                 tablaCelulares.Columns["Nombre"].Width = 115;
 
 
                 //Renombre de columnas, más que nada es estético.
+                tablaCelulares.Columns["ModeloYOmarca"].HeaderText = "Marca y/o Modelo";
                 tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cédula";
                 tablaCelulares.Columns["Nombre"].HeaderText = "Técnico";
 
                 //Tooltips al posar el mouse
-                tablaCelulares.Columns["Marca"].ToolTipText = "La marca del teléfono";
-                tablaCelulares.Columns["Modelo"].ToolTipText = "El modelo del teléfono";
+                tablaCelulares.Columns["ModeloYOmarca"].ToolTipText = "El modelo y/o la marca del teléfono";
                 tablaCelulares.Columns["IMEI"].ToolTipText = "El número único identificatorio para cada dispositivo, normalmente viene detrás de este como una pegatina";
                 tablaCelulares.Columns["Estado"].ToolTipText = "El estado en el que está actualmente el celular";
                 tablaCelulares.Columns["Cedula_Cliente"].ToolTipText = "La cédula del dueño del teléfono";
                 tablaCelulares.Columns["Nombre"].ToolTipText = "El técnico a cargo del teléfono.";
             }
 
-            int columnIndexCedula = 5;
+            int columnIndexCedula = 6;
 
             foreach (DataGridViewRow row in tablaCelulares.Rows)
             {
@@ -1929,8 +1807,7 @@ namespace Diseño
 
         private void tablaTrabajos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            tablaTrabajos.Columns["Nombre"].HeaderText = "Tecnico a Cargo";
-            tablaTrabajos.Columns["Adelanto"].HeaderText = "Adelanto/Seña";
+
         }
 
         //Que se cague, no más de 8 caracteres, que es lo que sería la cédula sin los puntos ni el guión.
@@ -2112,7 +1989,6 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
                             break;
 
                         case "Problema":
@@ -2136,7 +2012,6 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
                             break;
 
                         case "Fecha de ingreso":
@@ -2160,7 +2035,6 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            tablaTrabajos.DataSource = DataTableTrabajosBusqueda;
                             break;
 
                         default:
@@ -2307,47 +2181,45 @@ namespace Diseño
             }
         }
 
-        private void MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares()
-        {
+        //private void MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares()
+        //{
 
-            try
-            {
-                string query = $"SELECT ID, Marca, Modelo, Cedula_Cliente FROM celulares WHERE Baja = 0";
-                conn.Open();
-                cmd = new MySqlCommand(query, conn);
-                reader = cmd.ExecuteReader();
+        //    try
+        //    {
+        //        string query = $"SELECT celulares.ID, celulares.ModeloYOmarca, clientes.Nombre FROM celulares INNER JOIN clientes ON celulares.Cedula_Cliente = clientes.Nombre WHERE celulares.Baja = 0 AND clientes.Baja = 0;";
+        //        conn.Open();
+        //        cmd = new MySqlCommand(query, conn);
+        //        reader = cmd.ExecuteReader();
 
-                List<Celulares> listaUsuarios = new List<Celulares>();
+        //        List<Celulares> listaUsuarios = new List<Celulares>();
 
-                while (reader.Read())
-                {
-                    string id = reader["ID"].ToString();
-                    string marca = reader["Marca"].ToString();
-                    string modelo = reader["Modelo"].ToString();
-                    string ci_Cliente = reader["Cedula_Cliente"].ToString();
+        //        while (reader.Read())
+        //        {
+        //            string id = reader["ID"].ToString();
+        //            string modeloYOmarca = reader["ModeloYOmarca"].ToString();
+        //            string ci_Cliente = reader["Nombre"].ToString();
 
-                    combobox_IDCelular_Modificar_Trabajo.Items.Add(new Celulares
-                    {
-                        Marca = marca,
-                        Modelo = modelo,
-                        CI_Cliente = ci_Cliente,
-                        ID = id
-                    });
-                }
+        //            combobox_IDCelular_Modificar_Trabajo.Items.Add(new Celulares
+        //            {
+        //                ModeloYOmarca = modeloYOmarca,
+        //                Nombre_Cliente = ci_Cliente,
+        //                ID = id
+        //            });
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (conn.State == ConnectionState.Open)
+        //        {
+        //            conn.Close();
+        //        }
+        //    }
+        //}
         private void tabIndex_Pestañas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
@@ -2403,28 +2275,8 @@ namespace Diseño
                 {
 
                 }
-            }
-            else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
-            {
-                if (panel_Modificar.Visible == true && panel_Modificar.Enabled == true)
-                {
-                    timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-                    timer_GroupBox_ModificarC_Reducir.Enabled = true;
-
-                    timer_GroupBox_ModificarT_Agrandar.Enabled = true;
-                    timer_GroupBox_ModificarT_Reducir.Enabled = false;
-                }
-                else
-                {
-                    timer_GroupBox_ModificarC_Reducir.Enabled = true;
-                    timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-
-                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
-                    timer_GroupBox_ModificarT_Reducir.Enabled = true;
 
 
-
-                }
 
                 if (panel_Eliminar.Enabled == true && panel_Eliminar.Visible == true)
                 {
@@ -2464,13 +2316,14 @@ namespace Diseño
 
         private void tablaCelulares_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            if (e.ColumnIndex == 3 && e.RowIndex >= 0)
             {
                 string estado = tablaCelulares.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 
+
                 if (estado == "Averiado")
                 {
-                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.BackColor = Color.FromArgb(180, 25, 25);
                     e.CellStyle.ForeColor = Color.White;
                 }
                 else if (estado == "Arreglado")
@@ -2488,12 +2341,36 @@ namespace Diseño
                     e.CellStyle.BackColor = Color.MidnightBlue;
                     e.CellStyle.ForeColor = Color.White;
                 }
+
             }
+            if (tablaCelulares.Columns[e.ColumnIndex].Name == "Plazo")
+            {
+                plazo = (DateTime)e.Value;
+                DateTime diaDeHoy = DateTime.Now.Date;
+
+                if (plazo <= diaDeHoy)
+                {
+                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else if ((plazo - diaDeHoy).Days <= 2)
+                {
+                    e.CellStyle.BackColor = Color.Yellow;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+
+
+
         }
 
         private void tablaCelulares_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
             {
                 DataGridViewCell cell = tablaCelulares.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 cell.Style.ForeColor = Color.Blue;
@@ -2509,76 +2386,6 @@ namespace Diseño
         {
             //Mala idea. No deja buscar a gusto.
             MostrarDatosEnLasTablasCelulares_SinMensajeDeError();
-            MostrarDatosEnLasTablasTrabajos_SinMensajeDeError();
-        }
-
-        private void tablaTrabajos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                numeroDeFilaTrabajos = e.RowIndex;
-
-                clavePrimariaTrabajos = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["ID"].Value.ToString();
-
-                if (groupBox_EliminarTrabajos.Height >= 300)
-                {
-                    txtID_Trabajo_Eliminar.Text = clavePrimariaTrabajos;
-                }
-
-                labelSeleccion_ID_Modificar.Text = $"Selección: {clavePrimariaTrabajos}";
-
-
-                txtPresupuesto_Modificar.Text = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Presupuesto"].Value.ToString();
-                txtProblema_Modificar.Text = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Problema"].Value.ToString();
-                txtAdelanto_Modificar.Text = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Adelanto"].Value.ToString();
-                string NombreTecnico = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["Nombre"].Value.ToString();
-                string idCelular = tablaTrabajos.Rows[numeroDeFilaTrabajos].Cells["ID_Celular"].Value.ToString();
-
-                foreach (Tecnicos tecnico in combobox_IDTecnico_Modificar_Trabajo.Items)
-                {
-                    if (tecnico.Nombre == NombreTecnico)
-                    {
-                        combobox_IDTecnico_Modificar_Trabajo.SelectedItem = tecnico;
-                        break;
-                    }
-                }
-
-                foreach (Celulares celular in combobox_IDCelular_Modificar_Trabajo.Items)
-                {
-                    if (celular.ID == idCelular)
-                    {
-                        combobox_IDCelular_Modificar_Trabajo.SelectedItem = celular;
-                        break;
-                    }
-                }
-            }
-        }
-        private void tablaTrabajos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //para que se ponga de colores los plazos.
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                if (tablaTrabajos.Columns[e.ColumnIndex].Name == "Plazo")
-                {
-                    plazo = (DateTime)e.Value;
-                    DateTime diaDeHoy = DateTime.Now.Date;
-
-                    if (plazo <= diaDeHoy)
-                    {
-                        e.CellStyle.BackColor = Color.DarkRed;
-                        e.CellStyle.ForeColor = Color.White;
-                    }
-                    else if ((plazo - diaDeHoy).Days <= 2)
-                    {
-                        e.CellStyle.BackColor = Color.Yellow;
-                    }
-                    else
-                    {
-                        e.CellStyle.BackColor = Color.LightGreen;
-                        e.CellStyle.ForeColor = Color.Black;
-                    }
-                }
-            }
         }
 
         private void txtDetallesUobservaciones_Agregar_TextChanged(object sender, EventArgs e)
@@ -2673,15 +2480,10 @@ namespace Diseño
 
         }
 
-        private void tablaTrabajos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void combobox_IDCelular_Modificar_Trabajo_Click(object sender, EventArgs e)
         {
-            combobox_IDCelular_Modificar_Trabajo.Items.Clear(); 
-            MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
+            //combobox_IDCelular_Modificar_Trabajo.Items.Clear();
+            //MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
         }
 
         private void combobox_IDTecnico_Modificar_Trabajo_Click(object sender, EventArgs e)
@@ -2697,12 +2499,159 @@ namespace Diseño
 
         private void panel_Agregar_Paint(object sender, PaintEventArgs e)
         {
-           
+
         }
 
         private void comboBox_AgregarCelular_CedulaDelDueño_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tablaCelulares_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            MostrarNombreYelIDdelTecnicoEnUnComboBox();
+            //linkeo de la cedula del cliente:
+            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
+            {
+                string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
+
+                string nombreDelCliente = ObtenerNombreHaciendoClickEnCedula(cedula);
+                string celularDelCliente = ObtenerCelularHaciendoClickEnCedula(cedula);
+                string telefonoDelCliente = ObtenerTelefonoHaciendoClickEnCedula(cedula);
+                string correoElectrionicoDelCliente = ObtenerCorreoElectronicoHaciendoClickEnCedula(cedula);
+
+                MessageBox.Show($"Información del Cliente:\n\nNombre y Apellido: {nombreDelCliente}\n\nCelular Adicional: {celularDelCliente}\n\nTelefono Fijo: {telefonoDelCliente}\n\nCorreo Electrónico: {correoElectrionicoDelCliente}", "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //Sino que solo seleccione el ID para borrar o modificar el celular.
+            else if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = tablaCelulares.Rows[e.RowIndex];
+
+                //para poner todos los valores en la tabla de modificación de celulares:
+
+                if (groupBox_ModificarCelulares.Enabled == true && panel_Modificar.Enabled == true && groupBox_ModificarCelulares.Visible == true && panel_Modificar.Visible == true)
+                {
+                    //Selección:
+                    string seleccion = filaSeleccionada.Cells["ID"].Value.ToString();
+                    clavePrimariaCelulares = seleccion;
+                    label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
+
+                    //textBoxes:
+                    string IMEI = filaSeleccionada.Cells["IMEI"].Value.ToString();
+                    string modeloYOmarca = filaSeleccionada.Cells["ModeloYOmarca"].Value.ToString();
+
+                    //comboboxes:
+                    string nombreTecnico = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                    string CIcliente = filaSeleccionada.Cells["Cedula_Cliente"].Value.ToString();
+
+                    //aplicaciones:
+                    txtIMEI_Modificar.Text = IMEI;
+                    txtModelo_Modificar.Text = modelo;
+                    txtMarca_Modificar.Text = marca;
+                    //comboboxes:
+
+                    foreach (Cliente cliente in combobox_CI_Del_Dueño_Modificar.Items)
+                    {
+                        if (cliente.Cedula == CIcliente)
+                        {
+                            combobox_CI_Del_Dueño_Modificar.SelectedItem = cliente;
+                            break;
+                        }
+                    }
+                    foreach (Tecnicos tecnico in comboBox_ModificarTecnicoACargo.Items)
+                    {
+                        if (tecnico.Nombre == nombreTecnico)
+                        {
+                            comboBox_ModificarTecnicoACargo.SelectedItem = tecnico;
+                            break;
+                        }
+                    }
+
+                    //para los detalles:
+                    string detalles = string.Empty;
+                    try
+                    {
+                        conn.Open();
+                        string query = $"SELECT Detalles FROM celulares WHERE ID ={seleccion}";
+                        cmd = new MySqlCommand(query, conn);
+                        reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            detalles = reader["Detalles"].ToString();
+                            txtDetallesUobservaciones_Modificar.Text = detalles;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo meter los detalles en el campo de texto de Detalles/Observaciones\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+
+                // para dar de baja los celulares.
+                else
+                {
+                    numeroDeFilaCelulares = e.RowIndex;
+                    clavePrimariaCelulares = tablaCelulares.Rows[numeroDeFilaCelulares].Cells["ID"].Value.ToString();
+                    if (groupBox_EliminarCelulares.Height > 300)
+                    {
+                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Black;
+                        labMostrarIDdelCelularSeleccionado.Text = clavePrimariaCelulares;
+                    }
+                    else if (groupBox_ModificarCelulares.Height > 300)
+                    {
+                        label_modificarCelular_Seleccion.Text = "Selección: " + clavePrimariaCelulares;
+                    }
+                    else
+                    {
+                        labMostrarIDdelCelularSeleccionado.ForeColor = Color.Brown;
+                        labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla.";
+                    }
+                }
+            }
+
+            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
+            {
+                string detalles = ObtenerDetallesDesdeElEstado();
+                MessageBox.Show("Detalles/Observaciones:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void Principal_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                MostrarDatosEnLasTablasCelulares();
+            }
+        }
+
+        private void timer_Transicion_Tick(object sender, EventArgs e)
+        {
+            if (transicion == "FadeIn")
+            {
+                if (this.Opacity == 1)
+                {
+                    timer_Transicion.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity + .15;
+                }
+            }
+            else if (transicion == "FadeOut")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    this.Hide();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - 0.15;
+                }
+            }
         }
     }
 }

@@ -368,6 +368,7 @@ namespace Diseño
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(teclado);
                 byte[] hashbytes = cripto.ComputeHash(bytes);
+
                 return BitConverter.ToString(hashbytes).Replace("-", "").ToLower();
             }
         }
