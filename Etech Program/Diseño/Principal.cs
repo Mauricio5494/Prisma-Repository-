@@ -2137,51 +2137,51 @@ namespace Diseño
         private void MostrarNombreYlaCeduladelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares()
         {
 
-        //    try
-        //    {
-        //        string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
-        //        conn.Open();
-        //        cmd = new MySqlCommand(query, conn);
-        //        reader = cmd.ExecuteReader();
+            try
+            {
+                string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
+                conn.Open();
+                cmd = new MySqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
 
-        //        comboBox_ModificarTecnicoACargo.Items.Clear();
+                comboBox_ModificarTecnicoACargo.Items.Clear();
 
-        //        List<Cliente> listaUsuarios = new List<Cliente>();
+                List<Cliente> listaUsuarios = new List<Cliente>();
 
-        //        while (reader.Read())
-        //        {
-        //            string nombre = reader["Nombre"].ToString();
-        //            string cedula = reader["Cedula"].ToString();
+                while (reader.Read())
+                {
+                    string nombre = reader["Nombre"].ToString();
+                    string cedula = reader["Cedula"].ToString();
 
-        //            comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
-        //            {
-        //                Nombre = nombre,
-        //                Cedula = cedula
-        //            });
-        //            combobox_CI_Del_Dueño_Modificar.Items.Add(new Cliente
-        //            {
-        //                Nombre = nombre,
-        //                Cedula = cedula
-        //            });
+                    comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
+                    {
+                        Nombre = nombre,
+                        Cedula = cedula
+                    });
+                    combobox_CI_Del_Dueño_Modificar.Items.Add(new Cliente
+                    {
+                        Nombre = nombre,
+                        Cedula = cedula
+                    });
 
-        //        }
+                }
 
 
-        //        comboBox_ModificarTecnicoACargo.DisplayMember = "";
+                comboBox_ModificarTecnicoACargo.DisplayMember = "";
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        if (conn.State == ConnectionState.Open)
-        //        {
-        //            conn.Close();
-        //        }
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
 
         //private void MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares()
         //{
@@ -2220,8 +2220,8 @@ namespace Diseño
         //        {
         //            conn.Close();
         //        }
-        //    }
-        }
+         
+    
         private void tabIndex_Pestañas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
@@ -2656,7 +2656,7 @@ namespace Diseño
                 }
             }
         }
-        
+
         private void tablaCelulares_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -2668,28 +2668,35 @@ namespace Diseño
 
         private void comboBox_AgregarCelular_CedulaDelDueño_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void comboBox_AgregarCelular_CedulaDelDueño_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
+
+
         private void comboBox_AgregarCelular_CedulaDelDueño_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
 
                 if (comboBox_AgregarCelular_CedulaDelDueño.Text == "")
                 {
-                    MessageBox.Show($"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0");
+                    //MessageBox.Show($"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0");
 
                     conn.Open();
                     string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
                     cmd = new MySqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
                     reader = cmd.ExecuteReader();
+
 
                     comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
 
@@ -2710,21 +2717,34 @@ namespace Diseño
                             Cedula = cedula
                         });
                     }
+
 
                 }
                 else
                 {
 
+                    comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
+
+
                     conn.Open();
-                    string query = $"SELECT Nombre, Cedula WHERE nombre LIKE '%{comboBox_AgregarCelular_CedulaDelDueño.Text}%' FROM clientes AND Baja = 0";
+                    string abrir;
+                    string query = $"SELECT Nombre, Cedula FROM Clientes WHERE Nombre LIKE '%{comboBox_AgregarCelular_CedulaDelDueño.Text}%' AND Baja = 0";
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show($"SELECT Nombre, Cedula WHERE nombre LIKE '%{comboBox_AgregarCelular_CedulaDelDueño.Text}%' FROM clientes AND Baja = 0");
 
-                    comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true;
 
                     comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
+
+                    abrir = "Abierto";
+
+                    if (abrir == "Abierto")
+                    {
+                        comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true; 
+                    }
+                    else if (abrir == "Cerrado")
+                    {
+                        comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = false;
+                    }
 
 
 
@@ -2740,19 +2760,22 @@ namespace Diseño
                             Nombre = nombre,
                             Cedula = cedula
                         });
+                        abrir = "Cerrado";
+                        break;
                     }
-
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message );
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }
 }
-
-
 
 /* It just works.
  * 
