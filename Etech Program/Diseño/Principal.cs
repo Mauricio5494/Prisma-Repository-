@@ -2714,18 +2714,19 @@ namespace Diseño
                 }
                 else
                 {
-                    MessageBox.Show($"SELECT Nombre, Cedula WHERE nombre LIKE %'{comboBox_AgregarCelular_CedulaDelDueño.Text}',% FROM clientes AND Baja = 0");
 
                     conn.Open();
-                    string query = $"SELECT Nombre, Cedula WHERE nombre LIKE %'{comboBox_AgregarCelular_CedulaDelDueño.Text}',% FROM clientes AND Baja = 0";
+                    string query = $"SELECT Nombre, Cedula WHERE nombre LIKE '%{comboBox_AgregarCelular_CedulaDelDueño.Text}%' FROM clientes AND Baja = 0";
                     cmd = new MySqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
                     reader = cmd.ExecuteReader();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show($"SELECT Nombre, Cedula WHERE nombre LIKE '%{comboBox_AgregarCelular_CedulaDelDueño.Text}%' FROM clientes AND Baja = 0");
+
+                    comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true;
 
                     comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
 
 
-                    comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true;
 
                     List<Cliente> listaUsuarios = new List<Cliente>();
 
@@ -2745,7 +2746,7 @@ namespace Diseño
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message );
             }
         }
     }
