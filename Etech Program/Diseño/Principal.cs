@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using MySql.Utility.Classes;
 using MySql.Utility.Forms;
 using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -112,7 +113,7 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                cmd = new MySqlCommand("SELECT celulares.ID, usuarios.Nombre, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
@@ -172,244 +173,6 @@ namespace Diseño
         {
             txtCampo_Busqueda.Enabled = true;
 
-        }
-
-        //Boton de busqueda
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (MenuOpcionesCelular.Text.Equals("") && txtCampo_Busqueda.Text.Equals("") || MenuOpcionesTrabajos.Equals("") && txtCampo_Busqueda.Text.Equals(""))
-            {
-                MessageBox.Show("Antes de buscar seleccione una opción de filtro y escribe algo en el campo", "Alto!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            else
-            {
-                //busqueda para celulares:
-                if (MenuOpcionesCelular.Enabled == true)
-                {
-                    option = MenuOpcionesCelular.Text;
-                    switch (option)
-                    {
-                        case "Dueño":
-
-                            DataTableCelularesBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Cedula_Cliente = (SELECT cedula FROM clientes WHERE Nombre = '" + txtCampo_Busqueda.Text + "') AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableCelularesBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
-                            break;
-
-                        case "Marca":
-
-                            DataTableCelularesBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Marca = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableCelularesBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
-                            break;
-
-                        case "Modelo":
-
-                            DataTableCelularesBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE Modelo = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableCelularesBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
-                            break;
-
-                        case "ID":
-
-                            DataTableCelularesBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ModeloYOmarca, IMEI, Estado, Cedula_Cliente, ID_Usuario FROM celulares WHERE ID = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableCelularesBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
-                            break;
-
-                        default:
-
-                            break;
-                    }
-                }
-                else
-                {
-                    //Busqueda para Trabajos:
-                    option = MenuOpcionesTrabajos.Text;
-                    switch (option)
-                    {
-                        case "Presupuesto":
-
-                            DataTableTrabajosBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Presupuesto = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableTrabajosBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-                            break;
-
-                        case "Problema":
-
-
-                            DataTableTrabajosBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Problema = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableTrabajosBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-                            break;
-
-                        case "Fecha de ingreso":
-
-
-                            DataTableTrabajosBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Fecha_Ingreso = '" + txtCampo_Busqueda.Text + "' AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableTrabajosBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-                            break;
-
-                        case "ID del celular":
-
-
-                            DataTableTrabajosBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = "SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE ID_Celular = " + txtCampo_Busqueda.Text + " AND Baja = 1;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableTrabajosBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-                            break;
-
-                        default:
-
-                            break;
-                    }
-                }
-            }
-        }
-
-        //Función para una ayuda visual al usuario, no muy elegante pero intenta hacer su función principal.
-        private void AyudaVisual_Tabla_Mostrar()
-        {
-            /*
-            if (radioButton_TablaCelulares.Checked || radioButton_TablaTrabajos.Checked)
-            {
-                labAyudaVisual_SeleccionarTabla.Visible = false;
-                labAyudaVisual_SeleccionarTabla.Enabled = false;
-            }
-            else
-            {
-                labAyudaVisual_SeleccionarTabla.Visible = true;
-                labAyudaVisual_SeleccionarTabla.Enabled = true;
-            }
-            */
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -614,11 +377,16 @@ namespace Diseño
         {
             if (Seguridad.getInvitado == false)
             {
-                if (panel_Modificar.Height <= 1)
+                if (panel_Modificar.Height < 1)
                 {
                     //panel modificar
                     timer_Modificar_Agrandar.Enabled = true;
                     timer_Modificar_Reducir.Enabled = false;
+                    timer_GroupBox_ModificarT_Reducir.Enabled = true;
+                    timer_GroupBox_ModificarT_Agrandar.Enabled = false;
+                    timer_GroupBox_ModificarC_Reducir.Enabled = false;
+                    timer_GroupBox_ModificarC_Agrandar.Enabled = true;
+                    groupBox_ModificarCelulares.Enabled = true;
 
                     //panel agregar
                     timer_Agregar_Agrandar.Enabled = false;
@@ -640,48 +408,7 @@ namespace Diseño
                 {
                     timer_Modificar_Agrandar.Enabled = false;
                     timer_Modificar_Reducir.Enabled = true;
-
-                    //tabIndex_Pestañas.Width = 1305;
-                    //tabIndex_Pestañas.Location = new Point(49, 73);
                 }
-
-
-                //    if (panel_Modificar.Height <= 1)
-                //    {
-                //        timer_Modificar_Agrandar.Enabled = true;
-                //        timer_Modificar_Reducir.Enabled = false;
-
-                //        if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
-                //        {
-                //            timer_GroupBox_ModificarC_Agrandar.Enabled = true;
-                //            timer_GroupBox_ModificarC_Reducir.Enabled = false;
-                //            timer_GroupBox_ModificarT_Agrandar.Enabled = false;
-                //            timer_GroupBox_ModificarT_Reducir.Enabled = true;
-                //        }
-                //        else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
-                //        {
-                //            timer_GroupBox_ModificarC_Reducir.Enabled = true;
-                //            timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-                //            timer_GroupBox_ModificarT_Agrandar.Enabled = true;
-                //            timer_GroupBox_ModificarT_Reducir.Enabled = false;
-                //        }
-                //    }
-                //    else
-                //    {
-                //        timer_Modificar_Reducir.Enabled = true;
-                //        timer_Modificar_Agrandar.Enabled = false;
-                //        timer_GroupBox_ModificarC_Reducir.Enabled = true;
-                //        timer_GroupBox_ModificarT_Reducir.Enabled = true;
-                //        timer_GroupBox_ModificarC_Agrandar.Enabled = false;
-                //        timer_GroupBox_ModificarT_Agrandar.Enabled = false;
-                //        panel_Modificar.Enabled = false;
-                //        panel_Modificar.SendToBack();
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                //}
 
             }
         }
@@ -1124,7 +851,7 @@ namespace Diseño
             {
 
                 //Codigo para modificar el Celular:
-                if (txtModelo_Modificar.Text != "" && txtMarca_Modificar.Text != "" && txtIMEI_Modificar.Text != "" && combobox_CI_Del_Dueño_Modificar.Text != "" && comboBox_ModificarTecnicoACargo.SelectedItem != null && txtDetallesUobservaciones_Modificar.Text != "")
+                if (txtModelo_Modificar.Text != "" && combobox_CI_Del_Dueño_Modificar.Text != "" && comboBox_ModificarTecnicoACargo.SelectedItem != null && txtDetallesUobservaciones_Modificar.Text != "")
                 {
 
                     if (radioButton_Arreglado_Modificar.Checked == true || radioButton_Averiado_Modificar.Checked == true || radioButton_EnProceso_Modificar.Checked || radioButton_EnEspera_Modificar.Checked)
@@ -1133,11 +860,22 @@ namespace Diseño
                         {
                             conn.Open();
                             modelo = txtModelo_Modificar.Text;
-                            marca = txtMarca_Modificar.Text;
                             imei = txtIMEI_Modificar.Text;
                             string detalles = txtDetallesUobservaciones_Modificar.Text;
+
+                            DateTime tomarIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
+                            DateTime tomarPlazo = dateTimePicker_FechaPlazo_Agregar.Value;
+
+                            string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
+                            string ingresoFormat = tomarIngreso.ToString("yyyy-MM-dd");
+
+                            DateTime plazo = DateTime.ParseExact(ingresoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            DateTime ingreso = DateTime.ParseExact(plazoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
                             string ciCliente = CIcliente.Cedula;
                             string idUsuario = idDelTecnicoSeleccionado.ID;
+                            string adelanto = txt_AdelantoModificar.Text;
+                            string presupuesto = txt_PresupuestoModificar.Text;
 
                             if (radioButton_Arreglado_Modificar.Checked)
                             {
@@ -1156,8 +894,20 @@ namespace Diseño
                                 estado = "En Espera";
                             }
 
-                            modifcarCelulares = $"UPDATE celulares SET Modelo ='{modelo}', Marca ='{marca}', IMEI ='{imei}',Estado ='{estado}',Cedula_Cliente ='{ciCliente}', ID_Usuario ={idUsuario}, Detalles ='{detalles}' WHERE celulares.ID ={clavePrimariaCelulares}";
+                            modifcarCelulares = $"UPDATE celulares SET ModeloYOmarca =@ModeloYOmarca, IMEI =@IMEI, Estado =@Estado, Ingreso =@Ingreso, Plazo =@Plazo, Adelanto = @Adelanto, Presupuesto = @Presupuesto, Detalles =@Detalles WHERE ID=@ID";
                             cmd = new MySqlCommand(modifcarCelulares, conn);
+
+                            cmd.Parameters.AddWithValue("@ModeloYOmarca", modelo);
+                            cmd.Parameters.AddWithValue("@IMEI", imei);
+                            cmd.Parameters.AddWithValue("@Estado", estado);
+                            cmd.Parameters.AddWithValue("@Cedula_Cliente", ciCliente);
+                            cmd.Parameters.AddWithValue("@ID_Usuario", idUsuario);
+                            cmd.Parameters.AddWithValue("@Plazo", plazo);
+                            cmd.Parameters.AddWithValue("@Ingreso", ingreso);
+                            cmd.Parameters.AddWithValue("@Adelanto", adelanto);
+                            cmd.Parameters.AddWithValue("@Presupuesto", presupuesto);
+                            cmd.Parameters.AddWithValue("@ID", clavePrimariaCelulares);
+                            cmd.Parameters.AddWithValue("@Detalles", detalles);
 
                             DialogResult siono = MessageBox.Show("¿Está seguro de querer modificar este celular?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (siono == DialogResult.Yes)
@@ -1719,15 +1469,11 @@ namespace Diseño
 
         private void radioButton_TablaCelulares_CheckedChanged(object sender, EventArgs e)
         {
-            AyudaVisual_Tabla_Mostrar();
             btnRecargar.Enabled = true;
             btnRecargar.Visible = true;
 
             MenuOpcionesCelular.Enabled = true;
             MenuOpcionesCelular.Visible = true;
-            MenuOpcionesTrabajos.Enabled = false;
-            MenuOpcionesTrabajos.Visible = false;
-
 
 
             if (tablaCelulares.Height <= 600)
@@ -1779,13 +1525,13 @@ namespace Diseño
                 tablaCelulares.Columns["ID"].Width = 20;
                 tablaCelulares.Columns["ModeloYOmarca"].Width = lonigtudDeColumna_Larga;
                 tablaCelulares.Columns["IMEI"].Width = 80;
-                tablaCelulares.Columns["Nombre"].Width = 115;
+                tablaCelulares.Columns["Nombre"].Width = 90;
 
 
                 //Renombre de columnas, más que nada es estético.
                 tablaCelulares.Columns["ModeloYOmarca"].HeaderText = "Marca y/o Modelo";
-                tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cédula";
-                tablaCelulares.Columns["Nombre"].HeaderText = "Técnico";
+                tablaCelulares.Columns["Cedula_Cliente"].HeaderText = "Cliente";
+                tablaCelulares.Columns["Nombre"].HeaderText = "Tecnico Responsable";
 
                 //Tooltips al posar el mouse
                 tablaCelulares.Columns["ModeloYOmarca"].ToolTipText = "El modelo y/o la marca del teléfono";
@@ -1816,7 +1562,10 @@ namespace Diseño
 
         private void txtCampo_Busqueda_TextChanged(object sender, EventArgs e)
         {
-            if (txtCampo_Busqueda.Text.Equals(""))
+
+            string busquedaCampo = txtCampo_Busqueda.Text;
+
+            if (txtCampo_Busqueda.Text.Length == 0)
             {
                 MostrarDatosEnLasTablasCelulares_SinMensajeDeError();
             }
@@ -1828,17 +1577,18 @@ namespace Diseño
                     option = MenuOpcionesCelular.Text;
                     switch (option)
                     {
-                        case "Cedula del dueño":
+                        case "Cedula del Propietario":
 
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
-                                           "FROM celulares " +
-                                           "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                           $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Cedula_Cliente LIKE '%{txtCampo_Busqueda.Text}%'";
+                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Cedula_Cliente LIKE '%@Busqueda%'";
 
+                                cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
 
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
@@ -1856,16 +1606,19 @@ namespace Diseño
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
 
-                        case "Marca":
+                        case "Modelo y/o Marca":
 
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
-                                           "FROM celulares " +
-                                           "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                           $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Marca LIKE '%{txtCampo_Busqueda.Text}%'";
+                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.ModeloYOmarca LIKE '%@Busqueda%'";
+
+                                cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
+
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -1882,16 +1635,19 @@ namespace Diseño
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
 
-                        case "Modelo":
+                        case "Ingreso":
 
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
-                                           "FROM celulares " +
-                                           "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                           $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Modelo LIKE '%{txtCampo_Busqueda.Text}%'";
+                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Ingreso LIKE '%@Busqueda%'";
+
+                                cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
+
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -1914,10 +1670,42 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
-                                           "FROM celulares " +
-                                           "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                           $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Estado LIKE '%{txtCampo_Busqueda.Text}%'";
+                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Estado LIKE '%@Busqueda%'";
+
+                                cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
+
+                                cmd = new MySqlCommand(busqueda, conn);
+                                cmd.CommandType = System.Data.CommandType.Text;
+                                reader = cmd.ExecuteReader();
+                                DataTableCelularesBusqueda.Load(reader);
+                            }
+                            catch (Exception x)
+                            {
+                                MessageBox.Show("Ocurrio un error inesperado durante la busqueda\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                            tablaCelulares.DataSource = DataTableCelularesBusqueda;
+                            break;
+
+                        case "Plazo":
+
+                            DataTableCelularesBusqueda.Rows.Clear();
+                            try
+                            {
+                                conn.Open();
+                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Plazo LIKE '%@Busqueda%'";
+
+                                cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
+
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -1940,10 +1728,13 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.Modelo, celulares.Marca, celulares.IMEI, celulares.Estado, celulares.Cedula_Cliente, usuarios.Nombre " +
-                                           "FROM celulares " +
-                                           "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                           $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND usuarios.Nombre LIKE '%{txtCampo_Busqueda.Text}%'";
+                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                     "FROM celulares " +
+                                     "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND usuarios.Nombre LIKE '%@Busqueda%'";
+
+                                cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
+
                                 cmd = new MySqlCommand(busqueda, conn);
                                 cmd.CommandType = System.Data.CommandType.Text;
                                 reader = cmd.ExecuteReader();
@@ -1965,87 +1756,10 @@ namespace Diseño
                             break;
                     }
                 }
-                else
-                {
-                    //Busqueda para Trabajos:
-                    option = MenuOpcionesTrabajos.Text;
-                    switch (option)
-                    {
-                        case "Presupuesto":
 
-                            DataTableTrabajosBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Presupuesto LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableTrabajosBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            break;
-
-                        case "Problema":
-
-
-                            DataTableTrabajosBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Problema LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableTrabajosBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            break;
-
-                        case "Fecha de ingreso":
-
-
-                            DataTableTrabajosBusqueda.Rows.Clear();
-                            try
-                            {
-                                conn.Open();
-                                busqueda = $"SELECT ID, ID_Tecnico, Plazo, Presupuesto, Problema, Fecha_Ingreso, Adelanto, ID_Celular FROM trabajos WHERE Fecha_Ingreso LIKE '%{txtCampo_Busqueda.Text}%' AND Baja = 0;";
-                                cmd = new MySqlCommand(busqueda, conn);
-                                cmd.CommandType = System.Data.CommandType.Text;
-                                reader = cmd.ExecuteReader();
-                                DataTableTrabajosBusqueda.Load(reader);
-                            }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show("Ocurrio un error inesperado durante la busquedas\n\n" + x.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            break;
-
-                        default:
-
-                            break;
-                    }
-                }
             }
         }
+
 
         //public List<Tecnicos> ObtenerParaFiltrarTecnicos()
         //{
@@ -2086,50 +1800,53 @@ namespace Diseño
         private void MostrarNombreYelIDdelTecnicoEnUnComboBox()
         {
 
-            try
+            if (comboBox_AgregarCelular_IdDelTecnicoAcargo.Text.Length == 0)
             {
-                string query = $"SELECT ID, Nombre FROM usuarios WHERE Baja = 0";
-                conn.Open();
-                cmd = new MySqlCommand(query, conn);
-                reader = cmd.ExecuteReader();
-
-                comboBox_ModificarTecnicoACargo.Items.Clear();
-                comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Clear();
-
-                List<Tecnicos> listaUsuarios = new List<Tecnicos>();
-
-                while (reader.Read())
+                try
                 {
-                    string nombre = reader["Nombre"].ToString();
-                    string id = reader["ID"].ToString();
+                    string query = $"SELECT ID, Nombre FROM usuarios WHERE Baja = 0";
+                    conn.Open();
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
 
-                    comboBox_ModificarTecnicoACargo.Items.Add(new Tecnicos
-                    {
-                        Nombre = nombre,
-                        ID = id
-                    });
+                    comboBox_ModificarTecnicoACargo.Items.Clear();
+                    comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Clear();
 
-                    comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Add(new Tecnicos
+                    List<Tecnicos> listaUsuarios = new List<Tecnicos>();
+
+                    while (reader.Read())
                     {
-                        Nombre = nombre,
-                        ID = id
-                    });
+                        string nombre = reader["Nombre"].ToString();
+                        string id = reader["ID"].ToString();
+
+
+                        comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Add(new Tecnicos
+                        {
+                            Nombre = nombre,
+                            ID = id
+                        });
+                        comboBox_ModificarTecnicoACargo.Items.Add(new Tecnicos
+                        {
+                            Nombre = nombre,
+                            ID = id
+                        });
+                    }
+
+
+
+                    comboBox_ModificarTecnicoACargo.DisplayMember = "";
 
                 }
-
-
-                comboBox_ModificarTecnicoACargo.DisplayMember = "";
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
+                catch (Exception ex)
                 {
-                    conn.Close();
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
                 }
             }
         }
@@ -2220,8 +1937,8 @@ namespace Diseño
         //        {
         //            conn.Close();
         //        }
-         
-    
+
+
         private void tabIndex_Pestañas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
@@ -2318,7 +2035,7 @@ namespace Diseño
 
         private void tablaCelulares_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 3 && e.RowIndex >= 0)
+            if (tablaCelulares.Columns[e.ColumnIndex].Name == "Estado")
             {
                 string estado = tablaCelulares.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 
@@ -2355,15 +2072,27 @@ namespace Diseño
                     e.CellStyle.BackColor = Color.DarkRed;
                     e.CellStyle.ForeColor = Color.White;
                 }
-                else if ((plazo - diaDeHoy).Days <= 2)
+                else if ((plazo - diaDeHoy).Days == 2)
                 {
                     e.CellStyle.BackColor = Color.Yellow;
+                }
+                else if ((plazo - diaDeHoy).Days == 1)
+                {
+                    e.CellStyle.BackColor = Color.OrangeRed;
                 }
                 else
                 {
                     e.CellStyle.BackColor = Color.LightGreen;
                     e.CellStyle.ForeColor = Color.Black;
                 }
+            }
+            if (tablaCelulares.Columns[e.ColumnIndex].Name == "Adelanto")
+            {
+                e.CellStyle.ForeColor = Color.FromArgb(0, 128, 0);
+            }
+            if (tablaCelulares.Columns[e.ColumnIndex].Name == "Presupuesto")
+            {
+                e.CellStyle.ForeColor = Color.FromArgb(0, 128, 0);
             }
 
 
@@ -2513,7 +2242,7 @@ namespace Diseño
         {
             MostrarNombreYelIDdelTecnicoEnUnComboBox();
             //linkeo de la cedula del cliente:
-            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 9)
             {
                 string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
 
@@ -2541,6 +2270,8 @@ namespace Diseño
                     //textBoxes:
                     string IMEI = filaSeleccionada.Cells["IMEI"].Value.ToString();
                     string modeloYOmarca = filaSeleccionada.Cells["ModeloYOmarca"].Value.ToString();
+                    string adelanto = filaSeleccionada.Cells["Adelanto"].Value.ToString();
+                    string presupuesto = filaSeleccionada.Cells["Presupuesto"].Value.ToString();
 
                     //comboboxes:
                     string nombreTecnico = filaSeleccionada.Cells["Nombre"].Value.ToString();
@@ -2548,8 +2279,10 @@ namespace Diseño
 
                     //aplicaciones:
                     txtIMEI_Modificar.Text = IMEI;
-                    txtModelo_Modificar.Text = modelo;
-                    txtMarca_Modificar.Text = marca;
+                    txtModelo_Modificar.Text = modeloYOmarca;
+                    txtPresupuesto_Modificar.Text = presupuesto;
+                    txtAdelanto_Modificar.Text = adelanto;
+
                     //comboboxes:
 
                     foreach (Cliente cliente in combobox_CI_Del_Dueño_Modificar.Items)
@@ -2680,18 +2413,59 @@ namespace Diseño
 
         private void comboBox_AgregarCelular_CedulaDelDueño_TextChanged(object sender, EventArgs e)
         {
+            if (comboBox_AgregarCelular_CedulaDelDueño.Text.Length == 0)
+            {
+                try
+                {
 
+                    if (comboBox_AgregarCelular_CedulaDelDueño.Text == "")
+                    {
+                        conn.Open();
+                        string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
+                        cmd = new MySqlCommand(query, conn);
+                        reader = cmd.ExecuteReader();
+
+
+                        comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
+
+
+                        List<Cliente> listaUsuarios = new List<Cliente>();
+
+                        while (reader.Read())
+                        {
+                            string nombre = reader["Nombre"].ToString();
+                            string cedula = reader["Cedula"].ToString();
+
+                            comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
+                            {
+                                Nombre = nombre,
+                                Cedula = cedula
+                            });
+                        }
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo encontrar a los clientes\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
+
+            string busqueda = comboBox_AgregarCelular_CedulaDelDueño.Text;
+
             try
             {
 
                 if (comboBox_AgregarCelular_CedulaDelDueño.Text == "")
                 {
-                    //MessageBox.Show($"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0");
-
                     conn.Open();
                     string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
                     cmd = new MySqlCommand(query, conn);
@@ -2728,18 +2502,18 @@ namespace Diseño
 
                     conn.Open();
                     string abrir;
-                    string query = $"SELECT Nombre, Cedula FROM Clientes WHERE Nombre LIKE '%{comboBox_AgregarCelular_CedulaDelDueño.Text}%' AND Baja = 0";
+                    string query = $"SELECT Nombre, Cedula FROM Clientes WHERE Nombre LIKE '%{busqueda}%' AND Baja = 0";
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
 
+                    cmd.Parameters.AddWithValue("@Nombre", busqueda);
 
-                    comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
 
                     abrir = "Abierto";
 
                     if (abrir == "Abierto")
                     {
-                        comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true; 
+                        comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true;
                     }
                     else if (abrir == "Cerrado")
                     {
@@ -2761,7 +2535,6 @@ namespace Diseño
                             Cedula = cedula
                         });
                         abrir = "Cerrado";
-                        break;
                     }
                 }
             }

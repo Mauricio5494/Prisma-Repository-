@@ -250,6 +250,12 @@
     <None Include="Resources\20230313_234416_0000.png" />
     <None Include="Resources\Logo Catalina Harriague de Castaños - UTU.png" />
     <Content Include="logo-etech-uruguay-220-e1654881097513-_1_.ico" />
+    <None Include="Resources\lupa2.png" />
+    <None Include="Resources\work-from-home.png" />
+    <None Include="Resources\cliente.png" />
+    <None Include="Resources\vigilancia.png" />
+    <None Include="Resources\telefono-inteligente.png" />
+    <None Include="Resources\telefono-inteligente %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
