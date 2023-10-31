@@ -112,7 +112,7 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Plazo, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                cmd = new MySqlCommand("SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
@@ -1112,6 +1112,8 @@ namespace Diseño
                 MostrarDatosEnLasTablasCelulares();
             }
         }
+
+
 
         private void btnModificar_Celular_Click(object sender, EventArgs e)
         {
@@ -2135,51 +2137,51 @@ namespace Diseño
         private void MostrarNombreYlaCeduladelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares()
         {
 
-            try
-            {
-                string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
-                conn.Open();
-                cmd = new MySqlCommand(query, conn);
-                reader = cmd.ExecuteReader();
+        //    try
+        //    {
+        //        string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
+        //        conn.Open();
+        //        cmd = new MySqlCommand(query, conn);
+        //        reader = cmd.ExecuteReader();
 
-                comboBox_ModificarTecnicoACargo.Items.Clear();
+        //        comboBox_ModificarTecnicoACargo.Items.Clear();
 
-                List<Cliente> listaUsuarios = new List<Cliente>();
+        //        List<Cliente> listaUsuarios = new List<Cliente>();
 
-                while (reader.Read())
-                {
-                    string nombre = reader["Nombre"].ToString();
-                    string cedula = reader["Cedula"].ToString();
+        //        while (reader.Read())
+        //        {
+        //            string nombre = reader["Nombre"].ToString();
+        //            string cedula = reader["Cedula"].ToString();
 
-                    comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
-                    {
-                        Nombre = nombre,
-                        Cedula = cedula
-                    });
-                    combobox_CI_Del_Dueño_Modificar.Items.Add(new Cliente
-                    {
-                        Nombre = nombre,
-                        Cedula = cedula
-                    });
+        //            comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
+        //            {
+        //                Nombre = nombre,
+        //                Cedula = cedula
+        //            });
+        //            combobox_CI_Del_Dueño_Modificar.Items.Add(new Cliente
+        //            {
+        //                Nombre = nombre,
+        //                Cedula = cedula
+        //            });
 
-                }
+        //        }
 
 
-                comboBox_ModificarTecnicoACargo.DisplayMember = "";
+        //        comboBox_ModificarTecnicoACargo.DisplayMember = "";
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (conn.State == ConnectionState.Open)
+        //        {
+        //            conn.Close();
+        //        }
+        //    }
+        //}
 
         //private void MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares()
         //{
@@ -2219,7 +2221,7 @@ namespace Diseño
         //            conn.Close();
         //        }
         //    }
-        //}
+        }
         private void tabIndex_Pestañas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
@@ -2613,7 +2615,7 @@ namespace Diseño
                 }
             }
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
             {
                 string detalles = ObtenerDetallesDesdeElEstado();
                 MessageBox.Show("Detalles/Observaciones:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2624,6 +2626,7 @@ namespace Diseño
             if (e.KeyCode == Keys.F5)
             {
                 MostrarDatosEnLasTablasCelulares();
+                MessageBox.Show("No, mentira, si");
             }
         }
 
@@ -2651,6 +2654,98 @@ namespace Diseño
                 {
                     this.Opacity = this.Opacity - 0.15;
                 }
+            }
+        }
+        
+        private void tablaCelulares_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.F5)
+            {
+                MostrarDatosEnLasTablasCelulares();
+            }
+        }
+
+        private void comboBox_AgregarCelular_CedulaDelDueño_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void comboBox_AgregarCelular_CedulaDelDueño_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void comboBox_AgregarCelular_CedulaDelDueño_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (comboBox_AgregarCelular_CedulaDelDueño.Text == "")
+                {
+                    MessageBox.Show($"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0");
+
+                    conn.Open();
+                    string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    reader = cmd.ExecuteReader();
+
+                    comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
+
+                    comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true;
+
+
+
+                    List<Cliente> listaUsuarios = new List<Cliente>();
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string cedula = reader["Cedula"].ToString();
+
+                        comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
+                        {
+                            Nombre = nombre,
+                            Cedula = cedula
+                        });
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show($"SELECT Nombre, Cedula WHERE nombre LIKE %'{comboBox_AgregarCelular_CedulaDelDueño.Text}',% FROM clientes AND Baja = 0");
+
+                    conn.Open();
+                    string query = $"SELECT Nombre, Cedula WHERE nombre LIKE %'{comboBox_AgregarCelular_CedulaDelDueño.Text}',% FROM clientes AND Baja = 0";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    reader = cmd.ExecuteReader();
+
+                    comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
+
+
+                    comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true;
+
+                    List<Cliente> listaUsuarios = new List<Cliente>();
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string cedula = reader["Cedula"].ToString();
+
+                        comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
+                        {
+                            Nombre = nombre,
+                            Cedula = cedula
+                        });
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }

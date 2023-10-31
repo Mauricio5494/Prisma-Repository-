@@ -192,7 +192,7 @@
             // 
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = global::Diseño.Properties.Resources.ojo_tapado;
-            this.pictureBox2.Location = new System.Drawing.Point(362, 95);
+            this.pictureBox2.Location = new System.Drawing.Point(362, 93);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -235,6 +235,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroUsuarios";
             this.Opacity = 0D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etech | Registro Rápido";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroUsuarios_FormClosed);
             this.Load += new System.EventHandler(this.RegistroUsuarios_Load);

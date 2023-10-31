@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Diseño.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
 using System.Security.Cryptography;
@@ -167,17 +168,17 @@ namespace Diseño
                 }
                 else
                 {
-                    existe_otra_cuenta= false;
+                    existe_otra_cuenta = false;
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Fallo la conexion con el servidor o la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally 
-            { 
-                conn.Close(); 
-            }   
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void RegistroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
@@ -190,15 +191,18 @@ namespace Diseño
         {
             if (!checkBox_MostrarContraseña.Checked)
             {
-                txtPassword.PasswordChar = '\0';
+                pictureBox2.Image = Resources.ojo_tapado;
+                txtPassword.PasswordChar = '*';
             }
             else
             {
-                txtPassword.PasswordChar = '*';
+                pictureBox2.Image = Resources.ojo;
+                txtPassword.PasswordChar = '\0';
             }
         }
         private void RegistroUsuarios_Load(object sender, EventArgs e)
         {
+
             transicion = "FadeIn";
             timer_transicion.Start();
         }
@@ -218,7 +222,7 @@ namespace Diseño
             }
             else if (transicion == "FadeOut")
             {
-                if (this.Opacity == 1)
+                if (this.Opacity == 0)
                 {
                     timer_transicion.Stop();
                     this.Hide();
@@ -226,6 +230,7 @@ namespace Diseño
                 else
                 {
                     this.Opacity = this.Opacity - .15;
+                    this.Top += 15;
                 }
             }
             else if (transicion == "FadeOutExit")
@@ -238,7 +243,7 @@ namespace Diseño
                 else
                 {
                     this.Opacity -= .15;
-                    this.Top += 15;
+                    this.Left += 15;
                 }
             }
         }

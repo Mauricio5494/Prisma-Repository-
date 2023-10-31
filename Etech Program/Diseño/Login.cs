@@ -89,33 +89,18 @@ namespace Diseño
             try
             {
                 conn.Open();
-                sql = $"SELECT Nombre, Contraseña FROM usuarios WHERE nombre ='{Nombre}' AND Contraseña ='{Password}'";
+                sql = $"SELECT Nombre, Contraseña FROM usuarios WHERE nombre ='{Nombre}' AND Contraseña = SHA2('{Password}', 256)";
                 cmd_sql = new MySqlCommand(sql, conn);
                 reader = cmd_sql.ExecuteReader();
                 reader.Read();
                 try
                 {
-
-                        string contraseñaEnBD = reader["Contraseña"].ToString();
-
-                        string contraseñaDecodificada = DecoderDelHash(Password);
-
-                        if (contraseñaDecodificada == contraseñaEnBD)
-                        {
-                            Seguridad.SetInvitado = false;
-                            transicion = "FadeOut";
-                            timer_AparecerSuavemente.Start();
-                            Taller.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Contraseña Incorrecta", "Mal!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    
-                    
-
-
-
+                        //string contraseñaEnBD = reader["Contraseña"].ToString();
+                        //string contraseñaDecodificada = DecoderDelHash(Password);
+                        Seguridad.SetInvitado = false;
+                        transicion = "FadeOut";
+                        timer_AparecerSuavemente.Start();
+                        Taller.Show();
                 }
                 catch (Exception ex)
                 {

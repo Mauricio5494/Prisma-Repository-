@@ -75,7 +75,7 @@ namespace Diseño
                 {
                     dataTableUsuarios.Rows.Clear();   /*<-- RECORDATORIO: No poner el nombre del DataGridView, sino el de la instancia DataTable de MySQL.*/
                     conn.Open();
-                    cmd = new MySqlCommand("SELECT ID, Nombre, Contraseña, Celular, CorreoElectronico, Telefono FROM usuarios WHERE Baja = 0 ", conn);
+                    cmd = new MySqlCommand("SELECT ID, Nombre, Celular, CorreoElectronico, Telefono FROM usuarios WHERE Baja = 0 ", conn);
                     cmd.CommandType = System.Data.CommandType.Text;
                     reader = cmd.ExecuteReader();
                     dataTableUsuarios.Load(reader);
@@ -112,7 +112,7 @@ namespace Diseño
             {
                 dataTableUsuarios.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT ID, Nombre, Contraseña, Celular, CorreoElectronico, Telefono FROM usuarios WHERE Baja = 0 ", conn);
+                cmd = new MySqlCommand("SELECT ID, Nombre, Celular, CorreoElectronico, Telefono FROM usuarios WHERE Baja = 0 ", conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 reader = cmd.ExecuteReader();
                 dataTableUsuarios.Load(reader);
@@ -403,19 +403,17 @@ namespace Diseño
                             {
                                 conn.Open();
 
-                                string contraseñaHash = SHA256EncriptarContraseña(Password);
 
 
-                                sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, @Contraseña, @Telefono, @CorreoElectronico, @Celular)";
+
+                                sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, SHA2(@Contraseña, 256), @Telefono, @CorreoElectronico, @Celular)";
                                 cmd_Registro = new MySqlCommand(sql_Registro, conn);
 
                                 cmd_Registro.Parameters.AddWithValue("@Nombre", Nombre);
-                                cmd_Registro.Parameters.AddWithValue("@Contraseña", contraseñaHash);
+                                cmd_Registro.Parameters.AddWithValue("@Contraseña", Password);
                                 cmd_Registro.Parameters.AddWithValue("@Telefono", Telefono);
                                 cmd_Registro.Parameters.AddWithValue("@CorreoElectronico", Correo);
                                 cmd_Registro.Parameters.AddWithValue("@Celular", Celular);
-
-                                Console.WriteLine(contraseñaHash);
 
                                 try
                                 {
@@ -562,12 +560,10 @@ namespace Diseño
                 //Cambia los tamaños de las columnas para que se acomplen mejor a la tabla y que no parezca una cosa mal hecha... no es que esté mal hecha.
                 tabla_Usuarios.Columns["ID"].Width = 40;
                 tabla_Usuarios.Columns["Nombre"].Width = 175;
-                tabla_Usuarios.Columns["CorreoElectronico"].Width = 250;
+                tabla_Usuarios.Columns["CorreoElectronico"].Width = 350;
                 tabla_Usuarios.Columns["Celular"].Width = 79;
-                tabla_Usuarios.Columns["Contraseña"].Width = 185;
 
                 //Renombres del texto descriptivo de las columnas necesarias.
-                tabla_Usuarios.Columns["Contraseña"].HeaderText = "HASH";
                 tabla_Usuarios.Columns["CorreoElectronico"].HeaderText = "Correo Electrónico";
                 tabla_Usuarios.Columns["Nombre"].HeaderText = "Nombre de Usuario";
 
@@ -577,7 +573,6 @@ namespace Diseño
                 tabla_Usuarios.Columns["CorreoElectronico"].ToolTipText = "El Correo Electrónico, este solo funciona como una forma de intentar contactar con dicho empleado";
                 tabla_Usuarios.Columns["Telefono"].ToolTipText = "¡Hola! ¡Si, soy yo! Resulta que la Organización tiene teléfonos fijos... si... si... ¡Pero!.. Está bien... Te mantendré informado. El, Psy, Kongroo";
                 tabla_Usuarios.Columns["Celular"].ToolTipText = "El número de teléfono, otra vía por donde contactar al empleado";
-                tabla_Usuarios.Columns["Contraseña"].ToolTipText = "Este es el Hash de la contraeña, es así para que no se puedan robar las cuentas, está enctriptado";
             }
             else
             {
