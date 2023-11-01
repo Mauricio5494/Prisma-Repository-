@@ -384,72 +384,80 @@ namespace Diseño
             Correo = txtCorreo.Text;
             Celular = txtCelular.Text;
 
-            if (txtNombre.Text.Equals("") || txtPassword.Text.Equals("") || txtCorreo.Text.Equals("") || txtCelular.Text.Equals(""))
+            if (txtNombre.Text.Equals("") || txtPassword.Text.Equals("") || txtRepitaLaContraseña.Text.Equals("") || txtCorreo.Text.Equals("") || txtCelular.Text.Equals(""))
             {
                 MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
-                contraseñaMaestra.Show();
-                contraseñaMaestra.FormClosing += (s, args) =>
+                if (txtPassword.Text == txtRepitaLaContraseña.Text)
                 {
-                    ApareceLaContraseñaMaestra = true;
-                    if (contraseñaMaestra.PassBien)
+                    contraseñaMaestra.Show();
+                    contraseñaMaestra.FormClosing += (s, args) =>
                     {
-
-                        if (existe_otra_cuenta == false)
+                        ApareceLaContraseñaMaestra = true;
+                        if (contraseñaMaestra.PassBien)
                         {
-                            try
+
+                            if (existe_otra_cuenta == false)
                             {
-                                conn.Open();
-
-
-
-
-                                sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, SHA2(@Contraseña, 256), @Telefono, @CorreoElectronico, @Celular)";
-                                cmd_Registro = new MySqlCommand(sql_Registro, conn);
-
-                                cmd_Registro.Parameters.AddWithValue("@Nombre", Nombre);
-                                cmd_Registro.Parameters.AddWithValue("@Contraseña", Password);
-                                cmd_Registro.Parameters.AddWithValue("@Telefono", Telefono);
-                                cmd_Registro.Parameters.AddWithValue("@CorreoElectronico", Correo);
-                                cmd_Registro.Parameters.AddWithValue("@Celular", Celular);
-
                                 try
                                 {
-                                    cmd_Registro.ExecuteNonQuery();
+                                    conn.Open();
+
+
+
+
+                                    sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, SHA2(@Contraseña, 256), @Telefono, @CorreoElectronico, @Celular)";
+                                    cmd_Registro = new MySqlCommand(sql_Registro, conn);
+
+                                    cmd_Registro.Parameters.AddWithValue("@Nombre", Nombre);
+                                    cmd_Registro.Parameters.AddWithValue("@Contraseña", Password);
+                                    cmd_Registro.Parameters.AddWithValue("@Telefono", Telefono);
+                                    cmd_Registro.Parameters.AddWithValue("@CorreoElectronico", Correo);
+                                    cmd_Registro.Parameters.AddWithValue("@Celular", Celular);
+
+                                    try
+                                    {
+                                        cmd_Registro.ExecuteNonQuery();
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("No se ingreso correctamente el usuario", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
-                                catch (Exception ex)
+                                catch (Exception E)
                                 {
-                                    MessageBox.Show("No se ingreso correctamente el usuario", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + E.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
+                                finally
+                                {
+                                    conn.Close();
+                                }
+                                txtNombre.Text = "";
+                                txtPassword.Text = "";
+                                txtTelefono.Text = "";
+                                txtCorreo.Text = "";
+                                txtCelular.Text = "";
+                                txtRepitaLaContraseña.Text = "";
                             }
-                            catch (Exception E)
+                            else
                             {
-                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + E.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ya existe otra cuenta con esa informacion", "Ups...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            txtNombre.Text = "";
-                            txtPassword.Text = "";
-                            txtTelefono.Text = "";
-                            txtCorreo.Text = "";
-                            txtCelular.Text = "";
                         }
                         else
                         {
-                            MessageBox.Show("Ya existe otra cuenta con esa informacion", "Ups...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                         }
-                    }
-                    else
-                    {
+                        ApareceLaContraseñaMaestra = false;
+                    };
 
-                    }
-                    ApareceLaContraseñaMaestra = false;
-                };
-
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no coinciden\n\nEscriba la misma contraseña arriba y abajo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
 
@@ -560,7 +568,7 @@ namespace Diseño
                 //Cambia los tamaños de las columnas para que se acomplen mejor a la tabla y que no parezca una cosa mal hecha... no es que esté mal hecha.
                 tabla_Usuarios.Columns["ID"].Width = 40;
                 tabla_Usuarios.Columns["Nombre"].Width = 175;
-                tabla_Usuarios.Columns["CorreoElectronico"].Width = 350;
+                tabla_Usuarios.Columns["CorreoElectronico"].Width = 330;
                 tabla_Usuarios.Columns["Celular"].Width = 79;
 
                 //Renombres del texto descriptivo de las columnas necesarias.
@@ -583,17 +591,19 @@ namespace Diseño
 
         private void chbMostrarContraseña_PanelRegistro_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbMostrarContraseña_PanelRegistro.Checked)
-            {
-                //Se cambia la imagen y la sintaxis cambia a letras y números
-                picMostrar.Image = Resources.ojo;
-                txtPassword.PasswordChar = '\0';
-            }
-            else
+            if (chbMostrarContraseña_PanelRegistro.Checked == false)
             {
                 //Se cambia la imagen y la sintaxis cambia a Asteriscos " * "
                 picMostrar.Image = Resources.ojo_tapado;
                 txtPassword.PasswordChar = '*';
+                txtRepitaLaContraseña.PasswordChar = '*';
+            }
+            else
+            {
+                //Se cambia la imagen y la sintaxis cambia a letras y números
+                picMostrar.Image = Resources.ojo;
+                txtPassword.PasswordChar = '\0';
+                txtRepitaLaContraseña.PasswordChar = '\0';
             }
         }
 
@@ -737,19 +747,59 @@ namespace Diseño
             {
                 DataGridViewRow filaSeleccionada = tabla_Usuarios.Rows[e.RowIndex];
 
+                string seleccion = filaSeleccionada.Cells["ID"].Value.ToString();
+
+                try
+                {
+                    conn.Open();
+                    string query = $"SELECT contraseña FROM Usuarios WHERE ID ={seleccion}";
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string contraseña = reader["Contraseña"].ToString();
+                        txtContraseña_groupboxModificar_PanelModificar.Text = contraseña;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
+
                 clavePrimariaDelTecnico = filaSeleccionada.Cells["ID"].Value.ToString();
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                string contraseña = filaSeleccionada.Cells["contraseña"].Value.ToString();
                 string correoElectronico = filaSeleccionada.Cells["CorreoElectronico"].Value.ToString();
                 string telefonoOpcional = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string celular = filaSeleccionada.Cells["Celular"].Value.ToString();
-
                 labelDelID_groupBoxModificar_PanelModificar.Text = $"Selección: {clavePrimariaDelTecnico}";
                 txtNombre_groupboxModificar_PanelModificar.Text = nombre;
-                txtContraseña_groupboxModificar_PanelModificar.Text = contraseña;
                 txtCorreoElectronico_groupBoxModificar_PanelModificar.Text = correoElectronico;
                 txtTelefono_groupBoxModificar_PanelModificar.Text = telefonoOpcional;
                 txtCelular_groupBoxModificar_PanelModificar.Text = celular;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbMostrarContraseña_PanelRegistro.Checked)
+            {
+                //Se cambia la imagen y la sintaxis cambia a letras y números
+                picMostrar.Image = Resources.ojo;
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                //Se cambia la imagen y la sintaxis cambia a Asteriscos " * "
+                picMostrar.Image = Resources.ojo_tapado;
+                txtPassword.PasswordChar = '*';
             }
         }
     }

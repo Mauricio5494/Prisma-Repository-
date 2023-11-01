@@ -29,18 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label_Filtrar = new System.Windows.Forms.Label();
             this.MenuOpcionesCelular = new System.Windows.Forms.ComboBox();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
             this.panelE = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_AgregarCelulares = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,6 +65,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDetallesUobservaciones_Agregar = new System.Windows.Forms.TextBox();
             this.radioButton_Arreglado_Agregar = new System.Windows.Forms.RadioButton();
+            this.label21 = new System.Windows.Forms.Label();
             this.radioButton_EnProceso_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_EnEspera_Agregar = new System.Windows.Forms.RadioButton();
             this.radioButton_Averiado_Agregar = new System.Windows.Forms.RadioButton();
@@ -80,7 +91,11 @@
             this.timer_GroupBox_AgregarT_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_AgregarT_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.timer_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Menu_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
@@ -106,16 +121,9 @@
             this.labelPresupuesto_Modificar = new System.Windows.Forms.Label();
             this.labelSeleccion_ID_Modificar = new System.Windows.Forms.Label();
             this.groupBox_ModificarCelulares = new System.Windows.Forms.GroupBox();
-            this.combobox_CI_Del_Dueño_Modificar = new System.Windows.Forms.ComboBox();
-            this.comboBox_ModificarTecnicoACargo = new System.Windows.Forms.ComboBox();
-            this.label_modificarCelular_Seleccion = new System.Windows.Forms.Label();
-            this.btnModificar_Celular = new System.Windows.Forms.Button();
-            this.labelID_Dueño_Modificar = new System.Windows.Forms.Label();
-            this.labelTecnico_A_Cargo_Modificar = new System.Windows.Forms.Label();
-            this.labelIMEI_Modificar = new System.Windows.Forms.Label();
-            this.txtIMEI_Modificar = new System.Windows.Forms.TextBox();
-            this.txtModelo_Modificar = new System.Windows.Forms.TextBox();
-            this.labelMarca_Modificar = new System.Windows.Forms.Label();
+            this.txt_PresupuestoModificar = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox_ModificarCelular_Estados = new System.Windows.Forms.GroupBox();
             this.label_caracteresRestantes_Detalles_Modificar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -124,6 +132,29 @@
             this.radioButton_EnProceso_Modificar = new System.Windows.Forms.RadioButton();
             this.radioButton_EnEspera_Modificar = new System.Windows.Forms.RadioButton();
             this.radioButton_Averiado_Modificar = new System.Windows.Forms.RadioButton();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dtp_ModificarCelular_Plazo = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txt_AdelantoModificar = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBox_ModificarTecnicoACargo = new System.Windows.Forms.ComboBox();
+            this.txtIMEI_Modificar = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btn_ModificarTecnicoACargo_Buscar = new System.Windows.Forms.Button();
+            this.btn_ModificarClientes_Buscar = new System.Windows.Forms.Button();
+            this.dtp_ModificarIngresoCelulares = new System.Windows.Forms.DateTimePicker();
+            this.combobox_CI_Del_Dueño_Modificar = new System.Windows.Forms.ComboBox();
+            this.label_modificarCelular_Seleccion = new System.Windows.Forms.Label();
+            this.btnModificar_Celular = new System.Windows.Forms.Button();
+            this.labelID_Dueño_Modificar = new System.Windows.Forms.Label();
+            this.labelTecnico_A_Cargo_Modificar = new System.Windows.Forms.Label();
+            this.labelIMEI_Modificar = new System.Windows.Forms.Label();
+            this.txtModelo_Modificar = new System.Windows.Forms.TextBox();
+            this.labelMarca_Modificar = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.timer_GroupBox_ModificarT_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_ModificarT_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_Modificar_Agrandar = new System.Windows.Forms.Timer(this.components);
@@ -131,9 +162,11 @@
             this.panel_Eliminar = new System.Windows.Forms.Panel();
             this.groupBox_EliminarTrabajos = new System.Windows.Forms.GroupBox();
             this.txtID_Trabajo_Eliminar = new System.Windows.Forms.Label();
+            this.btn_EliminarTrabajos = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
             this.labMostrarIDdelCelularSeleccionado = new System.Windows.Forms.Label();
+            this.btnEliminar_Celular = new System.Windows.Forms.Button();
             this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
             this.timer_GroupBox_EliminarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_EliminarC_Reducir = new System.Windows.Forms.Timer(this.components);
@@ -146,46 +179,16 @@
             this.tab_Celulares = new System.Windows.Forms.TabPage();
             this.timer_RecargarBDs = new System.Windows.Forms.Timer(this.components);
             this.timer_Transicion = new System.Windows.Forms.Timer(this.components);
-            this.label9 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dtp_ModificarIngresoCelulares = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btn_EliminarTrabajos = new System.Windows.Forms.Button();
-            this.btnEliminar_Celular = new System.Windows.Forms.Button();
-            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares = new System.Windows.Forms.Button();
-            this.btn_ModificarTecnicoACargo_Buscar = new System.Windows.Forms.Button();
-            this.btn_ModificarClientes_Buscar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_AdelantoModificar = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dtp_ModificarCelular_Plazo = new System.Windows.Forms.DateTimePicker();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txt_PresupuestoModificar = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panel_Agregar.SuspendLayout();
             this.groupBox_AgregarCelulares.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
             this.groupBox_ModificarTrabajos.SuspendLayout();
@@ -197,9 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).BeginInit();
             this.tabIndex_Pestañas.SuspendLayout();
             this.tab_Celulares.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,6 +216,108 @@
             this.panelD.Name = "panelD";
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 5;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.TabIndex = 21;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuPrincipal.Image")));
+            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
+            this.btnMenuPrincipal.TabIndex = 16;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenu_Principal);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Quitar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(0, 132);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 46);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Salir";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // label_Filtrar
             // 
@@ -285,18 +387,41 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Búsqueda";
             // 
+            // pictureBox_Taller
+            // 
+            this.pictureBox_Taller.Image = global::Diseño.Properties.Resources.telefono_inteligente__1_;
+            this.pictureBox_Taller.Location = new System.Drawing.Point(129, 9);
+            this.pictureBox_Taller.Name = "pictureBox_Taller";
+            this.pictureBox_Taller.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Taller.TabIndex = 21;
+            this.pictureBox_Taller.TabStop = false;
+            // 
             // label_Name_Form
             // 
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label_Name_Form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Name_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.Font = new System.Drawing.Font("Montserrat", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_Name_Form.Location = new System.Drawing.Point(167, 24);
+            this.label_Name_Form.Location = new System.Drawing.Point(196, 22);
             this.label_Name_Form.Name = "label_Name_Form";
-            this.label_Name_Form.Size = new System.Drawing.Size(123, 31);
+            this.label_Name_Form.Size = new System.Drawing.Size(124, 37);
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "TALLER";
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(0, 18);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(45, 41);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // panel_Agregar
             // 
@@ -347,12 +472,40 @@
             this.groupBox_AgregarCelulares.Text = "Agregar Celular";
             this.groupBox_AgregarCelulares.Enter += new System.EventHandler(this.groupBox_AgregarCelulares_Enter);
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Image = global::Diseño.Properties.Resources.lupa2;
+            this.button1.Location = new System.Drawing.Point(191, 308);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 24);
+            this.button1.TabIndex = 48;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btn_BuscarClientesEnElComboboxDeAgregarCelulares
+            // 
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Image = global::Diseño.Properties.Resources.lupa2;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Location = new System.Drawing.Point(192, 36);
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Name = "btn_BuscarClientesEnElComboboxDeAgregarCelulares";
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Size = new System.Drawing.Size(26, 24);
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TabIndex = 47;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.UseVisualStyleBackColor = true;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(171, 315);
+            this.label14.Location = new System.Drawing.Point(171, 178);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 18);
             this.label14.TabIndex = 46;
@@ -363,7 +516,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(151, 263);
+            this.label13.Location = new System.Drawing.Point(151, 95);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 18);
             this.label13.TabIndex = 45;
@@ -374,7 +527,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(113, 172);
+            this.label11.Location = new System.Drawing.Point(112, 292);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(15, 18);
             this.label11.TabIndex = 43;
@@ -385,7 +538,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(100, 96);
+            this.label10.Location = new System.Drawing.Point(100, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 18);
             this.label10.TabIndex = 42;
@@ -407,7 +560,7 @@
             this.dateTimePicker_FechaPlazo_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker_FechaPlazo_Agregar.CustomFormat = "dd/MM/yyyy   |    H:mm";
             this.dateTimePicker_FechaPlazo_Agregar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_FechaPlazo_Agregar.Location = new System.Drawing.Point(5, 330);
+            this.dateTimePicker_FechaPlazo_Agregar.Location = new System.Drawing.Point(5, 193);
             this.dateTimePicker_FechaPlazo_Agregar.Name = "dateTimePicker_FechaPlazo_Agregar";
             this.dateTimePicker_FechaPlazo_Agregar.Size = new System.Drawing.Size(161, 20);
             this.dateTimePicker_FechaPlazo_Agregar.TabIndex = 39;
@@ -415,7 +568,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 316);
+            this.label7.Location = new System.Drawing.Point(4, 179);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(161, 13);
             this.label7.TabIndex = 38;
@@ -510,6 +663,17 @@
             this.radioButton_Arreglado_Agregar.Text = "Arreglado";
             this.radioButton_Arreglado_Agregar.UseVisualStyleBackColor = false;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(131, 63);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(12, 16);
+            this.label21.TabIndex = 39;
+            this.label21.Text = "*";
+            // 
             // radioButton_EnProceso_Agregar
             // 
             this.radioButton_EnProceso_Agregar.AutoSize = true;
@@ -570,9 +734,9 @@
             // comboBox_AgregarCelular_IdDelTecnicoAcargo
             // 
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.FormattingEnabled = true;
-            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(6, 189);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(4, 309);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Name = "comboBox_AgregarCelular_IdDelTecnicoAcargo";
-            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(180, 21);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(181, 21);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Sorted = true;
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.TabIndex = 20;
             // 
@@ -581,7 +745,7 @@
             this.dateTimePicker_FechaDeIngreso_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker_FechaDeIngreso_Agregar.CustomFormat = "dd/MM/yyyy   |    H:mm";
             this.dateTimePicker_FechaDeIngreso_Agregar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(5, 281);
+            this.dateTimePicker_FechaDeIngreso_Agregar.Location = new System.Drawing.Point(5, 113);
             this.dateTimePicker_FechaDeIngreso_Agregar.Name = "dateTimePicker_FechaDeIngreso_Agregar";
             this.dateTimePicker_FechaDeIngreso_Agregar.Size = new System.Drawing.Size(161, 20);
             this.dateTimePicker_FechaDeIngreso_Agregar.TabIndex = 22;
@@ -600,7 +764,7 @@
             // labelAdelanto_Agregar
             // 
             this.labelAdelanto_Agregar.AutoSize = true;
-            this.labelAdelanto_Agregar.Location = new System.Drawing.Point(7, 60);
+            this.labelAdelanto_Agregar.Location = new System.Drawing.Point(7, 137);
             this.labelAdelanto_Agregar.Name = "labelAdelanto_Agregar";
             this.labelAdelanto_Agregar.Size = new System.Drawing.Size(133, 13);
             this.labelAdelanto_Agregar.TabIndex = 10;
@@ -608,15 +772,18 @@
             // 
             // txtAdelanto_Agregar
             // 
-            this.txtAdelanto_Agregar.Location = new System.Drawing.Point(6, 76);
+            this.txtAdelanto_Agregar.ForeColor = System.Drawing.Color.Green;
+            this.txtAdelanto_Agregar.Location = new System.Drawing.Point(6, 153);
             this.txtAdelanto_Agregar.Name = "txtAdelanto_Agregar";
             this.txtAdelanto_Agregar.Size = new System.Drawing.Size(401, 20);
             this.txtAdelanto_Agregar.TabIndex = 23;
+            this.txtAdelanto_Agregar.Text = "$";
+            this.txtAdelanto_Agregar.TextChanged += new System.EventHandler(this.txtAdelanto_Agregar_TextChanged);
             // 
             // labelTecnico_A_Cargo_Agregar
             // 
             this.labelTecnico_A_Cargo_Agregar.AutoSize = true;
-            this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(4, 174);
+            this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 294);
             this.labelTecnico_A_Cargo_Agregar.Name = "labelTecnico_A_Cargo_Agregar";
             this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(103, 13);
             this.labelTecnico_A_Cargo_Agregar.TabIndex = 9;
@@ -625,7 +792,7 @@
             // labelFechaDeIngreso_Agregar
             // 
             this.labelFechaDeIngreso_Agregar.AutoSize = true;
-            this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(5, 265);
+            this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(5, 97);
             this.labelFechaDeIngreso_Agregar.Name = "labelFechaDeIngreso_Agregar";
             this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(147, 13);
             this.labelFechaDeIngreso_Agregar.TabIndex = 8;
@@ -642,14 +809,17 @@
             // 
             // txtPresupuesto_Agregar
             // 
-            this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(5, 232);
+            this.txtPresupuesto_Agregar.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPresupuesto_Agregar.ForeColor = System.Drawing.Color.Green;
+            this.txtPresupuesto_Agregar.Location = new System.Drawing.Point(6, 232);
             this.txtPresupuesto_Agregar.Name = "txtPresupuesto_Agregar";
-            this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(401, 20);
+            this.txtPresupuesto_Agregar.Size = new System.Drawing.Size(400, 20);
             this.txtPresupuesto_Agregar.TabIndex = 20;
+            this.txtPresupuesto_Agregar.Text = "$";
             // 
             // txtModeloYOmarca_Agregar
             // 
-            this.txtModeloYOmarca_Agregar.Location = new System.Drawing.Point(5, 114);
+            this.txtModeloYOmarca_Agregar.Location = new System.Drawing.Point(5, 75);
             this.txtModeloYOmarca_Agregar.Name = "txtModeloYOmarca_Agregar";
             this.txtModeloYOmarca_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtModeloYOmarca_Agregar.TabIndex = 18;
@@ -657,7 +827,7 @@
             // labelModelo_Agregar
             // 
             this.labelModelo_Agregar.AutoSize = true;
-            this.labelModelo_Agregar.Location = new System.Drawing.Point(7, 99);
+            this.labelModelo_Agregar.Location = new System.Drawing.Point(7, 60);
             this.labelModelo_Agregar.Name = "labelModelo_Agregar";
             this.labelModelo_Agregar.Size = new System.Drawing.Size(97, 13);
             this.labelModelo_Agregar.TabIndex = 4;
@@ -665,15 +835,15 @@
             // 
             // txtIMEI_Agregar
             // 
-            this.txtIMEI_Agregar.Location = new System.Drawing.Point(6, 150);
+            this.txtIMEI_Agregar.Location = new System.Drawing.Point(5, 270);
             this.txtIMEI_Agregar.Name = "txtIMEI_Agregar";
-            this.txtIMEI_Agregar.Size = new System.Drawing.Size(398, 20);
+            this.txtIMEI_Agregar.Size = new System.Drawing.Size(399, 20);
             this.txtIMEI_Agregar.TabIndex = 19;
             // 
             // labelIMEI_Agregar
             // 
             this.labelIMEI_Agregar.AutoSize = true;
-            this.labelIMEI_Agregar.Location = new System.Drawing.Point(6, 136);
+            this.labelIMEI_Agregar.Location = new System.Drawing.Point(6, 256);
             this.labelIMEI_Agregar.Name = "labelIMEI_Agregar";
             this.labelIMEI_Agregar.Size = new System.Drawing.Size(83, 13);
             this.labelIMEI_Agregar.TabIndex = 2;
@@ -729,6 +899,15 @@
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 16;
             // 
+            // pictureBox_EtechLogo_PanelMenu
+            // 
+            this.pictureBox_EtechLogo_PanelMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_EtechLogo_PanelMenu.Image")));
+            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(122, 6);
+            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
+            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
+            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
+            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
+            // 
             // groupBox_Menu
             // 
             this.groupBox_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -742,6 +921,43 @@
             this.groupBox_Menu.TabIndex = 0;
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "Menú";
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Image = global::Diseño.Properties.Resources.cliente;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnClientes.Location = new System.Drawing.Point(4, 22);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(404, 91);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.vigilancia;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(3, 216);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(404, 91);
+            this.btnEstadisticas.TabIndex = 1;
+            this.btnEstadisticas.Text = "ESTADISTICAS";
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Image = global::Diseño.Properties.Resources.work_from_home;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(4, 119);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(404, 91);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // timer_Menu_Agrandar
             // 
@@ -995,96 +1211,33 @@
             this.groupBox_ModificarCelulares.TabStop = false;
             this.groupBox_ModificarCelulares.Text = "Modificar Celular";
             // 
-            // combobox_CI_Del_Dueño_Modificar
+            // txt_PresupuestoModificar
             // 
-            this.combobox_CI_Del_Dueño_Modificar.AllowDrop = true;
-            this.combobox_CI_Del_Dueño_Modificar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.combobox_CI_Del_Dueño_Modificar.FormattingEnabled = true;
-            this.combobox_CI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 57);
-            this.combobox_CI_Del_Dueño_Modificar.Name = "combobox_CI_Del_Dueño_Modificar";
-            this.combobox_CI_Del_Dueño_Modificar.Size = new System.Drawing.Size(180, 21);
-            this.combobox_CI_Del_Dueño_Modificar.TabIndex = 1;
-            this.combobox_CI_Del_Dueño_Modificar.TextChanged += new System.EventHandler(this.combobox_CI_Del_Dueño_Modificar_TextChanged);
+            this.txt_PresupuestoModificar.ForeColor = System.Drawing.Color.Green;
+            this.txt_PresupuestoModificar.Location = new System.Drawing.Point(6, 262);
+            this.txt_PresupuestoModificar.Name = "txt_PresupuestoModificar";
+            this.txt_PresupuestoModificar.Size = new System.Drawing.Size(402, 20);
+            this.txt_PresupuestoModificar.TabIndex = 52;
+            this.txt_PresupuestoModificar.Text = "$";
+            this.txt_PresupuestoModificar.TextChanged += new System.EventHandler(this.txt_PresupuestoModificar_TextChanged);
             // 
-            // comboBox_ModificarTecnicoACargo
+            // label22
             // 
-            this.comboBox_ModificarTecnicoACargo.FormattingEnabled = true;
-            this.comboBox_ModificarTecnicoACargo.Location = new System.Drawing.Point(7, 338);
-            this.comboBox_ModificarTecnicoACargo.Name = "comboBox_ModificarTecnicoACargo";
-            this.comboBox_ModificarTecnicoACargo.Size = new System.Drawing.Size(180, 21);
-            this.comboBox_ModificarTecnicoACargo.TabIndex = 31;
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 246);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(120, 13);
+            this.label22.TabIndex = 53;
+            this.label22.Text = "Presupuesto (Opcional):";
             // 
-            // label_modificarCelular_Seleccion
+            // label12
             // 
-            this.label_modificarCelular_Seleccion.AutoSize = true;
-            this.label_modificarCelular_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_modificarCelular_Seleccion.Location = new System.Drawing.Point(7, 22);
-            this.label_modificarCelular_Seleccion.Name = "label_modificarCelular_Seleccion";
-            this.label_modificarCelular_Seleccion.Size = new System.Drawing.Size(67, 13);
-            this.label_modificarCelular_Seleccion.TabIndex = 30;
-            this.label_modificarCelular_Seleccion.Text = "Selección:";
-            // 
-            // btnModificar_Celular
-            // 
-            this.btnModificar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar_Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar_Celular.Location = new System.Drawing.Point(306, 558);
-            this.btnModificar_Celular.Name = "btnModificar_Celular";
-            this.btnModificar_Celular.Size = new System.Drawing.Size(92, 30);
-            this.btnModificar_Celular.TabIndex = 13;
-            this.btnModificar_Celular.Text = "Modificar";
-            this.btnModificar_Celular.UseVisualStyleBackColor = true;
-            this.btnModificar_Celular.Click += new System.EventHandler(this.btnModificar_Celular_Click);
-            // 
-            // labelID_Dueño_Modificar
-            // 
-            this.labelID_Dueño_Modificar.AutoSize = true;
-            this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(4, 44);
-            this.labelID_Dueño_Modificar.Name = "labelID_Dueño_Modificar";
-            this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(93, 13);
-            this.labelID_Dueño_Modificar.TabIndex = 16;
-            this.labelID_Dueño_Modificar.Text = "Dueño del celular:";
-            // 
-            // labelTecnico_A_Cargo_Modificar
-            // 
-            this.labelTecnico_A_Cargo_Modificar.AutoSize = true;
-            this.labelTecnico_A_Cargo_Modificar.Location = new System.Drawing.Point(3, 325);
-            this.labelTecnico_A_Cargo_Modificar.Name = "labelTecnico_A_Cargo_Modificar";
-            this.labelTecnico_A_Cargo_Modificar.Size = new System.Drawing.Size(88, 13);
-            this.labelTecnico_A_Cargo_Modificar.TabIndex = 25;
-            this.labelTecnico_A_Cargo_Modificar.Text = "Técnico a cargo:";
-            // 
-            // labelIMEI_Modificar
-            // 
-            this.labelIMEI_Modificar.AutoSize = true;
-            this.labelIMEI_Modificar.Location = new System.Drawing.Point(7, 288);
-            this.labelIMEI_Modificar.Name = "labelIMEI_Modificar";
-            this.labelIMEI_Modificar.Size = new System.Drawing.Size(83, 13);
-            this.labelIMEI_Modificar.TabIndex = 18;
-            this.labelIMEI_Modificar.Text = "IMEI (Opcional):";
-            // 
-            // txtIMEI_Modificar
-            // 
-            this.txtIMEI_Modificar.Location = new System.Drawing.Point(7, 304);
-            this.txtIMEI_Modificar.Name = "txtIMEI_Modificar";
-            this.txtIMEI_Modificar.Size = new System.Drawing.Size(400, 20);
-            this.txtIMEI_Modificar.TabIndex = 5;
-            // 
-            // txtModelo_Modificar
-            // 
-            this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 99);
-            this.txtModelo_Modificar.Name = "txtModelo_Modificar";
-            this.txtModelo_Modificar.Size = new System.Drawing.Size(401, 20);
-            this.txtModelo_Modificar.TabIndex = 3;
-            // 
-            // labelMarca_Modificar
-            // 
-            this.labelMarca_Modificar.AutoSize = true;
-            this.labelMarca_Modificar.Location = new System.Drawing.Point(3, 85);
-            this.labelMarca_Modificar.Name = "labelMarca_Modificar";
-            this.labelMarca_Modificar.Size = new System.Drawing.Size(97, 13);
-            this.labelMarca_Modificar.TabIndex = 22;
-            this.labelMarca_Modificar.Text = "Marca y/o Modelo:";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(4, 125);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 13);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Fecha de Ingreso:";
             // 
             // groupBox_ModificarCelular_Estados
             // 
@@ -1191,6 +1344,237 @@
             this.radioButton_Averiado_Modificar.Text = "Averiado";
             this.radioButton_Averiado_Modificar.UseVisualStyleBackColor = false;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(96, -2);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(12, 16);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "*";
+            // 
+            // dtp_ModificarCelular_Plazo
+            // 
+            this.dtp_ModificarCelular_Plazo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_ModificarCelular_Plazo.Location = new System.Drawing.Point(6, 138);
+            this.dtp_ModificarCelular_Plazo.Name = "dtp_ModificarCelular_Plazo";
+            this.dtp_ModificarCelular_Plazo.Size = new System.Drawing.Size(181, 20);
+            this.dtp_ModificarCelular_Plazo.TabIndex = 49;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(5, 205);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(36, 13);
+            this.label25.TabIndex = 50;
+            this.label25.Text = "Plazo:";
+            // 
+            // txt_AdelantoModificar
+            // 
+            this.txt_AdelantoModificar.ForeColor = System.Drawing.Color.Green;
+            this.txt_AdelantoModificar.Location = new System.Drawing.Point(5, 183);
+            this.txt_AdelantoModificar.Name = "txt_AdelantoModificar";
+            this.txt_AdelantoModificar.Size = new System.Drawing.Size(403, 20);
+            this.txt_AdelantoModificar.TabIndex = 46;
+            this.txt_AdelantoModificar.Text = "$";
+            this.txt_AdelantoModificar.TextChanged += new System.EventHandler(this.txt_AdelantoModificar_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(4, 166);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(133, 13);
+            this.label23.TabIndex = 47;
+            this.label23.Text = "Adelanto/Seña (Opcional):";
+            // 
+            // comboBox_ModificarTecnicoACargo
+            // 
+            this.comboBox_ModificarTecnicoACargo.FormattingEnabled = true;
+            this.comboBox_ModificarTecnicoACargo.Location = new System.Drawing.Point(7, 338);
+            this.comboBox_ModificarTecnicoACargo.Name = "comboBox_ModificarTecnicoACargo";
+            this.comboBox_ModificarTecnicoACargo.Size = new System.Drawing.Size(180, 21);
+            this.comboBox_ModificarTecnicoACargo.TabIndex = 31;
+            // 
+            // txtIMEI_Modificar
+            // 
+            this.txtIMEI_Modificar.Location = new System.Drawing.Point(7, 304);
+            this.txtIMEI_Modificar.Name = "txtIMEI_Modificar";
+            this.txtIMEI_Modificar.Size = new System.Drawing.Size(400, 20);
+            this.txtIMEI_Modificar.TabIndex = 5;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(91, 325);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(12, 16);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "*";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(96, 122);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(12, 16);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "*";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(96, 83);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(12, 16);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "*";
+            // 
+            // btn_ModificarTecnicoACargo_Buscar
+            // 
+            this.btn_ModificarTecnicoACargo_Buscar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_ModificarTecnicoACargo_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ModificarTecnicoACargo_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ModificarTecnicoACargo_Buscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_ModificarTecnicoACargo_Buscar.Image = global::Diseño.Properties.Resources.lupa2;
+            this.btn_ModificarTecnicoACargo_Buscar.Location = new System.Drawing.Point(193, 338);
+            this.btn_ModificarTecnicoACargo_Buscar.Name = "btn_ModificarTecnicoACargo_Buscar";
+            this.btn_ModificarTecnicoACargo_Buscar.Size = new System.Drawing.Size(26, 23);
+            this.btn_ModificarTecnicoACargo_Buscar.TabIndex = 41;
+            this.btn_ModificarTecnicoACargo_Buscar.UseVisualStyleBackColor = false;
+            this.btn_ModificarTecnicoACargo_Buscar.Click += new System.EventHandler(this.btn_ModificarTecnicoACargo_Buscar_Click);
+            // 
+            // btn_ModificarClientes_Buscar
+            // 
+            this.btn_ModificarClientes_Buscar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_ModificarClientes_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ModificarClientes_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ModificarClientes_Buscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_ModificarClientes_Buscar.Image = global::Diseño.Properties.Resources.lupa2;
+            this.btn_ModificarClientes_Buscar.Location = new System.Drawing.Point(192, 57);
+            this.btn_ModificarClientes_Buscar.Name = "btn_ModificarClientes_Buscar";
+            this.btn_ModificarClientes_Buscar.Size = new System.Drawing.Size(26, 23);
+            this.btn_ModificarClientes_Buscar.TabIndex = 2;
+            this.btn_ModificarClientes_Buscar.UseVisualStyleBackColor = false;
+            this.btn_ModificarClientes_Buscar.Click += new System.EventHandler(this.btn_ModificarClientes_Buscar_Click);
+            // 
+            // dtp_ModificarIngresoCelulares
+            // 
+            this.dtp_ModificarIngresoCelulares.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_ModificarIngresoCelulares.Location = new System.Drawing.Point(7, 221);
+            this.dtp_ModificarIngresoCelulares.Name = "dtp_ModificarIngresoCelulares";
+            this.dtp_ModificarIngresoCelulares.Size = new System.Drawing.Size(181, 20);
+            this.dtp_ModificarIngresoCelulares.TabIndex = 4;
+            // 
+            // combobox_CI_Del_Dueño_Modificar
+            // 
+            this.combobox_CI_Del_Dueño_Modificar.AllowDrop = true;
+            this.combobox_CI_Del_Dueño_Modificar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.combobox_CI_Del_Dueño_Modificar.FormattingEnabled = true;
+            this.combobox_CI_Del_Dueño_Modificar.Location = new System.Drawing.Point(6, 57);
+            this.combobox_CI_Del_Dueño_Modificar.Name = "combobox_CI_Del_Dueño_Modificar";
+            this.combobox_CI_Del_Dueño_Modificar.Size = new System.Drawing.Size(180, 21);
+            this.combobox_CI_Del_Dueño_Modificar.TabIndex = 1;
+            this.combobox_CI_Del_Dueño_Modificar.TextChanged += new System.EventHandler(this.combobox_CI_Del_Dueño_Modificar_TextChanged);
+            this.combobox_CI_Del_Dueño_Modificar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combobox_CI_Del_Dueño_Modificar_KeyDown);
+            this.combobox_CI_Del_Dueño_Modificar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.combobox_CI_Del_Dueño_Modificar_KeyUp);
+            // 
+            // label_modificarCelular_Seleccion
+            // 
+            this.label_modificarCelular_Seleccion.AutoSize = true;
+            this.label_modificarCelular_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_modificarCelular_Seleccion.Location = new System.Drawing.Point(7, 22);
+            this.label_modificarCelular_Seleccion.Name = "label_modificarCelular_Seleccion";
+            this.label_modificarCelular_Seleccion.Size = new System.Drawing.Size(67, 13);
+            this.label_modificarCelular_Seleccion.TabIndex = 30;
+            this.label_modificarCelular_Seleccion.Text = "Selección:";
+            // 
+            // btnModificar_Celular
+            // 
+            this.btnModificar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar_Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar_Celular.Location = new System.Drawing.Point(306, 558);
+            this.btnModificar_Celular.Name = "btnModificar_Celular";
+            this.btnModificar_Celular.Size = new System.Drawing.Size(92, 30);
+            this.btnModificar_Celular.TabIndex = 13;
+            this.btnModificar_Celular.Text = "Modificar";
+            this.btnModificar_Celular.UseVisualStyleBackColor = true;
+            this.btnModificar_Celular.Click += new System.EventHandler(this.btnModificar_Celular_Click);
+            // 
+            // labelID_Dueño_Modificar
+            // 
+            this.labelID_Dueño_Modificar.AutoSize = true;
+            this.labelID_Dueño_Modificar.Location = new System.Drawing.Point(4, 44);
+            this.labelID_Dueño_Modificar.Name = "labelID_Dueño_Modificar";
+            this.labelID_Dueño_Modificar.Size = new System.Drawing.Size(93, 13);
+            this.labelID_Dueño_Modificar.TabIndex = 16;
+            this.labelID_Dueño_Modificar.Text = "Dueño del celular:";
+            // 
+            // labelTecnico_A_Cargo_Modificar
+            // 
+            this.labelTecnico_A_Cargo_Modificar.AutoSize = true;
+            this.labelTecnico_A_Cargo_Modificar.Location = new System.Drawing.Point(3, 325);
+            this.labelTecnico_A_Cargo_Modificar.Name = "labelTecnico_A_Cargo_Modificar";
+            this.labelTecnico_A_Cargo_Modificar.Size = new System.Drawing.Size(88, 13);
+            this.labelTecnico_A_Cargo_Modificar.TabIndex = 25;
+            this.labelTecnico_A_Cargo_Modificar.Text = "Técnico a cargo:";
+            // 
+            // labelIMEI_Modificar
+            // 
+            this.labelIMEI_Modificar.AutoSize = true;
+            this.labelIMEI_Modificar.Location = new System.Drawing.Point(7, 288);
+            this.labelIMEI_Modificar.Name = "labelIMEI_Modificar";
+            this.labelIMEI_Modificar.Size = new System.Drawing.Size(83, 13);
+            this.labelIMEI_Modificar.TabIndex = 18;
+            this.labelIMEI_Modificar.Text = "IMEI (Opcional):";
+            // 
+            // txtModelo_Modificar
+            // 
+            this.txtModelo_Modificar.Location = new System.Drawing.Point(6, 99);
+            this.txtModelo_Modificar.Name = "txtModelo_Modificar";
+            this.txtModelo_Modificar.Size = new System.Drawing.Size(401, 20);
+            this.txtModelo_Modificar.TabIndex = 3;
+            // 
+            // labelMarca_Modificar
+            // 
+            this.labelMarca_Modificar.AutoSize = true;
+            this.labelMarca_Modificar.Location = new System.Drawing.Point(3, 85);
+            this.labelMarca_Modificar.Name = "labelMarca_Modificar";
+            this.labelMarca_Modificar.Size = new System.Drawing.Size(97, 13);
+            this.labelMarca_Modificar.TabIndex = 22;
+            this.labelMarca_Modificar.Text = "Marca y/o Modelo:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Location = new System.Drawing.Point(43, 205);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(12, 16);
+            this.label24.TabIndex = 51;
+            this.label24.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(97, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(12, 16);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "*";
+            // 
             // timer_GroupBox_ModificarT_Agrandar
             // 
             this.timer_GroupBox_ModificarT_Agrandar.Interval = 1;
@@ -1247,6 +1631,21 @@
             this.txtID_Trabajo_Eliminar.TabIndex = 15;
             this.txtID_Trabajo_Eliminar.Text = "Seleccione un elemento de la tabla";
             // 
+            // btn_EliminarTrabajos
+            // 
+            this.btn_EliminarTrabajos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_EliminarTrabajos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EliminarTrabajos.Image = ((System.Drawing.Image)(resources.GetObject("btn_EliminarTrabajos.Image")));
+            this.btn_EliminarTrabajos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_EliminarTrabajos.Location = new System.Drawing.Point(306, 114);
+            this.btn_EliminarTrabajos.Name = "btn_EliminarTrabajos";
+            this.btn_EliminarTrabajos.Size = new System.Drawing.Size(92, 30);
+            this.btn_EliminarTrabajos.TabIndex = 14;
+            this.btn_EliminarTrabajos.Text = "Dar de baja";
+            this.btn_EliminarTrabajos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_EliminarTrabajos.UseVisualStyleBackColor = false;
+            this.btn_EliminarTrabajos.Click += new System.EventHandler(this.btn_EliminarTrabajos_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -1280,6 +1679,21 @@
             this.labMostrarIDdelCelularSeleccionado.Size = new System.Drawing.Size(207, 13);
             this.labMostrarIDdelCelularSeleccionado.TabIndex = 15;
             this.labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla";
+            // 
+            // btnEliminar_Celular
+            // 
+            this.btnEliminar_Celular.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Celular.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar_Celular.Image")));
+            this.btnEliminar_Celular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Celular.Location = new System.Drawing.Point(306, 114);
+            this.btnEliminar_Celular.Name = "btnEliminar_Celular";
+            this.btnEliminar_Celular.Size = new System.Drawing.Size(92, 30);
+            this.btnEliminar_Celular.TabIndex = 14;
+            this.btnEliminar_Celular.Text = "Dar de baja";
+            this.btnEliminar_Celular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Celular.UseVisualStyleBackColor = false;
+            this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
             // 
             // label_ID_Celular_Eliminar
             // 
@@ -1328,14 +1742,14 @@
             this.tablaCelulares.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaCelulares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCelulares.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaCelulares.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -1345,11 +1759,11 @@
             this.tablaCelulares.MultiSelect = false;
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaCelulares.Size = new System.Drawing.Size(866, 572);
@@ -1357,6 +1771,7 @@
             this.tablaCelulares.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCelulares_CellClick_1);
             this.tablaCelulares.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tablaCelulares_CellFormatting);
             this.tablaCelulares.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCelulares_CellMouseEnter);
+            this.tablaCelulares.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCelulares_CellMouseLeave);
             this.tablaCelulares.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tablaCelulares_DataBindingComplete);
             this.tablaCelulares.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tablaCelulares_KeyDown);
             // 
@@ -1395,337 +1810,6 @@
             this.timer_Transicion.Interval = 20;
             this.timer_Transicion.Tick += new System.EventHandler(this.timer_Transicion_Tick);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(97, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(12, 16);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "*";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 125);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 13);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "Fecha de Ingreso:";
-            // 
-            // dtp_ModificarIngresoCelulares
-            // 
-            this.dtp_ModificarIngresoCelulares.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ModificarIngresoCelulares.Location = new System.Drawing.Point(5, 141);
-            this.dtp_ModificarIngresoCelulares.Name = "dtp_ModificarIngresoCelulares";
-            this.dtp_ModificarIngresoCelulares.Size = new System.Drawing.Size(181, 20);
-            this.dtp_ModificarIngresoCelulares.TabIndex = 4;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(96, 83);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(12, 16);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "*";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(96, 122);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(12, 16);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "*";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(91, 325);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(12, 16);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "*";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(96, -2);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(12, 16);
-            this.label20.TabIndex = 45;
-            this.label20.Text = "*";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(131, 63);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(12, 16);
-            this.label21.TabIndex = 39;
-            this.label21.Text = "*";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
-            this.btnAgregar.TabIndex = 1;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // pictureBox_Taller
-            // 
-            this.pictureBox_Taller.Image = global::Diseño.Properties.Resources.telefono_inteligente__1_;
-            this.pictureBox_Taller.Location = new System.Drawing.Point(286, 13);
-            this.pictureBox_Taller.Name = "pictureBox_Taller";
-            this.pictureBox_Taller.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Taller.TabIndex = 21;
-            this.pictureBox_Taller.TabStop = false;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(0, 18);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(45, 41);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.TabIndex = 21;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
-            // 
-            // btnMenuPrincipal
-            // 
-            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuPrincipal.Image")));
-            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
-            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
-            this.btnMenuPrincipal.TabIndex = 16;
-            this.btnMenuPrincipal.Text = "Menu";
-            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
-            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenu_Principal);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
-            this.btnEliminar.TabIndex = 14;
-            this.btnEliminar.Text = "Quitar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(0, 132);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 46);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.Text = "Salir";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // btn_EliminarTrabajos
-            // 
-            this.btn_EliminarTrabajos.BackColor = System.Drawing.Color.Transparent;
-            this.btn_EliminarTrabajos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EliminarTrabajos.Image = ((System.Drawing.Image)(resources.GetObject("btn_EliminarTrabajos.Image")));
-            this.btn_EliminarTrabajos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_EliminarTrabajos.Location = new System.Drawing.Point(306, 114);
-            this.btn_EliminarTrabajos.Name = "btn_EliminarTrabajos";
-            this.btn_EliminarTrabajos.Size = new System.Drawing.Size(92, 30);
-            this.btn_EliminarTrabajos.TabIndex = 14;
-            this.btn_EliminarTrabajos.Text = "Dar de baja";
-            this.btn_EliminarTrabajos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_EliminarTrabajos.UseVisualStyleBackColor = false;
-            this.btn_EliminarTrabajos.Click += new System.EventHandler(this.btn_EliminarTrabajos_Click);
-            // 
-            // btnEliminar_Celular
-            // 
-            this.btnEliminar_Celular.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Celular.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar_Celular.Image")));
-            this.btnEliminar_Celular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar_Celular.Location = new System.Drawing.Point(306, 114);
-            this.btnEliminar_Celular.Name = "btnEliminar_Celular";
-            this.btnEliminar_Celular.Size = new System.Drawing.Size(92, 30);
-            this.btnEliminar_Celular.TabIndex = 14;
-            this.btnEliminar_Celular.Text = "Dar de baja";
-            this.btnEliminar_Celular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Celular.UseVisualStyleBackColor = false;
-            this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
-            // 
-            // pictureBox_EtechLogo_PanelMenu
-            // 
-            this.pictureBox_EtechLogo_PanelMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_EtechLogo_PanelMenu.Image")));
-            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(122, 6);
-            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
-            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
-            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
-            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Image = global::Diseño.Properties.Resources.cliente;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnClientes.Location = new System.Drawing.Point(4, 119);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(404, 91);
-            this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "CLIENTES";
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.vigilancia;
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(3, 216);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(404, 91);
-            this.btnEstadisticas.TabIndex = 1;
-            this.btnEstadisticas.Text = "ESTADISTICAS";
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::Diseño.Properties.Resources.work_from_home;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(404, 91);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "USUARIOS";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::Diseño.Properties.Resources.lupa2;
-            this.button1.Location = new System.Drawing.Point(192, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 24);
-            this.button1.TabIndex = 48;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btn_BuscarClientesEnElComboboxDeAgregarCelulares
-            // 
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Image = global::Diseño.Properties.Resources.lupa2;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Location = new System.Drawing.Point(192, 36);
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Name = "btn_BuscarClientesEnElComboboxDeAgregarCelulares";
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Size = new System.Drawing.Size(26, 24);
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TabIndex = 47;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.UseVisualStyleBackColor = true;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_ModificarTecnicoACargo_Buscar
-            // 
-            this.btn_ModificarTecnicoACargo_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ModificarTecnicoACargo_Buscar.Image = global::Diseño.Properties.Resources.lupa2;
-            this.btn_ModificarTecnicoACargo_Buscar.Location = new System.Drawing.Point(193, 338);
-            this.btn_ModificarTecnicoACargo_Buscar.Name = "btn_ModificarTecnicoACargo_Buscar";
-            this.btn_ModificarTecnicoACargo_Buscar.Size = new System.Drawing.Size(26, 23);
-            this.btn_ModificarTecnicoACargo_Buscar.TabIndex = 41;
-            this.btn_ModificarTecnicoACargo_Buscar.UseVisualStyleBackColor = true;
-            // 
-            // btn_ModificarClientes_Buscar
-            // 
-            this.btn_ModificarClientes_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ModificarClientes_Buscar.Image = global::Diseño.Properties.Resources.lupa2;
-            this.btn_ModificarClientes_Buscar.Location = new System.Drawing.Point(192, 57);
-            this.btn_ModificarClientes_Buscar.Name = "btn_ModificarClientes_Buscar";
-            this.btn_ModificarClientes_Buscar.Size = new System.Drawing.Size(26, 23);
-            this.btn_ModificarClientes_Buscar.TabIndex = 2;
-            this.btn_ModificarClientes_Buscar.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -1738,73 +1822,8 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
-            // txt_AdelantoModificar
-            // 
-            this.txt_AdelantoModificar.ForeColor = System.Drawing.Color.Green;
-            this.txt_AdelantoModificar.Location = new System.Drawing.Point(5, 183);
-            this.txt_AdelantoModificar.Name = "txt_AdelantoModificar";
-            this.txt_AdelantoModificar.Size = new System.Drawing.Size(403, 20);
-            this.txt_AdelantoModificar.TabIndex = 46;
-            this.txt_AdelantoModificar.Text = "$";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(4, 166);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(133, 13);
-            this.label23.TabIndex = 47;
-            this.label23.Text = "Adelanto/Seña (Opcional):";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Location = new System.Drawing.Point(43, 205);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(12, 16);
-            this.label24.TabIndex = 51;
-            this.label24.Text = "*";
-            // 
-            // dtp_ModificarCelular_Plazo
-            // 
-            this.dtp_ModificarCelular_Plazo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ModificarCelular_Plazo.Location = new System.Drawing.Point(6, 218);
-            this.dtp_ModificarCelular_Plazo.Name = "dtp_ModificarCelular_Plazo";
-            this.dtp_ModificarCelular_Plazo.Size = new System.Drawing.Size(181, 20);
-            this.dtp_ModificarCelular_Plazo.TabIndex = 49;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(5, 205);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(36, 13);
-            this.label25.TabIndex = 50;
-            this.label25.Text = "Plazo:";
-            // 
-            // txt_PresupuestoModificar
-            // 
-            this.txt_PresupuestoModificar.ForeColor = System.Drawing.Color.Green;
-            this.txt_PresupuestoModificar.Location = new System.Drawing.Point(7, 262);
-            this.txt_PresupuestoModificar.Name = "txt_PresupuestoModificar";
-            this.txt_PresupuestoModificar.Size = new System.Drawing.Size(401, 20);
-            this.txt_PresupuestoModificar.TabIndex = 52;
-            this.txt_PresupuestoModificar.Text = "$";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(7, 246);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(120, 13);
-            this.label22.TabIndex = 53;
-            this.label22.Text = "Presupuesto (Opcional):";
-            // 
             // Principal
             // 
-            this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -1822,19 +1841,23 @@
             this.Name = "Principal";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Etech | Taller";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Principal_KeyUp);
             this.panelD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
             this.panel_Agregar.ResumeLayout(false);
             this.groupBox_AgregarCelulares.ResumeLayout(false);
             this.groupBox_AgregarCelulares.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Modificar.ResumeLayout(false);
             this.groupBox_ModificarTrabajos.ResumeLayout(false);
@@ -1851,9 +1874,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaCelulares)).EndInit();
             this.tabIndex_Pestañas.ResumeLayout(false);
             this.tab_Celulares.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

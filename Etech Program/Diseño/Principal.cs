@@ -113,7 +113,7 @@ namespace Diseño
             {
                 DataTableCelulares.Rows.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, usuarios.Nombre, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente " +
+                cmd = new MySqlCommand("SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
@@ -138,7 +138,7 @@ namespace Diseño
             {
                 DataTableCelulares.Clear();
                 conn.Open();
-                cmd = new MySqlCommand("SELECT celulares.ID, celulares.ModeloYOmarca, calulares.Ingreso, celulares.Estado, celulares.Adelanto, celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre" +
+                cmd = new MySqlCommand("SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
                                      "WHERE celulares.Baja = 0 AND usuarios.Baja = 0;", conn);
@@ -791,8 +791,19 @@ namespace Diseño
                         string adelato = txtAdelanto_Agregar.Text;
                         string presupuesto = txtPresupuesto_Agregar.Text;
 
-                        insertarCelulares = $"INSERT INTO celulares(ModeloYOmarca, IMEI, Estado, Adelanto, Presupuesto, Ingreso, Plazo, Detalles, Cedula_Cliente, ID_Usuario) VALUES ('{modeloYOmarca}', '{imei}', '{estado}', '{adelanto}', '{presupuesto}','{ingresoFormat}','{plazoFormat}', '{detalles}', '{ciCliente}', {idUsuario})";
+                        insertarCelulares = $"INSERT INTO celulares(ModeloYOmarca, IMEI, Estado, Adelanto, Presupuesto, Ingreso, Plazo, Detalles, Cedula_Cliente, ID_Usuario) VALUES (@ModeloYOmarca, @IMEI, @Estado, @Adelanto, @Presupuesto, @Ingreso, @Plazo, @Detalles, @Cedula_Cliente, @ID_Usuario)";
                         cmd = new MySqlCommand(insertarCelulares, conn);
+
+                        cmd.Parameters.AddWithValue("@ModeloYOmarca", modeloYOmarca);
+                        cmd.Parameters.AddWithValue("@IMEI", imei);
+                        cmd.Parameters.AddWithValue("@Estado", estado);
+                        cmd.Parameters.AddWithValue("@Adelanto", adelato);
+                        cmd.Parameters.AddWithValue("@Presupuesto", presupuesto);
+                        cmd.Parameters.AddWithValue("@Ingreso", ingreso);
+                        cmd.Parameters.AddWithValue("@Plazo", plazo);
+                        cmd.Parameters.AddWithValue("@Detalles", detalles);
+                        cmd.Parameters.AddWithValue("@Cedula_Cliente", cedulaDelPropietarioDelCelular);
+                        cmd.Parameters.AddWithValue("@ID_Usuario", idUsuario);
 
                         try
                         {
@@ -802,7 +813,8 @@ namespace Diseño
                             txtIMEI_Agregar.Text = "";
                             comboBox_AgregarCelular_CedulaDelDueño.Text = "";
                             comboBox_AgregarCelular_IdDelTecnicoAcargo.Text = "";
-                            txtAdelanto_Agregar.Text = "";
+                            txtAdelanto_Agregar.Text = "$";
+                            txtPresupuesto_Agregar.Text = "$";
                             txtDetallesUobservaciones_Agregar.Text = "";
 
                             radioButton_Arreglado_Agregar.Checked = false;
@@ -894,7 +906,7 @@ namespace Diseño
                                 estado = "En Espera";
                             }
 
-                            modifcarCelulares = $"UPDATE celulares SET ModeloYOmarca =@ModeloYOmarca, IMEI =@IMEI, Estado =@Estado, Ingreso =@Ingreso, Plazo =@Plazo, Adelanto = @Adelanto, Presupuesto = @Presupuesto, Detalles =@Detalles WHERE ID=@ID";
+                            modifcarCelulares = $"UPDATE celulares SET ModeloYOmarca = @ModeloYOmarca, IMEI = @IMEI, Estado = @Estado, Ingreso = @Ingreso, Plazo = @Plazo, Adelanto = @Adelanto, Presupuesto = @Presupuesto, Detalles = @Detalles WHERE ID = @ID";
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             cmd.Parameters.AddWithValue("@ModeloYOmarca", modelo);
@@ -1583,10 +1595,10 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Cedula_Cliente LIKE '%@Busqueda%'";
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Cedula_Cliente LIKE '%{busquedaCampo}%'";
 
                                 cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
 
@@ -1612,10 +1624,10 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.ModeloYOmarca LIKE '%@Busqueda%'";
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.ModeloYOmarca LIKE '%{busquedaCampo}%'";
 
                                 cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
 
@@ -1641,10 +1653,10 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Ingreso LIKE '%@Busqueda%'";
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Ingreso LIKE '%{busquedaCampo}%'";
 
                                 cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
 
@@ -1670,10 +1682,10 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Estado LIKE '%@Busqueda%'";
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Estado LIKE '%{busquedaCampo}%'";
 
                                 cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
 
@@ -1699,10 +1711,10 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Plazo LIKE '%@Busqueda%'";
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND celulares.Plazo LIKE '%{busquedaCampo}%'";
 
                                 cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
 
@@ -1728,10 +1740,10 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                busqueda = "SELECT celulares.ID, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI, celulares.Cedula_Cliente, usuarios.Nombre " +
+                                busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
-                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND usuarios.Nombre LIKE '%@Busqueda%'";
+                                     $"WHERE celulares.Baja = 0 AND usuarios.Baja = 0 AND usuarios.Nombre LIKE '%{busquedaCampo}%'";
 
                                 cmd.Parameters.AddWithValue("@Busqueda", busquedaCampo);
 
@@ -2095,20 +2107,33 @@ namespace Diseño
                 e.CellStyle.ForeColor = Color.FromArgb(0, 128, 0);
             }
 
-
+            if (tablaCelulares.Columns[e.ColumnIndex].Name == "Cedula_Cliente")
+            {
+                e.CellStyle.ForeColor = Color.Blue;
+            }
 
         }
 
         private void tablaCelulares_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
             {
                 DataGridViewCell cell = tablaCelulares.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                cell.Style.ForeColor = Color.Blue;
+                cell.Style.ForeColor = Color.LightSteelBlue;
                 tablaCelulares.Cursor = Cursors.Hand;
             }
             else
             {
+                tablaCelulares.Cursor = Cursors.Default;
+            }
+        }
+
+        private void tablaCelulares_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
+            {
+                DataGridViewCell cell = tablaCelulares.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                cell.Style.ForeColor = Color.Blue;
                 tablaCelulares.Cursor = Cursors.Default;
             }
         }
@@ -2242,7 +2267,7 @@ namespace Diseño
         {
             MostrarNombreYelIDdelTecnicoEnUnComboBox();
             //linkeo de la cedula del cliente:
-            if (e.RowIndex >= 0 && e.ColumnIndex == 9)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
             {
                 string cedula = tablaCelulares.Rows[e.RowIndex].Cells["Cedula_Cliente"].Value.ToString();
 
@@ -2348,7 +2373,7 @@ namespace Diseño
                 }
             }
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
             {
                 string detalles = ObtenerDetallesDesdeElEstado();
                 MessageBox.Show("Detalles/Observaciones:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2496,10 +2521,6 @@ namespace Diseño
                 }
                 else
                 {
-
-                    comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
-
-
                     conn.Open();
                     string abrir;
                     string query = $"SELECT Nombre, Cedula FROM Clientes WHERE Nombre LIKE '%{busqueda}%' AND Baja = 0";
@@ -2508,6 +2529,7 @@ namespace Diseño
 
                     cmd.Parameters.AddWithValue("@Nombre", busqueda);
 
+                    comboBox_AgregarCelular_CedulaDelDueño.Items.Clear();
 
                     abrir = "Abierto";
 
@@ -2546,6 +2568,373 @@ namespace Diseño
             {
                 conn.Close();
             }
+        }
+
+
+
+        private void btn_ModificarTecnicoACargo_Buscar_Click(object sender, EventArgs e)
+        {
+            if (comboBox_ModificarTecnicoACargo.Text.Length == 0)
+            {
+                try
+                {
+                    string abrir;
+                    string query = $"SELECT ID, Nombre FROM usuarios WHERE Baja = 0";
+                    conn.Open();
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+
+                    comboBox_ModificarTecnicoACargo.Items.Clear();
+
+                    List<Tecnicos> listaUsuarios = new List<Tecnicos>();
+
+                    abrir = "Abierto";
+
+                    if (abrir == "Abierto")
+                    {
+                        comboBox_ModificarTecnicoACargo.DroppedDown = true;
+                    }
+                    else if (abrir == "Cerrado")
+                    {
+                        comboBox_ModificarTecnicoACargo.DroppedDown = false;
+                    }
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string id = reader["ID"].ToString();
+
+                        comboBox_ModificarTecnicoACargo.Items.Add(new Tecnicos
+                        {
+                            Nombre = nombre,
+                            ID = id
+                        });
+                        abrir = "Cerrado";
+                    }
+
+
+
+                    comboBox_ModificarTecnicoACargo.DisplayMember = "";
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+
+                    string abrir;
+                    string query = $"SELECT ID, Nombre FROM usuarios WHERE Nombre LIKE '%{comboBox_ModificarTecnicoACargo.Text}%' AND Baja = 0";
+                    conn.Open();
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+
+                    //cmd.Parameters.AddWithValue("@Buscar", comboBox_ModificarTecnicoACargo.Text);
+
+                    comboBox_ModificarTecnicoACargo.Items.Clear();
+
+                    abrir = "Abierto";
+
+                    if (abrir == "Abierto")
+                    {
+                        comboBox_ModificarTecnicoACargo.DroppedDown = true;
+                    }
+                    else if (abrir == "Cerrado")
+                    {
+                        comboBox_ModificarTecnicoACargo.DroppedDown = false;
+                    }
+
+                    List<Tecnicos> listaUsuarios = new List<Tecnicos>();
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string id = reader["ID"].ToString();
+
+                        comboBox_ModificarTecnicoACargo.Items.Add(new Tecnicos
+                        {
+                            Nombre = nombre,
+                            ID = id
+                        });
+
+                        abrir = "Cerrado";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
+        private void btn_ModificarClientes_Buscar_Click(object sender, EventArgs e)
+        {
+            string busqueda = combobox_CI_Del_Dueño_Modificar.Text;
+
+            try
+            {
+
+                if (combobox_CI_Del_Dueño_Modificar.Text == "")
+                {
+                    conn.Open();
+                    string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+
+
+                    combobox_CI_Del_Dueño_Modificar.Items.Clear();
+
+                    combobox_CI_Del_Dueño_Modificar.DroppedDown = true;
+
+
+
+                    List<Cliente> listaUsuarios = new List<Cliente>();
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string cedula = reader["Cedula"].ToString();
+
+                        combobox_CI_Del_Dueño_Modificar.Items.Add(new Cliente
+                        {
+                            Nombre = nombre,
+                            Cedula = cedula
+                        });
+                    }
+
+
+                }
+                else
+                {
+                    conn.Open();
+                    string abrir;
+                    string query = $"SELECT Nombre, Cedula FROM Clientes WHERE Nombre LIKE '%{busqueda}%' AND Baja = 0";
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+
+                    cmd.Parameters.AddWithValue("@Nombre", busqueda);
+
+                    combobox_CI_Del_Dueño_Modificar.Items.Clear();
+
+                    abrir = "Abierto";
+
+                    if (abrir == "Abierto")
+                    {
+                        combobox_CI_Del_Dueño_Modificar.DroppedDown = true;
+                    }
+                    else if (abrir == "Cerrado")
+                    {
+                        combobox_CI_Del_Dueño_Modificar.DroppedDown = false;
+                    }
+
+
+
+                    List<Cliente> listaUsuarios = new List<Cliente>();
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string cedula = reader["Cedula"].ToString();
+
+                        combobox_CI_Del_Dueño_Modificar.Items.Add(new Cliente
+                        {
+                            Nombre = nombre,
+                            Cedula = cedula
+                        });
+                        abrir = "Cerrado";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void txt_AdelantoModificar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_AdelantoModificar.Text.Length == 0)
+            {
+                txt_AdelantoModificar.Text = "$";
+                txt_AdelantoModificar.SelectionStart = txt_AdelantoModificar.Text.Length;
+            }
+
+        }
+
+        private void txt_PresupuestoModificar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_PresupuestoModificar.Text.Length == 0)
+            {
+                txt_PresupuestoModificar.Text = "$";
+                txt_PresupuestoModificar.SelectionStart = txt_PresupuestoModificar.Text.Length;  
+            }
+        }
+
+        private void txtAdelanto_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAdelanto_Agregar.Text.Length == 0)
+            {
+                txtAdelanto_Agregar.Text = "$";
+                txtAdelanto_Agregar.SelectionStart = txtAdelanto_Agregar.Text.Length;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (comboBox_AgregarCelular_IdDelTecnicoAcargo.Text.Length == 0)
+            {
+                try
+                {
+                    string abrir;
+                    string query = $"SELECT ID, Nombre FROM usuarios WHERE Baja = 0";
+                    conn.Open();
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+
+                    comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Clear();
+
+                    List<Tecnicos> listaUsuarios = new List<Tecnicos>();
+
+                    abrir = "Abierto";
+
+                    if (abrir == "Abierto")
+                    {
+                        comboBox_AgregarCelular_IdDelTecnicoAcargo.DroppedDown = true;
+                    }
+                    else if (abrir == "Cerrado")
+                    {
+                        comboBox_AgregarCelular_IdDelTecnicoAcargo.DroppedDown = false;
+                    }
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string id = reader["ID"].ToString();
+
+                        comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Add(new Tecnicos
+                        {
+                            Nombre = nombre,
+                            ID = id
+                        });
+                        abrir = "Cerrado";
+                    }
+
+
+
+                    comboBox_AgregarCelular_IdDelTecnicoAcargo.DisplayMember = "";
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+
+                    string abrir;
+                    string query = $"SELECT ID, Nombre FROM usuarios WHERE Nombre LIKE '%{comboBox_AgregarCelular_IdDelTecnicoAcargo.Text}%' AND Baja = 0";
+                    conn.Open();
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+
+                    //cmd.Parameters.AddWithValue("@Buscar", comboBox_ModificarTecnicoACargo.Text);
+
+                    comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Clear();
+
+                    abrir = "Abierto";
+
+                    if (abrir == "Abierto")
+                    {
+                        comboBox_AgregarCelular_IdDelTecnicoAcargo.DroppedDown = true;
+                    }
+                    else if (abrir == "Cerrado")
+                    {
+                        comboBox_AgregarCelular_IdDelTecnicoAcargo.DroppedDown = false;
+                    }
+
+                    List<Tecnicos> listaUsuarios = new List<Tecnicos>();
+
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string id = reader["ID"].ToString();
+
+                        comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Add(new Tecnicos
+                        {
+                            Nombre = nombre,
+                            ID = id
+                        });
+
+                        abrir = "Cerrado";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
+        private void combobox_CI_Del_Dueño_Modificar_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (combobox_CI_Del_Dueño_Modificar.Focused)
+            //{
+            //    if (e.KeyCode == Keys.Enter)
+            //    {
+            //        btn_ModificarClientes_Buscar_Click(sender, e);
+            //    }
+            //}
+        }
+
+        private void combobox_CI_Del_Dueño_Modificar_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if (combobox_CI_Del_Dueño_Modificar.ContainsFocus)
+            //{
+            //    if (e.KeyCode == Keys.Enter)
+            //    {
+            //        btn_ModificarClientes_Buscar_Click(sender, e);
+            //    }
+            //}
         }
     }
 }

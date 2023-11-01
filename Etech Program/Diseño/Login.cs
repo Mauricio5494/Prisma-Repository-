@@ -53,6 +53,8 @@ namespace Diseño
             }
         }
 
+//                       Un intento de hacer un decodificador y condificador de SHA256.
+//      ----------------------------------------------------------------------------------------------
         private static string DecoderDelHash(string teclado)
         {
             SHA256 sHA256 = SHA256.Create();
@@ -79,6 +81,8 @@ namespace Diseño
             return BitConverter.ToString(bytesHash).Replace("-", "").ToLower();
         }
 
+//      ----------------------------------------------------------------------------------------------
+
         private void btnIngreso_Click(object sender, System.EventArgs e)
         {
             Taller = new Principal();
@@ -89,18 +93,37 @@ namespace Diseño
             try
             {
                 conn.Open();
-                sql = $"SELECT Nombre, Contraseña FROM usuarios WHERE nombre ='{Nombre}' AND Contraseña = SHA2('{Password}', 256)";
+
+                sql = $"SELECT Nombre, Contraseña FROM usuarios WHERE Nombre = @Nombre AND Contraseña = SHA2(@Password, 256)";
                 cmd_sql = new MySqlCommand(sql, conn);
+
+                cmd_sql.Parameters.AddWithValue("@Nombre", Nombre);
+                cmd_sql.Parameters.AddWithValue("@Password", Password);
+
                 reader = cmd_sql.ExecuteReader();
-                reader.Read();
+
                 try
                 {
-                        //string contraseñaEnBD = reader["Contraseña"].ToString();
-                        //string contraseñaDecodificada = DecoderDelHash(Password);
-                        Seguridad.SetInvitado = false;
-                        transicion = "FadeOut";
-                        timer_AparecerSuavemente.Start();
-                        Taller.Show();
+                    try
+                    {
+                        if (reader.Read())
+                        {
+                            //string contraseñaEnBD = reader["Contraseña"].ToString();
+                            //string contraseñaDecodificada = DecoderDelHash(Password);
+                            Seguridad.SetInvitado = false;
+                            transicion = "FadeOut";
+                            timer_AparecerSuavemente.Start();
+                            Taller.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario o contraseña incorrectos\n\nVerifique los datos y vuelva a intentar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error\n\n" + ex.Message);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -114,7 +137,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close(); 
+                }
             }
         }
         private void btnInvitado_Click(object sender, EventArgs e)
@@ -129,12 +155,13 @@ namespace Diseño
         //Métodos relacionados con el apartado visual del programa que lo hacen mas intuitivo (no afectan las funcionalidades):
         private void Form2_Load(object sender, System.EventArgs e)
         {
+            txtNombre.Text = "Nombre del Empleado...";
+            txtNombre.ForeColor = Color.Black;
+
             transicion = "FadeIn";
             this.Top = this.Top + 20;
             timer_AparecerSuavemente.Start();
 
-            txtNombre.Text = "Nombre del Empleado...";
-            txtNombre.ForeColor = Color.Gray;
         }
 
         private void checkBox1_MouseEnter(object sender, System.EventArgs e)
@@ -159,8 +186,7 @@ namespace Diseño
             txtNombre.ForeColor = Color.Black;
             if (txtNombre.Text == "Nombre del Empleado...")
             {
-                txtNombre.Text = "";
-
+                
             }
         }
 
@@ -289,6 +315,16 @@ namespace Diseño
         {
             transicion = "FadeOutExit";
             timer_AparecerSuavemente.Start();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "Nombre del Empleado...")
+            {
+                txtNombre.SelectionStart = txtNombre.Text.Length;
+                txtNombre.SelectionLength = 0;
+                txtNombre.Text = "";
+            }
         }
     }
 }

@@ -256,6 +256,9 @@
     <None Include="Resources\vigilancia.png" />
     <None Include="Resources\telefono-inteligente.png" />
     <None Include="Resources\telefono-inteligente %281%29.png" />
+    <None Include="Resources\telefono-inteligente %282%29.png" />
+    <None Include="Resources\cliente Blanco.png" />
+    <None Include="Resources\work-from-home Blanco.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
