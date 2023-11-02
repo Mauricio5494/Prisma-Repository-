@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelE = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lab_SitauacionContextual = new System.Windows.Forms.Label();
@@ -51,6 +51,8 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel_Registro = new System.Windows.Forms.Panel();
             this.groupBoxInterno_panelRegistroUsuarios = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtRepitaLaContraseña = new System.Windows.Forms.TextBox();
             this.picMostrar = new System.Windows.Forms.PictureBox();
             this.chbMostrarContraseña_PanelRegistro = new System.Windows.Forms.CheckBox();
             this.panelAgregarUsuario_btnAgregar = new System.Windows.Forms.Button();
@@ -75,6 +77,7 @@
             this.txtID_panelBorrarUsuarios = new System.Windows.Forms.TextBox();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.groupBox_Menu_PanelMenu = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnEstadisticas_groupboxManu_PanelMenu = new System.Windows.Forms.Button();
             this.btnTaller_PanelMenu = new System.Windows.Forms.Button();
             this.btnClientes_groupBoxMenu_PanelMenu = new System.Windows.Forms.Button();
@@ -104,11 +107,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label_InvitadoDetectado = new System.Windows.Forms.Label();
+            this.tabla_Usuarios = new System.Windows.Forms.DataGridView();
             this.pictureBox_WarningRight = new System.Windows.Forms.PictureBox();
             this.pictureBox_WarningLeft = new System.Windows.Forms.PictureBox();
-            this.tabla_Usuarios = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtRepitaLaContraseña = new System.Windows.Forms.TextBox();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelD.SuspendLayout();
@@ -120,15 +121,16 @@
             this.groupboxInterno_panelBorrarTecnico.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             this.groupBox_Menu_PanelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
             this.groupBoxModificar_PanelModificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar_groupBoxModificar_PanelModificar)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // panelE
@@ -245,7 +247,6 @@
             this.MenuOpciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MenuOpciones.FormattingEnabled = true;
             this.MenuOpciones.Items.AddRange(new object[] {
-            "ID",
             "Nombre",
             "Telefono",
             "Correo Electrónico",
@@ -255,6 +256,7 @@
             this.MenuOpciones.Name = "MenuOpciones";
             this.MenuOpciones.Size = new System.Drawing.Size(120, 21);
             this.MenuOpciones.TabIndex = 7;
+            this.MenuOpciones.SelectedIndexChanged += new System.EventHandler(this.MenuOpciones_SelectedIndexChanged);
             // 
             // txtCampo_Busqueda
             // 
@@ -264,6 +266,7 @@
             this.txtCampo_Busqueda.Name = "txtCampo_Busqueda";
             this.txtCampo_Busqueda.Size = new System.Drawing.Size(323, 20);
             this.txtCampo_Busqueda.TabIndex = 8;
+            this.txtCampo_Busqueda.TextChanged += new System.EventHandler(this.txtCampo_Busqueda_TextChanged);
             // 
             // panelD
             // 
@@ -397,7 +400,7 @@
             this.panel_Registro.Location = new System.Drawing.Point(50, 79);
             this.panel_Registro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel_Registro.Name = "panel_Registro";
-            this.panel_Registro.Size = new System.Drawing.Size(419, 600);
+            this.panel_Registro.Size = new System.Drawing.Size(419, 0);
             this.panel_Registro.TabIndex = 16;
             this.panel_Registro.Visible = false;
             // 
@@ -429,6 +432,25 @@
             this.groupBoxInterno_panelRegistroUsuarios.TabIndex = 1;
             this.groupBoxInterno_panelRegistroUsuarios.TabStop = false;
             this.groupBoxInterno_panelRegistroUsuarios.Text = "Resgistro";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 176);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 16);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Repita la Contraseña:";
+            // 
+            // txtRepitaLaContraseña
+            // 
+            this.txtRepitaLaContraseña.Location = new System.Drawing.Point(6, 192);
+            this.txtRepitaLaContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtRepitaLaContraseña.Name = "txtRepitaLaContraseña";
+            this.txtRepitaLaContraseña.PasswordChar = '*';
+            this.txtRepitaLaContraseña.Size = new System.Drawing.Size(339, 22);
+            this.txtRepitaLaContraseña.TabIndex = 15;
             // 
             // picMostrar
             // 
@@ -578,7 +600,6 @@
             this.panel_BorrarUsuario.Name = "panel_BorrarUsuario";
             this.panel_BorrarUsuario.Size = new System.Drawing.Size(419, 0);
             this.panel_BorrarUsuario.TabIndex = 23;
-            this.panel_BorrarUsuario.Visible = false;
             // 
             // groupboxInterno_panelBorrarTecnico
             // 
@@ -590,11 +611,11 @@
             this.groupboxInterno_panelBorrarTecnico.Controls.Add(this.txtID_panelBorrarUsuarios);
             this.groupboxInterno_panelBorrarTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupboxInterno_panelBorrarTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupboxInterno_panelBorrarTecnico.Location = new System.Drawing.Point(13, 13);
+            this.groupboxInterno_panelBorrarTecnico.Location = new System.Drawing.Point(4, 3);
             this.groupboxInterno_panelBorrarTecnico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupboxInterno_panelBorrarTecnico.Name = "groupboxInterno_panelBorrarTecnico";
             this.groupboxInterno_panelBorrarTecnico.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupboxInterno_panelBorrarTecnico.Size = new System.Drawing.Size(392, 571);
+            this.groupboxInterno_panelBorrarTecnico.Size = new System.Drawing.Size(412, 594);
             this.groupboxInterno_panelBorrarTecnico.TabIndex = 0;
             this.groupboxInterno_panelBorrarTecnico.TabStop = false;
             this.groupboxInterno_panelBorrarTecnico.Text = "Borrar Técnico";
@@ -611,13 +632,16 @@
             // 
             // btnEliminar_panelBorrarTecnico
             // 
+            this.btnEliminar_panelBorrarTecnico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar_panelBorrarTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar_panelBorrarTecnico.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar_panelBorrarTecnico.Location = new System.Drawing.Point(7, 245);
+            this.btnEliminar_panelBorrarTecnico.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar_panelBorrarTecnico.Location = new System.Drawing.Point(13, 207);
             this.btnEliminar_panelBorrarTecnico.Name = "btnEliminar_panelBorrarTecnico";
-            this.btnEliminar_panelBorrarTecnico.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar_panelBorrarTecnico.Size = new System.Drawing.Size(89, 30);
             this.btnEliminar_panelBorrarTecnico.TabIndex = 2;
             this.btnEliminar_panelBorrarTecnico.Text = "Eliminar";
-            this.btnEliminar_panelBorrarTecnico.UseVisualStyleBackColor = true;
+            this.btnEliminar_panelBorrarTecnico.UseVisualStyleBackColor = false;
             this.btnEliminar_panelBorrarTecnico.Click += new System.EventHandler(this.btnEliminar_panelBorrarTecnico_Click);
             // 
             // label1
@@ -654,6 +678,7 @@
             // groupBox_Menu_PanelMenu
             // 
             this.groupBox_Menu_PanelMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_Menu_PanelMenu.Controls.Add(this.pictureBox2);
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnEstadisticas_groupboxManu_PanelMenu);
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnTaller_PanelMenu);
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnClientes_groupBoxMenu_PanelMenu);
@@ -665,11 +690,23 @@
             this.groupBox_Menu_PanelMenu.TabStop = false;
             this.groupBox_Menu_PanelMenu.Text = "Menú";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = global::Diseño.Properties.Resources.telefono_inteligente;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 37);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(75, 73);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnEstadisticas_groupboxManu_PanelMenu
             // 
             this.btnEstadisticas_groupboxManu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas_groupboxManu_PanelMenu.Image = global::Diseño.Properties.Resources.Estadisticas;
+            this.btnEstadisticas_groupboxManu_PanelMenu.Image = global::Diseño.Properties.Resources.vigilancia;
             this.btnEstadisticas_groupboxManu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstadisticas_groupboxManu_PanelMenu.Location = new System.Drawing.Point(3, 222);
             this.btnEstadisticas_groupboxManu_PanelMenu.Name = "btnEstadisticas_groupboxManu_PanelMenu";
@@ -682,7 +719,6 @@
             // btnTaller_PanelMenu
             // 
             this.btnTaller_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaller_PanelMenu.Image = global::Diseño.Properties.Resources.Taller2;
             this.btnTaller_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaller_PanelMenu.Location = new System.Drawing.Point(3, 28);
             this.btnTaller_PanelMenu.Name = "btnTaller_PanelMenu";
@@ -697,7 +733,7 @@
             this.btnClientes_groupBoxMenu_PanelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClientes_groupBoxMenu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes_groupBoxMenu_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes_groupBoxMenu_PanelMenu.Image = global::Diseño.Properties.Resources.Usuarios;
+            this.btnClientes_groupBoxMenu_PanelMenu.Image = global::Diseño.Properties.Resources.cliente;
             this.btnClientes_groupBoxMenu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes_groupBoxMenu_PanelMenu.Location = new System.Drawing.Point(3, 125);
             this.btnClientes_groupBoxMenu_PanelMenu.Name = "btnClientes_groupBoxMenu_PanelMenu";
@@ -1006,6 +1042,42 @@
             this.label_InvitadoDetectado.Text = "Ingrese como Usuario para poder Visualizar la tabla";
             this.label_InvitadoDetectado.Visible = false;
             // 
+            // tabla_Usuarios
+            // 
+            this.tabla_Usuarios.AllowUserToAddRows = false;
+            this.tabla_Usuarios.AllowUserToDeleteRows = false;
+            this.tabla_Usuarios.AllowUserToResizeRows = false;
+            this.tabla_Usuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabla_Usuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.tabla_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_Usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.tabla_Usuarios.EnableHeadersVisualStyles = false;
+            this.tabla_Usuarios.GridColor = System.Drawing.Color.DimGray;
+            this.tabla_Usuarios.Location = new System.Drawing.Point(476, 79);
+            this.tabla_Usuarios.MultiSelect = false;
+            this.tabla_Usuarios.Name = "tabla_Usuarios";
+            this.tabla_Usuarios.ReadOnly = true;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.tabla_Usuarios.RowTemplate.ReadOnly = true;
+            this.tabla_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.tabla_Usuarios.Size = new System.Drawing.Size(869, 597);
+            this.tabla_Usuarios.TabIndex = 29;
+            this.tabla_Usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_Usuarios_CellClick);
+            this.tabla_Usuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tabla_Usuarios_DataBindingComplete);
+            // 
             // pictureBox_WarningRight
             // 
             this.pictureBox_WarningRight.Image = global::Diseño.Properties.Resources.senal_de_advertencia;
@@ -1027,61 +1099,6 @@
             this.pictureBox_WarningLeft.TabIndex = 27;
             this.pictureBox_WarningLeft.TabStop = false;
             this.pictureBox_WarningLeft.Visible = false;
-            // 
-            // tabla_Usuarios
-            // 
-            this.tabla_Usuarios.AllowUserToAddRows = false;
-            this.tabla_Usuarios.AllowUserToDeleteRows = false;
-            this.tabla_Usuarios.AllowUserToResizeRows = false;
-            this.tabla_Usuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.tabla_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tabla_Usuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.tabla_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla_Usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.tabla_Usuarios.EnableHeadersVisualStyles = false;
-            this.tabla_Usuarios.GridColor = System.Drawing.Color.DimGray;
-            this.tabla_Usuarios.Location = new System.Drawing.Point(476, 79);
-            this.tabla_Usuarios.MultiSelect = false;
-            this.tabla_Usuarios.Name = "tabla_Usuarios";
-            this.tabla_Usuarios.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.tabla_Usuarios.RowTemplate.ReadOnly = true;
-            this.tabla_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tabla_Usuarios.Size = new System.Drawing.Size(869, 597);
-            this.tabla_Usuarios.TabIndex = 29;
-            this.tabla_Usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_Usuarios_CellClick);
-            this.tabla_Usuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tabla_Usuarios_DataBindingComplete);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 176);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 16);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Repita la Contraseña:";
-            // 
-            // txtRepitaLaContraseña
-            // 
-            this.txtRepitaLaContraseña.Location = new System.Drawing.Point(6, 192);
-            this.txtRepitaLaContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtRepitaLaContraseña.Name = "txtRepitaLaContraseña";
-            this.txtRepitaLaContraseña.PasswordChar = '*';
-            this.txtRepitaLaContraseña.Size = new System.Drawing.Size(339, 22);
-            this.txtRepitaLaContraseña.TabIndex = 15;
             // 
             // Usuarios
             // 
@@ -1125,6 +1142,7 @@
             this.groupboxInterno_panelBorrarTecnico.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
             this.groupBox_Menu_PanelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Modificar.ResumeLayout(false);
@@ -1132,9 +1150,9 @@
             this.groupBoxModificar_PanelModificar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar_groupBoxModificar_PanelModificar)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1176,7 +1194,6 @@
         private System.Windows.Forms.GroupBox groupboxInterno_panelBorrarTecnico;
         private System.Windows.Forms.Button btnEliminar_panelBorrarTecnico;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtID_panelBorrarUsuarios;
         private System.Windows.Forms.Label labelNota_panelBorrarTecnico;
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.PictureBox pictureBox_EtechLogo_PanelMenu;
@@ -1219,5 +1236,7 @@
         private System.Windows.Forms.DataGridView tabla_Usuarios;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRepitaLaContraseña;
+        private System.Windows.Forms.TextBox txtID_panelBorrarUsuarios;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

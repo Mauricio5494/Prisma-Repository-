@@ -168,7 +168,7 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                eliminarTecnico = $"UPDATE trabajos SET Baja = 0 WHERE ID_Tecnico = {idTecnico}; UPDATE celulares SET Baja = 0 WHERE ID_Usuario = {idTecnico}; DELETE FROM usuarios WHERE ID = {idTecnico};";
+                                eliminarTecnico = $"UPDATE trabajos SET Baja = 0 WHERE ID_Tecnico = {idTecnico}; UPDATE celulares SET Baja = 0 WHERE ID_Usuario = {idTecnico}; DELETE FROM usuarios WHERE ID ={clavePrimariaDelTecnico};";
                                 cmd = new MySqlCommand(eliminarTecnico, conn);
                                 txtID_panelBorrarUsuarios.Text = "";
                                 ApareceLaContraseñaMaestra = false;
@@ -774,11 +774,15 @@ namespace Diseño
                     }
                 }
 
+
                 clavePrimariaDelTecnico = filaSeleccionada.Cells["ID"].Value.ToString();
+                txtID_panelBorrarUsuarios.Text = clavePrimariaDelTecnico;
+
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 string correoElectronico = filaSeleccionada.Cells["CorreoElectronico"].Value.ToString();
                 string telefonoOpcional = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string celular = filaSeleccionada.Cells["Celular"].Value.ToString();
+
                 labelDelID_groupBoxModificar_PanelModificar.Text = $"Selección: {clavePrimariaDelTecnico}";
                 txtNombre_groupboxModificar_PanelModificar.Text = nombre;
                 txtCorreoElectronico_groupBoxModificar_PanelModificar.Text = correoElectronico;
@@ -800,6 +804,130 @@ namespace Diseño
                 //Se cambia la imagen y la sintaxis cambia a Asteriscos " * "
                 picMostrar.Image = Resources.ojo_tapado;
                 txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtCampo_Busqueda_TextChanged(object sender, EventArgs e)
+        {
+            string campoBusqueda = txtCampo_Busqueda.Text;
+
+            if (txtCampo_Busqueda.Text != "")
+            {
+                string option = MenuOpciones.Text;
+                switch (option)
+                {
+                    case "Nombre":
+
+                        dataTableUsuarios.Rows.Clear();
+
+                        try
+                        {
+                            conn.Open();
+                            string query = $"SELECT ID, Nombre, Celular, CorreoElectronico, Telefono FROM Usuarios WHERE Nombre LIKE '%{campoBusqueda}%' AND Baja = 0";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                            reader = cmd.ExecuteReader();
+                            dataTableUsuarios.Load(reader);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al intentar buscar:\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tabla_Usuarios.DataSource = dataTableUsuarios;
+                        break;
+
+                    case "Celular":
+
+                        dataTableUsuarios.Rows.Clear();
+                        try
+                        {
+                            conn.Open();
+                            string query = $"SELECT ID, Nombre, Celular, CorreoElectronico, Telefono FROM Usuarios WHERE Celular LIKE '%{campoBusqueda}%' AND Baja = 0";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                            reader = cmd.ExecuteReader();
+                            dataTableUsuarios.Load(reader);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al intentar buscar:\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tabla_Usuarios.DataSource = dataTableUsuarios;
+
+                        break;
+
+                    case "Correo Electrónico":
+
+                        dataTableUsuarios.Rows.Clear();
+                        try
+                        {
+                            conn.Open();
+                            string query = $"SELECT ID, Nombre, Celular, CorreoElectronico, Telefono FROM Usuarios WHERE CorreoElectronico LIKE '%{campoBusqueda}%' AND Baja = 0";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al intentar buscar:\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+
+                        tabla_Usuarios.DataSource = dataTableUsuarios;
+                        break;
+
+                    case "Telefono":
+
+                        dataTableUsuarios.Rows.Clear();
+                        try
+                        {
+                            conn.Open();
+                            string query = $"SELECT ID, Nombre, Celular, CorreoElectronico, Telefono FROM Usuarios WHERE Telefono LIKE '%{campoBusqueda}%' AND Baja = 0";
+                            cmd = new MySqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                            reader = cmd.ExecuteReader();
+                            dataTableUsuarios.Load(reader);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al intentar buscar:\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tabla_Usuarios.DataSource = dataTableUsuarios;
+
+                        break;
+
+                    default:
+
+                        break;
+                }
+            }
+            else
+            {
+                MostrarBaseDeDatosDeLaTablaUsuariosd_SinMensajeDeError();
+            }
+        }
+        private void MenuOpciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtCampo_Busqueda.Enabled == false)
+            {
+                txtCampo_Busqueda.Enabled = true;
             }
         }
     }

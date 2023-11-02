@@ -28,6 +28,7 @@ namespace Diseño
         string columna;
         string option;
         string busqueda;
+        string transicion;
 
         //Instancias:
         Principal Taller = new Principal();
@@ -47,6 +48,9 @@ namespace Diseño
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+            transicion = "FadeIn";
+            timer_Transicion.Start();
+
             MostrarDatosEnLaTablaClientes();
         }
 
@@ -939,22 +943,22 @@ namespace Diseño
         {
             Seguridad.SetInvitado = true;
             conn.Close();
+
             DialogResult siono = MessageBox.Show("¿Está seguro de Cerrar la Sesión?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (siono == DialogResult.Yes)
             {
-                Application.Restart();
-            }
-            else
-            {
+                transicion = "FadeOut";
+                timer_Transicion.Start();
 
+                Application.Restart();
             }
         }
 
         private void btnTaller_Click(object sender, EventArgs e)
         {
-            Taller.Show();
-            this.Hide();
+            transicion = "FadeOutTaller";
+            timer_Transicion.Start();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -996,14 +1000,14 @@ namespace Diseño
                 tablaClientes.Columns["Telefono"].HeaderText = "Teléfono fijo";
                 tablaClientes.Columns["Nombre"].HeaderText = "Nombre y Apellido";
                 tablaClientes.Columns["CorreoElectronico"].HeaderText = "Correo Electrónico";
-                tablaClientes.Columns["Celular"].HeaderText = "N° Celular provicional";
+                tablaClientes.Columns["Celular"].HeaderText = "Celular provicional";
 
                 //Tooltips al posar el mouse
                 tablaClientes.Columns["Cedula"].ToolTipText = "Cédula de identidad del cliente, necesaria para identificar los dueños de los celulares en el taller";
                 tablaClientes.Columns["Nombre"].ToolTipText = "Nombre de pila y apellido del cliente";
                 tablaClientes.Columns["Telefono"].ToolTipText = "Teléfono fijo, como forma de contactar al cliente.";
-                tablaClientes.Columns["CorreoElectronico"].ToolTipText = "El E-Mail del cliente, otra forma de contactar con el mismo";
-                tablaClientes.Columns["Celular"].ToolTipText = "Número de celular el cuál no sea el que está para arreglar";
+                tablaClientes.Columns["CorreoElectronico"].ToolTipText = "El E-Mail del cliente, otra forma de contactar con el mismo (Menos probable que te contesten).";
+                tablaClientes.Columns["Celular"].ToolTipText = "Número de celular el cuál no sea el del celular que está para arreglar, sino otro con el cual contractar al cliente.";
             }
         }
 
@@ -1012,19 +1016,6 @@ namespace Diseño
             MostrarDatosEnLaTablaClientes_SinMensajeDeError();
         }
 
-        private void txtCedula_Agregar_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCedula_Agregar.Text.Length <= 8 && txtCedula_Agregar.Text.Length > 0)
-            {
-                label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
-                int caracteresRestantes = 8 - txtCedula_Agregar.TextLength;
-                label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres Restantes: " + caracteresRestantes + "/8";
-            }
-            else
-            {
-                label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
-            }
-        }
 
         private void txtCampo_Busqueda_TextChanged(object sender, EventArgs e)
         {
@@ -1162,6 +1153,149 @@ namespace Diseño
                     default:
 
                         break;
+                }
+            }
+        }
+
+        private void txtCedula_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCedula_Agregar.Text.Length <= 8 && txtCedula_Agregar.Text.Length > 0)
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
+                int caracteresRestantes = 8 - txtCedula_Agregar.TextLength;
+                label_CaracteresRestantesCI_AgregarCelulares.Text = caracteresRestantes + "/8";
+            }
+            else
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
+            }
+        }
+        private void txtCedula_Agregar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int caracteresRestantes = 8;
+
+            if (txtCedula_Agregar.Text.Length >= caracteresRestantes && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tablaClientes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                MostrarDatosEnLaTablaClientes();
+            }
+        }
+
+        private void txtCelular_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCelular_Agregar.Text.Length <= 9 && txtCelular_Agregar.Text.Length > 0)
+            {
+                labCaracteresRestantesCelular.Visible = true;
+                int caracteresRestantes = 9 - txtCelular_Agregar.TextLength;
+                labCaracteresRestantesCelular.Text = caracteresRestantes + "/9";
+            }
+            else
+            {
+                labCaracteresRestantesCelular.Visible = false;
+            }
+        }
+
+        private void txtCelular_Agregar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int caracteresRestantes = 9;
+
+            if (txtCelular_Agregar.Text.Length >= caracteresRestantes && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        private void labCaracteresRestantesCelular_TextChanged(object sender, EventArgs e)
+        {
+            if (labCaracteresRestantesCelular.Text == "0/9")
+            {
+                labCaracteresRestantesCelular.ForeColor = Color.Red;
+            }
+            else
+            {
+                labCaracteresRestantesCelular.ForeColor = Color.Black;
+            }
+        }
+
+        private void label_CaracteresRestantesCI_AgregarCelulares_TextChanged(object sender, EventArgs e)
+        {
+            if (label_CaracteresRestantesCI_AgregarCelulares.Text == "0/8")
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.ForeColor = Color.Red;
+            }
+            else
+            {
+                label_CaracteresRestantesCI_AgregarCelulares.ForeColor = Color.Black;
+            }
+        }
+
+        private void timer_Transicion_Tick(object sender, EventArgs e)
+        {
+            if (transicion == "FadeIn")
+            {
+                if (this.Opacity == 1)
+                {
+                    timer_Transicion.Stop();
+                }
+                else
+                {
+                    this.Opacity += .15;
+                }
+            }
+            if (transicion == "FadeOut")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                }
+                else
+                {
+                    this.Opacity -= .15;
+                }
+            }
+            if (transicion == "FadeOutTaller")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    
+                }
+                else
+                {
+                    this.Left = this.Left + 10;
+                    this.Opacity -= .15;
+                    Taller.Show();
+                    this.Hide();
+                }
+            }
+            if (transicion == "FadeOutUsuarios")
+            {
+                if (this.Opacity == 1)
+                {
+                    timer_Transicion.Stop();
+                }
+                else
+                {
+                    this.Opacity -= .15;
+                }
+            }
+            if (transicion == "FadeOutEstadisticas")
+            {
+                if(this.Opacity == 1)
+                {
+                    timer_Transicion.Stop();
+                }
+                else
+                {
+                    this.Opacity -= .15;
                 }
             }
         }

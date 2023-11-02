@@ -3,11 +3,13 @@ using MySql.Data.MySqlClient;
 using MySql.Utility.Classes;
 using MySql.Utility.Forms;
 using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Bcpg.Sig;
 using Org.BouncyCastle.Utilities;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
@@ -99,6 +101,8 @@ namespace Diseño
         public Principal()
         {
             InitializeComponent();
+
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         /*
          * 
@@ -217,6 +221,7 @@ namespace Diseño
                 panel_Agregar.SendToBack();
                 panel_Eliminar.SendToBack();
                 panel_Menu.SendToBack();
+                pictureBox1.SendToBack();
 
                 btnEliminar.ForeColor = Color.Black;
                 btnCerrarSesion.ForeColor = Color.Black;
@@ -237,6 +242,7 @@ namespace Diseño
                 panel_Agregar.BringToFront();
                 panel_Eliminar.BringToFront();
                 panel_Menu.BringToFront();
+                pictureBox1.SendToBack();
 
                 btnModificar.ForeColor = Color.FromArgb(255, 40, 40);
                 btnEliminar.ForeColor = Color.FromArgb(255, 40, 40);
@@ -761,13 +767,8 @@ namespace Diseño
                         DateTime tomarIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
                         DateTime tomarPlazo = dateTimePicker_FechaPlazo_Agregar.Value;
 
-                        string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
                         string ingresoFormat = tomarIngreso.ToString("yyyy-MM-dd");
-
-                        DateTime plazo = DateTime.ParseExact(ingresoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-                        DateTime ingreso = DateTime.ParseExact(plazoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-
-
+                        string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
 
                         if (radioButton_Arreglado_Agregar.Checked)
                         {
@@ -799,10 +800,10 @@ namespace Diseño
                         cmd.Parameters.AddWithValue("@Estado", estado);
                         cmd.Parameters.AddWithValue("@Adelanto", adelato);
                         cmd.Parameters.AddWithValue("@Presupuesto", presupuesto);
-                        cmd.Parameters.AddWithValue("@Ingreso", ingreso);
-                        cmd.Parameters.AddWithValue("@Plazo", plazo);
+                        cmd.Parameters.AddWithValue("@Ingreso", ingresoFormat);
+                        cmd.Parameters.AddWithValue("@Plazo", plazoFormat);
                         cmd.Parameters.AddWithValue("@Detalles", detalles);
-                        cmd.Parameters.AddWithValue("@Cedula_Cliente", cedulaDelPropietarioDelCelular);
+                        cmd.Parameters.AddWithValue("@Cedula_Cliente", ciCliente);
                         cmd.Parameters.AddWithValue("@ID_Usuario", idUsuario);
 
                         try
@@ -827,7 +828,6 @@ namespace Diseño
                         catch (Exception ex)
                         {
                             MessageBox.Show("No se ingreso correctamente el celular\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            MessageBox.Show(ex.Message);
                         }
                     }
 
@@ -875,14 +875,11 @@ namespace Diseño
                             imei = txtIMEI_Modificar.Text;
                             string detalles = txtDetallesUobservaciones_Modificar.Text;
 
-                            DateTime tomarIngreso = dateTimePicker_FechaDeIngreso_Agregar.Value;
-                            DateTime tomarPlazo = dateTimePicker_FechaPlazo_Agregar.Value;
+                            DateTime tomarIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
+                            DateTime tomarPlazo = dateTimePicker_Plazo_Modificar.Value;
 
-                            string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
                             string ingresoFormat = tomarIngreso.ToString("yyyy-MM-dd");
-
-                            DateTime plazo = DateTime.ParseExact(ingresoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-                            DateTime ingreso = DateTime.ParseExact(plazoFormat, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
 
                             string ciCliente = CIcliente.Cedula;
                             string idUsuario = idDelTecnicoSeleccionado.ID;
@@ -906,7 +903,7 @@ namespace Diseño
                                 estado = "En Espera";
                             }
 
-                            modifcarCelulares = $"UPDATE celulares SET ModeloYOmarca = @ModeloYOmarca, IMEI = @IMEI, Estado = @Estado, Ingreso = @Ingreso, Plazo = @Plazo, Adelanto = @Adelanto, Presupuesto = @Presupuesto, Detalles = @Detalles WHERE ID = @ID";
+                            modifcarCelulares = $"UPDATE celulares SET ModeloYOmarca = @ModeloYOmarca, IMEI = @IMEI, Estado = @Estado, Ingreso = @Ingreso, Plazo = @Plazo , Adelanto = @Adelanto, Presupuesto = @Presupuesto, Detalles = @Detalles WHERE ID = @ID";
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             cmd.Parameters.AddWithValue("@ModeloYOmarca", modelo);
@@ -914,14 +911,14 @@ namespace Diseño
                             cmd.Parameters.AddWithValue("@Estado", estado);
                             cmd.Parameters.AddWithValue("@Cedula_Cliente", ciCliente);
                             cmd.Parameters.AddWithValue("@ID_Usuario", idUsuario);
-                            cmd.Parameters.AddWithValue("@Plazo", plazo);
-                            cmd.Parameters.AddWithValue("@Ingreso", ingreso);
+                            cmd.Parameters.AddWithValue("@Ingreso", ingresoFormat);
+                            cmd.Parameters.AddWithValue("@Plazo", plazoFormat);
                             cmd.Parameters.AddWithValue("@Adelanto", adelanto);
                             cmd.Parameters.AddWithValue("@Presupuesto", presupuesto);
                             cmd.Parameters.AddWithValue("@ID", clavePrimariaCelulares);
                             cmd.Parameters.AddWithValue("@Detalles", detalles);
 
-                            DialogResult siono = MessageBox.Show("¿Está seguro de querer modificar este celular?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            DialogResult siono = MessageBox.Show("¿Está seguro de querer modificar este celular?\n\n Fíjese bien en los cambios que vaya a realizar.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (siono == DialogResult.Yes)
                             {
                                 try
@@ -2248,21 +2245,6 @@ namespace Diseño
             MostrarNombreYelIDdelTecnicoEnUnComboBox();
         }
 
-        private void groupBox_AgregarCelulares_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_Agregar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox_AgregarCelular_CedulaDelDueño_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tablaCelulares_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             MostrarNombreYelIDdelTecnicoEnUnComboBox();
@@ -2276,7 +2258,7 @@ namespace Diseño
                 string telefonoDelCliente = ObtenerTelefonoHaciendoClickEnCedula(cedula);
                 string correoElectrionicoDelCliente = ObtenerCorreoElectronicoHaciendoClickEnCedula(cedula);
 
-                MessageBox.Show($"Información del Cliente:\n\nNombre y Apellido: {nombreDelCliente}\n\nCelular Adicional: {celularDelCliente}\n\nTelefono Fijo: {telefonoDelCliente}\n\nCorreo Electrónico: {correoElectrionicoDelCliente}", "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Información del Cliente:\n\nNombre y Apellido: {nombreDelCliente}\n\nCelular provicional: {celularDelCliente}\n\nTelefono Fijo: {telefonoDelCliente}\n\nCorreo Electrónico: {correoElectrionicoDelCliente}", "Información acerca del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //Sino que solo seleccione el ID para borrar o modificar el celular.
             else if (e.RowIndex >= 0)
@@ -2308,7 +2290,7 @@ namespace Diseño
                     txtPresupuesto_Modificar.Text = presupuesto;
                     txtAdelanto_Modificar.Text = adelanto;
 
-                    //comboboxes:
+                        //comboboxes:
 
                     foreach (Cliente cliente in combobox_CI_Del_Dueño_Modificar.Items)
                     {
@@ -2376,7 +2358,7 @@ namespace Diseño
             if (e.RowIndex >= 0 && e.ColumnIndex == 5)
             {
                 string detalles = ObtenerDetallesDesdeElEstado();
-                MessageBox.Show("Detalles/Observaciones:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Detalles del Estado del Teléfono:\n\n" + detalles, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void Principal_KeyUp(object sender, KeyEventArgs e)
@@ -2411,6 +2393,26 @@ namespace Diseño
                 else
                 {
                     this.Opacity = this.Opacity - 0.15;
+                }
+            }
+            else if (transicion == "FadeExit")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        this.Opacity -= .15;
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Left += 10;
+                        this.Opacity -= .15;
+                    }
                 }
             }
         }
@@ -2789,7 +2791,7 @@ namespace Diseño
             if (txt_PresupuestoModificar.Text.Length == 0)
             {
                 txt_PresupuestoModificar.Text = "$";
-                txt_PresupuestoModificar.SelectionStart = txt_PresupuestoModificar.Text.Length;  
+                txt_PresupuestoModificar.SelectionStart = txt_PresupuestoModificar.Text.Length;
             }
         }
 
@@ -2799,6 +2801,15 @@ namespace Diseño
             {
                 txtAdelanto_Agregar.Text = "$";
                 txtAdelanto_Agregar.SelectionStart = txtAdelanto_Agregar.Text.Length;
+            }
+        }
+
+        private void txtPresupuesto_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPresupuesto_Agregar.Text.Length == 0)
+            {
+                txtPresupuesto_Agregar.Text = "$";
+                txtPresupuesto_Agregar.SelectionStart = txtPresupuesto_Agregar.Text.Length;
             }
         }
 
@@ -2935,6 +2946,37 @@ namespace Diseño
             //        btn_ModificarClientes_Buscar_Click(sender, e);
             //    }
             //}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            transicion = "FadeExit";
+            timer_Transicion.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtDetallesUobservaciones_Agregar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnAgregarCelular_Click(sender, e);
+            }
         }
     }
 }

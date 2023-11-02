@@ -42,6 +42,8 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_Agregar = new System.Windows.Forms.GroupBox();
+            this.labCaracteresRestantesCelular = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label_CaracteresRestantesCI_AgregarCelulares = new System.Windows.Forms.Label();
             this.txtCelular_Agregar = new System.Windows.Forms.TextBox();
             this.labelCelular_Agregar = new System.Windows.Forms.Label();
@@ -90,6 +92,10 @@
             this.timer_Menu_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_RecargarBD = new System.Windows.Forms.Timer(this.components);
             this.tablaClientes = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.timer_Transicion = new System.Windows.Forms.Timer(this.components);
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.btnTaller = new System.Windows.Forms.Button();
@@ -245,6 +251,11 @@
             // groupBox_Agregar
             // 
             this.groupBox_Agregar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_Agregar.Controls.Add(this.label7);
+            this.groupBox_Agregar.Controls.Add(this.label6);
+            this.groupBox_Agregar.Controls.Add(this.label5);
+            this.groupBox_Agregar.Controls.Add(this.labCaracteresRestantesCelular);
+            this.groupBox_Agregar.Controls.Add(this.label4);
             this.groupBox_Agregar.Controls.Add(this.label_CaracteresRestantesCI_AgregarCelulares);
             this.groupBox_Agregar.Controls.Add(this.txtCelular_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelCelular_Agregar);
@@ -257,48 +268,72 @@
             this.groupBox_Agregar.Controls.Add(this.labelTelefono_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelNombre_Agregar);
             this.groupBox_Agregar.Controls.Add(this.labelCedula_Agregar);
-            this.groupBox_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Agregar.Location = new System.Drawing.Point(3, 2);
             this.groupBox_Agregar.Name = "groupBox_Agregar";
             this.groupBox_Agregar.Size = new System.Drawing.Size(411, 593);
             this.groupBox_Agregar.TabIndex = 0;
             this.groupBox_Agregar.TabStop = false;
-            this.groupBox_Agregar.Text = "Ingrese un cliente";
+            this.groupBox_Agregar.Text = "Agregar un Cliente";
+            // 
+            // labCaracteresRestantesCelular
+            // 
+            this.labCaracteresRestantesCelular.AutoSize = true;
+            this.labCaracteresRestantesCelular.Location = new System.Drawing.Point(379, 135);
+            this.labCaracteresRestantesCelular.Name = "labCaracteresRestantesCelular";
+            this.labCaracteresRestantesCelular.Size = new System.Drawing.Size(25, 15);
+            this.labCaracteresRestantesCelular.TabIndex = 17;
+            this.labCaracteresRestantesCelular.Text = "9/9";
+            this.labCaracteresRestantesCelular.Visible = false;
+            this.labCaracteresRestantesCelular.TextChanged += new System.EventHandler(this.labCaracteresRestantesCelular_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(379, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 15);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "8/8";
+            this.label4.Visible = false;
             // 
             // label_CaracteresRestantesCI_AgregarCelulares
             // 
             this.label_CaracteresRestantesCI_AgregarCelulares.AutoSize = true;
-            this.label_CaracteresRestantesCI_AgregarCelulares.Location = new System.Drawing.Point(157, 80);
+            this.label_CaracteresRestantesCI_AgregarCelulares.Location = new System.Drawing.Point(379, 38);
             this.label_CaracteresRestantesCI_AgregarCelulares.Name = "label_CaracteresRestantesCI_AgregarCelulares";
-            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(128, 13);
+            this.label_CaracteresRestantesCI_AgregarCelulares.Size = new System.Drawing.Size(25, 15);
             this.label_CaracteresRestantesCI_AgregarCelulares.TabIndex = 15;
-            this.label_CaracteresRestantesCI_AgregarCelulares.Text = "Caracteres restantes:";
+            this.label_CaracteresRestantesCI_AgregarCelulares.Text = "8/8";
             this.label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
+            this.label_CaracteresRestantesCI_AgregarCelulares.TextChanged += new System.EventHandler(this.label_CaracteresRestantesCI_AgregarCelulares_TextChanged);
             // 
             // txtCelular_Agregar
             // 
             this.txtCelular_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular_Agregar.Location = new System.Drawing.Point(6, 151);
             this.txtCelular_Agregar.Name = "txtCelular_Agregar";
-            this.txtCelular_Agregar.Size = new System.Drawing.Size(325, 20);
+            this.txtCelular_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtCelular_Agregar.TabIndex = 9;
+            this.txtCelular_Agregar.TextChanged += new System.EventHandler(this.txtCelular_Agregar_TextChanged);
+            this.txtCelular_Agregar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_Agregar_KeyPress);
             // 
             // labelCelular_Agregar
             // 
             this.labelCelular_Agregar.AutoSize = true;
-            this.labelCelular_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCelular_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCelular_Agregar.Location = new System.Drawing.Point(3, 135);
             this.labelCelular_Agregar.Name = "labelCelular_Agregar";
-            this.labelCelular_Agregar.Size = new System.Drawing.Size(50, 13);
+            this.labelCelular_Agregar.Size = new System.Drawing.Size(149, 15);
             this.labelCelular_Agregar.TabIndex = 9;
-            this.labelCelular_Agregar.Text = "Celular:";
+            this.labelCelular_Agregar.Text = "N° de Celular Provicional:";
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCliente.Location = new System.Drawing.Point(6, 342);
+            this.btnAgregarCliente.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCliente.Location = new System.Drawing.Point(6, 315);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarCliente.Size = new System.Drawing.Size(92, 35);
             this.btnAgregarCliente.TabIndex = 12;
             this.btnAgregarCliente.Text = "Agregar";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
@@ -309,16 +344,17 @@
             this.txtCedula_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula_Agregar.Location = new System.Drawing.Point(6, 56);
             this.txtCedula_Agregar.Name = "txtCedula_Agregar";
-            this.txtCedula_Agregar.Size = new System.Drawing.Size(325, 20);
+            this.txtCedula_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtCedula_Agregar.TabIndex = 7;
             this.txtCedula_Agregar.TextChanged += new System.EventHandler(this.txtCedula_Agregar_TextChanged);
+            this.txtCedula_Agregar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_Agregar_KeyPress);
             // 
             // txtTelefono_Agregar
             // 
             this.txtTelefono_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono_Agregar.Location = new System.Drawing.Point(6, 256);
+            this.txtTelefono_Agregar.Location = new System.Drawing.Point(6, 249);
             this.txtTelefono_Agregar.Name = "txtTelefono_Agregar";
-            this.txtTelefono_Agregar.Size = new System.Drawing.Size(325, 20);
+            this.txtTelefono_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtTelefono_Agregar.TabIndex = 11;
             // 
             // txtNombre_Agregar
@@ -326,54 +362,54 @@
             this.txtNombre_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre_Agregar.Location = new System.Drawing.Point(6, 106);
             this.txtNombre_Agregar.Name = "txtNombre_Agregar";
-            this.txtNombre_Agregar.Size = new System.Drawing.Size(325, 20);
+            this.txtNombre_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtNombre_Agregar.TabIndex = 8;
             // 
             // txtCorreoElectronico_Agregar
             // 
             this.txtCorreoElectronico_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoElectronico_Agregar.Location = new System.Drawing.Point(6, 206);
+            this.txtCorreoElectronico_Agregar.Location = new System.Drawing.Point(6, 199);
             this.txtCorreoElectronico_Agregar.Name = "txtCorreoElectronico_Agregar";
-            this.txtCorreoElectronico_Agregar.Size = new System.Drawing.Size(325, 20);
+            this.txtCorreoElectronico_Agregar.Size = new System.Drawing.Size(398, 20);
             this.txtCorreoElectronico_Agregar.TabIndex = 10;
             // 
             // labelCorreoElectronico_Agregar
             // 
             this.labelCorreoElectronico_Agregar.AutoSize = true;
-            this.labelCorreoElectronico_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorreoElectronico_Agregar.Location = new System.Drawing.Point(3, 190);
+            this.labelCorreoElectronico_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreoElectronico_Agregar.Location = new System.Drawing.Point(3, 183);
             this.labelCorreoElectronico_Agregar.Name = "labelCorreoElectronico_Agregar";
-            this.labelCorreoElectronico_Agregar.Size = new System.Drawing.Size(115, 13);
+            this.labelCorreoElectronico_Agregar.Size = new System.Drawing.Size(175, 15);
             this.labelCorreoElectronico_Agregar.TabIndex = 3;
-            this.labelCorreoElectronico_Agregar.Text = "Correo electronico:";
+            this.labelCorreoElectronico_Agregar.Text = "Correo electronico (Opcional):";
             // 
             // labelTelefono_Agregar
             // 
             this.labelTelefono_Agregar.AutoSize = true;
-            this.labelTelefono_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTelefono_Agregar.Location = new System.Drawing.Point(3, 240);
+            this.labelTelefono_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono_Agregar.Location = new System.Drawing.Point(3, 233);
             this.labelTelefono_Agregar.Name = "labelTelefono_Agregar";
-            this.labelTelefono_Agregar.Size = new System.Drawing.Size(147, 13);
+            this.labelTelefono_Agregar.Size = new System.Drawing.Size(140, 15);
             this.labelTelefono_Agregar.TabIndex = 2;
             this.labelTelefono_Agregar.Text = "Telefono Fijo (Opcional):";
             // 
             // labelNombre_Agregar
             // 
             this.labelNombre_Agregar.AutoSize = true;
-            this.labelNombre_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre_Agregar.Location = new System.Drawing.Point(3, 90);
             this.labelNombre_Agregar.Name = "labelNombre_Agregar";
-            this.labelNombre_Agregar.Size = new System.Drawing.Size(113, 13);
+            this.labelNombre_Agregar.Size = new System.Drawing.Size(116, 15);
             this.labelNombre_Agregar.TabIndex = 1;
             this.labelNombre_Agregar.Text = "Nombre y Apellido:";
             // 
             // labelCedula_Agregar
             // 
             this.labelCedula_Agregar.AutoSize = true;
-            this.labelCedula_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCedula_Agregar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCedula_Agregar.Location = new System.Drawing.Point(3, 40);
             this.labelCedula_Agregar.Name = "labelCedula_Agregar";
-            this.labelCedula_Agregar.Size = new System.Drawing.Size(50, 13);
+            this.labelCedula_Agregar.Size = new System.Drawing.Size(49, 15);
             this.labelCedula_Agregar.TabIndex = 0;
             this.labelCedula_Agregar.Text = "Cédula:";
             // 
@@ -393,7 +429,7 @@
             this.panel_Modificar.Controls.Add(this.groupBox_Modificar);
             this.panel_Modificar.Location = new System.Drawing.Point(49, 81);
             this.panel_Modificar.Name = "panel_Modificar";
-            this.panel_Modificar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 22;
             // 
             // groupBox_Modificar
@@ -614,7 +650,7 @@
             this.panel_Eliminar.Controls.Add(this.groupBox1);
             this.panel_Eliminar.Location = new System.Drawing.Point(49, 81);
             this.panel_Eliminar.Name = "panel_Eliminar";
-            this.panel_Eliminar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Eliminar.Size = new System.Drawing.Size(419, 0);
             this.panel_Eliminar.TabIndex = 23;
             // 
             // groupBox1
@@ -686,7 +722,7 @@
             this.panel_Menu.Enabled = false;
             this.panel_Menu.Location = new System.Drawing.Point(49, 81);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(419, 600);
+            this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 24;
             // 
             // groupBox_Menu
@@ -754,6 +790,52 @@
             this.tablaClientes.TabIndex = 25;
             this.tablaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellClick);
             this.tablaClientes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tablaClientes_DataBindingComplete);
+            this.tablaClientes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tablaClientes_KeyDown);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(53, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(12, 16);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "*";
+            this.label5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(125, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(12, 16);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "*";
+            this.label6.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(158, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(12, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "*";
+            this.label7.Visible = false;
+            // 
+            // timer_Transicion
+            // 
+            this.timer_Transicion.Enabled = true;
+            this.timer_Transicion.Interval = 20;
+            this.timer_Transicion.Tick += new System.EventHandler(this.timer_Transicion_Tick);
             // 
             // btnCerrarSesion
             // 
@@ -1043,5 +1125,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView tablaClientes;
+        private System.Windows.Forms.Label labCaracteresRestantesCelular;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer_Transicion;
     }
 }

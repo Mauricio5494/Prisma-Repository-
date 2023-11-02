@@ -259,6 +259,12 @@
     <None Include="Resources\telefono-inteligente %282%29.png" />
     <None Include="Resources\cliente Blanco.png" />
     <None Include="Resources\work-from-home Blanco.png" />
+    <None Include="Resources\menos.png" />
+    <None Include="Resources\cerrar.png" />
+    <None Include="Resources\maximizar-tamano.png" />
+    <None Include="Resources\maximizar.png" />
+    <None Include="Resources\cerrar-ventana.png" />
+    <None Include="Resources\cerrar-ventana %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

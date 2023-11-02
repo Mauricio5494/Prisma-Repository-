@@ -36,20 +36,21 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.LabelRegistrarse = new System.Windows.Forms.Label();
+            this.timer_AparecerSuavemente = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnIngreso = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnInvitado = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picMostrar = new System.Windows.Forms.PictureBox();
-            this.timer_AparecerSuavemente = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Cerrar = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labName
@@ -126,6 +127,22 @@
             this.LabelRegistrarse.MouseEnter += new System.EventHandler(this.LabelRegistrarse_MouseEnter);
             this.LabelRegistrarse.MouseLeave += new System.EventHandler(this.LabelRegistrarse_MouseLeave);
             // 
+            // timer_AparecerSuavemente
+            // 
+            this.timer_AparecerSuavemente.Enabled = true;
+            this.timer_AparecerSuavemente.Interval = 20;
+            this.timer_AparecerSuavemente.Tick += new System.EventHandler(this.timer_AparecerSuavemente_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_Cerrar);
+            this.panel1.Location = new System.Drawing.Point(-4, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(575, 23);
+            this.panel1.TabIndex = 12;
+            // 
             // btnIngreso
             // 
             this.btnIngreso.BackColor = System.Drawing.Color.DarkRed;
@@ -144,6 +161,34 @@
             this.btnIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIngreso.UseVisualStyleBackColor = false;
             this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FloralWhite;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Diseño.Properties.Resources.menos;
+            this.button1.Location = new System.Drawing.Point(509, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 21);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Cerrar
+            // 
+            this.btn_Cerrar.BackColor = System.Drawing.Color.FloralWhite;
+            this.btn_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cerrar.Image = global::Diseño.Properties.Resources.cruz_16px_roja;
+            this.btn_Cerrar.Location = new System.Drawing.Point(544, 2);
+            this.btn_Cerrar.Name = "btn_Cerrar";
+            this.btn_Cerrar.Size = new System.Drawing.Size(29, 21);
+            this.btn_Cerrar.TabIndex = 0;
+            this.btn_Cerrar.UseVisualStyleBackColor = false;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
             // pictureBox3
             // 
@@ -210,35 +255,6 @@
             this.picMostrar.TabIndex = 7;
             this.picMostrar.TabStop = false;
             // 
-            // timer_AparecerSuavemente
-            // 
-            this.timer_AparecerSuavemente.Enabled = true;
-            this.timer_AparecerSuavemente.Interval = 20;
-            this.timer_AparecerSuavemente.Tick += new System.EventHandler(this.timer_AparecerSuavemente_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.btn_Cerrar);
-            this.panel1.Location = new System.Drawing.Point(-4, -3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(575, 27);
-            this.panel1.TabIndex = 12;
-            // 
-            // btn_Cerrar
-            // 
-            this.btn_Cerrar.BackColor = System.Drawing.Color.FloralWhite;
-            this.btn_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cerrar.Image = global::Diseño.Properties.Resources.cruz_16px_roja;
-            this.btn_Cerrar.Location = new System.Drawing.Point(544, 2);
-            this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(29, 25);
-            this.btn_Cerrar.TabIndex = 0;
-            this.btn_Cerrar.UseVisualStyleBackColor = false;
-            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
-            // 
             // Login
             // 
             this.AcceptButton = this.btnIngreso;
@@ -271,11 +287,11 @@
             this.Text = "Etech | Iniciar Sesión";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +314,6 @@
         private System.Windows.Forms.Timer timer_AparecerSuavemente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Cerrar;
+        private System.Windows.Forms.Button button1;
     }
 }
