@@ -433,6 +433,16 @@ namespace Diseño.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap vigilancia__1_ {
+            get {
+                object obj = ResourceManager.GetObject("vigilancia (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap work_from_home {
             get {
                 object obj = ResourceManager.GetObject("work-from-home", resourceCulture);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,6 +51,8 @@ namespace Diseño
         {
             transicion = "FadeIn";
             timer_Transicion.Start();
+
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             MostrarDatosEnLaTablaClientes();
         }
@@ -1192,7 +1195,6 @@ namespace Diseño
         {
             if (txtCelular_Agregar.Text.Length <= 9 && txtCelular_Agregar.Text.Length > 0)
             {
-                labCaracteresRestantesCelular.Visible = true;
                 int caracteresRestantes = 9 - txtCelular_Agregar.TextLength;
                 labCaracteresRestantesCelular.Text = caracteresRestantes + "/9";
             }
@@ -1258,7 +1260,17 @@ namespace Diseño
                 }
                 else
                 {
-                    this.Opacity -= .15;
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Left -= 15;
+                        this.Hide();
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                        this.Hide();
+                    }
                 }
             }
             if (transicion == "FadeOutTaller")
@@ -1270,10 +1282,19 @@ namespace Diseño
                 }
                 else
                 {
-                    this.Left = this.Left + 10;
-                    this.Opacity -= .15;
-                    Taller.Show();
-                    this.Hide();
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Left = this.Left + 10;
+                        this.Opacity -= .15;
+                        Taller.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                        Taller.Show();
+                        this.Hide(); 
+                    }
                 }
             }
             if (transicion == "FadeOutUsuarios")
@@ -1284,7 +1305,20 @@ namespace Diseño
                 }
                 else
                 {
-                    this.Opacity -= .15;
+
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Left = this.Left + 10;
+                        this.Opacity -= .15;
+                        Usuarios.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                        Usuarios.Show();
+                        this.Hide();
+                    }
                 }
             }
             if (transicion == "FadeOutEstadisticas")
@@ -1295,8 +1329,28 @@ namespace Diseño
                 }
                 else
                 {
-                    this.Opacity -= .15;
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Left = this.Left + 10;
+                        this.Opacity -= .15;
+                        Estadisticas.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                        Estadisticas.Show();
+                        this.Hide();
+                    }
                 }
+            }
+        }
+
+        private void txtTelefono_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if(txtTelefono_Agregar.Text.Length <= 8 && txtTelefono_Agregar.Text.Length > 8)
+            {
+
             }
         }
     }

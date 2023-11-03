@@ -24,7 +24,7 @@ namespace Diseño
 {
     public partial class Principal : Form
     {
-        //Atributos o variables:
+        //Constantes o variables:
         int numeroDeFilaCelulares;
         int numeroDeFilaTrabajos;
         int activo = 1;
@@ -2980,7 +2980,6 @@ namespace Diseño
         }
     }
 }
-
 /* It just works.
  * 
             - Tom Howard   */

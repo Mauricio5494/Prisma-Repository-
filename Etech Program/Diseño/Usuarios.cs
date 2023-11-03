@@ -20,10 +20,13 @@ namespace Diseño
     public partial class Usuarios : Form
     {
         //Variables:
+        string trasnsicion;
         string clavePrimariaDelTecnico;
         private int idTecnico;
         public bool PassSucess;
         private string modificarAtributosDeUsuarios;
+
+
         DataBaseConnect connect = new DataBaseConnect();
 
         //Instancias
@@ -58,10 +61,15 @@ namespace Diseño
         {
 
             InitializeComponent();
+
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
 
         private void MostrarBaseDeDatosDeLaTablaUsuarios()
         {
+
+
             if (seguridad.getInvitado)
             {
                 pictureBox_WarningLeft.Visible = true;
@@ -320,6 +328,9 @@ namespace Diseño
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
+            trasnsicion = "FadeIn";
+            timerTransicion.Start();
+
             MostrarBaseDeDatosDeLaTablaUsuarios();
 
             labelNota_panelBorrarTecnico.Text = "Nota:\n\nSi eliminas un técnico, se eliminarán\ntodos los celulares que se le \nasignaron al técnico en cuestión.";
@@ -344,7 +355,7 @@ namespace Diseño
 
             if (panel_Registro.Height == 0)
             {
-                panel_Registro.Height = 599;
+                panel_Registro.Height = 600;
                 panel_Registro.Visible = true;
                 panel_Menu.Height = 0;
                 panel_Modificar.Height = 0;
@@ -404,9 +415,6 @@ namespace Diseño
                                 try
                                 {
                                     conn.Open();
-
-
-
 
                                     sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, SHA2(@Contraseña, 256), @Telefono, @CorreoElectronico, @Celular)";
                                     cmd_Registro = new MySqlCommand(sql_Registro, conn);
@@ -637,7 +645,8 @@ namespace Diseño
 
             if (siono == DialogResult.Yes)
             {
-                Application.Restart();
+                trasnsicion = "FadeOutRestart";
+                timerTransicion.Start();
             }
         }
 
@@ -650,23 +659,42 @@ namespace Diseño
             else
             {
                 Principal mostrar = new Principal();
-                this.Hide();
+                trasnsicion = "FadeOut";
+                timerTransicion.Start();
                 mostrar.Show();
             }
         }
 
         private void btnClientes_groupBoxMenu_PanelMenu_Click(object sender, EventArgs e)
         {
-            Clientes mostrar = new Clientes();
-            mostrar.Show();
-            this.Hide();
+            if (!ApareceLaContraseñaMaestra)
+            {
+                Clientes show = new Clientes();
+                trasnsicion = "FadeOut";
+                timerTransicion.Start();
+                show.Show();
+            }
+            else
+            {
+                MessageBox.Show("Debe de cerrar todas las ventanas emergentes antes de cambiar de pantalla", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void btnEstadisticas_groupboxManu_PanelMenu_Click(object sender, EventArgs e)
         {
-            Estadisticas mostrar = new Estadisticas();
-            mostrar.Show();
-            this.Hide();
+            if (!ApareceLaContraseñaMaestra)
+            {
+                Estadisticas mostrar = new Estadisticas();
+                trasnsicion = "FadeOut";
+                timerTransicion.Start();
+                mostrar.Show();
+            }
+            else
+            {
+                MessageBox.Show("Debe de cerrar todas las ventanas emergentes antes de cambiar de pantalla", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
@@ -929,6 +957,104 @@ namespace Diseño
             {
                 txtCampo_Busqueda.Enabled = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            trasnsicion = "FadeOutExit";
+            timerTransicion.Start();
+        }
+
+        private void timerTransicion_Tick(object sender, EventArgs e)
+        {
+            if (trasnsicion == "FadeIn")
+            {
+                if (this.Opacity == 1)
+                {
+                    timerTransicion.Stop();
+                }
+                else
+                {
+                    this.Opacity += .15;
+                }
+            }
+            else if (trasnsicion == "FadeOut")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTransicion.Stop();
+                    this.Hide();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Left += 15;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+                }
+            }
+            else if (trasnsicion == "FadeOutExit")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTransicion.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Left += 15;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+                }
+            }
+            else if (trasnsicion == "FadeOutRestart")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTransicion.Stop();
+                    Application.Restart();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Left += 15;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Normal) 
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -39,7 +39,6 @@
             this.label_BD_Mostrada = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.label_Filtrar = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.MenuOpciones = new System.Windows.Forms.ComboBox();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
             this.panelD = new System.Windows.Forms.Panel();
@@ -110,6 +109,11 @@
             this.tabla_Usuarios = new System.Windows.Forms.DataGridView();
             this.pictureBox_WarningRight = new System.Windows.Forms.PictureBox();
             this.pictureBox_WarningLeft = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.timerTransicion = new System.Windows.Forms.Timer(this.components);
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelD.SuspendLayout();
@@ -131,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelE
@@ -142,10 +147,9 @@
             this.panelE.Controls.Add(this.label_BD_Mostrada);
             this.panelE.Controls.Add(this.btnMenu);
             this.panelE.Controls.Add(this.label_Filtrar);
-            this.panelE.Controls.Add(this.btnBuscar);
             this.panelE.Controls.Add(this.MenuOpciones);
             this.panelE.Controls.Add(this.txtCampo_Busqueda);
-            this.panelE.Location = new System.Drawing.Point(-2, -2);
+            this.panelE.Location = new System.Drawing.Point(-2, 25);
             this.panelE.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelE.Name = "panelE";
             this.panelE.Size = new System.Drawing.Size(2000, 74);
@@ -225,23 +229,6 @@
             this.label_Filtrar.TabIndex = 6;
             this.label_Filtrar.Text = "Filtrar por:";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.Enabled = false;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.Location = new System.Drawing.Point(1003, 23);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnBuscar.Size = new System.Drawing.Size(70, 23);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
             // MenuOpciones
             // 
             this.MenuOpciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -277,7 +264,7 @@
             this.panelD.Controls.Add(this.btnModificar);
             this.panelD.Controls.Add(this.btnAgregar);
             this.panelD.Controls.Add(this.btnCerrarSesion);
-            this.panelD.Location = new System.Drawing.Point(-2, -2);
+            this.panelD.Location = new System.Drawing.Point(-2, 25);
             this.panelD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelD.Name = "panelD";
             this.panelD.Size = new System.Drawing.Size(45, 1060);
@@ -397,7 +384,7 @@
             // 
             this.panel_Registro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Registro.Controls.Add(this.groupBoxInterno_panelRegistroUsuarios);
-            this.panel_Registro.Location = new System.Drawing.Point(50, 79);
+            this.panel_Registro.Location = new System.Drawing.Point(50, 106);
             this.panel_Registro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel_Registro.Name = "panel_Registro";
             this.panel_Registro.Size = new System.Drawing.Size(419, 0);
@@ -596,7 +583,7 @@
             // 
             this.panel_BorrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_BorrarUsuario.Controls.Add(this.groupboxInterno_panelBorrarTecnico);
-            this.panel_BorrarUsuario.Location = new System.Drawing.Point(50, 79);
+            this.panel_BorrarUsuario.Location = new System.Drawing.Point(50, 106);
             this.panel_BorrarUsuario.Name = "panel_BorrarUsuario";
             this.panel_BorrarUsuario.Size = new System.Drawing.Size(419, 0);
             this.panel_BorrarUsuario.TabIndex = 23;
@@ -669,7 +656,7 @@
             this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
             this.panel_Menu.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Menu.Location = new System.Drawing.Point(50, 79);
+            this.panel_Menu.Location = new System.Drawing.Point(50, 106);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 24;
@@ -808,7 +795,7 @@
             this.panel_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Modificar.Controls.Add(this.groupBoxModificar_PanelModificar);
             this.panel_Modificar.Controls.Add(this.groupBox2);
-            this.panel_Modificar.Location = new System.Drawing.Point(50, 79);
+            this.panel_Modificar.Location = new System.Drawing.Point(50, 106);
             this.panel_Modificar.Name = "panel_Modificar";
             this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 25;
@@ -1035,7 +1022,7 @@
             this.label_InvitadoDetectado.AutoSize = true;
             this.label_InvitadoDetectado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.label_InvitadoDetectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_InvitadoDetectado.Location = new System.Drawing.Point(627, 294);
+            this.label_InvitadoDetectado.Location = new System.Drawing.Point(627, 276);
             this.label_InvitadoDetectado.Name = "label_InvitadoDetectado";
             this.label_InvitadoDetectado.Size = new System.Drawing.Size(558, 25);
             this.label_InvitadoDetectado.TabIndex = 26;
@@ -1062,7 +1049,7 @@
             this.tabla_Usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tabla_Usuarios.EnableHeadersVisualStyles = false;
             this.tabla_Usuarios.GridColor = System.Drawing.Color.DimGray;
-            this.tabla_Usuarios.Location = new System.Drawing.Point(476, 79);
+            this.tabla_Usuarios.Location = new System.Drawing.Point(495, 105);
             this.tabla_Usuarios.MultiSelect = false;
             this.tabla_Usuarios.Name = "tabla_Usuarios";
             this.tabla_Usuarios.ReadOnly = true;
@@ -1092,13 +1079,69 @@
             // pictureBox_WarningLeft
             // 
             this.pictureBox_WarningLeft.Image = global::Diseño.Properties.Resources.senal_de_advertencia;
-            this.pictureBox_WarningLeft.Location = new System.Drawing.Point(525, 281);
+            this.pictureBox_WarningLeft.Location = new System.Drawing.Point(525, 263);
             this.pictureBox_WarningLeft.Name = "pictureBox_WarningLeft";
             this.pictureBox_WarningLeft.Size = new System.Drawing.Size(57, 56);
             this.pictureBox_WarningLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_WarningLeft.TabIndex = 27;
             this.pictureBox_WarningLeft.TabStop = false;
             this.pictureBox_WarningLeft.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1374, 25);
+            this.panel1.TabIndex = 30;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::Diseño.Properties.Resources.menos;
+            this.button4.Location = new System.Drawing.Point(1224, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(48, 25);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::Diseño.Properties.Resources.maximizar;
+            this.button3.Location = new System.Drawing.Point(1271, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(48, 25);
+            this.button3.TabIndex = 1;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Diseño.Properties.Resources.cerrar_ventana__1_;
+            this.button2.Location = new System.Drawing.Point(1318, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(48, 25);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // timerTransicion
+            // 
+            this.timerTransicion.Enabled = true;
+            this.timerTransicion.Interval = 20;
+            this.timerTransicion.Tick += new System.EventHandler(this.timerTransicion_Tick);
             // 
             // Usuarios
             // 
@@ -1107,7 +1150,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnMenu;
-            this.ClientSize = new System.Drawing.Size(1350, 689);
+            this.ClientSize = new System.Drawing.Size(1366, 728);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabla_Usuarios);
             this.Controls.Add(this.pictureBox_WarningRight);
             this.Controls.Add(this.pictureBox_WarningLeft);
@@ -1118,9 +1162,11 @@
             this.Controls.Add(this.panel_Registro);
             this.Controls.Add(this.panelE);
             this.Controls.Add(this.panelD);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Usuarios";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etech | Registro de Técnicos en Celulares";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1153,6 +1199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Usuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1163,7 +1210,6 @@
         private System.Windows.Forms.Panel panelE;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label label_Filtrar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox MenuOpciones;
         private System.Windows.Forms.TextBox txtCampo_Busqueda;
         private System.Windows.Forms.Panel panelD;
@@ -1238,5 +1284,10 @@
         private System.Windows.Forms.TextBox txtRepitaLaContraseña;
         private System.Windows.Forms.TextBox txtID_panelBorrarUsuarios;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer timerTransicion;
     }
 }

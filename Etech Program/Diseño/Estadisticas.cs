@@ -18,6 +18,9 @@ namespace Diseño
         public Estadisticas()
         {
             InitializeComponent();
+
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
         //atributos:
         int celularesArreglados;
