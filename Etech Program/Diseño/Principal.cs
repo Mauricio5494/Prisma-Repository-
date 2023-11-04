@@ -848,6 +848,7 @@ namespace Diseño
             finally
             {
                 conn.Close();
+
                 MostrarDatosEnLasTablasCelulares();
             }
         }
@@ -2447,7 +2448,7 @@ namespace Diseño
 
                     if (comboBox_AgregarCelular_CedulaDelDueño.Text == "")
                     {
-                        conn.Open();
+                        //conn.Open();
                         string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
                         cmd = new MySqlCommand(query, conn);
                         reader = cmd.ExecuteReader();

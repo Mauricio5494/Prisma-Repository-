@@ -1168,10 +1168,6 @@ namespace Diseño
                 int caracteresRestantes = 8 - txtCedula_Agregar.TextLength;
                 label_CaracteresRestantesCI_AgregarCelulares.Text = caracteresRestantes + "/8";
             }
-            else
-            {
-                label_CaracteresRestantesCI_AgregarCelulares.Visible = false;
-            }
         }
         private void txtCedula_Agregar_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1348,9 +1344,33 @@ namespace Diseño
 
         private void txtTelefono_Agregar_TextChanged(object sender, EventArgs e)
         {
-            if(txtTelefono_Agregar.Text.Length <= 8 && txtTelefono_Agregar.Text.Length > 8)
+            if (txtTelefono_Agregar.Text.Length <= 8 && txtTelefono_Agregar.Text.Length > 0)
             {
+                labCaracteresRestantesTelefono.Visible = true;
+                int caracteresRestantes = 8 - txtTelefono_Agregar.TextLength;
+                labCaracteresRestantesTelefono.Text = caracteresRestantes + "/8";
+            }
+        }
 
+        private void txtTelefono_Agregar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int caracteresRestantes = 8;
+
+            if (txtTelefono_Agregar.Text.Length >= caracteresRestantes && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void labCaracteresRestantesTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (labCaracteresRestantesTelefono.Text == "0/8")
+            {
+                labCaracteresRestantesTelefono.ForeColor = Color.Red;
+            }
+            else
+            {
+                labCaracteresRestantesTelefono.ForeColor = Color.Black;
             }
         }
     }

@@ -33,8 +33,8 @@ namespace Diseño
         string celularesEsperaConversion;
         string celularesArregladosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado'";
         string celularesAveriadosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado'";
-        string celularesProcesoConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En espera'";
-        string celularesEsperaConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En proceso'";
+        string celularesProcesoConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En Espera'";
+        string celularesEsperaConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En Proceso'";
 
 
         //instancias:
@@ -44,6 +44,7 @@ namespace Diseño
 
         //Arreglos y atributos:
         string[] seriesCelulares = {"C. Arreglados", "C. Averiados", "C. en proceso", "C. en espera"};
+        int[] PointsCelulares = new int[4];
 
         //Codigo de lo graficos:
         private void mostrarGraficoCelulares()
@@ -54,28 +55,32 @@ namespace Diseño
                 cmd = new MySqlCommand(celularesArregladosConsulta, conn);
                 celularesArregladosConversion = cmd.ExecuteScalar().ToString();
                 celularesArreglados = int.Parse(celularesArregladosConversion);
+                PointsCelulares[0] = celularesArreglados;
 
                 cmd = new MySqlCommand(celularesAveriadosConsulta, conn);
                 celularesAveriadosConversion = cmd.ExecuteScalar().ToString();
                 celularesAveriados = int.Parse(celularesAveriadosConversion);
+                PointsCelulares[1] = celularesAveriados;
 
                 cmd = new MySqlCommand(celularesEsperaConsulta, conn);
                 celularesEsperaConversion = cmd.ExecuteScalar().ToString();
                 celularesEspera = int.Parse(celularesEsperaConversion);
+                PointsCelulares[2] = celularesEspera;
 
                 cmd = new MySqlCommand(celularesProcesoConsulta, conn);
                 celularesProcesoConversion = cmd.ExecuteScalar().ToString();
                 celularesProceso = int.Parse(celularesProcesoConversion);
+                PointsCelulares[3] = celularesProceso;
 
 
                 for (int i = 0; i < seriesCelulares.Length; i++)
                 {
-                    serie = graficoCelulares.Series.Add(seriesCelulares[i]);
+                    graficoCelulares.Series["Series1"].Points.AddXY(seriesCelulares[i], PointsCelulares[i]);
                 }
             }
-            catch 
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Error inesperado" + ex.Message);
             }
             finally
             {
@@ -84,6 +89,7 @@ namespace Diseño
                 label_CelularesAveriados.Text = "Celulares averiados: " + celularesAveriados.ToString();
                 label_CelularesEnEspera.Text = "celulares en espera: " + celularesEspera.ToString();
                 label_CelularesEnProceso.Text = "celulares en proceso: " + celularesProceso.ToString();
+                conn.Close();
             }
         }
 
@@ -228,6 +234,11 @@ namespace Diseño
             Clientes show = new Clientes();
             this.Hide();
             show.Show();
+        }
+
+        private void panel_Menu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

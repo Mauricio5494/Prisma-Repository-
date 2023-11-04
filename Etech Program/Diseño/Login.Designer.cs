@@ -38,9 +38,9 @@
             this.LabelRegistrarse = new System.Windows.Forms.Label();
             this.timer_AparecerSuavemente = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnIngreso = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Cerrar = new System.Windows.Forms.Button();
+            this.btnIngreso = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnInvitado = new System.Windows.Forms.Button();
@@ -143,25 +143,6 @@
             this.panel1.Size = new System.Drawing.Size(575, 23);
             this.panel1.TabIndex = 12;
             // 
-            // btnIngreso
-            // 
-            this.btnIngreso.BackColor = System.Drawing.Color.DarkRed;
-            this.btnIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIngreso.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIngreso.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnIngreso.Image = global::Diseño.Properties.Resources.usuario;
-            this.btnIngreso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIngreso.Location = new System.Drawing.Point(69, 239);
-            this.btnIngreso.Name = "btnIngreso";
-            this.btnIngreso.Size = new System.Drawing.Size(77, 31);
-            this.btnIngreso.TabIndex = 0;
-            this.btnIngreso.Text = "Ingresar";
-            this.btnIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngreso.UseVisualStyleBackColor = false;
-            this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FloralWhite;
@@ -169,7 +150,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::Diseño.Properties.Resources.menos;
-            this.button1.Location = new System.Drawing.Point(509, 2);
+            this.button1.Location = new System.Drawing.Point(515, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(29, 21);
             this.button1.TabIndex = 1;
@@ -189,6 +170,25 @@
             this.btn_Cerrar.TabIndex = 0;
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
+            // 
+            // btnIngreso
+            // 
+            this.btnIngreso.BackColor = System.Drawing.Color.DarkRed;
+            this.btnIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngreso.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIngreso.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnIngreso.Image = global::Diseño.Properties.Resources.usuario;
+            this.btnIngreso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIngreso.Location = new System.Drawing.Point(69, 239);
+            this.btnIngreso.Name = "btnIngreso";
+            this.btnIngreso.Size = new System.Drawing.Size(77, 31);
+            this.btnIngreso.TabIndex = 0;
+            this.btnIngreso.Text = "Ingresar";
+            this.btnIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIngreso.UseVisualStyleBackColor = false;
+            this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
             // pictureBox3
             // 
