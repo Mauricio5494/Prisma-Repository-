@@ -23,13 +23,18 @@ namespace Diseño
 
         }
         //atributos:
+        int TotalDeCelulares;
         int celularesArreglados;
+        int celularesArregladosPorcentaje;
         string celularesArregladosConversion;
         int celularesAveriados;
+        int celularesAveriadosPorcentaje;
         string celularesAveriadosConversion;
         int celularesProceso;
+        int celularesProcesoPorcentaje;
         string celularesProcesoConversion;
         int celularesEspera;
+        int celularesEsperaPorcentaje;
         string celularesEsperaConversion;
         string celularesArregladosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado'";
         string celularesAveriadosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado'";
@@ -91,6 +96,18 @@ namespace Diseño
                 label_CelularesEnProceso.Text = "celulares en proceso: " + celularesProceso.ToString();
                 conn.Close();
             }
+
+            TotalDeCelulares = celularesArreglados + celularesAveriados + celularesEspera + celularesProceso;
+
+            celularesArregladosPorcentaje = (celularesArreglados / TotalDeCelulares) * 100;
+            celularesAveriadosPorcentaje = (celularesAveriados / TotalDeCelulares) * 100;
+            celularesEsperaPorcentaje = (celularesEspera / TotalDeCelulares) * 100;
+            celularesProcesoPorcentaje = (celularesProceso / TotalDeCelulares) * 100;
+
+            labelArreglados_Porcentaje.Text = "El " + celularesArregladosPorcentaje + "% de los celulares estan arreglados";
+            labelAveriados_Porcentaje.Text = "El " + celularesAveriadosPorcentaje + "% de los celulares estan averiados";
+            labelEspera_Porcentaje.Text = "El " + celularesEsperaPorcentaje + "% de los celulares estan en espera";
+            labelProceso_Porcentaje.Text = "El " + celularesEsperaPorcentaje + "% de los celulares estan en espera";
         }
 
         private void Estadisticas_Load(object sender, EventArgs e)

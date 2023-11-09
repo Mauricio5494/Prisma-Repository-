@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estadisticas));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelE = new System.Windows.Forms.Panel();
             this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.tabIndex_Pestañas = new System.Windows.Forms.TabControl();
             this.tab_Celulares = new System.Windows.Forms.TabPage();
+            this.graficoCelulares = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tab_Tecnicos = new System.Windows.Forms.TabPage();
             this.graficoTecnicos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_Menu = new System.Windows.Forms.Panel();
@@ -66,20 +67,24 @@
             this.label_CelularesArreglados = new System.Windows.Forms.Label();
             this.timer_Agrandar_Informacion = new System.Windows.Forms.Timer(this.components);
             this.timer_Reducir_Informacion = new System.Windows.Forms.Timer(this.components);
-            this.graficoCelulares = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.labelArreglados_Porcentaje = new System.Windows.Forms.Label();
+            this.labelProceso_Porcentaje = new System.Windows.Forms.Label();
+            this.labelEspera_Porcentaje = new System.Windows.Forms.Label();
+            this.labelAveriados_Porcentaje = new System.Windows.Forms.Label();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panelD.SuspendLayout();
             this.tabIndex_Pestañas.SuspendLayout();
             this.tab_Celulares.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCelulares)).BeginInit();
             this.tab_Tecnicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.graficoTecnicos)).BeginInit();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Informacion.SuspendLayout();
+            this.groupBox_InformacionTecnicos.SuspendLayout();
             this.groupBox_InformacionCelulares.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graficoCelulares)).BeginInit();
             this.SuspendLayout();
             // 
             // panelE
@@ -230,6 +235,23 @@
             this.tab_Celulares.Text = "Celulares";
             this.tab_Celulares.UseVisualStyleBackColor = true;
             // 
+            // graficoCelulares
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.graficoCelulares.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.graficoCelulares.Legends.Add(legend1);
+            this.graficoCelulares.Location = new System.Drawing.Point(6, 3);
+            this.graficoCelulares.Name = "graficoCelulares";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.graficoCelulares.Series.Add(series1);
+            this.graficoCelulares.Size = new System.Drawing.Size(854, 569);
+            this.graficoCelulares.TabIndex = 0;
+            this.graficoCelulares.Text = "chart1";
+            // 
             // tab_Tecnicos
             // 
             this.tab_Tecnicos.Controls.Add(this.graficoTecnicos);
@@ -245,17 +267,17 @@
             // 
             // graficoTecnicos
             // 
-            chartArea5.Name = "ChartArea1";
-            this.graficoTecnicos.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.graficoTecnicos.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.graficoTecnicos.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.graficoTecnicos.Legends.Add(legend2);
             this.graficoTecnicos.Location = new System.Drawing.Point(6, 3);
             this.graficoTecnicos.Name = "graficoTecnicos";
             this.graficoTecnicos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.graficoTecnicos.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.graficoTecnicos.Series.Add(series2);
             this.graficoTecnicos.Size = new System.Drawing.Size(854, 569);
             this.graficoTecnicos.TabIndex = 1;
             this.graficoTecnicos.Text = "chart2";
@@ -353,6 +375,10 @@
             // groupBox_InformacionTecnicos
             // 
             this.groupBox_InformacionTecnicos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_InformacionTecnicos.Controls.Add(this.labelAveriados_Porcentaje);
+            this.groupBox_InformacionTecnicos.Controls.Add(this.labelEspera_Porcentaje);
+            this.groupBox_InformacionTecnicos.Controls.Add(this.labelProceso_Porcentaje);
+            this.groupBox_InformacionTecnicos.Controls.Add(this.labelArreglados_Porcentaje);
             this.groupBox_InformacionTecnicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_InformacionTecnicos.Location = new System.Drawing.Point(3, 284);
             this.groupBox_InformacionTecnicos.Name = "groupBox_InformacionTecnicos";
@@ -420,22 +446,41 @@
             // 
             this.timer_Reducir_Informacion.Tick += new System.EventHandler(this.timer_Reducir_Informacion_Tick);
             // 
-            // graficoCelulares
+            // labelArreglados_Porcentaje
             // 
-            chartArea6.Name = "ChartArea1";
-            this.graficoCelulares.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.graficoCelulares.Legends.Add(legend6);
-            this.graficoCelulares.Location = new System.Drawing.Point(6, 3);
-            this.graficoCelulares.Name = "graficoCelulares";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.graficoCelulares.Series.Add(series6);
-            this.graficoCelulares.Size = new System.Drawing.Size(854, 569);
-            this.graficoCelulares.TabIndex = 0;
-            this.graficoCelulares.Text = "chart1";
+            this.labelArreglados_Porcentaje.AutoSize = true;
+            this.labelArreglados_Porcentaje.Location = new System.Drawing.Point(6, 41);
+            this.labelArreglados_Porcentaje.Name = "labelArreglados_Porcentaje";
+            this.labelArreglados_Porcentaje.Size = new System.Drawing.Size(57, 20);
+            this.labelArreglados_Porcentaje.TabIndex = 0;
+            this.labelArreglados_Porcentaje.Text = "label1";
+            // 
+            // labelProceso_Porcentaje
+            // 
+            this.labelProceso_Porcentaje.AutoSize = true;
+            this.labelProceso_Porcentaje.Location = new System.Drawing.Point(6, 128);
+            this.labelProceso_Porcentaje.Name = "labelProceso_Porcentaje";
+            this.labelProceso_Porcentaje.Size = new System.Drawing.Size(57, 20);
+            this.labelProceso_Porcentaje.TabIndex = 1;
+            this.labelProceso_Porcentaje.Text = "label2";
+            // 
+            // labelEspera_Porcentaje
+            // 
+            this.labelEspera_Porcentaje.AutoSize = true;
+            this.labelEspera_Porcentaje.Location = new System.Drawing.Point(6, 168);
+            this.labelEspera_Porcentaje.Name = "labelEspera_Porcentaje";
+            this.labelEspera_Porcentaje.Size = new System.Drawing.Size(57, 20);
+            this.labelEspera_Porcentaje.TabIndex = 2;
+            this.labelEspera_Porcentaje.Text = "label3";
+            // 
+            // labelAveriados_Porcentaje
+            // 
+            this.labelAveriados_Porcentaje.AutoSize = true;
+            this.labelAveriados_Porcentaje.Location = new System.Drawing.Point(6, 86);
+            this.labelAveriados_Porcentaje.Name = "labelAveriados_Porcentaje";
+            this.labelAveriados_Porcentaje.Size = new System.Drawing.Size(57, 20);
+            this.labelAveriados_Porcentaje.TabIndex = 3;
+            this.labelAveriados_Porcentaje.Text = "label4";
             // 
             // Estadisticas
             // 
@@ -459,15 +504,17 @@
             this.panelD.ResumeLayout(false);
             this.tabIndex_Pestañas.ResumeLayout(false);
             this.tab_Celulares.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCelulares)).EndInit();
             this.tab_Tecnicos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.graficoTecnicos)).EndInit();
             this.panel_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Informacion.ResumeLayout(false);
+            this.groupBox_InformacionTecnicos.ResumeLayout(false);
+            this.groupBox_InformacionTecnicos.PerformLayout();
             this.groupBox_InformacionCelulares.ResumeLayout(false);
             this.groupBox_InformacionCelulares.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graficoCelulares)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,5 +552,9 @@
         private System.Windows.Forms.Label label_CelularesEnProceso;
         private System.Windows.Forms.GroupBox groupBox_InformacionTecnicos;
         private System.Windows.Forms.DataVisualization.Charting.Chart graficoCelulares;
+        private System.Windows.Forms.Label labelAveriados_Porcentaje;
+        private System.Windows.Forms.Label labelEspera_Porcentaje;
+        private System.Windows.Forms.Label labelProceso_Porcentaje;
+        private System.Windows.Forms.Label labelArreglados_Porcentaje;
     }
 }
