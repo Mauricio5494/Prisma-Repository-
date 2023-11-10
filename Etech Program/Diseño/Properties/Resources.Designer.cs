@@ -233,6 +233,16 @@ namespace Diseño.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_etech_uruguay_220_e1654881097513__1_ {
+            get {
+                object obj = ResourceManager.GetObject("logo-etech-uruguay-220-e1654881097513 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_etech_uruguay_220_e1654881097513_LARGE_Edited {
             get {
                 object obj = ResourceManager.GetObject("logo-etech-uruguay-220-e1654881097513_LARGE_Edited", resourceCulture);

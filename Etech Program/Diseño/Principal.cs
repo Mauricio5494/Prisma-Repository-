@@ -1867,7 +1867,7 @@ namespace Diseño
             try
             {
                 string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
-                conn.Open();
+                //conn.Open();
                 cmd = new MySqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
 
@@ -1894,7 +1894,7 @@ namespace Diseño
                 }
 
 
-                comboBox_ModificarTecnicoACargo.DisplayMember = "";
+                //comboBox_ModificarTecnicoACargo.DisplayMember = "";
 
             }
             catch (Exception ex)
@@ -2284,14 +2284,33 @@ namespace Diseño
                     //comboboxes:
                     string nombreTecnico = filaSeleccionada.Cells["Nombre"].Value.ToString();
                     string CIcliente = filaSeleccionada.Cells["Cedula_Cliente"].Value.ToString();
+                    string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
 
                     //aplicaciones:
                     txtIMEI_Modificar.Text = IMEI;
                     txtModelo_Modificar.Text = modeloYOmarca;
-                    txtPresupuesto_Modificar.Text = presupuesto;
-                    txtAdelanto_Modificar.Text = adelanto;
+                    txt_PresupuestoModificar.Text = presupuesto;
+                    txt_AdelantoModificar.Text = adelanto;
 
-                        //comboboxes:
+                    if (estado == "Averiado")
+                    {
+                        radioButton_Averiado_Modificar.Checked = true;
+                    }
+                    else if (estado == "Arreglado")
+                    {
+                        radioButton_Arreglado_Modificar.Checked = true;
+                    }
+                    else if (estado == "En Proceso")
+                    {
+                        radioButton_EnProceso_Modificar.Checked = true;
+                    }
+                    else if (estado == "En Espera")
+                    {
+                        radioButton_EnEspera_Modificar.Checked = true;
+                    }
+
+
+                    //comboboxes:
 
                     foreach (Cliente cliente in combobox_CI_Del_Dueño_Modificar.Items)
                     {
@@ -2520,7 +2539,6 @@ namespace Diseño
                         });
                     }
 
-
                 }
                 else
                 {
@@ -2539,27 +2557,27 @@ namespace Diseño
                     if (abrir == "Abierto")
                     {
                         comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = true;
+
+
+                        List<Cliente> listaUsuarios = new List<Cliente>();
+
+                        while (reader.Read())
+                        {
+                            string nombre = reader["Nombre"].ToString();
+                            string cedula = reader["Cedula"].ToString();
+
+                            comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
+                            {
+                                Nombre = nombre,
+                                Cedula = cedula
+                            });
+                            abrir = "Cerrado";
+                        }
                     }
+
                     else if (abrir == "Cerrado")
                     {
                         comboBox_AgregarCelular_CedulaDelDueño.DroppedDown = false;
-                    }
-
-
-
-                    List<Cliente> listaUsuarios = new List<Cliente>();
-
-                    while (reader.Read())
-                    {
-                        string nombre = reader["Nombre"].ToString();
-                        string cedula = reader["Cedula"].ToString();
-
-                        comboBox_AgregarCelular_CedulaDelDueño.Items.Add(new Cliente
-                        {
-                            Nombre = nombre,
-                            Cedula = cedula
-                        });
-                        abrir = "Cerrado";
                     }
                 }
             }
@@ -2929,13 +2947,13 @@ namespace Diseño
         }
         private void combobox_CI_Del_Dueño_Modificar_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (combobox_CI_Del_Dueño_Modificar.Focused)
-            //{
-            //    if (e.KeyCode == Keys.Enter)
-            //    {
-            //        btn_ModificarClientes_Buscar_Click(sender, e);
-            //    }
-            //}
+            if (combobox_CI_Del_Dueño_Modificar.Focused)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btn_ModificarClientes_Buscar_Click(sender, e);
+                }
+            }
         }
 
         private void combobox_CI_Del_Dueño_Modificar_KeyUp(object sender, KeyEventArgs e)
@@ -2951,8 +2969,12 @@ namespace Diseño
 
         private void button2_Click(object sender, EventArgs e)
         {
-            transicion = "FadeExit";
-            timer_Transicion.Start();
+            DialogResult seguro = MessageBox.Show("¿Está seguro que quiere Cerrar el programa?\n\nEsto es diferente de cerrar sesión.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (seguro == DialogResult.Yes)
+            {
+                transicion = "FadeExit";
+                timer_Transicion.Start(); 
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -2974,7 +2996,7 @@ namespace Diseño
 
         private void txtDetallesUobservaciones_Agregar_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 btnAgregarCelular_Click(sender, e);
             }

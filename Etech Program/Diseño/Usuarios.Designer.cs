@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelE = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lab_SitauacionContextual = new System.Windows.Forms.Label();
@@ -114,6 +114,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.timerTransicion = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.labNombreDelForm = new System.Windows.Forms.Label();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelD.SuspendLayout();
@@ -136,6 +138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelE
@@ -157,7 +160,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Diseño.Properties.Resources.work_from_home_Blanco;
             this.pictureBox1.Location = new System.Drawing.Point(117, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 71);
@@ -200,6 +202,7 @@
             this.label_BD_Mostrada.Size = new System.Drawing.Size(16, 15);
             this.label_BD_Mostrada.TabIndex = 12;
             this.label_BD_Mostrada.Text = "...";
+            this.label_BD_Mostrada.Visible = false;
             // 
             // btnMenu
             // 
@@ -277,7 +280,6 @@
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuPrincipal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnMenuPrincipal.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 236);
             this.btnMenuPrincipal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -442,7 +444,6 @@
             // picMostrar
             // 
             this.picMostrar.Enabled = false;
-            this.picMostrar.Image = global::Diseño.Properties.Resources.ojo_tapado;
             this.picMostrar.Location = new System.Drawing.Point(351, 196);
             this.picMostrar.Name = "picMostrar";
             this.picMostrar.Size = new System.Drawing.Size(16, 16);
@@ -681,7 +682,6 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = global::Diseño.Properties.Resources.telefono_inteligente;
             this.pictureBox2.Location = new System.Drawing.Point(10, 37);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 73);
@@ -693,7 +693,6 @@
             // 
             this.btnEstadisticas_groupboxManu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas_groupboxManu_PanelMenu.Image = global::Diseño.Properties.Resources.vigilancia;
             this.btnEstadisticas_groupboxManu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstadisticas_groupboxManu_PanelMenu.Location = new System.Drawing.Point(3, 222);
             this.btnEstadisticas_groupboxManu_PanelMenu.Name = "btnEstadisticas_groupboxManu_PanelMenu";
@@ -720,7 +719,6 @@
             this.btnClientes_groupBoxMenu_PanelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClientes_groupBoxMenu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes_groupBoxMenu_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes_groupBoxMenu_PanelMenu.Image = global::Diseño.Properties.Resources.cliente;
             this.btnClientes_groupBoxMenu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes_groupBoxMenu_PanelMenu.Location = new System.Drawing.Point(3, 125);
             this.btnClientes_groupBoxMenu_PanelMenu.Name = "btnClientes_groupBoxMenu_PanelMenu";
@@ -732,7 +730,6 @@
             // 
             // pictureBox_EtechLogo_PanelMenu
             // 
-            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
             this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(125, 2);
             this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
             this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
@@ -755,7 +752,6 @@
             // 
             // btnClientes
             // 
-            this.btnClientes.Image = global::Diseño.Properties.Resources.Clientes1;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnClientes.Location = new System.Drawing.Point(4, 105);
             this.btnClientes.Name = "btnClientes";
@@ -767,7 +763,6 @@
             // 
             // btnEstadisticas
             // 
-            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.Estadisticas;
             this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstadisticas.Location = new System.Drawing.Point(4, 191);
             this.btnEstadisticas.Name = "btnEstadisticas";
@@ -780,7 +775,6 @@
             // btnUsuarios
             // 
             this.btnUsuarios.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::Diseño.Properties.Resources.Usuarios;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.Location = new System.Drawing.Point(4, 22);
             this.btnUsuarios.Name = "btnUsuarios";
@@ -855,7 +849,6 @@
             // 
             this.picMostrar_groupBoxModificar_PanelModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMostrar_groupBoxModificar_PanelModificar.Enabled = false;
-            this.picMostrar_groupBoxModificar_PanelModificar.Image = global::Diseño.Properties.Resources.ojo_tapado;
             this.picMostrar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(352, 128);
             this.picMostrar_groupBoxModificar_PanelModificar.Name = "picMostrar_groupBoxModificar_PanelModificar";
             this.picMostrar_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(16, 16);
@@ -982,7 +975,6 @@
             // 
             // button5
             // 
-            this.button5.Image = global::Diseño.Properties.Resources.Clientes1;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button5.Location = new System.Drawing.Point(4, 105);
             this.button5.Name = "button5";
@@ -994,7 +986,6 @@
             // 
             // button6
             // 
-            this.button6.Image = global::Diseño.Properties.Resources.Estadisticas;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(4, 191);
             this.button6.Name = "button6";
@@ -1007,7 +998,6 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::Diseño.Properties.Resources.Usuarios;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(4, 22);
             this.button7.Name = "button7";
@@ -1037,14 +1027,14 @@
             this.tabla_Usuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tabla_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla_Usuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tabla_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tabla_Usuarios.EnableHeadersVisualStyles = false;
@@ -1053,11 +1043,11 @@
             this.tabla_Usuarios.MultiSelect = false;
             this.tabla_Usuarios.Name = "tabla_Usuarios";
             this.tabla_Usuarios.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tabla_Usuarios.RowTemplate.ReadOnly = true;
             this.tabla_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tabla_Usuarios.Size = new System.Drawing.Size(869, 597);
@@ -1067,7 +1057,6 @@
             // 
             // pictureBox_WarningRight
             // 
-            this.pictureBox_WarningRight.Image = global::Diseño.Properties.Resources.senal_de_advertencia;
             this.pictureBox_WarningRight.Location = new System.Drawing.Point(1244, 278);
             this.pictureBox_WarningRight.Name = "pictureBox_WarningRight";
             this.pictureBox_WarningRight.Size = new System.Drawing.Size(57, 56);
@@ -1078,7 +1067,6 @@
             // 
             // pictureBox_WarningLeft
             // 
-            this.pictureBox_WarningLeft.Image = global::Diseño.Properties.Resources.senal_de_advertencia;
             this.pictureBox_WarningLeft.Location = new System.Drawing.Point(525, 263);
             this.pictureBox_WarningLeft.Name = "pictureBox_WarningLeft";
             this.pictureBox_WarningLeft.Size = new System.Drawing.Size(57, 56);
@@ -1090,6 +1078,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.labNombreDelForm);
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -1100,10 +1090,9 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Cursor = System.Windows.Forms.Cursors.Default;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Diseño.Properties.Resources.menos;
             this.button4.Location = new System.Drawing.Point(1224, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 25);
@@ -1113,10 +1102,9 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Diseño.Properties.Resources.maximizar;
             this.button3.Location = new System.Drawing.Point(1271, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 25);
@@ -1126,10 +1114,9 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Diseño.Properties.Resources.cerrar_ventana__1_;
             this.button2.Location = new System.Drawing.Point(1318, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(48, 25);
@@ -1142,6 +1129,26 @@
             this.timerTransicion.Enabled = true;
             this.timerTransicion.Interval = 20;
             this.timerTransicion.Tick += new System.EventHandler(this.timerTransicion_Tick);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
+            // 
+            // labNombreDelForm
+            // 
+            this.labNombreDelForm.AutoSize = true;
+            this.labNombreDelForm.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNombreDelForm.ForeColor = System.Drawing.Color.White;
+            this.labNombreDelForm.Location = new System.Drawing.Point(34, 6);
+            this.labNombreDelForm.Name = "labNombreDelForm";
+            this.labNombreDelForm.Size = new System.Drawing.Size(99, 15);
+            this.labNombreDelForm.TabIndex = 17;
+            this.labNombreDelForm.Text = "Etech | Usuarios";
             // 
             // Usuarios
             // 
@@ -1200,6 +1207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WarningLeft)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1289,5 +1298,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timerTransicion;
+        private System.Windows.Forms.Label labNombreDelForm;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

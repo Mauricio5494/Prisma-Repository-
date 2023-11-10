@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Security;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Diseño
@@ -102,8 +103,10 @@ namespace Diseño
 
         private void MenuOpcionesClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtCampo_Busqueda.Enabled = true;
-
+            if (!txtCampo_Busqueda.Enabled)
+            {
+                txtCampo_Busqueda.Enabled = true;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -1371,6 +1374,34 @@ namespace Diseño
             else
             {
                 labCaracteresRestantesTelefono.ForeColor = Color.Black;
+            }
+        }
+
+        private void panelE_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult seguro = MessageBox.Show("¿Está seguro que quiere Cerrar el programa?\n\nEsto es diferente de cerrar sesión.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (seguro == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }

@@ -36,6 +36,7 @@ namespace Diseño
         int celularesEspera;
         int celularesEsperaPorcentaje;
         string celularesEsperaConversion;
+
         string celularesArregladosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado'";
         string celularesAveriadosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado'";
         string celularesProcesoConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En Espera'";
@@ -58,21 +59,28 @@ namespace Diseño
             {
                 conn.Open();
                 cmd = new MySqlCommand(celularesArregladosConsulta, conn);
+
                 celularesArregladosConversion = cmd.ExecuteScalar().ToString();
                 celularesArreglados = int.Parse(celularesArregladosConversion);
                 PointsCelulares[0] = celularesArreglados;
 
+
                 cmd = new MySqlCommand(celularesAveriadosConsulta, conn);
+
                 celularesAveriadosConversion = cmd.ExecuteScalar().ToString();
                 celularesAveriados = int.Parse(celularesAveriadosConversion);
                 PointsCelulares[1] = celularesAveriados;
 
+
                 cmd = new MySqlCommand(celularesEsperaConsulta, conn);
+
                 celularesEsperaConversion = cmd.ExecuteScalar().ToString();
                 celularesEspera = int.Parse(celularesEsperaConversion);
                 PointsCelulares[2] = celularesEspera;
 
+
                 cmd = new MySqlCommand(celularesProcesoConsulta, conn);
+
                 celularesProcesoConversion = cmd.ExecuteScalar().ToString();
                 celularesProceso = int.Parse(celularesProcesoConversion);
                 PointsCelulares[3] = celularesProceso;

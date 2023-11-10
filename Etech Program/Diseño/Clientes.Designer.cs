@@ -29,17 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelE = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuOpcionesClientes = new System.Windows.Forms.ComboBox();
+            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.label_Filtrar = new System.Windows.Forms.Label();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_Agregar = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -90,26 +97,29 @@
             this.timer_Eliminar_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
+            this.btnTaller = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.timer_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Menu_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_RecargarBD = new System.Windows.Forms.Timer(this.components);
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.timer_Transicion = new System.Windows.Forms.Timer(this.components);
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
-            this.btnTaller = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.labNombreDelForm = new System.Windows.Forms.Label();
+            this.asd = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panel_Agregar.SuspendLayout();
             this.groupBox_Agregar.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
@@ -117,11 +127,11 @@
             this.panel_Eliminar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelD
@@ -133,10 +143,111 @@
             this.panelD.Controls.Add(this.btnModificar);
             this.panelD.Controls.Add(this.btnAgregar);
             this.panelD.Controls.Add(this.btnCerrarSesion);
-            this.panelD.Location = new System.Drawing.Point(-2, -2);
+            this.panelD.Location = new System.Drawing.Point(-2, 22);
             this.panelD.Name = "panelD";
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 6;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.TabIndex = 21;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
+            this.btnMenuPrincipal.TabIndex = 16;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Quitar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(0, 132);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 46);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Salir";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // panelE
             // 
@@ -148,11 +259,11 @@
             this.panelE.Controls.Add(this.btnMenu);
             this.panelE.Controls.Add(this.label_Filtrar);
             this.panelE.Controls.Add(this.txtCampo_Busqueda);
-            this.panelE.Controls.Add(this.btnCerrar);
-            this.panelE.Location = new System.Drawing.Point(-2, -2);
+            this.panelE.Location = new System.Drawing.Point(-2, 22);
             this.panelE.Name = "panelE";
             this.panelE.Size = new System.Drawing.Size(2000, 74);
             this.panelE.TabIndex = 13;
+            this.panelE.Paint += new System.Windows.Forms.PaintEventHandler(this.panelE_Paint);
             // 
             // label1
             // 
@@ -191,18 +302,40 @@
             this.MenuOpcionesClientes.TabIndex = 22;
             this.MenuOpcionesClientes.SelectedIndexChanged += new System.EventHandler(this.MenuOpcionesClientes_SelectedIndexChanged);
             // 
+            // pictureBox_Taller
+            // 
+            this.pictureBox_Taller.Location = new System.Drawing.Point(135, 3);
+            this.pictureBox_Taller.Name = "pictureBox_Taller";
+            this.pictureBox_Taller.Size = new System.Drawing.Size(72, 68);
+            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Taller.TabIndex = 21;
+            this.pictureBox_Taller.TabStop = false;
+            // 
             // label_Name_Form
             // 
             this.label_Name_Form.AutoSize = true;
             this.label_Name_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label_Name_Form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Name_Form.Font = new System.Drawing.Font("Montserrat", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name_Form.Font = new System.Drawing.Font("Montserrat", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.label_Name_Form.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_Name_Form.Location = new System.Drawing.Point(175, 15);
+            this.label_Name_Form.Location = new System.Drawing.Point(213, 22);
             this.label_Name_Form.Name = "label_Name_Form";
-            this.label_Name_Form.Size = new System.Drawing.Size(179, 44);
+            this.label_Name_Form.Size = new System.Drawing.Size(131, 37);
             this.label_Name_Form.TabIndex = 14;
-            this.label_Name_Form.Text = "CLIENTES";
+            this.label_Name_Form.Text = "Clientes";
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.PanSE;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(0, 18);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(45, 41);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // label_Filtrar
             // 
@@ -227,23 +360,13 @@
             this.txtCampo_Busqueda.TextChanged += new System.EventHandler(this.txtCampo_Busqueda_TextChanged);
             this.txtCampo_Busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCampo_Busqueda_KeyPress);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Location = new System.Drawing.Point(221, 31);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(10, 10);
-            this.btnCerrar.TabIndex = 24;
-            this.btnCerrar.Text = "cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            // 
             // panel_Agregar
             // 
             this.panel_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Agregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Agregar.Controls.Add(this.groupBox_Agregar);
             this.panel_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Agregar.Location = new System.Drawing.Point(49, 81);
+            this.panel_Agregar.Location = new System.Drawing.Point(49, 105);
             this.panel_Agregar.Name = "panel_Agregar";
             this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
             this.panel_Agregar.TabIndex = 21;
@@ -463,7 +586,7 @@
             // 
             this.panel_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Modificar.Controls.Add(this.groupBox_Modificar);
-            this.panel_Modificar.Location = new System.Drawing.Point(49, 81);
+            this.panel_Modificar.Location = new System.Drawing.Point(49, 105);
             this.panel_Modificar.Name = "panel_Modificar";
             this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 22;
@@ -684,7 +807,7 @@
             this.panel_Eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel_Eliminar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Eliminar.Controls.Add(this.groupBox1);
-            this.panel_Eliminar.Location = new System.Drawing.Point(49, 81);
+            this.panel_Eliminar.Location = new System.Drawing.Point(49, 105);
             this.panel_Eliminar.Name = "panel_Eliminar";
             this.panel_Eliminar.Size = new System.Drawing.Size(419, 0);
             this.panel_Eliminar.TabIndex = 23;
@@ -756,10 +879,18 @@
             this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
             this.panel_Menu.Enabled = false;
-            this.panel_Menu.Location = new System.Drawing.Point(49, 81);
+            this.panel_Menu.Location = new System.Drawing.Point(49, 105);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 24;
+            // 
+            // pictureBox_EtechLogo_PanelMenu
+            // 
+            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(132, 3);
+            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
+            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
+            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
+            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
             // 
             // groupBox_Menu
             // 
@@ -775,6 +906,43 @@
             this.groupBox_Menu.TabIndex = 0;
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "MENU";
+            // 
+            // btnTaller
+            // 
+            this.btnTaller.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnTaller.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaller.Location = new System.Drawing.Point(4, 23);
+            this.btnTaller.Name = "btnTaller";
+            this.btnTaller.Size = new System.Drawing.Size(401, 80);
+            this.btnTaller.TabIndex = 2;
+            this.btnTaller.Text = "TALLER";
+            this.btnTaller.UseVisualStyleBackColor = true;
+            this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(4, 195);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(401, 80);
+            this.btnEstadisticas.TabIndex = 1;
+            this.btnEstadisticas.Text = "ESTADISTICAS";
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(5, 109);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(401, 80);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // timer_Menu_Agrandar
             // 
@@ -799,27 +967,27 @@
             this.tablaClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tablaClientes.EnableHeadersVisualStyles = false;
             this.tablaClientes.GridColor = System.Drawing.Color.DimGray;
-            this.tablaClientes.Location = new System.Drawing.Point(474, 81);
+            this.tablaClientes.Location = new System.Drawing.Point(471, 102);
             this.tablaClientes.MultiSelect = false;
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.tablaClientes.RowTemplate.ReadOnly = true;
             this.tablaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaClientes.Size = new System.Drawing.Size(877, 597);
@@ -834,186 +1002,116 @@
             this.timer_Transicion.Interval = 20;
             this.timer_Transicion.Tick += new System.EventHandler(this.timer_Transicion_Tick);
             // 
-            // btnCerrarSesion
+            // panel1
             // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.Text = "Salir";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.labNombreDelForm);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.btnMaximizar);
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Location = new System.Drawing.Point(-2, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1374, 25);
+            this.panel1.TabIndex = 26;
             // 
-            // pictureBox_EtechLogo_PanelMenu
+            // pictureBox2
             // 
-            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513;
-            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(132, 3);
-            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
-            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
-            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
-            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
-            // btnTaller
+            // btnMinimizar
             // 
-            this.btnTaller.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnTaller.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaller.Image = global::Diseño.Properties.Resources.telefono_inteligente__2_;
-            this.btnTaller.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaller.Location = new System.Drawing.Point(4, 23);
-            this.btnTaller.Name = "btnTaller";
-            this.btnTaller.Size = new System.Drawing.Size(401, 80);
-            this.btnTaller.TabIndex = 2;
-            this.btnTaller.Text = "TALLER";
-            this.btnTaller.UseVisualStyleBackColor = true;
-            this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
+            this.btnMinimizar.BackColor = System.Drawing.Color.White;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(1229, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(48, 25);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btnEstadisticas
+            // btnMaximizar
             // 
-            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.vigilancia;
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(4, 195);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(401, 80);
-            this.btnEstadisticas.TabIndex = 1;
-            this.btnEstadisticas.Text = "ESTADISTICAS";
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            this.btnMaximizar.BackColor = System.Drawing.Color.White;
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Location = new System.Drawing.Point(1276, 0);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(48, 25);
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnUsuarios
+            // btnCerrar
             // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::Diseño.Properties.Resources.work_from_home;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(5, 109);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(401, 80);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "USUARIOS";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Location = new System.Drawing.Point(1323, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(48, 25);
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox_Taller
+            // labNombreDelForm
             // 
-            this.pictureBox_Taller.Image = global::Diseño.Properties.Resources.cliente_Blanco;
-            this.pictureBox_Taller.Location = new System.Drawing.Point(97, 3);
-            this.pictureBox_Taller.Name = "pictureBox_Taller";
-            this.pictureBox_Taller.Size = new System.Drawing.Size(72, 68);
-            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Taller.TabIndex = 21;
-            this.pictureBox_Taller.TabStop = false;
+            this.labNombreDelForm.AutoSize = true;
+            this.labNombreDelForm.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNombreDelForm.ForeColor = System.Drawing.Color.White;
+            this.labNombreDelForm.Location = new System.Drawing.Point(31, 5);
+            this.labNombreDelForm.Name = "labNombreDelForm";
+            this.labNombreDelForm.Size = new System.Drawing.Size(96, 15);
+            this.labNombreDelForm.TabIndex = 18;
+            this.labNombreDelForm.Text = "Etech | Clientes";
             // 
-            // btnMenu
+            // asd
             // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.PanSE;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(0, 18);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(45, 41);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.asd.BackColor = System.Drawing.Color.White;
+            this.asd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.asd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.asd.Location = new System.Drawing.Point(1229, 0);
+            this.asd.Name = "asd";
+            this.asd.Size = new System.Drawing.Size(48, 25);
+            this.asd.TabIndex = 2;
+            this.asd.UseVisualStyleBackColor = false;
+            this.asd.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btnRecargar
+            // button3
             // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.TabIndex = 21;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(1276, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(48, 25);
+            this.button3.TabIndex = 1;
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // btnMenuPrincipal
+            // button2
             // 
-            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.casa;
-            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
-            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
-            this.btnMenuPrincipal.TabIndex = 16;
-            this.btnMenuPrincipal.Text = "Menu";
-            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
-            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
-            this.btnEliminar.TabIndex = 14;
-            this.btnEliminar.Text = "Quitar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(0, 132);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 46);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
-            this.btnAgregar.TabIndex = 1;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(1323, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(48, 25);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrarSesion;
-            this.ClientSize = new System.Drawing.Size(1350, 689);
+            this.ClientSize = new System.Drawing.Size(1366, 720);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tablaClientes);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_Eliminar);
@@ -1021,6 +1119,7 @@
             this.Controls.Add(this.panel_Agregar);
             this.Controls.Add(this.panelE);
             this.Controls.Add(this.panelD);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1029,8 +1128,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Clientes_FormClosed);
             this.Load += new System.EventHandler(this.Clientes_Load);
             this.panelD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
             this.panel_Agregar.ResumeLayout(false);
             this.groupBox_Agregar.ResumeLayout(false);
             this.groupBox_Agregar.PerformLayout();
@@ -1041,11 +1142,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1066,7 +1168,6 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label label_Filtrar;
         private System.Windows.Forms.TextBox txtCampo_Busqueda;
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panel_Agregar;
         private System.Windows.Forms.GroupBox groupBox_Agregar;
         private System.Windows.Forms.Label labelCorreoElectronico_Agregar;
@@ -1128,5 +1229,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer_Transicion;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnMaximizar;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label labNombreDelForm;
+        private System.Windows.Forms.Button asd;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
