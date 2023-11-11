@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelE = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lab_SitauacionContextual = new System.Windows.Forms.Label();
@@ -76,7 +76,6 @@
             this.txtID_panelBorrarUsuarios = new System.Windows.Forms.TextBox();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.groupBox_Menu_PanelMenu = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnEstadisticas_groupboxManu_PanelMenu = new System.Windows.Forms.Button();
             this.btnTaller_PanelMenu = new System.Windows.Forms.Button();
             this.btnClientes_groupBoxMenu_PanelMenu = new System.Windows.Forms.Button();
@@ -110,12 +109,12 @@
             this.pictureBox_WarningRight = new System.Windows.Forms.PictureBox();
             this.pictureBox_WarningLeft = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labNombreDelForm = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.timerTransicion = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.labNombreDelForm = new System.Windows.Forms.Label();
             this.panelE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelD.SuspendLayout();
@@ -127,7 +126,6 @@
             this.groupboxInterno_panelBorrarTecnico.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             this.groupBox_Menu_PanelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
@@ -160,6 +158,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Diseño.Properties.Resources.work_from_home_Blanco;
             this.pictureBox1.Location = new System.Drawing.Point(117, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 71);
@@ -210,7 +209,7 @@
             this.btnMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Image = global::Diseño.Properties.Resources.contexto__1_;
             this.btnMenu.Location = new System.Drawing.Point(0, 18);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnMenu.Name = "btnMenu";
@@ -280,6 +279,7 @@
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuPrincipal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnMenuPrincipal.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.menu;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 236);
             this.btnMenuPrincipal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -652,21 +652,20 @@
             // 
             // panel_Menu
             // 
-            this.panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel_Menu.BackColor = System.Drawing.Color.White;
             this.panel_Menu.Controls.Add(this.groupBox_Menu_PanelMenu);
             this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
             this.panel_Menu.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Menu.Location = new System.Drawing.Point(50, 106);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(419, 0);
+            this.panel_Menu.Size = new System.Drawing.Size(419, 600);
             this.panel_Menu.TabIndex = 24;
             this.panel_Menu.Visible = false;
             // 
             // groupBox_Menu_PanelMenu
             // 
-            this.groupBox_Menu_PanelMenu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox_Menu_PanelMenu.Controls.Add(this.pictureBox2);
+            this.groupBox_Menu_PanelMenu.BackColor = System.Drawing.Color.White;
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnEstadisticas_groupboxManu_PanelMenu);
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnTaller_PanelMenu);
             this.groupBox_Menu_PanelMenu.Controls.Add(this.btnClientes_groupBoxMenu_PanelMenu);
@@ -678,58 +677,55 @@
             this.groupBox_Menu_PanelMenu.TabStop = false;
             this.groupBox_Menu_PanelMenu.Text = "Menú";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 37);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 73);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // btnEstadisticas_groupboxManu_PanelMenu
             // 
+            this.btnEstadisticas_groupboxManu_PanelMenu.BackColor = System.Drawing.Color.White;
             this.btnEstadisticas_groupboxManu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas_groupboxManu_PanelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas_groupboxManu_PanelMenu.Image = global::Diseño.Properties.Resources.vigilancia;
             this.btnEstadisticas_groupboxManu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstadisticas_groupboxManu_PanelMenu.Location = new System.Drawing.Point(3, 222);
             this.btnEstadisticas_groupboxManu_PanelMenu.Name = "btnEstadisticas_groupboxManu_PanelMenu";
             this.btnEstadisticas_groupboxManu_PanelMenu.Size = new System.Drawing.Size(404, 91);
             this.btnEstadisticas_groupboxManu_PanelMenu.TabIndex = 2;
             this.btnEstadisticas_groupboxManu_PanelMenu.Text = "Estadísticas";
-            this.btnEstadisticas_groupboxManu_PanelMenu.UseVisualStyleBackColor = true;
+            this.btnEstadisticas_groupboxManu_PanelMenu.UseVisualStyleBackColor = false;
             this.btnEstadisticas_groupboxManu_PanelMenu.Click += new System.EventHandler(this.btnEstadisticas_groupboxManu_PanelMenu_Click);
             // 
             // btnTaller_PanelMenu
             // 
-            this.btnTaller_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller_PanelMenu.BackColor = System.Drawing.Color.White;
+            this.btnTaller_PanelMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTaller_PanelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller_PanelMenu.Image = global::Diseño.Properties.Resources.telefono_inteligente__2_;
             this.btnTaller_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaller_PanelMenu.Location = new System.Drawing.Point(3, 28);
             this.btnTaller_PanelMenu.Name = "btnTaller_PanelMenu";
             this.btnTaller_PanelMenu.Size = new System.Drawing.Size(404, 91);
             this.btnTaller_PanelMenu.TabIndex = 0;
             this.btnTaller_PanelMenu.Text = "Taller";
-            this.btnTaller_PanelMenu.UseVisualStyleBackColor = true;
+            this.btnTaller_PanelMenu.UseVisualStyleBackColor = false;
             this.btnTaller_PanelMenu.Click += new System.EventHandler(this.btnTaller_PanelMenu_Click);
             // 
             // btnClientes_groupBoxMenu_PanelMenu
             // 
+            this.btnClientes_groupBoxMenu_PanelMenu.BackColor = System.Drawing.Color.White;
             this.btnClientes_groupBoxMenu_PanelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClientes_groupBoxMenu_PanelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientes_groupBoxMenu_PanelMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes_groupBoxMenu_PanelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes_groupBoxMenu_PanelMenu.Image = global::Diseño.Properties.Resources.cliente;
             this.btnClientes_groupBoxMenu_PanelMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes_groupBoxMenu_PanelMenu.Location = new System.Drawing.Point(3, 125);
             this.btnClientes_groupBoxMenu_PanelMenu.Name = "btnClientes_groupBoxMenu_PanelMenu";
             this.btnClientes_groupBoxMenu_PanelMenu.Size = new System.Drawing.Size(404, 91);
             this.btnClientes_groupBoxMenu_PanelMenu.TabIndex = 1;
             this.btnClientes_groupBoxMenu_PanelMenu.Text = "Clientes";
-            this.btnClientes_groupBoxMenu_PanelMenu.UseVisualStyleBackColor = true;
+            this.btnClientes_groupBoxMenu_PanelMenu.UseVisualStyleBackColor = false;
             this.btnClientes_groupBoxMenu_PanelMenu.Click += new System.EventHandler(this.btnClientes_groupBoxMenu_PanelMenu_Click);
             // 
             // pictureBox_EtechLogo_PanelMenu
             // 
+            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513_LARGE_Edited;
             this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(125, 2);
             this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
             this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
@@ -1027,14 +1023,14 @@
             this.tabla_Usuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tabla_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla_Usuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tabla_Usuarios.EnableHeadersVisualStyles = false;
@@ -1043,17 +1039,18 @@
             this.tabla_Usuarios.MultiSelect = false;
             this.tabla_Usuarios.Name = "tabla_Usuarios";
             this.tabla_Usuarios.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tabla_Usuarios.RowTemplate.ReadOnly = true;
             this.tabla_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tabla_Usuarios.Size = new System.Drawing.Size(869, 597);
             this.tabla_Usuarios.TabIndex = 29;
             this.tabla_Usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_Usuarios_CellClick);
             this.tabla_Usuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tabla_Usuarios_DataBindingComplete);
+            this.tabla_Usuarios.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabla_Usuarios_KeyDown);
             // 
             // pictureBox_WarningRight
             // 
@@ -1087,12 +1084,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1374, 25);
             this.panel1.TabIndex = 30;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // labNombreDelForm
+            // 
+            this.labNombreDelForm.AutoSize = true;
+            this.labNombreDelForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNombreDelForm.ForeColor = System.Drawing.Color.White;
+            this.labNombreDelForm.Location = new System.Drawing.Point(34, 6);
+            this.labNombreDelForm.Name = "labNombreDelForm";
+            this.labNombreDelForm.Size = new System.Drawing.Size(84, 13);
+            this.labNombreDelForm.TabIndex = 17;
+            this.labNombreDelForm.Text = "Etech | Usuarios";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Cursor = System.Windows.Forms.Cursors.Default;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::Diseño.Properties.Resources.menos;
             this.button4.Location = new System.Drawing.Point(1224, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 25);
@@ -1105,6 +1127,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::Diseño.Properties.Resources.maximizar_tamano;
             this.button3.Location = new System.Drawing.Point(1271, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 25);
@@ -1117,6 +1140,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Diseño.Properties.Resources.cerrar_ventana__1_;
             this.button2.Location = new System.Drawing.Point(1318, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(48, 25);
@@ -1129,26 +1153,6 @@
             this.timerTransicion.Enabled = true;
             this.timerTransicion.Interval = 20;
             this.timerTransicion.Tick += new System.EventHandler(this.timerTransicion_Tick);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
-            // 
-            // labNombreDelForm
-            // 
-            this.labNombreDelForm.AutoSize = true;
-            this.labNombreDelForm.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNombreDelForm.ForeColor = System.Drawing.Color.White;
-            this.labNombreDelForm.Location = new System.Drawing.Point(34, 6);
-            this.labNombreDelForm.Name = "labNombreDelForm";
-            this.labNombreDelForm.Size = new System.Drawing.Size(99, 15);
-            this.labNombreDelForm.TabIndex = 17;
-            this.labNombreDelForm.Text = "Etech | Usuarios";
             // 
             // Usuarios
             // 
@@ -1195,7 +1199,6 @@
             this.groupboxInterno_panelBorrarTecnico.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
             this.groupBox_Menu_PanelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Modificar.ResumeLayout(false);
@@ -1292,7 +1295,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRepitaLaContraseña;
         private System.Windows.Forms.TextBox txtID_panelBorrarUsuarios;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

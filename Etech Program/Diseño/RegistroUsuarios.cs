@@ -112,6 +112,12 @@ namespace Diseño
                                 try
                                 {
                                     cmd_Registro.ExecuteNonQuery();
+
+                                    txtNombre.Text = "";
+                                    txtPassword.Text = "";
+                                    txtTelefono.Text = "";
+                                    txtCorreo.Text = "";
+                                    txtCelular.Text = "";
                                 }
                                 catch (Exception ex)
                                 {
@@ -126,11 +132,6 @@ namespace Diseño
                             {
                                 conn.Close();
                             }
-                            txtNombre.Text = "";
-                            txtPassword.Text = "";
-                            txtTelefono.Text = "";
-                            txtCorreo.Text = "";
-                            txtCelular.Text = "";
                         }
                         else
                         {
@@ -146,11 +147,6 @@ namespace Diseño
 
 
             }
-            txtNombre.Text = "";
-            txtPassword.Text = "";
-            txtTelefono.Text = "";
-            txtCorreo.Text = "";
-            txtCelular.Text = "";
         }
 
         private void Comprobacion()

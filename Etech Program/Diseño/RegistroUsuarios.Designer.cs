@@ -53,7 +53,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.labelRegresar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.txtTelefono);
@@ -75,7 +75,7 @@
             this.groupBox1.Size = new System.Drawing.Size(394, 417);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Registrate";
+            this.groupBox1.Text = "Regístrate";
             // 
             // labelRegresar
             // 
@@ -109,7 +109,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(6, 238);
+            this.txtTelefono.Location = new System.Drawing.Point(7, 246);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(382, 21);
             this.txtTelefono.TabIndex = 11;
@@ -117,7 +117,7 @@
             // label_Telefono
             // 
             this.label_Telefono.AutoSize = true;
-            this.label_Telefono.Location = new System.Drawing.Point(6, 222);
+            this.label_Telefono.Location = new System.Drawing.Point(7, 230);
             this.label_Telefono.Name = "label_Telefono";
             this.label_Telefono.Size = new System.Drawing.Size(138, 15);
             this.label_Telefono.TabIndex = 10;
@@ -126,7 +126,7 @@
             // label_Celular
             // 
             this.label_Celular.AutoSize = true;
-            this.label_Celular.Location = new System.Drawing.Point(6, 172);
+            this.label_Celular.Location = new System.Drawing.Point(7, 180);
             this.label_Celular.Name = "label_Celular";
             this.label_Celular.Size = new System.Drawing.Size(47, 15);
             this.label_Celular.TabIndex = 8;
@@ -135,7 +135,7 @@
             // label_Correo
             // 
             this.label_Correo.AutoSize = true;
-            this.label_Correo.Location = new System.Drawing.Point(3, 124);
+            this.label_Correo.Location = new System.Drawing.Point(4, 132);
             this.label_Correo.Name = "label_Correo";
             this.label_Correo.Size = new System.Drawing.Size(46, 15);
             this.label_Correo.TabIndex = 7;
@@ -144,7 +144,7 @@
             // label_Password
             // 
             this.label_Password.AutoSize = true;
-            this.label_Password.Location = new System.Drawing.Point(3, 75);
+            this.label_Password.Location = new System.Drawing.Point(4, 83);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(69, 15);
             this.label_Password.TabIndex = 6;
@@ -153,7 +153,7 @@
             // label_Nombre
             // 
             this.label_Nombre.AutoSize = true;
-            this.label_Nombre.Location = new System.Drawing.Point(3, 26);
+            this.label_Nombre.Location = new System.Drawing.Point(4, 34);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(55, 15);
             this.label_Nombre.TabIndex = 5;
@@ -161,14 +161,14 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(6, 188);
+            this.txtCelular.Location = new System.Drawing.Point(7, 196);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(382, 21);
             this.txtCelular.TabIndex = 3;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(6, 91);
+            this.txtPassword.Location = new System.Drawing.Point(7, 99);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(351, 21);
@@ -176,14 +176,14 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(6, 140);
+            this.txtCorreo.Location = new System.Drawing.Point(7, 148);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(382, 21);
             this.txtCorreo.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(6, 42);
+            this.txtNombre.Location = new System.Drawing.Point(7, 50);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(382, 21);
             this.txtNombre.TabIndex = 0;
@@ -192,7 +192,7 @@
             // 
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = global::Diseño.Properties.Resources.ojo_tapado;
-            this.pictureBox2.Location = new System.Drawing.Point(362, 93);
+            this.pictureBox2.Location = new System.Drawing.Point(363, 101);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -203,7 +203,7 @@
             // 
             this.checkBox_MostrarContraseña.AutoSize = true;
             this.checkBox_MostrarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox_MostrarContraseña.Location = new System.Drawing.Point(363, 95);
+            this.checkBox_MostrarContraseña.Location = new System.Drawing.Point(364, 103);
             this.checkBox_MostrarContraseña.Name = "checkBox_MostrarContraseña";
             this.checkBox_MostrarContraseña.Size = new System.Drawing.Size(15, 14);
             this.checkBox_MostrarContraseña.TabIndex = 15;
@@ -229,10 +229,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(404, 485);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "RegistroUsuarios";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

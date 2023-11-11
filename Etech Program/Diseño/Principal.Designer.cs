@@ -29,28 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label_Filtrar = new System.Windows.Forms.Label();
             this.MenuOpcionesCelular = new System.Windows.Forms.ComboBox();
             this.txtCampo_Busqueda = new System.Windows.Forms.TextBox();
             this.panelE = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.label_Name_Form = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.panel_Agregar = new System.Windows.Forms.Panel();
             this.groupBox_AgregarCelulares = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -90,11 +80,7 @@
             this.timer_GroupBox_AgregarT_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_AgregarT_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.timer_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Menu_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
@@ -161,11 +147,9 @@
             this.panel_Eliminar = new System.Windows.Forms.Panel();
             this.groupBox_EliminarTrabajos = new System.Windows.Forms.GroupBox();
             this.txtID_Trabajo_Eliminar = new System.Windows.Forms.Label();
-            this.btn_EliminarTrabajos = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox_EliminarCelulares = new System.Windows.Forms.GroupBox();
             this.labMostrarIDdelCelularSeleccionado = new System.Windows.Forms.Label();
-            this.btnEliminar_Celular = new System.Windows.Forms.Button();
             this.label_ID_Celular_Eliminar = new System.Windows.Forms.Label();
             this.timer_GroupBox_EliminarC_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_EliminarC_Reducir = new System.Windows.Forms.Timer(this.components);
@@ -179,20 +163,34 @@
             this.timer_RecargarBDs = new System.Windows.Forms.Timer(this.components);
             this.timer_Transicion = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btn_EliminarTrabajos = new System.Windows.Forms.Button();
+            this.btnEliminar_Celular = new System.Windows.Forms.Button();
+            this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
             this.panel_Agregar.SuspendLayout();
             this.groupBox_AgregarCelulares.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
             this.groupBox_Menu.SuspendLayout();
             this.panel_Modificar.SuspendLayout();
             this.groupBox_ModificarTrabajos.SuspendLayout();
@@ -205,8 +203,11 @@
             this.tabIndex_Pestañas.SuspendLayout();
             this.tab_Celulares.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelD
@@ -223,108 +224,6 @@
             this.panelD.Size = new System.Drawing.Size(45, 1060);
             this.panelD.TabIndex = 5;
             // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.TabIndex = 21;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
-            // 
-            // btnMenuPrincipal
-            // 
-            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMenuPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuPrincipal.Image")));
-            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
-            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
-            this.btnMenuPrincipal.TabIndex = 16;
-            this.btnMenuPrincipal.Text = "Menu";
-            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
-            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenu_Principal);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
-            this.btnEliminar.TabIndex = 14;
-            this.btnEliminar.Text = "Quitar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(0, 132);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 46);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
-            this.btnAgregar.TabIndex = 1;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.Text = "Salir";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
             // label_Filtrar
             // 
             this.label_Filtrar.AutoSize = true;
@@ -339,6 +238,7 @@
             // 
             // MenuOpcionesCelular
             // 
+            this.MenuOpcionesCelular.BackColor = System.Drawing.Color.White;
             this.MenuOpcionesCelular.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MenuOpcionesCelular.Enabled = false;
             this.MenuOpcionesCelular.Items.AddRange(new object[] {
@@ -393,15 +293,6 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Búsqueda";
             // 
-            // pictureBox_Taller
-            // 
-            this.pictureBox_Taller.Location = new System.Drawing.Point(129, 9);
-            this.pictureBox_Taller.Name = "pictureBox_Taller";
-            this.pictureBox_Taller.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Taller.TabIndex = 21;
-            this.pictureBox_Taller.TabStop = false;
-            // 
             // label_Name_Form
             // 
             this.label_Name_Form.AutoSize = true;
@@ -415,19 +306,6 @@
             this.label_Name_Form.TabIndex = 14;
             this.label_Name_Form.Text = "TALLER";
             // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(0, 18);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(45, 41);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // panel_Agregar
             // 
             this.panel_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -436,7 +314,7 @@
             this.panel_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(51, 105);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
             this.panel_Agregar.TabIndex = 15;
             // 
             // groupBox_AgregarCelulares
@@ -475,38 +353,12 @@
             this.groupBox_AgregarCelulares.TabStop = false;
             this.groupBox_AgregarCelulares.Text = "Agregar Celular";
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(191, 308);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 24);
-            this.button1.TabIndex = 48;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btn_BuscarClientesEnElComboboxDeAgregarCelulares
-            // 
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Location = new System.Drawing.Point(192, 36);
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Name = "btn_BuscarClientesEnElComboboxDeAgregarCelulares";
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Size = new System.Drawing.Size(26, 24);
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TabIndex = 47;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.UseVisualStyleBackColor = true;
-            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(171, 178);
+            this.label14.Location = new System.Drawing.Point(160, 178);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 18);
             this.label14.TabIndex = 46;
@@ -517,7 +369,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(151, 95);
+            this.label13.Location = new System.Drawing.Point(147, 95);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 18);
             this.label13.TabIndex = 45;
@@ -528,7 +380,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(100, 57);
+            this.label10.Location = new System.Drawing.Point(94, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 18);
             this.label10.TabIndex = 42;
@@ -579,7 +431,7 @@
             this.groupBox1.Controls.Add(this.radioButton_EnEspera_Agregar);
             this.groupBox1.Controls.Add(this.radioButton_Averiado_Agregar);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(12, 354);
+            this.groupBox1.Location = new System.Drawing.Point(4, 360);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(395, 182);
             this.groupBox1.TabIndex = 37;
@@ -710,9 +562,9 @@
             // comboBox_AgregarCelular_IdDelTecnicoAcargo
             // 
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.FormattingEnabled = true;
-            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(4, 309);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Location = new System.Drawing.Point(5, 309);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Name = "comboBox_AgregarCelular_IdDelTecnicoAcargo";
-            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(181, 21);
+            this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Size = new System.Drawing.Size(180, 21);
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.Sorted = true;
             this.comboBox_AgregarCelular_IdDelTecnicoAcargo.TabIndex = 20;
             // 
@@ -740,7 +592,7 @@
             // labelAdelanto_Agregar
             // 
             this.labelAdelanto_Agregar.AutoSize = true;
-            this.labelAdelanto_Agregar.Location = new System.Drawing.Point(7, 137);
+            this.labelAdelanto_Agregar.Location = new System.Drawing.Point(3, 137);
             this.labelAdelanto_Agregar.Name = "labelAdelanto_Agregar";
             this.labelAdelanto_Agregar.Size = new System.Drawing.Size(133, 13);
             this.labelAdelanto_Agregar.TabIndex = 10;
@@ -759,7 +611,7 @@
             // labelTecnico_A_Cargo_Agregar
             // 
             this.labelTecnico_A_Cargo_Agregar.AutoSize = true;
-            this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 294);
+            this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 293);
             this.labelTecnico_A_Cargo_Agregar.Name = "labelTecnico_A_Cargo_Agregar";
             this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(103, 13);
             this.labelTecnico_A_Cargo_Agregar.TabIndex = 9;
@@ -768,7 +620,7 @@
             // labelFechaDeIngreso_Agregar
             // 
             this.labelFechaDeIngreso_Agregar.AutoSize = true;
-            this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(5, 97);
+            this.labelFechaDeIngreso_Agregar.Location = new System.Drawing.Point(1, 97);
             this.labelFechaDeIngreso_Agregar.Name = "labelFechaDeIngreso_Agregar";
             this.labelFechaDeIngreso_Agregar.Size = new System.Drawing.Size(147, 13);
             this.labelFechaDeIngreso_Agregar.TabIndex = 8;
@@ -777,7 +629,7 @@
             // labelPresupuesto_Agregar
             // 
             this.labelPresupuesto_Agregar.AutoSize = true;
-            this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(8, 216);
+            this.labelPresupuesto_Agregar.Location = new System.Drawing.Point(4, 216);
             this.labelPresupuesto_Agregar.Name = "labelPresupuesto_Agregar";
             this.labelPresupuesto_Agregar.Size = new System.Drawing.Size(120, 13);
             this.labelPresupuesto_Agregar.TabIndex = 4;
@@ -798,13 +650,13 @@
             // 
             this.txtModeloYOmarca_Agregar.Location = new System.Drawing.Point(5, 75);
             this.txtModeloYOmarca_Agregar.Name = "txtModeloYOmarca_Agregar";
-            this.txtModeloYOmarca_Agregar.Size = new System.Drawing.Size(398, 20);
+            this.txtModeloYOmarca_Agregar.Size = new System.Drawing.Size(402, 20);
             this.txtModeloYOmarca_Agregar.TabIndex = 18;
             // 
             // labelModelo_Agregar
             // 
             this.labelModelo_Agregar.AutoSize = true;
-            this.labelModelo_Agregar.Location = new System.Drawing.Point(7, 60);
+            this.labelModelo_Agregar.Location = new System.Drawing.Point(1, 60);
             this.labelModelo_Agregar.Name = "labelModelo_Agregar";
             this.labelModelo_Agregar.Size = new System.Drawing.Size(97, 13);
             this.labelModelo_Agregar.TabIndex = 4;
@@ -814,13 +666,13 @@
             // 
             this.txtIMEI_Agregar.Location = new System.Drawing.Point(5, 270);
             this.txtIMEI_Agregar.Name = "txtIMEI_Agregar";
-            this.txtIMEI_Agregar.Size = new System.Drawing.Size(399, 20);
+            this.txtIMEI_Agregar.Size = new System.Drawing.Size(402, 20);
             this.txtIMEI_Agregar.TabIndex = 19;
             // 
             // labelIMEI_Agregar
             // 
             this.labelIMEI_Agregar.AutoSize = true;
-            this.labelIMEI_Agregar.Location = new System.Drawing.Point(6, 256);
+            this.labelIMEI_Agregar.Location = new System.Drawing.Point(3, 255);
             this.labelIMEI_Agregar.Name = "labelIMEI_Agregar";
             this.labelIMEI_Agregar.Size = new System.Drawing.Size(83, 13);
             this.labelIMEI_Agregar.TabIndex = 2;
@@ -840,7 +692,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(112, 292);
+            this.label11.Location = new System.Drawing.Point(112, 291);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(15, 18);
             this.label11.TabIndex = 43;
@@ -878,7 +730,7 @@
             // 
             // panel_Menu
             // 
-            this.panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel_Menu.BackColor = System.Drawing.Color.White;
             this.panel_Menu.Controls.Add(this.pictureBox_EtechLogo_PanelMenu);
             this.panel_Menu.Controls.Add(this.groupBox_Menu);
             this.panel_Menu.Enabled = false;
@@ -887,62 +739,19 @@
             this.panel_Menu.Size = new System.Drawing.Size(419, 0);
             this.panel_Menu.TabIndex = 16;
             // 
-            // pictureBox_EtechLogo_PanelMenu
-            // 
-            this.pictureBox_EtechLogo_PanelMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_EtechLogo_PanelMenu.Image")));
-            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(122, 6);
-            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
-            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
-            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
-            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
-            // 
             // groupBox_Menu
             // 
-            this.groupBox_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox_Menu.BackColor = System.Drawing.Color.White;
             this.groupBox_Menu.Controls.Add(this.btnClientes);
             this.groupBox_Menu.Controls.Add(this.btnEstadisticas);
             this.groupBox_Menu.Controls.Add(this.btnUsuarios);
-            this.groupBox_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Menu.Location = new System.Drawing.Point(3, 83);
             this.groupBox_Menu.Name = "groupBox_Menu";
             this.groupBox_Menu.Size = new System.Drawing.Size(413, 514);
             this.groupBox_Menu.TabIndex = 0;
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "Menú";
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnClientes.Location = new System.Drawing.Point(4, 22);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(404, 91);
-            this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "CLIENTES";
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(3, 216);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(404, 91);
-            this.btnEstadisticas.TabIndex = 1;
-            this.btnEstadisticas.Text = "ESTADISTICAS";
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(4, 119);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(404, 91);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "USUARIOS";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // timer_Menu_Agrandar
             // 
@@ -983,7 +792,7 @@
             this.panel_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Modificar.Location = new System.Drawing.Point(51, 105);
             this.panel_Modificar.Name = "panel_Modificar";
-            this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Modificar.Size = new System.Drawing.Size(419, 600);
             this.panel_Modificar.TabIndex = 17;
             // 
             // groupBox_ModificarTrabajos
@@ -1432,6 +1241,7 @@
             this.btn_ModificarTecnicoACargo_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ModificarTecnicoACargo_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ModificarTecnicoACargo_Buscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_ModificarTecnicoACargo_Buscar.Image = global::Diseño.Properties.Resources.lupa2;
             this.btn_ModificarTecnicoACargo_Buscar.Location = new System.Drawing.Point(193, 338);
             this.btn_ModificarTecnicoACargo_Buscar.Name = "btn_ModificarTecnicoACargo_Buscar";
             this.btn_ModificarTecnicoACargo_Buscar.Size = new System.Drawing.Size(26, 23);
@@ -1445,6 +1255,7 @@
             this.btn_ModificarClientes_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ModificarClientes_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ModificarClientes_Buscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_ModificarClientes_Buscar.Image = global::Diseño.Properties.Resources.lupa2;
             this.btn_ModificarClientes_Buscar.Location = new System.Drawing.Point(192, 57);
             this.btn_ModificarClientes_Buscar.Name = "btn_ModificarClientes_Buscar";
             this.btn_ModificarClientes_Buscar.Size = new System.Drawing.Size(26, 23);
@@ -1618,21 +1429,6 @@
             this.txtID_Trabajo_Eliminar.TabIndex = 15;
             this.txtID_Trabajo_Eliminar.Text = "Seleccione un elemento de la tabla";
             // 
-            // btn_EliminarTrabajos
-            // 
-            this.btn_EliminarTrabajos.BackColor = System.Drawing.Color.Transparent;
-            this.btn_EliminarTrabajos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EliminarTrabajos.Image = ((System.Drawing.Image)(resources.GetObject("btn_EliminarTrabajos.Image")));
-            this.btn_EliminarTrabajos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_EliminarTrabajos.Location = new System.Drawing.Point(306, 114);
-            this.btn_EliminarTrabajos.Name = "btn_EliminarTrabajos";
-            this.btn_EliminarTrabajos.Size = new System.Drawing.Size(92, 30);
-            this.btn_EliminarTrabajos.TabIndex = 14;
-            this.btn_EliminarTrabajos.Text = "Dar de baja";
-            this.btn_EliminarTrabajos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_EliminarTrabajos.UseVisualStyleBackColor = false;
-            this.btn_EliminarTrabajos.Click += new System.EventHandler(this.btn_EliminarTrabajos_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -1666,21 +1462,6 @@
             this.labMostrarIDdelCelularSeleccionado.Size = new System.Drawing.Size(207, 13);
             this.labMostrarIDdelCelularSeleccionado.TabIndex = 15;
             this.labMostrarIDdelCelularSeleccionado.Text = "Seleccione un elemento de la tabla";
-            // 
-            // btnEliminar_Celular
-            // 
-            this.btnEliminar_Celular.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Celular.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar_Celular.Image")));
-            this.btnEliminar_Celular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar_Celular.Location = new System.Drawing.Point(306, 114);
-            this.btnEliminar_Celular.Name = "btnEliminar_Celular";
-            this.btnEliminar_Celular.Size = new System.Drawing.Size(92, 30);
-            this.btnEliminar_Celular.TabIndex = 14;
-            this.btnEliminar_Celular.Text = "Dar de baja";
-            this.btnEliminar_Celular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Celular.UseVisualStyleBackColor = false;
-            this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
             // 
             // label_ID_Celular_Eliminar
             // 
@@ -1729,14 +1510,14 @@
             this.tablaCelulares.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaCelulares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCelulares.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaCelulares.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -1746,11 +1527,11 @@
             this.tablaCelulares.MultiSelect = false;
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaCelulares.Size = new System.Drawing.Size(866, 595);
@@ -1800,6 +1581,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -1808,12 +1590,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1366, 25);
             this.panel1.TabIndex = 23;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(31, 6);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(174, 13);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Etech | Taller | Gestión de Celulares";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Cursor = System.Windows.Forms.Cursors.Default;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::Diseño.Properties.Resources.menos;
             this.button4.Location = new System.Drawing.Point(1224, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 25);
@@ -1826,6 +1632,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::Diseño.Properties.Resources.maximizar_tamano;
             this.button3.Location = new System.Drawing.Point(1271, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 25);
@@ -1838,6 +1645,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Diseño.Properties.Resources.cerrar_ventana__1_;
             this.button2.Location = new System.Drawing.Point(1318, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(48, 25);
@@ -1845,9 +1653,244 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pictureBox_Taller
+            // 
+            this.pictureBox_Taller.Image = global::Diseño.Properties.Resources.telefono_inteligente__1_;
+            this.pictureBox_Taller.Location = new System.Drawing.Point(129, 9);
+            this.pictureBox_Taller.Name = "pictureBox_Taller";
+            this.pictureBox_Taller.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox_Taller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Taller.TabIndex = 21;
+            this.pictureBox_Taller.TabStop = false;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnMenu.Image = global::Diseño.Properties.Resources.contexto__1_;
+            this.btnMenu.Location = new System.Drawing.Point(0, 18);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(45, 41);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(10, 285);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.TabIndex = 21;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMenuPrincipal.Image = global::Diseño.Properties.Resources.menu;
+            this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 230);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(120, 46);
+            this.btnMenuPrincipal.TabIndex = 16;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenu_Principal);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(0, 184);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 46);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Quitar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(0, 132);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 46);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(0, 80);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregar.Size = new System.Drawing.Size(120, 46);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 638);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 46);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Salir";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btn_EliminarTrabajos
+            // 
+            this.btn_EliminarTrabajos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_EliminarTrabajos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EliminarTrabajos.Image = ((System.Drawing.Image)(resources.GetObject("btn_EliminarTrabajos.Image")));
+            this.btn_EliminarTrabajos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_EliminarTrabajos.Location = new System.Drawing.Point(306, 114);
+            this.btn_EliminarTrabajos.Name = "btn_EliminarTrabajos";
+            this.btn_EliminarTrabajos.Size = new System.Drawing.Size(92, 30);
+            this.btn_EliminarTrabajos.TabIndex = 14;
+            this.btn_EliminarTrabajos.Text = "Dar de baja";
+            this.btn_EliminarTrabajos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_EliminarTrabajos.UseVisualStyleBackColor = false;
+            this.btn_EliminarTrabajos.Click += new System.EventHandler(this.btn_EliminarTrabajos_Click);
+            // 
+            // btnEliminar_Celular
+            // 
+            this.btnEliminar_Celular.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar_Celular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Celular.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar_Celular.Image")));
+            this.btnEliminar_Celular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Celular.Location = new System.Drawing.Point(306, 114);
+            this.btnEliminar_Celular.Name = "btnEliminar_Celular";
+            this.btnEliminar_Celular.Size = new System.Drawing.Size(92, 30);
+            this.btnEliminar_Celular.TabIndex = 14;
+            this.btnEliminar_Celular.Text = "Dar de baja";
+            this.btnEliminar_Celular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Celular.UseVisualStyleBackColor = false;
+            this.btnEliminar_Celular.Click += new System.EventHandler(this.btnEliminar_Celular_Click);
+            // 
+            // pictureBox_EtechLogo_PanelMenu
+            // 
+            this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513_LARGE_Edited;
+            this.pictureBox_EtechLogo_PanelMenu.Location = new System.Drawing.Point(122, 6);
+            this.pictureBox_EtechLogo_PanelMenu.Name = "pictureBox_EtechLogo_PanelMenu";
+            this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
+            this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
+            this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.White;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClientes.Image = global::Diseño.Properties.Resources.cliente;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnClientes.Location = new System.Drawing.Point(4, 22);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(404, 91);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackColor = System.Drawing.Color.White;
+            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.vigilancia;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(3, 216);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(404, 91);
+            this.btnEstadisticas.TabIndex = 1;
+            this.btnEstadisticas.Text = "ESTADISTICAS";
+            this.btnEstadisticas.UseVisualStyleBackColor = false;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.White;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Image = global::Diseño.Properties.Resources.work_from_home;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(4, 119);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(404, 91);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Image = global::Diseño.Properties.Resources.lupa2;
+            this.button1.Location = new System.Drawing.Point(191, 306);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 24);
+            this.button1.TabIndex = 48;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btn_BuscarClientesEnElComboboxDeAgregarCelulares
+            // 
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Image = global::Diseño.Properties.Resources.lupa2;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Location = new System.Drawing.Point(192, 36);
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Name = "btn_BuscarClientesEnElComboboxDeAgregarCelulares";
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Size = new System.Drawing.Size(26, 24);
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TabIndex = 47;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.UseVisualStyleBackColor = true;
+            this.btn_BuscarClientesEnElComboboxDeAgregarCelulares.Click += new System.EventHandler(this.button1_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(173, 257);
@@ -1856,15 +1899,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // Principal
             // 
@@ -1893,17 +1928,14 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Principal_KeyUp);
             this.panelD.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             this.panelE.ResumeLayout(false);
             this.panelE.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
             this.panel_Agregar.ResumeLayout(false);
             this.groupBox_AgregarCelulares.ResumeLayout(false);
             this.groupBox_AgregarCelulares.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
             this.groupBox_Menu.ResumeLayout(false);
             this.panel_Modificar.ResumeLayout(false);
             this.groupBox_ModificarTrabajos.ResumeLayout(false);
@@ -1921,8 +1953,12 @@
             this.tabIndex_Pestañas.ResumeLayout(false);
             this.tab_Celulares.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Taller)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EtechLogo_PanelMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2081,6 +2117,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label21;
     }
 }
 

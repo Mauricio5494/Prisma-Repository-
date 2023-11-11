@@ -41,7 +41,9 @@ namespace Diseño
         string option;
         string busqueda;
         string transicion;
+        int mouseStartX, mouseStartY;
         int caracteresMaximos = 8;
+        bool dragTrue;
 
 
         //De tabla
@@ -2601,7 +2603,12 @@ namespace Diseño
                 {
                     string abrir;
                     string query = $"SELECT ID, Nombre FROM usuarios WHERE Baja = 0";
-                    conn.Open();
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
 
@@ -2657,7 +2664,12 @@ namespace Diseño
 
                     string abrir;
                     string query = $"SELECT ID, Nombre FROM usuarios WHERE Nombre LIKE '%{comboBox_ModificarTecnicoACargo.Text}%' AND Baja = 0";
-                    conn.Open();
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
 
@@ -2716,7 +2728,11 @@ namespace Diseño
 
                 if (combobox_CI_Del_Dueño_Modificar.Text == "")
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open(); 
+                    }
+
                     string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
@@ -2746,7 +2762,10 @@ namespace Diseño
                 }
                 else
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
                     string abrir;
                     string query = $"SELECT Nombre, Cedula FROM Clientes WHERE Nombre LIKE '%{busqueda}%' AND Baja = 0";
                     cmd = new MySqlCommand(query, conn);
@@ -2999,6 +3018,49 @@ namespace Diseño
             if (e.KeyCode == Keys.Enter)
             {
                 btnAgregarCelular_Click(sender, e);
+            }
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragTrue)
+            {
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    this.WindowState = FormWindowState.Normal;
+
+
+                }
+
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                    int mouseX = MousePosition.X;
+                    int mouseY = MousePosition.Y;
+
+                    this.SetDesktopLocation(mouseX - mouseStartX, mouseY - mouseStartY);
+
+                }
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragTrue = false;
+
+            if (this.Top <= 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragTrue = true;
+
+                mouseStartX = e.X;
+                mouseStartY = e.Y;
             }
         }
     }

@@ -25,6 +25,8 @@ namespace Diseño
         private int idTecnico;
         public bool PassSucess;
         private string modificarAtributosDeUsuarios;
+        bool drag;
+        int mouseStartX, mouseStartY;
 
 
         DataBaseConnect connect = new DataBaseConnect();
@@ -259,6 +261,11 @@ namespace Diseño
             {
                 tabla_Usuarios.Size = new Size(872, 599);
             }
+
+            if (panelD.Width == 119 && panel_BorrarUsuario.Visible)
+            {
+                btnMenu_Click(sender, e);
+            }
         }
 
         private void btnRecargar_Click(object sender, EventArgs e)
@@ -286,15 +293,32 @@ namespace Diseño
                 btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
 
                 //La tabla:
-                tabla_Usuarios.Location = new Point(124, 78);
+                //tabla_Usuarios.Location = new Point(124, 78);
 
-                if (panel_BorrarUsuario.Visible == true || panel_Menu.Visible == true || panel_Registro.Visible == true || panel_Modificar.Visible == true)
+                //if (panel_BorrarUsuario.Visible == true || panel_Menu.Visible == true || panel_Registro.Visible == true || panel_Modificar.Visible == true)
+                //{
+                //    tabla_Usuarios.Size = new Size(800, 599);
+                //}
+                //else
+                //{
+                //    tabla_Usuarios.Size = new Size(872, 599);
+                //}
+
+                if (panel_Registro.Visible)
                 {
-                    tabla_Usuarios.Size = new Size(800, 599);
+                    panel_Registro.SendToBack();
                 }
-                else
+                else if (panel_Menu.Visible)
                 {
-                    tabla_Usuarios.Size = new Size(872, 599);
+                    panel_Menu.SendToBack();
+                }
+                else if (panel_BorrarUsuario.Visible)
+                {
+                    panel_BorrarUsuario.SendToBack();
+                }
+                else if (panel_Modificar.Visible)
+                {
+                    panel_Modificar.SendToBack();
                 }
 
             }
@@ -316,8 +340,8 @@ namespace Diseño
                 btnModificar.FlatStyle = FlatStyle.Flat;
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-                tabla_Usuarios.Location = new Point(49, 78);
-                tabla_Usuarios.Size = new Size(872, 599);
+                //tabla_Usuarios.Location = new Point(49, 78);
+                //tabla_Usuarios.Size = new Size(872, 599);
             }
         }
 
@@ -368,6 +392,11 @@ namespace Diseño
                 panel_Registro.Height = 0;
                 panel_BorrarUsuario.Height = 0;
                 panel_Registro.Visible = false;
+            }
+
+            if (panelD.Width == 119 && panel_Registro.Visible)
+            {
+                btnMenu_Click(sender, e);
             }
 
         }
@@ -566,6 +595,11 @@ namespace Diseño
             else
             {
                 tabla_Usuarios.Size = new Size(872, 599);
+            }
+
+            if (panelD.Width == 119 && panel_Modificar.Visible)
+            {
+                btnMenu_Click(sender, e);
             }
         }
         private void tabla_Usuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -1042,7 +1076,7 @@ namespace Diseño
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(this.WindowState == FormWindowState.Normal) 
+            if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
             }
@@ -1055,6 +1089,57 @@ namespace Diseño
         private void button4_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    this.WindowState = FormWindowState.Normal;
+
+
+                }
+
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                    int mouseX = MousePosition.X;
+                    int mouseY = MousePosition.Y;
+
+                    this.SetDesktopLocation(mouseX - mouseStartX, mouseY - mouseStartY);
+
+                }
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+
+            if (this.Top <= 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void tabla_Usuarios_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                MostrarBaseDeDatosDeLaTablaUsuarios();
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                drag = true;
+
+                mouseStartX = e.X;
+                mouseStartY = e.Y;
+            }
         }
     }
 }

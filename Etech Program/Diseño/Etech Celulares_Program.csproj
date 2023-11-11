@@ -267,6 +267,9 @@
     <None Include="Resources\cerrar-ventana %281%29.png" />
     <None Include="Resources\vigilancia %281%29.png" />
     <None Include="Resources\logo-etech-uruguay-220-e1654881097513 %281%29.png" />
+    <None Include="Resources\contexto.png" />
+    <None Include="Resources\contexto %281%29.png" />
+    <None Include="Resources\menu1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

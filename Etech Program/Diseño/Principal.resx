@@ -117,6 +117,78 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="timer_Agregar_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 3</value>
+  </metadata>
+  <metadata name="timer_GroupBox_AgregarC_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>186, 7</value>
+  </metadata>
+  <metadata name="timer_Agregar_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 36</value>
+  </metadata>
+  <metadata name="timer_GroupBox_AgregarC_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>185, 34</value>
+  </metadata>
+  <metadata name="timer_GroupBox_AgregarT_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>427, 8</value>
+  </metadata>
+  <metadata name="timer_GroupBox_AgregarT_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>424, 34</value>
+  </metadata>
+  <metadata name="timer_Menu_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>666, 10</value>
+  </metadata>
+  <metadata name="timer_Menu_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>668, 37</value>
+  </metadata>
+  <metadata name="timer_GroupBox_Menu_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>822, 11</value>
+  </metadata>
+  <metadata name="timer_GroupBox_Menu_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>823, 39</value>
+  </metadata>
+  <metadata name="timer_GroupBox_ModificarC_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1033, 39</value>
+  </metadata>
+  <metadata name="timer_GroupBox_ModificarC_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1030, 12</value>
+  </metadata>
+  <metadata name="timer_GroupBox_ModificarT_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1281, 12</value>
+  </metadata>
+  <metadata name="timer_GroupBox_ModificarT_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1283, 39</value>
+  </metadata>
+  <metadata name="timer_Modificar_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 67</value>
+  </metadata>
+  <metadata name="timer_Modificar_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="timer_GroupBox_EliminarC_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>194, 66</value>
+  </metadata>
+  <metadata name="timer_GroupBox_EliminarC_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>192, 95</value>
+  </metadata>
+  <metadata name="timer_GroupBox_EliminarT_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>426, 94</value>
+  </metadata>
+  <metadata name="timer_GroupBox_EliminarT_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>427, 66</value>
+  </metadata>
+  <metadata name="timer_Eliminar_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>665, 66</value>
+  </metadata>
+  <metadata name="timer_Eliminar_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>672, 91</value>
+  </metadata>
+  <metadata name="timer_RecargarBDs.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>840, 71</value>
+  </metadata>
+  <metadata name="timer_Transicion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1036, 73</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnRecargar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -131,21 +203,6 @@
         R2gv0J8zrU96PemRTeSMeVFbp+JqK/X8h8W8JV6zyTo1tk19idBtWUI9fxXrO50la2v0JKfWrBatVq3n
         pLdFD7R+z0W74Kmyrp3gREzYCTXN66lm/QQ9MampFZzx4kXdymCjbejy7+FnHG9Hu+A0sh2gOuDJQ72k
         2LSJvRiF+r4+VfTJok+XF1AXvoiDXqOqFf4DhzXcKZXC5gUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnMenuPrincipal.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHrSURBVFhH7dU7
-        aBRRFIfx9W0jFoJvLLSQFHaxEFIEkkYttNFOG8VG0C5ipYVBW3uLYJlCQ0AkpLUSC0GwU8Qn+EARFESN
-        +T68ByQ5m7mbXQLC/uEHw5k5585rZ1v9/M9Zg4MYxGoLK5lDeIo/xRN4Mv9mBM/g/lc4jK6zDtfwEw5+
-        gZdl29oVrIU5gMeIk/S4rjKAR3DYb9zEBmzEjVJz30Psh/GEr+IX3LesrMIFfIdDvK1DMMcKMwzviMd8
-        w3nYazzevo6zG7NwqG5hE3ZgutTktrXNmCg1zWAXjH0d5QQ+wUHvcRzG+kfEIuELzsEcwVtE/RSq41Xc
-        Rgy+j53YhjultpR78Kq3YqrUNIktWDKj8Cdjg8/xIoxX/QExrMlnxN04ja+w/g5HkcY3eQ4e+AB74VXf
-        LbXlsNcZ++BMa64xjkXxDf6By/ArdxLZs+6UM5zlTGe7xmssis/NqzZnkQ3rxhkY19jzd7N9niMb0o2O
-        vgPxLvSSM6uTDeiF6mTNvVCdrDn4Fo/Bj1PE7UtwX9YTqpM1BxdqF/dlPaE6WXPwT6ddtiPrCdXJmkNT
-        sp5Qnaw5NCXrCdXJmkNTsp5QnTfIBqgpWY/S73+7+M+YDVFTsh5dR3XWw5PI7kRTFh7vDGc5s59+FqTV
-        mgc6WHiIKcd1kgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -199,151 +256,6 @@
         0qdxFBBZE5UAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnBQYVGRXGLn1eAAACOElEQVRYR82Xu3LaQBSGqZ04lUNc
-        QEFN5TgU8AAep6MJZgZoGApkJ0MBM7bBIQ1FeDo8SR4glxdIfKPT+v9XRxB0WQGWRv5mvhl0tHvOInZX
-        S2ZTlFL78Bh+gufiR4ntS7N4QeIsHMHvMIpvcAhfS/ftQZIXkN/wL9yUO/gVvpJ0m4GOJfgHPpXf8J2k
-        XQ90+ADv2Tsm5rAp6c2gYR3a7BUzzHkiZYJBg7cwzm/u5QGWpNwquPESxvGbR/EL7kjZJQh+0bc9tNtt
-        lcvlVD6fV4PBQNm2rWq1mo5F2Wq1JIuPkZR1QIDr/Ebf8lAoFBYJy+Wyms/nK0VMsm8I/+Byn8DFlQ4H
-        kNAAyIWU1wP44cT88LFXKhXtZDLRMcuyFjGTvV5Ptw/h2i3OvT2JZRcFa2Y5gPf6Mh2OOIAz53Mw3W5X
-        FYtF7Xg81qug0WgsYibZN4JTDoBvrlASnITk8lkMwPgTcMa7j3Q4dMbabDZXHnWYnU5HtzdgPYtJ+Aam
-        tQyd3RAfQo9a/X5/sbFMp1Md4+z+f8MJk5uYgZkuTnDB814gCU7CcymvB7AH+YLwkdAAeMbck/IOCHzW
-        tzxwxjMZX8fc27kRVatVX7Eg63UergJZvohcEOQJmAfIpPkJ/QcSghsHMJ0jmQsanMAkliVz1qSMGTRM
-        71jugg6HkAfIp8Lf/EDSbgY67sBt/5rdQv4125V024Mk3Ccu4DU0zQ/em0EOenWdxwUS8wR9BE+lELUk
-        lpVma5LJPAL5xq0UQrmgIwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="timer_Agregar_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 3</value>
-  </metadata>
-  <metadata name="timer_GroupBox_AgregarC_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>186, 7</value>
-  </metadata>
-  <metadata name="timer_Agregar_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 36</value>
-  </metadata>
-  <metadata name="timer_GroupBox_AgregarC_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>185, 34</value>
-  </metadata>
-  <metadata name="timer_GroupBox_AgregarT_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>427, 8</value>
-  </metadata>
-  <metadata name="timer_GroupBox_AgregarT_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>424, 34</value>
-  </metadata>
-  <data name="pictureBox_EtechLogo_PanelMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        578695KI+cktNAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="timer_Menu_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>666, 10</value>
-  </metadata>
-  <metadata name="timer_Menu_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>668, 37</value>
-  </metadata>
-  <metadata name="timer_GroupBox_Menu_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>822, 11</value>
-  </metadata>
-  <metadata name="timer_GroupBox_Menu_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>823, 39</value>
-  </metadata>
-  <metadata name="timer_GroupBox_ModificarC_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1033, 39</value>
-  </metadata>
-  <metadata name="timer_GroupBox_ModificarC_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1030, 12</value>
-  </metadata>
-  <metadata name="timer_GroupBox_ModificarT_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1281, 12</value>
-  </metadata>
-  <metadata name="timer_GroupBox_ModificarT_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1283, 39</value>
-  </metadata>
-  <metadata name="timer_Modificar_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>16, 67</value>
-  </metadata>
-  <metadata name="timer_Modificar_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
   <data name="btn_EliminarTrabajos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
@@ -362,30 +274,6 @@
         SUVORK5CYII=
 </value>
   </data>
-  <metadata name="timer_GroupBox_EliminarC_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>194, 66</value>
-  </metadata>
-  <metadata name="timer_GroupBox_EliminarC_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>192, 95</value>
-  </metadata>
-  <metadata name="timer_GroupBox_EliminarT_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>426, 94</value>
-  </metadata>
-  <metadata name="timer_GroupBox_EliminarT_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>427, 66</value>
-  </metadata>
-  <metadata name="timer_Eliminar_Agrandar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>665, 66</value>
-  </metadata>
-  <metadata name="timer_Eliminar_Reducir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>672, 91</value>
-  </metadata>
-  <metadata name="timer_RecargarBDs.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>840, 71</value>
-  </metadata>
-  <metadata name="timer_Transicion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1036, 73</value>
-  </metadata>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJwAAABLCAYAAACFg+7aAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1

@@ -36,6 +36,10 @@ namespace Diseño
         int celularesEspera;
         int celularesEsperaPorcentaje;
         string celularesEsperaConversion;
+        bool dragTrue = false;
+        bool maxim;
+        int mouseStartX, mouseStartY;
+        string transicion;
 
         string celularesArregladosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado'";
         string celularesAveriadosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado'";
@@ -49,7 +53,7 @@ namespace Diseño
         Series serie;
 
         //Arreglos y atributos:
-        string[] seriesCelulares = {"C. Arreglados", "C. Averiados", "C. en proceso", "C. en espera"};
+        string[] seriesCelulares = { "C. Arreglados", "C. Averiados", "C. en proceso", "C. en espera" };
         int[] PointsCelulares = new int[4];
 
         //Codigo de lo graficos:
@@ -121,6 +125,8 @@ namespace Diseño
         private void Estadisticas_Load(object sender, EventArgs e)
         {
             mostrarGraficoCelulares();
+            transicion = "FadeIn";
+            timer_Transicion.Start();
         }
 
         //Botones del Menu latera:
@@ -241,29 +247,228 @@ namespace Diseño
 
         private void btnTaller_Click(object sender, EventArgs e)
         {
-            Principal show = new Principal();
-            this.Hide();
-            show.Show();
+            //Principal show = new Principal();
+            //this.Hide();
+            //show.Show();
+            transicion = "FadeOutTaller";
+            timer_Transicion.Start();
 
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Usuarios show = new Usuarios();
-            this.Hide();
-            show.Show();
+            //Usuarios show = new Usuarios();
+            //this.Hide();
+            //show.Show();
+
+            transicion = "FadeOutUsuarios";
+            timer_Transicion.Start();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            Clientes show = new Clientes();
-            this.Hide();
-            show.Show();
+            //Clientes show = new Clientes();
+            //this.Hide();
+            //show.Show();
+
+            transicion = "FadeOutClientes";
+            timer_Transicion.Start();
         }
 
         private void panel_Menu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragTrue = true;
+
+                mouseStartX = e.X;
+                mouseStartY = e.Y;
+            }
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragTrue)
+            {
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    this.WindowState = FormWindowState.Normal;
+
+
+                }
+
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                    int mouseX = MousePosition.X;
+                    int mouseY = MousePosition.Y;
+
+                    this.SetDesktopLocation(mouseX - mouseStartX, mouseY - mouseStartY);
+
+                }
+            }
+        }
+
+        private void btnCerrarPrograma_Click(object sender, EventArgs e)
+        {
+            transicion = "FadeOutExit";
+            timer_Transicion.Start();
+        }
+
+        private void timer_Transicion_Tick(object sender, EventArgs e)
+        {
+            if (transicion == "FadeOut")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    this.Hide();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Left += 12;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+                }
+            }
+            else if (transicion == "FadeIn")
+            {
+                if (this.Opacity == 1)
+                {
+                    timer_Transicion.Stop();
+                }
+                else
+                {
+                    this.Opacity += .15;
+                }
+            }
+            else if (transicion == "FadeOutExit")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Left += 12;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+
+                }
+            }
+            else if (transicion == "FadeOutTaller")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Principal show = new Principal();
+                    this.Hide();
+                    show.Show();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Top -= 12;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+
+                }
+            }
+            else if (transicion == "FadeOutClientes")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Clientes show = new Clientes();
+                    this.Hide();
+                    show.Show();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Top -= 12;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+
+                }
+            }
+            else if (transicion == "FadeOutUsuarios")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Usuarios show = new Usuarios();
+                    this.Hide();
+                    show.Show();
+                }
+                else
+                {
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Top -= 12;
+                    }
+                    else
+                    {
+                        this.Opacity -= .15;
+                    }
+
+                }
+            }
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragTrue = false;
+
+            if (this.Top <= 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }

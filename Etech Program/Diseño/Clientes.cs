@@ -31,6 +31,8 @@ namespace Diseño
         string option;
         string busqueda;
         string transicion;
+        bool drag;
+        int mouseStartX, mouseStartY;
 
         //Instancias:
         Principal Taller = new Principal();
@@ -724,7 +726,23 @@ namespace Diseño
                 btnCerrarSesion.BackColor = Color.FromArgb(255, 40, 40);
                 btnMenuPrincipal.BackColor = Color.FromArgb(255, 40, 40);
 
-                tablaClientes.Location = new Point(124, 78);
+                //tablaClientes.Location = new Point(124, 78);
+                if (panel_Agregar.Visible == true)
+                {
+                    panel_Agregar.SendToBack();
+                }
+                else if (panel_Modificar.Visible)
+                {
+                    panel_Modificar.SendToBack();
+                }
+                else if (panel_Eliminar.Visible)
+                {
+                    panel_Eliminar.SendToBack();
+                }
+                else if (panel_Menu.Visible)
+                {
+                    panel_Menu.SendToBack();
+                }
             }
             else
             {
@@ -744,7 +762,7 @@ namespace Diseño
                 btnModificar.FlatStyle = FlatStyle.Flat;
                 btnEliminar.FlatStyle = FlatStyle.Flat;
                 btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-                tablaClientes.Location = new Point(49, 78);
+                //tablaClientes.Location = new Point(49, 78);
             }
         }
 
@@ -1277,7 +1295,7 @@ namespace Diseño
                 if (this.Opacity == 0)
                 {
                     timer_Transicion.Stop();
-                    
+
                 }
                 else
                 {
@@ -1292,7 +1310,7 @@ namespace Diseño
                     {
                         this.Opacity -= .15;
                         Taller.Show();
-                        this.Hide(); 
+                        this.Hide();
                     }
                 }
             }
@@ -1322,7 +1340,7 @@ namespace Diseño
             }
             if (transicion == "FadeOutEstadisticas")
             {
-                if(this.Opacity == 1)
+                if (this.Opacity == 1)
                 {
                     timer_Transicion.Stop();
                 }
@@ -1398,10 +1416,53 @@ namespace Diseño
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult seguro = MessageBox.Show("¿Está seguro que quiere Cerrar el programa?\n\nEsto es diferente de cerrar sesión.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
+
             if (seguro == DialogResult.Yes)
             {
                 Application.Exit();
+            }
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    this.WindowState = FormWindowState.Normal;
+
+
+                }
+
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                    int mouseX = MousePosition.X;
+                    int mouseY = MousePosition.Y;
+
+                    this.SetDesktopLocation(mouseX - mouseStartX, mouseY - mouseStartY);
+
+                }
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+
+            if (this.Top <= 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                drag = true;
+
+                mouseStartX = e.X;
+                mouseStartY = e.Y;
             }
         }
     }

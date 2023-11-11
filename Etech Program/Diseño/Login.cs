@@ -17,6 +17,8 @@ namespace Diseño
         private string Password;
         string sql;
         string transicion;
+        bool drag;
+        int mouseStartX, mouseStartY;
 
         public Login()
         {
@@ -211,31 +213,31 @@ namespace Diseño
 
             //Se supone que igual esto es un ejemplo para poder hacer que el programa sea más seguro, sino cualquiera entra, mete un usuario y ve la BD.
 
-            if (txtNombre.Text.Equals("etech"))
-            {
-                userRootOk = true;
-            }
-            else
-            {
-                MessageBox.Show("Usuario Incorrecto", "Dato Erroneo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            //if (txtNombre.Text.Equals("etech"))
+            //{
+                ////userRootOk = true;
+            //}
+            //else
+            //{
+                //MessageBox.Show("Usuario Incorrecto", "Dato Erroneo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
 
-            if (txtPass.Text.Equals("123"))
-            {
-                passRootOK = true;
-            }
-            else
-            {
-                MessageBox.Show("Contraseña Incorrecta", "Dato Erroneo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            //if (txtPass.Text.Equals("123"))
+            //{
+                //passRootOK = true;
+            //}
+            //else
+            //{
+                //MessageBox.Show("Contraseña Incorrecta", "Dato Erroneo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
 
-            if (userRootOk && passRootOK)
-            {
+            ////if (userRootOk && passRootOK)
+            //{
                 RegistroUsuarios mostrar = new RegistroUsuarios();
                 transicion = "FadeOut";
                 timer_AparecerSuavemente.Start();
                 mostrar.Show();
-            }
+            //}
 
             //Si, ya se que se puede acortar el código, pero es solo un ejemplo... de momento.
 
@@ -255,12 +257,12 @@ namespace Diseño
 
         private void txtPass_MouseEnter(object sender, System.EventArgs e)
         {
-            toolTip1.SetToolTip(txtPass, "La contraseña que ustéd ha elegido o que \nsu Jefe o Empleador le ha proporcionado.");
+            toolTip1.SetToolTip(txtPass, "La contraseña!.");
         }
 
         private void txtNombre_MouseEnter(object sender, System.EventArgs e)
         {
-            toolTip1.SetToolTip(txtNombre, "Acá va el ID que le proporcionó su Jefe o Empleador.");
+            toolTip1.SetToolTip(txtNombre, "Acá va su nombre de Usuario.");
         }
 
         private void timer_AparecerSuavemente_Tick(object sender, EventArgs e)
@@ -303,7 +305,7 @@ namespace Diseño
                     this.Left = this.Left + 3;
                 }
             }
-
+            
         }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
@@ -328,6 +330,46 @@ namespace Diseño
             {
                 this.WindowState = FormWindowState.Minimized;
             }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                drag = true; 
+
+                mouseStartX = e.X;
+                mouseStartY = e.Y;
+            }
+
+
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    this.WindowState = FormWindowState.Normal;
+
+
+                }
+
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                    int mouseX = MousePosition.X;
+                    int mouseY = MousePosition.Y;
+
+                    this.SetDesktopLocation(mouseX - mouseStartX, mouseY - mouseStartY);
+
+                }
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
         }
     }
 }
