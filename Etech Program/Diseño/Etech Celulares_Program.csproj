@@ -270,6 +270,12 @@
     <None Include="Resources\contexto.png" />
     <None Include="Resources\contexto %281%29.png" />
     <None Include="Resources\menu1.png" />
+    <None Include="Resources\maximizar1.png" />
+    <None Include="Resources\cuadricula.png" />
+    <None Include="Resources\minimizar-signo.png" />
+    <None Include="Resources\menos %281%29.png" />
+    <None Include="Resources\cruzado.png" />
+    <None Include="Resources\cruzado %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

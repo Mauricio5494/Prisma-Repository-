@@ -268,68 +268,6 @@ namespace Diseño
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //if (Seguridad.getInvitado == false)
-            //{
-
-            //    if (panel_Agregar.Height < 1)
-            //    {
-            //        //panel agregar
-            //        timer_Agregar_Agrandar.Enabled = false;
-            //        timer_Agregar_Reducir.Enabled = true;
-
-            //        //panel eliminar
-            //        timer_Eliminar_Reducir.Enabled = true;
-            //        timer_Eliminar_Agrandar.Enabled = false;
-
-            //        //panel modificar
-            //        timer_Modificar_Agrandar.Enabled = false;
-            //        timer_Modificar_Reducir.Enabled = true;
-
-            //        //panel menu
-            //        timer_Menu_Agrandar.Enabled = false;
-            //        timer_Menu_Reducir.Enabled = true;
-
-            //        //Detalles:
-            //        pictureBox1.SendToBack();
-
-            //        ////tabIndex, tamaño y locación.
-            //        //tabIndex_Pestañas.Width = 880;
-            //        //tabIndex_Pestañas.Location = new Point(474, 73);
-
-            //        if (tabIndex_Pestañas.SelectedTab == tab_Celulares)
-            //        {
-            //            timer_GroupBox_AgregarC_Agrandar.Enabled = true;
-            //            timer_GroupBox_AgregarC_Reducir.Enabled = false;
-
-            //            timer_GroupBox_AgregarT_Agrandar.Enabled = false;
-            //            timer_GroupBox_AgregarT_Reducir.Enabled = true;
-            //        }
-
-            //        else if (tabIndex_Pestañas.SelectedTab == tab_Trabajos)
-            //        {
-            //            timer_GroupBox_AgregarT_Agrandar.Enabled = true;
-            //            timer_GroupBox_AgregarT_Reducir.Enabled = false;
-
-            //            timer_GroupBox_EliminarC_Agrandar.Enabled = false;
-            //            timer_GroupBox_AgregarC_Reducir.Enabled = true;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        timer_Agregar_Agrandar.Enabled = false;
-            //        timer_Agregar_Reducir.Enabled = true;
-
-            //        //tabIndex_Pestañas.Width = 1305;
-            //        //tabIndex_Pestañas.Location = new Point(49, 73);
-            //    }
-
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            //}
-
             if (Seguridad.getInvitado == false)
             {
                 if (panel_Agregar.Height < 1)
@@ -378,6 +316,10 @@ namespace Diseño
                     //tabIndex_Pestañas.Width = 1305;
                     //tabIndex_Pestañas.Location = new Point(49, 73);
                 }
+                if (panelD.Width == 119)
+                {
+                    btnMenu_Click(sender, e);
+                }
             }
         }
 
@@ -417,7 +359,10 @@ namespace Diseño
                     timer_Modificar_Agrandar.Enabled = false;
                     timer_Modificar_Reducir.Enabled = true;
                 }
-
+                if (panelD.Width == 119)
+                {
+                    btnMenu_Click(sender, e);
+                }
             }
         }
 
@@ -490,6 +435,11 @@ namespace Diseño
             {
                 MessageBox.Show("Si quiere realizar cualquer cambio sobre la informacion debe ingresar como un usuario", "Un momento!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+
+            if (panelD.Width == 119)
+            {
+                btnMenu_Click(sender, e);
+            }
         }
 
         private void btnMenu_Principal(object sender, EventArgs e)
@@ -549,6 +499,11 @@ namespace Diseño
 
                 panel_Menu.Enabled = false;
                 panel_Menu.SendToBack();
+            }
+
+            if (panelD.Width == 119)
+            {
+                btnMenu_Click(sender, e);
             }
         }
 
@@ -878,8 +833,8 @@ namespace Diseño
                             imei = txtIMEI_Modificar.Text;
                             string detalles = txtDetallesUobservaciones_Modificar.Text;
 
-                            DateTime tomarIngreso = dateTimePicker_FechaDeIngreso_Modificar.Value;
-                            DateTime tomarPlazo = dateTimePicker_Plazo_Modificar.Value;
+                            DateTime tomarIngreso = dtp_ModificarCelular_Plazo.Value;
+                            DateTime tomarPlazo = dtp_ModificarIngresoCelulares.Value;
 
                             string ingresoFormat = tomarIngreso.ToString("yyyy-MM-dd");
                             string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
@@ -906,7 +861,7 @@ namespace Diseño
                                 estado = "En Espera";
                             }
 
-                            modifcarCelulares = $"UPDATE celulares SET ModeloYOmarca = @ModeloYOmarca, IMEI = @IMEI, Estado = @Estado, Ingreso = @Ingreso, Plazo = @Plazo , Adelanto = @Adelanto, Presupuesto = @Presupuesto, Detalles = @Detalles WHERE ID = @ID";
+                            modifcarCelulares = $"UPDATE celulares SET ModeloYOmarca = @ModeloYOmarca, ID_Usuario = @ID_Usuario, IMEI = @IMEI, Estado = @Estado, Ingreso = @Ingreso, Plazo = @Plazo, Adelanto = @Adelanto, Presupuesto = @Presupuesto, Detalles = @Detalles WHERE ID = @ID";
                             cmd = new MySqlCommand(modifcarCelulares, conn);
 
                             cmd.Parameters.AddWithValue("@ModeloYOmarca", modelo);
@@ -1132,22 +1087,19 @@ namespace Diseño
         //Botones del Menu principal:
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Usuarios mostrar = new Usuarios();
-            mostrar.Show();
-            this.Hide();
+            transicion = "FadeOutUsuarios";
+            timer_Transicion.Start();
         }
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            Clientes mostrar = new Clientes();
-            mostrar.Show();
-            this.Hide();
+            transicion = "FadeOutClientes";
+            timer_Transicion.Start();
         }
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
-            Estadisticas mostrar = new Estadisticas();
-            mostrar.Show();
-            this.Hide();
+            transicion = "FadeOutEstadisticas";
+            timer_Transicion.Start();
         }
 
         //Timers de los paneles:
@@ -1772,43 +1724,6 @@ namespace Diseño
             }
         }
 
-
-        //public List<Tecnicos> ObtenerParaFiltrarTecnicos()
-        //{
-        //    List<Tecnicos> listatecnicos = new List<Tecnicos>();
-        //    try
-        //    {
-        //        conn.Open();
-        //        string query = $"SELECT ID, Nombre FROM tecnicos WHERE Baja = 0 AND LIKE '%{comboBox_AgregarCelular_IdDelTecnicoAcargo.Text}%'";
-        //        cmd = new MySqlCommand(query, conn);
-        //        reader = cmd.ExecuteReader();
-
-        //        while (reader.Read())
-        //        {
-        //            string nombre = reader["Nombre"].ToString();
-        //            string id = reader["ID"].ToString();
-
-        //            Tecnicos tecnico = new Tecnicos
-        //            {
-        //                Nombre = nombre,
-        //                ID = id
-        //            };
-
-        //            listatecnicos.Add(tecnico);
-        //        }
-        //    }
-        //    catch
-        //    {
-
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-
-        //    return listatecnicos;
-        //}
-
         private void MostrarNombreYelIDdelTecnicoEnUnComboBox()
         {
 
@@ -1817,7 +1732,11 @@ namespace Diseño
                 try
                 {
                     string query = $"SELECT ID, Nombre FROM usuarios WHERE Baja = 0";
-                    conn.Open();
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
 
@@ -1868,8 +1787,12 @@ namespace Diseño
 
             try
             {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
                 string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
-                //conn.Open();
                 cmd = new MySqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
 
@@ -2188,58 +2111,9 @@ namespace Diseño
             }
         }
 
-        private List<Cliente> listaClientes = new List<Cliente>();
-
-        private void BusquedaPorNombre(string nombre)
-        {
-            if (!string.IsNullOrEmpty(nombre))
-            {
-
-                foreach (Cliente cliente in listaClientes)
-                {
-                    if (cliente.Nombre.Contains(nombre))
-                    {
-                        combobox_CI_Del_Dueño_Modificar.Items.Add(nombre);
-                    }
-                }
-            }
-            else
-            {
-                combobox_CI_Del_Dueño_Modificar.Items.AddRange(listaClientes.ToArray());
-            }
-        }
-
-
-        private void combobox_CI_Del_Dueño_Modificar_TextChanged(object sender, EventArgs e)
-        {
-
-            BusquedaPorNombre(combobox_CI_Del_Dueño_Modificar.Text);
-
-            //ComboBox evento = (ComboBox)sender;
-
-            //string busqueda = evento.Text;
-
-
-            //List<Cliente> filtroDeClientes = listaClientes.Where(clientes => clientes.Nombre.Contains(busqueda) || clientes.Cedula.Contains(busqueda)).ToList();
-
-
-            //evento.Items.AddRange(filtroDeClientes.ToArray());
-        }
-
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             MostrarDatosEnLasTablasCelulares();
-        }
-
-        private void tablaTrabajos_CellBorderStyleChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void combobox_IDCelular_Modificar_Trabajo_Click(object sender, EventArgs e)
-        {
-            //combobox_IDCelular_Modificar_Trabajo.Items.Clear();
-            //MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
         }
 
         private void combobox_IDTecnico_Modificar_Trabajo_Click(object sender, EventArgs e)
@@ -2282,6 +2156,8 @@ namespace Diseño
                     string modeloYOmarca = filaSeleccionada.Cells["ModeloYOmarca"].Value.ToString();
                     string adelanto = filaSeleccionada.Cells["Adelanto"].Value.ToString();
                     string presupuesto = filaSeleccionada.Cells["Presupuesto"].Value.ToString();
+                    string tomarPlazo = filaSeleccionada.Cells["Plazo"].Value.ToString();
+                    string tomarIngreso = filaSeleccionada.Cells["Ingreso"].Value.ToString();
 
                     //comboboxes:
                     string nombreTecnico = filaSeleccionada.Cells["Nombre"].Value.ToString();
@@ -2293,6 +2169,8 @@ namespace Diseño
                     txtModelo_Modificar.Text = modeloYOmarca;
                     txt_PresupuestoModificar.Text = presupuesto;
                     txt_AdelantoModificar.Text = adelanto;
+                    dtp_ModificarCelular_Plazo.Value = DateTime.Parse(tomarPlazo);
+                    dtp_ModificarIngresoCelulares.Value = DateTime.Parse(tomarIngreso);
 
                     if (estado == "Averiado")
                     {
@@ -2353,6 +2231,7 @@ namespace Diseño
                     {
                         conn.Close();
                     }
+
                 }
 
                 // para dar de baja los celulares.
@@ -2437,6 +2316,66 @@ namespace Diseño
                     }
                 }
             }
+            else if (transicion == "FadeOutClientes")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Clientes show = new Clientes();
+                    this.Hide();
+                    show.Show();
+                }
+                else
+                {
+                    this.Opacity -= .15;
+
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Top -= 12;
+                    }
+                }
+            }
+            else if (transicion == "FadeOutEstadisticas")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Estadisticas show = new Estadisticas();
+                    this.Hide();
+                    show.Show();
+                }
+                else
+                {
+                    this.Opacity -= .15;
+
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Top -= 12;
+                    }
+                }
+            }
+            else if (transicion == "FadeOutUsuarios")
+            {
+                if (this.Opacity == 0)
+                {
+                    timer_Transicion.Stop();
+                    Usuarios show = new Usuarios();
+                    this.Hide();
+                    show.Show();
+                }
+                else
+                {
+                    this.Opacity -= .15;
+
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        this.Opacity -= .15;
+                        this.Top -= 12;
+                    }
+                }
+            }
         }
 
         private void tablaCelulares_KeyDown(object sender, KeyEventArgs e)
@@ -2448,18 +2387,6 @@ namespace Diseño
             }
         }
 
-        private void comboBox_AgregarCelular_CedulaDelDueño_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void comboBox_AgregarCelular_CedulaDelDueño_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-
-
         private void comboBox_AgregarCelular_CedulaDelDueño_TextChanged(object sender, EventArgs e)
         {
             if (comboBox_AgregarCelular_CedulaDelDueño.Text.Length == 0)
@@ -2469,7 +2396,10 @@ namespace Diseño
 
                     if (comboBox_AgregarCelular_CedulaDelDueño.Text == "")
                     {
-                        //conn.Open();
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open(); 
+                        }
                         string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
                         cmd = new MySqlCommand(query, conn);
                         reader = cmd.ExecuteReader();
@@ -2501,7 +2431,10 @@ namespace Diseño
                 }
                 finally
                 {
-                    conn.Close();
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close(); 
+                    }
                 }
             }
         }
@@ -2544,7 +2477,10 @@ namespace Diseño
                 }
                 else
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open(); 
+                    }
                     string abrir;
                     string query = $"SELECT Nombre, Cedula FROM Clientes WHERE Nombre LIKE '%{busqueda}%' AND Baja = 0";
                     cmd = new MySqlCommand(query, conn);
@@ -2589,7 +2525,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close(); 
+                }
             }
         }
 
@@ -2730,7 +2669,7 @@ namespace Diseño
                 {
                     if (conn.State == ConnectionState.Closed)
                     {
-                        conn.Open(); 
+                        conn.Open();
                     }
 
                     string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
@@ -2757,7 +2696,6 @@ namespace Diseño
                             Cedula = cedula
                         });
                     }
-
 
                 }
                 else
@@ -2992,7 +2930,7 @@ namespace Diseño
             if (seguro == DialogResult.Yes)
             {
                 transicion = "FadeExit";
-                timer_Transicion.Start(); 
+                timer_Transicion.Start();
             }
         }
 
@@ -3050,6 +2988,97 @@ namespace Diseño
             if (this.Top <= 0)
             {
                 this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void combobox_CI_Del_Dueño_Modificar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Que si y sino que no, si.
+
+            if (e.KeyChar != (char)Keys.Enter || e.KeyChar != (char)Keys.Back)
+            {
+                btn_ModificarClientes_Buscar_Click(sender, e);
+                e.Handled = false;
+                combobox_CI_Del_Dueño_Modificar.SelectionStart = combobox_CI_Del_Dueño_Modificar.Text.Length;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (combobox_CI_Del_Dueño_Modificar.Items.Count > 0)
+                {
+                    combobox_CI_Del_Dueño_Modificar.SelectedItem = combobox_CI_Del_Dueño_Modificar.Items[0]; 
+                }
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+
+        }
+
+        private void comboBox_ModificarTecnicoACargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)Keys.Enter || e.KeyChar != (char)Keys.Back)
+            {
+                btn_ModificarTecnicoACargo_Buscar_Click(sender, e);
+                e.Handled = false;
+                comboBox_ModificarTecnicoACargo.SelectionStart = comboBox_ModificarTecnicoACargo.Text.Length;
+            }
+            if(e.KeyChar != (char)Keys.Enter)
+            {
+                if (comboBox_ModificarTecnicoACargo.Items.Count > 0)
+                {
+                    comboBox_ModificarTecnicoACargo.SelectedItem = comboBox_ModificarTecnicoACargo.Items[0];
+                }
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void comboBox_AgregarCelular_CedulaDelDueño_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)Keys.Enter || e.KeyChar != (char)Keys.Back)
+            {
+                button1_Click(sender, e);
+                e.Handled = false;
+                comboBox_AgregarCelular_CedulaDelDueño.SelectionStart = comboBox_AgregarCelular_CedulaDelDueño.Text.Length;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (comboBox_AgregarCelular_CedulaDelDueño.Items.Count > 0)
+                {
+                    comboBox_AgregarCelular_CedulaDelDueño.SelectedItem = comboBox_AgregarCelular_CedulaDelDueño.Items[0];
+                }
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void comboBox_AgregarCelular_IdDelTecnicoAcargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)Keys.Enter || e.KeyChar != (char)Keys.Back)
+            {
+                button1_Click_1(sender, e);
+                e.Handled = false;
+                comboBox_AgregarCelular_IdDelTecnicoAcargo.SelectionStart = comboBox_AgregarCelular_IdDelTecnicoAcargo.Text.Length;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (comboBox_AgregarCelular_IdDelTecnicoAcargo.Items.Count > 0)
+                {
+                    comboBox_AgregarCelular_IdDelTecnicoAcargo.SelectedItem = comboBox_AgregarCelular_IdDelTecnicoAcargo.Items[0];
+                }
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
 

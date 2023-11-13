@@ -90,9 +90,6 @@
             this.timer_Eliminar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.groupBox_Menu = new System.Windows.Forms.GroupBox();
-            this.btnTaller = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.timer_Menu_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_Menu_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_RecargarBD = new System.Windows.Forms.Timer(this.components);
@@ -100,15 +97,18 @@
             this.timer_Transicion = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.labNombreDelForm = new System.Windows.Forms.Label();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.asd = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox_EtechLogo_PanelMenu = new System.Windows.Forms.PictureBox();
+            this.btnTaller = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.pictureBox_Taller = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
@@ -776,52 +776,6 @@
             this.groupBox_Menu.TabStop = false;
             this.groupBox_Menu.Text = "MENÚ";
             // 
-            // btnTaller
-            // 
-            this.btnTaller.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnTaller.BackColor = System.Drawing.Color.White;
-            this.btnTaller.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTaller.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaller.Image = global::Diseño.Properties.Resources.telefono_inteligente__2_;
-            this.btnTaller.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaller.Location = new System.Drawing.Point(4, 23);
-            this.btnTaller.Name = "btnTaller";
-            this.btnTaller.Size = new System.Drawing.Size(401, 80);
-            this.btnTaller.TabIndex = 2;
-            this.btnTaller.Text = "TALLER";
-            this.btnTaller.UseVisualStyleBackColor = false;
-            this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.BackColor = System.Drawing.Color.White;
-            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.vigilancia;
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(4, 195);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(401, 80);
-            this.btnEstadisticas.TabIndex = 1;
-            this.btnEstadisticas.Text = "ESTADISTICAS";
-            this.btnEstadisticas.UseVisualStyleBackColor = false;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.White;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::Diseño.Properties.Resources.work_from_home;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(5, 109);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(401, 80);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "USUARIOS";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
             // timer_Menu_Agrandar
             // 
             this.timer_Menu_Agrandar.Interval = 1;
@@ -907,45 +861,6 @@
             this.labNombreDelForm.TabIndex = 18;
             this.labNombreDelForm.Text = "Etech | Clientes";
             // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.White;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::Diseño.Properties.Resources.menos;
-            this.btnMinimizar.Location = new System.Drawing.Point(1229, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(48, 25);
-            this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.BackColor = System.Drawing.Color.White;
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Image = global::Diseño.Properties.Resources.maximizar_tamano;
-            this.btnMaximizar.Location = new System.Drawing.Point(1276, 0);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(48, 25);
-            this.btnMaximizar.TabIndex = 1;
-            this.btnMaximizar.UseVisualStyleBackColor = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.White;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::Diseño.Properties.Resources.cerrar_ventana__1_;
-            this.btnCerrar.Location = new System.Drawing.Point(1323, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(48, 25);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.button2_Click);
-            // 
             // asd
             // 
             this.asd.BackColor = System.Drawing.Color.White;
@@ -1008,6 +923,45 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = global::Diseño.Properties.Resources.menos__1_;
+            this.btnMinimizar.Location = new System.Drawing.Point(1229, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(48, 25);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Image = global::Diseño.Properties.Resources.cuadricula;
+            this.btnMaximizar.Location = new System.Drawing.Point(1276, 0);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(48, 25);
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::Diseño.Properties.Resources.cruzado__1_;
+            this.btnCerrar.Location = new System.Drawing.Point(1323, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(48, 25);
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.button2_Click);
+            // 
             // pictureBox_EtechLogo_PanelMenu
             // 
             this.pictureBox_EtechLogo_PanelMenu.Image = global::Diseño.Properties.Resources.logo_etech_uruguay_220_e1654881097513_LARGE_Edited;
@@ -1016,6 +970,52 @@
             this.pictureBox_EtechLogo_PanelMenu.Size = new System.Drawing.Size(161, 71);
             this.pictureBox_EtechLogo_PanelMenu.TabIndex = 1;
             this.pictureBox_EtechLogo_PanelMenu.TabStop = false;
+            // 
+            // btnTaller
+            // 
+            this.btnTaller.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnTaller.BackColor = System.Drawing.Color.White;
+            this.btnTaller.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTaller.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller.Image = global::Diseño.Properties.Resources.telefono_inteligente__2_;
+            this.btnTaller.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaller.Location = new System.Drawing.Point(4, 23);
+            this.btnTaller.Name = "btnTaller";
+            this.btnTaller.Size = new System.Drawing.Size(401, 80);
+            this.btnTaller.TabIndex = 2;
+            this.btnTaller.Text = "TALLER";
+            this.btnTaller.UseVisualStyleBackColor = false;
+            this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackColor = System.Drawing.Color.White;
+            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Image = global::Diseño.Properties.Resources.vigilancia;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(4, 195);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(401, 80);
+            this.btnEstadisticas.TabIndex = 1;
+            this.btnEstadisticas.Text = "ESTADISTICAS";
+            this.btnEstadisticas.UseVisualStyleBackColor = false;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.White;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Image = global::Diseño.Properties.Resources.work_from_home;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(5, 109);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(401, 80);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // pictureBox_Taller
             // 
