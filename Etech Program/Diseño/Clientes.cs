@@ -356,7 +356,15 @@ namespace Diseño
                 {
                     txtCI_Eliminar.Text = clavePrimaria.ToString();
                 }
+
+                txtCedula_Modificar.Text = tablaClientes.Rows[numeroDeFila].Cells["Cedula"].Value.ToString();
+                txtNombre_Modificar.Text = tablaClientes.Rows[numeroDeFila].Cells["Nombre"].Value.ToString();
+                txtTelefono_Modificar.Text = tablaClientes.Rows[numeroDeFila].Cells["Telefono"].Value.ToString();
+                txtCorreoElectronico_Modificar.Text = tablaClientes.Rows[numeroDeFila].Cells["CorreoElectronico"].Value.ToString();
+                txtCelular_Modificar.Text = tablaClientes.Rows[numeroDeFila].Cells["Celular"].Value.ToString();
             }
+
+            labelSeleccion_Modificar.Text = "Selección: " + clavePrimaria.ToString();
         }
 
         //Botones con sentencias SQL:
@@ -409,268 +417,58 @@ namespace Diseño
 
         private void btnModificarCliente_Click(object sender, EventArgs e)
         {
-            if (comboBoxModificar.Text.Equals("Todas..."))
+            if (txtCedula_Modificar.Text != "" && txtNombre_Modificar.Text != "" && txtTelefono_Modificar.Text != "" && txtCorreoElectronico_Modificar.Text != "" && txtCedula_Modificar.Text != "")
             {
-                if (txtCedula_Modificar.Text != "" && txtNombre_Modificar.Text != "" && txtTelefono_Modificar.Text != "" && txtCorreoElectronico_Modificar.Text != "" && txtCedula_Modificar.Text != "")
-                {
+
                     cedula = txtCedula_Modificar.Text;
                     nombre = txtNombre_Modificar.Text;
                     telefono = txtTelefono_Modificar.Text;
                     correoElectronico = txtCorreoElectronico_Modificar.Text;
-                    celular = txtCedula_Modificar.Text;
+                    celular = txtCelular_Modificar.Text;
+                try
+                {
+                    conn.Open();
+                    modificar = $"UPDATE clientes SET Cedula = @Cedula, Nombre = @Nombre, Telefono = @Telefono, Celular = @Celular, CorreoElectronico = @CorreoElectronico WHERE Cedula = @Claveprimaria";
+                    cmd = new MySqlCommand(modificar, conn);
 
-                    modificar = "UPDATE clientes SET Cedula = '" + cedula + "', Nombre = '" + nombre + "', Telefono = '" + telefono + "', CorreoElectronico = '" + correoElectronico + "', Celular = '" + celular + "' WHERE Cedula = '" + clavePrimaria + "';";
+
+                    cmd.Parameters.AddWithValue("@Cedula", cedula);
+                    cmd.Parameters.AddWithValue("@Nombre", nombre);
+                    cmd.Parameters.AddWithValue("@Telefono", telefono);
+                    cmd.Parameters.AddWithValue("@Celular", celular);
+                    cmd.Parameters.AddWithValue("@CorreoElectronico", correoElectronico);
+                    cmd.Parameters.AddWithValue("@Claveprimaria", clavePrimaria);
 
                     try
                     {
-                        conn.Open();
-                        cmd = new MySqlCommand(modificar, conn);
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                            txtCelular_Modificar.Text = "";
-                            txtNombre_Modificar.Text = "";
-                            txtTelefono_Modificar.Text = "";
-                            txtCorreoElectronico_Modificar.Text = "";
-                            txtCelular_Modificar.Text = "";
-                            txtNuevaInformacion.Text = "";
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se modifico correctamente el cliente\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        cmd.ExecuteNonQuery();
+
+                        txtCedula_Modificar.Text = "";
+                        txtNombre_Modificar.Text = "";
+                        txtTelefono_Modificar.Text = "";
+                        txtCorreoElectronico_Modificar.Text = "";
+                        txtCelular_Modificar.Text = "";
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                        MostrarDatosEnLaTablaClientes();
+                        MessageBox.Show("No se modifico correctamente el cliente\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    conn.Close();
+                    MostrarDatosEnLaTablaClientes();
                 }
             }
             else
             {
-                columna = comboBoxModificar.Text;
-
-                switch (columna)
-                {
-                    case "Cedula":
-                        if (txtNuevaInformacion.Text != "")
-                        {
-                            cedula = txtNuevaInformacion.Text;
-
-                            modificar = "UPDATE clientes SET Cedula = '" + cedula + "' WHERE Cedula = '" + clavePrimaria + "';";
-
-                            try
-                            {
-                                conn.Open();
-                                cmd = new MySqlCommand(modificar, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    txtCelular_Modificar.Text = "";
-                                    txtNombre_Modificar.Text = "";
-                                    txtTelefono_Modificar.Text = "";
-                                    txtCorreoElectronico_Modificar.Text = "";
-                                    txtCelular_Modificar.Text = "";
-                                    txtNuevaInformacion.Text = "";
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se modifico correctamente el cliente\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                                MostrarDatosEnLaTablaClientes();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                        }
-                        break;
-
-                    case "Nombre":
-                        if (txtNuevaInformacion.Text != "")
-                        {
-                            nombre = txtNuevaInformacion.Text;
-
-                            modificar = "UPDATE clientes SET Nombre = '" + nombre + "' WHERE Cedula = '" + clavePrimaria + "';";
-
-                            try
-                            {
-                                conn.Open();
-                                cmd = new MySqlCommand(modificar, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    txtCelular_Modificar.Text = "";
-                                    txtNombre_Modificar.Text = "";
-                                    txtTelefono_Modificar.Text = "";
-                                    txtCorreoElectronico_Modificar.Text = "";
-                                    txtCelular_Modificar.Text = "";
-                                    txtNuevaInformacion.Text = "";
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se modifico correctamente el cliente\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                                MostrarDatosEnLaTablaClientes();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                        }
-                        break;
-
-                    case "Telefono":
-                        if (txtNuevaInformacion.Text != "")
-                        {
-                            telefono = txtNuevaInformacion.Text;
-
-                            modificar = "UPDATE clientes SET Telefono = '" + telefono + "' WHERE Cedula = '" + clavePrimaria + "';";
-
-                            try
-                            {
-                                conn.Open();
-                                cmd = new MySqlCommand(modificar, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    txtCelular_Modificar.Text = "";
-                                    txtNombre_Modificar.Text = "";
-                                    txtTelefono_Modificar.Text = "";
-                                    txtCorreoElectronico_Modificar.Text = "";
-                                    txtCelular_Modificar.Text = "";
-                                    txtNuevaInformacion.Text = "";
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se modifico correctamente el cliente\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                                MostrarDatosEnLaTablaClientes();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                        }
-                        break;
-
-                    case "Correo Electronico":
-                        if (txtNuevaInformacion.Text != "")
-                        {
-                            correoElectronico = txtNuevaInformacion.Text;
-
-                            modificar = "UPDATE clientes SET CorreoElectronico = '" + correoElectronico + "' WHERE Cedula = '" + clavePrimaria + "';";
-
-                            try
-                            {
-                                conn.Open();
-                                cmd = new MySqlCommand(modificar, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    txtCelular_Modificar.Text = "";
-                                    txtNombre_Modificar.Text = "";
-                                    txtTelefono_Modificar.Text = "";
-                                    txtCorreoElectronico_Modificar.Text = "";
-                                    txtCelular_Modificar.Text = "";
-                                    txtNuevaInformacion.Text = "";
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se modifico correctamente el cliente\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                                MostrarDatosEnLaTablaClientes();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                        }
-                        break;
-                    case "Celular":
-                        if (txtNuevaInformacion.Text != "")
-                        {
-                            celular = txtNuevaInformacion.Text;
-
-                            modificar = "UPDATE clientes SET Celular = '" + celular + "' WHERE Cedula = '" + clavePrimaria + "';";
-
-                            try
-                            {
-                                conn.Open();
-                                cmd = new MySqlCommand(modificar, conn);
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    txtCelular_Modificar.Text = "";
-                                    txtNombre_Modificar.Text = "";
-                                    txtTelefono_Modificar.Text = "";
-                                    txtCorreoElectronico_Modificar.Text = "";
-                                    txtCelular_Modificar.Text = "";
-                                    txtNuevaInformacion.Text = "";
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("No se modifico correctamente el cliente\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Fallo la conexion con el servidor o la base de datos\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                                MostrarDatosEnLaTablaClientes();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                        }
-                        break;
-                }
+                MessageBox.Show("No deje un campo de texto obligatorio en blanco", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+
         }
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
@@ -879,89 +677,6 @@ namespace Diseño
             }
         }
 
-        private void comboBoxModificar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxModificar.Text.Equals("Todas..."))
-            {
-                //lables:
-                labelCedula_Modficiar.Enabled = true;
-                labelCedula_Modficiar.Visible = true;
-
-                labelNombre_Modificar.Enabled = true;
-                labelNombre_Modificar.Visible = true;
-
-                labelTelefono_Modificar.Enabled = true;
-                labelTelefono_Modificar.Visible = true;
-
-                labelCorreoElectronico_Modificar.Enabled = true;
-                labelCorreoElectronico_Modificar.Visible = true;
-
-                labelCelular_Modificar.Enabled = true;
-                labelCedula_Modficiar.Visible = true;
-
-                labelNueva_Informacion.Enabled = false;
-                labelNueva_Informacion.Visible = false;
-
-                //campos de texto:
-                txtCedula_Modificar.Enabled = true;
-                txtCedula_Modificar.Visible = true;
-
-                txtNombre_Modificar.Enabled = true;
-                txtNombre_Modificar.Visible = true;
-
-                txtTelefono_Modificar.Enabled = true;
-                txtTelefono_Modificar.Visible = true;
-
-                txtCorreoElectronico_Modificar.Enabled = true;
-                txtCorreoElectronico_Modificar.Visible = true;
-
-                txtCedula_Modificar.Enabled = true;
-                txtCedula_Modificar.Visible = true;
-
-                txtNuevaInformacion.Enabled = false;
-                txtNuevaInformacion.Visible = false;
-            }
-            else
-            {
-                //lables:
-                labelNueva_Informacion.Enabled = true;
-                labelNueva_Informacion.Visible = true;
-
-                labelCedula_Modficiar.Enabled = false;
-                labelCedula_Modficiar.Visible = false;
-
-                labelNombre_Modificar.Enabled = false;
-                labelNombre_Modificar.Visible = false;
-
-                labelTelefono_Modificar.Enabled = false;
-                labelTelefono_Modificar.Visible = false;
-
-                labelCorreoElectronico_Modificar.Enabled = false;
-                labelCorreoElectronico_Modificar.Visible = false;
-
-                labelCelular_Modificar.Enabled = false;
-                labelCedula_Modficiar.Visible = false;
-
-                //campos de texto:
-                txtNuevaInformacion.Enabled = true;
-                txtNuevaInformacion.Visible = true;
-
-                txtCedula_Modificar.Enabled = false;
-                txtCedula_Modificar.Visible = false;
-
-                txtNombre_Modificar.Enabled = false;
-                txtNombre_Modificar.Visible = false;
-
-                txtTelefono_Modificar.Enabled = false;
-                txtTelefono_Modificar.Visible = false;
-
-                txtCorreoElectronico_Modificar.Enabled = false;
-                txtCorreoElectronico_Modificar.Visible = false;
-
-                txtCedula_Modificar.Enabled = false;
-                txtCedula_Modificar.Visible = false;
-            }
-        }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {

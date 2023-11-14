@@ -740,6 +740,12 @@ namespace Diseño
         {
             //People will be modified... starting tonight... i'm a man of my word.
 
+            string nombre = txtNombre_groupboxModificar_PanelModificar.Text;
+            string contraseña = txtContraseña_groupboxModificar_PanelModificar.Text;
+            string telefono = txtTelefono_groupBoxModificar_PanelModificar.Text;
+            string correo = txtCorreoElectronico_groupBoxModificar_PanelModificar.Text;
+            string celular = txtCelular_groupBoxModificar_PanelModificar.Text;
+
             Confirmacion_Con_ContraseñaMaestro confirmacion = new Confirmacion_Con_ContraseñaMaestro();
 
             if (txtNombre_groupboxModificar_PanelModificar.Text != "" && txtContraseña_groupboxModificar_PanelModificar.Text != "" && txtCorreoElectronico_groupBoxModificar_PanelModificar.Text != "" && txtCelular_groupBoxModificar_PanelModificar.Text != "")
@@ -756,9 +762,15 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                string query = $"UPDATE usuarios SET Nombre ='{txtNombre_groupboxModificar_PanelModificar.Text}', Contraseña ='{txtContraseña_groupboxModificar_PanelModificar.Text}', Telefono ='{txtTelefono_groupBoxModificar_PanelModificar.Text}', CorreoElectronico ='{txtCorreoElectronico_groupBoxModificar_PanelModificar.Text}', Celular ='{txtCelular_groupBoxModificar_PanelModificar.Text}' WHERE ID ={clavePrimariaDelTecnico}";
+                                string query = $"UPDATE usuarios SET Nombre = @Nombre, Contraseña = SHA2(@Contraseña, 256), Telefono =@Telefono, CorreoElectronico = @CorreoElectronico, Celular = @Celular WHERE ID ={clavePrimariaDelTecnico}";
                                 cmd = new MySqlCommand(query, conn);
 
+                                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                                cmd.Parameters.AddWithValue("@Contraseña", contraseña);
+                                cmd.Parameters.AddWithValue("@Telefono", telefono);
+                                cmd.Parameters.AddWithValue("@CorreoElectronico", correo);
+                                cmd.Parameters.AddWithValue("@Celular", celular);
+                                
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
@@ -810,32 +822,6 @@ namespace Diseño
                 DataGridViewRow filaSeleccionada = tabla_Usuarios.Rows[e.RowIndex];
 
                 string seleccion = filaSeleccionada.Cells["ID"].Value.ToString();
-
-                try
-                {
-                    conn.Open();
-                    string query = $"SELECT contraseña FROM Usuarios WHERE ID ={seleccion}";
-                    cmd = new MySqlCommand(query, conn);
-                    reader = cmd.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        string contraseña = reader["Contraseña"].ToString();
-                        txtContraseña_groupboxModificar_PanelModificar.Text = contraseña;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    if (conn.State == ConnectionState.Open)
-                    {
-                        conn.Close();
-                    }
-                }
-
 
                 clavePrimariaDelTecnico = filaSeleccionada.Cells["ID"].Value.ToString();
                 txtID_panelBorrarUsuarios.Text = clavePrimariaDelTecnico;

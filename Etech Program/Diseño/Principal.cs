@@ -118,7 +118,10 @@ namespace Diseño
             try
             {
                 DataTableCelulares.Rows.Clear();
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 cmd = new MySqlCommand("SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -133,7 +136,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
             tablaCelulares.DataSource = DataTableCelulares;
         }
@@ -143,7 +149,10 @@ namespace Diseño
             try
             {
                 DataTableCelulares.Clear();
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 cmd = new MySqlCommand("SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -157,7 +166,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
             tablaCelulares.DataSource = DataTableCelulares;
         }
@@ -510,7 +522,10 @@ namespace Diseño
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Seguridad.SetInvitado = true;
-            conn.Close();
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
             DialogResult siono = MessageBox.Show("¿Está seguro de Cerrar la Sesión?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (siono == DialogResult.Yes)
@@ -528,7 +543,10 @@ namespace Diseño
 
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 string query = $"SELECT Nombre FROM Clientes WHERE Cedula = @cedula";
                 cmd = new MySqlCommand(query, conn);
                 try
@@ -552,7 +570,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
 
             return nombreDelCliente;
@@ -564,7 +585,10 @@ namespace Diseño
 
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 string query = $"SELECT Telefono FROM Clientes WHERE cedula = @cedula";
                 cmd = new MySqlCommand(query, conn);
                 try
@@ -588,7 +612,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
 
             return telefonoDelCliente;
@@ -601,7 +628,10 @@ namespace Diseño
 
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 string query = $"SELECT CorreoElectronico FROM Clientes WHERE Cedula = @cedula";
                 cmd = new MySqlCommand(query, conn);
                 try
@@ -625,7 +655,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
 
             return correoElectronicoDelCliente;
@@ -637,7 +670,10 @@ namespace Diseño
 
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 string query = $"SELECT celular FROM Clientes WHERE cedula = @cedula";
                 cmd = new MySqlCommand(query, conn);
                 try
@@ -661,7 +697,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
 
             return celularDelCliente;
@@ -673,7 +712,10 @@ namespace Diseño
 
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 string query = $"SELECT detalles FROM celulares WHERE ID = {clavePrimariaCelulares}";
                 cmd = new MySqlCommand(query, conn);
                 try
@@ -697,7 +739,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
 
             return estadoDelCelular;
@@ -717,7 +762,10 @@ namespace Diseño
 
                     if (radioButton_Arreglado_Agregar.Checked.Equals(true) || radioButton_Averiado_Agregar.Checked.Equals(true) || radioButton_EnProceso_Agregar.Checked.Equals(true) || radioButton_EnEspera_Agregar.Checked.Equals(true))
                     {
-                        conn.Open();
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open();
+                        }
                         string modeloYOmarca = txtModeloYOmarca_Agregar.Text;
                         string detalles = txtDetallesUobservaciones_Agregar.Text;
 
@@ -804,8 +852,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
-
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
                 MostrarDatosEnLasTablasCelulares();
             }
         }
@@ -828,13 +878,16 @@ namespace Diseño
                     {
                         try
                         {
-                            conn.Open();
+                            if (conn.State == ConnectionState.Closed)
+                            {
+                                conn.Open(); 
+                            }
                             modelo = txtModelo_Modificar.Text;
                             imei = txtIMEI_Modificar.Text;
                             string detalles = txtDetallesUobservaciones_Modificar.Text;
 
-                            DateTime tomarIngreso = dtp_ModificarCelular_Plazo.Value;
-                            DateTime tomarPlazo = dtp_ModificarIngresoCelulares.Value;
+                            DateTime tomarIngreso = dtp_ModificarIngresoCelulares.Value;
+                            DateTime tomarPlazo = dtp_ModificarCelular_Plazo.Value;
 
                             string ingresoFormat = tomarIngreso.ToString("yyyy-MM-dd");
                             string plazoFormat = tomarPlazo.ToString("yyyy-MM-dd");
@@ -899,7 +952,11 @@ namespace Diseño
                         }
                         finally
                         {
-                            conn.Close();
+                            if (conn.State == ConnectionState.Open)
+                            {
+                                conn.Close(); 
+                            }
+
                             MostrarDatosEnLasTablasCelulares();
                         }
                     }
@@ -920,7 +977,10 @@ namespace Diseño
         {
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open(); 
+                }
                 eliminarCelulares = $"UPDATE celulares SET Baja = 1 WHERE ID ='{clavePrimariaCelulares}';";
                 cmd = new MySqlCommand(eliminarCelulares, conn);
                 DialogResult siono = MessageBox.Show("¿Está seguro que desea eliminar este celular?\n\n No lo volverá a ver nunca más.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -940,7 +1000,10 @@ namespace Diseño
                     }
                     finally
                     {
-                        conn.Close();
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close(); 
+                        }
                         MostrarDatosEnLasTablasCelulares();
                     }
                 }
@@ -955,7 +1018,10 @@ namespace Diseño
         {
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open(); 
+                }
                 eliminarCelulares = $"UPDATE trabajos SET Baja = 1 WHERE ID ={clavePrimariaTrabajos};";
                 cmd = new MySqlCommand(eliminarCelulares, conn);
                 DialogResult siono = MessageBox.Show("¿Está seguro que desea eliminar este trabajo?.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -975,7 +1041,10 @@ namespace Diseño
                     }
                     finally
                     {
-                        conn.Close();
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close(); 
+                        }
                     }
                 }
             }
@@ -1002,7 +1071,10 @@ namespace Diseño
                 {
                     try
                     {
-                        conn.Open();
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open(); 
+                        }
 
                         string tecnicoACargo = idDelTecnicoaCargo.ID;
                         string celular = idCelular.ID;
@@ -1037,7 +1109,10 @@ namespace Diseño
                     }
                     finally
                     {
-                        conn.Close();
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close(); 
+                        }
                     }
                 }
             }
@@ -1054,7 +1129,10 @@ namespace Diseño
                 idTrabajo = int.Parse(txtID_Trabajo_Eliminar.Text);
                 try
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
                     eliminarTrabajos = "UPDATE trabajos SET Baja = 1 WHERE ID = " + idTrabajo + ";";
                     cmd = new MySqlCommand(eliminarTrabajos, conn);
 
@@ -1068,7 +1146,10 @@ namespace Diseño
                     }
                     finally
                     {
-                        conn.Close();
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close();
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -1546,7 +1627,10 @@ namespace Diseño
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
-                                conn.Open();
+                                if (conn.State == ConnectionState.Closed)
+                                {
+                                    conn.Open();
+                                }
                                 busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -1565,7 +1649,10 @@ namespace Diseño
                             }
                             finally
                             {
-                                conn.Close();
+                                if (conn.State == ConnectionState.Open)
+                                {
+                                    conn.Close();
+                                }
                             }
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
@@ -1575,7 +1662,10 @@ namespace Diseño
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
-                                conn.Open();
+                                if (conn.State == ConnectionState.Closed)
+                                {
+                                    conn.Open();
+                                }
                                 busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -1594,7 +1684,10 @@ namespace Diseño
                             }
                             finally
                             {
-                                conn.Close();
+                                if (conn.State == ConnectionState.Open)
+                                {
+                                    conn.Close();
+                                }
                             }
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
@@ -1604,7 +1697,10 @@ namespace Diseño
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
-                                conn.Open();
+                                if (conn.State == ConnectionState.Closed)
+                                {
+                                    conn.Open();
+                                }
                                 busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -1623,7 +1719,10 @@ namespace Diseño
                             }
                             finally
                             {
-                                conn.Close();
+                                if (conn.State == ConnectionState.Open)
+                                {
+                                    conn.Close();
+                                }
                             }
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
@@ -1633,7 +1732,10 @@ namespace Diseño
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
-                                conn.Open();
+                                if (conn.State == ConnectionState.Closed)
+                                {
+                                    conn.Open();
+                                }
                                 busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -1652,7 +1754,10 @@ namespace Diseño
                             }
                             finally
                             {
-                                conn.Close();
+                                if (conn.State == ConnectionState.Open)
+                                {
+                                    conn.Close();
+                                }
                             }
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
@@ -1662,7 +1767,10 @@ namespace Diseño
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
-                                conn.Open();
+                                if (conn.State == ConnectionState.Closed)
+                                {
+                                    conn.Open();
+                                }
                                 busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -1681,7 +1789,10 @@ namespace Diseño
                             }
                             finally
                             {
-                                conn.Close();
+                                if (conn.State == ConnectionState.Open)
+                                {
+                                    conn.Close();
+                                }
                             }
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
@@ -1691,7 +1802,10 @@ namespace Diseño
                             DataTableCelularesBusqueda.Rows.Clear();
                             try
                             {
-                                conn.Open();
+                                if (conn.State == ConnectionState.Closed)
+                                {
+                                    conn.Open();
+                                }
                                 busqueda = "SELECT celulares.ID, usuarios.Nombre, celulares.Cedula_Cliente, celulares.ModeloYOmarca, celulares.Ingreso, celulares.Estado, celulares.Adelanto,celulares.Plazo, celulares.Presupuesto, celulares.IMEI " +
                                      "FROM celulares " +
                                      "INNER JOIN usuarios ON celulares.ID_Usuario = usuarios.ID " +
@@ -1710,7 +1824,10 @@ namespace Diseño
                             }
                             finally
                             {
-                                conn.Close();
+                                if (conn.State == ConnectionState.Open)
+                                {
+                                    conn.Close();
+                                }
                             }
                             tablaCelulares.DataSource = DataTableCelularesBusqueda;
                             break;
@@ -2213,7 +2330,10 @@ namespace Diseño
                     string detalles = string.Empty;
                     try
                     {
-                        conn.Open();
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open(); 
+                        }
                         string query = $"SELECT Detalles FROM celulares WHERE ID ={seleccion}";
                         cmd = new MySqlCommand(query, conn);
                         reader = cmd.ExecuteReader();
@@ -2229,7 +2349,10 @@ namespace Diseño
                     }
                     finally
                     {
-                        conn.Close();
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close();
+                        }
                     }
 
                 }
@@ -2448,7 +2571,10 @@ namespace Diseño
 
                 if (comboBox_AgregarCelular_CedulaDelDueño.Text == "")
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
                     string query = $"SELECT Nombre, Cedula FROM clientes WHERE Baja = 0";
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
@@ -2748,7 +2874,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
         }
 
@@ -2858,7 +2987,10 @@ namespace Diseño
 
                     string abrir;
                     string query = $"SELECT ID, Nombre FROM usuarios WHERE Nombre LIKE '%{comboBox_AgregarCelular_IdDelTecnicoAcargo.Text}%' AND Baja = 0";
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
                     cmd = new MySqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
 

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelD = new System.Windows.Forms.Panel();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
@@ -120,9 +120,6 @@
             this.labelPresupuesto_Modificar = new System.Windows.Forms.Label();
             this.labelSeleccion_ID_Modificar = new System.Windows.Forms.Label();
             this.groupBox_ModificarCelulares = new System.Windows.Forms.GroupBox();
-            this.txt_PresupuestoModificar = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox_ModificarCelular_Estados = new System.Windows.Forms.GroupBox();
             this.label_caracteresRestantes_Detalles_Modificar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -132,6 +129,9 @@
             this.radioButton_EnEspera_Modificar = new System.Windows.Forms.RadioButton();
             this.radioButton_Averiado_Modificar = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
+            this.txt_PresupuestoModificar = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.dtp_ModificarCelular_Plazo = new System.Windows.Forms.DateTimePicker();
             this.label25 = new System.Windows.Forms.Label();
             this.txt_AdelantoModificar = new System.Windows.Forms.TextBox();
@@ -140,7 +140,6 @@
             this.txtIMEI_Modificar = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.btn_ModificarTecnicoACargo_Buscar = new System.Windows.Forms.Button();
             this.btn_ModificarClientes_Buscar = new System.Windows.Forms.Button();
             this.dtp_ModificarIngresoCelulares = new System.Windows.Forms.DateTimePicker();
@@ -154,6 +153,7 @@
             this.labelMarca_Modificar = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.timer_GroupBox_ModificarT_Agrandar = new System.Windows.Forms.Timer(this.components);
             this.timer_GroupBox_ModificarT_Reducir = new System.Windows.Forms.Timer(this.components);
             this.timer_Modificar_Agrandar = new System.Windows.Forms.Timer(this.components);
@@ -768,9 +768,9 @@
             this.labelTecnico_A_Cargo_Agregar.AutoSize = true;
             this.labelTecnico_A_Cargo_Agregar.Location = new System.Drawing.Point(3, 293);
             this.labelTecnico_A_Cargo_Agregar.Name = "labelTecnico_A_Cargo_Agregar";
-            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(103, 13);
+            this.labelTecnico_A_Cargo_Agregar.Size = new System.Drawing.Size(88, 13);
             this.labelTecnico_A_Cargo_Agregar.TabIndex = 9;
-            this.labelTecnico_A_Cargo_Agregar.Text = "Tecnico resposable:";
+            this.labelTecnico_A_Cargo_Agregar.Text = "Tecnico a cargo:";
             // 
             // labelFechaDeIngreso_Agregar
             // 
@@ -847,7 +847,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(112, 291);
+            this.label11.Location = new System.Drawing.Point(97, 290);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(15, 18);
             this.label11.TabIndex = 43;
@@ -1211,34 +1211,6 @@
             this.groupBox_ModificarCelulares.TabStop = false;
             this.groupBox_ModificarCelulares.Text = "Modificar Celular";
             // 
-            // txt_PresupuestoModificar
-            // 
-            this.txt_PresupuestoModificar.ForeColor = System.Drawing.Color.Green;
-            this.txt_PresupuestoModificar.Location = new System.Drawing.Point(6, 246);
-            this.txt_PresupuestoModificar.Name = "txt_PresupuestoModificar";
-            this.txt_PresupuestoModificar.Size = new System.Drawing.Size(401, 20);
-            this.txt_PresupuestoModificar.TabIndex = 52;
-            this.txt_PresupuestoModificar.Text = "$";
-            this.txt_PresupuestoModificar.TextChanged += new System.EventHandler(this.txt_PresupuestoModificar_TextChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(3, 230);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(120, 13);
-            this.label22.TabIndex = 53;
-            this.label22.Text = "Presupuesto (Opcional):";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(5, 101);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 13);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "Fecha de Ingreso:";
-            // 
             // groupBox_ModificarCelular_Estados
             // 
             this.groupBox_ModificarCelular_Estados.AutoSize = true;
@@ -1356,6 +1328,34 @@
             this.label20.TabIndex = 45;
             this.label20.Text = "*";
             // 
+            // txt_PresupuestoModificar
+            // 
+            this.txt_PresupuestoModificar.ForeColor = System.Drawing.Color.Green;
+            this.txt_PresupuestoModificar.Location = new System.Drawing.Point(6, 246);
+            this.txt_PresupuestoModificar.Name = "txt_PresupuestoModificar";
+            this.txt_PresupuestoModificar.Size = new System.Drawing.Size(401, 20);
+            this.txt_PresupuestoModificar.TabIndex = 52;
+            this.txt_PresupuestoModificar.Text = "$";
+            this.txt_PresupuestoModificar.TextChanged += new System.EventHandler(this.txt_PresupuestoModificar_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(3, 230);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(120, 13);
+            this.label22.TabIndex = 53;
+            this.label22.Text = "Presupuesto (Opcional):";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(5, 101);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 13);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Fecha de Ingreso:";
+            // 
             // dtp_ModificarCelular_Plazo
             // 
             this.dtp_ModificarCelular_Plazo.CustomFormat = "yyyy-MM-dd";
@@ -1431,17 +1431,6 @@
             this.label18.Size = new System.Drawing.Size(12, 16);
             this.label18.TabIndex = 43;
             this.label18.Text = "*";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(97, 59);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(12, 16);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "*";
             // 
             // btn_ModificarTecnicoACargo_Buscar
             // 
@@ -1580,6 +1569,17 @@
             this.label9.Size = new System.Drawing.Size(12, 16);
             this.label9.TabIndex = 37;
             this.label9.Text = "*";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(97, 59);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(12, 16);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "*";
             // 
             // timer_GroupBox_ModificarT_Agrandar
             // 
@@ -1748,14 +1748,14 @@
             this.tablaCelulares.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaCelulares.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaCelulares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCelulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaCelulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCelulares.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaCelulares.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -1765,11 +1765,11 @@
             this.tablaCelulares.MultiSelect = false;
             this.tablaCelulares.Name = "tablaCelulares";
             this.tablaCelulares.ReadOnly = true;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tablaCelulares.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaCelulares.RowTemplate.ReadOnly = true;
             this.tablaCelulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaCelulares.Size = new System.Drawing.Size(866, 595);

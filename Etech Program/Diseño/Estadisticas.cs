@@ -23,28 +23,38 @@ namespace Diseño
 
         }
         //atributos:
-        int TotalDeCelulares;
-        int celularesArreglados;
-        int celularesArregladosPorcentaje;
+        double TotalDeCelulares;
+        double celularesArreglados;
+        double celularesArregladosPorcentaje;
+        double celularesArregladosSinDecimales;
         string celularesArregladosConversion;
-        int celularesAveriados;
-        int celularesAveriadosPorcentaje;
+        double celularesAveriados;
+        double celularesAveriadosPorcentaje;
+        double celularesAveriadosSinDecimales;
         string celularesAveriadosConversion;
-        int celularesProceso;
-        int celularesProcesoPorcentaje;
+        double celularesProceso;
+        double celularesProcesoPorcentaje;
+        double celularesProcesoSinDecimales;
         string celularesProcesoConversion;
-        int celularesEspera;
-        int celularesEsperaPorcentaje;
+        double celularesEspera;
+        double celularesEsperaPorcentaje;
+        double celularesEsperaSinDecimales;
         string celularesEsperaConversion;
         bool dragTrue = false;
         bool maxim;
         int mouseStartX, mouseStartY;
         string transicion;
 
-        string celularesArregladosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado'";
-        string celularesAveriadosConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado'";
-        string celularesProcesoConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En Espera'";
-        string celularesEsperaConsulta = "SELECT COUNT(*) FROM celulares WHERE Estado = 'En Proceso'";
+        string celularesArregladosConsulta;
+        string celularesAveriadosConsulta;
+        string celularesProcesoConsulta;
+        string celularesEsperaConsulta;
+
+        string celularesArregladosDeBaja;
+        string celularesAveriadosDeBaja;
+        string celularesProcesoDeBaja; 
+        string celularesEsperaDeBaja;
+        int intervaloMeses;
 
 
         //instancias:
@@ -53,77 +63,163 @@ namespace Diseño
         Series serie;
 
         //Arreglos y atributos:
-        string[] seriesCelulares = { "C. Arreglados", "C. Averiados", "C. en proceso", "C. en espera" };
-        int[] PointsCelulares = new int[4];
+        string[] seriesCelulares = { "Celulares arreglados", "Celulares averiados", "Celulares en proceso", "Celulares en espera" };
+        double[] PointsCelulares = new double[4];
 
         //Codigo de lo graficos:
         private void mostrarGraficoCelulares()
         {
-            try
+            graficoCelulares.Series["Series1"].Points.Clear();
+            if (!checkBoxCelularesBaja.Checked)
             {
-                conn.Open();
-                cmd = new MySqlCommand(celularesArregladosConsulta, conn);
-
-                celularesArregladosConversion = cmd.ExecuteScalar().ToString();
-                celularesArreglados = int.Parse(celularesArregladosConversion);
-                PointsCelulares[0] = celularesArreglados;
-
-
-                cmd = new MySqlCommand(celularesAveriadosConsulta, conn);
-
-                celularesAveriadosConversion = cmd.ExecuteScalar().ToString();
-                celularesAveriados = int.Parse(celularesAveriadosConversion);
-                PointsCelulares[1] = celularesAveriados;
-
-
-                cmd = new MySqlCommand(celularesEsperaConsulta, conn);
-
-                celularesEsperaConversion = cmd.ExecuteScalar().ToString();
-                celularesEspera = int.Parse(celularesEsperaConversion);
-                PointsCelulares[2] = celularesEspera;
-
-
-                cmd = new MySqlCommand(celularesProcesoConsulta, conn);
-
-                celularesProcesoConversion = cmd.ExecuteScalar().ToString();
-                celularesProceso = int.Parse(celularesProcesoConversion);
-                PointsCelulares[3] = celularesProceso;
-
-
-                for (int i = 0; i < seriesCelulares.Length; i++)
+                try
                 {
-                    graficoCelulares.Series["Series1"].Points.AddXY(seriesCelulares[i], PointsCelulares[i]);
+                    conn.Open();
+                    cmd = new MySqlCommand(celularesArregladosConsulta, conn);
+
+                    celularesArregladosConversion = cmd.ExecuteScalar().ToString();
+                    celularesArreglados = double.Parse(celularesArregladosConversion);
+                    PointsCelulares[0] = celularesArreglados;
+
+
+                    cmd = new MySqlCommand(celularesAveriadosConsulta, conn);
+
+                    celularesAveriadosConversion = cmd.ExecuteScalar().ToString();
+                    celularesAveriados = double.Parse(celularesAveriadosConversion);
+                    PointsCelulares[1] = celularesAveriados;
+
+
+                    cmd = new MySqlCommand(celularesEsperaConsulta, conn);
+
+                    celularesEsperaConversion = cmd.ExecuteScalar().ToString();
+                    celularesEspera = double.Parse(celularesEsperaConversion);
+                    PointsCelulares[2] = celularesEspera;
+
+
+                    cmd = new MySqlCommand(celularesProcesoConsulta, conn);
+
+                    celularesProcesoConversion = cmd.ExecuteScalar().ToString();
+                    celularesProceso = double.Parse(celularesProcesoConversion);
+                    PointsCelulares[3] = celularesProceso;
+
+
+                    for (int i = 0; i < seriesCelulares.Length; i++)
+                    {
+                        graficoCelulares.Series["Series1"].Points.AddXY(seriesCelulares[i], PointsCelulares[i]);
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inesperado" + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                    label_CelularesArreglados.Text = "Celulares arreglados: " + celularesArreglados.ToString();
+                    label_CelularesAveriados.Text = "Celulares averiados: " + celularesAveriados.ToString();
+                    label_CelularesEnEspera.Text = "celulares en espera: " + celularesEspera.ToString();
+                    label_CelularesEnProceso.Text = "celulares en proceso: " + celularesProceso.ToString();
+                    conn.Close();
+                }
+
+                TotalDeCelulares = celularesArreglados + celularesAveriados + celularesEspera + celularesProceso;
+
+                celularesArregladosPorcentaje = (celularesArreglados / TotalDeCelulares) * 100;
+                celularesArregladosSinDecimales = Math.Floor(celularesArregladosPorcentaje);
+                celularesAveriadosPorcentaje = (celularesAveriados / TotalDeCelulares) * 100;
+                celularesAveriadosSinDecimales = Math.Floor(celularesAveriadosPorcentaje);
+                celularesEsperaPorcentaje = (celularesEspera / TotalDeCelulares) * 100;
+                celularesEsperaSinDecimales = Math.Floor(celularesEsperaPorcentaje);
+                celularesProcesoPorcentaje = (celularesProceso / TotalDeCelulares) * 100;
+                celularesProcesoSinDecimales = Math.Floor(celularesProcesoPorcentaje);
+
+                labelArreglados_Porcentaje.Text = "El " + celularesArregladosSinDecimales + "% de los celulares estan arreglados";
+                labelAveriados_Porcentaje.Text = "El " + celularesAveriadosSinDecimales + "% de los celulares estan averiados";
+                labelEspera_Porcentaje.Text = "El " + celularesEsperaSinDecimales + "% de los celulares estan en espera";
+                labelProceso_Porcentaje.Text = "El " + celularesEsperaSinDecimales + "% de los celulares estan en espera"; 
             }
-            catch (Exception ex)
+            else if (checkBoxCelularesBaja.Checked)
             {
-                MessageBox.Show("Error inesperado" + ex.Message);
+                try
+                {
+                    conn.Open();
+                    cmd = new MySqlCommand(celularesArregladosDeBaja, conn);
+
+                    celularesArregladosConversion = cmd.ExecuteScalar().ToString();
+                    celularesArreglados = double.Parse(celularesArregladosConversion);
+                    PointsCelulares[0] = celularesArreglados;
+
+
+                    cmd = new MySqlCommand(celularesAveriadosDeBaja, conn);
+
+                    celularesAveriadosConversion = cmd.ExecuteScalar().ToString();
+                    celularesAveriados = double.Parse(celularesAveriadosConversion);
+                    PointsCelulares[1] = celularesAveriados;
+
+
+                    cmd = new MySqlCommand(celularesEsperaDeBaja, conn);
+
+                    celularesEsperaConversion = cmd.ExecuteScalar().ToString();
+                    celularesEspera = double.Parse(celularesEsperaConversion);
+                    PointsCelulares[2] = celularesEspera;
+
+
+                    cmd = new MySqlCommand(celularesProcesoDeBaja, conn);
+
+                    celularesProcesoConversion = cmd.ExecuteScalar().ToString();
+                    celularesProceso = double.Parse(celularesProcesoConversion);
+                    PointsCelulares[3] = celularesProceso;
+
+
+                    for (int i = 0; i < seriesCelulares.Length; i++)
+                    {
+                        graficoCelulares.Series["Series1"].Points.AddXY(seriesCelulares[i], PointsCelulares[i]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inesperado" + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                    label_CelularesArreglados.Text = "Celulares arreglados: " + celularesArreglados.ToString();
+                    label_CelularesAveriados.Text = "Celulares averiados: " + celularesAveriados.ToString();
+                    label_CelularesEnEspera.Text = "celulares en espera: " + celularesEspera.ToString();
+                    label_CelularesEnProceso.Text = "celulares en proceso: " + celularesProceso.ToString();
+                    conn.Close();
+                }
+
+                TotalDeCelulares = celularesArreglados + celularesAveriados + celularesEspera + celularesProceso;
+
+                celularesArregladosPorcentaje = (celularesArreglados / TotalDeCelulares) * 100;
+                celularesArregladosSinDecimales = Math.Floor(celularesArregladosPorcentaje);
+                celularesAveriadosPorcentaje = (celularesAveriados / TotalDeCelulares) * 100;
+                celularesAveriadosSinDecimales = Math.Floor(celularesAveriadosPorcentaje);
+                celularesEsperaPorcentaje = (celularesEspera / TotalDeCelulares) * 100;
+                celularesEsperaSinDecimales = Math.Floor(celularesEsperaPorcentaje);
+                celularesProcesoPorcentaje = (celularesProceso / TotalDeCelulares) * 100;
+                celularesProcesoSinDecimales = Math.Floor(celularesProcesoPorcentaje);
+
+                labelArreglados_Porcentaje.Text = "El " + celularesArregladosSinDecimales + "% de los celulares estan arreglados";
+                labelAveriados_Porcentaje.Text = "El " + celularesAveriadosSinDecimales + "% de los celulares estan averiados";
+                labelEspera_Porcentaje.Text = "El " + celularesEsperaSinDecimales + "% de los celulares estan en espera";
+                labelProceso_Porcentaje.Text = "El " + celularesEsperaSinDecimales + "% de los celulares estan en espera";
             }
-            finally
-            {
-                conn.Close();
-                label_CelularesArreglados.Text = "Celulares arreglados: " + celularesArreglados.ToString();
-                label_CelularesAveriados.Text = "Celulares averiados: " + celularesAveriados.ToString();
-                label_CelularesEnEspera.Text = "celulares en espera: " + celularesEspera.ToString();
-                label_CelularesEnProceso.Text = "celulares en proceso: " + celularesProceso.ToString();
-                conn.Close();
-            }
-
-            TotalDeCelulares = celularesArreglados + celularesAveriados + celularesEspera + celularesProceso;
-
-            celularesArregladosPorcentaje = (celularesArreglados / TotalDeCelulares) * 100;
-            celularesAveriadosPorcentaje = (celularesAveriados / TotalDeCelulares) * 100;
-            celularesEsperaPorcentaje = (celularesEspera / TotalDeCelulares) * 100;
-            celularesProcesoPorcentaje = (celularesProceso / TotalDeCelulares) * 100;
-
-            labelArreglados_Porcentaje.Text = "El " + celularesArregladosPorcentaje + "% de los celulares estan arreglados";
-            labelAveriados_Porcentaje.Text = "El " + celularesAveriadosPorcentaje + "% de los celulares estan averiados";
-            labelEspera_Porcentaje.Text = "El " + celularesEsperaPorcentaje + "% de los celulares estan en espera";
-            labelProceso_Porcentaje.Text = "El " + celularesEsperaPorcentaje + "% de los celulares estan en espera";
         }
 
         private void Estadisticas_Load(object sender, EventArgs e)
         {
+
+            celularesArregladosConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+            celularesAveriadosConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+            celularesProcesoConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En Proceso' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+            celularesEsperaConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En espera' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+
+            celularesArregladosDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
+            celularesAveriadosDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
+            celularesProcesoDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En proceso' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
+            celularesEsperaDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En Espera' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
             mostrarGraficoCelulares();
             transicion = "FadeIn";
             timer_Transicion.Start();
@@ -459,6 +555,42 @@ namespace Diseño
             {
                 this.WindowState = FormWindowState.Normal;
             }
+        }
+
+        private void checkBoxCelularesBaja_CheckedChanged(object sender, EventArgs e)
+        {
+            mostrarGraficoCelulares();
+        }
+
+        private void txtMeses_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMeses.TextLength.Equals(0))
+            {
+                
+            }
+            else
+            {
+                try
+                {
+                    intervaloMeses = int.Parse(txtMeses.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Ingrese un valor valido!");
+                }
+            }
+
+            celularesArregladosConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+            celularesAveriadosConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+            celularesProcesoConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En Proceso' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+            celularesEsperaConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En espera' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
+
+            celularesArregladosDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses}";
+            celularesAveriadosDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
+            celularesProcesoDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En proceso' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
+            celularesEsperaDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En Espera' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
+
+            mostrarGraficoCelulares();
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
