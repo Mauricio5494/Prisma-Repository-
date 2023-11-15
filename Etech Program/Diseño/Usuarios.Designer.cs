@@ -1133,10 +1133,10 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Default;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Diseño.Properties.Resources.menos;
+            this.button4.Image = global::Diseño.Properties.Resources.menos__1_;
             this.button4.Location = new System.Drawing.Point(1224, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 25);
@@ -1146,10 +1146,10 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Diseño.Properties.Resources.maximizar_tamano;
+            this.button3.Image = global::Diseño.Properties.Resources.cuadricula;
             this.button3.Location = new System.Drawing.Point(1271, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 25);
@@ -1159,10 +1159,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Diseño.Properties.Resources.cerrar_ventana__1_;
+            this.button2.Image = global::Diseño.Properties.Resources.cruzado__1_;
             this.button2.Location = new System.Drawing.Point(1318, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(48, 25);

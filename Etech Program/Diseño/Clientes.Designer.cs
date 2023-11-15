@@ -70,6 +70,8 @@
             this.timerAgregar_Reducir = new System.Windows.Forms.Timer(this.components);
             this.panel_Modificar = new System.Windows.Forms.Panel();
             this.groupBox_Modificar = new System.Windows.Forms.GroupBox();
+            this.txtCedula_Modificar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.labelSeleccion_Modificar = new System.Windows.Forms.Label();
             this.txtCelular_Modificar = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico_Modificar = new System.Windows.Forms.TextBox();
@@ -110,8 +112,6 @@
             this.asd = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtCedula_Modificar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             this.panelE.SuspendLayout();
@@ -366,7 +366,7 @@
             this.panel_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Agregar.Location = new System.Drawing.Point(49, 105);
             this.panel_Agregar.Name = "panel_Agregar";
-            this.panel_Agregar.Size = new System.Drawing.Size(419, 0);
+            this.panel_Agregar.Size = new System.Drawing.Size(419, 600);
             this.panel_Agregar.TabIndex = 21;
             // 
             // groupBox_Agregar
@@ -586,7 +586,7 @@
             this.panel_Modificar.Controls.Add(this.groupBox_Modificar);
             this.panel_Modificar.Location = new System.Drawing.Point(49, 105);
             this.panel_Modificar.Name = "panel_Modificar";
-            this.panel_Modificar.Size = new System.Drawing.Size(419, 600);
+            this.panel_Modificar.Size = new System.Drawing.Size(419, 0);
             this.panel_Modificar.TabIndex = 22;
             // 
             // groupBox_Modificar
@@ -611,6 +611,22 @@
             this.groupBox_Modificar.TabIndex = 0;
             this.groupBox_Modificar.TabStop = false;
             this.groupBox_Modificar.Text = "Modifique un cliente";
+            // 
+            // txtCedula_Modificar
+            // 
+            this.txtCedula_Modificar.Location = new System.Drawing.Point(6, 88);
+            this.txtCedula_Modificar.Name = "txtCedula_Modificar";
+            this.txtCedula_Modificar.Size = new System.Drawing.Size(400, 20);
+            this.txtCedula_Modificar.TabIndex = 34;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Cedula:";
             // 
             // labelSeleccion_Modificar
             // 
@@ -1025,22 +1041,6 @@
             this.button2.Size = new System.Drawing.Size(48, 25);
             this.button2.TabIndex = 0;
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // txtCedula_Modificar
-            // 
-            this.txtCedula_Modificar.Location = new System.Drawing.Point(6, 88);
-            this.txtCedula_Modificar.Name = "txtCedula_Modificar";
-            this.txtCedula_Modificar.Size = new System.Drawing.Size(400, 20);
-            this.txtCedula_Modificar.TabIndex = 34;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Cedula:";
             // 
             // Clientes
             // 

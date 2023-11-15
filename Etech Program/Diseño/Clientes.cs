@@ -420,11 +420,11 @@ namespace Diseño
             if (txtCedula_Modificar.Text != "" && txtNombre_Modificar.Text != "" && txtTelefono_Modificar.Text != "" && txtCorreoElectronico_Modificar.Text != "" && txtCedula_Modificar.Text != "")
             {
 
-                    cedula = txtCedula_Modificar.Text;
-                    nombre = txtNombre_Modificar.Text;
-                    telefono = txtTelefono_Modificar.Text;
-                    correoElectronico = txtCorreoElectronico_Modificar.Text;
-                    celular = txtCelular_Modificar.Text;
+                cedula = txtCedula_Modificar.Text;
+                nombre = txtNombre_Modificar.Text;
+                telefono = txtTelefono_Modificar.Text;
+                correoElectronico = txtCorreoElectronico_Modificar.Text;
+                celular = txtCelular_Modificar.Text;
                 try
                 {
                     conn.Open();
@@ -898,12 +898,10 @@ namespace Diseño
 
         private void txtCedula_Agregar_TextChanged(object sender, EventArgs e)
         {
-            if (txtCedula_Agregar.Text.Length <= 8 && txtCedula_Agregar.Text.Length > 0)
-            {
-                label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
-                int caracteresRestantes = 8 - txtCedula_Agregar.TextLength;
-                label_CaracteresRestantesCI_AgregarCelulares.Text = caracteresRestantes + "/8";
-            }
+            int caracteresRestantes = Math.Max(0, 8 - txtCedula_Agregar.TextLength);
+
+            label_CaracteresRestantesCI_AgregarCelulares.Visible = true;
+            label_CaracteresRestantesCI_AgregarCelulares.Text = caracteresRestantes + "/8";
         }
         private void txtCedula_Agregar_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -924,16 +922,11 @@ namespace Diseño
         }
 
         private void txtCelular_Agregar_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCelular_Agregar.Text.Length <= 9 && txtCelular_Agregar.Text.Length > 0)
-            {
-                int caracteresRestantes = 9 - txtCelular_Agregar.TextLength;
-                labCaracteresRestantesCelular.Text = caracteresRestantes + "/9";
-            }
-            else
-            {
-                labCaracteresRestantesCelular.Visible = false;
-            }
+        { 
+            int caracteresRestantes = Math.Max(0, 9 - txtCelular_Agregar.TextLength);
+
+            labCaracteresRestantesCelular.Visible = true;
+            labCaracteresRestantesCelular.Text = caracteresRestantes + "/9";
         }
 
         private void txtCelular_Agregar_KeyPress(object sender, KeyPressEventArgs e)
@@ -1080,12 +1073,17 @@ namespace Diseño
 
         private void txtTelefono_Agregar_TextChanged(object sender, EventArgs e)
         {
-            if (txtTelefono_Agregar.Text.Length <= 8 && txtTelefono_Agregar.Text.Length > 0)
-            {
-                labCaracteresRestantesTelefono.Visible = true;
-                int caracteresRestantes = 8 - txtTelefono_Agregar.TextLength;
-                labCaracteresRestantesTelefono.Text = caracteresRestantes + "/8";
-            }
+            //if (txtTelefono_Agregar.Text.Length <= 8 && txtTelefono_Agregar.Text.Length > 0)
+            //{
+            //    labCaracteresRestantesTelefono.Visible = true;
+            //    int caracteresRestantes = 8 - txtTelefono_Agregar.TextLength;
+            //    labCaracteresRestantesTelefono.Text = caracteresRestantes + "/8";
+            //}
+
+            int caracteresRestantes = Math.Max(0, 8 - txtTelefono_Agregar.TextLength);
+
+            labCaracteresRestantesTelefono.Visible = true;
+            labCaracteresRestantesTelefono.Text = caracteresRestantes + "/8";
         }
 
         private void txtTelefono_Agregar_KeyPress(object sender, KeyPressEventArgs e)

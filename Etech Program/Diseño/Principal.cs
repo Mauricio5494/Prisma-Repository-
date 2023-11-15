@@ -203,6 +203,11 @@ namespace Diseño
             MostrarNombreYlaCeduladelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
             //MostrarModeloMarcaYlaCedulaDelClienteEnUnComboBoxParaModificacionOAdiciónDeLosCelulares();
 
+            dtp_ModificarCelular_Plazo.Value = DateTime.Today;
+            dtp_ModificarIngresoCelulares.Value = DateTime.Today;
+            dateTimePicker_FechaPlazo_Agregar.Value = DateTime.Today;
+            dateTimePicker_FechaDeIngreso_Agregar.Value = DateTime.Today;
+
 
             MenuOpcionesCelular.Enabled = true;
             MenuOpcionesCelular.Visible = true;
