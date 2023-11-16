@@ -411,8 +411,12 @@ namespace Diseño
 
         private void btnCerrarPrograma_Click(object sender, EventArgs e)
         {
-            transicion = "FadeOutExit";
-            timer_Transicion.Start();
+            DialogResult siono = MessageBox.Show("¿Está seguro de cerrar el programa?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (siono == DialogResult.Yes)
+            {
+                transicion = "FadeOutExit";
+                timer_Transicion.Start(); 
+            }
         }
 
         private void timer_Transicion_Tick(object sender, EventArgs e)

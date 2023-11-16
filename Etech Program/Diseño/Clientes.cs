@@ -48,14 +48,14 @@ namespace Diseño
         public Clientes()
         {
             InitializeComponent();
+
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void Clientes_Load(object sender, EventArgs e)
         {
             transicion = "FadeIn";
             timer_Transicion.Start();
-
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             MostrarDatosEnLaTablaClientes();
         }
@@ -1128,7 +1128,7 @@ namespace Diseño
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult seguro = MessageBox.Show("¿Está seguro que quiere Cerrar el programa?\n\nEsto es diferente de cerrar sesión.", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult seguro = MessageBox.Show("¿Está seguro que quiere Cerrar el programa?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (seguro == DialogResult.Yes)
             {

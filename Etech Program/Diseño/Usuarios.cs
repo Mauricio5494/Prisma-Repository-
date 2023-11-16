@@ -239,6 +239,11 @@ namespace Diseño
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (panelD.Width == 119 && panel_BorrarUsuario.Height >= 500)
+            {
+                btnMenu_Click(sender, e);
+            }
+
             if (panel_BorrarUsuario.Height == 0)
             {
                 panel_BorrarUsuario.Height = 590;
@@ -276,9 +281,27 @@ namespace Diseño
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
+
             if (panelD.Size.Width == 45)
             {
                 panelD.Width = 119;
+
+                if (panel_Registro.Visible)
+                {
+                    panel_Registro.SendToBack();
+                }
+                else if (panel_Menu.Visible)
+                {
+                    panel_Menu.SendToBack();
+                }
+                else if (panel_BorrarUsuario.Visible)
+                {
+                    panel_BorrarUsuario.SendToBack();
+                }
+                else if (panel_Modificar.Visible)
+                {
+                    panel_Modificar.SendToBack();
+                }
 
                 //Botones:
                 btnAgregar.ForeColor = Color.Black;
@@ -303,23 +326,6 @@ namespace Diseño
                 //{
                 //    tabla_Usuarios.Size = new Size(872, 599);
                 //}
-
-                if (panel_Registro.Visible)
-                {
-                    panel_Registro.SendToBack();
-                }
-                else if (panel_Menu.Visible)
-                {
-                    panel_Menu.SendToBack();
-                }
-                else if (panel_BorrarUsuario.Visible)
-                {
-                    panel_BorrarUsuario.SendToBack();
-                }
-                else if (panel_Modificar.Visible)
-                {
-                    panel_Modificar.SendToBack();
-                }
 
             }
             else
@@ -368,6 +374,11 @@ namespace Diseño
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (panelD.Width == 119 && panel_Registro.Height >= 500)
+            {
+                btnMenu_Click(sender, e);
+            }
+
             if (tabla_Usuarios.Size.Equals(new Size(872, 599)) && panelD.Size.Equals(new Size(119, 1060)))  /* <-- Andá a adivinar que esto era así...*/
             {
                 tabla_Usuarios.Size = new Size(800, 599);
@@ -548,6 +559,11 @@ namespace Diseño
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
+            if (panelD.Width == 119 && panel_Menu.Height >= 500)
+            {
+                btnMenu_Click(sender, e);
+            }
+
             if (panel_Menu.Height == 0)
             {
                 panel_Menu.Height = 599;
@@ -574,6 +590,11 @@ namespace Diseño
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (panelD.Width == 119 && panel_Modificar.Height >= 500)
+            {
+                btnMenu_Click(sender, e);
+            }
+
             if (panel_Modificar.Height == 0)
             {
                 panel_Modificar.Visible = true;
@@ -770,7 +791,7 @@ namespace Diseño
                                 cmd.Parameters.AddWithValue("@Telefono", telefono);
                                 cmd.Parameters.AddWithValue("@CorreoElectronico", correo);
                                 cmd.Parameters.AddWithValue("@Celular", celular);
-                                
+
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
@@ -981,8 +1002,12 @@ namespace Diseño
 
         private void button2_Click(object sender, EventArgs e)
         {
-            trasnsicion = "FadeOutExit";
-            timerTransicion.Start();
+            DialogResult siono = MessageBox.Show("¿Está seguro de cerrar el programa?", "Hmm...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (siono == DialogResult.Yes)
+            {
+                trasnsicion = "FadeOutExit";
+                timerTransicion.Start(); 
+            }
         }
 
         private void timerTransicion_Tick(object sender, EventArgs e)
