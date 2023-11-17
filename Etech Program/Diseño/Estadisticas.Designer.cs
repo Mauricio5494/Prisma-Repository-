@@ -112,7 +112,7 @@
             this.txtMeses.Name = "txtMeses";
             this.txtMeses.Size = new System.Drawing.Size(100, 20);
             this.txtMeses.TabIndex = 27;
-            this.txtMeses.Text = "3";
+            this.txtMeses.Text = "1";
             this.txtMeses.TextChanged += new System.EventHandler(this.txtMeses_TextChanged);
             // 
             // labelMeses

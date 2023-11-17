@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Diseño.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,12 @@ namespace Diseño
             if (chbOcultarContraseña.Checked)
             {
                 txtClaveMaestra.PasswordChar = PassOUT;
+                pb_Ojo.Image = Resources.ojo_tapado;
+            }
+            else
+            {
+                txtClaveMaestra.PasswordChar = '\0';
+                pb_Ojo.Image = Resources.ojo;
             }
         }
 
@@ -142,6 +149,11 @@ namespace Diseño
 
                 }
             }
+        }
+
+        private void chbOcultarContraseña_CheckedChanged(object sender, EventArgs e)
+        {
+            OcultarContraseña();
         }
     }
 }

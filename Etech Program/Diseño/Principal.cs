@@ -3122,7 +3122,6 @@ namespace Diseño
                 }
             }
         }
-
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             dragTrue = false;
@@ -3132,7 +3131,6 @@ namespace Diseño
                 this.WindowState = FormWindowState.Maximized;
             }
         }
-
         private void combobox_CI_Del_Dueño_Modificar_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Que si y sino que no, si.
@@ -3161,7 +3159,6 @@ namespace Diseño
             }
 
         }
-
         private void comboBox_ModificarTecnicoACargo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != (char)Keys.Enter && e.KeyChar != (char)Keys.Back)
@@ -3187,7 +3184,6 @@ namespace Diseño
                 e.Handled = false;
             }
         }
-
         private void comboBox_AgregarCelular_CedulaDelDueño_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -3214,10 +3210,6 @@ namespace Diseño
                 e.Handled = false;
             }
         }
-
-
-
-
         private void comboBox_AgregarCelular_IdDelTecnicoAcargo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != (char)Keys.Enter && (e.KeyChar != (char)Keys.Back || comboBox_AgregarCelular_IdDelTecnicoAcargo.Text == ""))

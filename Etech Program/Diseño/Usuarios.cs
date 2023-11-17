@@ -178,8 +178,12 @@ namespace Diseño
                             try
                             {
                                 conn.Open();
-                                eliminarTecnico = $"UPDATE trabajos SET Baja = 0 WHERE ID_Tecnico = {idTecnico}; UPDATE celulares SET Baja = 0 WHERE ID_Usuario = {idTecnico}; DELETE FROM usuarios WHERE ID ={clavePrimariaDelTecnico};";
+                                eliminarTecnico = $"UPDATE celulares SET Baja = 1 WHERE ID_Usuario = @idTecnico; UPDATE usuarios SET Baja = 1 WHERE ID = @ID;";
                                 cmd = new MySqlCommand(eliminarTecnico, conn);
+
+                                cmd.Parameters.AddWithValue("@idTecnico", idTecnico);
+                                cmd.Parameters.AddWithValue("@ID", clavePrimariaDelTecnico);
+
                                 txtID_panelBorrarUsuarios.Text = "";
                                 ApareceLaContraseñaMaestra = false;
                                 try
@@ -545,7 +549,7 @@ namespace Diseño
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
-            if (panelD.Width == 119 && panel_Menu.Height >= 300)
+            if (panelD.Width == 119)
             {
                 btnMenu_Click(sender, e);
             }
@@ -562,7 +566,6 @@ namespace Diseño
             else
             {
                 panel_Menu.Height = 0;
-                panel_Menu.Visible = false;
             }
             if (tabla_Usuarios.Size.Equals(new Size(872, 599)) && panelD.Size.Equals(new Size(119, 1060)))  /* <-- Andá a adivinar que esto era así...*/
             {

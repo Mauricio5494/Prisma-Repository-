@@ -568,12 +568,8 @@ namespace Diseño
 
         private void txtMeses_TextChanged(object sender, EventArgs e)
         {
-            if (txtMeses.TextLength.Equals(0))
-            {
-                
-            }
-            else
-            {
+            if (!txtMeses.TextLength.Equals(0))
+            { 
                 try
                 {
                     intervaloMeses = int.Parse(txtMeses.Text);
@@ -583,13 +579,13 @@ namespace Diseño
                     MessageBox.Show("Ingrese un valor valido!");
                 }
             }
-
+           
             celularesArregladosConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
             celularesAveriadosConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
             celularesProcesoConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En Proceso' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
             celularesEsperaConsulta = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En espera' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH) AND Baja = 0";
 
-            celularesArregladosDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses}";
+            celularesArregladosDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Arreglado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
             celularesAveriadosDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'Averiado' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
             celularesProcesoDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En proceso' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";
             celularesEsperaDeBaja = $"SELECT COUNT(*) FROM celulares WHERE Estado = 'En Espera' AND Ingreso >= DATE_SUB(CURDATE(), INTERVAL {intervaloMeses} MONTH)";

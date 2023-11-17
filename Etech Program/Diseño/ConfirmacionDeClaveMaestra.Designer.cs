@@ -33,6 +33,8 @@
             this.labelContraseñaMaestra_Text = new System.Windows.Forms.Label();
             this.txtClaveMaestra = new System.Windows.Forms.TextBox();
             this.chbOcultarContraseña = new System.Windows.Forms.CheckBox();
+            this.pb_Ojo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Ojo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -89,14 +91,25 @@
             this.chbOcultarContraseña.CausesValidation = false;
             this.chbOcultarContraseña.Checked = true;
             this.chbOcultarContraseña.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbOcultarContraseña.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chbOcultarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbOcultarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chbOcultarContraseña.Location = new System.Drawing.Point(12, 54);
+            this.chbOcultarContraseña.Location = new System.Drawing.Point(12, 58);
             this.chbOcultarContraseña.Name = "chbOcultarContraseña";
             this.chbOcultarContraseña.Size = new System.Drawing.Size(13, 12);
             this.chbOcultarContraseña.TabIndex = 4;
             this.chbOcultarContraseña.UseVisualStyleBackColor = true;
-            this.chbOcultarContraseña.Visible = false;
+            this.chbOcultarContraseña.CheckedChanged += new System.EventHandler(this.chbOcultarContraseña_CheckedChanged);
+            // 
+            // pb_Ojo
+            // 
+            this.pb_Ojo.Enabled = false;
+            this.pb_Ojo.Image = global::Diseño.Properties.Resources.ojo_tapado;
+            this.pb_Ojo.Location = new System.Drawing.Point(12, 54);
+            this.pb_Ojo.Name = "pb_Ojo";
+            this.pb_Ojo.Size = new System.Drawing.Size(16, 16);
+            this.pb_Ojo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pb_Ojo.TabIndex = 5;
+            this.pb_Ojo.TabStop = false;
             // 
             // Confirmacion_Con_ContraseñaMaestro
             // 
@@ -105,13 +118,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(325, 120);
+            this.ClientSize = new System.Drawing.Size(322, 120);
             this.ControlBox = false;
-            this.Controls.Add(this.chbOcultarContraseña);
+            this.Controls.Add(this.pb_Ojo);
             this.Controls.Add(this.txtClaveMaestra);
             this.Controls.Add(this.labelContraseñaMaestra_Text);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.chbOcultarContraseña);
             this.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -127,6 +141,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Confirmacion_Con_ContraseñaMaestro_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Confirmacion_Con_ContraseñaMaestro_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Confirmacion_Con_ContraseñaMaestro_MouseUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Ojo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +154,6 @@
         private System.Windows.Forms.Label labelContraseñaMaestra_Text;
         private System.Windows.Forms.TextBox txtClaveMaestra;
         private System.Windows.Forms.CheckBox chbOcultarContraseña;
+        private System.Windows.Forms.PictureBox pb_Ojo;
     }
 }
