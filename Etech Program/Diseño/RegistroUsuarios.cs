@@ -93,16 +93,19 @@ namespace Diseño
                         {
                             try
                             {
-                                conn.Open();
+                                if (conn.State == System.Data.ConnectionState.Closed)
+                                {
+                                    conn.Open();
+                                }
 
                                 string contraseñaHash = EncoderDelHash(Password);
 
 
-                                sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, @Contraseña, @Telefono, @CorreoElectronico, @Celular)";
+                                sql_Registro = $"INSERT INTO usuarios(Nombre, Contraseña, Telefono, CorreoElectronico, Celular) VALUES (@Nombre, SHA2(@Contraseña, 256), @Telefono, @CorreoElectronico, @Celular)";
                                 cmd_Registro = new MySqlCommand(sql_Registro, conn);
 
                                 cmd_Registro.Parameters.AddWithValue("@Nombre", Nombre);
-                                cmd_Registro.Parameters.AddWithValue("@Contraseña", contraseñaHash);
+                                cmd_Registro.Parameters.AddWithValue("@Contraseña", Password);
                                 cmd_Registro.Parameters.AddWithValue("@Telefono", Telefono);
                                 cmd_Registro.Parameters.AddWithValue("@CorreoElectronico", Correo);
                                 cmd_Registro.Parameters.AddWithValue("@Celular", Celular);
@@ -113,6 +116,8 @@ namespace Diseño
                                 {
                                     cmd_Registro.ExecuteNonQuery();
 
+                                    MessageBox.Show("Usuario creado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                                     txtNombre.Text = "";
                                     txtPassword.Text = "";
                                     txtTelefono.Text = "";
@@ -121,7 +126,7 @@ namespace Diseño
                                 }
                                 catch (Exception ex)
                                 {
-                                    MessageBox.Show("No se ingreso correctamente el usuario", "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("No se creó correctamente el usuario\n\n" + ex.Message, "Ups..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                             catch (Exception E)
@@ -130,7 +135,10 @@ namespace Diseño
                             }
                             finally
                             {
-                                conn.Close();
+                                if (conn.State == System.Data.ConnectionState.Open)
+                                {
+                                    conn.Close();
+                                }
                             }
                         }
                         else
@@ -153,7 +161,10 @@ namespace Diseño
         {
             try
             {
-                conn.Open();
+                if (conn.State == System.Data.ConnectionState.Closed)
+                {
+                    conn.Open(); 
+                }
                 sql_Seguridad = "SELECT Nombre, Contraseña FROM usuarios WHERE nombre = '" + Nombre + "' and Contraseña = '" + Password + "' ";
                 cmd_Seguridad = new MySqlCommand(sql_Seguridad, conn);
                 reader = cmd_Seguridad.ExecuteReader();
@@ -173,7 +184,10 @@ namespace Diseño
             }
             finally
             {
-                conn.Close();
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close(); 
+                }
             }
         }
 
@@ -239,10 +253,18 @@ namespace Diseño
                 else
                 {
                     this.Opacity -= .15;
-                    this.Left += 15;
+                    this.Top -= 15;
                 }
             }
+           
         }
 
+        private void RegistroUsuarios_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                labelRegresar_Click(sender, e);
+            }
+        }
     }
 }

@@ -246,7 +246,7 @@ namespace Diseño
 
             if (panel_BorrarUsuario.Height == 0)
             {
-                panel_BorrarUsuario.Height = 590;
+                panel_BorrarUsuario.Height = 600;
                 panel_BorrarUsuario.Visible = true;
                 panel_Menu.Height = 0;
                 panel_Registro.Height = 0;
@@ -286,22 +286,8 @@ namespace Diseño
             {
                 panelD.Width = 119;
 
-                if (panel_Registro.Visible)
-                {
-                    panel_Registro.SendToBack();
-                }
-                else if (panel_Menu.Visible)
-                {
-                    panel_Menu.SendToBack();
-                }
-                else if (panel_BorrarUsuario.Visible)
-                {
-                    panel_BorrarUsuario.SendToBack();
-                }
-                else if (panel_Modificar.Visible)
-                {
-                    panel_Modificar.SendToBack();
-                }
+                panelD.BringToFront();
+                panelE.BringToFront();
 
                 //Botones:
                 btnAgregar.ForeColor = Color.Black;
@@ -559,14 +545,14 @@ namespace Diseño
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
-            if (panelD.Width == 119 && panel_Menu.Height >= 500)
+            if (panelD.Width == 119 && panel_Menu.Height >= 300)
             {
                 btnMenu_Click(sender, e);
             }
 
             if (panel_Menu.Height == 0)
             {
-                panel_Menu.Height = 599;
+                panel_Menu.Height = 600;
                 panel_BorrarUsuario.Height = 0;
                 panel_Registro.Height = 0;
                 panel_Modificar.Height = 0;

@@ -52,6 +52,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Black;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
             this.button2.Location = new System.Drawing.Point(12, 88);
@@ -123,6 +124,9 @@
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Confirmacion_Con_ContraseñaMaestro_FormClosing);
             this.Load += new System.EventHandler(this.Confirmacion_Con_ContraseñaMaestro_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Confirmacion_Con_ContraseñaMaestro_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Confirmacion_Con_ContraseñaMaestro_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Confirmacion_Con_ContraseñaMaestro_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

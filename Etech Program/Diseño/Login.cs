@@ -110,6 +110,9 @@ namespace Diseño
                     {
                         if (reader.Read())
                         {
+                            txtNombre.Text = "";
+                            txtPass.Text = "";
+
                             Seguridad.SetInvitado = false;
                             transicion = "FadeOut";
                             timer_AparecerSuavemente.Start();
@@ -117,7 +120,8 @@ namespace Diseño
                         }
                         else
                         {
-                            MessageBox.Show("Usuario o contraseña incorrectos\n\nVerifique los datos y vuelva a intentar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtPass.Text = "";
+                            MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)

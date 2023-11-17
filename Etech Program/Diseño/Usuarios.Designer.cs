@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelE = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lab_SitauacionContextual = new System.Windows.Forms.Label();
@@ -299,16 +299,14 @@
             // btnRecargar
             // 
             this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Enabled = false;
             this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
-            this.btnRecargar.Location = new System.Drawing.Point(10, 342);
+            this.btnRecargar.Location = new System.Drawing.Point(9, 299);
             this.btnRecargar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(25, 25);
             this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnRecargar.TabIndex = 22;
             this.btnRecargar.TabStop = false;
-            this.btnRecargar.Visible = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnEliminar
@@ -394,7 +392,7 @@
             this.panel_Registro.Location = new System.Drawing.Point(50, 106);
             this.panel_Registro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel_Registro.Name = "panel_Registro";
-            this.panel_Registro.Size = new System.Drawing.Size(419, 600);
+            this.panel_Registro.Size = new System.Drawing.Size(419, 0);
             this.panel_Registro.TabIndex = 16;
             // 
             // groupBoxInterno_panelRegistroUsuarios
@@ -668,7 +666,7 @@
             this.groupboxInterno_panelBorrarTecnico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupboxInterno_panelBorrarTecnico.Name = "groupboxInterno_panelBorrarTecnico";
             this.groupboxInterno_panelBorrarTecnico.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupboxInterno_panelBorrarTecnico.Size = new System.Drawing.Size(412, 594);
+            this.groupboxInterno_panelBorrarTecnico.Size = new System.Drawing.Size(412, 593);
             this.groupboxInterno_panelBorrarTecnico.TabIndex = 0;
             this.groupboxInterno_panelBorrarTecnico.TabStop = false;
             this.groupboxInterno_panelBorrarTecnico.Text = "Borrar Técnico";
@@ -689,7 +687,7 @@
             this.btnEliminar_panelBorrarTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar_panelBorrarTecnico.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar_panelBorrarTecnico.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar_panelBorrarTecnico.Location = new System.Drawing.Point(13, 207);
+            this.btnEliminar_panelBorrarTecnico.Location = new System.Drawing.Point(13, 206);
             this.btnEliminar_panelBorrarTecnico.Name = "btnEliminar_panelBorrarTecnico";
             this.btnEliminar_panelBorrarTecnico.Size = new System.Drawing.Size(89, 30);
             this.btnEliminar_panelBorrarTecnico.TabIndex = 2;
@@ -724,7 +722,7 @@
             this.panel_Menu.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Menu.Location = new System.Drawing.Point(50, 106);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(419, 0);
+            this.panel_Menu.Size = new System.Drawing.Size(419, 600);
             this.panel_Menu.TabIndex = 24;
             this.panel_Menu.Visible = false;
             // 
@@ -753,7 +751,7 @@
             this.btnEstadisticas_groupboxManu_PanelMenu.Name = "btnEstadisticas_groupboxManu_PanelMenu";
             this.btnEstadisticas_groupboxManu_PanelMenu.Size = new System.Drawing.Size(404, 91);
             this.btnEstadisticas_groupboxManu_PanelMenu.TabIndex = 2;
-            this.btnEstadisticas_groupboxManu_PanelMenu.Text = "Estadísticas";
+            this.btnEstadisticas_groupboxManu_PanelMenu.Text = "ESTADÍSTICAS";
             this.btnEstadisticas_groupboxManu_PanelMenu.UseVisualStyleBackColor = false;
             this.btnEstadisticas_groupboxManu_PanelMenu.Click += new System.EventHandler(this.btnEstadisticas_groupboxManu_PanelMenu_Click);
             // 
@@ -768,7 +766,7 @@
             this.btnTaller_PanelMenu.Name = "btnTaller_PanelMenu";
             this.btnTaller_PanelMenu.Size = new System.Drawing.Size(404, 91);
             this.btnTaller_PanelMenu.TabIndex = 0;
-            this.btnTaller_PanelMenu.Text = "Taller";
+            this.btnTaller_PanelMenu.Text = "TALLER";
             this.btnTaller_PanelMenu.UseVisualStyleBackColor = false;
             this.btnTaller_PanelMenu.Click += new System.EventHandler(this.btnTaller_PanelMenu_Click);
             // 
@@ -784,7 +782,7 @@
             this.btnClientes_groupBoxMenu_PanelMenu.Name = "btnClientes_groupBoxMenu_PanelMenu";
             this.btnClientes_groupBoxMenu_PanelMenu.Size = new System.Drawing.Size(404, 91);
             this.btnClientes_groupBoxMenu_PanelMenu.TabIndex = 1;
-            this.btnClientes_groupBoxMenu_PanelMenu.Text = "Clientes";
+            this.btnClientes_groupBoxMenu_PanelMenu.Text = "CLIENTES";
             this.btnClientes_groupBoxMenu_PanelMenu.UseVisualStyleBackColor = false;
             this.btnClientes_groupBoxMenu_PanelMenu.Click += new System.EventHandler(this.btnClientes_groupBoxMenu_PanelMenu_Click);
             // 
@@ -872,7 +870,7 @@
             this.groupBoxModificar_PanelModificar.Controls.Add(this.txtCorreoElectronico_groupBoxModificar_PanelModificar);
             this.groupBoxModificar_PanelModificar.Controls.Add(this.txtTelefono_groupBoxModificar_PanelModificar);
             this.groupBoxModificar_PanelModificar.Controls.Add(this.txtNombre_groupboxModificar_PanelModificar);
-            this.groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 3);
             this.groupBoxModificar_PanelModificar.Name = "groupBoxModificar_PanelModificar";
             this.groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(412, 593);
@@ -883,10 +881,10 @@
             // labelDelID_groupBoxModificar_PanelModificar
             // 
             this.labelDelID_groupBoxModificar_PanelModificar.AutoSize = true;
-            this.labelDelID_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDelID_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(5, 35);
+            this.labelDelID_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDelID_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(71, 3);
             this.labelDelID_groupBoxModificar_PanelModificar.Name = "labelDelID_groupBoxModificar_PanelModificar";
-            this.labelDelID_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(60, 13);
+            this.labelDelID_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(72, 15);
             this.labelDelID_groupBoxModificar_PanelModificar.TabIndex = 15;
             this.labelDelID_groupBoxModificar_PanelModificar.Text = "Selección: ";
             // 
@@ -895,9 +893,9 @@
             this.btnModificar_groupBoxModificar_PanelModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnModificar_groupBoxModificar_PanelModificar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnModificar_groupBoxModificar_PanelModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar_groupBoxModificar_PanelModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnModificar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(326, 330);
+            this.btnModificar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(326, 298);
             this.btnModificar_groupBoxModificar_PanelModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModificar_groupBoxModificar_PanelModificar.Name = "btnModificar_groupBoxModificar_PanelModificar";
             this.btnModificar_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(76, 31);
@@ -910,7 +908,8 @@
             // 
             this.picMostrar_groupBoxModificar_PanelModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMostrar_groupBoxModificar_PanelModificar.Enabled = false;
-            this.picMostrar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(352, 128);
+            this.picMostrar_groupBoxModificar_PanelModificar.Image = global::Diseño.Properties.Resources.ojo_tapado;
+            this.picMostrar_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(352, 96);
             this.picMostrar_groupBoxModificar_PanelModificar.Name = "picMostrar_groupBoxModificar_PanelModificar";
             this.picMostrar_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(16, 16);
             this.picMostrar_groupBoxModificar_PanelModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -921,7 +920,7 @@
             // 
             this.chbOcultarContraseña_groupboxModificar_PanelModificar.AutoSize = true;
             this.chbOcultarContraseña_groupboxModificar_PanelModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chbOcultarContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(354, 128);
+            this.chbOcultarContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(352, 96);
             this.chbOcultarContraseña_groupboxModificar_PanelModificar.Name = "chbOcultarContraseña_groupboxModificar_PanelModificar";
             this.chbOcultarContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(15, 14);
             this.chbOcultarContraseña_groupboxModificar_PanelModificar.TabIndex = 12;
@@ -931,93 +930,93 @@
             // labelCelular_groupBoxModificar_PanelModificar
             // 
             this.labelCelular_groupBoxModificar_PanelModificar.AutoSize = true;
-            this.labelCelular_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCelular_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 249);
+            this.labelCelular_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCelular_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 217);
             this.labelCelular_groupBoxModificar_PanelModificar.Name = "labelCelular_groupBoxModificar_PanelModificar";
-            this.labelCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(39, 13);
+            this.labelCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(47, 15);
             this.labelCelular_groupBoxModificar_PanelModificar.TabIndex = 10;
             this.labelCelular_groupBoxModificar_PanelModificar.Text = "Celular";
             this.labelCelular_groupBoxModificar_PanelModificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCelular_groupBoxModificar_PanelModificar
             // 
-            this.txtCelular_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelular_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 263);
+            this.txtCelular_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 235);
             this.txtCelular_groupBoxModificar_PanelModificar.Name = "txtCelular_groupBoxModificar_PanelModificar";
-            this.txtCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 20);
+            this.txtCelular_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 21);
             this.txtCelular_groupBoxModificar_PanelModificar.TabIndex = 9;
             // 
             // labelContraseña_groupboxModificar_PanelModificar
             // 
             this.labelContraseña_groupboxModificar_PanelModificar.AutoSize = true;
-            this.labelContraseña_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(3, 109);
+            this.labelContraseña_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(3, 77);
             this.labelContraseña_groupboxModificar_PanelModificar.Name = "labelContraseña_groupboxModificar_PanelModificar";
-            this.labelContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(61, 13);
+            this.labelContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(72, 15);
             this.labelContraseña_groupboxModificar_PanelModificar.TabIndex = 8;
             this.labelContraseña_groupboxModificar_PanelModificar.Text = "Contraseña";
             // 
             // labelCorreoElectronico_groupBoxModificar_PanelModificar
             // 
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.AutoSize = true;
-            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 153);
+            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 121);
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Name = "labelCorreoElectronico_groupBoxModificar_PanelModificar";
-            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(94, 13);
+            this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(112, 15);
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.TabIndex = 7;
             this.labelCorreoElectronico_groupBoxModificar_PanelModificar.Text = "Correo Electrónico";
             // 
             // labelTelefono_groupBoxModificar_PanelModificar
             // 
             this.labelTelefono_groupBoxModificar_PanelModificar.AutoSize = true;
-            this.labelTelefono_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTelefono_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 201);
+            this.labelTelefono_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 169);
             this.labelTelefono_groupBoxModificar_PanelModificar.Name = "labelTelefono_groupBoxModificar_PanelModificar";
-            this.labelTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(100, 13);
+            this.labelTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(115, 15);
             this.labelTelefono_groupBoxModificar_PanelModificar.TabIndex = 6;
             this.labelTelefono_groupBoxModificar_PanelModificar.Text = "Teléfono (Opcional)";
             // 
             // labNombre_groupBoxModificar_PanelModificar
             // 
             this.labNombre_groupBoxModificar_PanelModificar.AutoSize = true;
-            this.labNombre_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNombre_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 66);
+            this.labNombre_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNombre_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(3, 34);
             this.labNombre_groupBoxModificar_PanelModificar.Name = "labNombre_groupBoxModificar_PanelModificar";
-            this.labNombre_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(44, 13);
+            this.labNombre_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(55, 15);
             this.labNombre_groupBoxModificar_PanelModificar.TabIndex = 5;
             this.labNombre_groupBoxModificar_PanelModificar.Text = "Nombre";
             // 
             // txtContraseña_groupboxModificar_PanelModificar
             // 
-            this.txtContraseña_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(6, 123);
+            this.txtContraseña_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(6, 91);
             this.txtContraseña_groupboxModificar_PanelModificar.Name = "txtContraseña_groupboxModificar_PanelModificar";
             this.txtContraseña_groupboxModificar_PanelModificar.PasswordChar = '*';
-            this.txtContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(340, 20);
+            this.txtContraseña_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(340, 21);
             this.txtContraseña_groupboxModificar_PanelModificar.TabIndex = 4;
             // 
             // txtCorreoElectronico_groupBoxModificar_PanelModificar
             // 
-            this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 168);
+            this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 136);
             this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Name = "txtCorreoElectronico_groupBoxModificar_PanelModificar";
-            this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(400, 20);
+            this.txtCorreoElectronico_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(400, 21);
             this.txtCorreoElectronico_groupBoxModificar_PanelModificar.TabIndex = 3;
             // 
             // txtTelefono_groupBoxModificar_PanelModificar
             // 
-            this.txtTelefono_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 215);
+            this.txtTelefono_groupBoxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono_groupBoxModificar_PanelModificar.Location = new System.Drawing.Point(6, 184);
             this.txtTelefono_groupBoxModificar_PanelModificar.Name = "txtTelefono_groupBoxModificar_PanelModificar";
-            this.txtTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 20);
+            this.txtTelefono_groupBoxModificar_PanelModificar.Size = new System.Drawing.Size(399, 21);
             this.txtTelefono_groupBoxModificar_PanelModificar.TabIndex = 1;
             // 
             // txtNombre_groupboxModificar_PanelModificar
             // 
-            this.txtNombre_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(6, 81);
+            this.txtNombre_groupboxModificar_PanelModificar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre_groupboxModificar_PanelModificar.Location = new System.Drawing.Point(6, 49);
             this.txtNombre_groupboxModificar_PanelModificar.Name = "txtNombre_groupboxModificar_PanelModificar";
-            this.txtNombre_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(399, 20);
+            this.txtNombre_groupboxModificar_PanelModificar.Size = new System.Drawing.Size(399, 21);
             this.txtNombre_groupboxModificar_PanelModificar.TabIndex = 0;
             // 
             // groupBox2
@@ -1088,14 +1087,14 @@
             this.tabla_Usuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tabla_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla_Usuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tabla_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.tabla_Usuarios.EnableHeadersVisualStyles = false;
@@ -1104,11 +1103,11 @@
             this.tabla_Usuarios.MultiSelect = false;
             this.tabla_Usuarios.Name = "tabla_Usuarios";
             this.tabla_Usuarios.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla_Usuarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tabla_Usuarios.RowTemplate.ReadOnly = true;
             this.tabla_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tabla_Usuarios.Size = new System.Drawing.Size(869, 597);

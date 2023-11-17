@@ -2925,7 +2925,7 @@ namespace Diseño
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (comboBox_AgregarCelular_IdDelTecnicoAcargo.Text.Length == 0)
+            if (comboBox_AgregarCelular_IdDelTecnicoAcargo.Text == "")
             {
                 try
                 {
@@ -3191,7 +3191,7 @@ namespace Diseño
         private void comboBox_AgregarCelular_CedulaDelDueño_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (e.KeyChar != (char)Keys.Enter && e.KeyChar != (char)Keys.Back)
+            if (e.KeyChar != (char)Keys.Enter && (e.KeyChar != (char)Keys.Back || comboBox_AgregarCelular_CedulaDelDueño.Text == ""))
             {
                 button1_Click(sender, e);
                 e.Handled = false;
@@ -3220,7 +3220,7 @@ namespace Diseño
 
         private void comboBox_AgregarCelular_IdDelTecnicoAcargo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != (char)Keys.Enter && e.KeyChar != (char)Keys.Back)
+            if (e.KeyChar != (char)Keys.Enter && (e.KeyChar != (char)Keys.Back || comboBox_AgregarCelular_IdDelTecnicoAcargo.Text == ""))
             {
                 button1_Click_1(sender, e);
                 e.Handled = false;
