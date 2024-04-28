@@ -1,2 +1,2 @@
 # Prisma-Repository-
-Proyecto de fin de año de programación UTU Bachillerato en Informática.
+Programa para la empresa Etech de gestión de celulares en reparación, clientes y técnicos.
